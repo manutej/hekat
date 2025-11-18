@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MONOIDAL-CATEGORIES-COHERENCE</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#monoidal-categories-and-coherence-theorems"
+id="toc-monoidal-categories-and-coherence-theorems">Monoidal Categories
+and Coherence Theorems</a>
+<ul>
+<li><a href="#overview" id="toc-overview">Overview</a></li>
+<li><a href="#fundamental-definitions"
+id="toc-fundamental-definitions">Fundamental Definitions</a>
+<ul>
+<li><a href="#monoidal-category-structure"
+id="toc-monoidal-category-structure">Monoidal Category
+Structure</a></li>
+</ul></li>
+<li><a href="#mac-lanes-coherence-theorem"
+id="toc-mac-lanes-coherence-theorem">Mac Lane’s Coherence
+Theorem</a></li>
+<li><a href="#examples-of-monoidal-categories"
+id="toc-examples-of-monoidal-categories">Examples of Monoidal
+Categories</a>
+<ul>
+<li><a href="#vector-spaces-vect_k" id="toc-vector-spaces-vect_k">1.
+Vector Spaces (Vect_k)</a></li>
+<li><a href="#r-modules-mod_r" id="toc-r-modules-mod_r">2. R-Modules
+(Mod_R)</a></li>
+<li><a href="#cobordism-category-ncob"
+id="toc-cobordism-category-ncob">3. Cobordism Category (nCob)</a></li>
+</ul></li>
+<li><a href="#braided-and-symmetric-monoidal-categories"
+id="toc-braided-and-symmetric-monoidal-categories">Braided and Symmetric
+Monoidal Categories</a>
+<ul>
+<li><a href="#braided-monoidal-categories"
+id="toc-braided-monoidal-categories">Braided Monoidal
+Categories</a></li>
+<li><a href="#symmetric-monoidal-categories"
+id="toc-symmetric-monoidal-categories">Symmetric Monoidal
+Categories</a></li>
+</ul></li>
+<li><a href="#applications" id="toc-applications">Applications</a>
+<ul>
+<li><a href="#quantum-computing" id="toc-quantum-computing">1. Quantum
+Computing</a></li>
+<li><a href="#linear-logic" id="toc-linear-logic">2. Linear
+Logic</a></li>
+<li><a href="#topological-quantum-field-theory-tqft"
+id="toc-topological-quantum-field-theory-tqft">3. Topological Quantum
+Field Theory (TQFT)</a></li>
+</ul></li>
+<li><a href="#why-coherence-matters" id="toc-why-coherence-matters">Why
+Coherence Matters</a></li>
+<li><a href="#string-diagrams" id="toc-string-diagrams">String
+Diagrams</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#key-theorems" id="toc-key-theorems">Key Theorems</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+Reading</a></li>
+<li><a href="#study-questions" id="toc-study-questions">Study
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="monoidal-categories-and-coherence-theorems">Monoidal Categories
+and Coherence Theorems</h1>
+<h2 id="overview">Overview</h2>
+<p>A <strong>monoidal category</strong> is a category equipped with a
+tensor product operation and associativity/unity conditions. Coherence
+theorems show that diagrammatic reasoning automatically works without
+verifying infinite compatibility conditions.</p>
+<h2 id="fundamental-definitions">Fundamental Definitions</h2>
+<h3 id="monoidal-category-structure">Monoidal Category Structure</h3>
+<p>A monoidal category (C, ⊗, I, α, λ, ρ) consists of: -
+<strong>Category C</strong> with objects and morphisms - <strong>Tensor
+product</strong> ⊗: C × C → C (bifunctor) - <strong>Unit object</strong>
+I ∈ Ob(C) - <strong>Associator</strong> α_{X,Y,Z}: (X ⊗ Y) ⊗ Z ≅ X ⊗ (Y
+⊗ Z) - <strong>Left unitor</strong> λ_X: I ⊗ X ≅ X - <strong>Right
+unitor</strong> ρ_X: X ⊗ I ≅ X</p>
+<p>These satisfy <strong>coherence axioms</strong>: 1. <strong>Pentagon
+axiom</strong> (associativity coherence) 2. <strong>Triangle
+axiom</strong> (unit coherence)</p>
+<pre><code>Pentagon Axiom:
+   ((W⊗X)⊗Y)⊗Z
+       ↓ α
+   (W⊗(X⊗Y))⊗Z
+       ↓ α
+   W⊗((X⊗Y)⊗Z)
+   ↑ (id⊗α)
+   W⊗(X⊗(Y⊗Z))</code></pre>
+<h2 id="mac-lanes-coherence-theorem">Mac Lane’s Coherence Theorem</h2>
+<p><strong>Statement:</strong> Every monoidal category is equivalent to
+a <em>strict</em> monoidal category (where α, λ, ρ are identities).</p>
+<p><strong>Proof Strategy:</strong> - Use “pivot words”
+(parenthesizations of tensor products) - Show different ways to
+parenthesize are connected by associators - Prove all paths through the
+pentagon commute (confluence) - Conclude morphisms between two
+parenthesizations are unique</p>
+<p><strong>Implications:</strong> - Only check diagrams on basic
+pentagon/triangle (not infinite combinations) - Automatic diagram
+commutation for coherent morphisms - Eliminates “diagram chasing hell”
+in monoidal categories</p>
+<h2 id="examples-of-monoidal-categories">Examples of Monoidal
+Categories</h2>
+<h3 id="vector-spaces-vect_k">1. Vector Spaces (Vect_k)</h3>
+<ul>
+<li><strong>Tensor product</strong>: Standard tensor product V ⊗_k
+W</li>
+<li><strong>Unit</strong>: Scalar field k (1-dimensional space)</li>
+<li><strong>Coherence</strong>: Automatic from linear algebra</li>
+</ul>
+<h3 id="r-modules-mod_r">2. R-Modules (Mod_R)</h3>
+<ul>
+<li><strong>Tensor product</strong>: M ⊗_R N</li>
+<li><strong>Unit</strong>: R itself</li>
+<li><strong>Coherence</strong>: Inherited from Vect</li>
+</ul>
+<h3 id="cobordism-category-ncob">3. Cobordism Category (nCob)</h3>
+<ul>
+<li><strong>Objects</strong>: (n-1)-dimensional closed manifolds</li>
+<li><strong>Morphisms</strong>: n-dimensional cobordisms</li>
+<li><strong>Tensor product</strong>: Disjoint union of manifolds</li>
+<li><strong>Unit</strong>: Empty manifold</li>
+<li><strong>Application</strong>: Topological Quantum Field Theory</li>
+</ul>
+<h2 id="braided-and-symmetric-monoidal-categories">Braided and Symmetric
+Monoidal Categories</h2>
+<h3 id="braided-monoidal-categories">Braided Monoidal Categories</h3>
+<p>Add <strong>braiding</strong> β: X ⊗ Y ≅ Y ⊗ X satisfying
+<strong>hexagon axioms</strong>:</p>
+<pre><code>(X⊗Y)⊗Z  --α--&gt;  X⊗(Y⊗Z)  --β⊗id--&gt;  X⊗(Z⊗Y)  --α⁻¹--&gt;  (X⊗Z)⊗Y
+  |                                                           |
+  id⊗β                                                       β⊗id
+  |                                                           |
+(Y⊗X)⊗Z  --α--&gt;  Y⊗(X⊗Z)  --id⊗β--&gt;  Y⊗(Z⊗X)  --α⁻¹--&gt;  (Y⊗Z)⊗X</code></pre>
+<h3 id="symmetric-monoidal-categories">Symmetric Monoidal
+Categories</h3>
+<p>Braiding is <strong>self-inverse</strong>: β_{Y,X} ∘ β_{X,Y} = id</p>
+<p><strong>Examples:</strong> - Vect_k (with standard tensor product
+braiding) - Modules over commutative rings - Any category with natural
+commutativity</p>
+<h2 id="applications">Applications</h2>
+<h3 id="quantum-computing">1. Quantum Computing</h3>
+<ul>
+<li><strong>Anyons</strong>: Particles with exotic braiding
+statistics</li>
+<li><strong>Categorical quantum mechanics</strong>: Quantum gates as
+braided morphisms</li>
+<li><strong>ZX-calculus</strong>: Graphical language for braided
+categories</li>
+</ul>
+<h3 id="linear-logic">2. Linear Logic</h3>
+<ul>
+<li><strong>Tensor ⊗</strong> represents multiplicative conjunction</li>
+<li><strong>Monoidal structure</strong> models resource management</li>
+<li><strong>Braiding</strong> enables exchange of resources</li>
+</ul>
+<h3 id="topological-quantum-field-theory-tqft">3. Topological Quantum
+Field Theory (TQFT)</h3>
+<ul>
+<li><strong>Functors</strong> from cobordism category to Vect_k</li>
+<li><strong>Tensor product</strong> preserves gluing of manifolds</li>
+<li><strong>Braiding</strong> describes particle exchange
+statistics</li>
+</ul>
+<h2 id="why-coherence-matters">Why Coherence Matters</h2>
+<p>Without coherence theorem, verifying one diagram would require: -
+Checking all possible parenthesizations (infinite) - Verifying
+commutativity through all “pivoting” sequences - Establishing
+associativity at every level</p>
+<p><strong>With coherence theorem:</strong> - Check pentagon + triangle
+axioms only (2 diagrams) - Mac Lane’s theorem guarantees all other
+diagrams commute - Practical diagram chasing becomes feasible</p>
+<h2 id="string-diagrams">String Diagrams</h2>
+<p>Visual notation for morphisms in braided categories:</p>
+<pre><code>  |     |           [Product by strands side-by-side]
+  X     Y
+
+  \   /            [Braiding β_{X,Y}]
+   \ /
+   / \
+  /   \
+
+  |→|              [Morphism f: X → X&#39;]</code></pre>
+<p>String diagrams automatically incorporate coherence visually.</p>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ <strong>Mistake</strong>: “Monoidal = commutative with identity” ✓
+<strong>Reality</strong>: Monoidal = associative with unit (may not
+commute)</p>
+<p>❌ <strong>Mistake</strong>: “Need to verify all pentagon
+commutations” ✓ <strong>Reality</strong>: Mac Lane’s theorem covers all
+coherence automatically</p>
+<p>❌ <strong>Mistake</strong>: “Braiding = same as tensor product
+commutativity” ✓ <strong>Reality</strong>: Braiding adds structure (can
+be non-trivial, have non-trivial statistics)</p>
+<h2 id="key-theorems">Key Theorems</h2>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>Theorem</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac Lane Coherence</td>
+<td>Every monoidal category ≅ strict monoidal category</td>
+</tr>
+<tr>
+<td>Braiding Coherence</td>
+<td>Hexagon axioms sufficient for all braiding commutativity</td>
+</tr>
+<tr>
+<td>TQFT Representation</td>
+<td>Modular tensor categories classify 2D topological quantum field
+theories</td>
+</tr>
+</tbody>
+</table>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Mac Lane, “Categories for the Working Mathematician” (Chapter
+VII)</li>
+<li>Etingof et al., “Tensor Categories” (Introduction)</li>
+<li>Selinger, “A survey of graphical languages for monoidal categories”
+(ArXiv)</li>
+<li>Kassel, “Quantum Groups” (Chapter IV: Ribbon categories)</li>
+</ul>
+<h2 id="study-questions">Study Questions</h2>
+<ol type="1">
+<li>Why does the pentagon axiom force associativity?</li>
+<li>How do string diagrams encode coherence automatically?</li>
+<li>Why does TQFT require both monoidal and braided structure?</li>
+<li>What’s the difference between weak and strict monoidal
+categories?</li>
+<li>How does coherence connect to Yoneda’s perspective?</li>
+</ol>
+</body>
+</html>

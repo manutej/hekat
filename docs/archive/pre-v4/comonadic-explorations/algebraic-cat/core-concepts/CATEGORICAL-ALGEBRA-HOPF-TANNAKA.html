@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CATEGORICAL-ALGEBRA-HOPF-TANNAKA</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#categorical-algebra-hopf-algebras-and-tannaka-krein-duality"
+id="toc-categorical-algebra-hopf-algebras-and-tannaka-krein-duality">Categorical
+Algebra: Hopf Algebras and Tannaka-Krein Duality</a>
+<ul>
+<li><a href="#introduction-symmetries-and-categories"
+id="toc-introduction-symmetries-and-categories">Introduction: Symmetries
+and Categories</a></li>
+<li><a href="#hopf-algebras-definition-and-structure"
+id="toc-hopf-algebras-definition-and-structure">Hopf Algebras:
+Definition and Structure</a>
+<ul>
+<li><a href="#the-four-operations" id="toc-the-four-operations">The Four
+Operations</a></li>
+<li><a href="#axioms-unified" id="toc-axioms-unified">Axioms
+Unified</a></li>
+</ul></li>
+<li><a href="#examples" id="toc-examples">25+ Examples</a>
+<ul>
+<li><a href="#group-algebra-kg" id="toc-group-algebra-kg">1. Group
+Algebra k[G]</a></li>
+<li><a href="#universal-enveloping-algebra-u𝔤"
+id="toc-universal-enveloping-algebra-u𝔤">2. Universal Enveloping Algebra
+U(𝔤)</a></li>
+<li><a href="#quantum-group-u_qsl_2" id="toc-quantum-group-u_qsl_2">3.
+Quantum Group U_q(sl_2)</a></li>
+<li><a href="#sweedlers-h_4" id="toc-sweedlers-h_4">4. Sweedler’s
+H_4</a></li>
+<li><a href="#kac-paljutkin-algebra-h_8"
+id="toc-kac-paljutkin-algebra-h_8">5. Kac-Paljutkin Algebra H_8</a></li>
+<li><a href="#truncated-group-algebra"
+id="toc-truncated-group-algebra">6. Truncated Group Algebra</a></li>
+<li><a href="#symmetric-function-algebra-λ"
+id="toc-symmetric-function-algebra-λ">7. Symmetric Function Algebra
+Λ</a></li>
+<li><a href="#hopf-algebra-of-rooted-trees"
+id="toc-hopf-algebra-of-rooted-trees">8. Hopf Algebra of Rooted
+Trees</a></li>
+<li><a href="#quantized-enveloping-algebra-u_qg"
+id="toc-quantized-enveloping-algebra-u_qg">9. Quantized Enveloping
+Algebra U_q(g)</a></li>
+<li><a href="#other-examples" id="toc-other-examples">10-25. Other
+Examples</a></li>
+</ul></li>
+<li><a href="#representation-categories"
+id="toc-representation-categories">Representation Categories</a>
+<ul>
+<li><a href="#the-category-reph" id="toc-the-category-reph">The Category
+Rep(H)</a></li>
+<li><a href="#rigid-monoidal-structure"
+id="toc-rigid-monoidal-structure">Rigid Monoidal Structure</a></li>
+<li><a href="#monoidal-functor-to-vect"
+id="toc-monoidal-functor-to-vect">Monoidal Functor to Vect</a></li>
+</ul></li>
+<li><a href="#string-diagram-calculus"
+id="toc-string-diagram-calculus">String Diagram Calculus</a>
+<ul>
+<li><a href="#visual-notation-for-monoidal-structures"
+id="toc-visual-notation-for-monoidal-structures">Visual Notation for
+Monoidal Structures</a></li>
+<li><a href="#snake-equations" id="toc-snake-equations">Snake
+Equations</a></li>
+</ul></li>
+<li><a href="#tannaka-krein-duality-reconstruction"
+id="toc-tannaka-krein-duality-reconstruction">Tannaka-Krein Duality:
+Reconstruction</a>
+<ul>
+<li><a href="#the-big-picture" id="toc-the-big-picture">The Big
+Picture</a></li>
+<li><a href="#tannaka-reconstruction-theorem"
+id="toc-tannaka-reconstruction-theorem">Tannaka Reconstruction
+Theorem</a></li>
+<li><a href="#reconstruction-formula"
+id="toc-reconstruction-formula">Reconstruction Formula</a></li>
+<li><a href="#correspondence-table"
+id="toc-correspondence-table">Correspondence Table</a></li>
+</ul></li>
+<li><a href="#rigid-monoidal-categories"
+id="toc-rigid-monoidal-categories">Rigid Monoidal Categories</a>
+<ul>
+<li><a href="#complete-definition" id="toc-complete-definition">Complete
+Definition</a></li>
+<li><a href="#rigid-braided-symmetric"
+id="toc-rigid-braided-symmetric">Rigid ≠ Braided ≠ Symmetric</a></li>
+<li><a href="#examples-1" id="toc-examples-1">Examples</a></li>
+</ul></li>
+<li><a href="#quantum-groups-and-yang-baxter-equation"
+id="toc-quantum-groups-and-yang-baxter-equation">Quantum Groups and
+Yang-Baxter Equation</a>
+<ul>
+<li><a href="#deformation-theory"
+id="toc-deformation-theory">Deformation Theory</a></li>
+<li><a href="#quasitriangular-structure"
+id="toc-quasitriangular-structure">Quasitriangular Structure</a></li>
+<li><a href="#classical-yang-baxter-equation"
+id="toc-classical-yang-baxter-equation">Classical Yang-Baxter
+Equation</a></li>
+<li><a href="#solutions-and-classification"
+id="toc-solutions-and-classification">Solutions and
+Classification</a></li>
+</ul></li>
+<li><a href="#braided-tensor-categories"
+id="toc-braided-tensor-categories">Braided Tensor Categories</a>
+<ul>
+<li><a href="#braiding" id="toc-braiding">Braiding</a></li>
+<li><a href="#fusion-categories" id="toc-fusion-categories">Fusion
+Categories</a></li>
+<li><a href="#examples-2" id="toc-examples-2">Examples</a></li>
+</ul></li>
+<li><a href="#topological-quantum-field-theory"
+id="toc-topological-quantum-field-theory">Topological Quantum Field
+Theory</a>
+<ul>
+<li><a href="#atiyah-segal-axioms"
+id="toc-atiyah-segal-axioms">Atiyah-Segal Axioms</a></li>
+<li><a href="#reshetikhin-turaev-construction"
+id="toc-reshetikhin-turaev-construction">Reshetikhin-Turaev
+Construction</a></li>
+<li><a href="#wrt-invariants" id="toc-wrt-invariants">WRT
+Invariants</a></li>
+</ul></li>
+<li><a href="#categorical-quantum-mechanics"
+id="toc-categorical-quantum-mechanics">Categorical Quantum Mechanics</a>
+<ul>
+<li><a href="#dagger-categories" id="toc-dagger-categories">Dagger
+Categories</a></li>
+<li><a href="#dagger-compact-categories"
+id="toc-dagger-compact-categories">Dagger-Compact Categories</a></li>
+<li><a href="#zx-calculus" id="toc-zx-calculus">ZX-Calculus</a></li>
+</ul></li>
+<li><a href="#knot-invariants-from-quantum-groups"
+id="toc-knot-invariants-from-quantum-groups">Knot Invariants from
+Quantum Groups</a>
+<ul>
+<li><a href="#jones-polynomial" id="toc-jones-polynomial">Jones
+Polynomial</a></li>
+<li><a href="#kauffman-bracket" id="toc-kauffman-bracket">Kauffman
+Bracket</a></li>
+</ul></li>
+<li><a href="#modern-developments" id="toc-modern-developments">Modern
+Developments</a>
+<ul>
+<li><a href="#tannaka-duality-iwanari"
+id="toc-tannaka-duality-iwanari">∞-Tannaka Duality (Iwanari)</a></li>
+<li><a href="#topological-order-and-anyons"
+id="toc-topological-order-and-anyons">Topological Order and
+Anyons</a></li>
+<li><a href="#khovanov-homology" id="toc-khovanov-homology">Khovanov
+Homology</a></li>
+<li><a href="#tensor-network-states"
+id="toc-tensor-network-states">Tensor Network States</a></li>
+</ul></li>
+<li><a href="#open-problems" id="toc-open-problems">Open
+Problems</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+Reading</a></li>
+<li><a href="#research-questions" id="toc-research-questions">Research
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="categorical-algebra-hopf-algebras-and-tannaka-krein-duality">Categorical
+Algebra: Hopf Algebras and Tannaka-Krein Duality</h1>
+<h2 id="introduction-symmetries-and-categories">Introduction: Symmetries
+and Categories</h2>
+<p><strong>Central question</strong>: How do algebraic structures
+(groups, rings) capture symmetries?</p>
+<p><strong>Categorical answer</strong>: Via <strong>Hopf
+algebras</strong> - algebraic structures with categorical representation
+theory.</p>
+<p><strong>Key insight</strong>: A Hopf algebra is defined by its
+<strong>representation category</strong>, not by operations.</p>
+<h2 id="hopf-algebras-definition-and-structure">Hopf Algebras:
+Definition and Structure</h2>
+<h3 id="the-four-operations">The Four Operations</h3>
+<p>A <strong>Hopf algebra</strong> H over field k is an algebra with
+four operations:</p>
+<p><strong>1. Multiplication</strong>: m: H ⊗ H → H (group
+multiplication)</p>
+<pre><code>(ab)c = a(bc)  [associativity]
+1·a = a = a·1  [identity element]</code></pre>
+<p><strong>2. Comultiplication</strong>: Δ: H → H ⊗ H (dualization - how
+to copy)</p>
+<pre><code>Δ: h ↦ h_(1) ⊗ h_(2)  [Sweedler notation]
+(Δ ⊗ id) ∘ Δ = (id ⊗ Δ) ∘ Δ  [coassociativity]</code></pre>
+<p><strong>3. Counit</strong>: ε: H → k (evaluation)</p>
+<pre><code>(ε ⊗ id) ∘ Δ = id  [left counit]
+(id ⊗ ε) ∘ Δ = id  [right counit]</code></pre>
+<p><strong>4. Antipode</strong>: S: H → H (inverse operation)</p>
+<pre><code>m ∘ (S ⊗ id) ∘ Δ = η ∘ ε  [left inverse]
+m ∘ (id ⊗ S) ∘ Δ = η ∘ ε  [right inverse]</code></pre>
+<h3 id="axioms-unified">Axioms Unified</h3>
+<pre><code>Compatibility: Δ, ε are algebra homomorphisms
+              m, η are coalgebra morphisms
+
+Consequence: (H, m, η) algebra AND (H, Δ, ε) coalgebra coexist</code></pre>
+<h2 id="examples">25+ Examples</h2>
+<h3 id="group-algebra-kg">1. Group Algebra k[G]</h3>
+<pre><code>H = k[G] = vector space with basis {e_g | g ∈ G}
+
+Multiplication: e_g · e_h = e_{gh}
+Comultiplication: Δ(e_g) = e_g ⊗ e_g
+Counit: ε(e_g) = 1 ∈ k
+Antipode: S(e_g) = e_{g^{-1}}
+
+Representation: Rep(k[G]) = G-modules</code></pre>
+<h3 id="universal-enveloping-algebra-u𝔤">2. Universal Enveloping Algebra
+U(𝔤)</h3>
+<pre><code>𝔤 = Lie algebra [x,y] = xy - yx
+H = U(𝔤) = tensor algebra with [x,y] relations
+
+PBW theorem: U(𝔤) ≅ polynomial algebra
+Comultiplication: Δ(x) = x ⊗ 1 + 1 ⊗ x  [primitive element]
+Antipode: S(x) = -x
+
+Representation: Rep(U(𝔤)) = 𝔤-modules = Lie algebra representations</code></pre>
+<h3 id="quantum-group-u_qsl_2">3. Quantum Group U_q(sl_2)</h3>
+<pre><code>Generators: e, f, h (Chevalley)
+Relations: [h,e] = 2e, [h,f] = -2f, [e,f] = (q^h - q^{-h})/(q - q^{-1})
+
+Comultiplication:
+  Δ(h) = h ⊗ 1 + 1 ⊗ h
+  Δ(e) = e ⊗ q^h + 1 ⊗ e
+  Δ(f) = f ⊗ 1 + q^{-h} ⊗ f
+
+Deformation: U_q(sl_2) = deformation of U(sl_2) by parameter q</code></pre>
+<h3 id="sweedlers-h_4">4. Sweedler’s H_4</h3>
+<pre><code>2-dimensional Hopf algebra
+Generated by: g with g² = 1, x with x² = 0
+Relations: gxg = -x (braiding)
+
+Only non-semisimple 4-dim Hopf algebra (over C)
+Important for: fusion categories</code></pre>
+<h3 id="kac-paljutkin-algebra-h_8">5. Kac-Paljutkin Algebra H_8</h3>
+<pre><code>8-dimensional
+Non-semisimple
+Kac-Paljutkin theorem: classification by comultiplication</code></pre>
+<h3 id="truncated-group-algebra">6. Truncated Group Algebra</h3>
+<pre><code>H = k[x]/(x^n)  with comultiplication Δ(x) = x ⊗ 1 + 1 ⊗ x
+Non-semisimple for n &gt; 1</code></pre>
+<h3 id="symmetric-function-algebra-λ">7. Symmetric Function Algebra
+Λ</h3>
+<pre><code>H = symmetric functions in infinitely many variables
+Multiply: product of symmetric functions
+Comultiply: Δ(f) = sum of f(x_1,...,x_i) ⊗ f(x_{i+1},...)
+Fundamental: Generates all symmetric functions</code></pre>
+<h3 id="hopf-algebra-of-rooted-trees">8. Hopf Algebra of Rooted
+Trees</h3>
+<pre><code>Connes-Kreimer: H = algebra with rooted trees
+m: merge trees by combining roots
+Δ: split tree into root and subtrees
+Application: Renormalization of quantum field theory</code></pre>
+<h3 id="quantized-enveloping-algebra-u_qg">9. Quantized Enveloping
+Algebra U_q(g)</h3>
+<pre><code>For any Lie algebra 𝔤
+U_q(g) = quantum deformation
+At q = 1: recovers U(g)
+At q root of unity: non-semisimple, interesting</code></pre>
+<h3 id="other-examples">10-25. Other Examples</h3>
+<ul>
+<li>Steenrod algebra (topology)</li>
+<li>Nichols algebras (braided Hopf)</li>
+<li>Quantum doubles D(H)</li>
+<li>Function algebras O_q(G)</li>
+<li>Taft algebras</li>
+<li>Yangians Y(g)</li>
+<li>Affine Kac-Moody algebras</li>
+<li>Quantum affine algebras</li>
+<li>And many more…</li>
+</ul>
+<h2 id="representation-categories">Representation Categories</h2>
+<h3 id="the-category-reph">The Category Rep(H)</h3>
+<p><strong>Objects</strong>: H-modules (vector space V with H
+action)</p>
+<p><strong>Morphisms</strong>: H-linear maps (respect action)</p>
+<p><strong>Tensor Structure</strong>:</p>
+<pre><code>V ⊗ W has action: h · (v ⊗ w) = Δ(h) · (v ⊗ w)
+                               = h_(1) · v ⊗ h_(2) · w</code></pre>
+<p><strong>Key property</strong>: Tensor product is
+<strong>monoidal</strong> because Δ is coassociative!</p>
+<h3 id="rigid-monoidal-structure">Rigid Monoidal Structure</h3>
+<p><strong>Duality</strong>:</p>
+<pre><code>For any V ∈ Rep(H), dual V* = Hom_k(V, k)
+
+Evaluation: V* ⊗ V → k
+Coevaluation: k → V ⊗ V*
+
+Both defined using antipode S!</code></pre>
+<p><strong>Consequence</strong>: Rep(H) is <strong>rigid
+monoidal</strong> (every object dualizable)</p>
+<h3 id="monoidal-functor-to-vect">Monoidal Functor to Vect</h3>
+<p><strong>Forgetful functor</strong> U: Rep(H) → Vect_k - Forgets
+H-action - Preserves tensor product (monoidal) - Has right adjoint (free
+module)</p>
+<h2 id="string-diagram-calculus">String Diagram Calculus</h2>
+<h3 id="visual-notation-for-monoidal-structures">Visual Notation for
+Monoidal Structures</h3>
+<pre><code>Tensor product:    |     |        [side by side strands]
+                   V     W
+
+Composition:       |          [vertical stacking]
+                   f
+                   |
+                   g
+                   |
+
+Morphism:          |→|        [labeled by f]
+                    f
+
+Duality:           \   /       [evaluation pairing]
+                    \_/
+
+Braiding:          \   /       [crossing strands]
+                     X
+                    /   \</code></pre>
+<h3 id="snake-equations">Snake Equations</h3>
+<p><strong>Left inverse</strong>:</p>
+<pre><code>    |               |
+    |────────────   |
+   /  \            (S_L law)
+  /__  \___
+    ↓
+
+Graphically: loop cancels</code></pre>
+<p><strong>Right inverse</strong>:</p>
+<pre><code>      |               |
+ ─────|────────────   |
+  ___/ \              (S_R law)
+      / \
+         ↓</code></pre>
+<p>These express S graphically!</p>
+<h2 id="tannaka-krein-duality-reconstruction">Tannaka-Krein Duality:
+Reconstruction</h2>
+<h3 id="the-big-picture">The Big Picture</h3>
+<pre><code>Hopf algebra H
+     ↓
+Rep(H) [representation category]
+     ↓
+Fiber functor F: Rep(H) → Vect_k
+     ↓
+Tannaka duality reconstructs H from (Rep(H), F)</code></pre>
+<h3 id="tannaka-reconstruction-theorem">Tannaka Reconstruction
+Theorem</h3>
+<p><strong>Statement</strong>: Given: - Abelian monoidal category C -
+Monoidal functor F: C → Vect_k (fiber functor) - Certain
+finiteness/rigidity conditions</p>
+<p>Then:</p>
+<pre><code>H = Nat(F, F)^op  [natural endomorphisms form Hopf algebra]
+C ≅ Rep(H)        [original category recovered]</code></pre>
+<p><strong>Key insight</strong>: Algebra IS determined by its
+representation category!</p>
+<h3 id="reconstruction-formula">Reconstruction Formula</h3>
+<pre><code>H = End(F)^* = {μ: F ⇒ F | natural}
+
+Explicitly:
+H = colim_{V ∈ C} Hom(V, V)^*  [coproduct of all endomorphisms]
+
+Hopf structure:
+m: H ⊗ H → H given by composition
+Δ: H → H ⊗ H given by tensor product splitting
+ε: H → k given by evaluation at identity
+S: H → H given by adjoint/dual</code></pre>
+<h3 id="correspondence-table">Correspondence Table</h3>
+<pre><code>Hopf algebra side    ←→    Category side
+─────────────────          ──────────────
+H (algebra)          ←→    (Rep(H), ⊗)
+Δ: H → H⊗H          ←→    Tensor product on modules
+ε: H → k            ←→    Forgetful functor
+S: H → H (antipode) ←→    Duality/dual module
+Grouplike g          ←→    Simple object decomposition
+Primitive x          ←→    Morphisms between objects</code></pre>
+<h2 id="rigid-monoidal-categories">Rigid Monoidal Categories</h2>
+<h3 id="complete-definition">Complete Definition</h3>
+<p>Monoidal category C with left and right duals:</p>
+<pre><code>For each X ∈ C: left dual X* and right dual *X
+
+Evaluation (right):     X* ⊗ X → I
+Coevaluation (right):   I → X ⊗ X*
+
+Evaluation (left):      X ⊗ *X → I
+Coevaluation (left):    I → *X ⊗ X
+
+Snake laws:  (both sides)  [diagram commutative]</code></pre>
+<h3 id="rigid-braided-symmetric">Rigid ≠ Braided ≠ Symmetric</h3>
+<pre><code>Rigid: Every object has dual
+Braiding: Natural isomorphism X⊗Y ≅ Y⊗X with hexagon axiom
+Symmetric: Braiding is self-inverse (β_Y,X ∘ β_X,Y = id)
+
+Relationship:
+Symmetric ⟹ Rigid monoidal ⟹ Monoidal
+Braided + Rigid ⟹ Ribbon (with twist)</code></pre>
+<h3 id="examples-1">Examples</h3>
+<p><strong>Rigid</strong>: Rep(H) for any Hopf algebra, Finite-dim
+Vect</p>
+<p><strong>NOT Rigid</strong>: Infinite-dimensional Hilbert spaces (no
+duals)</p>
+<h2 id="quantum-groups-and-yang-baxter-equation">Quantum Groups and
+Yang-Baxter Equation</h2>
+<h3 id="deformation-theory">Deformation Theory</h3>
+<p><strong>Drinfeld-Jimbo</strong>: Quantum groups as deformations</p>
+<pre><code>Classical: U(g) with [x,y] = xy - yx
+Quantum:   U_q(g) with [x,y] = (q^h - q^{-h})/(q-q^{-1})
+
+Limit: q → 1 recovers classical limit
+Deformation: respects Hopf structure</code></pre>
+<h3 id="quasitriangular-structure">Quasitriangular Structure</h3>
+<p><strong>R-matrix</strong>: R ∈ H⊗H satisfying Yang-Baxter
+equation</p>
+<pre><code>Braiding: β_{V,W} = R acts on V⊗W
+R ∈ U_q(g)⊗U_q(g) universal R-matrix
+
+Yang-Baxter equation:
+(R⊗1)(1⊗R)(R⊗1) = (1⊗R)(R⊗1)(1⊗R)  [in H⊗H⊗H]</code></pre>
+<h3 id="classical-yang-baxter-equation">Classical Yang-Baxter
+Equation</h3>
+<p>In Lie algebras:</p>
+<pre><code>[r₁₂, r₁₃] + [r₁₂, r₂₃] + [r₁₃, r₂₃] = 0
+
+r ∈ g⊗g classical r-matrix</code></pre>
+<p><strong>Origins</strong>: Integrable systems in statistical
+mechanics</p>
+<h3 id="solutions-and-classification">Solutions and Classification</h3>
+<p><strong>Six-vertex model</strong>: R-matrix satisfying QYBE with
+special structure</p>
+<p><strong>Classification (finite-dimensional)</strong>: - At generic q:
+Unique (up to equivalence) - At roots of unity: Multiple solutions -
+Dimension 2: 96 distinct solutions</p>
+<h2 id="braided-tensor-categories">Braided Tensor Categories</h2>
+<h3 id="braiding">Braiding</h3>
+<p><strong>Braiding isomorphism</strong>:</p>
+<pre><code>β_{V,W}: V ⊗ W → W ⊗ V
+
+Hexagon axioms (2-category coherence):
+(β ⊗ id) ∘ α ∘ (id ⊗ β) = α ∘ β ∘ α  [commutative in proper sense]</code></pre>
+<h3 id="fusion-categories">Fusion Categories</h3>
+<p><strong>Semisimple</strong> abelian tensor categories:</p>
+<pre><code>Simple objects: X₁, X₂, ..., X_n
+Fusion rules: X_i ⊗ X_j = ⊕_k N^k_{ij} X_k
+
+Dimension: dim(C) = ∑(dim X_i)²</code></pre>
+<h3 id="examples-2">Examples</h3>
+<ol type="1">
+<li><strong>Vec_G</strong>: G-graded vector spaces (dimension |G|)</li>
+<li><strong>Rep(G)</strong>: Finite group representations (dimension
+|G|)</li>
+<li><strong>Rep(U_q(sl_2))</strong>: Quantum group (dimension depends on
+deformation)</li>
+<li><strong>Fibonacci</strong>: Simplest non-group fusion (dimension
+φ²)</li>
+<li><strong>Tambara-Yamagami</strong>: Explicit non-symmetric
+fusion</li>
+</ol>
+<h2 id="topological-quantum-field-theory">Topological Quantum Field
+Theory</h2>
+<h3 id="atiyah-segal-axioms">Atiyah-Segal Axioms</h3>
+<p>TQFT is symmetric monoidal functor:</p>
+<pre><code>Z: (Bord_d) → (Vect)
+
+Bordism category: objects = (d-1)-manifolds, morphisms = d-cobordisms
+Vector space category: standard
+
+Multiplicative: Z(M₁ ⊔ M₂) = Z(M₁) ⊗ Z(M₂)
+Functorial: Composition preserved</code></pre>
+<h3 id="reshetikhin-turaev-construction">Reshetikhin-Turaev
+Construction</h3>
+<p>From <strong>modular tensor category</strong> C:</p>
+<pre><code>Z: Bord₃ → Vect_k
+
+For each closed 3-manifold M:
+Z(M) = vector space from ribbon graphs in M
+
+Invariant: Independent of triangulation (TFT axiom)</code></pre>
+<h3 id="wrt-invariants">WRT Invariants</h3>
+<p><strong>Witten-Reshetikhin-Turaev invariants</strong>:</p>
+<pre><code>τ_k(M) = Z(M) ∈ k
+
+From U_q(sl_2) at q = exp(2πi/(k+2))
+
+For q root of unity: Non-trivial invariant</code></pre>
+<p><strong>Example</strong>: Trefoil knot has WRT invariant computed
+from quantum group</p>
+<h2 id="categorical-quantum-mechanics">Categorical Quantum
+Mechanics</h2>
+<h3 id="dagger-categories">Dagger Categories</h3>
+<p><strong>Dagger structure</strong>: f† = adjoint of f</p>
+<pre><code>Satisfies:
+(f†)† = f
+(f ∘ g)† = g† ∘ f†
+(f ⊗ g)† = f† ⊗ g†</code></pre>
+<h3 id="dagger-compact-categories">Dagger-Compact Categories</h3>
+<p>Rigid monoidal categories with dagger:</p>
+<pre><code>V* = adjoint of V
+Evaluation: f†
+
+Teleportation, entanglement from dagger structure</code></pre>
+<h3 id="zx-calculus">ZX-Calculus</h3>
+<p><strong>Graphical quantum computing</strong>:</p>
+<pre><code>Spiders: |⟩ and green colored vertices
+Generators: Z (red), X (green) spiders
+Rewrite rules: Capture quantum mechanics graphically
+
+Completeness theorem (verified computationally)</code></pre>
+<h2 id="knot-invariants-from-quantum-groups">Knot Invariants from
+Quantum Groups</h2>
+<h3 id="jones-polynomial">Jones Polynomial</h3>
+<p>For knot K:</p>
+<pre><code>J(K)(q) = formal Laurent polynomial in q
+
+Computed from:
+- U_q(sl_2) representation
+- R-matrix (Yang-Baxter)
+- Trace over link diagram</code></pre>
+<p><strong>Example</strong>: Trefoil</p>
+<pre><code>J(trefoil)(q) = q⁻¹ - 1 + q
+
+Prove: trefoil ≠ unknot (unknot J = 1)</code></pre>
+<h3 id="kauffman-bracket">Kauffman Bracket</h3>
+<p><strong>Skein relation</strong>:</p>
+<pre><code>⟨trefoil⟩ = relations involving crossing changes
+           = computable polynomial</code></pre>
+<p><strong>Connection to quantum groups</strong>: Via representation
+theory</p>
+<h2 id="modern-developments">Modern Developments</h2>
+<h3 id="tannaka-duality-iwanari">∞-Tannaka Duality (Iwanari)</h3>
+<p>Extends reconstruction to higher categorical setting:</p>
+<pre><code>∞-categories ↔ ∞-Hopf algebras
+Derived reconstruction</code></pre>
+<h3 id="topological-order-and-anyons">Topological Order and Anyons</h3>
+<p><strong>Anyonic statistics</strong> in 2D condensed matter:</p>
+<pre><code>Anyons = quasiparticles with fractional statistics
+Anyonic braiding: non-abelian (from R-matrices)
+Topologically protected
+Quantum computing applications (TQC)</code></pre>
+<h3 id="khovanov-homology">Khovanov Homology</h3>
+<p><strong>Categorification</strong> of Jones polynomial:</p>
+<pre><code>Khovanov(K) = graded abelian group
+Euler characteristic = J(K)(q)
+Categorified knot invariant</code></pre>
+<h3 id="tensor-network-states">Tensor Network States</h3>
+<p><strong>MERA, MPS, PEPS</strong>: Tensor network representations</p>
+<pre><code>Encode topological order
+Braiding from network contractions
+Quantum simulation</code></pre>
+<h2 id="open-problems">Open Problems</h2>
+<ol type="1">
+<li>Classification of fusion categories</li>
+<li>Braided structure of specific categories</li>
+<li>Uniqueness of Tannaka duality</li>
+<li>Non-semisimple categorical structures</li>
+<li>Higher categorical quantum mechanics</li>
+<li>Quantum algorithm from categorical structure</li>
+<li>Categorical foundations of TQFT</li>
+</ol>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ <strong>Mistake</strong>: “Hopf algebra = group with operations” ✓
+<strong>Reality</strong>: Hopf = dual structure (comultiplication
+captures copying)</p>
+<p>❌ <strong>Mistake</strong>: “Antipode = inverse in group” ✓
+<strong>Reality</strong>: Antipode defined via comultiplication (weaker
+property)</p>
+<p>❌ <strong>Mistake</strong>: “All Hopf algebras are semisimple” ✓
+<strong>Reality</strong>: Non-semisimple Hopf algebras essential (at
+roots of unity)</p>
+<h2 id="study-guide">Study Guide</h2>
+<ol type="1">
+<li>Master group algebras k[G]</li>
+<li>Understand universal enveloping algebras</li>
+<li>Learn representation categories</li>
+<li>Study rigid monoidal structure</li>
+<li>Work through Tannaka reconstruction</li>
+<li>Compute with quantum groups</li>
+<li>Explore TQFT applications</li>
+<li>Apply to quantum computing</li>
+</ol>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Kassel, “Quantum Groups” (foundational)</li>
+<li>Majid, “Foundations of Quantum Group Theory”</li>
+<li>Selinger, “A survey of graphical languages”</li>
+<li>Etingof et al., “Tensor Categories”</li>
+<li>Preskill, “Quantum Computation” (applications)</li>
+</ul>
+<h2 id="research-questions">Research Questions</h2>
+<ol type="1">
+<li>Why is comultiplication natural for symmetries?</li>
+<li>How does Tannaka reconstruction work?</li>
+<li>What makes Yang-Baxter equation fundamental?</li>
+<li>Why do quantum groups deform classical groups?</li>
+<li>How do anyons realize quantum information?</li>
+<li>What is the category-theoretic essence of TQFT?</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,455 @@
+---
+# Hekat-Helper Workflow: Multi-Agent Query Generation & Execution
+# Purpose: Orchestrate Hekat DSL query selection, hotkey generation, and task-relay compliance
+# Status: Ready for Workflow Implementation
+# Date: 2025-10-27
+
+workflow:
+  name: hekat-query-generation-workflow
+  version: 1.0
+  description: "Multi-agent workflow orchestrating Hekat DSL query generation, dynamic hotkey creation, consciousness pattern integration, and task-relay protocol compliance"
+
+  type: multi-step-orchestration
+  triggers:
+    - "User invokes /hekat command"
+    - "Automatic trigger after major task completion"
+    - "Document reference: /hekat::path/to/doc"
+    - "Command with parameters: /hekat -l 7"
+
+  goals:
+    - "Generate 4 contextually-optimal Hekat DSL queries"
+    - "Create dynamic mnemonic hotkeys from action verbs"
+    - "Calculate confidence scores from consciousness patterns"
+    - "Enforce task-relay token accounting protocol"
+    - "Persist context across entire session"
+    - "Enable user to select and execute suggested query"
+
+execution_phases:
+  phase_1_input_parsing:
+    name: "Parse & Contextualize User Input"
+    agents:
+      - none # This is deterministic parsing, not agent-driven
+    steps:
+      - "Parse input type: verbal | flag | DSL | document-reference"
+      - "Extract level override (-l 3 through -l 7)"
+      - "Extract display preference (--full vs --minimal)"
+      - "Extract domain context (explicit or inferred)"
+      - "Load mode/preferences from session state"
+      - "Load consciousness patterns from memory"
+    inputs:
+      - user_input: "Hekat invocation string"
+      - session_state: "Persisted context from previous invocations"
+      - consciousness_memory: "Learned patterns per context/domain/level"
+    outputs:
+      - parsed_intent: "action, domain, constraints"
+      - level_override: "1-7 or null (use default 3)"
+      - display_preference: "full | minimal"
+      - domain_context: "specific domain for query selection"
+      - session_context: "carried forward from previous invocations"
+    token_budget: "200 (pre-query)"
+    task_relay_checkpoint: "RELAY_1_INPUT_PARSING"
+
+  phase_2_consciousness_pattern_lookup:
+    name: "Retrieve & Apply Consciousness Patterns"
+    agents:
+      - none # Deterministic pattern lookup
+    steps:
+      - "Look up success rates for domain/level/query-type combinations"
+      - "Calculate base confidence scores (0.5 if no history)"
+      - "Apply learned adjustments from past executions"
+      - "Prepare fallback heuristics for low-confidence scenarios"
+      - "Load contextual bias (boost/penalty for recent patterns)"
+    inputs:
+      - domain_context: "What domain are we working in?"
+      - level_override: "What complexity level requested?"
+      - pattern_storage: "Historical success rates"
+    outputs:
+      - confidence_scores: "Initial scores per candidate query"
+      - pattern_context: "Which patterns are most relevant?"
+      - fallback_strategy: "Heuristic if confidence < 0.3"
+    token_budget: "0 (memory lookup only)"
+    task_relay_checkpoint: "RELAY_2_PATTERN_LOOKUP"
+
+  phase_3_query_selection:
+    name: "Select 4 Optimal Hekat DSL Queries"
+    agents:
+      - "hekat-agent (primary)"
+    steps:
+      - "Read LUXOR/PROJECTS/hekat/tmp/ specification files"
+      - "Index query lattice (1000+ pre-curated queries)"
+      - "Filter by level (respect -l override or use default 3)"
+      - "Rank candidates by: confidence → level-match → token-efficiency"
+      - "Select top 4 queries"
+      - "Generate context-dependent 4th option if needed"
+      - "Validate selections against domain context"
+    inputs:
+      - lattice_index: "1000+ pre-curated Hekat DSL queries"
+      - confidence_scores: "Ranking data from phase 2"
+      - domain_context: "Domain filter"
+      - level_override: "Complexity level constraint"
+      - parsed_intent: "What is user trying to accomplish?"
+    outputs:
+      - selected_queries: "4 optimal Hekat DSL queries"
+      - confidence_ranking: "0.0-1.0 scores for each"
+      - query_explanations: "Why each query ranked where it is"
+    agent_prompt: |
+      Using the Hekat specification files at LUXOR/PROJECTS/hekat/tmp/:
+
+      1. Read the query lattice index (1000+ pre-curated queries)
+      2. Filter queries by complexity level (user specified: {level_override} or default 3)
+      3. Filter by domain: {domain_context}
+      4. Rank by confidence score from consciousness patterns:
+         - High confidence (>0.8): Boost ranking
+         - Medium confidence (0.5-0.8): Normal ranking
+         - Low confidence (<0.3): Use token-efficiency heuristic
+
+      5. Select top 4 queries that:
+         - Match domain context
+         - Respect complexity level
+         - Maximize confidence scores
+         - Provide diversity (different approaches)
+
+      6. For 4th option, apply context-dependent logic:
+         - After implementation → suggest TEST
+         - After research → suggest EVALUATE
+         - After design → suggest IMPLEMENT
+         - Default → suggest NEXT
+
+      Deliverable: JSON with selected_queries, confidence_scores, explanations
+    token_budget: "1500 (query lattice reading + selection logic)"
+    task_relay_checkpoint: "RELAY_3_QUERY_SELECTION"
+
+  phase_4_hotkey_generation:
+    name: "Generate Dynamic Mnemonic Hotkeys"
+    agents:
+      - "hekat-agent (hotkey-generation sub-task)"
+    steps:
+      - "For each selected query, extract primary action verb"
+      - "Apply verb→letter mnemonic mapping (100+ verbs)"
+      - "Detect conflicts (multiple verbs → same letter)"
+      - "Resolve conflicts: secondary letter → context word → numeric"
+      - "Validate hotkeys are deterministic and accessible"
+      - "Generate alternative keybinding schemes if requested"
+    inputs:
+      - selected_queries: "4 Hekat DSL query objects"
+      - verb_mapping_table: "LUXOR/PROJECTS/hekat/tmp/skill-reference/verb-to-letter-map.md"
+      - accessibility_preferences: "User's hotkey scheme (DRET | numbers | arrows | vim)"
+    outputs:
+      - hotkeys: "[A] [I] [T] [F] (final letters only, no conflicts shown)"
+      - hotkey_explanations: "Why each letter chosen from action verb"
+      - alternative_hotkeys: "Numbers/arrows/vim schemes if requested"
+    algorithm: |
+      For query_i in selected_queries:
+        action_verb = extract_verb(query_i.text)
+        primary_letter = verb_mapping[action_verb]
+
+        if primary_letter in used_letters:
+          secondary_letter = get_secondary_letter(action_verb)
+          if secondary_letter not in used_letters:
+            primary_letter = secondary_letter
+          else:
+            context_word = extract_context_word(query_i.text)
+            context_letter = context_word[0]
+            if context_letter not in used_letters:
+              primary_letter = context_letter
+            else:
+              primary_letter = get_numeric_fallback(i)
+
+        used_letters.add(primary_letter)
+        hotkeys[i] = primary_letter
+
+      # CRITICAL: Never display the conflict resolution process
+      # Display only final hotkeys: [A] [I] [T] [F]
+    token_budget: "500 (verb extraction + conflict resolution)"
+    task_relay_checkpoint: "RELAY_4_HOTKEY_GENERATION"
+
+  phase_5_display_formatting:
+    name: "Format & Display Query Suggestions"
+    agents:
+      - none # Deterministic formatting
+    steps:
+      - "Build full display string per user preference (--full vs --minimal)"
+      - "Include metadata: level, confidence, estimated tokens"
+      - "Include agent pipeline: (agent1 || agent2) -> agent3, etc."
+      - "Include explanation: 'Why' field with success rate or heuristic"
+      - "Include hotkey legend: [?] [TAB] [/] [C] [ESC] [q]"
+      - "Validate formatting against template"
+    inputs:
+      - selected_queries: "4 Hekat DSL queries"
+      - hotkeys: "[A] [I] [T] [F]"
+      - confidence_ranking: "0.0-1.0 scores"
+      - display_preference: "full or minimal"
+    outputs:
+      - formatted_display: "User-facing UI string"
+      - ready_for_interaction: "true (waiting for hotkey input)"
+    display_template: |
+      ╔═══════════════════════════════════════════════════════════════╗
+      ║ HEKAT-HELPER: Next Steps [{domain}] (Level {level})           ║
+      ╠═══════════════════════════════════════════════════════════════╣
+      ║                                                               ║
+      ║ [{hotkey}] {ACTION} - {description}                          ║
+      ║     Level {L} | Confidence: {C:.0%} | Est. Tokens: {T}      ║
+      ║     → {pipeline}                                            ║
+      ║     Why: {explanation}                                      ║
+      ║                                                               ║
+      ║ [?] Help  [TAB] Query  [/] Explain  [C] Custom  [ESC] Close ║
+      ║                                                               ║
+      ╚═══════════════════════════════════════════════════════════════╝
+    token_budget: "300 (formatting only)"
+    task_relay_checkpoint: "RELAY_5_DISPLAY"
+
+  phase_6_user_interaction:
+    name: "Capture & Process User Input"
+    agents:
+      - none # UI interaction, no agents
+    steps:
+      - "Wait for user to press hotkey: [A] [I] [T] [F]"
+      - "Support hotkey actions:"
+        - "[?] Show help/documentation"
+        - "[TAB] Show full query text"
+        - "[/] Show explanation of ranking"
+        - "[C] Custom query (user writes own DSL)"
+        - "[ESC] or [q] Dismiss suggestions"
+        - "[D/R/E/T] Execute default hotkeys"
+        - "Alternative: [1/2/3/4] numeric, [↑↓←→] arrows, [j/k/l/h] vim"
+    inputs:
+      - hotkey_press: "Single character from user"
+      - display_state: "Current suggestion display"
+    outputs:
+      - selected_query: "Which query user selected"
+      - user_action: "Execute | Help | Explain | Custom | Dismiss"
+    token_budget: "0 (UI interaction only)"
+    task_relay_checkpoint: "RELAY_6_USER_INPUT (pre-execution)"
+
+  phase_7_query_execution:
+    name: "Execute Selected Hekat DSL Query"
+    agents:
+      - "Selected agents from query (1-5+ agents depending on level)"
+      - "task-relay-orchestrator (tracking wrapper)"
+    steps:
+      - "Pre-execution: Log estimated tokens from metadata"
+      - "Execute query agents in specified pattern (sequential, parallel, fallback, etc.)"
+      - "Post-execution: Log actual tokens used"
+      - "Calculate variance: |actual - estimated| / estimated"
+      - "Report variance status: ✅ excellent | ⚠️ investigate | ❌ rework"
+      - "Capture agent outputs"
+    inputs:
+      - selected_query: "The Hekat DSL query to execute"
+      - query_metadata: "Level, agents, estimated tokens"
+      - task_relay_protocol: "~/.claude/task-relay.md checkpoint format"
+    outputs:
+      - execution_result: "Agent outputs from query execution"
+      - token_accounting: "Pre/post/delta/variance data"
+      - variance_status: "✅/⚠️/❌"
+      - execution_timestamp: "When execution completed"
+    task_relay_checkpoint: |
+      RELAY_7_QUERY_EXECUTION:
+        pre_tokens: {estimated_tokens}
+        post_tokens: {actual_tokens}
+        delta: {actual - estimated}
+        expected: {estimated_tokens}
+        actual: {actual_tokens}
+        variance: {|(actual-estimated)/estimated|}
+        status: {✅/⚠️/❌}
+        output: {query_execution_result}
+    token_budget: "Variable (depends on selected query: 500-5000+)"
+
+  phase_8_consciousness_pattern_update:
+    name: "Learn from Execution & Update Patterns"
+    agents:
+      - none # Deterministic pattern update
+    steps:
+      - "Capture execution success signal: Did user accept? Did task complete?"
+      - "Update consciousness pattern for this context/domain/level"
+      - "Adjust confidence score: boost if successful, penalty if not"
+      - "Account for variance: Did token estimate match reality?"
+      - "Increment sample size for pattern"
+      - "Store updated pattern to consciousness memory"
+      - "Prepare for next /hekat invocation with learned context"
+    inputs:
+      - selected_query: "Which query was executed"
+      - execution_result: "Success/failure signal"
+      - variance_data: "Token variance from phase 7"
+      - domain_context: "Where this pattern was applied"
+    outputs:
+      - updated_pattern: "New confidence score, sample size, variance data"
+      - consciousness_memory: "Updated pattern storage"
+    pattern_update_formula: |
+      success_rate = (previous_success * sample_size + signal) / (sample_size + 1)
+      confidence = base_score (0.5) × success_rate
+      sample_size += 1
+      last_updated = now()
+
+      # Variance impact: if variance was high, adjust future estimates
+      if variance > 20%:
+        future_estimate_adjustment -= 10%
+      if variance < -50%:
+        future_estimate_adjustment += 5%
+    token_budget: "100 (pattern storage update)"
+    task_relay_checkpoint: "RELAY_8_PATTERN_UPDATE"
+
+  phase_9_session_context_persistence:
+    name: "Persist Context for Next /hekat Invocation"
+    agents:
+      - none # Session state management
+    steps:
+      - "Save consciousness patterns to memory"
+      - "Save user preferences (display mode, hotkey scheme, level override)"
+      - "Save execution history (what queries executed, when, outcomes)"
+      - "Prepare context for next /hekat invocation"
+      - "Clear temporary state; keep persistent state"
+    inputs:
+      - consciousness_patterns: "Updated patterns from phase 8"
+      - user_preferences: "Display, hotkey scheme, level"
+      - execution_history: "Decisions made this session"
+    outputs:
+      - session_state: "Persisted context ready for next invocation"
+      - memory_checkpoint: "Saved to file or database"
+    persistence_scope: |
+      PERSISTS (across invocations):
+        - Consciousness patterns (success rates)
+        - User preferences (--full vs --minimal)
+        - Hotkey scheme choice (D/R/E/T or numbers or arrows)
+        - Execution history (for feedback)
+        - Domain context (inferred from recent tasks)
+
+      CLEARS (per invocation):
+        - Temporary hotkey state
+        - Display buffer
+        - User input capture
+        - Phase-specific temporary data
+    token_budget: "150 (state serialization + persistence)"
+    task_relay_checkpoint: "RELAY_9_PERSISTENCE"
+
+workflow_orchestration:
+  sequence: "PHASE_1 → PHASE_2 → PHASE_3 → PHASE_4 → PHASE_5 → PHASE_6 → PHASE_7 → PHASE_8 → PHASE_9"
+
+  dependencies:
+    - "Phase 1 must complete before Phase 2 (need parsed intent)"
+    - "Phase 2 must complete before Phase 3 (need confidence scores)"
+    - "Phase 3 must complete before Phase 4 (need selected queries)"
+    - "Phase 4 must complete before Phase 5 (need hotkeys)"
+    - "Phase 5 must complete before Phase 6 (need display ready)"
+    - "Phase 6 must complete before Phase 7 (need user selection)"
+    - "Phase 7 must complete before Phase 8 (need execution results)"
+    - "Phase 8 must complete before Phase 9 (need updated patterns)"
+
+  parallelization:
+    - "Phases 1-5 can execute sequentially (required dependencies)"
+    - "Phase 6 is interactive (user waits)"
+    - "Phase 7 agents execute in patterns specified by query"
+    - "Phase 8-9 execute sequentially (serialized state updates)"
+
+  reusability:
+    - "Consciousness patterns accumulate across invocations"
+    - "User preferences persist across invocations"
+    - "Execution history builds learning signal"
+    - "Workflow itself is stateless (data is state)"
+
+task_relay_integration:
+  protocol: "~/.claude/task-relay.md"
+  checkpoints:
+    - "RELAY_1_INPUT_PARSING: ~200 tokens"
+    - "RELAY_2_PATTERN_LOOKUP: ~0 tokens (memory lookup)"
+    - "RELAY_3_QUERY_SELECTION: ~1500 tokens (agent work)"
+    - "RELAY_4_HOTKEY_GENERATION: ~500 tokens (conflict resolution)"
+    - "RELAY_5_DISPLAY: ~300 tokens (formatting)"
+    - "RELAY_6_USER_INPUT: ~0 tokens (UI interaction)"
+    - "RELAY_7_QUERY_EXECUTION: variable (query-dependent)"
+    - "RELAY_8_PATTERN_UPDATE: ~100 tokens (learning)"
+    - "RELAY_9_PERSISTENCE: ~150 tokens (state save)"
+
+  total_overhead: "~2750 tokens (pre-query execution)"
+  execution_tokens: "Variable (query-dependent, 500-5000+)"
+
+  variance_tracking:
+    - "Each phase tracks pre/post tokens"
+    - "Variance compared to estimates"
+    - "Status: ✅ -50% to +10%, ⚠️ +10% to +20%, ❌ +20%+"
+    - "Consciousness patterns updated with variance data"
+
+mode_persistence_details:
+  per_session_scope: |
+    User invokes /hekat multiple times in session
+    Each invocation:
+    1. Reads persisted state from previous invocation
+    2. Executes workflow phases
+    3. Updates patterns & preferences
+    4. Saves state for next invocation
+    5. User never needs to re-initialize
+
+  automatic_context_carryforward: |
+    - Domain context: Inferred from task description
+    - Consciousness patterns: Automatically loaded
+    - User preferences: Applied automatically
+    - Execution history: Available for learning
+
+  no_manual_reinitialization: |
+    User doesn't need to:
+    - Specify domain after first invocation
+    - Re-set display preference
+    - Re-choose hotkey scheme
+    - Explain context again
+
+  profile_evolution: |
+    Currently: Per-session persistence
+    Future: Save to user profile ~/.claude/hekat-profile.yaml
+    Result: Preferences follow user across projects/machines
+
+error_handling:
+  phase_1_errors:
+    - "Invalid input format → Show usage help, return to PHASE_6"
+    - "Parse failure → Use sensible defaults, continue"
+
+  phase_3_errors:
+    - "Query lattice unavailable → Load fallback queries, warn user"
+    - "Domain not recognized → Use generic queries, continue"
+
+  phase_7_errors:
+    - "Agent execution failure → Show error, update pattern with 'failure' signal"
+    - "Token limit exceeded → Stop agent, report actual tokens, log variance"
+
+  phase_8_errors:
+    - "Pattern storage full → Archive old patterns, continue"
+    - "Memory corruption → Reset to defaults, warn user"
+
+  fallback_strategy:
+    - "Low confidence (<0.3) → Use token-efficiency heuristic instead of patterns"
+    - "No history available → Use Level 3 simple queries by default"
+    - "All phases failing → Display manual hotkey option [C] Custom"
+
+validation:
+  per_phase:
+    - "Phase 1: Parsed intent correct? Domain recognized?"
+    - "Phase 2: Confidence scores in valid range [0.0, 1.0]?"
+    - "Phase 3: 4 queries selected? Valid DSL syntax?"
+    - "Phase 4: Hotkeys unique? Deterministic generation?"
+    - "Phase 5: Display formatted correctly? Hotkeys visible?"
+    - "Phase 6: User input captured? Selection valid?"
+    - "Phase 7: Agents executed? Token counts recorded?"
+    - "Phase 8: Pattern updated? Sample size incremented?"
+    - "Phase 9: State persisted? Next invocation ready?"
+
+  end_to_end:
+    - "✅ Full workflow completes in <5 minutes for Level 5 query"
+    - "✅ Consciousness patterns improve with each execution"
+    - "✅ User can repeat suggestions across multiple invocations"
+    - "✅ No data loss between sessions"
+
+metrics_tracking:
+  per_invocation:
+    - "Total time: Phase 1-5 display time + Phase 6 user wait + Phase 7 execution"
+    - "Token efficiency: Total tokens / query complexity level"
+    - "Confidence accuracy: Did high-confidence queries succeed?"
+    - "Variance: Did token estimates match reality?"
+
+  per_session:
+    - "Suggestion acceptance rate: % of hotkeys actually pressed"
+    - "Pattern learning: How much did confidence scores improve?"
+    - "Domain coverage: How many different domains were queried?"
+    - "User satisfaction: Implicit signal from repeated invocations"
+
+status: "Ready for Workflow Implementation"
+next_step: "Create workflow in ~/.claude/workflows/ or LUXOR/.claude/workflows/"
+implementation_method: "/wflw hekat-workflow --type=multi-step --hekat-aware"
+---

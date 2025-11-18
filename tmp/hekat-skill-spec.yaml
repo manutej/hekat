@@ -1,0 +1,537 @@
+---
+# Hekat Skill Specification
+# Purpose: Domain expertise for Hekat DSL query generation, selection, and ranking
+# Status: Ready for Skill Creation
+# Date: 2025-10-27
+
+skill:
+  name: hekat
+  description: |
+    Expert knowledge of Hekat DSL query generation, dynamic hotkey creation, complexity levels,
+    consciousness pattern integration, and task-relay protocol compliance for intelligent
+    next-step suggestions in Claude Code.
+
+  category: "multi-agent-orchestration"
+  trust_score: 9.5
+
+core_expertise:
+  hekat_dsl: |
+    Complete understanding of 8 Hekat query types across 5 complexity levels (3-7):
+    - Simple queries (single agent, level 3)
+    - Skilled queries (agent + skill combination, level 4)
+    - Sequential queries (A → B → C chains, level 5)
+    - Parallel queries (A || B || C execution, level 5)
+    - Mixed queries (A → (B || C) → D patterns, level 6)
+    - Fallback queries (A ? B ? C priority chains, level 6)
+    - Ensemble queries (sample^3; merge; synthesize, level 7)
+    - Commanded queries (@ctx7(agent) : "prompt", level 5-7)
+
+  dynamic_hotkey_generation: |
+    Pure algorithm for generating mnemonic hotkeys from query action verbs:
+
+    PRIMARY STEP: Extract action verb from query
+      - "research vulnerabilities" → verb: "research"
+      - "implement authentication" → verb: "implement"
+      - "test integration" → verb: "test"
+
+    SECONDARY STEP: Map verb to mnemonic letter
+      - research → R
+      - implement → I
+      - test → T
+      - design → D
+      - audit → A
+      - validate → V
+      - optimize → O
+      - (100+ verb mappings - see verb-to-letter-map.md)
+
+    CONFLICT RESOLUTION (if two queries map to same letter):
+      1. Try secondary letter: iMplement → M
+      2. Try context word: "validate database" → D (from context)
+      3. Fall back to numeric: 1, 2, 3, 4
+      4. CRITICAL: Never display conflicts, show only final hotkeys
+
+    ACCESSIBILITY: Support alternative schemes
+      - DRET (default): D=Develop, R=Research, E=Edit, T=Test
+      - Numbers (1234)
+      - Arrows (↑↓←→)
+      - Vim (j/k/l/h)
+
+  complexity_levels: |
+    Level 3: Single agent execution
+      - Examples: deep-researcher, practical-programmer, test-engineer alone
+      - Token budget: <500
+      - Speed: <2 minutes
+      - Use: Quick answers, fast iteration
+
+    Level 4: Two agents, sequential or with skills
+      - Examples: api-architect → practical-programmer
+      - Token budget: 1000-1500
+      - Speed: 2-4 minutes
+      - Use: Design-then-build workflows
+
+    Level 5: Three agents, mixed patterns possible
+      - Examples: deep-researcher → api-architect → practical-programmer
+      - Token budget: 2000-3000
+      - Speed: 5-8 minutes
+      - Use: Comprehensive feature development
+
+    Level 6: Four agents, parallel + sequential mix
+      - Examples: (api-architect || frontend-architect) → practical-programmer → test-engineer
+      - Token budget: 3500-5000
+      - Speed: 8-12 minutes
+      - Use: Complex systems, multiple concerns
+
+    Level 7: Five+ agents, full ensemble patterns
+      - Examples: mercurio-orchestrator coordinating 5+ agents with task-relay
+      - Token budget: 5000+ (no hard limit)
+      - Speed: 15+ minutes
+      - Use: Deep research, multi-dimensional analysis, critical decisions
+
+  agent_and_skill_flags: |
+    Hekat DSL supports passing flags/parameters to agents and skills:
+
+    AGENT FLAGS (passed in query):
+      agent-name : "prompt" --flag1=value1 --flag2=value2
+
+    SKILL REFERENCES (with parameters):
+      agent + skill : "prompt" --skill-param=value
+
+    EXAMPLES:
+      - test-engineer : "add tests" --coverage=80 --framework=pytest
+      - frontend-architect : "optimize component" --performance=strict
+      - api-architect : "design schema" --database=postgresql --normalization=3nf
+      - deep-researcher : "research topic" --depth=comprehensive --citations=true
+
+    LEVEL SELECTION BY FLAG:
+      query -l 3  # Override to level 3 only
+      query -l 7  # Override to level 7 only
+      query --level=5  # Explicit level specification
+
+    DISPLAY FLAGS:
+      query --full  # Expanded output with explanations
+      query --minimal  # Single-line compact output
+
+    TASK-RELAY FLAGS:
+      query --track-tokens  # Explicit token accounting
+      query --checkpoint  # Save intermediate results
+      query --variance=10%  # Set variance tolerance
+
+  consciousness_patterns: |
+    Pattern storage and ranking system based on execution history:
+
+    PATTERN STRUCTURE:
+      context: (domain + task_type + user_profile)
+      level: (3-7)
+      query_type: (8 types)
+      success_rate: (0.0-1.0)
+      last_updated: (timestamp)
+      sample_size: (count of observations)
+
+    RANKING IMPACT:
+      confidence_score = base_score × success_rate
+      base_score = 0.5 (uniform initialization)
+      boost: High success (>0.85) → +0.2 to confidence
+      penalty: Low success (<0.5) → -0.1 to confidence
+
+    LEARNING SIGNALS:
+      - After execution: did user accept suggestion?
+      - After completion: did task complete successfully?
+      - Context match: was pattern relevant to this situation?
+      - Feedback: explicit user rating (optional)
+
+    FALLBACK STRATEGY:
+      If confidence < 0.3 (insufficient data):
+        Use heuristic: rank by token efficiency (prefer level 3 > 4 > 5)
+        Explanation: "Low confidence - recommending by efficiency"
+
+  task_relay_protocol: |
+    Mandatory token accounting and execution tracking per ~/.claude/task-relay.md:
+
+    CHECKPOINT STRUCTURE:
+      RELAY_N_AGENT_NAME:
+        pre_tokens: XXXX
+        post_tokens: XXXX
+        delta: XXXX
+        expected: XXXX
+        actual: XXXX
+        variance: ±XX%
+        status: ✅/⚠️/❌
+        output: "Agent deliverable"
+
+    VARIANCE THRESHOLDS:
+      ✅ Excellent: -50% to +10% variance
+      ⚠️ Investigate: +10% to +20% variance
+      ❌ Stop: +20%+ variance (rework approach)
+
+    INTEGRATION WITH HEKAT:
+      Every Hekat query execution must:
+      1. Log pre-execution token count
+      2. Execute query (1-5 agents)
+      3. Log post-execution token count
+      4. Calculate variance
+      5. Update consciousness pattern with variance data
+      6. Report variance status to user
+
+    CHECKPOINT LOGGING:
+      - Logged before display (show estimates)
+      - Updated after execution (show actuals)
+      - Included in session memory (for future patterns)
+
+  mode_persistence: |
+    Session-spanning context maintenance:
+
+    WHAT PERSISTS:
+      - User's display preference (--full vs --minimal)
+      - Consciousness patterns (learned success rates)
+      - Level overrides (if user sets -l 7, stays until reset)
+      - Hotkey scheme (if user chooses numbers, stays)
+      - Execution history (for feedback learning)
+
+    SCOPE:
+      - Per session (survive multiple /hekat invocations)
+      - Per user (eventually become saved profile preferences)
+      - Per context (different patterns per domain/task)
+
+    INDEPENDENCE:
+      - Each /hekat invocation is independent
+      - But mode-aware (considers previous execution context)
+      - Automatic context carry-forward
+      - No manual re-initialization needed
+
+when_to_use_this_skill:
+  - Generating next-step suggestions for any task
+  - Selecting optimal Hekat DSL queries for a given context
+  - Understanding query complexity levels (3-7)
+  - Creating dynamic hotkeys from action verbs
+  - Calculating confidence scores from consciousness patterns
+  - Explaining query rankings and reasoning
+  - Integrating task-relay protocol with Hekat execution
+  - Debugging hotkey generation or conflict resolution
+  - Learning from execution patterns and feedback
+
+core_concepts:
+  hekat_dsl: "Declarative multi-agent workflow language with 8 query types"
+  query_lattice: "Pre-curated 1000+ queries indexed by level/domain/depth (select, don't generate)"
+  mnemonic_hotkey: "Single-letter keyboard shortcut derived from query action verb"
+  consciousness_pattern: "Learned success rate for query type in specific context"
+  task_relay: "Token accounting protocol tracking pre/post/delta/variance per execution"
+  mode_persistence: "Session-spanning context that carries forward across invocations"
+  complexity_level: "1-7 scale; 3-7 for Hekat (3=single agent, 7=ensemble)"
+  confidence_score: "0.0-1.0 ranking based on consciousness patterns and heuristics"
+
+quick_start:
+  basic_workflow: |
+    1. User completes a task (research, implementation, testing)
+    2. /hekat invocation triggered (manual or automatic)
+    3. Agent reads context (domain, task type, previous results)
+    4. Agent selects 4 optimal queries from lattice
+    5. Agent generates dynamic hotkeys from action verbs
+    6. Agent calculates confidence scores from patterns
+    7. Agent displays suggestions with 4 keyboard shortcuts
+    8. User presses hotkey (D/R/E/T or alternatives)
+    9. Agent executes query, tracks tokens via task-relay
+    10. Pattern updates with success/failure signal
+    11. Context persists, ready for next /hekat invocation
+
+  example_hotkey_generation: |
+    Four queries selected:
+
+    Query 1: "deep-researcher : 'analyze requirements'"
+      → Verb: "analyze"
+      → Letter: A
+      → Hotkey: [A]
+
+    Query 2: "practical-programmer : 'implement solution'"
+      → Verb: "implement"
+      → Letter: I
+      → Hotkey: [I]
+
+    Query 3: "test-engineer : 'design tests'"
+      → Verb: "design" (wait, this is test-engineer)
+      → Actually: "test" is the context
+      → Letter: T (from context)
+      → Hotkey: [T]
+
+    Query 4: "debug-detective : 'find root cause'"
+      → Verb: "find"
+      → Letter: F (not one of D/R/E/T)
+      → Hotkey: [F]
+
+    DISPLAY:
+    [A] Analyze Requirements (Level 3)
+    [I] Implement Solution (Level 5)
+    [T] Test Design (Level 4)
+    [F] Find Root Cause (Level 3)
+
+  example_with_flags: |
+    Agent invoking skills with parameters:
+
+    Query 1: test-engineer : "add tests" --coverage=85 --framework=pytest
+    Query 2: frontend-architect : "optimize" --performance=strict --measure=true
+    Query 3: api-architect : "design" --database=postgresql --scale=true
+    Query 4: deep-researcher : "research" --depth=deep --citations=true
+
+    Each skill receives flags/parameters relevant to its domain
+
+advanced_patterns:
+  parallel_query_execution: |
+    Multiple agents running simultaneously:
+
+    [M] MULTI - Parallel research and design
+        → (deep-researcher || api-architect || frontend-architect)
+        Confidence: 0.88 | Tokens: 2200
+
+    Advantages:
+    - Saves time (all agents run simultaneously)
+    - Cross-domain perspectives (3 specialists at once)
+    - Higher token cost but better quality (parallel > sequential)
+
+  sequential_chains: |
+    Workflow dependencies:
+
+    [D] DESIGN then IMPLEMENT
+        → api-architect → practical-programmer → test-engineer
+        Confidence: 0.92 | Tokens: 3500
+
+    Advantages:
+    - Each step builds on previous
+    - Design→Implementation→Testing flow
+    - Clear dependencies, deterministic
+
+  fallback_chains: |
+    Priority-based execution:
+
+    [F] FALLBACK - Try approaches in order
+        → deep-researcher ? practical-programmer ? mercurio-orchestrator
+        Confidence: 0.79 | Tokens: varies
+
+    Advantages:
+    - Try simple approach first (deep-researcher)
+    - Fall back to implementation if research insufficient
+    - Final fallback to orchestrator for complex cases
+
+  ensemble_patterns: |
+    Full synthesis workflows:
+
+    [E] ENSEMBLE - Complete analysis
+        → sample^3; merge; synthesize
+        Level: 7 | Confidence: 0.85 | Tokens: 5500
+
+    Process:
+    1. sample^3: Run 3 independent agents on same prompt
+    2. merge: Combine results
+    3. synthesize: Mercurio synthesizes into unified answer
+
+    Advantages:
+    - Multiple perspectives on critical decisions
+    - Robust against single-agent blindspots
+    - High-quality consensus output
+
+sub_documentation_references:
+  query_types: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/query-types.md
+    Content: Complete specification of 8 Hekat query types with examples
+    When to use: Understanding DSL syntax, designing queries
+
+  levels_3_7: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/levels-3-7.md
+    Content: Complexity level characteristics, token budgets, use cases
+    When to use: Choosing appropriate level for task
+
+  verb_to_letter_map: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/verb-to-letter-map.md
+    Content: 100+ verb→letter mappings for mnemonic hotkey generation
+    When to use: Generating or debugging hotkeys
+
+  task_relay_protocol: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/task-relay-protocol.md
+    Content: Token tracking, variance analysis, checkpoint format
+    When to use: Understanding token discipline, debugging variance
+
+  conflict_resolution_rules: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/conflict-resolution-rules.md
+    Content: Algorithm for resolving hotkey letter conflicts
+    When to use: Debugging hotkey generation, understanding precedence
+
+  consciousness_patterns: |
+    File: LUXOR/PROJECTS/hekat/tmp/skill-reference/consciousness-patterns.md
+    Content: Pattern storage, learning signals, ranking impact
+    When to use: Understanding confidence scores, pattern updates
+
+implementation_notes:
+  no_generation: |
+    CRITICAL: Hekat selects from pre-curated lattice, does NOT generate queries.
+
+    Why:
+    - Pre-curated queries are tested and reliable
+    - Generation is expensive and unpredictable
+    - Selection is fast and deterministic
+    - Easy to index/categorize lattice queries
+
+  mnemonic_determinism: |
+    CRITICAL: Hotkeys must be deterministic.
+
+    Same query input → Always same hotkey
+    No randomization, no contextual variation
+    Enables user muscle memory and predictability
+
+  conflict_visibility: |
+    CRITICAL: Never display conflict resolution process.
+
+    User sees: [A] [I] [T] [F] (final hotkeys only)
+    User doesn't see: "Resolution process: I→implement→primary, I conflict, try M, no M, use secondary..."
+
+    Why: Cleaner UI, less cognitive load
+
+  task_relay_compliance: |
+    CRITICAL: Every Hekat execution must follow task-relay protocol.
+
+    Before display: Show estimated tokens
+    After execution: Show actual tokens + variance
+    Update consciousness pattern with variance data
+
+    This trains patterns to account for variance patterns over time
+
+examples:
+  example_1_refactoring: |
+    Context: Just completed code review, now need to refactor
+
+    User input: /hekat
+
+    Agent determines:
+    - Intent: refactoring
+    - Domain: backend-async
+    - Previous context: code review, implementation
+    - Suggested level: 4
+
+    Hotkey generation:
+    1. "investigate async patterns" → I
+    2. "implement async improvements" → I (CONFLICT!)
+       Resolution: secondary letter M (iMplement)
+    3. "test async refactoring" → T
+    4. "evaluate async performance" → E
+
+    Output:
+    [I] Investigate Async Patterns (Level 3, Confidence: 0.92)
+    [M] Implement Improvements (Level 4, Confidence: 0.87)
+    [T] Test Refactoring (Level 4, Confidence: 0.85)
+    [E] Evaluate Performance (Level 3, Confidence: 0.79)
+
+    User presses: M
+    → Executes practical-programmer with async improvement prompt
+    → Tracks tokens: 1250 actual vs 1200 estimated (+4% variance) ✅
+    → Updates consciousness pattern: implement-async-backend → 0.92 (success)
+    → Next /hekat invocation will rank [M] higher for async contexts
+
+  example_2_research_intensive: |
+    Context: Complex unfamiliar problem, need deep research
+
+    User input: /hekat -l 7
+
+    Agent determines:
+    - Override to level 7 only
+    - Intent: comprehensive analysis
+    - Domain: system architecture
+    - Complexity: high
+
+    Generates 4 Level-7 queries:
+    [M] Mercurio Multi-Perspective (5200 tokens, 0.82 confidence)
+    [A] Architect Full Design (4800 tokens, 0.88 confidence)
+    [S] Synthesize Research (5100 tokens, 0.84 confidence)
+    [O] Orchestrate Project (5500 tokens, 0.79 confidence)
+
+    User presses: A
+    → Executes: api-architect || frontend-architect || deployment-orchestrator (parallel)
+    → Tracks tokens: 4950 actual vs 4800 estimated (+3% variance) ✅
+    → All 3 agents run simultaneously, results synthesized
+    → Updates patterns for parallel-architecture-design context
+
+  example_3_document_reference: |
+    Context: Load document as query seed
+
+    User input: /hekat::LUXOR/PROJECTS/hekat/tmp/HEKAT_IMPLEMENTATION_SPEC.md
+
+    Agent:
+    1. Reads document
+    2. Extracts intent: "implement Hekat system"
+    3. Extracts key sections: architecture, hotkeys, task-relay, modes
+    4. Generates context-specific queries
+
+    Hotkeys:
+    [B] Build Specifications (Level 5, 0.94 confidence)
+    [V] Validate Assumptions (Level 5, 0.88 confidence)
+    [T] Test Implementation (Level 4, 0.81 confidence)
+    [D] Document Architecture (Level 4, 0.87 confidence)
+
+    User presses: B
+    → Executes practical-programmer with spec implementation focus
+    → Document context preserved for subsequent iterations
+
+best_practices:
+  hotkey_creation: |
+    - Always extract the primary action verb
+    - Use first letter by default
+    - Be consistent with verb→letter mapping
+    - Resolve conflicts gracefully (no display)
+    - Support accessibility alternatives
+
+  confidence_calculation: |
+    - Start with 0.5 (uniform)
+    - Update from success/failure signals
+    - Account for sample size (small N = less confident)
+    - Adjust for context relevance
+    - Provide fallback if confidence < 0.3
+
+  task_relay_accounting: |
+    - Pre-execute: Log estimated tokens
+    - Post-execute: Log actual tokens
+    - Calculate variance: |(actual - estimated) / estimated|
+    - Report status: ✅/⚠️/❌
+    - Update consciousness pattern with variance
+
+  mode_persistence: |
+    - Carry forward user preferences
+    - Maintain execution history
+    - Update patterns automatically
+    - No explicit user action needed
+    - Support session-spanning workflows
+
+validation_checklist:
+  hotkey_generation:
+    - "✅ Deterministic (same input → same hotkey)"
+    - "✅ Mnemonic (letter matches action)"
+    - "✅ No conflicts in final output"
+    - "✅ Conflict resolution algorithm correct"
+    - "✅ Alternative schemes supported"
+
+  consciousness_patterns:
+    - "✅ Pattern storage implemented"
+    - "✅ Learning signals captured"
+    - "✅ Confidence calculation correct"
+    - "✅ Fallback strategy for low confidence"
+    - "✅ Variance accounting integrated"
+
+  task_relay_compliance:
+    - "✅ Token counting at every checkpoint"
+    - "✅ Variance calculation correct"
+    - "✅ Status reporting accurate"
+    - "✅ Pattern updates with variance data"
+    - "✅ Checkpoint format matches protocol"
+
+  mode_persistence:
+    - "✅ User preferences saved"
+    - "✅ Context carried forward"
+    - "✅ Patterns updated automatically"
+    - "✅ No explicit re-initialization"
+    - "✅ Session-spanning functionality"
+
+related_documentation:
+  - "HEKAT_HELPER_SPECIFICATION.md (full system specification)"
+  - "HEKAT_IMPLEMENTATION_SPEC.md (implementation requirements)"
+  - "HEKAT_HOTKEYS_REAL_EXAMPLES.md (6 scenario examples)"
+  - "HEKAT_HOTKEYS_GENERAL_PURPOSE.md (10 domain examples)"
+  - "~/.claude/task-relay.md (token accounting protocol)"
+
+status: "Ready for Skill Creation"
+next_step: "Create skill via /meta-skill-builder or manual skill registration"
+---

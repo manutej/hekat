@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>09-YONEDA-LEMMA</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#the-yoneda-lemma-central-theorem-of-category-theory"
+id="toc-the-yoneda-lemma-central-theorem-of-category-theory">The Yoneda
+Lemma: Central Theorem of Category Theory</a>
+<ul>
+<li><a href="#statement" id="toc-statement">Statement</a></li>
+<li><a href="#interpretation"
+id="toc-interpretation">Interpretation</a></li>
+<li><a href="#proof-sketch" id="toc-proof-sketch">Proof Sketch</a></li>
+<li><a href="#four-equivalent-formulations"
+id="toc-four-equivalent-formulations">Four Equivalent Formulations</a>
+<ul>
+<li><a href="#hom-set-version-most-common"
+id="toc-hom-set-version-most-common">1. Hom-Set Version (Most
+Common)</a></li>
+<li><a href="#representation-version" id="toc-representation-version">2.
+Representation Version</a></li>
+<li><a href="#natural-transformation-version"
+id="toc-natural-transformation-version">3. Natural Transformation
+Version</a></li>
+<li><a href="#embedding-version-yoneda-embedding-corollary"
+id="toc-embedding-version-yoneda-embedding-corollary">4. Embedding
+Version (Yoneda Embedding Corollary)</a></li>
+</ul></li>
+<li><a href="#why-this-is-true-the-deep-reason"
+id="toc-why-this-is-true-the-deep-reason">Why This Is True (The Deep
+Reason)</a></li>
+<li><a href="#critical-examples" id="toc-critical-examples">12 Critical
+Examples</a>
+<ul>
+<li><a href="#forgetful-functor-is-representable"
+id="toc-forgetful-functor-is-representable">1. <strong>Forgetful Functor
+is Representable</strong></a></li>
+<li><a href="#free-functor-is-represented"
+id="toc-free-functor-is-represented">2. <strong>Free Functor is
+Represented</strong></a></li>
+<li><a href="#power-set-is-representable"
+id="toc-power-set-is-representable">3. <strong>Power Set is
+Representable</strong></a></li>
+<li><a href="#fundamental-group-functor"
+id="toc-fundamental-group-functor">4. <strong>Fundamental Group
+Functor</strong></a></li>
+<li><a href="#homology-functors" id="toc-homology-functors">5.
+<strong>Homology Functors</strong></a></li>
+<li><a href="#tangent-space-in-manifolds"
+id="toc-tangent-space-in-manifolds">6. <strong>Tangent Space in
+Manifolds</strong></a></li>
+<li><a href="#scheme-points" id="toc-scheme-points">7. <strong>Scheme
+Points</strong></a></li>
+<li><a href="#tensor-product-is-representable"
+id="toc-tensor-product-is-representable">8. <strong>Tensor Product is
+Representable</strong></a></li>
+<li><a href="#determinant-as-representable-functor"
+id="toc-determinant-as-representable-functor">9. <strong>Determinant as
+Representable Functor</strong></a></li>
+<li><a href="#moduli-spaces-as-representing-objects"
+id="toc-moduli-spaces-as-representing-objects">10. <strong>Moduli Spaces
+as Representing Objects</strong></a></li>
+<li><a href="#stone-duality" id="toc-stone-duality">11. <strong>Stone
+Duality</strong></a></li>
+<li><a href="#eilenberg-maclane-spaces"
+id="toc-eilenberg-maclane-spaces">12. <strong>Eilenberg-MacLane
+Spaces</strong></a></li>
+</ul></li>
+<li><a href="#three-consequences" id="toc-three-consequences">Three
+Consequences</a>
+<ul>
+<li><a href="#consequence-1-density-theorem"
+id="toc-consequence-1-density-theorem">Consequence 1: Density
+Theorem</a></li>
+<li><a href="#consequence-2-functors-determine-each-other-via-hom"
+id="toc-consequence-2-functors-determine-each-other-via-hom">Consequence
+2: Functors Determine Each Other via Hom</a></li>
+<li><a href="#consequence-3-the-yoneda-embedding-is-dense"
+id="toc-consequence-3-the-yoneda-embedding-is-dense">Consequence 3: The
+Yoneda Embedding is Dense</a></li>
+</ul></li>
+<li><a href="#the-converse-co-yoneda"
+id="toc-the-converse-co-yoneda">The Converse (Co-Yoneda)</a></li>
+<li><a href="#study-checklist" id="toc-study-checklist">Study
+Checklist</a></li>
+<li><a href="#key-insight" id="toc-key-insight">Key Insight</a></li>
+<li><a href="#relation-to-kan-extensions"
+id="toc-relation-to-kan-extensions">Relation to Kan Extensions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="the-yoneda-lemma-central-theorem-of-category-theory">The Yoneda
+Lemma: Central Theorem of Category Theory</h1>
+<h2 id="statement">Statement</h2>
+<p><strong>Theorem (Yoneda Lemma)</strong>: For any functor F: C^op  Set
+and any object A  C:</p>
+<pre><code>Nat(Hom(-,A), F) E F(A)</code></pre>
+<p>The isomorphism is <strong>natural in both F and A</strong>.</p>
+<h2 id="interpretation">Interpretation</h2>
+<p><strong>In English</strong>: “Natural transformations from the
+Hom-functor to F are in bijection with elements of F(A).”</p>
+<p>More precisely: Evaluating a natural transformation · at the identity
+element id_A gives you the element ·_A(id_A)  F(A), and this map is
+bijective.</p>
+<h2 id="proof-sketch">Proof Sketch</h2>
+<ol type="1">
+<li><strong>Forward direction</strong>: · ¦ ·_A(id_A)
+<ul>
+<li>Given natural transformation ·: Hom(-,A) Ò F</li>
+<li>Evaluate at A: ·_A: Hom(A,A)  F(A)</li>
+<li>Apply to identity: ·_A(id_A)  F(A)</li>
+</ul></li>
+<li><strong>Reverse direction</strong>: x ¦ natural transformation ·_x
+<ul>
+<li><p>Given element x  F(A)</p></li>
+<li><p>For each f: B  A and y: Hom(B,A), define:</p>
+<pre><code>·_x,B(f) = F(f)(x)</code></pre></li>
+<li><p>This is natural: commutes with further morphisms</p></li>
+</ul></li>
+<li><strong>Bijection verification</strong>: The forward-backward
+compositions are identities.</li>
+</ol>
+<h2 id="four-equivalent-formulations">Four Equivalent Formulations</h2>
+<h3 id="hom-set-version-most-common">1. Hom-Set Version (Most
+Common)</h3>
+<pre><code>Nat(Hom(A,-), F) E F(A)
+·  ·_A(id_A)</code></pre>
+<h3 id="representation-version">2. Representation Version</h3>
+<p>For any functor F: C  Set:</p>
+<pre><code>F is representable ú  A  C such that F E Hom(A,-)</code></pre>
+<h3 id="natural-transformation-version">3. Natural Transformation
+Version</h3>
+<p>Every natural transformation ·: Hom(-,A) Ò F is uniquely determined
+by ·_A(id_A).</p>
+<h3 id="embedding-version-yoneda-embedding-corollary">4. Embedding
+Version (Yoneda Embedding Corollary)</h3>
+<p>The Yoneda embedding:</p>
+<pre><code>y: C  [C^op, Set]
+X ¦ Hom(-,X)</code></pre>
+<p>is <strong>fully faithful</strong>: For any A,B  C:</p>
+<pre><code>Hom_C(A,B) E Nat(Hom(-,A), Hom(-,B))</code></pre>
+<h2 id="why-this-is-true-the-deep-reason">Why This Is True (The Deep
+Reason)</h2>
+<p>The Yoneda lemma is true because <strong>morphisms uniquely determine
+functors</strong>.</p>
+<p>When you have a natural transformation ·: Hom(-,A) Ò F, the
+naturality square:</p>
+<pre><code>        Hom(B,A) --·_B F(B)
+                      
+      post-comp   F(post-comp)
+          |            |
+      Hom(A,A) --·_A F(A)</code></pre>
+<p>forces ·_B to be completely determined by what · does at id_A 
+Hom(A,A).</p>
+<p>This is because <strong>every morphism f: B  A can be expressed as
+post-composition of id_A with something</strong>, and naturality forces
+·_B(f) to be determined by ·_A(id_A).</p>
+<h2 id="critical-examples">12 Critical Examples</h2>
+<h3 id="forgetful-functor-is-representable">1. <strong>Forgetful Functor
+is Representable</strong></h3>
+<p>F: Grp  Set (forgetful) E Hom($, -) Elements of F(G) = homomorphisms
+from $ = elements of G</p>
+<h3 id="free-functor-is-represented">2. <strong>Free Functor is
+Represented</strong></h3>
+<p>F: Set  Grp (free group) has right adjoint (forgetful) So F is left
+adjoint to Hom(F(-),-)</p>
+<h3 id="power-set-is-representable">3. <strong>Power Set is
+Representable</strong></h3>
+<p>P(X) E [X, {0,1}] Subsets of X  functions to two-element set</p>
+<h3 id="fundamental-group-functor">4. <strong>Fundamental Group
+Functor</strong></h3>
+<p>À: Top*  Grp Not representable (why? would need universal space with
+specific homotopy properties)</p>
+<h3 id="homology-functors">5. <strong>Homology Functors</strong></h3>
+<p>H_n: Top  Ab Not representable (Eilenberg-MacLane spaces represent
+these)</p>
+<h3 id="tangent-space-in-manifolds">6. <strong>Tangent Space in
+Manifolds</strong></h3>
+<p>T_p M E (m_p / m_p²)* where m_p = ideal of functions vanishing at p
+This is representability in derived setting</p>
+<h3 id="scheme-points">7. <strong>Scheme Points</strong></h3>
+<p>Spec(R): Hom(-,Spec(R)) represents points of scheme Yoneda: points
+are functors from finitely-generated algebras</p>
+<h3 id="tensor-product-is-representable">8. <strong>Tensor Product is
+Representable</strong></h3>
+<p>M _R N represents: Hom(-, M _R N) E Bilinear maps</p>
+<h3 id="determinant-as-representable-functor">9. <strong>Determinant as
+Representable Functor</strong></h3>
+<p>det: GL_n(R)  R* is represented by the universal matrix</p>
+<h3 id="moduli-spaces-as-representing-objects">10. <strong>Moduli Spaces
+as Representing Objects</strong></h3>
+<p>Moduli of curves M_g: Hom(-,M_g) = families of curves over - Yoneda:
+moduli spaces represent universal families</p>
+<h3 id="stone-duality">11. <strong>Stone Duality</strong></h3>
+<p>Spec(Boolean algebra) E representation by Boolean algebra operations
+Boolean algebras are representable in topological spaces</p>
+<h3 id="eilenberg-maclane-spaces">12. <strong>Eilenberg-MacLane
+Spaces</strong></h3>
+<p>K(G,n): Hom(-, K(G,n)) E H^n(-, G) Cohomology is representable by
+topological spaces</p>
+<h2 id="three-consequences">Three Consequences</h2>
+<h3 id="consequence-1-density-theorem">Consequence 1: Density
+Theorem</h3>
+<p><strong>Every presheaf is a colimit of representables</strong>.</p>
+<pre><code>F  [C^op, Set] = colim_{Hom(c,-)  F} Hom(c,-)</code></pre>
+<p>where the colimit is over the <strong>category of elements</strong>
+(c, x) where c  C and x  F(c).</p>
+<h3 id="consequence-2-functors-determine-each-other-via-hom">Consequence
+2: Functors Determine Each Other via Hom</h3>
+<p>If two functors F, G: C^op  Set satisfy:</p>
+<pre><code>Hom(Y_C(A), F) E Hom(Y_C(A), G) for all A  C</code></pre>
+<p>(where Y_C(A) = Hom(-,A)), then F E G.</p>
+<p>This is because every presheaf is a colimit of representables, and
+Hom commutes with limits.</p>
+<h3 id="consequence-3-the-yoneda-embedding-is-dense">Consequence 3: The
+Yoneda Embedding is Dense</h3>
+<p>The image of y: C  [C^op, Set] is <strong>dense</strong>: every
+presheaf is a colimit of representables.</p>
+<h2 id="the-converse-co-yoneda">The Converse (Co-Yoneda)</h2>
+<p><strong>Lemma (Duality)</strong>: For contravariant F (F: C  Set),
+similarly:</p>
+<pre><code>Nat(Hom(A,-), F) E F(A)</code></pre>
+<p>with the covariant version of composition.</p>
+<p>This is why <strong>left/right Kan extensions are dual</strong>.</p>
+<h2 id="study-checklist">Study Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Understand the Yoneda lemma
+statement word-by-word</label></li>
+<li><label><input type="checkbox" />Verify it in 3-4 concrete examples
+(representable functors)</label></li>
+<li><label><input type="checkbox" />Understand why the bijection is
+natural</label></li>
+<li><label><input type="checkbox" />Know the Yoneda embedding and why
+it’s fully faithful</label></li>
+<li><label><input type="checkbox" />Understand density theorem (colimit
+of representables)</label></li>
+<li><label><input type="checkbox" />Connect to Kan extensions
+(representables as Kan extensions)</label></li>
+</ul>
+<h2 id="key-insight">Key Insight</h2>
+<p>The Yoneda lemma says: <strong>Morphisms and natural transformations
+freely determine functors.</strong></p>
+<p>This is why Kan extensions exist: they’re asking “What’s the
+universal way to extend a functor?” The answer is determined by the
+Yoneda lemma structure.</p>
+<p>Every representable functor is a <strong>right Kan extension</strong>
+of the identity functor. Understanding Yoneda deeply means understanding
+why Kan extensions work.</p>
+<h2 id="relation-to-kan-extensions">Relation to Kan Extensions</h2>
+<p>The Yoneda lemma is the <strong>simplest case</strong> of Kan
+extension theory: - Hom(-,A) is obtained by Kan extending along the
+Yoneda embedding - The natural isomorphism in Yoneda is the universal
+property of this Kan extension - The density theorem (colimit of
+representables) is the <strong>density theorem for Kan
+extensions</strong></p>
+<p>In fact: <strong>Yoneda lemma = Kan extension in the category [C^op,
+Set]</strong>.</p>
+<p>This is why mastering Yoneda is essential preparation for Kan
+extensions.</p>
+</body>
+</html>

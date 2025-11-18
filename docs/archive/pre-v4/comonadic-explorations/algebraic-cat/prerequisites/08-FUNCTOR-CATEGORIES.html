@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>08-FUNCTOR-CATEGORIES</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#functor-categories-cd-categories-of-functors"
+id="toc-functor-categories-cd-categories-of-functors">Functor Categories
+[C,D]: Categories of Functors</a>
+<ul>
+<li><a href="#definition" id="toc-definition">Definition</a></li>
+<li><a href="#core-axioms" id="toc-core-axioms">Core Axioms</a></li>
+<li><a href="#key-observation" id="toc-key-observation">Key
+Observation</a></li>
+<li><a href="#critical-examples" id="toc-critical-examples">8 Critical
+Examples</a></li>
+<li><a href="#fundamental-properties"
+id="toc-fundamental-properties">Fundamental Properties</a>
+<ul>
+<li><a href="#limits-and-colimits-computed-pointwise"
+id="toc-limits-and-colimits-computed-pointwise">Limits and Colimits
+(Computed Pointwise)</a></li>
+<li><a href="#completeness-and-cocompleteness"
+id="toc-completeness-and-cocompleteness">Completeness and
+Cocompleteness</a></li>
+<li><a href="#yoneda-embedding-c-cop-set"
+id="toc-yoneda-embedding-c-cop-set">Yoneda Embedding: C  [C^op,
+Set]</a></li>
+</ul></li>
+<li><a href="#fundamental-theorem-of-category-theory"
+id="toc-fundamental-theorem-of-category-theory">Fundamental Theorem of
+Category Theory</a></li>
+<li><a href="#relation-to-kan-extensions"
+id="toc-relation-to-kan-extensions">Relation to Kan Extensions</a></li>
+<li><a href="#study-checklist" id="toc-study-checklist">Study
+Checklist</a></li>
+<li><a href="#key-insight" id="toc-key-insight">Key Insight</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="functor-categories-cd-categories-of-functors">Functor Categories
+[C,D]: Categories of Functors</h1>
+<h2 id="definition">Definition</h2>
+<p>The <strong>functor category</strong> [C,D] is the category whose: -
+<strong>Objects</strong>: Functors F: C  D - <strong>Morphisms</strong>:
+Natural transformations between functors</p>
+<h2 id="core-axioms">Core Axioms</h2>
+<p>[C,D] is a legitimate category:</p>
+<ol type="1">
+<li><p><strong>Identity</strong>: For each functor F, identity natural
+transformation id_F: F Ò F (id_F(X) = id_{F(X)})</p></li>
+<li><p><strong>Composition</strong>: For ·: F Ò G and ¶: G Ò H, their
+composition (¶  ·): F Ò H is defined componentwise:</p>
+<pre><code>(¶  ·)_X = ¶_X  ·_X: F(X)  H(X)</code></pre></li>
+<li><p><strong>Associativity</strong>: (¸  ¶)  · = ¸  (¶  ·)</p></li>
+<li><p><strong>Identity Laws</strong>: id_G  · = · and ·  id_F =
+·</p></li>
+</ol>
+<h2 id="key-observation">Key Observation</h2>
+<p>Morphisms in [C,D] are <strong>natural
+transformations</strong>composition respects the naturality squares.</p>
+<h2 id="critical-examples">8 Critical Examples</h2>
+<ol type="1">
+<li><strong>[C^op, Set] = Presheaf Category</strong>
+<ul>
+<li>Fundamental in category theory</li>
+<li>Every category embeds densely here via Yoneda embedding</li>
+<li>Limits/colimits computed pointwise</li>
+</ul></li>
+<li><strong>Simplicial Sets [^op, Set]</strong>
+<ul>
+<li>Objects: simplicial complexes with degenerate faces</li>
+<li>Used in algebraic topology, higher category theory</li>
+<li>Quasi-categories live in here</li>
+</ul></li>
+<li><strong>[G, Set] = G-Sets (Group Actions)</strong>
+<ul>
+<li>Objects: functors from one-object-one-morphism G to Set (=
+G-actions)</li>
+<li>Morphisms: natural transformations (= equivariant maps)</li>
+<li>Category of G-sets and G-equivariant functions</li>
+</ul></li>
+<li><strong>[J, Ab] (Direct Limits)</strong>
+<ul>
+<li>Objects: functors J  Ab (families of abelian groups)</li>
+<li>Colimit in [J,Ab] computed in Ab gives direct limit</li>
+<li>The directed limit lim is the colimit in this functor category</li>
+</ul></li>
+<li><strong>[^op, Grp] (Inverse Limits)</strong>
+<ul>
+<li>Objects: sequences of groups and homomorphisms</li>
+<li>Inverse limit is the limit in this functor category</li>
+<li>lim computed as product of stabilizing sequences</li>
+</ul></li>
+<li><strong>[2, Set] (Spans and Correspondences)</strong>
+<ul>
+<li>Objects: functors from 2-element category {”  “}</li>
+<li>= Pairs of functions with common codomain</li>
+<li>Morphisms: commutative triangles</li>
+</ul></li>
+<li><strong>[, C] (Simplicial Objects in C)</strong>
+<ul>
+<li>Objects: simplicial objects in any category C</li>
+<li>Used in homological algebra, derived functors</li>
+<li>Simplicial complexes, simplicial abelian groups, etc.</li>
+</ul></li>
+<li><strong>[C, _i D_i] (Product of Functor Categories)</strong>
+<ul>
+<li>Products of functor categories are functor categories</li>
+<li>[C, D × D] E [C, D] × [C, D]</li>
+<li>Functors into product = pair of functors into factors</li>
+</ul></li>
+</ol>
+<h2 id="fundamental-properties">Fundamental Properties</h2>
+<h3 id="limits-and-colimits-computed-pointwise">Limits and Colimits
+(Computed Pointwise)</h3>
+<p><strong>Theorem</strong>: Limits and colimits in [C,D] are computed
+<strong>pointwise</strong>:</p>
+<p>If ·: F Ò G and we want the limit, for each object X in C:</p>
+<pre><code>(lim ·)_X = lim ·_X</code></pre>
+<p><strong>Why</strong>: Natural transformations are compatible with
+limits, so we can compute limits of components independently.</p>
+<p><strong>Example</strong>: - lim F in [C, Set] is the functor that
+assigns to each X the limit lim_{jJ} F(j)(X) - Yoneda embedding y: C 
+[C^op, Set] preserves limits</p>
+<h3 id="completeness-and-cocompleteness">Completeness and
+Cocompleteness</h3>
+<p><strong>Theorem</strong>: If D is complete/cocomplete, so is
+[C,D].</p>
+<p><strong>Proof</strong>: Use pointwise computation of
+limits/colimits.</p>
+<p><strong>Significance</strong>: This means: - [C, Set] is complete and
+cocomplete - Presheaves have all limits and colimits - Every category
+embeds into a complete/cocomplete category</p>
+<h3 id="yoneda-embedding-c-cop-set">Yoneda Embedding: C  [C^op,
+Set]</h3>
+<p>The Yoneda embedding is the <strong>fundamental functor</strong>:</p>
+<pre><code>y: C  [C^op, Set]
+X ¦ Hom(-,X)
+(f: X  Y) ¦ (natural transformation: post-composition by f)</code></pre>
+<p><strong>Theorem (Yoneda Fully Faithful)</strong>: y is fully
+faithful. - Injective on objects (up to isomorphism) - Bijective on
+morphisms</p>
+<p><strong>Theorem (Yoneda Density)</strong>: Every presheaf is the
+<strong>colimit of representables</strong>.</p>
+<pre><code>F  [C^op, Set] = colim_{X(ÀF)} Hom(-,X)</code></pre>
+<p>where (ÀF) is the comma category of representables under F.</p>
+<h2 id="fundamental-theorem-of-category-theory">Fundamental Theorem of
+Category Theory</h2>
+<p><strong>Theorem</strong>: Every functor F: C  D can be
+<strong>uniquely extended</strong> to a continuous functor (preserving
+limits) from [C^op, Set] to [D^op, Set]:</p>
+<pre><code>C --F D
+ |      |
+ y     y
+[C^op,Set] --Ran_y F- [D^op,Set]</code></pre>
+<p>This extension is given by the <strong>right Kan extension</strong>
+of F along the Yoneda embedding.</p>
+<h2 id="relation-to-kan-extensions">Relation to Kan Extensions</h2>
+<p>Everything in functor categories is built from Kan extensions:</p>
+<ol type="1">
+<li><strong>Yoneda embedding</strong>: y_C: C  [C^op, Set] is defined by
+Kan extensions</li>
+<li><strong>Limits in [C,D]</strong>: Computed via Kan extensions in
+D</li>
+<li><strong>Extensions of functors</strong>: Via Kan extensions along
+Yoneda</li>
+<li><strong>Density theorem</strong>: Every presheaf is colimit of
+representables (= left Kan extension)</li>
+</ol>
+<h2 id="study-checklist">Study Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Understand [C^op, Set] as the free
+cocompletion of C</label></li>
+<li><label><input type="checkbox" />Recognize [C^op, Set] in multiple
+examples</label></li>
+<li><label><input type="checkbox" />Verify Yoneda lemma in simple
+cases</label></li>
+<li><label><input type="checkbox" />Compute limits/colimits pointwise in
+[C,D]</label></li>
+<li><label><input type="checkbox" />See connection to Kan
+extensions</label></li>
+</ul>
+<h2 id="key-insight">Key Insight</h2>
+<p>Functor categories are the bridge between individual categories and
+the universal properties that define them. In [C,D], natural
+transformations are the <strong>morphisms</strong>, which means
+<strong>Kan extensions are the universal morphisms</strong> in functor
+categories.</p>
+<p>This is why [C^op, Set] is so important: it’s the
+<strong>universal</strong> category containing C (via Yoneda), and every
+construction in category theory can be understood as happening in some
+functor category.</p>
+</body>
+</html>

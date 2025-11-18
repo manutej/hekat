@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>06-LIMITS-COLIMITS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#limits-and-colimits" id="toc-limits-and-colimits">Limits
+and Colimits</a>
+<ul>
+<li><a href="#cones-and-cocones" id="toc-cones-and-cocones">Cones and
+Cocones</a></li>
+<li><a href="#limit-terminal-cone" id="toc-limit-terminal-cone">Limit =
+Terminal Cone</a></li>
+<li><a href="#colimit-initial-cocone"
+id="toc-colimit-initial-cocone">Colimit = Initial Cocone</a></li>
+<li><a href="#examples" id="toc-examples">15 Examples</a></li>
+<li><a href="#preservation" id="toc-preservation">Preservation</a></li>
+<li><a href="#completecocomplete-categories"
+id="toc-completecocomplete-categories">Complete/Cocomplete
+Categories</a></li>
+<li><a href="#completeness-theorem"
+id="toc-completeness-theorem">Completeness Theorem</a></li>
+<li><a href="#universal-properties"
+id="toc-universal-properties">Universal Properties</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="limits-and-colimits">Limits and Colimits</h1>
+<h2 id="cones-and-cocones">Cones and Cocones</h2>
+<p><strong>Cone over F: J → C</strong>: Object X with compatible
+morphisms to F(j) <strong>Cocone under F: J → C</strong>: Object X with
+compatible morphisms from F(j)</p>
+<h2 id="limit-terminal-cone">Limit = Terminal Cone</h2>
+<p><strong>Lim F</strong>: Universal cone with unique morphisms from any
+other cone</p>
+<h2 id="colimit-initial-cocone">Colimit = Initial Cocone</h2>
+<p><strong>Colim F</strong>: Universal cocone with unique morphisms to
+any other cocone</p>
+<h2 id="examples">15 Examples</h2>
+<ol type="1">
+<li><strong>Product</strong>: Limit of discrete diagram</li>
+<li><strong>Coproduct</strong>: Colimit of discrete</li>
+<li><strong>Equalizer</strong>: Limit of parallel pair</li>
+<li><strong>Coequalizer</strong>: Colimit of parallel<br />
+</li>
+<li><strong>Pullback</strong>: Limit of span diagram</li>
+<li><strong>Pushout</strong>: Colimit of cospan</li>
+<li><strong>Kernel</strong>: Equalizer with zero</li>
+<li><strong>Cokernel</strong>: Coequalizer with zero</li>
+<li><strong>Terminal object</strong>: Limit of empty diagram</li>
+<li><strong>Initial object</strong>: Colimit of empty</li>
+<li><strong>Inverse limit</strong>: Limit of inverse system</li>
+<li><strong>Direct limit</strong>: Colimit of direct system</li>
+<li><strong>Fiber product</strong>: Pullback<br />
+</li>
+<li><strong>Amalgamated free product</strong>: Pushout</li>
+<li><strong>Projective/Inductive limits</strong></li>
+</ol>
+<h2 id="preservation">Preservation</h2>
+<p><strong>Right adjoints preserve limits</strong> <strong>Left adjoints
+preserve colimits</strong></p>
+<p>Key property for understanding adjunctions!</p>
+<h2 id="completecocomplete-categories">Complete/Cocomplete
+Categories</h2>
+<ul>
+<li><strong>Complete</strong>: Has all limits<br />
+</li>
+<li><strong>Cocomplete</strong>: Has all colimits</li>
+<li><strong>Bicomplete</strong>: Both</li>
+</ul>
+<p>Examples: Set, Top, Grp, Vect, Presheaves (all bicomplete)</p>
+<h2 id="completeness-theorem">Completeness Theorem</h2>
+<p><strong>Theorem</strong>: C is complete iff has products and
+equalizers <strong>Dual</strong>: C is cocomplete iff has coproducts and
+coequalizers</p>
+<p>(Other limits/colimits build from these)</p>
+<h2 id="universal-properties">Universal Properties</h2>
+<p>Limits/colimits characterized by universal properties Foundation for
+categorical algebra and Kan extensions</p>
+<h2 id="study-guide">Study Guide</h2>
+<ul>
+<li>Master products and coproducts</li>
+<li>Understand pullbacks deeply</li>
+<li>Work through examples</li>
+<li>Connect to adjoints</li>
+<li>Recognize in your field</li>
+</ul>
+</body>
+</html>

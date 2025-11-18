@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HIGHER-CATEGORY-THEORY-RESEARCH</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#higher-category-theory-a-comprehensive-treatment"
+id="toc-higher-category-theory-a-comprehensive-treatment">Higher
+Category Theory: A Comprehensive Treatment</a>
+<ul>
+<li><a href="#why-higher-categories" id="toc-why-higher-categories">Why
+Higher Categories?</a>
+<ul>
+<li><a href="#the-homotopy-problem" id="toc-the-homotopy-problem">The
+Homotopy Problem</a></li>
+</ul></li>
+<li><a href="#categories-complete-foundations"
+id="toc-categories-complete-foundations">2-Categories: Complete
+Foundations</a>
+<ul>
+<li><a href="#formal-definition" id="toc-formal-definition">Formal
+Definition</a></li>
+<li><a href="#axioms" id="toc-axioms">Axioms</a></li>
+<li><a href="#fundamental-examples" id="toc-fundamental-examples">8
+Fundamental Examples</a></li>
+</ul></li>
+<li><a href="#bicategories-weak-higher-structures"
+id="toc-bicategories-weak-higher-structures">Bicategories: Weak Higher
+Structures</a>
+<ul>
+<li><a href="#the-problem-with-strictness"
+id="toc-the-problem-with-strictness">The Problem with
+Strictness</a></li>
+<li><a href="#bicategory-definition"
+id="toc-bicategory-definition">Bicategory Definition</a></li>
+<li><a href="#coherence-axioms" id="toc-coherence-axioms">Coherence
+Axioms</a></li>
+</ul></li>
+<li><a href="#examples-of-bicategories"
+id="toc-examples-of-bicategories">Examples of Bicategories</a></li>
+<li><a href="#higher-categories-n-categories-and--categories"
+id="toc-higher-categories-n-categories-and--categories">Higher
+Categories: n-Categories and ∞-Categories</a>
+<ul>
+<li><a href="#recursive-definition-of-n-categories"
+id="toc-recursive-definition-of-n-categories">Recursive Definition of
+n-Categories</a></li>
+<li><a href="#coherence-complexity"
+id="toc-coherence-complexity">Coherence Complexity</a></li>
+<li><a href="#strictification-from-weak-to-strict"
+id="toc-strictification-from-weak-to-strict">Strictification: From Weak
+to Strict</a></li>
+</ul></li>
+<li><a href="#categories-multiple-models"
+id="toc-categories-multiple-models">∞-Categories: Multiple Models</a>
+<ul>
+<li><a href="#five-equivalent-models"
+id="toc-five-equivalent-models">Five Equivalent Models</a></li>
+<li><a href="#quasi-categories-joyal-lurie-model"
+id="toc-quasi-categories-joyal-lurie-model">Quasi-Categories
+(Joyal-Lurie Model)</a></li>
+<li><a href="#categories" id="toc-categories">(∞,1)-Categories</a></li>
+</ul></li>
+<li><a href="#stable--categories" id="toc-stable--categories">Stable
+∞-Categories</a>
+<ul>
+<li><a href="#motivation-from-triangulated-categories"
+id="toc-motivation-from-triangulated-categories">Motivation from
+Triangulated Categories</a></li>
+<li><a href="#stable--category-definition"
+id="toc-stable--category-definition">Stable ∞-Category
+Definition</a></li>
+<li><a href="#examples" id="toc-examples">Examples</a></li>
+<li><a href="#t-structures" id="toc-t-structures">t-Structures</a></li>
+</ul></li>
+<li><a href="#homotopy-type-theory-connection"
+id="toc-homotopy-type-theory-connection">Homotopy Type Theory
+Connection</a>
+<ul>
+<li><a href="#homotopy-hypothesis" id="toc-homotopy-hypothesis">Homotopy
+Hypothesis</a></li>
+<li><a href="#univalence-axiom" id="toc-univalence-axiom">Univalence
+Axiom</a></li>
+</ul></li>
+<li><a href="#applications-across-mathematics"
+id="toc-applications-across-mathematics">Applications Across
+Mathematics</a>
+<ul>
+<li><a href="#derived-algebraic-geometry"
+id="toc-derived-algebraic-geometry">Derived Algebraic Geometry</a></li>
+<li><a href="#homotopy-type-theory-hott"
+id="toc-homotopy-type-theory-hott">Homotopy Type Theory (HoTT)</a></li>
+<li><a href="#topological-quantum-field-theory"
+id="toc-topological-quantum-field-theory">Topological Quantum Field
+Theory</a></li>
+<li><a href="#higher-gauge-theory" id="toc-higher-gauge-theory">Higher
+Gauge Theory</a></li>
+</ul></li>
+<li><a href="#why-beyond-ordinary-categories"
+id="toc-why-beyond-ordinary-categories">Why Beyond Ordinary
+Categories?</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+Reading</a></li>
+<li><a href="#research-questions" id="toc-research-questions">Research
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="higher-category-theory-a-comprehensive-treatment">Higher
+Category Theory: A Comprehensive Treatment</h1>
+<h2 id="why-higher-categories">Why Higher Categories?</h2>
+<p>Ordinary category theory models objects and morphisms between them.
+But mathematics often has <strong>morphisms between morphisms</strong>
+(natural transformations), requiring a second level. Higher category
+theory extends this to arbitrary depth.</p>
+<h3 id="the-homotopy-problem">The Homotopy Problem</h3>
+<p>In ordinary categories: <strong>a = b ⟹ all properties
+equal</strong></p>
+<p>But in topology: <strong>paths a ~ b at same points</strong>
+(homotopy equivalence)</p>
+<p>Higher categories capture <strong>homotopical equality</strong>
+systematically.</p>
+<h2 id="categories-complete-foundations">2-Categories: Complete
+Foundations</h2>
+<h3 id="formal-definition">Formal Definition</h3>
+<p>A <strong>2-category</strong> C consists of:</p>
+<p><strong>1. Objects</strong>: Collection of 0-cells Ob(C)</p>
+<p><strong>2. 1-Morphisms</strong>: For X,Y ∈ Ob(C), a set C(X,Y) of
+1-cells f,g,…</p>
+<p><strong>3. 2-Morphisms</strong>: For f,g: X → Y, a set C(f,g) of
+2-cells α: f ⇒ g</p>
+<p><strong>4. Horizontal Composition</strong>:</p>
+<pre><code>f: X → Y  and  g: Y → Z
+_________________________________
+g ∘ f: X → Z  (compose 1-cells)</code></pre>
+<p><strong>5. Vertical Composition</strong>:</p>
+<pre><code>α: f ⇒ f&#39;  and  β: f&#39; ⇒ f&#39;&#39;
+_________________________________
+β ∘ α: f ⇒ f&#39;&#39;  (compose 2-cells)</code></pre>
+<p><strong>6. Interchange Law</strong>:</p>
+<pre><code>(β ∘ α) ∘ (δ ∘ γ) = (β ∘ δ) ∘ (α ∘ γ)
+
+Horizontal and vertical compositions commute</code></pre>
+<h3 id="axioms">Axioms</h3>
+<ol type="1">
+<li><strong>Associativity</strong>: Both ∘ operations associative</li>
+<li><strong>Identity</strong>: Identity 1-cells and 2-cells</li>
+<li><strong>Interchange</strong>: Above law holds</li>
+<li><strong>Strictness</strong>: All diagrams commute exactly (no
+coherence data)</li>
+</ol>
+<h3 id="fundamental-examples">8 Fundamental Examples</h3>
+<h4 id="cat-category-of-categories">1. Cat: Category of Categories</h4>
+<ul>
+<li><strong>Objects</strong>: Small categories</li>
+<li><strong>1-Morphisms</strong>: Functors</li>
+<li><strong>2-Morphisms</strong>: Natural transformations</li>
+<li><strong>Vertical ∘</strong>: Natural transformation composition</li>
+<li><strong>Horizontal ∘</strong>: Functor composition</li>
+<li><strong>Interchange</strong>: Godement product associativity</li>
+</ul>
+<h4 id="span-spans-in-a-category">2. Span: Spans in a Category</h4>
+<pre><code>Objects: Same as base category
+1-cells: Spans X ← S → Y
+2-cells: Morphisms between spans</code></pre>
+<p><strong>Composition</strong>: Pullback of middle objects</p>
+<h4 id="prof-profunctors-distributors">3. Prof: Profunctors
+(Distributors)</h4>
+<pre><code>1-cells: Profunctors F: C ⇸ D (contravariant in domain)
+2-cells: Natural transformations</code></pre>
+<p><strong>Composition</strong>: Profunctor composition (via coend)</p>
+<h4 id="one-object-2-categories-monoidal-categories">4. One-Object
+2-Categories (Monoidal Categories)</h4>
+<pre><code>Objects: single point *
+1-cells: elements of monoidal category M
+2-cells: any morphisms</code></pre>
+<p>Result: 2-category with one object = monoidal structure!</p>
+<h4 id="enriched-categories">5. Enriched Categories</h4>
+<pre><code>Objects: objects of base category
+1-cells: morphisms
+2-cells: between morphisms in enriching category V</code></pre>
+<p>V-enriched categories = 2-categories with specific structure</p>
+<h4 id="topological-2-categories">6. Topological 2-Categories</h4>
+<pre><code>1-cells: continuous maps
+2-cells: homotopies between continuous maps</code></pre>
+<h4 id="simplicial-2-categories">7. Simplicial 2-Categories</h4>
+<pre><code>Based on simplicial sets
+Extra homotopy structure at each level</code></pre>
+<h4 id="algebraic-2-categories">8. Algebraic 2-Categories</h4>
+<pre><code>Objects: algebraic structures
+1-cells: homomorphisms
+2-cells: homotopies or derivations</code></pre>
+<h2 id="bicategories-weak-higher-structures">Bicategories: Weak Higher
+Structures</h2>
+<h3 id="the-problem-with-strictness">The Problem with Strictness</h3>
+<p>In practice, categorical structures are <strong>weakly
+associative</strong>:</p>
+<pre><code>(W ∘ X) ∘ Y ≠ W ∘ (X ∘ Y)
+but
+(W ∘ X) ∘ Y ≅ W ∘ (X ∘ Y)  [natural isomorphism]</code></pre>
+<p>Strict associativity too restrictive!</p>
+<h3 id="bicategory-definition">Bicategory Definition</h3>
+<p>A <strong>bicategory</strong> C consists of (same as 2-category,
+but):</p>
+<p><strong>Compositions are only associative up to natural
+isomorphism</strong>:</p>
+<pre><code>ASSOCIATOR:
+a_{X,Y,Z,W}: (h ∘ g) ∘ f ⇒ h ∘ (g ∘ f)
+[2-morphism, not identity]
+
+LEFT UNITOR:
+l_f: id ∘ f ⇒ f
+
+RIGHT UNITOR:
+r_f: f ∘ id ⇒ f</code></pre>
+<h3 id="coherence-axioms">Coherence Axioms</h3>
+<pre><code>PENTAGON AXIOM (associators cohere):
+((k∘j)∘i)∘h  ---α---→  (k∘j)∘(i∘h)
+    ↓                         ↓
+(k∘(j∘i))∘h  ---α---→  k∘((j∘i)∘h)
+    ↓                         ↓
+k∘(j∘(i∘h))  [commutes via α and intermediate α&#39;s]
+
+TRIANGLE AXIOM (unitors cohere):
+(f∘id)∘g  ---r⊗id---→  f∘g
+    ↓                    ↓
+f∘(id∘g)  ---id⊗l---→  f∘g</code></pre>
+<p><strong>Mac Lane Coherence Theorem</strong>: These two axioms
+guarantee all diagrams commute!</p>
+<h2 id="examples-of-bicategories">Examples of Bicategories</h2>
+<ol type="1">
+<li><strong>Span(C)</strong>: Spans with pullback composition</li>
+<li><strong>Prof</strong>: Profunctors with coend composition</li>
+<li><strong>Cat</strong>: Enriched over itself</li>
+<li><strong>Alg(T)</strong>: Algebras over monad T</li>
+<li><strong>Modules</strong>: Bimodules between rings</li>
+<li><strong>Tangles</strong>: Tangle diagrams with composition</li>
+<li><strong>Matroid</strong>: Matroids with weak operations</li>
+<li><strong>Schemes</strong>: Over common base (weak fiber product)</li>
+</ol>
+<h2 id="higher-categories-n-categories-and--categories">Higher
+Categories: n-Categories and ∞-Categories</h2>
+<h3 id="recursive-definition-of-n-categories">Recursive Definition of
+n-Categories</h3>
+<pre><code>0-category: Set
+1-category: Ordinary category
+2-category: As defined above
+n-category: Category enriched in (n-1)-categories
+∞-category: Limit as n → ∞</code></pre>
+<h3 id="coherence-complexity">Coherence Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Coherence</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Associativity + identity</td>
+<td>Ordinary categories</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pentagon + triangle</td>
+<td>Bicategories</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6+ coherence axioms</td>
+<td>Tricategories</td>
+</tr>
+<tr>
+<td>4+</td>
+<td>Impossible to classify</td>
+<td>Need weak structure</td>
+</tr>
+<tr>
+<td>∞</td>
+<td>Coherence by definition</td>
+<td>∞-categories</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Simpson’s Conjecture</strong>: For n ≥ 4, strictification not
+possible (beyond Mac Lane).</p>
+<h3 id="strictification-from-weak-to-strict">Strictification: From Weak
+to Strict</h3>
+<p><strong>Theorem (Mac Lane)</strong>: Every bicategory biequivalent to
+strict 2-category.</p>
+<p><strong>Key</strong>: Associators/unitors become identities via
+equivalence.</p>
+<p><strong>Fails for n ≥ 3</strong>: Tricategories cannot always be
+strictified!</p>
+<p><strong>Solution</strong>: Accept weak structure, use coherence
+directly.</p>
+<h2 id="categories-multiple-models">∞-Categories: Multiple Models</h2>
+<h3 id="five-equivalent-models">Five Equivalent Models</h3>
+<ol type="1">
+<li><strong>Simplicial Sets</strong>: Nerves of simplicial
+complexes</li>
+<li><strong>Topological</strong>: Topological spaces (∞-groupoids are
+spaces)</li>
+<li><strong>Quasi-categories</strong>: Simplicial sets with inner horn
+filling</li>
+<li><strong>Segal Spaces</strong>: Iteration of spaces with Segal
+maps</li>
+<li><strong>Complete Segal Spaces</strong>: Segal with equivalences</li>
+</ol>
+<p><strong>Theorem (Joyal, Lurie, Rezk)</strong>: All models
+equivalent!</p>
+<h3 id="quasi-categories-joyal-lurie-model">Quasi-Categories
+(Joyal-Lurie Model)</h3>
+<h4 id="simplicial-sets-background">Simplicial Sets Background</h4>
+<p><strong>Δ^n</strong> = standard n-simplex (vertices 0,1,…,n with
+order)</p>
+<p><strong>Simplicial set</strong> X = functor Δ^op → Set</p>
+<pre><code>X_n = n-simplices
+face maps: delete vertices
+degeneracy: repeat vertices</code></pre>
+<h4 id="horns-partial-simplices">Horns: Partial Simplices</h4>
+<p><strong>Λ^k_n</strong> = simplicial subset of Δ^n (all faces except
+interior of one)</p>
+<p>Example: Λ^1_2 = two edges of triangle (missing middle face)</p>
+<h4 id="quasi-category-definition">Quasi-Category Definition</h4>
+<p>Simplicial set X is <strong>quasi-category</strong> if:</p>
+<p><strong>Inner horn filling</strong>: Every Λ^k_n → X (k ≠ 0,n)
+extends to Δ^n → X</p>
+<p><strong>Intuition</strong>: Composable chains of arrows always have
+filler compositions</p>
+<h3 id="categories">(∞,1)-Categories</h3>
+<p>Focus on 1-morphisms (objects and arrows), ignore higher
+structure.</p>
+<pre><code>Homotopy hypothesis:
+∞-groupoids ≅ homotopy types (topological spaces)
+
+(∞,1)-categories:
+Objects and arrows, higher structure are homotopy equivalences</code></pre>
+<h2 id="stable--categories">Stable ∞-Categories</h2>
+<h3 id="motivation-from-triangulated-categories">Motivation from
+Triangulated Categories</h3>
+<p>Classical <strong>triangulated categories</strong> (homological
+algebra) have: - Shift functor Σ (suspension) - Distinguished triangles
+(exact sequences) - Octahedral axioms</p>
+<p><strong>Problem</strong>: Axioms don’t lift to homotopy theory
+naturally.</p>
+<h3 id="stable--category-definition">Stable ∞-Category Definition</h3>
+<p>∞-category C is <strong>stable</strong> if:</p>
+<pre><code>1. Finite limits and colimits exist
+2. Pushouts = pullbacks (by pointing)
+3. Shift/suspension: Σ: C → C is equivalence
+4. Fiber sequences = cofiber sequences</code></pre>
+<p><strong>Key insight</strong>: Cancels distinction between hom and
+suspension!</p>
+<h3 id="examples">Examples</h3>
+<ol type="1">
+<li><strong>Sp</strong>: Spectra (fundamental stable category)</li>
+<li><strong>D(R)</strong>: Derived category of module category</li>
+<li><strong>D^perf(X)</strong>: Perfect complexes on scheme X</li>
+<li><strong>Perf(X)</strong>: Perfectoid spaces</li>
+<li><strong>QC(X)</strong>: Quasi-coherent sheaves on stack</li>
+</ol>
+<h3 id="t-structures">t-Structures</h3>
+<p><strong>t-structure</strong> on stable category:</p>
+<pre><code>C^≤0, C^≥0: Subcategories satisfying axioms
+Heart: C^≤0 ∩ C^≥0 = abelian category</code></pre>
+<p><strong>Recovery</strong>:</p>
+<pre><code>Homology: H^i(X) = Hom(Σ^i Y, X) where Y ∈ Heart</code></pre>
+<p>Recovers classical homology from categorical structure!</p>
+<h2 id="homotopy-type-theory-connection">Homotopy Type Theory
+Connection</h2>
+<h3 id="homotopy-hypothesis">Homotopy Hypothesis</h3>
+<p><strong>Conjecture</strong>: ∞-groupoids = homotopy types
+(spaces)</p>
+<p><strong>Statement</strong>:</p>
+<pre><code>Category of ∞-groupoids ≅ Homotopy category of spaces</code></pre>
+<p><strong>Implications for higher categories</strong>: - Types are
+spaces - Equality is homotopy - Identity types give paths</p>
+<h3 id="univalence-axiom">Univalence Axiom</h3>
+<p><strong>Voevodsky’s axiom</strong>:</p>
+<pre><code>(A ≃ B) ≅ (A = B)
+[equivalence = equality]</code></pre>
+<p><strong>Consequence</strong>: All mathematics expressible in
+homotopy-invariant way!</p>
+<h2 id="applications-across-mathematics">Applications Across
+Mathematics</h2>
+<h3 id="derived-algebraic-geometry">Derived Algebraic Geometry</h3>
+<p>Use ∞-categories to define: - <strong>Derived schemes</strong>:
+Locally ringed with derived structure sheaf - <strong>Cotangent
+complex</strong>: Derived analog of differentials - <strong>Serre
+intersection formula</strong>: In stable homotopy theory</p>
+<h3 id="homotopy-type-theory-hott">Homotopy Type Theory (HoTT)</h3>
+<p>Proof assistant system where: - Types are ∞-groupoids - Proofs are
+homotopy paths - Univalence axiom allows type equality - Applications:
+Formalized mathematics</p>
+<h3 id="topological-quantum-field-theory">Topological Quantum Field
+Theory</h3>
+<p><strong>Cobordism hypothesis (Baez-Dolan)</strong>:</p>
+<p>∞-functors from cobordism category to vector spaces = TQFTs</p>
+<p><strong>Higher versions</strong>: - Extended TQFTs (higher
+dimensions) - Factorization algebras (∞-categorical structure)</p>
+<h3 id="higher-gauge-theory">Higher Gauge Theory</h3>
+<p>Quantum field theory with higher symmetries: - 2-gauge connections
+(higher connections) - ∞-categories of principal bundles - Chern-Simons
+theory revisited</p>
+<h2 id="why-beyond-ordinary-categories">Why Beyond Ordinary
+Categories?</h2>
+<ol type="1">
+<li><strong>Homotopy natural</strong>: Captures spaces up to
+equivalence</li>
+<li><strong>Derived structures</strong>: Shadows of classical
+constructions</li>
+<li><strong>∞-functors</strong>: Automatically preserve homotopy
+structure</li>
+<li><strong>Modern physics</strong>: String theory requires higher
+structures</li>
+<li><strong>Algebraic topology</strong>: Intersection homology, perverse
+sheaves</li>
+</ol>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ <strong>Mistake</strong>: “Bicategories need all Pentagon/Triangle
+axioms” ✓ <strong>Reality</strong>: Mac Lane shows only these two;
+others automatic</p>
+<p>❌ <strong>Mistake</strong>: “∞-categories are ∞-groupoids” ✓
+<strong>Reality</strong>: (∞,1)-categories focus on 1-morphisms</p>
+<p>❌ <strong>Mistake</strong>: “Can strictify all coherences” ✓
+<strong>Reality</strong>: Fails for n ≥ 3 (Simpson’s Conjecture)</p>
+<p>❌ <strong>Mistake</strong>: “Homotopy Type Theory replaces set
+theory” ✓ <strong>Reality</strong>: HoTT = constructive mathematics +
+univalence</p>
+<h2 id="study-guide">Study Guide</h2>
+<ol type="1">
+<li>Master 2-categories and bicategories</li>
+<li>Understand associator/unitor coherence</li>
+<li>Learn simplicial sets (background for ∞-categories)</li>
+<li>Study quasi-categories systematically</li>
+<li>Apply to homotopy theory</li>
+<li>Explore stable categories</li>
+<li>Connect to homotopy type theory</li>
+</ol>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Leinster, “Higher Operads, Higher Categories” (introduction)</li>
+<li>Lurie, “Higher Topos Theory” (foundational ∞-category text)</li>
+<li>Riehl &amp; Verity, “Elements of ∞-Category Theory” (modern
+treatment)</li>
+<li>Univalent Foundations, “Homotopy Type Theory: UF” (HoTT book)</li>
+</ul>
+<h2 id="research-questions">Research Questions</h2>
+<ol type="1">
+<li>Why is weak structure necessary for higher categories?</li>
+<li>How does simplicial nerve recover categorical structure?</li>
+<li>Why is univalence axiom profound?</li>
+<li>How do stable categories generalize homological algebra?</li>
+<li>What makes ∞-categories the “right” framework?</li>
+<li>How does TQFT interpret cobordisms as functors?</li>
+</ol>
+</body>
+</html>

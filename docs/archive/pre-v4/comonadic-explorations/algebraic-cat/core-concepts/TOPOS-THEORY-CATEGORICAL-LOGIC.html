@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>TOPOS-THEORY-CATEGORICAL-LOGIC</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#topos-theory-and-categorical-logic-a-comprehensive-treatment"
+id="toc-topos-theory-and-categorical-logic-a-comprehensive-treatment">Topos
+Theory and Categorical Logic: A Comprehensive Treatment</a>
+<ul>
+<li><a href="#what-is-a-topos" id="toc-what-is-a-topos">What is a
+Topos?</a></li>
+<li><a href="#elementary-topoi-complete-axiomatization"
+id="toc-elementary-topoi-complete-axiomatization">Elementary Topoi:
+Complete Axiomatization</a>
+<ul>
+<li><a href="#formal-definition" id="toc-formal-definition">Formal
+Definition</a></li>
+</ul></li>
+<li><a href="#why-these-axioms" id="toc-why-these-axioms">Why These
+Axioms?</a>
+<ul>
+<li><a href="#finite-limits" id="toc-finite-limits">Finite
+Limits</a></li>
+<li><a href="#cartesian-closure" id="toc-cartesian-closure">Cartesian
+Closure</a></li>
+<li><a href="#subobject-classifier-ω"
+id="toc-subobject-classifier-ω">Subobject Classifier Ω</a></li>
+</ul></li>
+<li><a href="#examples-of-elementary-topoi"
+id="toc-examples-of-elementary-topoi">Examples of Elementary Topoi</a>
+<ul>
+<li><a href="#set-the-prototypical-topos"
+id="toc-set-the-prototypical-topos">1. Set: The Prototypical
+Topos</a></li>
+<li><a href="#presheaf-topoi-cop-set" id="toc-presheaf-topoi-cop-set">2.
+Presheaf Topoi: [C^op, Set]</a></li>
+<li><a href="#sheaf-topoi-shx" id="toc-sheaf-topoi-shx">3. Sheaf Topoi:
+Sh(X)</a></li>
+<li><a href="#effective-topos-eff" id="toc-effective-topos-eff">4.
+Effective Topos: Eff</a></li>
+<li><a href="#g-sets-g-equivariant-sets"
+id="toc-g-sets-g-equivariant-sets">5. G-Sets: G-Equivariant
+Sets</a></li>
+<li><a href="#simplicial-sets-sset-δop-set"
+id="toc-simplicial-sets-sset-δop-set">6. Simplicial Sets: sSet = [Δ^op,
+Set]</a></li>
+<li><a href="#realizability-topos-rta"
+id="toc-realizability-topos-rta">7. Realizability Topos: RT(A)</a></li>
+</ul></li>
+<li><a href="#subobject-classifier-and-logical-structure"
+id="toc-subobject-classifier-and-logical-structure">Subobject Classifier
+and Logical Structure</a>
+<ul>
+<li><a href="#the-power-object-ω" id="toc-the-power-object-ω">The Power
+Object Ω</a></li>
+<li><a href="#power-objects-ωx" id="toc-power-objects-ωx">Power Objects:
+Ω^X</a></li>
+</ul></li>
+<li><a href="#grothendieck-topoi-and-sheaves"
+id="toc-grothendieck-topoi-and-sheaves">Grothendieck Topoi and
+Sheaves</a>
+<ul>
+<li><a href="#sites-and-grothendieck-topologies"
+id="toc-sites-and-grothendieck-topologies">Sites and Grothendieck
+Topologies</a></li>
+<li><a href="#sheaves-on-sites" id="toc-sheaves-on-sites">Sheaves on
+Sites</a></li>
+<li><a href="#sheafification"
+id="toc-sheafification">Sheafification</a></li>
+</ul></li>
+<li><a href="#topoi-as-foundations-for-mathematics"
+id="toc-topoi-as-foundations-for-mathematics">Topoi as Foundations for
+Mathematics</a>
+<ul>
+<li><a href="#why-not-zfc" id="toc-why-not-zfc">Why Not ZFC?</a></li>
+<li><a href="#elementary-topos-category-theory-etcs"
+id="toc-elementary-topos-category-theory-etcs">Elementary Topos Category
+Theory (ETCS)</a></li>
+<li><a href="#natural-numbers-objects-nno"
+id="toc-natural-numbers-objects-nno">Natural Numbers Objects
+(NNO)</a></li>
+</ul></li>
+<li><a href="#internal-logic-of-topoi"
+id="toc-internal-logic-of-topoi">Internal Logic of Topoi</a>
+<ul>
+<li><a href="#mitchell-bénabou-language"
+id="toc-mitchell-bénabou-language">Mitchell-Bénabou Language</a></li>
+<li><a href="#intuitionistic-logic"
+id="toc-intuitionistic-logic">Intuitionistic Logic</a></li>
+<li><a href="#examples-of-intuitionistic-reasoning"
+id="toc-examples-of-intuitionistic-reasoning">Examples of Intuitionistic
+Reasoning</a></li>
+</ul></li>
+<li><a href="#geometric-morphisms"
+id="toc-geometric-morphisms">Geometric Morphisms</a>
+<ul>
+<li><a href="#definition" id="toc-definition">Definition</a></li>
+<li><a href="#essential-geometric-morphisms"
+id="toc-essential-geometric-morphisms">Essential Geometric
+Morphisms</a></li>
+<li><a href="#boolean-topoi" id="toc-boolean-topoi">Boolean
+Topoi</a></li>
+</ul></li>
+<li><a href="#applications-throughout-mathematics"
+id="toc-applications-throughout-mathematics">Applications Throughout
+Mathematics</a>
+<ul>
+<li><a href="#sheaf-cohomology" id="toc-sheaf-cohomology">1. Sheaf
+Cohomology</a></li>
+<li><a href="#étale-topology-and-algebraic-geometry"
+id="toc-étale-topology-and-algebraic-geometry">2. Étale Topology and
+Algebraic Geometry</a></li>
+<li><a href="#effective-topos-and-computability"
+id="toc-effective-topos-and-computability">3. Effective Topos and
+Computability</a></li>
+<li><a href="#synthetic-differential-geometry"
+id="toc-synthetic-differential-geometry">4. Synthetic Differential
+Geometry</a></li>
+<li><a href="#homotopy-type-theory" id="toc-homotopy-type-theory">5.
+Homotopy Type Theory</a></li>
+</ul></li>
+<li><a href="#comparisons-topoi-vs-set-theory"
+id="toc-comparisons-topoi-vs-set-theory">Comparisons: Topoi vs Set
+Theory</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#further-reading" id="toc-further-reading">Further
+Reading</a></li>
+<li><a href="#research-questions" id="toc-research-questions">Research
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="topos-theory-and-categorical-logic-a-comprehensive-treatment">Topos
+Theory and Categorical Logic: A Comprehensive Treatment</h1>
+<h2 id="what-is-a-topos">What is a Topos?</h2>
+<p>A <strong>topos</strong> is a category that behaves like the category
+of sets, but with more flexibility. Topoi provide: - An alternative
+foundation for mathematics (not ZFC) - Categorical treatment of geometry
+(via sheaves) - Constructive/intuitionistic mathematics naturally -
+Internal logic (automatic reasoning within the topos)</p>
+<h2 id="elementary-topoi-complete-axiomatization">Elementary Topoi:
+Complete Axiomatization</h2>
+<h3 id="formal-definition">Formal Definition</h3>
+<p>A category ℰ is an <strong>elementary topos</strong> if:</p>
+<p><strong>1. Finite Limits</strong>: - Has terminal object 1 - Has
+binary products X × Y for all X,Y - Has equalizers for parallel pairs
+f,g: X → Y</p>
+<p>Consequence: Has all finite limits (products, pullbacks, etc.)</p>
+<p><strong>2. Cartesian Closure</strong>: - For all X,Y ∈ ℰ, there
+exists internal hom [X,Y] - Exponential adjunction: Hom(X × Y, Z) ≅
+Hom(X, [Y,Z])</p>
+<p><strong>3. Subobject Classifier</strong>: - Existence of object Ω
+with universal property: - Subobjects of X ↔︎ Morphisms X → Ω (bijection)
+- For each monic m: S → X, unique χ_m with: ``` S —m—→ X | | ! χ_m | | 1
+—T—→ Ω</p>
+<pre><code>[pullback diagram]
+```</code></pre>
+<p>Where T: 1 → Ω is “true” element.</p>
+<h2 id="why-these-axioms">Why These Axioms?</h2>
+<h3 id="finite-limits">Finite Limits</h3>
+<ul>
+<li><strong>Terminal 1</strong>: Single element (like ∅ or point)</li>
+<li><strong>Products</strong>: Combine structures (like Cartesian
+product)</li>
+<li><strong>Equalizers</strong>: Define subobjects by equations</li>
+<li>Together: Allow constructing all finite limits (universal
+properties)</li>
+</ul>
+<h3 id="cartesian-closure">Cartesian Closure</h3>
+<ul>
+<li><strong>[X,Y]</strong>: Internalize morphisms as objects</li>
+<li><strong>Exponential law</strong>: Move arguments in/out of
+exponents</li>
+<li><strong>Allows</strong>: Function spaces, higher-order
+structures</li>
+<li><strong>Consequence</strong>: Topos is a <strong>closed symmetric
+monoidal category</strong> (with × as tensor)</li>
+</ul>
+<h3 id="subobject-classifier-ω">Subobject Classifier Ω</h3>
+<ul>
+<li><strong>Generalizes {true, false}</strong>: Ω is “object of truth
+values”</li>
+<li><strong>Subobjects via morphisms</strong>: Instead of “X ⊆ Y”, use
+characteristic function</li>
+<li><strong>Makes logic internal</strong>: Type theory works inside
+topos automatically</li>
+</ul>
+<h2 id="examples-of-elementary-topoi">Examples of Elementary Topoi</h2>
+<h3 id="set-the-prototypical-topos">1. Set: The Prototypical Topos</h3>
+<pre><code>Objects: Sets
+Morphisms: Functions
+Limits: Ordinary set operations
+Ω = {true, false}
+[X,Y] = Y^X (functions X→Y)
+Logic: Classical (every truth value is true or false)</code></pre>
+<h3 id="presheaf-topoi-cop-set">2. Presheaf Topoi: [C^op, Set]</h3>
+<pre><code>Objects: Functors C^op → Set (presheaves)
+Morphisms: Natural transformations
+Limits: Pointwise (computed in Set)
+
+Example: Simplicial sets = [Δ^op, Set]</code></pre>
+<p><strong>Key property</strong>: Always a topos!</p>
+<h3 id="sheaf-topoi-shx">3. Sheaf Topoi: Sh(X)</h3>
+<pre><code>Objects: Sheaves on topological space X
+Morphisms: Sheaf morphisms
+Limits: Pointwise
+
+Subobject classifier Ω:
+- Ω(U) = {open sets V ⊆ U} (all opens)
+- Open sets glue by unions</code></pre>
+<p><strong>Characteristic function</strong>: χ_S(U) = {V ⊆ U | V ⊆
+S}</p>
+<h3 id="effective-topos-eff">4. Effective Topos: Eff</h3>
+<pre><code>Objects: Assemblies (sets with realizability notion)
+Morphisms: Realizable functions
+
+Logic: Intuitionistic (excludes law of excluded middle)
+Church&#39;s thesis: true as internal axiom
+Application: Computability theory</code></pre>
+<h3 id="g-sets-g-equivariant-sets">5. G-Sets: G-Equivariant Sets</h3>
+<pre><code>Objects: Sets with G-action (G finite group)
+Morphisms: G-equivariant functions
+
+Ω = G-set of subgroups (with action)
+Classifier: χ_S(g) = stability group of gS</code></pre>
+<h3 id="simplicial-sets-sset-δop-set">6. Simplicial Sets: sSet = [Δ^op,
+Set]</h3>
+<pre><code>Δ = simplicial category (finite non-empty ordinals)
+Objects: X_n = n-simplices (with face/degeneracy)
+Morphisms: Simplicial maps
+
+Logic: Classical (Set-based)
+Application: Homotopy theory, ∞-categories</code></pre>
+<h3 id="realizability-topos-rta">7. Realizability Topos: RT(A)</h3>
+<pre><code>A = partial combinatory algebra (computation model)
+Objects: Assemblies (sets with realizable proofs)
+Morphisms: Realizable functions
+
+Church-Turing thesis true internally
+Application: Recursive mathematics</code></pre>
+<h2 id="subobject-classifier-and-logical-structure">Subobject Classifier
+and Logical Structure</h2>
+<h3 id="the-power-object-ω">The Power Object Ω</h3>
+<p><strong>Definition</strong>: Ω is the <strong>terminal
+object</strong> in the category of subobject classifiers.</p>
+<p><strong>Universal property</strong>:</p>
+<pre><code>For any monic m: S → X:
+
+∃! χ_m (characteristic function) making diagram pullback:
+
+S ---m---→ X
+|          |
+|          χ_m
+|          |
+1 ---T---→ Ω</code></pre>
+<p><strong>Elements of Ω</strong>: Truth values in the topos</p>
+<p>In Set: Ω = {T, F} In Sh(X): Ω(U) = opens of U In Eff: Ω = partial
+recursive functions</p>
+<h3 id="power-objects-ωx">Power Objects: Ω^X</h3>
+<p><strong>Definition</strong>: P(X) = [X, Ω] (exponential in topos)</p>
+<p><strong>Universal property</strong>: Morphisms X → Ω correspond to
+subobjects of X</p>
+<p><strong>Comprehension</strong>:</p>
+<pre><code>{x ∈ X | φ(x)} ↔ characteristic function X → Ω</code></pre>
+<p><strong>Higher-order logic</strong>: P(P(X)) exists, giving
+impredicative quantification</p>
+<h2 id="grothendieck-topoi-and-sheaves">Grothendieck Topoi and
+Sheaves</h2>
+<h3 id="sites-and-grothendieck-topologies">Sites and Grothendieck
+Topologies</h3>
+<p>A <strong>Grothendieck topology</strong> on small category C: - For
+each X ∈ C, collection Cov(X) of “covering families” - Must satisfy: 1.
+Identity covers (single id morphism) 2. Stability under pullback 3.
+Transitivity (covers of covers)</p>
+<p><strong>Examples</strong>: - Zariski topology (on schemes): Open
+covers in spec(R) - Étale topology: Étale morphisms as covers -
+Canonical: All families with epi legs (arrows)</p>
+<h3 id="sheaves-on-sites">Sheaves on Sites</h3>
+<p><strong>Presheaf</strong> F: C^op → Set</p>
+<p><strong>Sheaf condition</strong>: For covering family {U_i → X}:</p>
+<pre><code>F(X) → ∏F(U_i) ⟹ ∏F(U_i ×_X U_j)
+(matching condition: gluability axiom)</code></pre>
+<p><strong>Consequence</strong>: F is <strong>continuous</strong> with
+respect to Grothendieck topology</p>
+<h3 id="sheafification">Sheafification</h3>
+<p><strong>Theorem</strong>: Every presheaf extends to sheaf
+(sheafification functor)</p>
+<pre><code>Presheaves ⊇ Sheaves
+(lex reflective subcategory)</code></pre>
+<p><strong>Construction</strong>: F^+ = sheafification - F^+(X) =
+colimit of compatible families of F-sections - Natural map F → F^+
+universal</p>
+<h2 id="topoi-as-foundations-for-mathematics">Topoi as Foundations for
+Mathematics</h2>
+<h3 id="why-not-zfc">Why Not ZFC?</h3>
+<p><strong>ZFC Axioms</strong>: - Materialism (elements matter) - Global
+membership ∈ - Law of excluded middle - Axiom of choice</p>
+<p><strong>Alternative in topoi</strong>: - Structuralism (relationships
+matter) - Local logic internal to topos - Constructive/intuitionistic
+reasoning - Choice axiom optional</p>
+<h3 id="elementary-topos-category-theory-etcs">Elementary Topos Category
+Theory (ETCS)</h3>
+<p><strong>Lawvere-Maclane</strong>: Axioms for category of sets
+(category-theoretic)</p>
+<p>Instead of axioms on ∈, axioms on: - Objects (sets) - Morphisms
+(functions) - Composition, identity - Finite limits, colimits,
+exponentials</p>
+<p><strong>Theorem (Lawvere)</strong>: ETCS equivalent to bounded
+ZFC</p>
+<h3 id="natural-numbers-objects-nno">Natural Numbers Objects (NNO)</h3>
+<p><strong>Definition</strong>: N is NNO if:</p>
+<pre><code>0: 1 → N
+s: N → N (successor)
+
+∀f: X → X and e: 1 → X, ∃! u: N → X:
+u ∘ 0 = e
+u ∘ s = f ∘ u
+(recursion principle)</code></pre>
+<p><strong>Consequence</strong>: Can define all arithmetic in topos!</p>
+<h2 id="internal-logic-of-topoi">Internal Logic of Topoi</h2>
+<h3 id="mitchell-bénabou-language">Mitchell-Bénabou Language</h3>
+<p><strong>Internal language</strong>: Reason “as if” objects are
+sets</p>
+<p><strong>Kripke-Joyal Semantics</strong>: Truth notion for internal
+formulas</p>
+<p>For formula φ(x) and stage U:</p>
+<pre><code>U ⊨ φ(x)  iff  characteristic function lands in true
+
+More precisely: U → [1, Ω] lands in T: 1 → Ω</code></pre>
+<h3 id="intuitionistic-logic">Intuitionistic Logic</h3>
+<p>In topoi (especially non-Boolean): - <strong>Law of excluded middle
+fails</strong>: A ∨ ¬A not provable - <strong>Double negation</strong>:
+¬¬A not equivalent to A - <strong>Proof by contradiction</strong>: Not
+valid in constructive logic - <strong>BHK interpretation</strong>:
+Proofs are constructions, not just existence claims</p>
+<h3 id="examples-of-intuitionistic-reasoning">Examples of Intuitionistic
+Reasoning</h3>
+<p>In effective topos:</p>
+<pre><code>∀x ∃y φ(x,y)  [universal + existential]
+
+≠ ∃f ∀x φ(x, f(x))  [requires choice function!]
+
+Church&#39;s thesis: all functions are computable</code></pre>
+<h2 id="geometric-morphisms">Geometric Morphisms</h2>
+<h3 id="definition">Definition</h3>
+<p><strong>Geometric morphism</strong> f: ℰ → ℱ (f: ℱ → ℰ in opposite
+direction):</p>
+<pre><code>f*: ℱ → ℰ  (inverse image, must be left exact)
+f_*: ℰ → ℱ  (direct image, right adjoint to f*)</code></pre>
+<p><strong>Left exactness of f</strong>*: Preserves finite limits</p>
+<p><strong>Key property</strong>: f* ⊣ f_* always holds!</p>
+<h3 id="essential-geometric-morphisms">Essential Geometric
+Morphisms</h3>
+<p>When f_* also has left adjoint f!:</p>
+<pre><code>f! ⊣ f* ⊣ f_*
+(essential morphism)</code></pre>
+<p><strong>Consequence</strong>: Much stronger, allows comparing
+logic</p>
+<h3 id="boolean-topoi">Boolean Topoi</h3>
+<p><strong>Topos ℰ is Boolean</strong> if:</p>
+<pre><code>Ω = {T, F}  (two-element set)
+
+Equivalently: Law of excluded middle
+Equivalently: Every object decidable</code></pre>
+<p><strong>Theorem (Barr)</strong>: Every topos has Boolean
+sheafification</p>
+<h2 id="applications-throughout-mathematics">Applications Throughout
+Mathematics</h2>
+<h3 id="sheaf-cohomology">1. Sheaf Cohomology</h3>
+<pre><code>H^i(X, F) = Ext^i(𝒪_X, F)
+
+Define via exact sequences in Sh(X)
+Works for any sheaf on any topos</code></pre>
+<h3 id="étale-topology-and-algebraic-geometry">2. Étale Topology and
+Algebraic Geometry</h3>
+<pre><code>Scheme X has étale topology
+Sheaves measure étale structure
+Adic rings from sheaf sections</code></pre>
+<h3 id="effective-topos-and-computability">3. Effective Topos and
+Computability</h3>
+<pre><code>Every morphism is algorithm
+Decidability is propositional form
+Computability provable internally</code></pre>
+<h3 id="synthetic-differential-geometry">4. Synthetic Differential
+Geometry</h3>
+<pre><code>Smooth topos SDG:
+- Infinitesimals exist (dx)
+- Taylor expansion automatic
+- Derivatives from logic</code></pre>
+<h3 id="homotopy-type-theory">5. Homotopy Type Theory</h3>
+<pre><code>Types are ∞-groupoids
+Paths are proofs of equality
+Univalence: equivalence = equality
+
+∞-topoi (Lurie): Higher sheaf theory</code></pre>
+<h2 id="comparisons-topoi-vs-set-theory">Comparisons: Topoi vs Set
+Theory</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>ZFC</th>
+<th>Topos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foundation</td>
+<td>Sets + membership</td>
+<td>Categories + morphisms</td>
+</tr>
+<tr>
+<td>Logic</td>
+<td>Classical (LEM)</td>
+<td>Constructive (default)</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>External</td>
+<td>Internal + via sheaves</td>
+</tr>
+<tr>
+<td>Functions</td>
+<td>Global</td>
+<td>Local (sheaves)</td>
+</tr>
+<tr>
+<td>Truth values</td>
+<td>{T,F}</td>
+<td>Ω object (variable)</td>
+</tr>
+<tr>
+<td>Choice</td>
+<td>Axiom</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ <strong>Mistake</strong>: “Topos = generalization of Set” ✓
+<strong>Reality</strong>: Topos = flexible foundation, Set is special
+case</p>
+<p>❌ <strong>Mistake</strong>: “Topoi must satisfy classical logic” ✓
+<strong>Reality</strong>: Default is intuitionistic; Boolean is
+special</p>
+<p>❌ <strong>Mistake</strong>: “Sheaves are only topological” ✓
+<strong>Reality</strong>: Sheaves work on any site (Zariski, étale,
+etc.)</p>
+<p>❌ <strong>Mistake</strong>: “Subobject classifier is just truth
+values” ✓ <strong>Reality</strong>: Ω is sophisticated object
+controlling all logic</p>
+<h2 id="study-guide">Study Guide</h2>
+<ol type="1">
+<li>Master finite limits and cartesian closure</li>
+<li>Understand subobject classifier deeply</li>
+<li>Work through presheaf example [C^op, Set]</li>
+<li>Study sheafification on topological space</li>
+<li>Learn internal logic (Mitchell-Bénabou)</li>
+<li>Explore Kripke-Joyal semantics</li>
+<li>Apply to effective topos</li>
+<li>Connect to homotopy type theory</li>
+</ol>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Mac Lane &amp; Moerdijk, “Sheaves in Geometry and Logic”
+(foundational)</li>
+<li>Johnstone, “Sketches of an Elephant” (comprehensive reference)</li>
+<li>Taylor, “Practical Foundations of Mathematics” (constructive
+approach)</li>
+<li>Univalent Foundations, “Homotopy Type Theory” (modern
+direction)</li>
+</ul>
+<h2 id="research-questions">Research Questions</h2>
+<ol type="1">
+<li>Why must subobject classifier exist?</li>
+<li>How does logic emerge from Ω?</li>
+<li>Why is classical logic exceptional?</li>
+<li>What makes Grothendieck topologies fundamental?</li>
+<li>How do topoi generalize ZFC?</li>
+<li>Why is sheafification universal?</li>
+</ol>
+</body>
+</html>

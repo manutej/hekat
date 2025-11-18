@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01-CATEGORIES-FOUNDATIONAL</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#categories-foundational-definition-and-examples"
+id="toc-categories-foundational-definition-and-examples">Categories:
+Foundational Definition and Examples</a>
+<ul>
+<li><a href="#what-is-a-category" id="toc-what-is-a-category">What is a
+Category?</a></li>
+<li><a href="#formal-definition" id="toc-formal-definition">Formal
+Definition</a></li>
+<li><a href="#concrete-examples" id="toc-concrete-examples">11 Concrete
+Examples</a>
+<ul>
+<li><a href="#set-sets-and-functions" id="toc-set-sets-and-functions">1.
+Set: Sets and Functions</a></li>
+<li><a href="#top-topological-spaces" id="toc-top-topological-spaces">2.
+Top: Topological Spaces</a></li>
+<li><a href="#grp-groups-and-homomorphisms"
+id="toc-grp-groups-and-homomorphisms">3. Grp: Groups and
+Homomorphisms</a></li>
+<li><a href="#vect_k-vector-spaces" id="toc-vect_k-vector-spaces">4.
+Vect_k: Vector Spaces</a></li>
+<li><a href="#ring-rings-and-ring-homomorphisms"
+id="toc-ring-rings-and-ring-homomorphisms">5. Ring: Rings and Ring
+Homomorphisms</a></li>
+<li><a href="#poset-partially-ordered-sets"
+id="toc-poset-partially-ordered-sets">6. Poset: Partially Ordered
+Sets</a></li>
+<li><a href="#rel-relations" id="toc-rel-relations">7. Rel:
+Relations</a></li>
+<li><a href="#mon-monoids" id="toc-mon-monoids">8. Mon: Monoids</a></li>
+<li><a href="#cat-the-category-of-categories"
+id="toc-cat-the-category-of-categories">9. Cat: The Category of
+Categories</a></li>
+<li><a href="#met-metric-spaces" id="toc-met-metric-spaces">10. Met:
+Metric Spaces</a></li>
+<li><a href="#measured-spaces" id="toc-measured-spaces">11. Measured
+Spaces</a></li>
+</ul></li>
+<li><a href="#morphism-properties" id="toc-morphism-properties">Morphism
+Properties</a>
+<ul>
+<li><a href="#isomorphism" id="toc-isomorphism">Isomorphism</a></li>
+<li><a href="#monomorphism-monic"
+id="toc-monomorphism-monic">Monomorphism (Monic)</a></li>
+<li><a href="#epimorphism-epic" id="toc-epimorphism-epic">Epimorphism
+(Epic)</a></li>
+<li><a href="#endomorphism" id="toc-endomorphism">Endomorphism</a></li>
+<li><a href="#automorphism" id="toc-automorphism">Automorphism</a></li>
+<li><a href="#bimorphism" id="toc-bimorphism">Bimorphism</a></li>
+</ul></li>
+<li><a href="#commutative-diagrams"
+id="toc-commutative-diagrams">Commutative Diagrams</a></li>
+<li><a href="#small-vs-large-categories"
+id="toc-small-vs-large-categories">Small vs Large Categories</a></li>
+<li><a href="#why-categories" id="toc-why-categories">Why
+Categories?</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#key-takeaways" id="toc-key-takeaways">Key
+Takeaways</a></li>
+<li><a href="#study-questions" id="toc-study-questions">Study
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="categories-foundational-definition-and-examples">Categories:
+Foundational Definition and Examples</h1>
+<h2 id="what-is-a-category">What is a Category?</h2>
+<p>A <strong>category</strong> is an abstract structure capturing: -
+<strong>Objects</strong>: Things being studied (sets, groups,
+topological spaces, etc.) - <strong>Morphisms</strong>:
+Structure-preserving maps between objects -
+<strong>Composition</strong>: How morphisms combine</p>
+<h2 id="formal-definition">Formal Definition</h2>
+<p>Category C = (Ob(C), Mor(C), ∘, id) where:</p>
+<p><strong>1. Collections</strong>: - Ob(C): objects of C - For each X,
+Y ∈ Ob(C): Hom_C(X,Y) = morphisms f: X → Y</p>
+<p><strong>2. Composition</strong>:</p>
+<pre><code>∘: Hom(Y,Z) × Hom(X,Y) → Hom(X,Z)
+  (g,f) ↦ g ∘ f</code></pre>
+<p><strong>3. Identities</strong>:</p>
+<pre><code>For each X ∈ Ob(C): id_X ∈ Hom(X,X)</code></pre>
+<p><strong>4. Axioms</strong>:</p>
+<pre><code>ASSOCIATIVITY: (h ∘ g) ∘ f = h ∘ (g ∘ f)
+IDENTITY: id_Y ∘ f = f = f ∘ id_X</code></pre>
+<h2 id="concrete-examples">11 Concrete Examples</h2>
+<h3 id="set-sets-and-functions">1. Set: Sets and Functions</h3>
+<p>Objects: All sets Morphisms: Functions f: X → Y Composition: Function
+composition Identity: id_X(x) = x</p>
+<h3 id="top-topological-spaces">2. Top: Topological Spaces</h3>
+<p>Objects: Topological spaces Morphisms: Continuous functions
+Composition: Functional composition (continuous ∘ continuous =
+continuous)</p>
+<h3 id="grp-groups-and-homomorphisms">3. Grp: Groups and
+Homomorphisms</h3>
+<p>Objects: Groups (G, ·) Morphisms: Group homomorphisms φ: G → H
+(preserve multiplication) Composition: Function composition
+(homomorphism ∘ homomorphism = homomorphism)</p>
+<h3 id="vect_k-vector-spaces">4. Vect_k: Vector Spaces</h3>
+<p>Objects: Vector spaces over field k Morphisms: k-linear maps f: V → W
+(f(av + bw) = af(v) + bf(w))</p>
+<h3 id="ring-rings-and-ring-homomorphisms">5. Ring: Rings and Ring
+Homomorphisms</h3>
+<p>Objects: Rings (R, +, ×) Morphisms: Ring homomorphisms (preserve both
+operations)</p>
+<h3 id="poset-partially-ordered-sets">6. Poset: Partially Ordered
+Sets</h3>
+<p>Objects: Posets (S, ≤) Morphisms: f: S → T with x ≤ y ⟹ f(x) ≤ f(y)
+(order-preserving)</p>
+<h3 id="rel-relations">7. Rel: Relations</h3>
+<p>Objects: Sets Morphisms: Relations R ⊆ X × Y Composition: Relational
+composition {(x,z) | ∃y: (x,y) ∈ R, (y,z) ∈ S}</p>
+<h3 id="mon-monoids">8. Mon: Monoids</h3>
+<p>Objects: Monoids (M, ·, e) Morphisms: Monoid homomorphisms</p>
+<h3 id="cat-the-category-of-categories">9. Cat: The Category of
+Categories</h3>
+<p>Objects: Small categories Morphisms: Functors (structure-preserving
+maps between categories)</p>
+<h3 id="met-metric-spaces">10. Met: Metric Spaces</h3>
+<p>Objects: Metric spaces (X, d) Morphisms: Continuous functions
+(distance-preserving)</p>
+<h3 id="measured-spaces">11. Measured Spaces</h3>
+<p>Objects: Measurable spaces (X, Σ) Morphisms: Measurable functions</p>
+<h2 id="morphism-properties">Morphism Properties</h2>
+<h3 id="isomorphism">Isomorphism</h3>
+<p>f: X → Y with ∃g: Y → X where g ∘ f = id_X and f ∘ g = id_Y</p>
+<p><strong>Interpretation</strong>: X and Y are “same” in category</p>
+<h3 id="monomorphism-monic">Monomorphism (Monic)</h3>
+<p>f: X → Y such that f ∘ g₁ = f ∘ g₂ ⟹ g₁ = g₂</p>
+<p><strong>In Set</strong>: Injective functions
+<strong>General</strong>: Left-cancellative</p>
+<h3 id="epimorphism-epic">Epimorphism (Epic)</h3>
+<p>f: X → Y such that h₁ ∘ f = h₂ ∘ f ⟹ h₁ = h₂</p>
+<p><strong>In Set</strong>: Surjective functions
+<strong>General</strong>: Right-cancellative <strong>Warning</strong>:
+NOT always surjective! (Example: ℤ → ℚ in Ring)</p>
+<h3 id="endomorphism">Endomorphism</h3>
+<p>f: X → X (morphism from object to itself)</p>
+<h3 id="automorphism">Automorphism</h3>
+<p>f: X → X that is isomorphism</p>
+<h3 id="bimorphism">Bimorphism</h3>
+<p>f that is both monic and epic (but may not be iso!)</p>
+<h2 id="commutative-diagrams">Commutative Diagrams</h2>
+<p>Visual representation of morphism relationships:</p>
+<pre><code>       f
+   X ---→ Y
+   |      |
+  g|      |h
+   |      |
+   ↓      ↓
+   Z ---→ W
+       k</code></pre>
+<p>Diagram commutes if: k ∘ g = h ∘ f</p>
+<h2 id="small-vs-large-categories">Small vs Large Categories</h2>
+<p><strong>Locally Small</strong>: Hom_C(X,Y) is a set (not proper
+class)</p>
+<p><strong>Small Category</strong>: Ob(C) and Mor(C) are sets</p>
+<p><strong>Large Category</strong>: Allow proper classes of
+objects/morphisms Example: Category Cat of all categories (proper class
+of objects)</p>
+<h2 id="why-categories">Why Categories?</h2>
+<ol type="1">
+<li><strong>Unifies Mathematics</strong>: Same structure in algebra,
+topology, logic</li>
+<li><strong>Universal Properties</strong>: Characterize objects by
+relationships</li>
+<li><strong>Morphisms Over Elements</strong>: Focus on
+structure-preserving maps</li>
+<li><strong>Duality</strong>: Opposite category gives free theorems</li>
+<li><strong>Abstraction</strong>: Common patterns across
+disciplines</li>
+</ol>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ “Objects are primary, morphisms secondary” ✓ Actually: Morphisms
+define structure; objects are just labels</p>
+<p>❌ “Monomorphism = Injective”<br />
+✓ Only in concrete categories; ℤ → ℚ is monic epic but not iso</p>
+<p>❌ “Categories require elements” ✓ No: Categories are purely
+structural</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Categories capture mathematical structure abstractly</li>
+<li>Morphisms are the primary data</li>
+<li>Composition respects structure</li>
+<li>Many familiar structures are categories</li>
+<li>Universal properties are morphism conditions</li>
+</ul>
+<h2 id="study-questions">Study Questions</h2>
+<ol type="1">
+<li>What makes a morphism an isomorphism?</li>
+<li>Why isn’t every bimorphism an isomorphism?</li>
+<li>How do limits generalize universal properties?</li>
+<li>What does locally small mean?</li>
+<li>Why focus on morphisms instead of elements?</li>
+</ol>
+</body>
+</html>

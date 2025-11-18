@@ -1,0 +1,550 @@
+# Hekat: DSL for Claude Code Agent Orchestration
+
+**Project Codename**: Hekat (Ancient Egyptian: "measurement")
+**Status**: v4.0 Balanced Architecture ✅ | Production (L1-L4) Ready | Experimental (L5) Validating | Research (L6-L7) Long-Term
+**Created**: 2025-10-19
+**Last Updated**: 2025-11-01
+
+---
+
+## ⭐ Version 4.0 - Three-Track Architecture
+
+**IMPORTANT**: Hekat DSL has been refactored to v4.0 with a balanced three-track approach:
+
+- ✅ **Production Track (L1-L4)**: Ship now, proven value, 95% of queries
+- ⚠️ **Experimental Track (L5)**: Validate carefully, user consent required, <1% of queries
+- 🔬 **Research Track (L6-L7)**: 5-10 year research horizon, not production-ready
+
+**Authority**: All development follows [`CORE.md`](CORE.md) - the authoritative three-track directive.
+
+**Key Documents (v4.0)**:
+- **[CORE.md](CORE.md)** - ⭐ **AUTHORITATIVE** directive for all development
+- **[HEKAT_OPERATIONAL_MODEL_v4.md](docs/hekat-dsl/models/HEKAT_OPERATIONAL_MODEL_v4.md)** - Production-focused operational reference
+- **[HEKAT_PRACTICAL_PATTERNS_v4.md](docs/hekat-dsl/patterns/HEKAT_PRACTICAL_PATTERNS_v4.md)** - All patterns with track markers (✅⚠️🔬)
+- **[HEKAT_QUERY_REFERENCE_v4.md](docs/hekat-dsl/models/HEKAT_QUERY_REFERENCE_v4.md)** - Production-ready query reference
+- **[HEKAT_MEMORY_MODEL_v4.md](docs/hekat-dsl/models/HEKAT_MEMORY_MODEL_v4.md)** - Track-aware consciousness system
+
+**Production Patterns (Ready Now)** ✅:
+- L1 NOVICE: Simple queries (`api-architect : "design API"`)
+- L2 COMPETENT: Sequential + skilled (`research -> design -> implement`)
+- L3 PROFICIENT: Parallel + mixed (`(frontend || backend || devops)`)
+- L4 ADVANCED: Fallback + commanded (`primary ? secondary ? tertiary`)
+
+**Experimental Patterns (Validating)** ⚠️:
+- L5 EXPERT: Probabilistic ensemble (`sample³ ; merge ; synthesize`) - Decision gate pending
+
+**Research Patterns (5-10 Years)** 🔬:
+- L6 MASTER: Formal verification workflows
+- L7 GENIUS: Comonadic orchestration paradigms
+
+---
+
+## Overview
+
+Hekat is a Domain-Specific Language (DSL) for orchestrating agents, skills, and commands in Claude Code CLI. The name "hekat" comes from ancient Egyptian mathematics, where it represented a unit of measurement and precision—symbolizing the mathematical rigor and exactness of this orchestration framework.
+
+### Vision
+
+Create a mathematically rigorous, type-safe, voice-accessible DSL that enables:
+- **Sequential Composition**: `agent1 -> agent2 -> agent3`
+- **Parallel Execution**: `agent1 || agent2 || agent3`
+- **Skill Combination**: `agent + skill1 + skill2`
+- **Task Specification**: `agent : "task description"`
+- **Complex Orchestration**: Multi-level workflows with conditional branching, error handling, and meta-programming
+
+### Core Philosophy
+
+```
+Natural Language → Verbal DSL → Formal DSL → Execution
+```
+
+Make advanced agent orchestration accessible through:
+1. **Mathematical Foundations**: Category theory, graph theory, type systems
+2. **Progressive Complexity**: 6 levels from basic to meta-programming
+3. **Voice Interface**: Hands-free natural language control
+4. **Type Safety**: Compile-time validation of agent compositions
+5. **Deterministic Execution**: Reproducible results with DAG-based scheduling
+
+---
+
+## 🚀 Quick Start
+
+### **Shortest Possible Syntax**
+
+Hekat DSL provides minimal-keystroke workflows with complete mathematical rigor:
+
+```bash
+# Level 1: Basic (5-15K tokens, 2-5 min)
+api-architect : "design REST API"
+
+# Level 2: Binary Operations (10-30K tokens, 5-15 min)
+research -> design -> implement
+
+# Level 3: Parallel Streams (40-100K tokens, 20-45 min) ⭐
+sample³ ; merge ; refine : "quantum computing"
+
+# Level 6: Monadic Meta-Programming (200K+ tokens, 3+ hours)
+retry(3, backoff=exp) { risky_operation }
+```
+
+### **Example: Probabilistic Research Chain**
+
+**What you type** (28 characters):
+```dsl
+sample³ ; merge ; refine
+```
+
+**What it compiles to**:
+```
+DSL → PROP Term → DAG → Optimized Execution
+
+sample³ ; merge ; refine
+    ↓
+copy₃ ; (sample ⊗ sample ⊗ sample) ; merge ; refine : 1→3→3→1→1
+    ↓
+7 nodes, 8 edges, 6 scheduling levels
+    ↓
+Parallel execution: 3 samples concurrently
+Result: ~10 min, 75K tokens (vs 30 min sequential)
+```
+
+### **Example: Error Handling with Fallback**
+
+**What you type** (27 characters):
+```dsl
+primary ? secondary ? tertiary
+```
+
+**What it means**:
+- Try primary LLM first
+- If failure (Nothing), try secondary
+- If failure again, try tertiary
+- Short-circuits on first success (Just)
+
+**Success rate**: If each has 85% success → 99.7% overall
+
+### **See Full Examples**
+
+📁 **[examples/](examples/)** - Complete layered interpretations
+- [Probabilistic Workflows](examples/level6-examples-probabilistic.md)
+- [Error Handling & Fallback](examples/level6-examples-error-handling.md)
+
+Each example shows **7 layers** from shortest CLI input to complete execution architecture.
+
+---
+
+## 📖 Documentation Menu
+
+### **🎯 Getting Started**
+1. **[QUICKSTART.md](QUICKSTART.md)** - 5-minute introduction
+2. **[examples/README.md](examples/README.md)** - Hands-on examples
+3. **[DSL-SYMBOLIC-VISUAL-GUIDE.md](docs/DSL-SYMBOLIC-VISUAL-GUIDE.md)** - Quick reference
+
+### **📚 Core Documentation**
+- **[DSL-COMPLEXITY-LEVELS.md](docs/DSL-COMPLEXITY-LEVELS.md)** - 7 levels from basic to consciousness
+- **[DSL-ORCHESTRATION-COMPREHENSIVE.md](docs/DSL-ORCHESTRATION-COMPREHENSIVE.md)** - 150+ page deep dive
+- **[DSL-VERBAL-INTERFACE.md](docs/DSL-VERBAL-INTERFACE.md)** - Voice/accessibility interface
+
+### **🔬 Advanced Research**
+- **[FORMAL-SYMBOLIC-ENCODINGS-WORKFLOW-DSLS.md](docs/FORMAL-SYMBOLIC-ENCODINGS-WORKFLOW-DSLS.md)** - Mathematical foundations
+- **[MARKOV-CATEGORIES-PROBABILISTIC-ORCHESTRATION.md](docs/MARKOV-CATEGORIES-PROBABILISTIC-ORCHESTRATION.md)** - Probabilistic workflows
+- **[COMONADS-LLM-ORCHESTRATION-ANALYSIS.md](docs/COMONADS-LLM-ORCHESTRATION-ANALYSIS.md)** - Contextual computation
+- **[PROBABILISTIC-HYPERGRAPHS-WORKFLOW-ORCHESTRATION.md](docs/PROBABILISTIC-HYPERGRAPHS-WORKFLOW-ORCHESTRATION.md)** - Beyond DAGs
+
+### **💡 Examples by Category**
+- **[Probabilistic](examples/level6-examples-probabilistic.md)** - `Dist<A>` monad (3 examples)
+- **[Error Handling](examples/level6-examples-error-handling.md)** - `Maybe/Either` monads (3 examples)
+- **State Management** [TODO] - `State<S,A>` monad
+- **Context-Aware** [TODO] - `Reader<Env,A>` monad
+
+---
+
+## Project Structure
+
+```
+hekat/
+├── README.md                    # This file
+│
+├── research/                    # Foundational Research
+│   ├── INDEX.md                # Research documentation index
+│   ├── DSL-RESEARCH.md         # 70-page comprehensive research
+│   ├── dsl-visual-reference.md # Visual pattern library
+│   └── DSL-PROJECT-SUMMARY.md  # Project summary
+│
+├── design/                      # Specifications & Formal Design
+│   ├── INDEX.md                # Design documentation index
+│   ├── dsl-specification.md    # Formal mathematical specification
+│   ├── dsl-api-blueprint.md    # API design and contracts
+│   └── DSL-ORCHESTRATION-REFINED.md  # Production-ready spec
+│
+├── docs/                        # User Documentation
+│   ├── INDEX.md                # User guide index
+│   ├── DSL-COMPLEXITY-LEVELS.md        # 6-level hierarchy
+│   ├── DSL-ORCHESTRATION-COMPREHENSIVE.md  # 150-page guide
+│   ├── DSL-SYMBOLIC-VISUAL-GUIDE.md    # Quick reference
+│   ├── DSL-VERBAL-INTERFACE.md         # Voice interface guide
+│   └── dsl-examples.md                 # Practical examples
+│
+└── implementation/              # Code & Tooling (Future)
+    └── (compiler, parser, MCP server, voice interface)
+```
+
+---
+
+## Documentation Guide
+
+### For Beginners
+
+Start here to understand the basics:
+
+1. **[DSL-SYMBOLIC-VISUAL-GUIDE.md](docs/DSL-SYMBOLIC-VISUAL-GUIDE.md)** - Quick reference with symbols and patterns
+2. **[DSL-COMPLEXITY-LEVELS.md](docs/DSL-COMPLEXITY-LEVELS.md)** - 6 levels from basic to advanced
+3. **[dsl-examples.md](docs/dsl-examples.md)** - Practical examples
+
+### For Voice/Accessibility
+
+If you need hands-free or voice-first interaction:
+
+**[DSL-VERBAL-INTERFACE.md](docs/DSL-VERBAL-INTERFACE.md)** - Complete voice interface guide with natural language mappings
+
+### For Deep Dive
+
+Comprehensive coverage of all aspects:
+
+**[DSL-ORCHESTRATION-COMPREHENSIVE.md](docs/DSL-ORCHESTRATION-COMPREHENSIVE.md)** - 150-page comprehensive guide with:
+- All 6 complexity levels in detail
+- 80+ ASCII visualizations
+- Advanced topics (optimization, error handling)
+- Complete pattern library
+
+### For Implementers
+
+Building the DSL compiler or tooling:
+
+1. **[dsl-specification.md](design/dsl-specification.md)** - Formal mathematical specification
+2. **[DSL-ORCHESTRATION-REFINED.md](design/DSL-ORCHESTRATION-REFINED.md)** - Production-ready spec with algorithms
+3. **[dsl-api-blueprint.md](design/dsl-api-blueprint.md)** - API contracts and integration
+
+### For Researchers
+
+Theoretical foundations and academic rigor:
+
+**[DSL-RESEARCH.md](research/DSL-RESEARCH.md)** - 70-page research document covering:
+- DSL theory and patterns
+- Lambda calculus and functional composition
+- Category theory foundations
+- Real-world DSL analysis
+
+---
+
+## Core Operators
+
+| Symbol | Name | Meaning | Example |
+|--------|------|---------|---------|
+| `->` | Sequential | Do this then that | `A -> B -> C` |
+| `||` | Parallel | Run simultaneously | `A || B || C` |
+| `+` | Combination | Combine capabilities | `agent + skill1 + skill2` |
+| `:` | Specification | Bind task to agent | `agent : "task"` |
+| `?` | Conditional | Branch on condition | `A -> ? -> B \| C` |
+| `*` | Iteration | Repeat operation | `(A -> B)*` |
+| `⟲` | Retry | Retry with fallback | `A ⟲³ -> fallback` |
+
+---
+
+## Complexity Levels
+
+### Level 1: Basic Invocation (5-15K tokens, 2-5 min)
+```dsl
+api-architect : "design REST API"
+```
+
+### Level 2: Binary Operations (10-30K tokens, 5-15 min)
+```dsl
+research_domain -> design_api
+design_frontend || design_backend
+agent + skill1 + skill2
+```
+
+### Level 3: Parallel Streams (40-100K tokens, 20-45 min) ⭐
+```dsl
+(/deep + /ctx7 || /orch /wflw || /meta-skill-builder) : "task"
+```
+
+### Level 4: Complex Orchestration (80-150K tokens, 45-90 min)
+```dsl
+test_suite -> if(all_pass) deploy : (fix -> retest)
+```
+
+### Level 5: Workflow Composition (120-250K tokens, 90-180 min)
+```dsl
+workflow microservice_dev(service, domain) {
+  research(domain) ->
+  (design_api || design_db || design_infra) ->
+  implement ->
+  test ->
+  deploy
+}
+```
+
+### Level 6: Meta-Programming (200K+ tokens, 3+ hours)
+```dsl
+workflow_generator<T>(domain: Domain<T>) -> Workflow<T> {
+  fmap(transform: T -> U) -> Workflow<U>
+  bind(f: T -> Workflow<U>) -> Workflow<U>
+}
+```
+
+---
+
+## Mathematical Foundations
+
+### Category Theory
+
+**Agents as Morphisms**:
+```
+Agent: A -> B (transforms input A to output B)
+
+Sequential Composition (∘):
+(f ∘ g): A -> C  where  f: B -> C, g: A -> B
+
+Identity:
+id: A -> A
+```
+
+**Functors**:
+```haskell
+fmap: (A -> B) -> Workflow<A> -> Workflow<B>
+```
+
+**Monads**:
+```haskell
+return: A -> Workflow<A>
+bind: Workflow<A> -> (A -> Workflow<B>) -> Workflow<B>
+```
+
+### Graph Theory
+
+**DAG Construction**:
+```
+Workflow → Parse → AST → Type Check → Build DAG → Stratify → Execute
+```
+
+**Topological Sort**:
+```python
+def stratify(dag):
+    levels = []
+    in_degree = {node: 0 for node in dag.nodes}
+
+    for edge in dag.edges:
+        in_degree[edge.target] += 1
+
+    remaining = set(dag.nodes)
+    while remaining:
+        level = {node for node in remaining if in_degree[node] == 0}
+        levels.append(level)
+        # ... update in_degree for next level
+
+    return levels
+```
+
+---
+
+## Voice Interface
+
+### Natural Language Translation
+
+| Natural Speech | Verbal DSL | Formal DSL |
+|---------------|------------|------------|
+| "then" | "then" | `->` |
+| "and" / "together" | "and" | `||` |
+| "with" / "plus" | "with" | `+` |
+| "on" / "for task" | "task" | `:` |
+
+### Example Translation
+
+**SAY**:
+```
+"Run deep research and context lookup in parallel,
+then synthesize findings on DSL design"
+```
+
+**VERBAL**:
+```
+parallel: deep research, context lookup
+then: synthesize
+task: DSL design
+```
+
+**FORMAL**:
+```dsl
+(/deep || /ctx7) -> synthesize : "DSL design"
+```
+
+---
+
+## Implementation Roadmap
+
+### Phase 1: Foundation ✓ (Current)
+- [x] Mathematical framework
+- [x] Operator semantics
+- [x] Complexity hierarchy
+- [x] Voice interface design
+- [x] Comprehensive documentation
+
+### Phase 2: Compiler (Next)
+- [ ] Lexer and parser
+- [ ] AST construction
+- [ ] Type checker
+- [ ] DAG builder
+- [ ] Error reporting
+
+### Phase 3: Runtime
+- [ ] Execution engine
+- [ ] Stratified scheduler
+- [ ] Resource manager
+- [ ] State persistence
+- [ ] Monitoring/observability
+
+### Phase 4: Voice Integration
+- [ ] Speech-to-text pipeline
+- [ ] Intent recognition
+- [ ] DSL compiler integration
+- [ ] Voice feedback system
+- [ ] Accessibility features
+
+### Phase 5: MCP Server
+- [ ] DSL compilation service
+- [ ] Workflow management
+- [ ] Template library
+- [ ] Integration with Claude Code
+
+### Phase 6: Production
+- [ ] Performance optimization
+- [ ] Security hardening
+- [ ] Documentation
+- [ ] Testing suite
+- [ ] User guides
+
+---
+
+## Key Features
+
+### Type Safety
+```typescript
+// Compile-time type checking
+Agent<A, B> -> Agent<B, C> : Agent<A, C>  ✓
+Agent<A, B> -> Agent<X, Y> : TYPE ERROR   ✗
+```
+
+### Deterministic Execution
+```
+DAG construction → Topological sort → Stratified execution
+= Same input → Same output (reproducible)
+```
+
+### Progressive Disclosure
+```
+Beginner  → Natural language voice commands
+↓
+Intermediate → Verbal DSL with simple syntax
+↓
+Expert → Formal DSL with full expressiveness
+```
+
+### Resource Management
+```
+Token budgets, concurrency limits, timeouts
+= Optimal resource utilization
+```
+
+---
+
+## Visual Patterns
+
+### Pipeline
+```
+●──→●──→●──→●
+   linear flow
+```
+
+### Diamond
+```
+    ●
+   ╱ ╲
+  ●   ●
+   ╲ ╱
+    ●
+```
+
+### Star (Hub-Spoke)
+```
+    ●
+   ╱│╲╲
+  ● ● ● ●
+```
+
+### Map-Reduce
+```
+[●,●,●,●]
+    │ map
+ ┌──┼──┐
+ ●  ●  ●  (parallel)
+ │  │  │
+ └──┼──┘
+    │ reduce
+    ●
+```
+
+---
+
+## Contributing
+
+This project is in active research and design phase. Key areas for contribution:
+
+1. **Mathematical Rigor**: Category theory, type theory, graph algorithms
+2. **Voice Interface**: NLP, intent recognition, accessibility
+3. **Implementation**: Compiler design, runtime optimization
+4. **Documentation**: Examples, tutorials, API docs
+5. **Testing**: Property-based testing, fuzzing, benchmarks
+
+---
+
+## References
+
+### External Research
+- Lambda Calculus and Functional Composition
+- Category Theory for Programmers
+- Graph Theory and Algorithms
+- DSL Design Patterns
+- Voice User Interface Design
+- Accessibility Standards (WCAG)
+
+### Claude Code Resources
+- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code)
+- [Agent Skills Blog Post](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+- MCP Server Protocol Specification
+
+### Real-World DSL Analysis
+- GitHub Actions Workflows
+- Apache Airflow DAGs
+- Terraform HCL
+- AWS CloudFormation
+- Kubernetes Manifests
+
+---
+
+## License
+
+Part of the LUXOR project.
+
+---
+
+## Contact
+
+For questions or contributions to the Hekat DSL project, see the LUXOR project documentation.
+
+---
+
+**Hekat**: Precision in measurement, precision in orchestration.
+
+*Ancient wisdom meets modern agent coordination.*

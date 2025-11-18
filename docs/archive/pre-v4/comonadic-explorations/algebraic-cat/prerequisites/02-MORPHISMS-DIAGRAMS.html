@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>02-MORPHISMS-DIAGRAMS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#morphisms-and-commutative-diagrams"
+id="toc-morphisms-and-commutative-diagrams">Morphisms and Commutative
+Diagrams</a>
+<ul>
+<li><a href="#morphism-types-complete-reference"
+id="toc-morphism-types-complete-reference">Morphism Types Complete
+Reference</a>
+<ul>
+<li><a href="#monomorphism-monic"
+id="toc-monomorphism-monic">Monomorphism (Monic, ↪)</a></li>
+<li><a href="#epimorphism-epic" id="toc-epimorphism-epic">Epimorphism
+(Epic, ↠)</a></li>
+<li><a href="#isomorphism-iso" id="toc-isomorphism-iso">Isomorphism
+(Iso, ≅)</a></li>
+<li><a href="#endomorphism-endo" id="toc-endomorphism-endo">Endomorphism
+(Endo)</a></li>
+<li><a href="#automorphism-auto" id="toc-automorphism-auto">Automorphism
+(Auto)</a></li>
+<li><a href="#bimorphism" id="toc-bimorphism">Bimorphism</a></li>
+</ul></li>
+<li><a href="#commutative-diagrams"
+id="toc-commutative-diagrams">Commutative Diagrams</a>
+<ul>
+<li><a href="#five-lemma" id="toc-five-lemma">Five Lemma</a></li>
+<li><a href="#snake-lemma" id="toc-snake-lemma">Snake Lemma</a></li>
+</ul></li>
+<li><a href="#special-morphism-classes"
+id="toc-special-morphism-classes">Special Morphism Classes</a>
+<ul>
+<li><a href="#split-monomorphism" id="toc-split-monomorphism">Split
+Monomorphism</a></li>
+<li><a href="#split-epimorphism" id="toc-split-epimorphism">Split
+Epimorphism</a></li>
+<li><a href="#regular-mono" id="toc-regular-mono">Regular Mono</a></li>
+<li><a href="#regular-epi" id="toc-regular-epi">Regular Epi</a></li>
+<li><a href="#normal-mono-in-abelian"
+id="toc-normal-mono-in-abelian">Normal Mono (in abelian)</a></li>
+<li><a href="#normal-epi-in-abelian"
+id="toc-normal-epi-in-abelian">Normal Epi (in abelian)</a></li>
+</ul></li>
+<li><a href="#diagram-chasing-techniques"
+id="toc-diagram-chasing-techniques">Diagram Chasing Techniques</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#key-questions" id="toc-key-questions">Key
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="morphisms-and-commutative-diagrams">Morphisms and Commutative
+Diagrams</h1>
+<h2 id="morphism-types-complete-reference">Morphism Types Complete
+Reference</h2>
+<h3 id="monomorphism-monic">Monomorphism (Monic, ↪)</h3>
+<p>f: X → Y is monic if: f ∘ g₁ = f ∘ g₂ ⟹ g₁ = g₂</p>
+<p>In <strong>Set</strong>: Injective In <strong>Ring</strong>: ℤ → ℚ is
+monic (non-injective!)</p>
+<h3 id="epimorphism-epic">Epimorphism (Epic, ↠)</h3>
+<p>f: X → Y is epic if: h₁ ∘ f = h₂ ∘ f ⟹ h₁ = h₂</p>
+<p>In <strong>Set</strong>: Surjective In <strong>Ring</strong>: ℤ → ℚ
+is epic (non-surjective!)</p>
+<h3 id="isomorphism-iso">Isomorphism (Iso, ≅)</h3>
+<p>∃g: Y → X with g ∘ f = id_X and f ∘ g = id_Y</p>
+<h3 id="endomorphism-endo">Endomorphism (Endo)</h3>
+<p>f: X → X (self-map)</p>
+<h3 id="automorphism-auto">Automorphism (Auto)</h3>
+<p>Endomorphism that is also isomorphism</p>
+<h3 id="bimorphism">Bimorphism</h3>
+<p>Both monic and epic (but NOT necessarily iso!)</p>
+<h2 id="commutative-diagrams">Commutative Diagrams</h2>
+<p>Diagrams express equalities between morphism paths:</p>
+<pre><code>     f
+ X ---→ Y
+ |      |
+g|      |h
+ |      |
+ ↓      ↓
+ Z ---→ W
+     k
+Commutes: k ∘ g = h ∘ f</code></pre>
+<h3 id="five-lemma">Five Lemma</h3>
+<p>Classical result for chasing diagrams in exact sequences</p>
+<pre><code>... → A → B → C → D → E → ...
+      |   |   |   |   |
+      ↓   ↓   ↓   ↓   ↓
+... → A&#39;→ B&#39;→ C&#39;→ D&#39;→ E&#39;→ ...
+
+If outer four preserve exactness, middle does too</code></pre>
+<h3 id="snake-lemma">Snake Lemma</h3>
+<p>Produces connecting homomorphism between kernels/cokernels</p>
+<pre><code>0 → A → B → C → 0
+    |   |   |
+    ↓   ↓   ↓
+0 → A&#39;→ B&#39;→ C&#39;→ 0
+
+Gives connecting map: ker(C→C&#39;) → coker(A→A&#39;)</code></pre>
+<h2 id="special-morphism-classes">Special Morphism Classes</h2>
+<h3 id="split-monomorphism">Split Monomorphism</h3>
+<p>f: X → Y with ∃r: Y → X where r ∘ f = id_X (retraction)</p>
+<h3 id="split-epimorphism">Split Epimorphism</h3>
+<p>f: X → Y with ∃s: Y → X where f ∘ s = id_Y (section)</p>
+<h3 id="regular-mono">Regular Mono</h3>
+<p>Equalizer of some pair of morphisms</p>
+<h3 id="regular-epi">Regular Epi</h3>
+<p>Coequalizer of some pair of morphisms</p>
+<h3 id="normal-mono-in-abelian">Normal Mono (in abelian)</h3>
+<p>Kernel of some morphism</p>
+<h3 id="normal-epi-in-abelian">Normal Epi (in abelian)</h3>
+<p>Cokernel of some morphism</p>
+<h2 id="diagram-chasing-techniques">Diagram Chasing Techniques</h2>
+<ol type="1">
+<li><strong>Element chasing</strong>: In concrete categories, follow
+elements through diagrams</li>
+<li><strong>Freyd-Mitchell embedding</strong>: Abelian categories embed
+into module categories</li>
+<li><strong>Diagram lemmas</strong>: Five lemma, snake lemma, 3×3
+lemma</li>
+</ol>
+<h2 id="study-guide">Study Guide</h2>
+<ul>
+<li>Master monomorphism vs injectivity</li>
+<li>Understand why ℤ → ℚ is monic</li>
+<li>Work through five lemma proof</li>
+<li>Practice snake lemma construction</li>
+<li>Learn diagram chasing in abelian categories</li>
+</ul>
+<h2 id="key-questions">Key Questions</h2>
+<ol type="1">
+<li>Why is monic ≠ injective in general?</li>
+<li>How do five and snake lemmas relate?</li>
+<li>What makes diagram chasing valid?</li>
+<li>How do normal monos differ from regular?</li>
+</ol>
+</body>
+</html>

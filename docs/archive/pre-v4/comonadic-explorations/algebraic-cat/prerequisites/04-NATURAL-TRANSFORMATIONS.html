@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>04-NATURAL-TRANSFORMATIONS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#natural-transformations"
+id="toc-natural-transformations">Natural Transformations</a>
+<ul>
+<li><a href="#definition" id="toc-definition">Definition</a></li>
+<li><a href="#why-naturality" id="toc-why-naturality">Why
+Naturality?</a></li>
+<li><a href="#examples" id="toc-examples">15+ Examples</a>
+<ul>
+<li><a href="#double-dual-finite-dim-vect"
+id="toc-double-dual-finite-dim-vect">1. Double Dual (Finite-Dim
+Vect)</a></li>
+<li><a href="#abelianization" id="toc-abelianization">2.
+Abelianization</a></li>
+<li><a href="#fundamental-group" id="toc-fundamental-group">3.
+Fundamental Group</a></li>
+<li><a href="#determinant" id="toc-determinant">4. Determinant</a></li>
+<li><a href="#homology-theories" id="toc-homology-theories">5. Homology
+Theories</a></li>
+<li><a href="#tensor-hom-adjunction" id="toc-tensor-hom-adjunction">6.
+Tensor-Hom Adjunction</a></li>
+<li><a href="#yoneda-embedding" id="toc-yoneda-embedding">7. Yoneda
+Embedding</a></li>
+<li><a href="#unitcounit-of-adjunction"
+id="toc-unitcounit-of-adjunction">8. Unit/Counit of Adjunction</a></li>
+<li><a href="#many-more-in-algebra-topology-logic"
+id="toc-many-more-in-algebra-topology-logic">9-15: Many more in algebra,
+topology, logic…</a></li>
+</ul></li>
+<li><a href="#composition-of-natural-transformations"
+id="toc-composition-of-natural-transformations">Composition of Natural
+Transformations</a>
+<ul>
+<li><a href="#vertical-composition"
+id="toc-vertical-composition">Vertical Composition</a></li>
+<li><a href="#horizontal-composition-godement-product"
+id="toc-horizontal-composition-godement-product">Horizontal Composition
+(Godement Product)</a></li>
+<li><a href="#interchange-law" id="toc-interchange-law">Interchange
+Law</a></li>
+</ul></li>
+<li><a href="#natural-isomorphism" id="toc-natural-isomorphism">Natural
+Isomorphism</a></li>
+<li><a href="#functor-categories" id="toc-functor-categories">Functor
+Categories</a></li>
+<li><a href="#key-theorems" id="toc-key-theorems">Key Theorems</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#questions" id="toc-questions">Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="natural-transformations">Natural Transformations</h1>
+<h2 id="definition">Definition</h2>
+<p>A <strong>natural transformation</strong> η: F ⇒ G between functors
+F,G: C → D is:</p>
+<p><strong>Collection</strong> {η_X : F(X) → G(X) | X ∈ C} of morphisms
+in D</p>
+<p><strong>Naturality Axiom</strong>: For all f: X → Y in C, the diagram
+commutes:</p>
+<pre><code>F(X) --η_X-→ G(X)
+  |           |
+F(f)        G(f)
+  |           |
+  ↓           ↓
+F(Y) --η_Y-→ G(Y)</code></pre>
+<p>This ensures η is “natural” - doesn’t depend on arbitrary
+choices.</p>
+<h2 id="why-naturality">Why Naturality?</h2>
+<p>Without naturality condition, just collection of morphisms.</p>
+<p>With naturality: Forces compatibility with categorical structure.</p>
+<p><strong>Eilenberg-Mac Lane insight</strong>: Naturality formalizes
+“canonical” constructions.</p>
+<h2 id="examples">15+ Examples</h2>
+<h3 id="double-dual-finite-dim-vect">1. Double Dual (Finite-Dim
+Vect)</h3>
+<p>η_V: V → V** sending v to evaluation at v Natural, but not iso for
+infinite-dimensional</p>
+<h3 id="abelianization">2. Abelianization</h3>
+<p>Forgetful Grp → Ab composed with universal map Natural
+endomorphism</p>
+<h3 id="fundamental-group">3. Fundamental Group</h3>
+<p>π₁: Top → Grp from basepoint Homotopy equivalence is natural
+transformation</p>
+<h3 id="determinant">4. Determinant</h3>
+<p>det: GL(n) → k* Natural between linear group and multiplicative</p>
+<h3 id="homology-theories">5. Homology Theories</h3>
+<p>Singular vs simplicial homology Natural isomorphic via
+Eilenberg-Zilber</p>
+<h3 id="tensor-hom-adjunction">6. Tensor-Hom Adjunction</h3>
+<p>Natural bijection between bilinear and linear maps</p>
+<h3 id="yoneda-embedding">7. Yoneda Embedding</h3>
+<p>y: C → [C^op, Set] Fully faithful natural embedding</p>
+<h3 id="unitcounit-of-adjunction">8. Unit/Counit of Adjunction</h3>
+<p>η: id ⇒ G∘F and ε: F∘G ⇒ id Natural transformations defining
+adjoints</p>
+<h3 id="many-more-in-algebra-topology-logic">9-15: Many more in algebra,
+topology, logic…</h3>
+<h2 id="composition-of-natural-transformations">Composition of Natural
+Transformations</h2>
+<h3 id="vertical-composition">Vertical Composition</h3>
+<p>η: F ⇒ G and μ: G ⇒ H give (μ ∘ η): F ⇒ H</p>
+<p>Component: (μ ∘ η)_X = μ_X ∘ η_X</p>
+<h3 id="horizontal-composition-godement-product">Horizontal Composition
+(Godement Product)</h3>
+<p>For η: F ⇒ G (C → D) and μ: F’ ⇒ G’ (D → E):</p>
+<p>(μ * η): F’ ∘ F ⇒ G’ ∘ G</p>
+<p>Component: Commutative square combining both</p>
+<h3 id="interchange-law">Interchange Law</h3>
+<p>(μ₂ ∘ μ₁) * (η₂ ∘ η₁) = (μ₂ * η₂) ∘ (μ₁ * η₁)</p>
+<p>Both compositions compatible!</p>
+<h2 id="natural-isomorphism">Natural Isomorphism</h2>
+<p><strong>Natural isomorphism</strong>: All components η_X are
+isomorphisms</p>
+<p><strong>F ≅ G</strong>: Functors naturally isomorphic</p>
+<p><strong>Equivalence of categories</strong>: F ∘ G ≅ id and G ∘ F ≅
+id</p>
+<h2 id="functor-categories">Functor Categories</h2>
+<p>Natural transformations make [C,D] into category: - Objects: Functors
+C → D - Morphisms: Natural transformations - Composition: Vertical
+composition</p>
+<h2 id="key-theorems">Key Theorems</h2>
+<ul>
+<li><strong>Yoneda Lemma</strong>: Nat(Hom(-,A), F) ≅ F(A)</li>
+<li><strong>Mac Lane Coherence</strong>: Associator/unitor natural isos
+satisfy pentagon</li>
+<li><strong>Adjoint Naturality</strong>: Unit/counit are natural
+transformations</li>
+</ul>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ “Just a collection of morphisms” ✓ Must satisfy naturality
+square</p>
+<p>❌ “Natural = canonical” ✓ More precise: canonical constructions are
+natural</p>
+<p>❌ “Horizontal composition = vertical” ✓ Different operations
+(Godement ≠ pointwise)</p>
+<h2 id="study-guide">Study Guide</h2>
+<ol type="1">
+<li>Master naturality square</li>
+<li>Work through 5+ examples carefully</li>
+<li>Prove vertical composition associative</li>
+<li>Understand horizontal composition</li>
+<li>Recognize natural isos in your field</li>
+<li>Connect to adjoints and Yoneda</li>
+</ol>
+<h2 id="questions">Questions</h2>
+<ol type="1">
+<li>What does naturality square express?</li>
+<li>Why call it “natural”?</li>
+<li>How do compositions interact?</li>
+<li>What makes Yoneda lemma natural?</li>
+<li>How do natural transformations lift to categories?</li>
+</ol>
+</body>
+</html>

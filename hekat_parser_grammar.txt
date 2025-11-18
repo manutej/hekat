@@ -1,0 +1,326 @@
+# HEKAT Parser Grammar - Phase 2B (All 8 Query Patterns)
+# Status: Extended Grammar - Ready for Implementation
+# Target Patterns: Simple, Sequential, Parallel, Mixed, Fallback, Ensemble, Commanded, Skilled
+
+## Grammar Rules (EBNF)
+
+<query>             ::= <expression> COLON STRING
+
+<expression>        ::= <fallback>
+
+<fallback>          ::= <sequential> (QUESTION <sequential>)*
+
+<sequential>        ::= <parallel_or_atom> (ARROW <parallel_or_atom>)*
+
+<parallel_or_atom>  ::= <parallel> | <atom>
+
+<parallel>          ::= LPAREN <sequential> (PIPE PIPE <sequential>)+ RPAREN
+
+<atom>              ::= <ensemble> | <commanded> | <skilled> | <simple>
+
+<ensemble>          ::= IDENTIFIER CARET NUMBER SEMICOLON IDENTIFIER SEMICOLON IDENTIFIER
+
+<commanded>         ::= AT IDENTIFIER LPAREN <agent_list> RPAREN
+
+<skilled>           ::= AGENT (PLUS SKILL)+
+
+<simple>            ::= AGENT | IDENTIFIER
+
+<agent_list>        ::= AGENT (COMMA AGENT)*
+
+
+## Operator Precedence (Low to High)
+# 1. Fallback (?) - lowest precedence, outermost expression type
+# 2. Sequential (→) - left-associative chain
+# 3. Parallel (||) - within parentheses, atomic unit in sequential chain
+# 4. Ensemble (^, ;) - special atomic pattern, doesn't compose with other operators
+# 5. Commanded (@) - special atomic pattern with function-call syntax
+# 6. Skilled (+) - highest precedence, tightly binds agent with skills
+# 7. Parentheses - force grouping, override precedence
+
+## Token Mapping (from lexer)
+AGENT      : identifier (agent name, e.g., api-architect, deep-researcher)
+IDENTIFIER : identifier (generic, e.g., sample, merge, synthesize)
+SKILL      : identifier (skill name, e.g., fastapi, postgresql)
+ARROW      : "→" or "->"
+PIPE       : "||"
+QUESTION   : "?"
+PLUS       : "+"
+AT         : "@"
+CARET      : "^"
+SEMICOLON  : ";"
+COMMA      : ","
+COLON      : ":"
+STRING     : "..." (double-quoted text)
+LPAREN     : "("
+RPAREN     : ")"
+NUMBER     : digit+
+
+## Parsing Strategy (Recursive Descent)
+
+# Entry point: query()
+#   1. Parse <expression> via fallback()
+#   2. Expect COLON token
+#   3. Parse STRING token
+#   4. Return QueryNode(expression, prompt_string)
+
+# fallback() - handles Pattern 5 (Fallback)
+#   1. Parse first <sequential> via sequential()
+#   2. While next token is QUESTION:
+#      - Consume QUESTION
+#      - Parse another <sequential>
+#      - Build FallbackNode with alternatives list
+#   3. Return FallbackNode or single sequential if no QUESTION found
+
+# sequential() - handles Patterns 2, 4 (Sequential, Mixed)
+#   1. Parse first <parallel_or_atom> via parallel_or_atom()
+#   2. While next token is ARROW:
+#      - Consume ARROW
+#      - Parse another <parallel_or_atom>
+#      - Build SequentialNode with steps list
+#   3. Return SequentialNode or single parallel_or_atom if no ARROW found
+
+# parallel_or_atom() - dispatcher
+#   1. If next token is LPAREN:
+#      - Parse <parallel> via parallel()
+#   2. Otherwise:
+#      - Parse <atom> via atom()
+
+# parallel() - handles Pattern 3 (Parallel)
+#   1. Consume LPAREN
+#   2. Parse first <sequential> via sequential()
+#   3. Expect at least one PIPE PIPE sequence:
+#      - Consume PIPE PIPE
+#      - Parse another <sequential>
+#      - Add to branches list
+#   4. Consume RPAREN
+#   5. Validate 2+ branches (error if single branch)
+#   6. Return ParallelNode with branches list
+
+# atom() - handles Patterns 1, 6, 7, 8 (Simple, Ensemble, Commanded, Skilled)
+#   1. Check next token type and dispatch:
+#      - AT → parse <commanded> via commanded()
+#      - IDENTIFIER followed by CARET → parse <ensemble> via ensemble()
+#      - AGENT followed by PLUS → parse <skilled> via skilled()
+#      - AGENT or IDENTIFIER → parse <simple> via simple()
+
+# ensemble() - handles Pattern 6 (Ensemble)
+#   1. Parse IDENTIFIER (e.g., "sample")
+#   2. Consume CARET
+#   3. Parse NUMBER (repetition count)
+#   4. Consume SEMICOLON
+#   5. Parse IDENTIFIER (e.g., "merge")
+#   6. Consume SEMICOLON
+#   7. Parse IDENTIFIER (e.g., "synthesize")
+#   8. Return EnsembleNode(base, count, merge_step, synth_step)
+
+# commanded() - handles Pattern 7 (Commanded)
+#   1. Consume AT
+#   2. Parse IDENTIFIER (command name, e.g., "ctx7")
+#   3. Consume LPAREN
+#   4. Parse <agent_list> via agent_list()
+#   5. Consume RPAREN
+#   6. Return CommandedNode(command, agents)
+
+# agent_list() - helper for commanded pattern
+#   1. Parse first AGENT
+#   2. While next token is COMMA:
+#      - Consume COMMA
+#      - Parse another AGENT
+#      - Add to agents list
+#   3. Return list of agents
+
+# skilled() - handles Pattern 8 (Skilled)
+#   1. Parse AGENT
+#   2. Expect at least one PLUS:
+#      - Consume PLUS
+#      - Parse SKILL
+#      - Add to skills list
+#   3. Return SkilledNode(agent, skills)
+
+# simple() - handles Pattern 1 (Simple)
+#   1. Parse AGENT or IDENTIFIER
+#   2. Return SimpleNode(name)
+
+## Example Parse Trees
+
+### Pattern 1 - Simple: `api-architect : "design REST API"`
+QueryNode
+├── expression: SimpleNode
+│   └── agent: "api-architect"
+└── prompt: "design REST API"
+
+### Pattern 2 - Sequential: `deep-researcher → api-architect → practical-programmer : "build feature"`
+QueryNode
+├── expression: SequentialNode
+│   ├── steps[0]: SimpleNode("deep-researcher")
+│   ├── steps[1]: SimpleNode("api-architect")
+│   └── steps[2]: SimpleNode("practical-programmer")
+└── prompt: "build feature"
+
+### Pattern 3 - Parallel: `(api-architect || deep-researcher || test-engineer) : "evaluate tech"`
+QueryNode
+├── expression: ParallelNode
+│   ├── branches[0]: SimpleNode("api-architect")
+│   ├── branches[1]: SimpleNode("deep-researcher")
+│   └── branches[2]: SimpleNode("test-engineer")
+└── prompt: "evaluate tech"
+
+### Pattern 4 - Mixed: `deep-researcher → (api-architect || db-expert) → practical-programmer : "design system"`
+QueryNode
+├── expression: SequentialNode
+│   ├── steps[0]: SimpleNode("deep-researcher")
+│   ├── steps[1]: ParallelNode
+│   │   ├── branches[0]: SimpleNode("api-architect")
+│   │   └── branches[1]: SimpleNode("db-expert")
+│   └── steps[2]: SimpleNode("practical-programmer")
+└── prompt: "design system"
+
+### Pattern 5 - Fallback: `deployment-orchestrator ? devops-github-expert ? practical-programmer : "deploy app"`
+QueryNode
+├── expression: FallbackNode
+│   ├── alternatives[0]: SimpleNode("deployment-orchestrator")
+│   ├── alternatives[1]: SimpleNode("devops-github-expert")
+│   └── alternatives[2]: SimpleNode("practical-programmer")
+└── prompt: "deploy app"
+
+### Pattern 6 - Ensemble: `sample^3 ; merge ; synthesize : "research quantum computing"`
+QueryNode
+├── expression: EnsembleNode
+│   ├── base: "sample"
+│   ├── count: 3
+│   ├── merge_step: "merge"
+│   └── synth_step: "synthesize"
+└── prompt: "research quantum computing"
+
+### Pattern 7 - Commanded: `@ctx7(deep-researcher) : "analyze React hooks"`
+QueryNode
+├── expression: CommandedNode
+│   ├── command: "ctx7"
+│   └── agents: ["deep-researcher"]
+└── prompt: "analyze React hooks"
+
+### Pattern 8 - Skilled: `api-architect + fastapi + postgresql : "design user service API"`
+QueryNode
+├── expression: SkilledNode
+│   ├── agent: "api-architect"
+│   └── skills: ["fastapi", "postgresql"]
+└── prompt: "design user service API"
+
+### Complex Example - All Patterns Combined:
+`deep-researcher + fastapi → (@ctx7(api-architect) || db-expert) ? fallback-agent : "complex task"`
+QueryNode
+├── expression: FallbackNode
+│   ├── alternatives[0]: SequentialNode
+│   │   ├── steps[0]: SkilledNode
+│   │   │   ├── agent: "deep-researcher"
+│   │   │   └── skills: ["fastapi"]
+│   │   └── steps[1]: ParallelNode
+│   │       ├── branches[0]: CommandedNode
+│   │       │   ├── command: "ctx7"
+│   │       │   └── agents: ["api-architect"]
+│   │       └── branches[1]: SimpleNode("db-expert")
+│   └── alternatives[1]: SimpleNode("fallback-agent")
+└── prompt: "complex task"
+
+## Implementation Notes for practical-programmer
+
+### Parsing Order
+1. Start with query() as entry point
+2. Use lookahead(1) for most decisions, lookahead(2) for ambiguous cases
+3. Grammar is LL(2) - suitable for recursive descent parsing
+
+### Token Lookahead Requirements
+- **LPAREN**: Indicates parallel pattern
+- **AT**: Indicates commanded pattern
+- **IDENTIFIER + CARET**: Indicates ensemble pattern (needs lookahead(2))
+- **AGENT + PLUS**: Indicates skilled pattern (needs lookahead(2))
+- **QUESTION**: Indicates fallback continuation
+- **ARROW**: Indicates sequential continuation
+- **AGENT/IDENTIFIER alone**: Indicates simple pattern
+
+### Disambiguation Rules
+1. **Ensemble vs Simple**: Check for CARET after IDENTIFIER
+2. **Skilled vs Simple**: Check for PLUS after AGENT
+3. **Commanded vs Simple**: Check for AT prefix
+4. **Parallel vs Atom**: Check for LPAREN
+5. **Fallback vs Sequential**: Parse sequential first, check for QUESTION
+6. **Sequential vs Atom**: Parse atom first, check for ARROW
+
+### Error Handling
+1. **Empty parallel**: `()` → Error: "Parallel expression requires at least 2 branches"
+2. **Single parallel**: `(A)` → Error: "Parallel expression with single branch, use A directly"
+3. **Ensemble wrong count**: `sample^0` → Error: "Ensemble count must be positive integer"
+4. **Missing semicolons**: `sample^3 merge` → Error: "Expected semicolon in ensemble pattern"
+5. **Skilled without skills**: `agent +` → Error: "Skilled pattern requires at least one skill"
+6. **Commanded empty agents**: `@ctx7()` → Error: "Commanded pattern requires at least one agent"
+7. **Unclosed parentheses**: `(A || B` → Error: "Expected closing parenthesis"
+8. **Missing prompt**: `agent →` → Error: "Expected colon and prompt string"
+
+### Validation Rules (Semantic Analysis)
+1. All agent names must exist in agent registry
+2. All skill names must exist in skills registry
+3. All command names must be valid MCP commands
+4. Ensemble count must be between 1 and 10
+5. No duplicate agents in parallel branches
+6. No duplicate skills in skilled pattern
+
+## Grammar Properties
+✓ Unambiguous - each pattern has unique token signature
+✓ Left-associative for sequential (A → B → C parses as (A → B) → C)
+✓ Left-associative for fallback (A ? B ? C parses as (A ? B) ? C)
+✓ No shift/reduce conflicts - precedence encoded in grammar rules
+✓ LL(2) parseable - requires at most 2 token lookahead
+✓ No backtracking needed - decisions can be made with lookahead alone
+✓ Handles nesting: `(A || (B → C) || D)`, `(A ? B) → (C || D)` fully supported
+✓ All 8 patterns composable via precedence rules
+
+## AST Node Types
+
+```python
+@dataclass
+class QueryNode:
+    expression: ExpressionNode
+    prompt: str
+
+@dataclass
+class SimpleNode:
+    name: str
+
+@dataclass
+class SequentialNode:
+    steps: List[ExpressionNode]
+
+@dataclass
+class ParallelNode:
+    branches: List[ExpressionNode]
+
+@dataclass
+class FallbackNode:
+    alternatives: List[ExpressionNode]
+
+@dataclass
+class EnsembleNode:
+    base: str
+    count: int
+    merge_step: str
+    synth_step: str
+
+@dataclass
+class CommandedNode:
+    command: str
+    agents: List[str]
+
+@dataclass
+class SkilledNode:
+    agent: str
+    skills: List[str]
+```
+
+## Next Steps for Implementation
+1. Extend lexer to tokenize all new operators (QUESTION, PLUS, AT, CARET, SEMICOLON, COMMA, NUMBER)
+2. Implement parser methods following recursive descent strategy above
+3. Create AST node classes matching the dataclass definitions
+4. Add semantic validation (agent/skill/command existence checks)
+5. Test with all 8 example patterns plus complex combinations
+6. Add error recovery for common syntax mistakes

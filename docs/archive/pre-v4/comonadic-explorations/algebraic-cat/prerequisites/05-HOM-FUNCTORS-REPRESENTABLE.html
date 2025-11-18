@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>05-HOM-FUNCTORS-REPRESENTABLE</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hom-functors-and-representable-functors"
+id="toc-hom-functors-and-representable-functors">Hom-Functors and
+Representable Functors</a>
+<ul>
+<li><a href="#hom-functors" id="toc-hom-functors">Hom-Functors</a>
+<ul>
+<li><a href="#covariant-hom_ca-" id="toc-covariant-hom_ca-">Covariant
+Hom_C(A,-)</a></li>
+<li><a href="#contravariant-hom_c--a"
+id="toc-contravariant-hom_c--a">Contravariant Hom_C(-, A)</a></li>
+</ul></li>
+<li><a href="#representable-functors"
+id="toc-representable-functors">Representable Functors</a></li>
+<li><a href="#criterion-for-representability"
+id="toc-criterion-for-representability">Criterion for
+Representability</a></li>
+<li><a href="#detailed-examples" id="toc-detailed-examples">10 Detailed
+Examples</a>
+<ul>
+<li><a href="#forgetful-functor-grp-set"
+id="toc-forgetful-functor-grp-set">1. Forgetful Functor Grp →
+Set</a></li>
+<li><a href="#polynomial-evaluation" id="toc-polynomial-evaluation">2.
+Polynomial Evaluation</a></li>
+<li><a href="#continuous-functions-to-sierpinski"
+id="toc-continuous-functions-to-sierpinski">3. Continuous Functions to
+Sierpinski</a></li>
+<li><a href="#power-set-functor" id="toc-power-set-functor">4. Power Set
+Functor</a></li>
+<li><a href="#tangent-bundle-differential-geometry"
+id="toc-tangent-bundle-differential-geometry">5. Tangent Bundle
+(Differential Geometry)</a></li>
+<li><a href="#fundamental-group-pointed-spaces"
+id="toc-fundamental-group-pointed-spaces">6. Fundamental Group (Pointed
+Spaces)</a></li>
+<li><a href="#cohomology-ring-homotopy"
+id="toc-cohomology-ring-homotopy">7. Cohomology Ring (Homotopy)</a></li>
+<li><a href="#tensor-algebra" id="toc-tensor-algebra">8. Tensor
+Algebra</a></li>
+<li><a href="#free-module-functor" id="toc-free-module-functor">9. Free
+Module Functor</a></li>
+<li><a href="#moduli-space" id="toc-moduli-space">10. Moduli
+Space</a></li>
+</ul></li>
+<li><a href="#yoneda-embedding" id="toc-yoneda-embedding">Yoneda
+Embedding</a></li>
+<li><a href="#power-of-representability"
+id="toc-power-of-representability">Power of Representability</a></li>
+<li><a href="#adjunctions-and-representability"
+id="toc-adjunctions-and-representability">Adjunctions and
+Representability</a></li>
+<li><a href="#common-mistakes" id="toc-common-mistakes">Common
+Mistakes</a></li>
+<li><a href="#study-guide" id="toc-study-guide">Study Guide</a></li>
+<li><a href="#key-questions" id="toc-key-questions">Key
+Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hom-functors-and-representable-functors">Hom-Functors and
+Representable Functors</h1>
+<h2 id="hom-functors">Hom-Functors</h2>
+<h3 id="covariant-hom_ca-">Covariant Hom_C(A,-)</h3>
+<p><strong>Functor</strong> C → Set</p>
+<pre><code>X ↦ Hom_C(A, X)  [morphisms FROM A]
+(f: X → Y) ↦ (f ∘ -): Hom(A,X) → Hom(A,Y)</code></pre>
+<p><strong>Functoriality</strong>: Composition preserved</p>
+<h3 id="contravariant-hom_c--a">Contravariant Hom_C(-, A)</h3>
+<p><strong>Functor</strong> C^op → Set</p>
+<pre><code>X ↦ Hom_C(X, A)  [morphisms TO A]
+(f: X → Y) ↦ (- ∘ f): Hom(Y,A) → Hom(X,A)</code></pre>
+<p><strong>Arrows reversed</strong> due to contravariance</p>
+<h2 id="representable-functors">Representable Functors</h2>
+<p><strong>Definition</strong>: F: C → Set is
+<strong>representable</strong> if ∃A ∈ C such that:</p>
+<pre><code>F ≅ Hom_C(A, -)  [natural isomorphism]</code></pre>
+<p><strong>Universal Element</strong>: Unique a ∈ F(A) such that F(f)(a)
+= (f,a) establishes bijection</p>
+<h2 id="criterion-for-representability">Criterion for
+Representability</h2>
+<p><strong>Brown Representability</strong>: F is representable iff: 1.
+Preserves limits 2. Solution set condition holds</p>
+<h2 id="detailed-examples">10 Detailed Examples</h2>
+<h3 id="forgetful-functor-grp-set">1. Forgetful Functor Grp → Set</h3>
+<pre><code>U(G) = underlying set of G
+Hom_Grp(ℤ, G) ≅ U(G)  [homomorphisms = elements]
+Represented by ℤ</code></pre>
+<h3 id="polynomial-evaluation">2. Polynomial Evaluation</h3>
+<pre><code>F: Ring → Set, R ↦ R^n [n-tuples]
+Hom_Ring(Z[x₁,...,x_n], R) ≅ R^n  [evaluation]
+Represented by polynomial ring</code></pre>
+<h3 id="continuous-functions-to-sierpinski">3. Continuous Functions to
+Sierpinski</h3>
+<pre><code>F: Top → Set, X ↦ open sets of X
+Hom(X, Sierpinski) ≅ Open(X)  [continuous = inclusion]
+Represented by Sierpinski space</code></pre>
+<h3 id="power-set-functor">4. Power Set Functor</h3>
+<pre><code>F: Set → Set, X ↦ P(X)
+Hom(X, {0,1}) ≅ P(X)  [characteristic functions]
+Represented by two-element set</code></pre>
+<h3 id="tangent-bundle-differential-geometry">5. Tangent Bundle
+(Differential Geometry)</h3>
+<pre><code>T: Diff → Set, M ↦ tangent bundle
+Representable by infinitesimal construction</code></pre>
+<h3 id="fundamental-group-pointed-spaces">6. Fundamental Group (Pointed
+Spaces)</h3>
+<pre><code>π₁: Top* → Grp
+Hom(S¹, X) ≅ π₁(X)  [loops = elements]
+Represented by S¹</code></pre>
+<h3 id="cohomology-ring-homotopy">7. Cohomology Ring (Homotopy)</h3>
+<pre><code>H*: Top → Grp
+Representable by Eilenberg-MacLane spaces</code></pre>
+<h3 id="tensor-algebra">8. Tensor Algebra</h3>
+<pre><code>T: Vect → Vect, V ↦ ⊗*V
+Hom(T(V), W) ↔ morphisms respecting tensor structure</code></pre>
+<h3 id="free-module-functor">9. Free Module Functor</h3>
+<pre><code>F: Grp → Set, X ↦ free Z[G]-module on X
+Hom(Z[G], M) ≅ M^G  [G-module structure]</code></pre>
+<h3 id="moduli-space">10. Moduli Space</h3>
+<pre><code>Schemes parameterized by objects
+Hilbert scheme: Hom(-, H) represents closed subschemes</code></pre>
+<h2 id="yoneda-embedding">Yoneda Embedding</h2>
+<p><strong>Embedding</strong> y: C → [C^op, Set]</p>
+<pre><code>y(A) = Hom_C(-, A)
+y(f: A → B) = Hom(f, -): Hom(-,A) ⇒ Hom(-,B)</code></pre>
+<p><strong>Theorem</strong>: y is fully faithful</p>
+<p><strong>Consequence</strong>: Every category embeds in presheaves;
+presheaves are free cocompletions</p>
+<h2 id="power-of-representability">Power of Representability</h2>
+<ol type="1">
+<li><strong>Universal Property Characterization</strong>: Universal
+properties = representability statements</li>
+<li><strong>Computational Power</strong>: Categorical → set-theoretic
+(via representation)</li>
+<li><strong>Automatic Existence/Uniqueness</strong>: From representing
+object</li>
+<li><strong>Natural Constructions</strong>: Representable functors are
+“canonical”</li>
+<li><strong>Foundation for Adjoints</strong>: Adjoints define themselves
+via representability</li>
+</ol>
+<h2 id="adjunctions-and-representability">Adjunctions and
+Representability</h2>
+<p><strong>Fundamental Connection</strong>:</p>
+<pre><code>F ⊣ G  ⟺  Hom_D(F(c), d) ≅ Hom_C(c, G(d))  [natural in both variables]
+
+Right adjoint G: &quot;Represents&quot; the hom-functor</code></pre>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>❌ “All functors are representable” ✓ Only special ones; most are
+not</p>
+<p>❌ “Representability = free functor” ✓ Related but different
+concepts</p>
+<p>❌ “Solution set condition not important” ✓ Necessary for
+representability to exist</p>
+<h2 id="study-guide">Study Guide</h2>
+<ol type="1">
+<li>Master Hom_C(A,-) definition</li>
+<li>Understand contravariance in Hom_C(-,A)</li>
+<li>Work through 5+ examples</li>
+<li>Prove Yoneda embedding fully faithful</li>
+<li>Connect to adjoint functors</li>
+<li>Apply representability to your field</li>
+</ol>
+<h2 id="key-questions">Key Questions</h2>
+<ol type="1">
+<li>Why is Hom_C(A,-) a functor?</li>
+<li>What makes a functor representable?</li>
+<li>Why is Yoneda embedding important?</li>
+<li>How do represent functors relate to adjoints?</li>
+<li>What’s the geometric meaning of representable?</li>
+</ol>
+</body>
+</html>

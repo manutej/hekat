@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03-Functors: Definition and Examples</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@5/github-markdown.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#functors-definition-and-examples"
+id="toc-functors-definition-and-examples">Functors: Definition and
+Examples</a>
+<ul>
+<li><a href="#what-is-a-functor" id="toc-what-is-a-functor">What is a
+Functor?</a>
+<ul>
+<li><a href="#covariant-vs-contravariant"
+id="toc-covariant-vs-contravariant">Covariant vs Contravariant</a></li>
+</ul></li>
+<li><a href="#examples" id="toc-examples">12 Examples</a></li>
+<li><a href="#functor-properties" id="toc-functor-properties">Functor
+Properties</a></li>
+<li><a href="#key-theorems" id="toc-key-theorems">Key Theorems</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="functors-definition-and-examples">Functors: Definition and
+Examples</h1>
+<h2 id="what-is-a-functor">What is a Functor?</h2>
+<p>A <strong>functor</strong> F: C → D (between categories) preserves
+categorical structure:</p>
+<p>F(f ∘ g) = F(f) ∘ F(g) [composition] F(id_X) = id_{F(X)}
+[identity]</p>
+<h3 id="covariant-vs-contravariant">Covariant vs Contravariant</h3>
+<ul>
+<li><strong>Covariant</strong>: Preserves direction of arrows</li>
+<li><strong>Contravariant</strong>: Reverses arrows (F(f: X → Y) becomes
+F(f): F(Y) → F(X))</li>
+</ul>
+<h2 id="examples">12 Examples</h2>
+<ol type="1">
+<li><strong>Forgetful U: Grp → Set</strong> - Forget group
+structure</li>
+<li><strong>Free F: Set → Grp</strong> - Generate free group on
+set<br />
+</li>
+<li><strong>Fundamental Group π₁: Top → Grp</strong> - Topological
+invariant</li>
+<li><strong>Homology Hₙ: Top → Ab</strong> - Algebraic topology</li>
+<li><strong>Dual Space (-)* : Vect → Vect</strong> (contravariant)</li>
+<li><strong>Opposite Inclusion C ↪ [C^op, Set]</strong> - Yoneda
+embedding</li>
+<li><strong>Universal Enveloping U: LieAlg → Alg</strong> - Algebraic
+enveloping</li>
+<li><strong>Abelianization G ↦ G/[G,G]: Grp → Ab</strong></li>
+<li><strong>Tensor Product (-) ⊗ k: Mod_R → Vect_k</strong></li>
+<li><strong>Spectrum Spec: Comm(Ring)^op → Sch</strong> - Algebraic
+geometry</li>
+<li>**Determinant det: GL(n) → k*: Grp → Grp**</li>
+<li><strong>Inclusion functors</strong> between subcategories</li>
+</ol>
+<h2 id="functor-properties">Functor Properties</h2>
+<p><strong>Faithful</strong>: Injective on hom-sets
+<strong>Full</strong>: Surjective on hom-sets<br />
+<strong>Essentially Surjective</strong>: Objects covered up to
+isomorphism</p>
+<h2 id="key-theorems">Key Theorems</h2>
+<ul>
+<li>Faithful functors reflect monos/epis/isos</li>
+<li>Full faithful functors are embeddings</li>
+<li>Fully faithful + ess surj = equivalence of categories</li>
+</ul>
+</body>
+</html>
