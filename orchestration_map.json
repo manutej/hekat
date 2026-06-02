@@ -1,0 +1,964 @@
+{
+  "workflows": [
+    {
+      "name": "api-delivery-pipeline",
+      "query": "deep-researcher -> api-architect -> practical-programmer -> test-engineer : \"design and ship a REST API\"",
+      "pattern": "Sequential",
+      "complexity": "L6",
+      "total_tokens": 2476,
+      "metadata": {
+        "total_agents": 4,
+        "execution_depth": 4,
+        "has_parallelism": false,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "deep-researcher"
+          ],
+          "token_budget": 619,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 2,
+          "agents": [
+            "api-architect"
+          ],
+          "token_budget": 619,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 3,
+          "agents": [
+            "practical-programmer"
+          ],
+          "token_budget": 619,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 4,
+          "agents": [
+            "test-engineer"
+          ],
+          "token_budget": 619,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "deep-researcher",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "api-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "practical-programmer",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "3": {
+            "id": 3,
+            "label": "test-engineer",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [
+          {
+            "from": 0,
+            "to": 1,
+            "from_label": "deep-researcher",
+            "to_label": "api-architect"
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "from_label": "api-architect",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "from_label": "practical-programmer",
+            "to_label": "test-engineer"
+          }
+        ],
+        "phases": {
+          "0": [
+            "deep-researcher"
+          ],
+          "1": [
+            "api-architect"
+          ],
+          "2": [
+            "practical-programmer"
+          ],
+          "3": [
+            "test-engineer"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "name": "fullstack-fanout",
+      "query": "(frontend-architect || api-architect || test-engineer) : \"build a full-stack feature in parallel\"",
+      "pattern": "Parallel",
+      "complexity": "L3",
+      "total_tokens": 1028,
+      "metadata": {
+        "total_agents": 3,
+        "execution_depth": 1,
+        "has_parallelism": true,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "frontend-architect",
+            "api-architect",
+            "test-engineer"
+          ],
+          "token_budget": 1028,
+          "parallel": true,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "frontend-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "api-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "test-engineer",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [],
+        "phases": {
+          "0": [
+            "frontend-architect",
+            "api-architect",
+            "test-engineer"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "name": "db-system-mixed",
+      "query": "deep-researcher -> (api-architect || debug-detective) -> practical-programmer -> test-engineer : \"design and validate a database system\"",
+      "pattern": "Mixed",
+      "complexity": "L5",
+      "total_tokens": 2808,
+      "metadata": {
+        "total_agents": 5,
+        "execution_depth": 4,
+        "has_parallelism": true,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "deep-researcher"
+          ],
+          "token_budget": 627,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 2,
+          "agents": [
+            "api-architect",
+            "debug-detective"
+          ],
+          "token_budget": 927,
+          "parallel": true,
+          "skills": []
+        },
+        {
+          "num": 3,
+          "agents": [
+            "practical-programmer"
+          ],
+          "token_budget": 627,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 4,
+          "agents": [
+            "test-engineer"
+          ],
+          "token_budget": 627,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "deep-researcher",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "api-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "debug-detective",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "3": {
+            "id": 3,
+            "label": "practical-programmer",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "4": {
+            "id": 4,
+            "label": "test-engineer",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [
+          {
+            "from": 0,
+            "to": 1,
+            "from_label": "deep-researcher",
+            "to_label": "api-architect"
+          },
+          {
+            "from": 0,
+            "to": 2,
+            "from_label": "deep-researcher",
+            "to_label": "debug-detective"
+          },
+          {
+            "from": 1,
+            "to": 3,
+            "from_label": "api-architect",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "from_label": "debug-detective",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 3,
+            "to": 4,
+            "from_label": "practical-programmer",
+            "to_label": "test-engineer"
+          }
+        ],
+        "phases": {
+          "0": [
+            "deep-researcher"
+          ],
+          "1": [
+            "api-architect",
+            "debug-detective"
+          ],
+          "2": [
+            "practical-programmer"
+          ],
+          "3": [
+            "test-engineer"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "name": "prod-deploy-fallback",
+      "query": "deployment-orchestrator ? devops-github-expert ? practical-programmer : \"deploy the service to production\"",
+      "pattern": "Fallback",
+      "complexity": "L3",
+      "total_tokens": 1024,
+      "metadata": {
+        "total_agents": 3,
+        "execution_depth": 1,
+        "has_parallelism": true,
+        "has_fallback": true
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "deployment-orchestrator",
+            "devops-github-expert",
+            "practical-programmer"
+          ],
+          "token_budget": 1024,
+          "parallel": true,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "deployment-orchestrator",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "devops-github-expert",
+            "is_fallback": true,
+            "fallback_of": 0
+          },
+          "2": {
+            "id": 2,
+            "label": "practical-programmer",
+            "is_fallback": true,
+            "fallback_of": 0
+          }
+        },
+        "edges": [],
+        "phases": {
+          "0": [
+            "deployment-orchestrator",
+            "devops-github-expert",
+            "practical-programmer"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "name": "user-service-skilled",
+      "query": "api-architect + fastapi + postgresql : \"design the user service API\"",
+      "pattern": "Skilled",
+      "complexity": "L1",
+      "total_tokens": 620,
+      "metadata": {
+        "total_agents": 1,
+        "execution_depth": 1,
+        "has_parallelism": false,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "api-architect"
+          ],
+          "token_budget": 620,
+          "parallel": false,
+          "skills": [
+            "fastapi",
+            "postgresql"
+          ]
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "api-architect+fastapi+postgresql",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [],
+        "phases": {
+          "0": [
+            "api-architect+fastapi+postgresql"
+          ]
+        },
+        "execution_order": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "research-consensus-ensemble",
+      "query": "deep-researcher^3 ; merge ; synthesize : \"reach consensus on system architecture\"",
+      "pattern": "Ensemble",
+      "complexity": "L4",
+      "total_tokens": 2284,
+      "metadata": {
+        "total_agents": 5,
+        "execution_depth": 3,
+        "has_parallelism": true,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "deep-researcher",
+            "deep-researcher",
+            "deep-researcher"
+          ],
+          "token_budget": 1028,
+          "parallel": true,
+          "skills": []
+        },
+        {
+          "num": 2,
+          "agents": [
+            "deep-researcher"
+          ],
+          "token_budget": 628,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 3,
+          "agents": [
+            "deep-researcher"
+          ],
+          "token_budget": 628,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "deep-researcher^3",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "deep-researcher^3",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "deep-researcher^3",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "3": {
+            "id": 3,
+            "label": "deep-researcher^3",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "4": {
+            "id": 4,
+            "label": "deep-researcher^3",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [
+          {
+            "from": 0,
+            "to": 3,
+            "from_label": "deep-researcher^3",
+            "to_label": "deep-researcher^3"
+          },
+          {
+            "from": 1,
+            "to": 3,
+            "from_label": "deep-researcher^3",
+            "to_label": "deep-researcher^3"
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "from_label": "deep-researcher^3",
+            "to_label": "deep-researcher^3"
+          },
+          {
+            "from": 3,
+            "to": 4,
+            "from_label": "deep-researcher^3",
+            "to_label": "deep-researcher^3"
+          }
+        ],
+        "phases": {
+          "0": [
+            "deep-researcher^3",
+            "deep-researcher^3",
+            "deep-researcher^3"
+          ],
+          "1": [
+            "deep-researcher^3"
+          ],
+          "2": [
+            "deep-researcher^3"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "name": "docs-commanded",
+      "query": "@ctx7(deep-researcher) : \"fetch the latest framework documentation\"",
+      "pattern": "Commanded",
+      "complexity": "L1",
+      "total_tokens": 630,
+      "metadata": {
+        "total_agents": 1,
+        "execution_depth": 1,
+        "has_parallelism": false,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "ctx7(deep-researcher)"
+          ],
+          "token_budget": 630,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "@ctx7(deep-researcher)",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [],
+        "phases": {
+          "0": [
+            "@ctx7(deep-researcher)"
+          ]
+        },
+        "execution_order": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "end-to-end-product",
+      "query": "deep-researcher -> (api-architect || frontend-architect || test-engineer) -> (practical-programmer || code-craftsman) -> deployment-orchestrator : \"end-to-end product build\"",
+      "pattern": "Mixed",
+      "complexity": "L5",
+      "total_tokens": 3172,
+      "metadata": {
+        "total_agents": 7,
+        "execution_depth": 4,
+        "has_parallelism": true,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "deep-researcher"
+          ],
+          "token_budget": 618,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 2,
+          "agents": [
+            "api-architect",
+            "frontend-architect",
+            "test-engineer"
+          ],
+          "token_budget": 1018,
+          "parallel": true,
+          "skills": []
+        },
+        {
+          "num": 3,
+          "agents": [
+            "practical-programmer",
+            "code-craftsman"
+          ],
+          "token_budget": 918,
+          "parallel": true,
+          "skills": []
+        },
+        {
+          "num": 4,
+          "agents": [
+            "deployment-orchestrator"
+          ],
+          "token_budget": 618,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "deep-researcher",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "api-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "frontend-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "3": {
+            "id": 3,
+            "label": "test-engineer",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "4": {
+            "id": 4,
+            "label": "practical-programmer",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "5": {
+            "id": 5,
+            "label": "code-craftsman",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "6": {
+            "id": 6,
+            "label": "deployment-orchestrator",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [
+          {
+            "from": 0,
+            "to": 1,
+            "from_label": "deep-researcher",
+            "to_label": "api-architect"
+          },
+          {
+            "from": 0,
+            "to": 2,
+            "from_label": "deep-researcher",
+            "to_label": "frontend-architect"
+          },
+          {
+            "from": 0,
+            "to": 3,
+            "from_label": "deep-researcher",
+            "to_label": "test-engineer"
+          },
+          {
+            "from": 1,
+            "to": 4,
+            "from_label": "api-architect",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 2,
+            "to": 4,
+            "from_label": "frontend-architect",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 3,
+            "to": 4,
+            "from_label": "test-engineer",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 1,
+            "to": 5,
+            "from_label": "api-architect",
+            "to_label": "code-craftsman"
+          },
+          {
+            "from": 2,
+            "to": 5,
+            "from_label": "frontend-architect",
+            "to_label": "code-craftsman"
+          },
+          {
+            "from": 3,
+            "to": 5,
+            "from_label": "test-engineer",
+            "to_label": "code-craftsman"
+          },
+          {
+            "from": 4,
+            "to": 6,
+            "from_label": "practical-programmer",
+            "to_label": "deployment-orchestrator"
+          },
+          {
+            "from": 5,
+            "to": 6,
+            "from_label": "code-craftsman",
+            "to_label": "deployment-orchestrator"
+          }
+        ],
+        "phases": {
+          "0": [
+            "deep-researcher"
+          ],
+          "1": [
+            "api-architect",
+            "frontend-architect",
+            "test-engineer"
+          ],
+          "2": [
+            "practical-programmer",
+            "code-craftsman"
+          ],
+          "3": [
+            "deployment-orchestrator"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "name": "mercurio-synthesis",
+      "query": "mercurio-orchestrator -> (deep-researcher || api-architect) -> practical-programmer : \"multi-dimensional synthesis and build\"",
+      "pattern": "Mixed",
+      "complexity": "L4",
+      "total_tokens": 2181,
+      "metadata": {
+        "total_agents": 4,
+        "execution_depth": 3,
+        "has_parallelism": true,
+        "has_fallback": false
+      },
+      "plan_phases": [
+        {
+          "num": 1,
+          "agents": [
+            "mercurio-orchestrator"
+          ],
+          "token_budget": 627,
+          "parallel": false,
+          "skills": []
+        },
+        {
+          "num": 2,
+          "agents": [
+            "deep-researcher",
+            "api-architect"
+          ],
+          "token_budget": 927,
+          "parallel": true,
+          "skills": []
+        },
+        {
+          "num": 3,
+          "agents": [
+            "practical-programmer"
+          ],
+          "token_budget": 627,
+          "parallel": false,
+          "skills": []
+        }
+      ],
+      "dag": {
+        "valid": true,
+        "warnings": [],
+        "nodes": {
+          "0": {
+            "id": 0,
+            "label": "mercurio-orchestrator",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "1": {
+            "id": 1,
+            "label": "deep-researcher",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "2": {
+            "id": 2,
+            "label": "api-architect",
+            "is_fallback": false,
+            "fallback_of": null
+          },
+          "3": {
+            "id": 3,
+            "label": "practical-programmer",
+            "is_fallback": false,
+            "fallback_of": null
+          }
+        },
+        "edges": [
+          {
+            "from": 0,
+            "to": 1,
+            "from_label": "mercurio-orchestrator",
+            "to_label": "deep-researcher"
+          },
+          {
+            "from": 0,
+            "to": 2,
+            "from_label": "mercurio-orchestrator",
+            "to_label": "api-architect"
+          },
+          {
+            "from": 1,
+            "to": 3,
+            "from_label": "deep-researcher",
+            "to_label": "practical-programmer"
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "from_label": "api-architect",
+            "to_label": "practical-programmer"
+          }
+        ],
+        "phases": {
+          "0": [
+            "mercurio-orchestrator"
+          ],
+          "1": [
+            "deep-researcher",
+            "api-architect"
+          ],
+          "2": [
+            "practical-programmer"
+          ]
+        },
+        "execution_order": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "aggregate": {
+    "agent_usage": {
+      "api-architect": 5,
+      "practical-programmer": 5,
+      "deep-researcher^3": 5,
+      "deep-researcher": 4,
+      "test-engineer": 4,
+      "frontend-architect": 2,
+      "deployment-orchestrator": 2,
+      "debug-detective": 1,
+      "devops-github-expert": 1,
+      "api-architect+fastapi+postgresql": 1,
+      "@ctx7(deep-researcher)": 1,
+      "code-craftsman": 1,
+      "mercurio-orchestrator": 1
+    },
+    "handoffs": {
+      "api-architect -> practical-programmer": 4,
+      "deep-researcher^3 -> deep-researcher^3": 4,
+      "deep-researcher -> api-architect": 3,
+      "practical-programmer -> test-engineer": 2,
+      "deep-researcher -> debug-detective": 1,
+      "debug-detective -> practical-programmer": 1,
+      "deep-researcher -> frontend-architect": 1,
+      "deep-researcher -> test-engineer": 1,
+      "frontend-architect -> practical-programmer": 1,
+      "test-engineer -> practical-programmer": 1,
+      "api-architect -> code-craftsman": 1,
+      "frontend-architect -> code-craftsman": 1,
+      "test-engineer -> code-craftsman": 1,
+      "practical-programmer -> deployment-orchestrator": 1,
+      "code-craftsman -> deployment-orchestrator": 1,
+      "mercurio-orchestrator -> deep-researcher": 1,
+      "mercurio-orchestrator -> api-architect": 1,
+      "deep-researcher -> practical-programmer": 1
+    },
+    "total_workflows": 9,
+    "compiled_ok": 9
+  }
+}
