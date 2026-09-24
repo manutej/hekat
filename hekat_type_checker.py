@@ -10,6 +10,10 @@ from hekat_parser import (
 class TypeChecker:
     """Validates AST for semantic correctness."""
 
+    # Five interface colors of the JEV colored operad (jev/src/lib/jev/colors.ts).
+    # Types-as-ports: entity, concept, idea, evidence, action.
+    JEV_COLORS: Set[str] = {"entity", "concept", "idea", "evidence", "action"}
+
     def __init__(self):
         """Initialize with valid agents and skills from Claude Code."""
         # Valid agents from ~/.claude/agents/
@@ -134,9 +138,10 @@ class TypeChecker:
         errors: List[str],
         warnings: List[str]
     ) -> None:
-        """Validate SimpleNode - agent name must exist."""
+        """Validate SimpleNode - agent name must exist; JEV color port must be valid."""
         if node.name not in self.agents:
             errors.append(f"Agent '{node.name}' not found")
+        self._validate_port(node.port, node.name, errors)
 
     def _validate_skilled(
         self,
@@ -154,6 +159,16 @@ class TypeChecker:
 
         if len(node.skills) == 0:
             errors.append("SkilledNode must have at least one skill")
+
+        self._validate_port(node.port, node.agent, errors)
+
+    def _validate_port(self, port, owner: str, errors: List[str]) -> None:
+        """Validate an optional JEV color-port modifier (~color)."""
+        if port is not None and port not in self.JEV_COLORS:
+            valid = ", ".join(sorted(self.JEV_COLORS))
+            errors.append(
+                f"Invalid JEV color '{port}' on '{owner}' (must be one of: {valid})"
+            )
 
     def _validate_commanded(
         self,
