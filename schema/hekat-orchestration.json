@@ -1,0 +1,18 @@
+{
+  "id": "hekat-orchestration",
+  "pin": "jev-1.13.0",
+  "note": "Many questions, one call. Code gates (score_fill). Model fills colors; it does not plan or execute.",
+  "thresholds": { "green": 0.72, "toxin": 0.12, "red": 0.4 },
+  "questions": [
+    { "id": "gold_color", "kind": "choice", "ask": "Classify this element's decision port.",
+      "options": ["entity", "concept", "idea", "evidence", "action"] },
+    { "id": "toxin_color", "kind": "choice", "ask": "Strongest forbidden fill, or none.",
+      "options": ["entity", "concept", "idea", "evidence", "action", "none"] }
+  ],
+  "gate": {
+    "ship":  "allowed_mass >= 0.72 AND toxin_mass <= 0.12 AND no_color_mismatch",
+    "hold":  "0.4 <= allowed_mass < 0.72 OR color_mismatch_seam",
+    "block": "toxin_mass > 0.12 OR allowed_mass < 0.4"
+  },
+  "triage": { "ship": "compose", "hold": "escalate", "block": "refuse" }
+}
