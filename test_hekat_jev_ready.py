@@ -44,6 +44,30 @@ class TestConfig(unittest.TestCase):
             self.assertTrue(cfgmod.load_config().typesafe_live)
 
 
+class TestDotenv(unittest.TestCase):
+    def test_parse_dotenv(self):
+        import tempfile, os as _os
+        fd, path = tempfile.mkstemp(suffix=".env")
+        with _os.fdopen(fd, "w") as f:
+            f.write('# comment\nexport TYPESAFE_API_KEY="sk-abc"\nTYPESAFE_MODEL=jev-1.13.0\n\nBAD LINE\n')
+        try:
+            d = cfgmod._parse_dotenv(path)
+        finally:
+            _os.remove(path)
+        self.assertEqual(d["TYPESAFE_API_KEY"], "sk-abc")
+        self.assertEqual(d["TYPESAFE_MODEL"], "jev-1.13.0")
+        self.assertNotIn("BAD LINE", d)
+
+    def test_real_env_wins_over_dotenv(self):
+        with mock.patch.dict(os.environ, {"TYPESAFE_API_KEY": "from-env"}, clear=False):
+            self.assertEqual(cfgmod._env({"TYPESAFE_API_KEY": "from-dotenv"}, "TYPESAFE_API_KEY"), "from-env")
+
+    def test_dotenv_fills_gap(self):
+        with mock.patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("TEMPORAL_ADDRESS", None)
+            self.assertEqual(cfgmod._env({"TEMPORAL_ADDRESS": "host:7233"}, "TEMPORAL_ADDRESS"), "host:7233")
+
+
 class TestTypeSafeCodec(unittest.TestCase):
     def test_build_request_is_valid(self):
         req = ts.build_request({"agent": "deep-researcher"}, "jev-1.13.0")
