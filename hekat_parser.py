@@ -14,8 +14,9 @@ class ExpressionNode:
 
 @dataclass
 class SimpleNode(ExpressionNode):
-    """Simple agent invocation: agent"""
+    """Simple agent invocation: agent (optionally with a JEV color port: agent~color)"""
     name: str
+    port: str = None  # JEV color classification modifier (entity|concept|idea|evidence|action)
 
 
 @dataclass
@@ -54,9 +55,10 @@ class CommandedNode(ExpressionNode):
 
 @dataclass
 class SkilledNode(ExpressionNode):
-    """Skilled pattern: agent + skill1 + skill2"""
+    """Skilled pattern: agent + skill1 + skill2 (optionally with a JEV color port)"""
     agent: str
     skills: List[str]
+    port: str = None  # JEV color classification modifier (entity|concept|idea|evidence|action)
 
 
 @dataclass
@@ -221,7 +223,7 @@ class Parser:
         return agents
 
     def _skilled(self) -> SkilledNode:
-        """Parse skilled: IDENTIFIER (PLUS IDENTIFIER)+"""
+        """Parse skilled: IDENTIFIER (PLUS IDENTIFIER)+ (TILDE IDENTIFIER)?"""
         agent_token = self._expect(TokenType.IDENTIFIER)
 
         skills = []
@@ -236,12 +238,26 @@ class Parser:
                 self._current()
             )
 
-        return SkilledNode(agent=agent_token.value, skills=skills)
+        port = self._maybe_port()
+        return SkilledNode(agent=agent_token.value, skills=skills, port=port)
 
     def _simple(self) -> SimpleNode:
-        """Parse simple: IDENTIFIER"""
+        """Parse simple: IDENTIFIER (TILDE IDENTIFIER)?"""
         token = self._expect(TokenType.IDENTIFIER)
-        return SimpleNode(name=token.value)
+        port = self._maybe_port()
+        return SimpleNode(name=token.value, port=port)
+
+    def _maybe_port(self) -> str:
+        """Parse optional JEV color-port modifier: TILDE IDENTIFIER.
+
+        Returns the color name (str) or None. Validation that the name is one
+        of the five JEV colors happens in the type checker.
+        """
+        if self._current().type != TokenType.TILDE:
+            return None
+        self._advance()
+        color_token = self._expect(TokenType.IDENTIFIER)
+        return color_token.value
 
     def _current(self) -> Token:
         """Get current token."""
