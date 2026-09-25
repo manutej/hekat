@@ -1,0 +1,401 @@
+<title>HEKAT × JEV Wiring</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --surface-2: #eef1f5; --border: #dbe0e8;
+    --ink: #19202b; --ink-soft: #556072; --muted: #8b94a4;
+    --accent: #3a6ea5; --accent-soft: #eaf1f8;
+    --green: #1f9d63; --green-bg: #e5f4ec;
+    --amber: #b9820c; --amber-bg: #f8efd8;
+    --red: #cf4b5f; --red-bg: #fae7ea;
+    --c-entity: #c98a3c; --c-concept: #3f7cc9; --c-idea: #9b59d0;
+    --c-evidence: #2aa198; --c-action: #e07a5f;
+    --shadow: 0 1px 2px rgba(20,30,45,.06), 0 4px 16px rgba(20,30,45,.05);
+    --radius: 12px;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --display: "Fraunces", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0e131a; --surface: #161d27; --surface-2: #1d2631; --border: #2b3542;
+      --ink: #e7ecf3; --ink-soft: #a4afbe; --muted: #74808f;
+      --accent: #6ea3d8; --accent-soft: #17273a;
+      --green: #4cc78a; --green-bg: #123024;
+      --amber: #e0ab3c; --amber-bg: #33290f;
+      --red: #f0687c; --red-bg: #351a20;
+      --c-entity: #e0a860; --c-concept: #6fa2e6; --c-idea: #bd86ea;
+      --c-evidence: #4cc7bb; --c-action: #f0997e;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0e131a; --surface: #161d27; --surface-2: #1d2631; --border: #2b3542;
+    --ink: #e7ecf3; --ink-soft: #a4afbe; --muted: #74808f;
+    --accent: #6ea3d8; --accent-soft: #17273a;
+    --green: #4cc78a; --green-bg: #123024;
+    --amber: #e0ab3c; --amber-bg: #33290f;
+    --red: #f0687c; --red-bg: #351a20;
+    --c-entity: #e0a860; --c-concept: #6fa2e6; --c-idea: #bd86ea;
+    --c-evidence: #4cc7bb; --c-action: #f0997e;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans);
+    line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 0; }
+  h1,h2,h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+  h2 { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem,3.4vw,1.9rem);
+    letter-spacing: -.01em; }
+  h3 { font-size: 1.02rem; font-weight: 600; letter-spacing: -.005em; }
+  p { margin: .5rem 0; color: var(--ink-soft); }
+  a { color: var(--accent); }
+  code, .mono { font-family: var(--mono); font-size: .86em; }
+  .eyebrow { font-family: var(--mono); font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .16em; color: var(--muted); }
+
+  /* header */
+  header { border-bottom: 1px solid var(--border); background:
+    linear-gradient(180deg, var(--accent-soft), transparent); }
+  .hero { padding-block: 34px 26px; }
+  .hero h1 { font-family: var(--display); font-weight: 600;
+    font-size: clamp(2rem,6vw,3.2rem); letter-spacing: -.02em; }
+  .hero .lede { font-size: clamp(1rem,2.4vw,1.18rem); color: var(--ink); max-width: 64ch; margin-top: .5rem; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono);
+    font-size: .74rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--ink-soft); white-space: nowrap; }
+  .chip b { color: var(--ink); font-weight: 600; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.ok { background: var(--green); } .dot.wait { background: var(--amber); }
+  .dot.block { background: var(--red); }
+
+  section { padding-block: 30px; border-bottom: 1px solid var(--border); }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .sec-head .n { font-family: var(--mono); color: var(--accent); font-size: .8rem; font-weight: 600; }
+  .grid { display: grid; gap: 14px; }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 720px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+  .card { background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+  .card h3 { margin-bottom: 4px; }
+  .card p { margin: 0; font-size: .92rem; }
+
+  /* pipeline flow */
+  .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+  .stage { flex: 1 1 120px; min-width: 120px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 12px; position: relative; }
+  .stage .k { font-family: var(--mono); font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+  .stage .v { font-weight: 600; font-size: .92rem; margin-top: 2px; }
+  .stage .sub { font-size: .76rem; color: var(--ink-soft); margin-top: 2px; }
+  .stage.hl { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+
+  /* color legend */
+  .colors { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  @media (max-width: 720px) { .colors { grid-template-columns: repeat(2, 1fr); } }
+  .swatch { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--surface); }
+  .swatch .bar { height: 6px; border-radius: 4px; margin-bottom: 8px; }
+  .swatch .name { font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .swatch .tag { font-family: var(--mono); font-size: .68rem; color: var(--surface);
+    background: var(--ink); border-radius: 4px; padding: 0 5px; }
+  .swatch p { font-size: .8rem; margin-top: 4px; }
+
+  /* verdict table */
+  .verdicts { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  @media (max-width: 720px) { .verdicts { grid-template-columns: 1fr; } }
+  .verdict { border-radius: var(--radius); padding: 14px; border: 1px solid var(--border); }
+  .verdict.g { background: var(--green-bg); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+  .verdict.a { background: var(--amber-bg); border-color: color-mix(in srgb, var(--amber) 40%, var(--border)); }
+  .verdict.r { background: var(--red-bg); border-color: color-mix(in srgb, var(--red) 40%, var(--border)); }
+  .verdict .lbl { font-family: var(--mono); font-weight: 700; letter-spacing: .04em; }
+  .verdict.g .lbl { color: var(--green); } .verdict.a .lbl { color: var(--amber); } .verdict.r .lbl { color: var(--red); }
+  .verdict .map { font-size: .82rem; margin-top: 6px; color: var(--ink); }
+  .verdict .rule { font-family: var(--mono); font-size: .72rem; color: var(--ink-soft); margin-top: 8px; display: block; }
+
+  /* examples */
+  .ex { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px; box-shadow: var(--shadow); }
+  .ex .q { font-family: var(--mono); font-size: .8rem; background: var(--surface-2); border-radius: 8px;
+    padding: 8px 10px; overflow-x: auto; white-space: nowrap; color: var(--ink); }
+  .ex .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .pill { font-family: var(--mono); font-size: .74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+  .pill.g { background: var(--green); color: #fff; } .pill.a { background: var(--amber); color: #fff; } .pill.r { background: var(--red); color: #fff; }
+  .ex .why { font-size: .82rem; color: var(--ink-soft); margin-top: 8px; }
+  .clr { font-family: var(--mono); font-weight: 700; font-size: .72rem; padding: 1px 5px; border-radius: 4px; color: #fff; }
+
+  /* module table */
+  .tbl { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  .tbl th, .tbl td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .tbl th { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .tbl td code { color: var(--ink); }
+  .st { font-family: var(--mono); font-size: .7rem; font-weight: 700; padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
+  .st.done { background: var(--green-bg); color: var(--green); }
+  .st.wait { background: var(--amber-bg); color: var(--amber); }
+  .st.block { background: var(--red-bg); color: var(--red); }
+  .tblwrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 40px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff;
+    font-family: var(--mono); font-weight: 700; font-size: .8rem; display: grid; place-items: center; }
+  ol.steps b { color: var(--ink); }
+  pre.cmd { font-family: var(--mono); font-size: .8rem; background: var(--surface-2); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 8px 0 0; }
+  .kbd { font-family: var(--mono); background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .82em; color: var(--ink); }
+  .callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 14px;
+    border-radius: 0 8px 8px 0; font-size: .9rem; color: var(--ink); }
+  footer { padding-block: 26px 40px; color: var(--muted); font-size: .82rem; }
+  .toggle { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 12px); right: 14px;
+    z-index: 10; background: var(--surface); border: 1px solid var(--border); color: var(--ink-soft);
+    border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: .72rem; cursor: pointer; box-shadow: var(--shadow); }
+  @media (prefers-reduced-motion: no-preference) { .stage, .card, .ex { transition: border-color .2s; } }
+</style>
+
+<button class="toggle" id="themeToggle" aria-label="Toggle theme">◑ theme</button>
+
+<header>
+  <div class="wrap hero">
+    <div class="eyebrow">Session review · manutej/hekat</div>
+    <h1>HEKAT × JEV</h1>
+    <p class="lede">What we wired: a typed classification &amp; fail-closed gate on top of the HEKAT
+      orchestration DSL, so an agent pipeline isn&rsquo;t just <em>planned</em> &mdash; it&rsquo;s
+      classified, gated, triaged, and recorded on a durable tape.</p>
+    <div class="meta-row">
+      <span class="chip"><span class="dot ok"></span> runs offline <b>today</b></span>
+      <span class="chip">branch <b>claude/hekat-jev-integration</b></span>
+      <span class="chip">40 JEV + 59 pkg tests <b>green</b></span>
+      <span class="chip">model pin <b>jev-1.13.0</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- WHY -->
+  <section>
+    <div class="sec-head"><span class="n">01</span><h2>The idea in one line</h2></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>HEKAT plans</h3>
+        <p>A DSL that composes agents with operators (<code>-&gt;</code> sequential, <code>||</code>
+          parallel, <code>?</code> fallback, <code>^</code> ensemble). It compiles a query into a DAG
+          with phases and an L1&ndash;L7 complexity/token budget. Powerful, but <em>static</em>:
+          it never asks whether a composition is <em>allowed</em> or <em>useful</em>.</p>
+      </div>
+      <div class="card">
+        <h3>JEV judges</h3>
+        <p>A double-operadic type system (Libkind&ndash;Myers, arXiv:2505.18329). It classifies
+          elements into five colors, composes only on a color match (<code>&gamma;</code>), and scores
+          a shipping gate that <b>fails closed</b>. It supplies the <em>decision</em>; HEKAT supplies
+          the <em>plan</em>.</p>
+      </div>
+    </div>
+    <div style="margin-top:14px" class="callout">
+      Net effect: HEKAT becomes useful <b>at runtime</b> &mdash; classifying agent outputs, gating
+      hand-offs, and directing triage (ship / clarify / re-route), all recorded durably.
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section>
+    <div class="sec-head"><span class="n">02</span><h2>The pipeline, end to end</h2></div>
+    <p>Each existing HEKAT stage gained a JEV entry point. The two highlighted stages are new.</p>
+    <div class="flow" style="margin-top:12px">
+      <div class="stage"><div class="k">DSL</div><div class="v">query</div><div class="sub"><code>agent -&gt; agent : "task"</code></div></div>
+      <div class="stage hl"><div class="k">Lexer / Parser</div><div class="v">~color modifier</div><div class="sub">classify an element inline</div></div>
+      <div class="stage"><div class="k">TypeChecker</div><div class="v">validate</div><div class="sub">agents + JEV colors</div></div>
+      <div class="stage"><div class="k">DAG</div><div class="v">operadic forest</div><div class="sub">nodes = slots, edges = γ</div></div>
+      <div class="stage hl"><div class="k">Classify + Gate</div><div class="v">score_fill</div><div class="sub">colors → verdict → triage</div></div>
+      <div class="stage"><div class="k">Durable</div><div class="v">worker tree</div><div class="sub">tape: start/query/signal</div></div>
+    </div>
+    <p style="margin-top:12px; font-size:.86rem">
+      Entrypoint: <code>python3 hekat_orchestrate.py '&lt;query&gt;' [--forbid action] [--json]</code>
+      &mdash; same command offline or live.</p>
+  </section>
+
+  <!-- COLORS -->
+  <section>
+    <div class="sec-head"><span class="n">03</span><h2>Five colors = the domain language</h2></div>
+    <p>Every element (agent, skill, prompt) is classified into one interface color. The
+      <code>~color</code> modifier lets you assert it inline; otherwise a lexicon or the live model decides.</p>
+    <div class="colors" style="margin-top:12px">
+      <div class="swatch"><div class="bar" style="background:var(--c-entity)"></div>
+        <div class="name"><span class="tag">E</span> entity</div><p>Named things: tables, tokens, people.</p></div>
+      <div class="swatch"><div class="bar" style="background:var(--c-concept)"></div>
+        <div class="name"><span class="tag">C</span> concept</div><p>Interfaces, types, modules, doctrines.</p></div>
+      <div class="swatch"><div class="bar" style="background:var(--c-idea)"></div>
+        <div class="name"><span class="tag">I</span> idea</div><p>Hypotheses, claims, theories.</p></div>
+      <div class="swatch"><div class="bar" style="background:var(--c-evidence)"></div>
+        <div class="name"><span class="tag">V</span> evidence</div><p>Queries, counts, catalogs, checks.</p></div>
+      <div class="swatch"><div class="bar" style="background:var(--c-action)"></div>
+        <div class="name"><span class="tag">A</span> action</div><p>Publish, compose, deploy, grant.</p></div>
+    </div>
+  </section>
+
+  <!-- GATE -->
+  <section>
+    <div class="sec-head"><span class="n">04</span><h2>The fail-closed gate</h2></div>
+    <p>A color distribution is scored against thresholds
+      <code>τ_green=0.72</code>, <code>τ_toxin=0.12</code>, <code>τ_red=0.4</code>. The verdict maps
+      straight onto a triage branch and a HEKAT control path.</p>
+    <div class="verdicts" style="margin-top:12px">
+      <div class="verdict g"><span class="lbl">GREEN</span>
+        <div class="map">ship → <b>compose</b></div>
+        <span class="rule">allowed ≥ 0.72 &amp; toxin ≤ 0.12 &amp; no seam</span>
+        <div class="map" style="margin-top:6px">Proceed to the next phase.</div></div>
+      <div class="verdict a"><span class="lbl">AMBER</span>
+        <div class="map">hold → <b>escalate</b></div>
+        <span class="rule">0.4 ≤ allowed &lt; 0.72, or a γ seam</span>
+        <div class="map" style="margin-top:6px">Ask a human / clarify. Don&rsquo;t ship.</div></div>
+      <div class="verdict r"><span class="lbl">RED</span>
+        <div class="map">block → <b>refuse</b></div>
+        <span class="rule">toxin &gt; 0.12, or allowed &lt; 0.4</span>
+        <div class="map" style="margin-top:6px">Fail closed → re-route via <code>?</code> fallback.</div></div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section>
+    <div class="sec-head"><span class="n">05</span><h2>Live examples (from the demo)</h2></div>
+    <div class="grid cols-3">
+      <div class="ex">
+        <div class="q">deep-researcher → api-architect → practical-programmer</div>
+        <div class="row">
+          <span>
+            <span class="clr" style="background:var(--c-evidence)">V</span>
+            <span class="clr" style="background:var(--c-concept)">C</span>
+            <span class="clr" style="background:var(--c-action)">A</span>
+          </span>
+          <span class="pill a">AMBER · escalate</span>
+        </div>
+        <div class="why">Grounded &amp; actionable, but a <code>γ</code> seam
+          (evidence→concept) means it needs an adapter step before it ships.</div>
+      </div>
+      <div class="ex">
+        <div class="q">mercurio-orchestrator → project-orchestrator</div>
+        <div class="row">
+          <span>
+            <span class="clr" style="background:var(--c-idea)">I</span>
+            <span class="clr" style="background:var(--c-idea)">I</span>
+          </span>
+          <span class="pill r">RED · refuse</span>
+        </div>
+        <div class="why">All <em>idea</em>, nothing grounded. Allowed mass 0.00 &lt; τ_r &mdash;
+          fail closed on pure speculation.</div>
+      </div>
+      <div class="ex">
+        <div class="q">deep-researcher → deployment-orchestrator <b>--forbid action</b></div>
+        <div class="row">
+          <span>
+            <span class="clr" style="background:var(--c-evidence)">V</span>
+            <span class="clr" style="background:var(--c-action)">A</span>
+          </span>
+          <span class="pill r">RED · refuse</span>
+        </div>
+        <div class="why">Audit-only policy forbids <em>action</em>; the deploy node is a toxin
+          (0.50 &gt; τ_t). The constraint <b>fails closed</b> &mdash; the useful part.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WAS WIRED -->
+  <section>
+    <div class="sec-head"><span class="n">06</span><h2>What was wired</h2></div>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>File</th><th>Role</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><code>hekat_lexer/parser/type_checker.py</code></td><td>New <code>~color</code> modifier: TILDE token, <code>port</code> field, JEV-color validation. Additive, backward compatible.</td><td><span class="st done">built</span></td></tr>
+          <tr><td><code>hekat_jev.py</code></td><td>Kernel port: 5 colors, <code>score_fill</code> (τ), <code>γ</code> edge gate, agent lexicon + local classifier, whole-orchestration classify/score/triage, in-process tape.</td><td><span class="st done">built</span></td></tr>
+          <tr><td><code>hekat_jev_config.py</code></td><td>Env flags + <code>.env</code> auto-load (from <code>vercel env pull</code>) + status banner.</td><td><span class="st done">built</span></td></tr>
+          <tr><td><code>hekat_jev_typesafe.py</code></td><td>Port of the TypeSafe wire contract; one-call/many-seats client. Model fills colors; gate stays in code. Degrades to local on error.</td><td><span class="st wait">built · needs key</span></td></tr>
+          <tr><td><code>hekat_jev_tape.py</code></td><td>Durable runner: <code>InProcessRunner</code> (default) + <code>TemporalRunner</code>; stages DEFINE→SHIP; start/query/signal.</td><td><span class="st wait">built · needs jev-tape</span></td></tr>
+          <tr><td><code>hekat_orchestrate.py</code></td><td>Single CLI: query → classify → gate → triage → durable run.</td><td><span class="st done">built</span></td></tr>
+          <tr><td><code>schema/hekat-orchestration.json</code></td><td>Closed-question + threshold kit (pinned jev-1.13.0).</td><td><span class="st done">built</span></td></tr>
+          <tr><td><code>test_hekat_jev*.py</code></td><td>40 tests (grammar, gate, codec w/ mocked live client, runner, dotenv).</td><td><span class="st done">green</span></td></tr>
+          <tr><td><code>docs/JEV_HEKAT_MAPPING.md · GO_LIVE.md</code></td><td>Entry-point map + exact go-live steps.</td><td><span class="st done">built</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- STATUS / BLOCKERS -->
+  <section>
+    <div class="sec-head"><span class="n">07</span><h2>Status &amp; blockers</h2></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3><span class="dot ok"></span> Working now (offline)</h3>
+        <p>Full DSL→classify→gate→triage→tape runs with the local classifier and in-process tape.
+          No keys, no network. Same commands go live when keys are added.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot block"></span> Blocked on you</h3>
+        <p><b>Private repos</b> — <code>jev-tape</code>, <code>JEV-works</code>, <code>jev-domain</code>,
+          <code>jev-playground</code> can&rsquo;t be read: install the Claude GitHub App for them.
+          Then the Temporal adapter + eval corpora get pinned to their real APIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GO LIVE -->
+  <section>
+    <div class="sec-head"><span class="n">08</span><h2>Go live — set the TypeSafe key</h2></div>
+    <p>No env var is set on any JEV project yet. Home it on the <code>volumetric-intelligence</code>
+      Vercel project (team <code>…wfsWtUP7d1zIRArAwhlTUidB</code>). Then HEKAT auto-consumes it.</p>
+    <ol class="steps" style="margin-top:14px">
+      <li><b>Add the key</b> on Vercel (once):
+        <pre class="cmd">vercel link      # team …TUidB · project volumetric-intelligence
+vercel env add TYPESAFE_API_KEY production</pre></li>
+      <li><b>Pull it into local runtime</b> from the repo root:
+        <pre class="cmd">vercel env pull .env   # writes TYPESAFE_API_KEY (gitignored)</pre></li>
+      <li><b>Verify</b> — the banner flips to LIVE:
+        <pre class="cmd">python3 hekat_orchestrate.py --status
+# classify=LIVE (TypeSafe API) · … · env=.env</pre></li>
+    </ol>
+    <p style="margin-top:12px; font-size:.86rem">Quick alternative: <span class="kbd">export TYPESAFE_API_KEY=…</span>
+      in your shell &mdash; same effect. Full detail in <code>docs/GO_LIVE.md</code>.</p>
+  </section>
+
+  <!-- NEXT SESSION -->
+  <section style="border-bottom:none">
+    <div class="sec-head"><span class="n">09</span><h2>Resuming next session</h2></div>
+    <p>The container is ephemeral; the branch is the memory. Everything to pick up cold lives in
+      <code>docs/HANDOFF.md</code> on <code>claude/hekat-jev-integration</code> — current state,
+      file map, blockers, and the ordered next steps.</p>
+    <div class="grid cols-3" style="margin-top:6px">
+      <div class="card"><h3>Run it</h3><p class="mono" style="font-size:.8rem">python3 hekat_orchestrate.py --status</p></div>
+      <div class="card"><h3>See the map</h3><p class="mono" style="font-size:.8rem">docs/JEV_HEKAT_MAPPING.md</p></div>
+      <div class="card"><h3>Resume</h3><p class="mono" style="font-size:.8rem">docs/HANDOFF.md</p></div>
+    </div>
+  </section>
+
+  <footer class="wrap" style="padding-inline:0">
+    HEKAT × JEV wiring review · classification &amp; fail-closed gate over the HEKAT DSL ·
+    generated for review, source of truth is the repo.
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('hekat-jev-theme');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    btn.addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme');
+      var isDark = cur ? cur === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = isDark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('hekat-jev-theme', next); } catch (e) {}
+    });
+  })();
+</script>
