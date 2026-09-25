@@ -205,3 +205,40 @@ Claude GitHub App for those repos to proceed.
    `JEV-works` blind corpora (measure with `brier`, already ported).
 3. Emit a `jev-tape` workflow script directly from a HEKAT DAG (codegen target),
    closing the loop from DSL → gated durable run.
+
+---
+
+## 10. Ready-to-go-live wiring ✅ (flip a switch, no code change)
+
+The integration is now built end-to-end and **runs offline today**; the two external
+dependencies are gated behind env vars and degrade to the local implementation until
+set. Adding a key/address is the only change needed.
+
+**Modules (all in this repo, tested — 37 JEV tests + 59 package tests pass):**
+| File | Role |
+|---|---|
+| `hekat_jev_config.py` | Env-driven feature flags; `banner()` shows live vs. fallback |
+| `hekat_jev_typesafe.py` | Port of `contract.ts` + one-call/many-seats client; model fills colors, code gates |
+| `hekat_jev_tape.py` | Durable runner — `InProcessRunner` (default) + `TemporalRunner` (jev-tape worker tree); `start`/`query`/`signal` |
+| `hekat_orchestrate.py` | Single CLI: query → classify → γ-gate → triage → durable run |
+| `schema/hekat-orchestration.json` | Closed-question + threshold kit (pinned `jev-1.13.0`) |
+| `.env.example` | The two things to fill in |
+
+**Run it now (offline):**
+```sh
+python3 hekat_orchestrate.py --status
+python3 hekat_orchestrate.py 'deep-researcher -> deployment-orchestrator : "audit only"' --forbid action
+```
+
+**Go live — what *you* do:**
+1. **Classification via the real model** — set `TYPESAFE_API_KEY` (Vercel/CI env only).
+   Presence alone flips every node's color from the local classifier to the pinned
+   `jev-1.13.0` System One fill. On any API error the run degrades to local, never fails.
+2. **Durable execution** — set `TEMPORAL_ADDRESS` (+ `pip install temporalio`, +
+   `JEV_TAPE_PATH` to a `jev-tape` clone once access is granted). `get_runner` then
+   selects `TemporalRunner`, handing the same cohort tree to the jev-tape workflow;
+   `preflight()` names anything still missing.
+3. **Repo access** — install the Claude GitHub App for `jev-tape` / `JEV-works` /
+   `jev-domain` so steps 1–2 can use the first-party workflow and eval corpora.
+
+Until then: `classify=local · durable=in-process` — fully functional, same commands.

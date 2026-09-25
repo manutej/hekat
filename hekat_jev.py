@@ -328,6 +328,34 @@ def _label(expr: ExpressionNode) -> str:
     return type(expr).__name__
 
 
+def _expr_state(expr: ExpressionNode, prompt: str) -> dict:
+    """Build the TypeSafe `state` for one node (fed to the colorist seat)."""
+    state = {"kind": type(expr).__name__, "prompt": prompt, "label": _label(expr)}
+    if isinstance(expr, SimpleNode):
+        state["agent"] = expr.name
+    elif isinstance(expr, SkilledNode):
+        state["agent"] = expr.agent
+        state["skills"] = list(expr.skills)
+    elif isinstance(expr, EnsembleNode):
+        state["agent"] = expr.base
+    elif isinstance(expr, CommandedNode):
+        state["command"] = expr.command
+        state["agents"] = list(expr.agents)
+    return state
+
+
+def node_color(expr: ExpressionNode, prompt: str, color_fn=None) -> str:
+    """Color of a node. Precedence: ~color modifier > live model (color_fn) >
+    lexicon/default. The explicit modifier is a human assertion and always wins."""
+    port = getattr(expr, "port", None)
+    if is_color(port):
+        return port
+    if color_fn is not None:
+        dist = color_fn(_expr_state(expr, prompt))
+        return max(((c, dist[c]) for c in COLORS), key=lambda kv: kv[1])[0]
+    return classify_expr_color(expr)
+
+
 def classify_orchestration(
     query: QueryNode,
     dag,                                        # hekat_dag_builder.DAG
@@ -335,9 +363,14 @@ def classify_orchestration(
     forbidden: Set[str] = DEFAULT_FORBIDDEN,
     tau: Thresholds = DEFAULT_THRESHOLDS,
     run_id: str = "run",
+    color_fn=None,                              # optional state->Dist (live TypeSafe model)
 ) -> OrchestrationClassification:
     """Classify every DAG node, gate every edge, score + triage the whole run,
-    and write a durable Temporal-shaped tape of the decision."""
+    and write a durable Temporal-shaped tape of the decision.
+
+    If `color_fn` is given (e.g. from hekat_jev_typesafe.make_color_fn), the live
+    model classifies each node; otherwise the local lexicon/`~color` path is used.
+    """
     tape = Tape(run_id=run_id)
     tape.append("WorkflowStarted", {"prompt": query.prompt})
 
@@ -345,7 +378,7 @@ def classify_orchestration(
     node_colors: List[Tuple[str, str]] = []
     color_of: Dict[int, str] = {}
     for nid, node in dag.nodes.items():
-        color = classify_expr_color(node.expr)
+        color = node_color(node.expr, query.prompt, color_fn)
         color_of[nid] = color
         label = _label(node.expr)
         node_colors.append((label, color))
