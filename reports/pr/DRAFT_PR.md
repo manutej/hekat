@@ -8,13 +8,12 @@
 
 | Area | Status |
 |------|--------|
-| Dataset rows | **52** compile-ok (45 train / 7 val), 7 patterns |
-| Blind eval | **mvp_green** — pass_rate=1.0 on train and val |
-| Adversarial | 3/3 caught |
-| Monitor | `alarms=[]` (`reports/monitor/snapshot.json`) |
-| Trace quality | **Composer-2.5 enrichment in flight** (template MVP on disk; diversity/NL still pending) |
-
-Plumbing (pack, validate, blind eval firewall, ops snapshots) is green. This draft tracks a **template-quality MVP** until enrichment lands and the orchestrator approves opening.
+| Dataset rows | **79** compile-ok (66 train / 13 val), 7 patterns |
+| Blind eval | **validation mvp_green** (exit gated on val only) + `registry_ok` |
+| Adversarial | 8/8 caught |
+| Monitor | `alarms=[]`; tracks `eval_mvp_green_validation` |
+| Trace quality | 52 Composer-enriched; 27 newer rows still template (batch_d pending) |
+| Arch F1–F3 | Applied (val-only green, monitor, registry G4) |
 
 ## Title
 feat: HEKAT orchestration SFT dataset MVP (MessagesList + dual reasoning)
@@ -29,26 +28,22 @@ feat: HEKAT orchestration SFT dataset MVP (MessagesList + dual reasoning)
 - SOP + measured checklist
 
 ### Evidence (current)
-- Train/val: 45 / 7 (**52** compile-ok)
-- Blind eval: **mvp_green** on both splits (`reports/eval/scorecard.json`)
-- Adversarial: 3/3 caught (`reports/adversarial/report.json`)
+- Train/val: 66 / 13 (**79** compile-ok)
+- Blind eval: validation mvp_green (`reports/eval/scorecard.json`)
+- Adversarial: 8/8 (`reports/adversarial/report.json`)
 - Monitor: no alarms
-- Enrichment: `tools/sft/build/enrich_from_agent_jsonl.py` + Composer agent JSONL — **in progress** (not yet merged into published rows for diversity gate)
+- Arch follow-ups F1–F3 landed
 
 ### Blockers before open
-1. **Orchestrator greenlight** — PR steward must not open until explicit approval (`docs/sft/CHECKLIST.md` Phase 4).
-2. **Composer-2.5 enrichment** — dual-trace / naturalistic NL diversity (see `reports/architecture/REVIEW_PASS1.md`); template-only traces remain a known limitation until enrichment completes or is explicitly accepted.
-3. **Branch pushed** — remote branch sync before open (checklist Phase 0).
-4. **Hub-ready dataset card** — draft card; finalize L2 sparsity and post-enrichment row notes before publish (out of scope for first PR unless required by greenlight).
+1. **Orchestrator greenlight** — do not open until explicit approval.
+2. Optional: finish Composer enrichment for the 27 growth rows (batch_d).
+3. Hub-ready card polish if publishing in the same PR.
 
 ### Test plan
-- [ ] `python3 tools/sft/build/template_generator.py`
-- [ ] `python3 tools/sft/build/validate_dataset.py`
-- [ ] `python3 tools/sft/eval/blind_eval.py`
-- [ ] `python3 tools/sft/ops/adversarial/attack_suite.py`
-- [ ] `python3 tools/sft/ops/monitor/snapshot.py`
+- [ ] `bash tools/sft/ops/run_all_gates.sh`
+- [ ] `python3 tools/sft/ops/math_check.py`
 
 ### Not in this PR yet
 - Hub publish
-- Deep repo archive cleanup
 - Package consolidation of root `hekat_*.py`
+- Dual-lexer unification

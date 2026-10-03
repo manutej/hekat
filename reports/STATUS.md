@@ -9,7 +9,7 @@
 | SOP + checklist + memories | done |
 | Dataset schema + card | done |
 | Pilot JSONL | **79** compile-ok (66/13); 52 composer + 27 template (batch_d enriching) |
-| Blind eval | mvp_green |
+| Blind eval | validation mvp_green (+ registry_ok); exit gated on val only |
 | Adversarial | 8/8 catch |
 | Monitor | no alarms |
 | Math review | labels match compiler; L2 sparse |
