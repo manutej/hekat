@@ -42,6 +42,22 @@ TAG_RE = {
 DATA = ROOT / "datasets/hekat-orchestration-sft/data"
 OUT = ROOT / "reports/eval/scorecard.json"
 
+_FORBIDDEN_MODULE_PREFIX = "tools.sft.build"
+
+
+def assert_information_firewall() -> None:
+    """Fail fast if build-lane modules were imported before blind eval runs."""
+    leaked = [
+        name
+        for name in sys.modules
+        if name == _FORBIDDEN_MODULE_PREFIX or name.startswith(f"{_FORBIDDEN_MODULE_PREFIX}.")
+    ]
+    if leaked:
+        raise RuntimeError(
+            "Information firewall violation: build modules loaded in eval process: "
+            + ", ".join(sorted(leaked))
+        )
+
 
 def load_jsonl(path: Path) -> List[Dict[str, Any]]:
     rows = []
@@ -121,6 +137,7 @@ def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str,
 
 
 def main() -> int:
+    assert_information_firewall()
     compiler = HEKATCompiler()
     report = {"thresholds": THRESHOLDS, "splits": {}}
     for split in ("train", "validation"):
