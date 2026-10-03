@@ -12,7 +12,7 @@
 | Blind eval | **validation mvp_green** (exit gated on val only) + `registry_ok` |
 | Adversarial | 8/8 caught |
 | Monitor | `alarms=[]`; tracks `eval_mvp_green_validation` |
-| Trace quality | 52 Composer-enriched; 27 newer rows still template (batch_d pending) |
+| Trace quality | **79/79** Composer-enriched (batch_a–d) |
 | Arch F1–F3 | Applied (val-only green, monitor, registry G4) |
 
 ## Title
