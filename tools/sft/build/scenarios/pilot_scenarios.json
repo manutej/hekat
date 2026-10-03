@@ -1,7 +1,7 @@
 [
   {
     "id": "simple-000",
-    "natural_language": "Handle task with api-architect: 0 clarify and propose next steps",
+    "natural_language": "Design a clean REST surface for user profile CRUD with pagination.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -11,7 +11,7 @@
   },
   {
     "id": "simple-001",
-    "natural_language": "Handle task with practical-programmer: 1 clarify and propose next steps",
+    "natural_language": "Implement a webhook retry worker that won't double-charge payments.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -21,7 +21,7 @@
   },
   {
     "id": "simple-002",
-    "natural_language": "Handle task with test-engineer: 2 clarify and propose next steps",
+    "natural_language": "Add integration tests for the Stripe webhook signature path.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -31,7 +31,7 @@
   },
   {
     "id": "simple-003",
-    "natural_language": "Handle task with docs-generator: 3 clarify and propose next steps",
+    "natural_language": "Write operator docs for the new orchestration CLI flags.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -41,7 +41,7 @@
   },
   {
     "id": "simple-004",
-    "natural_language": "Handle task with deep-researcher: 4 clarify and propose next steps",
+    "natural_language": "Research tradeoffs between session cookies and JWT for our B2B app.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -51,7 +51,7 @@
   },
   {
     "id": "simple-005",
-    "natural_language": "Handle task with debug-detective: 5 clarify and propose next steps",
+    "natural_language": "Bisect the null deref in checkout when cart is empty.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -61,7 +61,7 @@
   },
   {
     "id": "simple-006",
-    "natural_language": "Handle task with frontend-architect: 6 clarify and propose next steps",
+    "natural_language": "Sketch a responsive settings page layout for the admin console.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -71,7 +71,7 @@
   },
   {
     "id": "simple-007",
-    "natural_language": "Handle task with devops-github-expert: 7 clarify and propose next steps",
+    "natural_language": "Propose a GitHub Actions deploy pipeline for the API service.",
     "scenario_category": "quick_start",
     "pattern_type": "Simple",
     "operators": [
@@ -81,7 +81,7 @@
   },
   {
     "id": "skilled-000",
-    "natural_language": "Deliver slice 0 using api-architect with fastapi/react-development",
+    "natural_language": "Build a FastAPI service with PostgreSQL models for inventory.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -92,7 +92,7 @@
   },
   {
     "id": "skilled-001",
-    "natural_language": "Deliver slice 1 using practical-programmer with postgresql/pytest",
+    "natural_language": "Ship a React dashboard with Tailwind for warehouse metrics.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -103,7 +103,7 @@
   },
   {
     "id": "skilled-002",
-    "natural_language": "Deliver slice 2 using test-engineer with react-development/docker-compose-orchestration",
+    "natural_language": "Add pytest coverage for the billing reconciliation job.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -114,7 +114,7 @@
   },
   {
     "id": "skilled-003",
-    "natural_language": "Deliver slice 3 using docs-generator with pytest/oauth2-authentication",
+    "natural_language": "Containerize the worker with docker compose for local deps.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -125,7 +125,7 @@
   },
   {
     "id": "skilled-004",
-    "natural_language": "Deliver slice 4 using deep-researcher with docker-compose-orchestration/tailwind-css",
+    "natural_language": "Implement OAuth2 login against our IdP for the admin app.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -136,7 +136,7 @@
   },
   {
     "id": "skilled-005",
-    "natural_language": "Deliver slice 5 using debug-detective with oauth2-authentication/mlops-workflows",
+    "natural_language": "Prototype an MLOps preprocessing job using pandas.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -147,7 +147,7 @@
   },
   {
     "id": "skilled-006",
-    "natural_language": "Deliver slice 6 using frontend-architect with tailwind-css/pandas",
+    "natural_language": "Harden the FastAPI auth middleware with PostgreSQL session store.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -158,7 +158,7 @@
   },
   {
     "id": "skilled-007",
-    "natural_language": "Deliver slice 7 using devops-github-expert with mlops-workflows/fastapi",
+    "natural_language": "Refactor the React forms to share validation with the API schemas.",
     "scenario_category": "skilled",
     "pattern_type": "Skilled",
     "operators": [
@@ -169,7 +169,7 @@
   },
   {
     "id": "seq-000",
-    "natural_language": "Sequential workflow 0",
+    "natural_language": "Research OAuth options, design the auth API, then implement it.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -180,7 +180,7 @@
   },
   {
     "id": "seq-001",
-    "natural_language": "Sequential workflow 1",
+    "natural_language": "Implement billing, cover it with tests, then document the API.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -191,7 +191,7 @@
   },
   {
     "id": "seq-002",
-    "natural_language": "Sequential workflow 2",
+    "natural_language": "Compare vector DB options and document a recommendation.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -202,7 +202,7 @@
   },
   {
     "id": "seq-003",
-    "natural_language": "Sequential workflow 3",
+    "natural_language": "Design the notifications API, implement it, then add tests.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -213,7 +213,7 @@
   },
   {
     "id": "seq-004",
-    "natural_language": "Sequential workflow 4",
+    "natural_language": "Debug the flaky job, patch it, then add regression tests.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -224,7 +224,7 @@
   },
   {
     "id": "seq-005",
-    "natural_language": "Sequential workflow 5",
+    "natural_language": "Coordinate the project plan, design the API, then implement MVP.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -235,7 +235,7 @@
   },
   {
     "id": "seq-006",
-    "natural_language": "Sequential workflow 6",
+    "natural_language": "Research UX patterns, design the frontend architecture, then implement.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -246,7 +246,7 @@
   },
   {
     "id": "seq-007",
-    "natural_language": "Sequential workflow 7",
+    "natural_language": "Design the deploy API contract, automate CI, then document runbooks.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Sequential",
     "operators": [
@@ -257,7 +257,7 @@
   },
   {
     "id": "par-000",
-    "natural_language": "Parallel exploration 0",
+    "natural_language": "In parallel draft frontend, backend, and DevOps plans for a chat MVP.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -268,7 +268,7 @@
   },
   {
     "id": "par-001",
-    "natural_language": "Parallel exploration 1",
+    "natural_language": "Simultaneously review API shape, implementation risks, and test strategy for login.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -279,7 +279,7 @@
   },
   {
     "id": "par-002",
-    "natural_language": "Parallel exploration 2",
+    "natural_language": "Parallel pass: code craftsmanship, coverage gaps, and test quality on payments.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -290,7 +290,7 @@
   },
   {
     "id": "par-003",
-    "natural_language": "Parallel exploration 3",
+    "natural_language": "Together produce docs, tests, and implementation notes for the CLI.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -301,7 +301,7 @@
   },
   {
     "id": "par-004",
-    "natural_language": "Parallel exploration 4",
+    "natural_language": "Investigate the outage from debug, API, and frontend angles at once.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -312,7 +312,7 @@
   },
   {
     "id": "par-005",
-    "natural_language": "Parallel exploration 5",
+    "natural_language": "Parallel research + API design + docs outline for search ranking.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -323,7 +323,7 @@
   },
   {
     "id": "par-006",
-    "natural_language": "Parallel exploration 6",
+    "natural_language": "Compare deploy orchestration options across three ops specialists.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -334,7 +334,7 @@
   },
   {
     "id": "par-007",
-    "natural_language": "Parallel exploration 7",
+    "natural_language": "Project-manage, implement, and test the onboarding checklist feature in parallel tracks.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Parallel",
     "operators": [
@@ -345,7 +345,7 @@
   },
   {
     "id": "mixed-000",
-    "natural_language": "Mixed fan-out workflow 0",
+    "natural_language": "Research the outage, investigate API and debug paths in parallel, then ship the fix.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -357,7 +357,7 @@
   },
   {
     "id": "mixed-001",
-    "natural_language": "Mixed fan-out workflow 1",
+    "natural_language": "Gather requirements, design frontend and API together, then implement.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -369,7 +369,7 @@
   },
   {
     "id": "mixed-002",
-    "natural_language": "Mixed fan-out workflow 2",
+    "natural_language": "Plan the release, prepare tests and docs in parallel, then implement automation.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -381,7 +381,7 @@
   },
   {
     "id": "mixed-003",
-    "natural_language": "Mixed fan-out workflow 3",
+    "natural_language": "Research deploy strategy, plan devops and tests together, then implement pipelines.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -393,7 +393,7 @@
   },
   {
     "id": "mixed-004",
-    "natural_language": "Mixed fan-out workflow 4",
+    "natural_language": "Triage the bug, redesign API or craft a patch in parallel, then add tests.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -405,7 +405,7 @@
   },
   {
     "id": "mixed-005",
-    "natural_language": "Mixed fan-out workflow 5",
+    "natural_language": "Research content needs, draft UI and docs outlines together, then implement.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -417,7 +417,7 @@
   },
   {
     "id": "mixed-006",
-    "natural_language": "Mixed fan-out workflow 6",
+    "natural_language": "Design the API, implement and test in parallel, then publish docs.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -429,7 +429,7 @@
   },
   {
     "id": "mixed-007",
-    "natural_language": "Mixed fan-out workflow 7",
+    "natural_language": "Coordinate delivery, design API and frontend together, then implement MVP.",
     "scenario_category": "real_world_workflow",
     "pattern_type": "Mixed",
     "operators": [
@@ -441,7 +441,7 @@
   },
   {
     "id": "fallback-000",
-    "natural_language": "Resilient fallback chain 0",
+    "natural_language": "Deploy the service; fall back across deploy/devops/unix owners if one path fails.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -452,7 +452,7 @@
   },
   {
     "id": "fallback-001",
-    "natural_language": "Resilient fallback chain 1",
+    "natural_language": "Implement the feature with a craftsman; fall back to practical then debug help.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -463,7 +463,7 @@
   },
   {
     "id": "fallback-002",
-    "natural_language": "Resilient fallback chain 2",
+    "natural_language": "Run architecture analysis with orchestration specialists as fallback chain.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -474,7 +474,7 @@
   },
   {
     "id": "fallback-003",
-    "natural_language": "Resilient fallback chain 3",
+    "natural_language": "Deliver the UI; fall back to generalist implementer then docs if blocked.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -485,7 +485,7 @@
   },
   {
     "id": "fallback-004",
-    "natural_language": "Resilient fallback chain 4",
+    "natural_language": "Design the API; fall back to implementer then debugger on failure.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -496,7 +496,7 @@
   },
   {
     "id": "fallback-005",
-    "natural_language": "Resilient fallback chain 5",
+    "natural_language": "Own the GitHub deploy; fall back to deployment orchestrator then bash expert.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -507,7 +507,7 @@
   },
   {
     "id": "fallback-006",
-    "natural_language": "Resilient fallback chain 6",
+    "natural_language": "Own test strategy; fall back to coverage analysis then implementation help.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -518,7 +518,7 @@
   },
   {
     "id": "fallback-007",
-    "natural_language": "Resilient fallback chain 7",
+    "natural_language": "Produce docs; fall back to implementer then project orchestrator.",
     "scenario_category": "resilience",
     "pattern_type": "Fallback",
     "operators": [
@@ -529,7 +529,7 @@
   },
   {
     "id": "cmd-000",
-    "natural_language": "Context7 assisted work 0 with api-architect",
+    "natural_language": "Use context7 docs assist to design the payments API correctly.",
     "scenario_category": "commanded",
     "pattern_type": "Commanded",
     "operators": [
@@ -540,7 +540,7 @@
   },
   {
     "id": "cmd-001",
-    "natural_language": "Context7 assisted work 1 with deep-researcher",
+    "natural_language": "Pull library context then research Redis vs NATS for job queues.",
     "scenario_category": "commanded",
     "pattern_type": "Commanded",
     "operators": [
@@ -551,7 +551,7 @@
   },
   {
     "id": "cmd-002",
-    "natural_language": "Context7 assisted work 2 with practical-programmer",
+    "natural_language": "With docs context, implement the rate limiter middleware.",
     "scenario_category": "commanded",
     "pattern_type": "Commanded",
     "operators": [
@@ -562,7 +562,7 @@
   },
   {
     "id": "cmd-003",
-    "natural_language": "Context7 assisted work 3 with test-engineer",
+    "natural_language": "Use context7 to guide writing contract tests for the SDK client.",
     "scenario_category": "commanded",
     "pattern_type": "Commanded",
     "operators": [

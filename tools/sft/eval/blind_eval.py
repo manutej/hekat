@@ -6,6 +6,9 @@ scenario seeds, or BUILD_SPEC content. It only reads:
   - PRODUCT_SPEC thresholds (hardcoded constants mirroring docs/sft/PRODUCT_SPEC.md)
   - dataset JSONL + schema
   - HEKATCompiler public compile API
+
+Forbidden imports (enforced by convention + CI later):
+  tools.sft.build.*, docs/sft/BUILD_SPEC.md, enrichment prompts, adversarial recipes.
 """
 
 from __future__ import annotations

@@ -8,7 +8,7 @@ Track progress here. Evidence paths required. Update after each phase.
 - [x] Build spec written (`docs/sft/BUILD_SPEC.md`) — builders only
 - [x] AGENTS.md memories
 - [x] Milestone log started (`reports/MILESTONES.md`)
-- [ ] Branch pushed
+- [x] Branch pushed (`cursor/hekat-sft-dataset-mvp-6a6b`)
 
 ## Phase 1 — Scaffold
 - [x] Dataset card draft
