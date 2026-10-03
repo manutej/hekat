@@ -1,0 +1,23 @@
+{
+  "n_train": 45,
+  "n_validation": 7,
+  "n_total": 52,
+  "compile_ok": 52,
+  "patterns": {
+    "Simple": 8,
+    "Skilled": 8,
+    "Sequential": 8,
+    "Parallel": 8,
+    "Mixed": 8,
+    "Fallback": 8,
+    "Commanded": 4
+  },
+  "levels": {
+    "L1": 20,
+    "L4": 15,
+    "L2": 1,
+    "L3": 16
+  },
+  "alarms": [],
+  "eval_mvp_green_train": true
+}

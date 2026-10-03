@@ -1,0 +1,24 @@
+{
+  "n": 3,
+  "caught": 3,
+  "results": [
+    {
+      "name": "unknown_agent",
+      "compile_failed": true,
+      "tag_logic_present": true,
+      "caught_as_expected": true
+    },
+    {
+      "name": "empty_prompt",
+      "compile_failed": true,
+      "tag_logic_present": true,
+      "caught_as_expected": true
+    },
+    {
+      "name": "missing_logic_tag",
+      "compile_failed": false,
+      "tag_logic_present": false,
+      "caught_as_expected": true
+    }
+  ]
+}

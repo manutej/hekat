@@ -1,0 +1,58 @@
+{
+  "thresholds": {
+    "pass_rate": 0.9,
+    "tag_completeness": 1.0,
+    "compile_recheck": 0.95,
+    "dsl_answer_match": 0.95
+  },
+  "splits": {
+    "train": {
+      "n": 45,
+      "pass_rate": 1.0,
+      "tag_completeness": 1.0,
+      "compile_recheck": 1.0,
+      "dsl_answer_match": 1.0,
+      "pass_by_pattern": {
+        "Simple": 7,
+        "Skilled": 7,
+        "Sequential": 7,
+        "Parallel": 7,
+        "Mixed": 7,
+        "Fallback": 7,
+        "Commanded": 3
+      },
+      "fail_ids": [],
+      "thresholds_met": {
+        "pass_rate": true,
+        "tag_completeness": true,
+        "compile_recheck": true,
+        "dsl_answer_match": true
+      },
+      "mvp_green": true
+    },
+    "validation": {
+      "n": 7,
+      "pass_rate": 1.0,
+      "tag_completeness": 1.0,
+      "compile_recheck": 1.0,
+      "dsl_answer_match": 1.0,
+      "pass_by_pattern": {
+        "Simple": 1,
+        "Skilled": 1,
+        "Sequential": 1,
+        "Parallel": 1,
+        "Mixed": 1,
+        "Fallback": 1,
+        "Commanded": 1
+      },
+      "fail_ids": [],
+      "thresholds_met": {
+        "pass_rate": true,
+        "tag_completeness": true,
+        "compile_recheck": true,
+        "dsl_answer_match": true
+      },
+      "mvp_green": true
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hekat.dev/schemas/orchestration-sft-record.json",
+  "title": "HEKATOrchestrationSFTRecord",
+  "type": "object",
+  "required": ["id", "messages", "task", "artifacts", "meta"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "messages": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["role", "content"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "enum": ["system", "user", "assistant"] },
+          "content": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "required": ["natural_language", "scenario_category", "pattern_type", "complexity_level", "operators"],
+      "additionalProperties": false,
+      "properties": {
+        "natural_language": { "type": "string", "minLength": 3 },
+        "scenario_category": { "type": "string" },
+        "pattern_type": {
+          "enum": ["Simple", "Skilled", "Sequential", "Parallel", "Mixed", "Fallback", "Ensemble", "Commanded"]
+        },
+        "complexity_level": { "enum": ["L1", "L2", "L3", "L4", "L5", "L6", "L7"] },
+        "operators": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["dsl", "compile_ok", "dag", "execution_plan"],
+      "additionalProperties": true,
+      "properties": {
+        "dsl": { "type": "string", "minLength": 3 },
+        "compile_ok": { "type": "boolean" },
+        "tokens": { "type": "array" },
+        "ast_summary": { "type": "object" },
+        "dag": { "type": "object" },
+        "execution_plan": { "type": "object" }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["source", "generator_model", "hekat_compiler_version", "license", "created_at", "quality"],
+      "additionalProperties": true,
+      "properties": {
+        "source": { "type": "string" },
+        "generator_model": { "type": "string" },
+        "hekat_compiler_version": { "type": "string" },
+        "license": { "type": "string" },
+        "created_at": { "type": "string" },
+        "quality": {
+          "type": "object",
+          "required": ["schema_valid", "compile_valid", "has_pseudocode", "has_logic", "has_answer"],
+          "properties": {
+            "schema_valid": { "type": "boolean" },
+            "compile_valid": { "type": "boolean" },
+            "has_pseudocode": { "type": "boolean" },
+            "has_logic": { "type": "boolean" },
+            "has_answer": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  }
+}

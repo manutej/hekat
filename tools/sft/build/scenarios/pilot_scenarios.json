@@ -1,0 +1,574 @@
+[
+  {
+    "id": "simple-000",
+    "natural_language": "Handle task with api-architect: 0 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "api-architect : \"{nl}\""
+  },
+  {
+    "id": "simple-001",
+    "natural_language": "Handle task with practical-programmer: 1 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "simple-002",
+    "natural_language": "Handle task with test-engineer: 2 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "test-engineer : \"{nl}\""
+  },
+  {
+    "id": "simple-003",
+    "natural_language": "Handle task with docs-generator: 3 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "docs-generator : \"{nl}\""
+  },
+  {
+    "id": "simple-004",
+    "natural_language": "Handle task with deep-researcher: 4 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "deep-researcher : \"{nl}\""
+  },
+  {
+    "id": "simple-005",
+    "natural_language": "Handle task with debug-detective: 5 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "debug-detective : \"{nl}\""
+  },
+  {
+    "id": "simple-006",
+    "natural_language": "Handle task with frontend-architect: 6 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "frontend-architect : \"{nl}\""
+  },
+  {
+    "id": "simple-007",
+    "natural_language": "Handle task with devops-github-expert: 7 clarify and propose next steps",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "devops-github-expert : \"{nl}\""
+  },
+  {
+    "id": "skilled-000",
+    "natural_language": "Deliver slice 0 using api-architect with fastapi/react-development",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "api-architect + fastapi + react-development : \"{nl}\""
+  },
+  {
+    "id": "skilled-001",
+    "natural_language": "Deliver slice 1 using practical-programmer with postgresql/pytest",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "practical-programmer + postgresql + pytest : \"{nl}\""
+  },
+  {
+    "id": "skilled-002",
+    "natural_language": "Deliver slice 2 using test-engineer with react-development/docker-compose-orchestration",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "test-engineer + react-development + docker-compose-orchestration : \"{nl}\""
+  },
+  {
+    "id": "skilled-003",
+    "natural_language": "Deliver slice 3 using docs-generator with pytest/oauth2-authentication",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "docs-generator + pytest + oauth2-authentication : \"{nl}\""
+  },
+  {
+    "id": "skilled-004",
+    "natural_language": "Deliver slice 4 using deep-researcher with docker-compose-orchestration/tailwind-css",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "deep-researcher + docker-compose-orchestration + tailwind-css : \"{nl}\""
+  },
+  {
+    "id": "skilled-005",
+    "natural_language": "Deliver slice 5 using debug-detective with oauth2-authentication/mlops-workflows",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "debug-detective + oauth2-authentication + mlops-workflows : \"{nl}\""
+  },
+  {
+    "id": "skilled-006",
+    "natural_language": "Deliver slice 6 using frontend-architect with tailwind-css/pandas",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "frontend-architect + tailwind-css + pandas : \"{nl}\""
+  },
+  {
+    "id": "skilled-007",
+    "natural_language": "Deliver slice 7 using devops-github-expert with mlops-workflows/fastapi",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "devops-github-expert + mlops-workflows + fastapi : \"{nl}\""
+  },
+  {
+    "id": "seq-000",
+    "natural_language": "Sequential workflow 0",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> api-architect -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "seq-001",
+    "natural_language": "Sequential workflow 1",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "practical-programmer -> test-engineer -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "seq-002",
+    "natural_language": "Sequential workflow 2",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "seq-003",
+    "natural_language": "Sequential workflow 3",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "api-architect -> practical-programmer -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "seq-004",
+    "natural_language": "Sequential workflow 4",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "debug-detective -> practical-programmer -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "seq-005",
+    "natural_language": "Sequential workflow 5",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "project-orchestrator -> api-architect -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "seq-006",
+    "natural_language": "Sequential workflow 6",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> frontend-architect -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "seq-007",
+    "natural_language": "Sequential workflow 7",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "api-architect -> devops-github-expert -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "par-000",
+    "natural_language": "Parallel exploration 0",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(frontend-architect || practical-programmer || devops-github-expert) : \"{nl}\""
+  },
+  {
+    "id": "par-001",
+    "natural_language": "Parallel exploration 1",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(api-architect || practical-programmer || test-engineer) : \"{nl}\""
+  },
+  {
+    "id": "par-002",
+    "natural_language": "Parallel exploration 2",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(code-craftsman || coverage-analyzer || test-engineer) : \"{nl}\""
+  },
+  {
+    "id": "par-003",
+    "natural_language": "Parallel exploration 3",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(docs-generator || test-engineer || practical-programmer) : \"{nl}\""
+  },
+  {
+    "id": "par-004",
+    "natural_language": "Parallel exploration 4",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(debug-detective || api-architect || frontend-architect) : \"{nl}\""
+  },
+  {
+    "id": "par-005",
+    "natural_language": "Parallel exploration 5",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(deep-researcher || api-architect || docs-generator) : \"{nl}\""
+  },
+  {
+    "id": "par-006",
+    "natural_language": "Parallel exploration 6",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(deployment-orchestrator || devops-github-expert || unix-bash-expert) : \"{nl}\""
+  },
+  {
+    "id": "par-007",
+    "natural_language": "Parallel exploration 7",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(project-orchestrator || practical-programmer || test-engineer) : \"{nl}\""
+  },
+  {
+    "id": "mixed-000",
+    "natural_language": "Mixed fan-out workflow 0",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (api-architect || debug-detective) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "mixed-001",
+    "natural_language": "Mixed fan-out workflow 1",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (frontend-architect || api-architect) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "mixed-002",
+    "natural_language": "Mixed fan-out workflow 2",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "project-orchestrator -> (test-engineer || docs-generator) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "mixed-003",
+    "natural_language": "Mixed fan-out workflow 3",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (devops-github-expert || test-engineer) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "mixed-004",
+    "natural_language": "Mixed fan-out workflow 4",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "debug-detective -> (api-architect || code-craftsman) -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "mixed-005",
+    "natural_language": "Mixed fan-out workflow 5",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (frontend-architect || docs-generator) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "mixed-006",
+    "natural_language": "Mixed fan-out workflow 6",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "api-architect -> (practical-programmer || test-engineer) -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "mixed-007",
+    "natural_language": "Mixed fan-out workflow 7",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "project-orchestrator -> (api-architect || frontend-architect) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "fallback-000",
+    "natural_language": "Resilient fallback chain 0",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "deployment-orchestrator ? devops-github-expert ? unix-bash-expert : \"{nl}\""
+  },
+  {
+    "id": "fallback-001",
+    "natural_language": "Resilient fallback chain 1",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "code-craftsman ? practical-programmer ? debug-detective : \"{nl}\""
+  },
+  {
+    "id": "fallback-002",
+    "natural_language": "Resilient fallback chain 2",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "mercurio-orchestrator ? project-orchestrator ? deep-researcher : \"{nl}\""
+  },
+  {
+    "id": "fallback-003",
+    "natural_language": "Resilient fallback chain 3",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "frontend-architect ? practical-programmer ? docs-generator : \"{nl}\""
+  },
+  {
+    "id": "fallback-004",
+    "natural_language": "Resilient fallback chain 4",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "api-architect ? practical-programmer ? debug-detective : \"{nl}\""
+  },
+  {
+    "id": "fallback-005",
+    "natural_language": "Resilient fallback chain 5",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "devops-github-expert ? deployment-orchestrator ? unix-bash-expert : \"{nl}\""
+  },
+  {
+    "id": "fallback-006",
+    "natural_language": "Resilient fallback chain 6",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "test-engineer ? coverage-analyzer ? practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "fallback-007",
+    "natural_language": "Resilient fallback chain 7",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "docs-generator ? practical-programmer ? project-orchestrator : \"{nl}\""
+  },
+  {
+    "id": "cmd-000",
+    "natural_language": "Context7 assisted work 0 with api-architect",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(api-architect) : \"{nl}\""
+  },
+  {
+    "id": "cmd-001",
+    "natural_language": "Context7 assisted work 1 with deep-researcher",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(deep-researcher) : \"{nl}\""
+  },
+  {
+    "id": "cmd-002",
+    "natural_language": "Context7 assisted work 2 with practical-programmer",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(practical-programmer) : \"{nl}\""
+  },
+  {
+    "id": "cmd-003",
+    "natural_language": "Context7 assisted work 3 with test-engineer",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(test-engineer) : \"{nl}\""
+  }
+]
