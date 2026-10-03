@@ -19,5 +19,6 @@
     "L3": 24
   },
   "alarms": [],
+  "eval_mvp_green_validation": true,
   "eval_mvp_green_train": true
 }

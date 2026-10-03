@@ -76,14 +76,18 @@ def validate_row(row: Dict[str, Any], schema: Dict[str, Any] | None, compiler: H
         plan = compiler.compile(dsl)
         if not row["artifacts"]["compile_ok"]:
             errs.append("compile_ok_flag_false_but_compiles")
-        # registry agents appear in plan phases
+        # G4: phase agents/commands ⊆ public registry
         for phase in plan.phases:
             for agent in phase.agents:
-                base = agent.split("(")[-1].rstrip(")") if "(" in agent else agent
-                if base not in registry.agents and not base.startswith("ctx7"):
-                    # commanded form ctx7(agent) already partially checked by compiler
-                    if base not in registry.agents:
-                        pass
+                if "(" in agent and agent.endswith(")"):
+                    cmd, rest = agent.split("(", 1)
+                    inner = rest[:-1]
+                    if cmd not in registry.commands:
+                        errs.append(f"registry: unknown command '{cmd}'")
+                    elif inner and inner not in registry.agents:
+                        errs.append(f"registry: unknown agent '{inner}'")
+                elif agent not in registry.agents:
+                    errs.append(f"registry: unknown agent '{agent}'")
     except CompileError as e:
         errs.append(f"compile: {e}")
 

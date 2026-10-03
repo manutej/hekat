@@ -3,7 +3,8 @@
     "pass_rate": 0.9,
     "tag_completeness": 1.0,
     "compile_recheck": 0.95,
-    "dsl_answer_match": 0.95
+    "dsl_answer_match": 0.95,
+    "registry_ok": 0.95
   },
   "splits": {
     "train": {
@@ -12,6 +13,7 @@
       "tag_completeness": 1.0,
       "compile_recheck": 1.0,
       "dsl_answer_match": 1.0,
+      "registry_ok": 1.0,
       "pass_by_pattern": {
         "Simple": 11,
         "Skilled": 10,
@@ -26,7 +28,8 @@
         "pass_rate": true,
         "tag_completeness": true,
         "compile_recheck": true,
-        "dsl_answer_match": true
+        "dsl_answer_match": true,
+        "registry_ok": true
       },
       "mvp_green": true
     },
@@ -36,6 +39,7 @@
       "tag_completeness": 1.0,
       "compile_recheck": 1.0,
       "dsl_answer_match": 1.0,
+      "registry_ok": 1.0,
       "pass_by_pattern": {
         "Simple": 2,
         "Skilled": 2,
@@ -50,7 +54,8 @@
         "pass_rate": true,
         "tag_completeness": true,
         "compile_recheck": true,
-        "dsl_answer_match": true
+        "dsl_answer_match": true,
+        "registry_ok": true
       },
       "mvp_green": true
     }

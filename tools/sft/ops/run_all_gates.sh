@@ -11,7 +11,7 @@ python3 tools/sft/build/validate_dataset.py
 
 echo "== blind eval =="
 python3 tools/sft/eval/blind_eval.py >/dev/null
-python3 -c "import json;print(json.load(open('reports/eval/scorecard.json'))['splits']['train']['mvp_green'])"
+python3 -c "import json;d=json.load(open('reports/eval/scorecard.json'));print('validation_mvp_green=', d['splits']['validation']['mvp_green'])"
 
 echo "== adversarial =="
 python3 tools/sft/ops/adversarial/attack_suite.py >/dev/null

@@ -41,10 +41,11 @@ A row **passes** iff:
 5. `<answer>` DSL matches `artifacts.dsl` (normalized whitespace)
 
 ## Blind eval score thresholds (MVP)
-- **Pass rate** ≥ 0.90 on validation split  
+- **Pass rate** ≥ 0.90 on **validation** split (exit code / MVP green = validation only)  
 - **Tag completeness** = 1.0  
 - **Compile recheck** ≥ 0.95  
 - **DSL/answer match** ≥ 0.95  
+- **Registry ok** ≥ 0.95 (phase agents/commands ⊆ public type-checker registry)  
 
 ## Out of scope for MVP
 L6–L7 research monads, TUI agent, Query Builder hotkeys, consciousness YAML learning.

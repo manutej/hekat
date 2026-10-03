@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 
 from hekat_compiler import CompileError, HEKATCompiler
+from hekat_type_checker import TypeChecker
 
 # Mirrors docs/sft/PRODUCT_SPEC.md — keep in sync manually; do not import BUILD_SPEC.
 THRESHOLDS = {
@@ -31,6 +32,7 @@ THRESHOLDS = {
     "tag_completeness": 1.0,
     "compile_recheck": 0.95,
     "dsl_answer_match": 0.95,
+    "registry_ok": 0.95,
 }
 
 TAG_RE = {
@@ -89,11 +91,33 @@ def answer_dsl(content: str) -> str:
     return fence.group(1).strip() if fence else ""
 
 
-def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str, Any]:
+def _phase_agents_in_registry(plan, registry: TypeChecker) -> bool:
+    for phase in plan.phases:
+        for agent in phase.agents:
+            # Commanded labels look like ctx7(api-architect)
+            if "(" in agent and agent.endswith(")"):
+                cmd, rest = agent.split("(", 1)
+                inner = rest[:-1]
+                if cmd not in registry.commands:
+                    return False
+                if inner and inner not in registry.agents:
+                    return False
+                continue
+            if agent not in registry.agents:
+                return False
+    return True
+
+
+def eval_split(
+    rows: List[Dict[str, Any]],
+    compiler: HEKATCompiler,
+    registry: TypeChecker,
+) -> Dict[str, Any]:
     n = len(rows) or 1
     tag_pass = 0
     compile_pass = 0
     match_pass = 0
+    registry_pass = 0
     full_pass = 0
     by_pattern = Counter()
     fail_ids = []
@@ -101,11 +125,15 @@ def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str,
         asst = row["messages"][-1]["content"]
         t_ok = tags_ok(asst)
         c_ok = False
+        r_ok = False
+        plan = None
         try:
-            compiler.compile(row["artifacts"]["dsl"])
+            plan = compiler.compile(row["artifacts"]["dsl"])
             c_ok = True
+            r_ok = _phase_agents_in_registry(plan, registry)
         except CompileError:
             c_ok = False
+            r_ok = False
         a_ok = normalize_dsl(answer_dsl(asst)) == normalize_dsl(row["artifacts"]["dsl"])
         if t_ok:
             tag_pass += 1
@@ -113,7 +141,15 @@ def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str,
             compile_pass += 1
         if a_ok:
             match_pass += 1
-        ok = t_ok and c_ok and a_ok and bool(row["artifacts"].get("compile_ok"))
+        if r_ok:
+            registry_pass += 1
+        ok = (
+            t_ok
+            and c_ok
+            and a_ok
+            and r_ok
+            and bool(row["artifacts"].get("compile_ok"))
+        )
         if ok:
             full_pass += 1
             by_pattern[row["task"]["pattern_type"]] += 1
@@ -125,6 +161,7 @@ def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str,
         "tag_completeness": tag_pass / n,
         "compile_recheck": compile_pass / n,
         "dsl_answer_match": match_pass / n,
+        "registry_ok": registry_pass / n,
         "pass_by_pattern": dict(by_pattern),
         "fail_ids": fail_ids,
     }
@@ -139,19 +176,20 @@ def eval_split(rows: List[Dict[str, Any]], compiler: HEKATCompiler) -> Dict[str,
 def main() -> int:
     assert_information_firewall()
     compiler = HEKATCompiler()
+    registry = TypeChecker()
     report = {"thresholds": THRESHOLDS, "splits": {}}
     for split in ("train", "validation"):
         path = DATA / f"{split}.jsonl"
         if not path.exists():
             report["splits"][split] = {"error": "missing"}
             continue
-        report["splits"][split] = eval_split(load_jsonl(path), compiler)
+        report["splits"][split] = eval_split(load_jsonl(path), compiler, registry)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report, indent=2))
+    # PRODUCT_SPEC gates MVP on the validation split only.
     val = report["splits"].get("validation", {})
-    train = report["splits"].get("train", {})
-    green = bool(val.get("mvp_green") or train.get("mvp_green"))
+    green = bool(val.get("mvp_green"))
     return 0 if green else 1
 
 

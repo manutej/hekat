@@ -59,9 +59,9 @@ Main risks are **semantic drift** (two lexer implementations), **eval contract g
 
 | ID | Severity | Anti-pattern | Evidence | Recommended fix (no PR required) |
 |----|----------|--------------|----------|----------------------------------|
-| F1 | **High** | Exit code treats **train OR validation** as MVP green | `blind_eval.py` `green = val.get("mvp_green") or train.get("mvp_green")` | Gate exit code on **validation only**; keep train metrics in scorecard for diagnostics only. Aligns with `PRODUCT_SPEC.md` (“≥0.90 on **validation** split”). |
-| F2 | **Medium** | Monitor alarm uses **train** `mvp_green`, not validation | `ops/monitor/snapshot.py` L43–44 | Switch alarm to `validation.mvp_green`; add separate `train_mvp_green` field for debug. |
-| F3 | **Medium** | PRODUCT_SPEC hard gate **registry ⊆ agents** not implemented in blind eval | No `TypeChecker` in `tools/sft/eval/` | Add registry check in `eval_split` or document as builder-only via `validate_dataset.py` and add explicit gate G4 implementation (today stubbed). |
+| F1 | **High** → **Fixed** | Exit code treated train OR validation as MVP green | was `or train` | **Applied:** validation-only exit code. |
+| F2 | **Medium** → **Fixed** | Monitor alarm used train `mvp_green` | snapshot.py | **Applied:** alarm + `eval_mvp_green_validation`; train kept as diagnostic. |
+| F3 | **Medium** → **Fixed** | Registry ⊆ agents not in blind eval; G4 stubbed | eval / validate_dataset | **Applied:** `registry_ok` metric in eval + real G4 errors in validator. |
 | F4 | **Low** | Firewall is comment-only until runtime check | Docstring “CI later” | **Applied:** `assert_information_firewall()` in `blind_eval.py` fails fast if `tools.sft.build` is already imported. Extend CI with `python -c` import-linter or grep gate. |
 | F5 | **Low** | `sys.path.insert(ROOT)` widens import surface | Eval adds repo root | Acceptable for MVP; long-term package `hekat_compiler` as installable dep and drop path hack. |
 

@@ -40,7 +40,8 @@ def main() -> int:
     scorecard = {}
     if EVAL.exists():
         scorecard = json.loads(EVAL.read_text(encoding="utf-8"))
-        if not scorecard.get("splits", {}).get("train", {}).get("mvp_green", False):
+        # PRODUCT_SPEC gates on validation; train is diagnostic only.
+        if not scorecard.get("splits", {}).get("validation", {}).get("mvp_green", False):
             alarms.append("EVAL_NOT_GREEN")
     snap = {
         "n_train": len(train),
@@ -50,6 +51,7 @@ def main() -> int:
         "patterns": dict(patterns),
         "levels": dict(levels),
         "alarms": alarms,
+        "eval_mvp_green_validation": scorecard.get("splits", {}).get("validation", {}).get("mvp_green"),
         "eval_mvp_green_train": scorecard.get("splits", {}).get("train", {}).get("mvp_green"),
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
