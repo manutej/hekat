@@ -43,8 +43,12 @@ a durable tape. JEV supplies the decision; HEKAT supplies the plan.
 | `hekat_jev_tape.py` | Durable runner: `InProcessRunner` (default) + `TemporalRunner`; stages DEFINE→ASSIGN→ROUTE→STATE→GUARD→SHIP; `start`/`query`/`signal` |
 | `hekat_orchestrate.py` | Single CLI entrypoint |
 | `schema/hekat-orchestration.json` | Closed-question + threshold kit |
+| `hekat_openrouter.py` | Run a HEKAT agent as a real LLM call via OpenRouter (role prompts); mock when no key |
+| `hekat_eval.py` | Adversarial suite: deterministic gate-defeat cases (must-block) + false-positive guards (must-allow) + live agent probes |
+| `hekat_serve.py` | Local testing/monitoring server (stdlib): `/api/{status,classify,run,adversarial,runs}`; serves `docs/monitor.html` |
+| `docs/monitor.html` | Live UI: test queries, run agents, run adversarial suite, monitor feed |
 | `build_orchestration_map.py` | (from PR #2, merged) multi-query DAG mapper |
-| `test_hekat_jev.py`, `test_hekat_jev_ready.py` | 40 tests |
+| `test_hekat_jev.py`, `test_hekat_jev_ready.py`, `test_hekat_eval.py` | 51 JEV tests |
 | `docs/JEV_HEKAT_MAPPING.md` | Full entry-point map + architecture |
 | `docs/GO_LIVE.md` | Exact go-live steps |
 | `docs/dashboard.html` | The review dashboard |
@@ -56,10 +60,16 @@ a durable tape. JEV supplies the decision; HEKAT supplies the plan.
 # from repo root
 python3 hekat_orchestrate.py --status
 python3 hekat_orchestrate.py 'deep-researcher -> deployment-orchestrator : "audit"' --forbid action
-python3 jev_classify_demo.py
-python3 -m unittest test_hekat_jev test_hekat_jev_ready          # 40 tests
+python3 hekat_eval.py                                            # adversarial suite 12/12
+python3 hekat_serve.py                                           # → http://localhost:8711 (testing UI)
+python3 -m unittest test_hekat_jev test_hekat_jev_ready test_hekat_eval   # 51 tests
 pip install pytest pytest-cov -q && python3 -m pytest -q          # 59 package tests
 ```
+
+**Testing/monitoring interface:** `python3 hekat_serve.py` → open the URL →
+test queries, run agents (mock, or live with `OPENROUTER_API_KEY`), run the
+adversarial suite, watch the monitor feed. Full guide: `docs/TESTING.md`.
+Env present in last session: `TYPESAFE_API_KEY` was set; `OPENROUTER_API_KEY` was not.
 Offline banner: `classify=local classifier … · durable=in-process tape …`.
 
 ## 4. Current state

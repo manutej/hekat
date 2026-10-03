@@ -74,11 +74,18 @@ class JevConfig:
     temporal_namespace: str
     temporal_task_queue: str
     jev_tape_path: str | None
+    openrouter_api_key: str | None = None
+    openrouter_endpoint: str = "https://openrouter.ai/api/v1/chat/completions"
+    openrouter_model: str = "openai/gpt-4o-mini"
     dotenv_source: str | None = None   # path of the .env consumed, if any
 
     @property
     def typesafe_live(self) -> bool:
         return bool(self.typesafe_api_key)
+
+    @property
+    def openrouter_live(self) -> bool:
+        return bool(self.openrouter_api_key)
 
     @property
     def temporal_live(self) -> bool:
@@ -88,8 +95,9 @@ class JevConfig:
         """One-line status of what is live vs. running on the local fallback."""
         ts = "LIVE (TypeSafe API)" if self.typesafe_live else "local classifier (add TYPESAFE_API_KEY)"
         tp = "LIVE (Temporal)" if self.temporal_live else "in-process tape (add TEMPORAL_ADDRESS)"
+        orr = f"LIVE ({self.openrouter_model})" if self.openrouter_live else "mock agents (add OPENROUTER_API_KEY)"
         src = f" · env={os.path.basename(self.dotenv_source)}" if self.dotenv_source else ""
-        return f"classify={ts} · durable={tp} · model={self.typesafe_model}{src}"
+        return f"agents={orr} · classify={ts} · durable={tp}{src}"
 
 
 def load_config() -> JevConfig:
@@ -103,6 +111,10 @@ def load_config() -> JevConfig:
         temporal_namespace=_env(dotenv, "TEMPORAL_NAMESPACE", "default"),
         temporal_task_queue=_env(dotenv, "TEMPORAL_TASK_QUEUE", "hekat-jev"),
         jev_tape_path=_env(dotenv, "JEV_TAPE_PATH"),
+        openrouter_api_key=_env(dotenv, "OPENROUTER_API_KEY"),
+        openrouter_endpoint=_env(dotenv, "OPENROUTER_ENDPOINT",
+                                 "https://openrouter.ai/api/v1/chat/completions"),
+        openrouter_model=_env(dotenv, "OPENROUTER_MODEL", "openai/gpt-4o-mini"),
         dotenv_source=dotenv_path,
     )
 
