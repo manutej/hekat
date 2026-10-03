@@ -8,3 +8,8 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Local tooling
+.pytest_cache/
+.venv/
+venv/
