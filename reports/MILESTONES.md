@@ -14,3 +14,10 @@
 - Arch: firewall OK; needs Composer diversity on traces/NL
 - PR draft written — **not opened**
 - Next: Composer-2.5 enrichment + minimal cleanup + push
+
+## 2026-10-03 — Phase 4 enrichment merged (still no PR)
+- Composer batches A/B/C + flagships merged → **52/52** `synthetic-composer-2.5`
+- Blind eval still mvp_green; adversarial **8/8**; commanded DAG labels fixed
+- Cross-functional reports: eval AUDIT_PASS2, math REVIEW_PASS2, arch REVIEW_PASS2, adv PASS2
+- PR steward draft only — **PR not opened**
+- Remaining: optional Hub publish + orchestrator greenlight

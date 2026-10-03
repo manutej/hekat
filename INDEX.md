@@ -1,3 +1,6 @@
+
+> **Historical index** — For current HEKAT DSL + SFT data MVP, start at [`CORE.md`](CORE.md), [`docs/sft/SOP.md`](docs/sft/SOP.md), and [`datasets/hekat-orchestration-sft/`](datasets/hekat-orchestration-sft/).
+
 # HEKAT Query Builder: Complete Documentation Index
 
 **Project Status**: ✅ Unified Design Complete → Ready for Implementation

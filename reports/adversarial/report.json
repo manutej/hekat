@@ -1,23 +1,86 @@
 {
-  "n": 3,
-  "caught": 3,
+  "n": 8,
+  "caught": 8,
+  "catch_rate": 1.0,
   "results": [
     {
       "name": "unknown_agent",
       "compile_failed": true,
-      "tag_logic_present": true,
+      "validation_errors": [
+        "compile: Compilation failed: Validation failed: Agent 'not-a-real-agent' not found"
+      ],
+      "expect_compile_fail": true,
       "caught_as_expected": true
     },
     {
       "name": "empty_prompt",
       "compile_failed": true,
-      "tag_logic_present": true,
+      "validation_errors": [
+        "compile: Compilation failed: Validation failed: Query prompt cannot be empty"
+      ],
+      "expect_compile_fail": true,
       "caught_as_expected": true
     },
     {
       "name": "missing_logic_tag",
       "compile_failed": false,
-      "tag_logic_present": false,
+      "validation_errors": [
+        "missing_tag:logic"
+      ],
+      "expect_validation_substrings": [
+        "missing_tag:logic"
+      ],
+      "caught_as_expected": true
+    },
+    {
+      "name": "answer_dsl_mismatch",
+      "compile_failed": false,
+      "validation_errors": [
+        "answer_dsl_mismatch"
+      ],
+      "expect_validation_substrings": [
+        "answer_dsl_mismatch"
+      ],
+      "caught_as_expected": true
+    },
+    {
+      "name": "missing_pseudocode_tag",
+      "compile_failed": false,
+      "validation_errors": [
+        "missing_tag:pseudocode"
+      ],
+      "expect_validation_substrings": [
+        "missing_tag:pseudocode"
+      ],
+      "caught_as_expected": true
+    },
+    {
+      "name": "invalid_operator_soup",
+      "compile_failed": true,
+      "validation_errors": [
+        "compile: Parser error: Expected COLON at position 14 (got PIPE)"
+      ],
+      "expect_compile_fail": true,
+      "caught_as_expected": true
+    },
+    {
+      "name": "unknown_skill",
+      "compile_failed": true,
+      "validation_errors": [
+        "compile: Compilation failed: Validation failed: Skill 'fake-skill-xyz' not found"
+      ],
+      "expect_compile_fail": true,
+      "caught_as_expected": true
+    },
+    {
+      "name": "whitespace_only_logic",
+      "compile_failed": false,
+      "validation_errors": [
+        "missing_tag:logic"
+      ],
+      "expect_validation_substrings": [
+        "missing_tag:logic"
+      ],
       "caught_as_expected": true
     }
   ]

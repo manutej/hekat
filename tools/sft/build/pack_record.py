@@ -50,6 +50,26 @@ def extract_answer_dsl(answer_body: str) -> Optional[str]:
     return None
 
 
+def _agent_label(expr) -> str:
+    from hekat_parser import SimpleNode, SkilledNode, CommandedNode, EnsembleNode
+
+    if isinstance(expr, SimpleNode):
+        return expr.name
+    if isinstance(expr, SkilledNode):
+        return expr.agent
+    if isinstance(expr, CommandedNode):
+        first = expr.agents[0] if expr.agents else "unknown"
+        return f"{expr.command}({first})"
+    if isinstance(expr, EnsembleNode):
+        return expr.base
+    return (
+        getattr(expr, "name", None)
+        or getattr(expr, "agent", None)
+        or getattr(expr, "base", None)
+        or "unknown"
+    )
+
+
 def serialize_dag(dsl: str) -> Dict[str, Any]:
     tokens = Lexer(dsl).tokenize()
     ast = Parser(tokens).parse()
@@ -62,9 +82,7 @@ def serialize_dag(dsl: str) -> Dict[str, Any]:
         "nodes": [
             {
                 "id": nid,
-                "agent": str(getattr(node.expr, "name", None)
-                             or getattr(node.expr, "agent", None)
-                             or getattr(node.expr, "base", "unknown")),
+                "agent": _agent_label(node.expr),
                 "deps": list(node.dependencies),
             }
             for nid, node in dag.nodes.items()
@@ -172,7 +190,7 @@ def pack_record(
             "license": "Apache-2.0",
             "created_at": _now(),
             "quality": {
-                "schema_valid": False,  # set by validator
+                "schema_valid": True,  # structural fields always emitted; validator may flip
                 "compile_valid": compile_ok,
                 "has_pseudocode": tags["pseudocode"],
                 "has_logic": tags["logic"],

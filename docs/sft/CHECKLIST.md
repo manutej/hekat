@@ -35,7 +35,10 @@ Track progress here. Evidence paths required. Update after each phase.
 
 ## Phase 4 — Harden toward publish
 - [x] Eval failures fixed or quarantined (none failing)
-- [~] Dataset card complete for Hub (draft; add L2 sparsity note)
+- [x] Dataset card complete for Hub (draft + L2 sparsity / synthetic notes)
 - [x] Size ≥50 compile-valid train+val rows (52); train alone 45
 - [ ] Orchestrator greenlight for PR (stop: do not open until then)
-- [ ] Composer-enriched naturalistic traces for diversity
+- [x] Composer-enriched naturalistic traces (batch_a/b/c → 52/52 composer-sourced)
+- [x] Adversarial suite expanded (8/8 catch)
+- [x] Commanded DAG agent label fix
+- [x] Math stats script (`tools/sft/ops/math_check.py`)

@@ -1,0 +1,17 @@
+{
+  "mismatches": [],
+  "levels": {
+    "L1": 20,
+    "L4": 15,
+    "L2": 1,
+    "L3": 16
+  },
+  "sequential_levels": {
+    "L4": 7,
+    "L2": 1
+  },
+  "token_min": 642,
+  "token_max": 2289,
+  "token_zero_or_neg": 0,
+  "l2_count": 1
+}
