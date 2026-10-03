@@ -570,5 +570,301 @@
       ":"
     ],
     "dsl_template": "@ctx7(test-engineer) : \"{nl}\""
+  },
+  {
+    "id": "simple-008",
+    "natural_language": "Draft a migration guide from the old CLI to HEKAT queries.",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "docs-generator : \"{nl}\""
+  },
+  {
+    "id": "simple-009",
+    "natural_language": "Run the flaky suite and isolate the top three failures.",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "test-runner : \"{nl}\""
+  },
+  {
+    "id": "simple-010",
+    "natural_language": "Shrink the oversized utils module without breaking public APIs.",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "code-trimmer : \"{nl}\""
+  },
+  {
+    "id": "simple-011",
+    "natural_language": "Propose a clean commit/rebase plan for this messy feature branch.",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "git-genius : \"{nl}\""
+  },
+  {
+    "id": "simple-012",
+    "natural_language": "Wire an MCP server for our internal docs search.",
+    "scenario_category": "quick_start",
+    "pattern_type": "Simple",
+    "operators": [
+      ":"
+    ],
+    "dsl_template": "mcp-integration-wizard : \"{nl}\""
+  },
+  {
+    "id": "skilled-008",
+    "natural_language": "Add OAuth2-protected FastAPI routes for partner webhooks.",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "practical-programmer + fastapi + oauth2-authentication : \"{nl}\""
+  },
+  {
+    "id": "skilled-009",
+    "natural_language": "Design a responsive React settings shell.",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "frontend-architect + react-development + responsive-design : \"{nl}\""
+  },
+  {
+    "id": "skilled-010",
+    "natural_language": "Model billing tables in SQLAlchemy/Postgres.",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "practical-programmer + postgresql + sqlalchemy : \"{nl}\""
+  },
+  {
+    "id": "skilled-011",
+    "natural_language": "Stand up CI with compose-based integration jobs.",
+    "scenario_category": "skilled",
+    "pattern_type": "Skilled",
+    "operators": [
+      "+",
+      ":"
+    ],
+    "dsl_template": "devops-github-expert + ci-cd-pipeline-patterns + docker-compose-orchestration : \"{nl}\""
+  },
+  {
+    "id": "seq-008",
+    "natural_language": "Research idempotency patterns, design the API, then specify tests.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> api-architect -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "seq-009",
+    "natural_language": "Implement the feature, analyze coverage gaps, then document.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "practical-programmer -> coverage-analyzer -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "seq-010",
+    "natural_language": "Coordinate discovery, research options, then lock an API shape.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "project-orchestrator -> deep-researcher -> api-architect : \"{nl}\""
+  },
+  {
+    "id": "seq-011",
+    "natural_language": "Find the race, craft a fix, then lock it with tests.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Sequential",
+    "operators": [
+      "->",
+      ":"
+    ],
+    "dsl_template": "debug-detective -> code-craftsman -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "par-008",
+    "natural_language": "Parallel design of API, UI, and test strategy for onboarding.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(api-architect || frontend-architect || test-engineer) : \"{nl}\""
+  },
+  {
+    "id": "par-009",
+    "natural_language": "Research, document, and spike implementation options together.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(deep-researcher || docs-generator || practical-programmer) : \"{nl}\""
+  },
+  {
+    "id": "par-010",
+    "natural_language": "Compare three ops approaches for blue/green deploys.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(devops-github-expert || deployment-orchestrator || unix-bash-expert) : \"{nl}\""
+  },
+  {
+    "id": "par-011",
+    "natural_language": "Parallel quality pass: craft, debug hotspots, coverage.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Parallel",
+    "operators": [
+      "||",
+      ":"
+    ],
+    "dsl_template": "(code-craftsman || debug-detective || coverage-analyzer) : \"{nl}\""
+  },
+  {
+    "id": "mixed-008",
+    "natural_language": "Research UX/API constraints, design both in parallel, then specify tests.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (api-architect || frontend-architect) -> test-engineer : \"{nl}\""
+  },
+  {
+    "id": "mixed-009",
+    "natural_language": "Coordinate delivery, implement and automate in parallel, then document.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "project-orchestrator -> (practical-programmer || devops-github-expert) -> docs-generator : \"{nl}\""
+  },
+  {
+    "id": "mixed-010",
+    "natural_language": "Triage the bug, craft/implement fixes in parallel, then check coverage.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "debug-detective -> (code-craftsman || practical-programmer) -> coverage-analyzer : \"{nl}\""
+  },
+  {
+    "id": "mixed-011",
+    "natural_language": "Research MCP options, design integration and API together, then implement.",
+    "scenario_category": "real_world_workflow",
+    "pattern_type": "Mixed",
+    "operators": [
+      "->",
+      "||",
+      ":"
+    ],
+    "dsl_template": "deep-researcher -> (mcp-integration-wizard || api-architect) -> practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "fallback-008",
+    "natural_language": "Integrate MCP; fall back to implementer then docs if blocked.",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "mcp-integration-wizard ? practical-programmer ? docs-generator : \"{nl}\""
+  },
+  {
+    "id": "fallback-009",
+    "natural_language": "Untangle git history; fall back across shell/devops help.",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "git-genius ? unix-bash-expert ? devops-github-expert : \"{nl}\""
+  },
+  {
+    "id": "fallback-010",
+    "natural_language": "Close coverage gaps with fallback implementers.",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "coverage-analyzer ? test-engineer ? practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "fallback-011",
+    "natural_language": "Own UI architecture with craft/generalist fallbacks.",
+    "scenario_category": "resilience",
+    "pattern_type": "Fallback",
+    "operators": [
+      "?",
+      ":"
+    ],
+    "dsl_template": "frontend-architect ? code-craftsman ? practical-programmer : \"{nl}\""
+  },
+  {
+    "id": "cmd-004",
+    "natural_language": "Use context7 to produce accurate library usage docs.",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(docs-generator) : \"{nl}\""
+  },
+  {
+    "id": "cmd-005",
+    "natural_language": "Pull docs context while hunting a framework-specific bug.",
+    "scenario_category": "commanded",
+    "pattern_type": "Commanded",
+    "operators": [
+      "@",
+      ":"
+    ],
+    "dsl_template": "@ctx7(debug-detective) : \"{nl}\""
   }
 ]

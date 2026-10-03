@@ -8,7 +8,7 @@
 |------|-------|
 | SOP + checklist + memories | done |
 | Dataset schema + card | done |
-| Pilot JSONL | **52** compile-ok (45/7) |
+| Pilot JSONL | **79** compile-ok (66/13); 52 composer + 27 template (batch_d enriching) |
 | Blind eval | mvp_green |
 | Adversarial | 8/8 catch |
 | Monitor | no alarms |

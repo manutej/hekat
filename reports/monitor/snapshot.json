@@ -1,22 +1,22 @@
 {
-  "n_train": 45,
-  "n_validation": 7,
-  "n_total": 52,
-  "compile_ok": 52,
+  "n_train": 66,
+  "n_validation": 13,
+  "n_total": 79,
+  "compile_ok": 79,
   "patterns": {
-    "Simple": 8,
-    "Skilled": 8,
-    "Sequential": 8,
-    "Parallel": 8,
-    "Mixed": 8,
-    "Fallback": 8,
-    "Commanded": 4
+    "Simple": 13,
+    "Skilled": 12,
+    "Sequential": 12,
+    "Parallel": 12,
+    "Mixed": 12,
+    "Fallback": 12,
+    "Commanded": 6
   },
   "levels": {
-    "L1": 20,
-    "L4": 15,
+    "L1": 31,
     "L2": 1,
-    "L3": 16
+    "L4": 23,
+    "L3": 24
   },
   "alarms": [],
   "eval_mvp_green_train": true

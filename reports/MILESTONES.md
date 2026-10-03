@@ -21,3 +21,9 @@
 - Cross-functional reports: eval AUDIT_PASS2, math REVIEW_PASS2, arch REVIEW_PASS2, adv PASS2
 - PR steward draft only — **PR not opened**
 - Remaining: optional Hub publish + orchestrator greenlight
+
+## 2026-10-03 — Growth to 79 rows
+- Added 27 naturalistic scenarios (still template traces; batch_d Composer enrich in flight)
+- Gates still green (validate/eval/adversarial/monitor)
+- Light cleanup: archive `tmp/` → `docs/archive/hekat-helper/` (in progress)
+- PR still not opened
