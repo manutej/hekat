@@ -13,8 +13,9 @@
 | Adversarial | 8/8 catch |
 | Monitor | no alarms |
 | Math review | labels match compiler; L2 sparse |
-| Arch review | firewall OK; dual-lexer deferred |
-| Composer enrichment | 52/52 composer-sourced |
+| Arch review | firewall OK; dual-lexer **specced** (root oracle; package 7/7 divergent) |
+| Dual-track spec | `docs/sft/DUAL_REASONING_SPEC.md` + research notes |
+| Composer enrichment | 79/79 composer-sourced |
 | PR steward | draft only |
 
 ## Checklist progress
