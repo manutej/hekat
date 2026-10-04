@@ -3,16 +3,17 @@
 from __future__ import annotations
 
 import json
-import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools/sft"))
 
 from hekat_compiler import CompileError, HEKATCompiler
 from hekat_type_checker import TypeChecker
+from common.tags import TAG_RE, extract_answer_dsl, extract_tag, normalize_dsl
 
 try:
     import jsonschema
@@ -21,13 +22,6 @@ except ImportError:  # pragma: no cover
 
 SCHEMA = ROOT / "datasets/hekat-orchestration-sft/schema/record.schema.json"
 DATA = ROOT / "datasets/hekat-orchestration-sft/data"
-
-TAG_RE = {
-    "pseudocode": re.compile(r"<pseudocode>(.*?)</pseudocode>", re.DOTALL | re.IGNORECASE),
-    "logic": re.compile(r"<logic>(.*?)</logic>", re.DOTALL | re.IGNORECASE),
-    "answer": re.compile(r"<answer>(.*?)</answer>", re.DOTALL | re.IGNORECASE),
-}
-
 
 def load_jsonl(path: Path) -> List[Dict[str, Any]]:
     rows = []
@@ -38,21 +32,6 @@ def load_jsonl(path: Path) -> List[Dict[str, Any]]:
                 continue
             rows.append(json.loads(line))
     return rows
-
-
-def normalize_dsl(s: str) -> str:
-    return re.sub(r"\s+", " ", s.strip().replace("→", "->"))
-
-
-def answer_dsl(assistant: str) -> str:
-    m = TAG_RE["answer"].search(assistant)
-    if not m:
-        return ""
-    body = m.group(1)
-    fence = re.search(r"```(?:hekat)?\s*(.*?)```", body, re.DOTALL | re.IGNORECASE)
-    if fence:
-        return fence.group(1).strip()
-    return ""
 
 
 def validate_row(row: Dict[str, Any], schema: Dict[str, Any] | None, compiler: HEKATCompiler, registry: TypeChecker) -> List[str]:
@@ -66,9 +45,8 @@ def validate_row(row: Dict[str, Any], schema: Dict[str, Any] | None, compiler: H
             row["meta"]["quality"]["schema_valid"] = False
 
     asst = row["messages"][-1]["content"]
-    for name, rx in TAG_RE.items():
-        m = rx.search(asst)
-        if not m or not m.group(1).strip():
+    for name in TAG_RE:
+        if not extract_tag(asst, name):
             errs.append(f"missing_tag:{name}")
 
     dsl = row["artifacts"]["dsl"]
@@ -91,7 +69,7 @@ def validate_row(row: Dict[str, Any], schema: Dict[str, Any] | None, compiler: H
     except CompileError as e:
         errs.append(f"compile: {e}")
 
-    adsl = answer_dsl(asst)
+    adsl = extract_answer_dsl(asst) or ""
     if adsl and normalize_dsl(adsl) != normalize_dsl(dsl):
         errs.append("answer_dsl_mismatch")
 

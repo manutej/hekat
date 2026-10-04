@@ -4,50 +4,32 @@ from __future__ import annotations
 
 import hashlib
 import json
-import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-
-ROOT = Path(__file__).resolve().parents[3]
 import sys
 
+ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+_SFT = str(ROOT / "tools/sft")
+if _SFT not in sys.path:
+    sys.path.insert(0, _SFT)
 
 from hekat_compiler import CompileError, HEKATCompiler
 from hekat_dag_builder import DAGBuilder
 from hekat_lexer import Lexer
 from hekat_parser import Parser
+from common.tags import extract_answer_dsl, has_tags
 
 SYSTEM_PROMPT = (
     "You are a HEKAT orchestration planner. Reason in pseudocode, then in <logic> "
     "using coding constructs, then emit a valid HEKAT DSL query and structured plan."
 )
 
-TAG_RE = {
-    "pseudocode": re.compile(r"<pseudocode>(.*?)</pseudocode>", re.DOTALL | re.IGNORECASE),
-    "logic": re.compile(r"<logic>(.*?)</logic>", re.DOTALL | re.IGNORECASE),
-    "answer": re.compile(r"<answer>(.*?)</answer>", re.DOTALL | re.IGNORECASE),
-}
-
 
 def _now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-
-
-def has_tags(text: str) -> Dict[str, bool]:
-    return {name: bool(rx.search(text) and rx.search(text).group(1).strip()) for name, rx in TAG_RE.items()}
-
-
-def extract_answer_dsl(answer_body: str) -> Optional[str]:
-    fence = re.search(r"```(?:hekat)?\s*(.*?)```", answer_body, re.DOTALL | re.IGNORECASE)
-    if fence:
-        return fence.group(1).strip()
-    for line in answer_body.splitlines():
-        if ":" in line and any(op in line for op in (":", "->", "→", "||", "?", "+")):
-            return line.strip().strip("`")
-    return None
 
 
 def _agent_label(expr) -> str:

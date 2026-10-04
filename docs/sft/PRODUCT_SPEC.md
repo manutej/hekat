@@ -47,5 +47,7 @@ A row **passes** iff:
 - **DSL/answer match** ≥ 0.95  
 - **Registry ok** ≥ 0.95 (phase agents/commands ⊆ public type-checker registry)  
 
+See also: [`DUAL_REASONING_SPEC.md`](DUAL_REASONING_SPEC.md) (trace format), [`COMPILER_CANONICAL_SPEC.md`](COMPILER_CANONICAL_SPEC.md) (root compiler oracle).
+
 ## Out of scope for MVP
 L6–L7 research monads, TUI agent, Query Builder hotkeys, consciousness YAML learning.

@@ -29,6 +29,7 @@ Revive HEKAT for **data curation**: MessagesList JSONL fine-tune dataset with du
 
 ## Authoritative refs
 - `CORE.md` — three-track (ship L1–L4)
-- Root compiler modules — ground truth for artifacts
+- Root compiler modules — ground truth for artifacts (`docs/sft/COMPILER_CANONICAL_SPEC.md`)
+- Dual-track traces — `docs/sft/DUAL_REASONING_SPEC.md`
 - `docs/sft/SOP.md` — operating procedure
 - `docs/sft/CHECKLIST.md` — measured phases

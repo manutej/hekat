@@ -19,4 +19,7 @@ python3 tools/sft/ops/adversarial/attack_suite.py >/dev/null
 echo "== monitor =="
 python3 tools/sft/ops/monitor/snapshot.py
 
+echo "== lexer golden (root oracle) =="
+python3 tools/sft/ops/lexer_golden.py >/dev/null
+
 echo "ALL GATES DONE"

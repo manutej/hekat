@@ -22,8 +22,8 @@
 - PR steward draft only — **PR not opened**
 - Remaining: optional Hub publish + orchestrator greenlight
 
-## 2026-10-03 — Growth to 79 rows
-- Added 27 naturalistic scenarios (still template traces; batch_d Composer enrich in flight)
-- Gates still green (validate/eval/adversarial/monitor)
-- Light cleanup: archive `tmp/` → `docs/archive/hekat-helper/` (in progress)
-- PR still not opened
+## 2026-10-04 — Specs: dual-track reasoning + compiler canonical
+- Researched PoT/PAL, Chain of Code, Logic-of-Thought, HoT XML, TRL `<think>`
+- Wrote `DUAL_REASONING_SPEC.md`, `COMPILER_CANONICAL_SPEC.md`, `RESEARCH_NOTES.md`
+- Shared `tools/sft/common/tags.py`; lexer golden oracle script
+- Root compiler locked as SFT ground truth; package lexer telemetry-only

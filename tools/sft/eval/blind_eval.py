@@ -14,7 +14,6 @@ Forbidden imports (enforced by convention + CI later):
 from __future__ import annotations
 
 import json
-import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -22,9 +21,11 @@ from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools/sft"))
 
 from hekat_compiler import CompileError, HEKATCompiler
 from hekat_type_checker import TypeChecker
+from common.tags import extract_answer_dsl, normalize_dsl, tags_ok
 
 # Mirrors docs/sft/PRODUCT_SPEC.md — keep in sync manually; do not import BUILD_SPEC.
 THRESHOLDS = {
@@ -33,12 +34,6 @@ THRESHOLDS = {
     "compile_recheck": 0.95,
     "dsl_answer_match": 0.95,
     "registry_ok": 0.95,
-}
-
-TAG_RE = {
-    "pseudocode": re.compile(r"<pseudocode>(.*?)</pseudocode>", re.DOTALL | re.IGNORECASE),
-    "logic": re.compile(r"<logic>(.*?)</logic>", re.DOTALL | re.IGNORECASE),
-    "answer": re.compile(r"<answer>(.*?)</answer>", re.DOTALL | re.IGNORECASE),
 }
 
 DATA = ROOT / "datasets/hekat-orchestration-sft/data"
@@ -69,26 +64,6 @@ def load_jsonl(path: Path) -> List[Dict[str, Any]]:
             if line:
                 rows.append(json.loads(line))
     return rows
-
-
-def normalize_dsl(s: str) -> str:
-    return re.sub(r"\s+", " ", s.strip().replace("→", "->"))
-
-
-def tags_ok(content: str) -> bool:
-    for rx in TAG_RE.values():
-        m = rx.search(content)
-        if not m or not m.group(1).strip():
-            return False
-    return True
-
-
-def answer_dsl(content: str) -> str:
-    m = TAG_RE["answer"].search(content)
-    if not m:
-        return ""
-    fence = re.search(r"```(?:hekat)?\s*(.*?)```", m.group(1), re.DOTALL | re.IGNORECASE)
-    return fence.group(1).strip() if fence else ""
 
 
 def _phase_agents_in_registry(plan, registry: TypeChecker) -> bool:
@@ -134,7 +109,7 @@ def eval_split(
         except CompileError:
             c_ok = False
             r_ok = False
-        a_ok = normalize_dsl(answer_dsl(asst)) == normalize_dsl(row["artifacts"]["dsl"])
+        a_ok = normalize_dsl(extract_answer_dsl(asst) or "") == normalize_dsl(row["artifacts"]["dsl"])
         if t_ok:
             tag_pass += 1
         if c_ok:

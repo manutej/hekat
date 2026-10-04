@@ -41,4 +41,7 @@ Track progress here. Evidence paths required. Update after each phase.
 - [x] Composer-enriched naturalistic traces (batch_a/b/c → 52/52 composer-sourced)
 - [x] Adversarial suite expanded (8/8 catch)
 - [x] Commanded DAG agent label fix
-- [x] Math stats script (`tools/sft/ops/math_check.py`)
+- [x] Dual-track reasoning spec (`docs/sft/DUAL_REASONING_SPEC.md`)
+- [x] Compiler canonical spec (`docs/sft/COMPILER_CANONICAL_SPEC.md`)
+- [x] Shared tag helpers (`tools/sft/common/tags.py`)
+- [x] Lexer golden script (`tools/sft/ops/lexer_golden.py`)

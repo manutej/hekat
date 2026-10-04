@@ -25,13 +25,14 @@ configs:
 
 # HEKAT Orchestration SFT
 
-MessagesList fine-tuning dataset for mapping natural-language orchestration intents to **HEKAT DSL**, with dual structured reasoning:
+## Format
+Assistant turns always use **dual-track** XML (see `docs/sft/DUAL_REASONING_SPEC.md`):
 
 1. `<pseudocode>` — imperative sketch  
-2. `<logic>` — coding-construct reasoning  
-3. `<answer>` — final DSL + short plan summary  
+2. `<logic>` — coding-construct re-encoding of the *same* plan (`fn`, constructors, `assert`)  
+3. `<answer>` — fenced HEKAT DSL + short summary  
 
-Sidecar columns include compiler artifacts (DAG, execution plan) for research and filtering. Default TRL training should use the `messages` column only.
+Default TRL training should use the `messages` column only.
 
 ## Load
 
@@ -47,9 +48,11 @@ ds = load_dataset("json", data_files={
 Supervised fine-tuning of chat models for agent orchestration planning (L1–L4 HEKAT patterns).
 
 ## Limitations
-- Synthetic traces (template + Composer enrichment); early rows can be stylistically repetitive.
+- Synthetic traces (Composer-enriched); some logic blocks still share constructor skeletons.
 - Token budgets are heuristic; not measured billing costs.
-- `complexity_level` follows compiler metrics (agent count / depth / parallelism / fallback), not human “task difficulty.” **L2 is sparse** in the pilot.
+- `complexity_level` follows compiler metrics (agent count / depth / parallelism / fallback), not human “task difficulty.” **L2 is sparse**; 3-agent sequential often labels **L4**.
+- Two lexers exist in-repo; **root** `hekat_lexer.py` is SFT ground truth. Package lexer (`hekat.compiler.lexer`) is CLI/experimental and may diverge.
 - L5–L7 research patterns are out of MVP scope.
+- Dual-track `<logic>` style is a soft vocabulary gate until promoted.
 
-See `docs/sft/PRODUCT_SPEC.md` in the source repo for the eval contract.
+See `docs/sft/PRODUCT_SPEC.md` for the eval contract.

@@ -1,0 +1,186 @@
+{
+  "canonical": "hekat_lexer.py (root)",
+  "package": "hekat.compiler.lexer",
+  "oracle_failures": [],
+  "n_divergent": 7,
+  "rows": [
+    {
+      "dsl": "api-architect : \"design REST API\"",
+      "root_types": [
+        "IDENTIFIER",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "IDENTIFIER",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 4,
+      "package_n": 3,
+      "diverges": true
+    },
+    {
+      "dsl": "practical-programmer + fastapi + postgresql : \"build API\"",
+      "root_types": [
+        "IDENTIFIER",
+        "PLUS",
+        "IDENTIFIER",
+        "PLUS",
+        "IDENTIFIER",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "IDENTIFIER",
+        "COMBINATION",
+        "IDENTIFIER",
+        "COMBINATION",
+        "IDENTIFIER",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 8,
+      "package_n": 7,
+      "diverges": true
+    },
+    {
+      "dsl": "deep-researcher -> api-architect -> practical-programmer : \"design API\"",
+      "root_types": [
+        "IDENTIFIER",
+        "ARROW",
+        "IDENTIFIER",
+        "ARROW",
+        "IDENTIFIER",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "IDENTIFIER",
+        "SEQUENTIAL",
+        "IDENTIFIER",
+        "SEQUENTIAL",
+        "IDENTIFIER",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 8,
+      "package_n": 7,
+      "diverges": true
+    },
+    {
+      "dsl": "(frontend-architect || practical-programmer || devops-github-expert) : \"chat mvp\"",
+      "root_types": [
+        "LPAREN",
+        "IDENTIFIER",
+        "PIPE",
+        "IDENTIFIER",
+        "PIPE",
+        "IDENTIFIER",
+        "RPAREN",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "LPAREN",
+        "IDENTIFIER",
+        "PARALLEL",
+        "IDENTIFIER",
+        "PARALLEL",
+        "IDENTIFIER",
+        "RPAREN",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 10,
+      "package_n": 9,
+      "diverges": true
+    },
+    {
+      "dsl": "deep-researcher -> (api-architect || debug-detective) -> practical-programmer : \"fix\"",
+      "root_types": [
+        "IDENTIFIER",
+        "ARROW",
+        "LPAREN",
+        "IDENTIFIER",
+        "PIPE",
+        "IDENTIFIER",
+        "RPAREN",
+        "ARROW",
+        "IDENTIFIER",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "IDENTIFIER",
+        "SEQUENTIAL",
+        "LPAREN",
+        "IDENTIFIER",
+        "PARALLEL",
+        "IDENTIFIER",
+        "RPAREN",
+        "SEQUENTIAL",
+        "IDENTIFIER",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 12,
+      "package_n": 11,
+      "diverges": true
+    },
+    {
+      "dsl": "deployment-orchestrator ? devops-github-expert ? unix-bash-expert : \"deploy\"",
+      "root_types": [
+        "IDENTIFIER",
+        "QUESTION",
+        "IDENTIFIER",
+        "QUESTION",
+        "IDENTIFIER",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [
+        "IDENTIFIER",
+        "QUESTION",
+        "IDENTIFIER",
+        "QUESTION",
+        "IDENTIFIER",
+        "SPECIFICATION",
+        "STRING"
+      ],
+      "package_error": null,
+      "root_n": 8,
+      "package_n": 7,
+      "diverges": true
+    },
+    {
+      "dsl": "@ctx7(api-architect) : \"docs-assisted design\"",
+      "root_types": [
+        "AT",
+        "IDENTIFIER",
+        "LPAREN",
+        "IDENTIFIER",
+        "RPAREN",
+        "COLON",
+        "STRING",
+        "EOF"
+      ],
+      "package_types": [],
+      "package_error": "Lexer error at 1:1: Unexpected character: '@'",
+      "root_n": 8,
+      "package_n": null,
+      "diverges": true
+    }
+  ]
+}
