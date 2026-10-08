@@ -18,6 +18,7 @@ class TokenType(Enum):
     QUESTION = 'QUESTION'     # ? (fallback)
     SEMICOLON = 'SEMICOLON'   # ; (context separator)
     CARET = 'CARET'           # ^ (repetition)
+    TILDE = 'TILDE'           # ~ (JEV color-port classification modifier)
 
     # Grouping
     LPAREN = 'LPAREN'         # (
@@ -87,6 +88,9 @@ class Lexer:
                 self._advance()
             elif char == '^':
                 self.tokens.append(Token(TokenType.CARET, '^', self.position))
+                self._advance()
+            elif char == '~':
+                self.tokens.append(Token(TokenType.TILDE, '~', self.position))
                 self._advance()
             elif char == '(':
                 self.tokens.append(Token(TokenType.LPAREN, '(', self.position))

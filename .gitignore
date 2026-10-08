@@ -8,3 +8,12 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# Secrets — never commit. `vercel env pull` writes .env locally.
+.env
+.env.*
+!.env.example
+
+# Monitoring tape + Vercel local state
+.hekat_runs.jsonl
+.vercel

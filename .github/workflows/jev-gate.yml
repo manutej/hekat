@@ -1,0 +1,19 @@
+name: JEV gate
+
+on:
+  push:
+    branches: [master, "claude/**"]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Adversarial gate (deterministic, no secrets)
+        run: python3 hekat_ci.py
+      - name: Unit tests
+        run: python3 -m unittest test_hekat_jev test_hekat_jev_ready test_hekat_eval
