@@ -76,6 +76,27 @@ GATE_CASES: List[GateCase] = [
     GateCase("grounded-build-ships", "GREEN",
              "Evidence→evidence→action with clean seams ships.",
              colors=["evidence", "evidence", "action"], adversarial=False),
+    # red-team: an idea swarm with one token grounded node must still fail
+    GateCase("idea-swarm-one-action", "RED",
+             "Three idea nodes + one action can't reach τ_r (0.25 allowed).",
+             colors=["idea", "idea", "idea", "action"]),
+    GateCase("double-forbidden", "RED",
+             "Two forbidden colors sum to 0.4 toxin — fail closed.",
+             dist={"entity": 0, "concept": 0, "idea": 0.2, "evidence": 0.6, "action": 0.2},
+             forbidden={"action", "idea"}),
+    # boundary guards: thresholds are inclusive/exclusive exactly as specified
+    GateCase("boundary-green-exact", "GREEN",
+             "Allowed exactly 0.72 ships (τ_g is inclusive).",
+             dist={"entity": 0, "concept": 0, "idea": 0.28, "evidence": 0.72, "action": 0},
+             adversarial=False),
+    GateCase("boundary-red-open", "AMBER",
+             "Allowed exactly 0.40 is AMBER, not RED (τ_r is exclusive).",
+             dist={"entity": 0, "concept": 0.40, "idea": 0.60, "evidence": 0, "action": 0},
+             adversarial=False),
+    GateCase("toxin-at-threshold", "GREEN",
+             "Toxin exactly 0.12 does not trip (τ_t is exclusive).",
+             dist={"entity": 0, "concept": 0, "idea": 0, "evidence": 0.88, "action": 0.12},
+             forbidden={"action"}, adversarial=False),
 ]
 
 

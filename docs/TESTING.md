@@ -54,6 +54,38 @@ python3 hekat_orchestrate.py 'deep-researcher -> deployment-orchestrator : "audi
 | GET | `/api/adversarial` | the suite → pass/fail per case |
 | GET | `/api/runs` | recent runs (monitoring tape) |
 
+## CI gate (repeatable, no secrets)
+
+`hekat_ci.py` runs the adversarial suite and exits non-zero on any failure, so a
+gate regression fails the build. Wired as a GitHub Action in
+`.github/workflows/jev-gate.yml` (runs on push/PR; also runs the unit tests).
+
+```sh
+python3 hekat_ci.py          # 0 = all pass, 1 = regression
+```
+
+## Deploy it hosted (shareable URL)
+
+The repo carries a Vercel scaffold so the interface can run as a hosted app (the
+`volumetric-intelligence` pattern): `api/index.py` (a thin handler reusing
+`hekat_serve`), `vercel.json` (routes `/api/*` to it, serves `docs/monitor.html`
+at `/`), and `requirements.txt` (stdlib only).
+
+```sh
+vercel link                                   # team …TUidB
+vercel env add OPENROUTER_API_KEY production  # the one key
+vercel deploy --prod
+```
+Then the monitor is a URL your team opens; the key lives in Vercel env, never in
+git. Monitoring writes to `/tmp` on serverless (set `HEKAT_RUNS_FILE` to a
+mounted store for cross-instance history). Note: agent runs can exceed a Hobby
+function's timeout — use a Pro function or keep orchestrations small.
+
+## Monitoring persistence
+
+Runs are appended to `.hekat_runs.jsonl` (gitignored) so the monitor feed
+survives a restart. Override the path with `HEKAT_RUNS_FILE`.
+
 ## Why a local server (not the artifact)
 
 The published claude.ai dashboard is a shareable **visual explorer** and can't

@@ -45,8 +45,12 @@ a durable tape. JEV supplies the decision; HEKAT supplies the plan.
 | `schema/hekat-orchestration.json` | Closed-question + threshold kit |
 | `hekat_openrouter.py` | Run a HEKAT agent as a real LLM call via OpenRouter (role prompts); mock when no key |
 | `hekat_eval.py` | Adversarial suite: deterministic gate-defeat cases (must-block) + false-positive guards (must-allow) + live agent probes |
-| `hekat_serve.py` | Local testing/monitoring server (stdlib): `/api/{status,classify,run,adversarial,runs}`; serves `docs/monitor.html` |
+| `hekat_serve.py` | Local testing/monitoring server (stdlib): `/api/{status,classify,run,adversarial,runs}`; serves `docs/monitor.html`; durable runs via `.hekat_runs.jsonl` (`HEKAT_RUNS_FILE`) |
+| `hekat_ci.py` | CI gate — runs the adversarial suite, exits non-zero on regression |
+| `.github/workflows/jev-gate.yml` | GitHub Action: adversarial gate + unit tests on push/PR |
+| `api/index.py` + `vercel.json` + `requirements.txt` | Vercel deploy scaffold (reuses `hekat_serve`); hosted monitor |
 | `docs/monitor.html` | Live UI: test queries, run agents, run adversarial suite, monitor feed |
+| `docs/TESTING.md` | How to run/deploy the interface |
 | `build_orchestration_map.py` | (from PR #2, merged) multi-query DAG mapper |
 | `test_hekat_jev.py`, `test_hekat_jev_ready.py`, `test_hekat_eval.py` | 51 JEV tests |
 | `docs/JEV_HEKAT_MAPPING.md` | Full entry-point map + architecture |
@@ -104,7 +108,13 @@ Offline banner: `classify=local classifier … · durable=in-process tape …`.
    and per-domain `allowed`/`forbidden` policies; measure with `brier` (ported).
 4. **Codegen target:** emit a `jev-tape` workflow script directly from a HEKAT
    DAG (DSL → gated durable run).
-5. **Open design question for the user:** the `ACCEPTS` matrix currently makes the
+5. **Hardening (known gap):** the `~color` modifier is a human assertion that
+   overrides classification — so under a `forbid action` policy, annotating a
+   deploy agent `deployment-orchestrator~evidence` would launder it past the
+   toxin check. Mitigation: when a color is forbidden, also test each node's
+   *intrinsic* (lexicon) color, not only the asserted one, so a relabel can't
+   escape policy. Lives in `hekat_jev.classify_expr_color` / `classify_orchestration`.
+6. **Open design question for the user:** the `ACCEPTS` matrix currently makes the
    canonical `research→design→build→test` pipeline land at AMBER (an
    `evidence→concept` seam). Decide: loosen so classic pipelines pass GREEN, or
    keep strict so seams always surface. It's tunable policy, documented in

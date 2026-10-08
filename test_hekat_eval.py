@@ -103,6 +103,32 @@ class TestServer(unittest.TestCase):
         with self.assertRaises(ValueError):
             S.classify_query('not-a-real-agent -> another-fake : "x"')
 
+    def test_runs_persist_to_tape(self):
+        import os, tempfile, importlib
+        fd, path = tempfile.mkstemp(suffix=".jsonl")
+        os.close(fd)
+        os.environ["HEKAT_RUNS_FILE"] = path
+        try:
+            import hekat_serve as S
+            importlib.reload(S)
+            S.run_query('deep-researcher -> test-engineer : "verify"', "run tests")
+            # a fresh load (empty in-memory cache) must read the run back from disk
+            S.RUNS.clear()
+            rows = S._load_runs()
+            self.assertGreaterEqual(len(rows), 1)
+            self.assertIn(rows[0]["verdict"], ("GREEN", "AMBER", "RED"))
+        finally:
+            os.environ.pop("HEKAT_RUNS_FILE", None)
+            os.remove(path)
+            importlib.reload(S)
+
+
+class TestCI(unittest.TestCase):
+    def test_ci_gate_passes(self):
+        os.environ.pop("OPENROUTER_API_KEY", None)
+        import hekat_ci
+        self.assertEqual(hekat_ci.main(), 0)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

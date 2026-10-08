@@ -13,3 +13,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Monitoring tape + Vercel local state
+.hekat_runs.jsonl
+.vercel

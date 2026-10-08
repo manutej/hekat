@@ -41,8 +41,39 @@ from hekat_eval import run_suite
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MONITOR_HTML = os.path.join(HERE, "docs", "monitor.html")
-RUNS: list = []            # in-memory monitoring log (most recent first)
+RUNS: list = []            # in-memory cache (most recent first)
 MAX_RUNS = 50
+# Durable monitoring tape — survives restarts. Override to /tmp on a read-only
+# serverless FS (Vercel: set HEKAT_RUNS_FILE=/tmp/hekat_runs.jsonl).
+RUNS_FILE = os.environ.get("HEKAT_RUNS_FILE", os.path.join(HERE, ".hekat_runs.jsonl"))
+
+
+def _append_run(entry: dict) -> None:
+    RUNS.insert(0, entry)
+    del RUNS[MAX_RUNS:]
+    try:
+        with open(RUNS_FILE, "a") as fh:
+            fh.write(json.dumps(entry) + "\n")
+    except OSError:
+        pass  # read-only FS (serverless) — in-memory cache still serves this run
+
+
+def _load_runs(limit: int = MAX_RUNS) -> list:
+    rows = list(RUNS)
+    if not rows:
+        try:
+            with open(RUNS_FILE) as fh:
+                rows = [json.loads(l) for l in fh if l.strip()][-limit:][::-1]
+        except OSError:
+            rows = []
+    return rows[:limit]
+
+
+def status_payload() -> dict:
+    cfg = load_config()
+    return {"banner": cfg.banner(), "openrouter_live": cfg.openrouter_live,
+            "typesafe_live": cfg.typesafe_live, "model": cfg.openrouter_model,
+            "colors": {k: v["short"] for k, v in COLOR_META.items()}}
 
 
 def _parse(query: str):
@@ -109,10 +140,9 @@ def run_query(query: str, task: str, forbid=None) -> dict:
         "live": cfg.openrouter_live, "model": cfg.openrouter_model,
         "orchestration": _serialize(clf, dag), "agents": agents,
     }
-    RUNS.insert(0, {"ts": result["ts"], "query": query, "task": task,
-                    "verdict": clf.score.verdict, "triage": clf.triage,
-                    "live": cfg.openrouter_live, "agents": len(agents)})
-    del RUNS[MAX_RUNS:]
+    _append_run({"ts": result["ts"], "query": query, "task": task,
+                 "verdict": clf.score.verdict, "triage": clf.triage,
+                 "live": cfg.openrouter_live, "agents": len(agents)})
     return result
 
 
@@ -145,16 +175,11 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 return self._send(500, {"error": "monitor.html not found"})
         if self.path == "/api/status":
-            cfg = load_config()
-            return self._send(200, {"banner": cfg.banner(),
-                                    "openrouter_live": cfg.openrouter_live,
-                                    "typesafe_live": cfg.typesafe_live,
-                                    "model": cfg.openrouter_model,
-                                    "colors": {k: v["short"] for k, v in COLOR_META.items()}})
+            return self._send(200, status_payload())
         if self.path == "/api/adversarial":
             return self._send(200, run_suite())
         if self.path == "/api/runs":
-            return self._send(200, {"runs": RUNS})
+            return self._send(200, {"runs": _load_runs()})
         return self._send(404, {"error": "not found"})
 
     def do_POST(self):
