@@ -62,7 +62,8 @@ def render_png(svg_text: str, out_dir: Optional[str] = None, name: str = "node")
 
         cairosvg.svg2png(bytestring=svg_text.encode("utf-8"), write_to=path)
         return path
-    svg_path = os.path.join(out_dir, f"{name}.svg")
+    work_dir = tempfile.mkdtemp(prefix="figtree-render-")  # intermediates never land next to outputs
+    svg_path = os.path.join(work_dir, f"{name}.svg")
     with open(svg_path, "w", encoding="utf-8") as fh:
         fh.write(svg_text)
     if backend == "rsvg-convert":
@@ -73,7 +74,7 @@ def render_png(svg_text: str, out_dir: Optional[str] = None, name: str = "node")
 
     w = int(float(re.search(r'width="(\d+)"', svg_text).group(1)))
     h = int(float(re.search(r'height="(\d+)"', svg_text).group(1)))
-    html_path = os.path.join(out_dir, f"{name}.html")
+    html_path = os.path.join(work_dir, f"{name}.html")
     with open(html_path, "w", encoding="utf-8") as fh:
         fh.write(f"<!doctype html><html><head><meta charset='utf-8'><style>html,body{{margin:0;padding:0;background:#fff}}svg{{display:block}}</style></head><body>{svg_text}</body></html>")
     exe = _chromium()

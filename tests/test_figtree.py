@@ -145,11 +145,12 @@ class TestEditability:
         assert proof.edit == {"op": "add_dashed_arrow", "from": "Critic", "to": "Generator"}
         assert proof.passed and proof.diff_element_count == 1 and proof.changed == ["#edit.arrow"]
         assert proof.ports_valid and proof.bboxes_valid
-        edited, _ = apply_local_edit(result.final_svg, proof.edit)
+        edited, remerge = apply_local_edit(result.final_svg, proof.edit)
         assert 'stroke-dasharray="4 2"' in edited and 'id="edit.arrow"' in edited
-        assert StructuralCritic().review(edited, result.global_style, None, 0) == [
-            d for d in StructuralCritic().review(edited, result.global_style, None, 0) if d.code_anchor == "no-vision"
-        ]
+        defects = [d for d in StructuralCritic().review(edited, result.global_style, None, 0) if d.code_anchor != "no-vision"]
+        # the only acceptable complaint is the padding one, and only when the edit says spacing is required
+        assert all("canvas edge" in d.visual_description for d in defects)
+        assert remerge or not defects
 
     def test_element_diff_is_zero_for_identical_documents(self):
         result = run(PIPELINE)

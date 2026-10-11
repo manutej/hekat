@@ -10,6 +10,7 @@ from figtree.generator import _layers, fill_for
 from figtree.geometry import (
     Point,
     ceil_to_grid,
+    round_to_grid,
     final_segment_length,
     is_orthogonal,
     on_grid,
@@ -30,6 +31,8 @@ class Worker:
     gap_h: int = 24  # compact; the MIN_ARROW_DISTANCE spacing pass widens it where an arrow needs it
     gap_v: int = 16
     detour: int = 24
+    max_aspect: float = 3.0  # wider layouts are folded into rows (left-to-right, top-to-bottom)
+    row_gap: int = 48
     spacing_iterations: int = 5
     events: List[str] = field(default_factory=list)
 
@@ -68,15 +71,54 @@ class Worker:
         columns: List[List[Node]] = [[by_id[cid] for cid in layer] for layer in layers]
         column_of: Dict[str, int] = {c.id: i for i, col in enumerate(columns) for c in col}
 
-        titled = node.depth >= 1
+        titled = node.depth >= 1 and self.has_title(node)
         origin_y = style.padding + (16 if titled else 0)
-        self._place(columns, style.padding, origin_y, grid)
+        rows = self._wrap_rows(columns)
+        row_of: Dict[str, int] = {c.id: r for r, row in enumerate(rows) for col in row for c in col}
+        y = origin_y
+        for row in rows:
+            y += self._place(row, style.padding, y, grid) + self.row_gap
+        if len(rows) > 1:
+            node.layout = "rows"
 
-        fragment = self._assemble(node, children, columns, column_of, owned, titled)
+        fragment = self._assemble(node, children, columns, column_of, owned, titled, boxed=node.depth >= 1, row_of=row_of)
         return fragment
 
+    def _wrap_rows(self, columns: List[List[Node]]) -> List[List[List[Node]]]:
+        """Fold the column sequence into rows so the canvas aspect stays below ``max_aspect``."""
+        n = len(columns)
+        widths = [max(c.canvas["w"] for c in col) for col in columns]
+        heights = [sum(c.canvas["h"] for c in col) + self.gap_v * (len(col) - 1) for col in columns]
+        total_w = sum(widths) + self.gap_h * (n - 1)
+        max_h = max(heights) if heights else 1
+        if n < 4 or total_w / max(max_h, 1) <= self.max_aspect:
+            return [columns]
+        rows_n = 2
+        while rows_n < n:
+            est_w = total_w / rows_n
+            est_h = rows_n * max_h + (rows_n - 1) * self.row_gap
+            if est_w / est_h <= self.max_aspect:
+                break
+            rows_n += 1
+        target = total_w / rows_n
+        rows: List[List[List[Node]]] = [[]]
+        cum = 0
+        for col, w in zip(columns, widths):
+            if rows[-1] and cum + w > target * 1.1 and len(rows) < rows_n:
+                rows.append([])
+                cum = 0
+            rows[-1].append(col)
+            cum += w + self.gap_h
+        return rows
+
+    @staticmethod
+    def has_title(node: Node) -> bool:
+        desc = (node.description or "").strip().lower()
+        return bool(desc) and desc != ", ".join(node.components).lower() and desc != node.id
+
     # ------------------------------------------------------------------
-    def _place(self, columns: List[List[Node]], x0: int, y0: int, grid: int) -> None:
+    def _place(self, columns: List[List[Node]], x0: int, y0: int, grid: int) -> int:
+        """Place the columns of one row left-to-right; returns the row height."""
         col_heights = [sum(c.canvas["h"] for c in col) + self.gap_v * (len(col) - 1) for col in columns]
         max_h = max(col_heights) if col_heights else 0
         x = x0
@@ -87,6 +129,7 @@ class Worker:
                 c.offset = {"x": x + ceil_to_grid((col_w - c.canvas["w"]) / 2, grid), "y": y}
                 y += c.canvas["h"] + self.gap_v
             x += col_w + self.gap_h
+        return ceil_to_grid(max_h, grid)
 
     def _export_ports(self, node: Node, children: Sequence[Node]) -> List[Port]:
         ports: List[Port] = []
@@ -123,8 +166,11 @@ class Worker:
         children: Sequence[Node],
         column_of: Dict[str, int],
         owned: List[Tuple[Flow, Node, Node]],
+        row_of: Optional[Dict[str, int]] = None,
     ) -> List[PathEl]:
+        row_of = row_of or {c.id: 0 for c in children}
         boxes = {c.id: BBox(c.offset["x"], c.offset["y"], c.canvas["w"], c.canvas["h"]) for c in children}
+        child_of_comp: Dict[str, str] = {comp: c.id for c in children for comp in c.components}
         all_boxes = list(boxes.values())
         # leaf blocks of every child, in this node's frame, keyed by component
         leaf_blocks: Dict[str, BBox] = {}
@@ -132,8 +178,6 @@ class Worker:
             for el, off in c.model.iter_all((c.offset["x"], c.offset["y"])):
                 if isinstance(el, RectEl) and el.role == "block":
                     leaf_blocks[el.extra.get("data-component", el.id)] = BBox(el.x + off[0], el.y + off[1], el.w, el.h)
-        min_top = min(b.y for b in all_boxes)
-        max_bottom = max(b.y2 for b in all_boxes)
         paths: List[PathEl] = []
         over = under = 0
 
@@ -150,7 +194,29 @@ class Worker:
                 continue
             s, d = port_pt(a, sp), port_pt(b, dp)
             pts: Optional[List[Point]] = None
-            if fwd:
+            ra, rb = row_of[a.id], row_of[b.id]
+            if ra != rb:
+                # cross-row route: exit right, travel along the row gap, re-enter from the left
+                # (A) through the lane just right of the blocks left of the target, or (B) from
+                # above into the target's top port when (A) would be too short or blocked.
+                gx1 = boxes[a.id].x2 + 8
+                if rb > ra:  # gap directly below a's row
+                    below = [bx for cid, bx in boxes.items() if row_of[cid] == ra + 1]
+                    y = round_to_grid((max(bx.y2 for cid, bx in boxes.items() if row_of[cid] == ra) + min(bx.y for bx in below)) / 2, node.style.grid)
+                else:  # gap directly above a's row
+                    above = [bx for cid, bx in boxes.items() if row_of[cid] == ra - 1]
+                    y = round_to_grid((max(bx.y2 for bx in above) + min(bx.y for cid, bx in boxes.items() if row_of[cid] == ra)) / 2, node.style.grid)
+                left_blocks = [bx for comp, bx in leaf_blocks.items() if comp != f.dst and bx.x2 <= d[0] and bx.y <= d[1] <= bx.y2 and row_of.get(child_of_comp.get(comp, ""), -1) == rb]
+                xl = (max(bx.x2 for bx in left_blocks) + 8) if left_blocks else boxes[b.id].x - self.detour
+                cand_a = [s, (gx1, s[1]), (gx1, y), (xl, y), (xl, d[1]), d]
+                dp_t = self._leaf_port(b, f.dst, "top")
+                d_t = port_pt(b, dp_t)
+                cand_b = [s, (gx1, s[1]), (gx1, y), (d_t[0], y), d_t]
+                if d[0] - xl >= node.style.min_arrow and not path_hits_boxes(cand_a, obstacles):
+                    pts = cand_a
+                elif not path_hits_boxes(cand_b, obstacles):
+                    pts, dp = cand_b, dp_t
+            elif fwd:
                 direct = route(s, d, "right", "left", node.style.grid)
                 if not path_hits_boxes(direct, obstacles):
                     pts = direct
@@ -164,15 +230,19 @@ class Worker:
                 gx1 = boxes[a.id].x2 + 8
                 # entry lane: just right of the column preceding the target, so that shifting the
                 # target (spacing pass) lengthens the final segment instead of moving the lane
-                prev_cols = [bx for cid, bx in boxes.items() if column_of[cid] == column_of[b.id] - 1]
-                gx2 = (max(bx.x2 for bx in prev_cols) + 8) if prev_cols else boxes[b.id].x - self.detour
+                left_blocks = [bx for comp, bx in leaf_blocks.items() if comp != f.dst and bx.x2 <= d[0] and bx.y <= d[1] <= bx.y2 and row_of.get(child_of_comp.get(comp, ""), -1) == rb and child_of_comp.get(comp) != a.id]
+                prev_cols = [bx for cid, bx in boxes.items() if column_of[cid] == column_of[b.id] - 1 and row_of[cid] == rb]
+                lane_candidates = [bx.x2 for bx in left_blocks] + [bx.x2 for bx in prev_cols]
+                gx2 = (max(lane_candidates) + 8) if lane_candidates else boxes[b.id].x - self.detour
+                lo_col, hi_col = sorted((column_of[a.id], column_of[b.id]))
+                spanned = [bx for cid, bx in boxes.items() if lo_col <= column_of[cid] <= hi_col and row_of[cid] in (ra, rb)]
                 if fwd:
                     over += 1
-                    y = min_top - self.detour - 8 * (over - 1)
+                    y = min(bx.y for bx in spanned) - self.detour - 8 * (over - 1)
                     vside = "top"
                 else:
                     under += 1
-                    y = max_bottom + self.detour + 8 * (under - 1)
+                    y = max(bx.y2 for bx in spanned) + self.detour + 8 * (under - 1)
                     vside = "bottom"
                 sp_v = self._leaf_port(a, f.src, vside)
                 dp_v = self._leaf_port(b, f.dst, vside)
@@ -182,7 +252,8 @@ class Worker:
                     ([s, (gx1, s[1]), (gx1, y), (d_v[0], y), d_v], sp, dp_v),
                     ([s_v, (s_v[0], y), (d_v[0], y), d_v], sp_v, dp_v),
                 ]
-                chosen = next((c for c in candidates if not path_hits_boxes(c[0], obstacles)), candidates[0])
+                ok = [c for c in candidates if not path_hits_boxes(c[0], obstacles) and final_segment_length(c[0]) >= node.style.min_arrow]
+                chosen = ok[0] if ok else next((c for c in candidates if not path_hits_boxes(c[0], obstacles)), candidates[0])
                 pts, sp, dp = chosen
             paths.append(
                 PathEl(
@@ -205,10 +276,13 @@ class Worker:
         column_of: Dict[str, int],
         owned: List[Tuple[Flow, Node, Node]],
         titled: bool,
+        boxed: bool = True,
+        row_of: Optional[Dict[str, int]] = None,
     ) -> Fragment:
         style = node.style
         grid = style.grid
-        paths = self._route_all(node, children, column_of, owned)
+        row_of = row_of or {c.id: 0 for c in children}
+        paths = self._route_all(node, children, column_of, owned, row_of)
 
         # spacing algorithm: terminates in <= spacing_iterations
         for _ in range(self.spacing_iterations):
@@ -221,7 +295,7 @@ class Worker:
             dx, dy = terminal_direction(p.points)
             target = next(c for c in children if any(q.id == p.dst_port for q in c.ports))
             if dx:
-                movers = [c for c in children if column_of[c.id] >= column_of[target.id]]
+                movers = [c for c in children if column_of[c.id] >= column_of[target.id] and row_of[c.id] == row_of[target.id]]
                 for c in movers:
                     c.offset["x"] += shift * dx
             else:
@@ -229,7 +303,7 @@ class Worker:
                 for c in movers:
                     c.offset["y"] += shift * dy
             self.events.append(f"spacing shift at {node.id}: {p.id} by {shift}")
-            paths = self._route_all(node, children, column_of, owned)
+            paths = self._route_all(node, children, column_of, owned, row_of)
         else:
             still = [p for p in paths if p.marker and final_segment_length(p.points) < style.min_arrow]
             for p in still:
@@ -259,7 +333,7 @@ class Worker:
         h = ceil_to_grid(max_y + style.padding, grid)
 
         elements: List = []
-        if titled:
+        if boxed:
             elements.append(
                 RectEl(
                     id=f"{node.id}.container",
@@ -275,6 +349,7 @@ class Worker:
                     extra={"stroke-dasharray": "4 2"},
                 )
             )
+        if titled:
             title = node.description
             max_chars = max(4, (w - 16) * 2 // style.annot_size)
             if len(title) > max_chars:

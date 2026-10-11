@@ -85,7 +85,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -172,7 +172,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 88
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -182,14 +182,14 @@
         "description": "Grounder, Generator",
         "canvas": {
           "w": 128,
-          "h": 144
+          "h": 128
         },
         "ports": [
           {
             "id": "n6.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -199,7 +199,7 @@
             "id": "n6.right",
             "side": "right",
             "rel_x": 104,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -209,7 +209,7 @@
             "id": "n6.top",
             "side": "top",
             "rel_x": 64,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -219,7 +219,7 @@
             "id": "n6.bottom",
             "side": "bottom",
             "rel_x": 64,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -229,7 +229,7 @@
             "id": "n7.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -239,7 +239,7 @@
             "id": "n7.right",
             "side": "right",
             "rel_x": 104,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -249,7 +249,7 @@
             "id": "n7.top",
             "side": "top",
             "rel_x": 64,
-            "rel_y": 88,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -259,7 +259,7 @@
             "id": "n7.bottom",
             "side": "bottom",
             "rel_x": 64,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -369,7 +369,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -456,7 +456,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 88
+              "y": 72
             },
             "svg_fragment": null
           }
@@ -465,7 +465,7 @@
           "x": 0,
           "y": 0,
           "w": 128,
-          "h": 144
+          "h": 128
         },
         "residuals": [],
         "components": [
@@ -474,8 +474,8 @@
         ],
         "layout": "vertical",
         "offset": {
-          "x": 24,
-          "y": 48
+          "x": 48,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -562,7 +562,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -649,7 +649,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 40,
-          "y": 88
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -659,14 +659,14 @@
         "description": "Decompose children, recursive tree",
         "canvas": {
           "w": 192,
-          "h": 144
+          "h": 128
         },
         "ports": [
           {
             "id": "n8.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -676,7 +676,7 @@
             "id": "n8.right",
             "side": "right",
             "rel_x": 168,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -686,7 +686,7 @@
             "id": "n8.top",
             "side": "top",
             "rel_x": 96,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -696,7 +696,7 @@
             "id": "n8.bottom",
             "side": "bottom",
             "rel_x": 96,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -706,7 +706,7 @@
             "id": "n9.left",
             "side": "left",
             "rel_x": 40,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -716,7 +716,7 @@
             "id": "n9.right",
             "side": "right",
             "rel_x": 152,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -726,7 +726,7 @@
             "id": "n9.top",
             "side": "top",
             "rel_x": 96,
-            "rel_y": 88,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -736,7 +736,7 @@
             "id": "n9.bottom",
             "side": "bottom",
             "rel_x": 96,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -846,7 +846,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -933,7 +933,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 40,
-              "y": 88
+              "y": 72
             },
             "svg_fragment": null
           }
@@ -942,7 +942,7 @@
           "x": 0,
           "y": 0,
           "w": 192,
-          "h": 144
+          "h": 128
         },
         "residuals": [],
         "components": [
@@ -951,8 +951,8 @@
         ],
         "layout": "vertical",
         "offset": {
-          "x": 176,
-          "y": 48
+          "x": 200,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1039,7 +1039,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1126,7 +1126,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 112,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1136,14 +1136,14 @@
         "description": "Merge, Critic",
         "canvas": {
           "w": 200,
-          "h": 96
+          "h": 80
         },
         "ports": [
           {
             "id": "n10.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1153,7 +1153,7 @@
             "id": "n10.right",
             "side": "right",
             "rel_x": 88,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1163,7 +1163,7 @@
             "id": "n10.top",
             "side": "top",
             "rel_x": 56,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1173,7 +1173,7 @@
             "id": "n10.bottom",
             "side": "bottom",
             "rel_x": 56,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1183,7 +1183,7 @@
             "id": "n11.left",
             "side": "left",
             "rel_x": 112,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1193,7 +1193,7 @@
             "id": "n11.right",
             "side": "right",
             "rel_x": 176,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1203,7 +1203,7 @@
             "id": "n11.top",
             "side": "top",
             "rel_x": 144,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1213,7 +1213,7 @@
             "id": "n11.bottom",
             "side": "bottom",
             "rel_x": 144,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1323,7 +1323,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1410,7 +1410,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 112,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           }
@@ -1419,7 +1419,7 @@
           "x": 0,
           "y": 0,
           "w": 200,
-          "h": 96
+          "h": 80
         },
         "residuals": [],
         "components": [
@@ -1428,8 +1428,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 392,
-          "y": 72
+          "x": 48,
+          "y": 200
         },
         "svg_fragment": null
       },
@@ -1516,7 +1516,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1603,7 +1603,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 112,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1690,7 +1690,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 296,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -1700,14 +1700,14 @@
         "description": "Worker, re-validate invariants, render",
         "canvas": {
           "w": 384,
-          "h": 96
+          "h": 80
         },
         "ports": [
           {
             "id": "n12.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1717,7 +1717,7 @@
             "id": "n12.right",
             "side": "right",
             "rel_x": 88,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1727,7 +1727,7 @@
             "id": "n12.top",
             "side": "top",
             "rel_x": 56,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1737,7 +1737,7 @@
             "id": "n12.bottom",
             "side": "bottom",
             "rel_x": 56,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1747,7 +1747,7 @@
             "id": "n13.left",
             "side": "left",
             "rel_x": 112,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1757,7 +1757,7 @@
             "id": "n13.right",
             "side": "right",
             "rel_x": 272,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1767,7 +1767,7 @@
             "id": "n13.top",
             "side": "top",
             "rel_x": 192,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1777,7 +1777,7 @@
             "id": "n13.bottom",
             "side": "bottom",
             "rel_x": 192,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1787,7 +1787,7 @@
             "id": "n14.left",
             "side": "left",
             "rel_x": 296,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1797,7 +1797,7 @@
             "id": "n14.right",
             "side": "right",
             "rel_x": 360,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1807,7 +1807,7 @@
             "id": "n14.top",
             "side": "top",
             "rel_x": 328,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1817,7 +1817,7 @@
             "id": "n14.bottom",
             "side": "bottom",
             "rel_x": 328,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1927,7 +1927,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -2014,7 +2014,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 112,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -2101,7 +2101,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 296,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           }
@@ -2110,7 +2110,7 @@
           "x": 0,
           "y": 0,
           "w": 384,
-          "h": 96
+          "h": 80
         },
         "residuals": [],
         "components": [
@@ -2120,8 +2120,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 616,
-          "y": 72
+          "x": 272,
+          "y": 200
         },
         "svg_fragment": null
       },
@@ -2130,15 +2130,15 @@
         "parent_id": null,
         "description": "FigTree-Style Recursive SVG Methodology Figure Generator",
         "canvas": {
-          "w": 1032,
-          "h": 240
+          "w": 688,
+          "h": 328
         },
         "ports": [
           {
             "id": "n6.left",
             "side": "left",
-            "rel_x": 48,
-            "rel_y": 104,
+            "rel_x": 72,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2147,8 +2147,8 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 128,
-            "rel_y": 104,
+            "rel_x": 152,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2157,8 +2157,8 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 88,
-            "rel_y": 88,
+            "rel_x": 112,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2167,8 +2167,8 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 88,
-            "rel_y": 120,
+            "rel_x": 112,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2177,8 +2177,8 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 48,
-            "rel_y": 152,
+            "rel_x": 72,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2187,8 +2187,8 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 128,
-            "rel_y": 152,
+            "rel_x": 152,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2197,8 +2197,8 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 88,
-            "rel_y": 136,
+            "rel_x": 112,
+            "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2207,8 +2207,8 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 88,
-            "rel_y": 168,
+            "rel_x": 112,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2217,8 +2217,8 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 200,
-            "rel_y": 104,
+            "rel_x": 224,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2227,8 +2227,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 344,
-            "rel_y": 104,
+            "rel_x": 368,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2237,8 +2237,8 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 272,
-            "rel_y": 88,
+            "rel_x": 296,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2247,8 +2247,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 272,
-            "rel_y": 120,
+            "rel_x": 296,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2257,8 +2257,8 @@
           {
             "id": "n9.left",
             "side": "left",
-            "rel_x": 216,
-            "rel_y": 152,
+            "rel_x": 240,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2267,8 +2267,8 @@
           {
             "id": "n9.right",
             "side": "right",
-            "rel_x": 328,
-            "rel_y": 152,
+            "rel_x": 352,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2277,8 +2277,8 @@
           {
             "id": "n9.top",
             "side": "top",
-            "rel_x": 272,
-            "rel_y": 136,
+            "rel_x": 296,
+            "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2287,8 +2287,8 @@
           {
             "id": "n9.bottom",
             "side": "bottom",
-            "rel_x": 272,
-            "rel_y": 168,
+            "rel_x": 296,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2297,8 +2297,8 @@
           {
             "id": "n10.left",
             "side": "left",
-            "rel_x": 416,
-            "rel_y": 128,
+            "rel_x": 72,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2307,8 +2307,8 @@
           {
             "id": "n10.right",
             "side": "right",
-            "rel_x": 480,
-            "rel_y": 128,
+            "rel_x": 136,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2317,8 +2317,8 @@
           {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 448,
-            "rel_y": 112,
+            "rel_x": 104,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2327,8 +2327,8 @@
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 448,
-            "rel_y": 144,
+            "rel_x": 104,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2337,8 +2337,8 @@
           {
             "id": "n11.left",
             "side": "left",
-            "rel_x": 504,
-            "rel_y": 128,
+            "rel_x": 160,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2347,8 +2347,8 @@
           {
             "id": "n11.right",
             "side": "right",
-            "rel_x": 568,
-            "rel_y": 128,
+            "rel_x": 224,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2357,8 +2357,8 @@
           {
             "id": "n11.top",
             "side": "top",
-            "rel_x": 536,
-            "rel_y": 112,
+            "rel_x": 192,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2367,8 +2367,8 @@
           {
             "id": "n11.bottom",
             "side": "bottom",
-            "rel_x": 536,
-            "rel_y": 144,
+            "rel_x": 192,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2377,8 +2377,8 @@
           {
             "id": "n12.left",
             "side": "left",
-            "rel_x": 640,
-            "rel_y": 128,
+            "rel_x": 296,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2387,8 +2387,8 @@
           {
             "id": "n12.right",
             "side": "right",
-            "rel_x": 704,
-            "rel_y": 128,
+            "rel_x": 360,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2397,8 +2397,8 @@
           {
             "id": "n12.top",
             "side": "top",
-            "rel_x": 672,
-            "rel_y": 112,
+            "rel_x": 328,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2407,8 +2407,8 @@
           {
             "id": "n12.bottom",
             "side": "bottom",
-            "rel_x": 672,
-            "rel_y": 144,
+            "rel_x": 328,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2417,8 +2417,8 @@
           {
             "id": "n13.left",
             "side": "left",
-            "rel_x": 728,
-            "rel_y": 128,
+            "rel_x": 384,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2427,8 +2427,8 @@
           {
             "id": "n13.right",
             "side": "right",
-            "rel_x": 888,
-            "rel_y": 128,
+            "rel_x": 544,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2437,8 +2437,8 @@
           {
             "id": "n13.top",
             "side": "top",
-            "rel_x": 808,
-            "rel_y": 112,
+            "rel_x": 464,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2447,8 +2447,8 @@
           {
             "id": "n13.bottom",
             "side": "bottom",
-            "rel_x": 808,
-            "rel_y": 144,
+            "rel_x": 464,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2457,8 +2457,8 @@
           {
             "id": "n14.left",
             "side": "left",
-            "rel_x": 912,
-            "rel_y": 128,
+            "rel_x": 568,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2467,8 +2467,8 @@
           {
             "id": "n14.right",
             "side": "right",
-            "rel_x": 976,
-            "rel_y": 128,
+            "rel_x": 632,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2477,8 +2477,8 @@
           {
             "id": "n14.top",
             "side": "top",
-            "rel_x": 944,
-            "rel_y": 112,
+            "rel_x": 600,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -2487,8 +2487,8 @@
           {
             "id": "n14.bottom",
             "side": "bottom",
-            "rel_x": 944,
-            "rel_y": 144,
+            "rel_x": 600,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2521,14 +2521,14 @@
             "description": "Grounder, Generator",
             "canvas": {
               "w": 128,
-              "h": 144
+              "h": 128
             },
             "ports": [
               {
                 "id": "n6.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2538,7 +2538,7 @@
                 "id": "n6.right",
                 "side": "right",
                 "rel_x": 104,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2548,7 +2548,7 @@
                 "id": "n6.top",
                 "side": "top",
                 "rel_x": 64,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2558,7 +2558,7 @@
                 "id": "n6.bottom",
                 "side": "bottom",
                 "rel_x": 64,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2568,7 +2568,7 @@
                 "id": "n7.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2578,7 +2578,7 @@
                 "id": "n7.right",
                 "side": "right",
                 "rel_x": 104,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2588,7 +2588,7 @@
                 "id": "n7.top",
                 "side": "top",
                 "rel_x": 64,
-                "rel_y": 88,
+                "rel_y": 72,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2598,7 +2598,7 @@
                 "id": "n7.bottom",
                 "side": "bottom",
                 "rel_x": 64,
-                "rel_y": 120,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2708,7 +2708,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -2795,7 +2795,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 88
+                  "y": 72
                 },
                 "svg_fragment": null
               }
@@ -2804,7 +2804,7 @@
               "x": 0,
               "y": 0,
               "w": 128,
-              "h": 144
+              "h": 128
             },
             "residuals": [],
             "components": [
@@ -2813,8 +2813,8 @@
             ],
             "layout": "vertical",
             "offset": {
-              "x": 24,
-              "y": 48
+              "x": 48,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -2824,14 +2824,14 @@
             "description": "Decompose children, recursive tree",
             "canvas": {
               "w": 192,
-              "h": 144
+              "h": 128
             },
             "ports": [
               {
                 "id": "n8.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2841,7 +2841,7 @@
                 "id": "n8.right",
                 "side": "right",
                 "rel_x": 168,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2851,7 +2851,7 @@
                 "id": "n8.top",
                 "side": "top",
                 "rel_x": 96,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2861,7 +2861,7 @@
                 "id": "n8.bottom",
                 "side": "bottom",
                 "rel_x": 96,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2871,7 +2871,7 @@
                 "id": "n9.left",
                 "side": "left",
                 "rel_x": 40,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2881,7 +2881,7 @@
                 "id": "n9.right",
                 "side": "right",
                 "rel_x": 152,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2891,7 +2891,7 @@
                 "id": "n9.top",
                 "side": "top",
                 "rel_x": 96,
-                "rel_y": 88,
+                "rel_y": 72,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2901,7 +2901,7 @@
                 "id": "n9.bottom",
                 "side": "bottom",
                 "rel_x": 96,
-                "rel_y": 120,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3011,7 +3011,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -3098,7 +3098,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 40,
-                  "y": 88
+                  "y": 72
                 },
                 "svg_fragment": null
               }
@@ -3107,7 +3107,7 @@
               "x": 0,
               "y": 0,
               "w": 192,
-              "h": 144
+              "h": 128
             },
             "residuals": [],
             "components": [
@@ -3116,8 +3116,8 @@
             ],
             "layout": "vertical",
             "offset": {
-              "x": 176,
-              "y": 48
+              "x": 200,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -3127,14 +3127,14 @@
             "description": "Merge, Critic",
             "canvas": {
               "w": 200,
-              "h": 96
+              "h": 80
             },
             "ports": [
               {
                 "id": "n10.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3144,7 +3144,7 @@
                 "id": "n10.right",
                 "side": "right",
                 "rel_x": 88,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3154,7 +3154,7 @@
                 "id": "n10.top",
                 "side": "top",
                 "rel_x": 56,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3164,7 +3164,7 @@
                 "id": "n10.bottom",
                 "side": "bottom",
                 "rel_x": 56,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3174,7 +3174,7 @@
                 "id": "n11.left",
                 "side": "left",
                 "rel_x": 112,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3184,7 +3184,7 @@
                 "id": "n11.right",
                 "side": "right",
                 "rel_x": 176,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3194,7 +3194,7 @@
                 "id": "n11.top",
                 "side": "top",
                 "rel_x": 144,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3204,7 +3204,7 @@
                 "id": "n11.bottom",
                 "side": "bottom",
                 "rel_x": 144,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3314,7 +3314,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -3401,7 +3401,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 112,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               }
@@ -3410,7 +3410,7 @@
               "x": 0,
               "y": 0,
               "w": 200,
-              "h": 96
+              "h": 80
             },
             "residuals": [],
             "components": [
@@ -3419,8 +3419,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 392,
-              "y": 72
+              "x": 48,
+              "y": 200
             },
             "svg_fragment": null
           },
@@ -3430,14 +3430,14 @@
             "description": "Worker, re-validate invariants, render",
             "canvas": {
               "w": 384,
-              "h": 96
+              "h": 80
             },
             "ports": [
               {
                 "id": "n12.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3447,7 +3447,7 @@
                 "id": "n12.right",
                 "side": "right",
                 "rel_x": 88,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3457,7 +3457,7 @@
                 "id": "n12.top",
                 "side": "top",
                 "rel_x": 56,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3467,7 +3467,7 @@
                 "id": "n12.bottom",
                 "side": "bottom",
                 "rel_x": 56,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3477,7 +3477,7 @@
                 "id": "n13.left",
                 "side": "left",
                 "rel_x": 112,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3487,7 +3487,7 @@
                 "id": "n13.right",
                 "side": "right",
                 "rel_x": 272,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3497,7 +3497,7 @@
                 "id": "n13.top",
                 "side": "top",
                 "rel_x": 192,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3507,7 +3507,7 @@
                 "id": "n13.bottom",
                 "side": "bottom",
                 "rel_x": 192,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3517,7 +3517,7 @@
                 "id": "n14.left",
                 "side": "left",
                 "rel_x": 296,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3527,7 +3527,7 @@
                 "id": "n14.right",
                 "side": "right",
                 "rel_x": 360,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3537,7 +3537,7 @@
                 "id": "n14.top",
                 "side": "top",
                 "rel_x": 328,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -3547,7 +3547,7 @@
                 "id": "n14.bottom",
                 "side": "bottom",
                 "rel_x": 328,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -3657,7 +3657,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -3744,7 +3744,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 112,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -3831,7 +3831,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 296,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               }
@@ -3840,7 +3840,7 @@
               "x": 0,
               "y": 0,
               "w": 384,
-              "h": 96
+              "h": 80
             },
             "residuals": [],
             "components": [
@@ -3850,8 +3850,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 616,
-              "y": 72
+              "x": 272,
+              "y": 200
             },
             "svg_fragment": null
           }
@@ -3859,8 +3859,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 1032,
-          "h": 240
+          "w": 688,
+          "h": 328
         },
         "residuals": [],
         "components": [
@@ -3874,7 +3874,7 @@
           "re-validate invariants",
           "recursive tree"
         ],
-        "layout": "horizontal",
+        "layout": "rows",
         "offset": {
           "x": 0,
           "y": 0
@@ -4024,7 +4024,7 @@
     },
     "ports_valid": true,
     "bboxes_valid": true,
-    "requires_remerge": false,
+    "requires_remerge": true,
     "note": ""
   },
   "content_plan": {

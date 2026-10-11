@@ -556,8 +556,12 @@ figure using the FigTree recursive construction (Grounder → recursive Generato
 Merge → dual-space Critic loop, with sheaf-stored residuals and an editability proof).
 
 ```bash
-python -m figtree examples/figtree/figtree-spec.md -o figure.svg --report report.json
-python -m pytest tests/test_figtree.py
+python -m figtree generate examples/figtree/figtree-spec.md -o figure.svg --report report.json
+python -m figtree refine examples/figtree/teaching/bar-chart.svg --rubric data-figure -o out.svg --trajectory t.json
+python -m pytest tests/test_figtree.py tests/test_figtree_refine.py
 ```
 
-See `docs/FIGTREE.md` for the architecture, constraints, test protocol and backends.
+`figtree refine` runs the paper's iterative-editing loop on any SVG (teaching diagrams, data
+figures, slides, dashboard tiles, icons) against a rubric, fixing mechanical defects and
+returning anchored edit requests for everything that needs a decision.
+See `docs/FIGTREE.md` for the architecture, constraints, rubrics, test protocol and backends.

@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
-from figtree.geometry import points_to_path, route
+from figtree.geometry import final_segment_length, path_hits_boxes, points_to_path, route
 from figtree.schemas import BBox
 from figtree.svgmodel import MARKER_ID, extract_bboxes, extract_ports, iter_elements, local, parse_svg
 
@@ -110,12 +110,45 @@ def apply_local_edit(svg_text: str, edit: Dict[str, Any]) -> Tuple[str, bool]:
         H = int(float(root.get("height", 0)))
         W = int(float(root.get("width", 0)))
         bboxes = extract_bboxes(svg_text)
-        max_bottom = max((b.y2 for k, b in bboxes.items() if k != next(iter(bboxes))), default=0)
-        s = (src["abs_x"], src["abs_y"])
-        d = (dst["abs_x"], dst["abs_y"])
-        y = max_bottom + 16
-        pts = [s, (s[0], y), (d[0], y), d]
-        requires_remerge = y + 24 > H or any(x < 0 or x > W for x, _ in pts)
+        root_id = next(iter(bboxes))
+        # leaf blocks (absolute) are the obstacles; candidate routes are tried in order
+        blocks: List[BBox] = []
+        for el, off in iter_elements(root):
+            if local(el.tag) == "rect" and el.get("data-role") == "block":
+                blocks.append(BBox(int(float(el.get("x", 0))) + off[0], int(float(el.get("y", 0))) + off[1], int(float(el.get("width", 0))), int(float(el.get("height", 0)))))
+
+        def port(comp: str, side: str) -> Optional[dict]:
+            return _find_port(ports, comp, side)
+
+        sb, db = port(edit["from"], "bottom"), port(edit["to"], "bottom")
+        st, dt = port(edit["from"], "top"), port(edit["to"], "top")
+        sr, dl = port(edit["from"], "right"), port(edit["to"], "left")
+        sl, dr = port(edit["from"], "left"), port(edit["to"], "right")
+        lo, hi = sorted((src["abs_x"], dst["abs_x"]))
+        spanned = [b for k, b in bboxes.items() if k != root_id and b.x <= hi and b.x2 >= lo]
+        y_bus = max((b.y2 for b in spanned), default=max(src["abs_y"], dst["abs_y"])) + 16
+        y_top = min((b.y for b in spanned), default=min(src["abs_y"], dst["abs_y"])) - 16
+        candidates = []
+        if sb and db:
+            candidates.append(([(sb["abs_x"], sb["abs_y"]), (sb["abs_x"], y_bus), (db["abs_x"], y_bus), (db["abs_x"], db["abs_y"])], sb, db))
+        if st and dt:
+            candidates.append(([(st["abs_x"], st["abs_y"]), (st["abs_x"], y_top), (dt["abs_x"], y_top), (dt["abs_x"], dt["abs_y"])], st, dt))
+        if sb and dl:  # left-margin lane
+            candidates.append(([(sb["abs_x"], sb["abs_y"]), (sb["abs_x"], y_bus), (8, y_bus), (8, dl["abs_y"]), (dl["abs_x"], dl["abs_y"])], sb, dl))
+        if sr and dr:  # right-margin lane
+            candidates.append(([(sr["abs_x"], sr["abs_y"]), (W - 8, sr["abs_y"]), (W - 8, dr["abs_y"]), (dr["abs_x"], dr["abs_y"])], sr, dr))
+
+        def clean(pts: List[Tuple[int, int]]) -> bool:
+            ends = {pts[0], pts[-1]}
+            obstacles = [b for b in blocks if not any(b.contains_point(x, y, strict=False) for x, y in ends)]
+            return not path_hits_boxes(pts, obstacles) and final_segment_length(pts) >= 20
+
+        chosen = next((c for c in candidates if clean(c[0])), candidates[0] if candidates else None)
+        if chosen is None:
+            return svg_text, False
+        pts, src, dst = chosen
+        # a lane in the padding zone keeps the edit local but means the parent should re-space
+        requires_remerge = any(x < 24 or x > W - 24 or y < 24 or y > H - 24 for x, y in pts[1:-1])
         path = (
             f'<path id="edit.arrow" d="{points_to_path(pts)}" fill="none" stroke="#333333" stroke-width="1.2" '
             f'data-flow="control" stroke-dasharray="4 2" marker-end="url(#{MARKER_ID})" '

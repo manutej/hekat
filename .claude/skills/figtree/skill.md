@@ -16,6 +16,20 @@ python -m figtree SOURCE.md -o figure.svg --edit "arrow:A>B"       # editability
 python -m figtree SOURCE.md -o figure.svg --backend claude          # Claude Grounder + Critic
 ```
 
+## Iterative refinement of any figure (teaching diagrams, charts, slides, tiles, icons)
+```bash
+python -m figtree score  FIG.svg --rubric slide                 # 1-10 per dimension + anchored issues
+python -m figtree refine FIG.svg --rubric data-figure -o out.svg --trajectory t.json [--edits edits.json]
+```
+Rubrics: `methodology`, `teaching`, `slide`, `data-figure`, `dashboard`, `icon`. Mechanical
+defects are fixed automatically round by round; content decisions come back as anchored edit
+requests. Answer them with an edit script (one list per round):
+```json
+[[{"op": "set_text", "id": "e2-text", "text": "Collect"},
+  {"op": "insert", "parent_id": "", "svg": "<text x=\"270\" y=\"290\" font-size=\"12\" data-role=\"axis-label\">Configuration</text>"}]]
+```
+Python: `from figtree.refine import Refiner; Refiner("teaching").run(svg, requests)`.
+
 ## Refine-step contract (recursive-meta-prompting integration)
 ```python
 from figtree.integrations import refine_step

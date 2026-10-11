@@ -84,8 +84,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 24,
-          "y": 104
+          "x": 48,
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -172,7 +172,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 32,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -259,7 +259,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 88
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -269,14 +269,14 @@
         "description": "Text Encoder, Layout Encoder",
         "canvas": {
           "w": 160,
-          "h": 144
+          "h": 128
         },
         "ports": [
           {
             "id": "n6.left",
             "side": "left",
             "rel_x": 32,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -286,7 +286,7 @@
             "id": "n6.right",
             "side": "right",
             "rel_x": 128,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -296,7 +296,7 @@
             "id": "n6.top",
             "side": "top",
             "rel_x": 80,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -306,7 +306,7 @@
             "id": "n6.bottom",
             "side": "bottom",
             "rel_x": 80,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -316,7 +316,7 @@
             "id": "n7.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -326,7 +326,7 @@
             "id": "n7.right",
             "side": "right",
             "rel_x": 136,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -336,7 +336,7 @@
             "id": "n7.top",
             "side": "top",
             "rel_x": 80,
-            "rel_y": 88,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -346,7 +346,7 @@
             "id": "n7.bottom",
             "side": "bottom",
             "rel_x": 80,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -456,7 +456,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 32,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -543,7 +543,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 88
+              "y": 72
             },
             "svg_fragment": null
           }
@@ -552,7 +552,7 @@
           "x": 0,
           "y": 0,
           "w": 160,
-          "h": 144
+          "h": 128
         },
         "residuals": [],
         "components": [
@@ -561,8 +561,8 @@
         ],
         "layout": "vertical",
         "offset": {
-          "x": 176,
-          "y": 48
+          "x": 200,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -648,8 +648,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 360,
-          "y": 104
+          "x": 384,
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -736,7 +736,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 24,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -823,7 +823,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 144,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -910,7 +910,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 264,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -920,14 +920,14 @@
         "description": "Residual Add, Feed Forward, Classifier",
         "canvas": {
           "w": 384,
-          "h": 96
+          "h": 80
         },
         "ports": [
           {
             "id": "n8.left",
             "side": "left",
             "rel_x": 24,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -937,7 +937,7 @@
             "id": "n8.right",
             "side": "right",
             "rel_x": 120,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -947,7 +947,7 @@
             "id": "n8.top",
             "side": "top",
             "rel_x": 72,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -957,7 +957,7 @@
             "id": "n8.bottom",
             "side": "bottom",
             "rel_x": 72,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -967,7 +967,7 @@
             "id": "n9.left",
             "side": "left",
             "rel_x": 144,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -977,7 +977,7 @@
             "id": "n9.right",
             "side": "right",
             "rel_x": 240,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -987,7 +987,7 @@
             "id": "n9.top",
             "side": "top",
             "rel_x": 192,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -997,7 +997,7 @@
             "id": "n9.bottom",
             "side": "bottom",
             "rel_x": 192,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1007,7 +1007,7 @@
             "id": "n10.left",
             "side": "left",
             "rel_x": 264,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1017,7 +1017,7 @@
             "id": "n10.right",
             "side": "right",
             "rel_x": 360,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1027,7 +1027,7 @@
             "id": "n10.top",
             "side": "top",
             "rel_x": 312,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1037,7 +1037,7 @@
             "id": "n10.bottom",
             "side": "bottom",
             "rel_x": 312,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1147,7 +1147,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 24,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1234,7 +1234,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 144,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1321,7 +1321,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 264,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           }
@@ -1330,7 +1330,7 @@
           "x": 0,
           "y": 0,
           "w": 384,
-          "h": 96
+          "h": 80
         },
         "residuals": [],
         "components": [
@@ -1340,8 +1340,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 512,
-          "y": 72
+          "x": 48,
+          "y": 200
         },
         "svg_fragment": null
       },
@@ -1350,15 +1350,15 @@
         "parent_id": null,
         "description": "Dual-Branch Transformer for Document Grounding",
         "canvas": {
-          "w": 920,
-          "h": 216
+          "w": 544,
+          "h": 304
         },
         "ports": [
           {
             "id": "n2.left",
             "side": "left",
-            "rel_x": 24,
-            "rel_y": 120,
+            "rel_x": 48,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1367,8 +1367,8 @@
           {
             "id": "n2.right",
             "side": "right",
-            "rel_x": 152,
-            "rel_y": 120,
+            "rel_x": 176,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1377,8 +1377,8 @@
           {
             "id": "n2.top",
             "side": "top",
-            "rel_x": 88,
-            "rel_y": 104,
+            "rel_x": 112,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1387,8 +1387,8 @@
           {
             "id": "n2.bottom",
             "side": "bottom",
-            "rel_x": 88,
-            "rel_y": 136,
+            "rel_x": 112,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1397,8 +1397,8 @@
           {
             "id": "n6.left",
             "side": "left",
-            "rel_x": 208,
-            "rel_y": 104,
+            "rel_x": 232,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1407,8 +1407,8 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 304,
-            "rel_y": 104,
+            "rel_x": 328,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1417,8 +1417,8 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 256,
-            "rel_y": 88,
+            "rel_x": 280,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1427,8 +1427,8 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 256,
-            "rel_y": 120,
+            "rel_x": 280,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1437,8 +1437,8 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 200,
-            "rel_y": 152,
+            "rel_x": 224,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1447,8 +1447,8 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 312,
-            "rel_y": 152,
+            "rel_x": 336,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1457,8 +1457,8 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 256,
-            "rel_y": 136,
+            "rel_x": 280,
+            "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1467,8 +1467,8 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 256,
-            "rel_y": 168,
+            "rel_x": 280,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1477,8 +1477,8 @@
           {
             "id": "n4.left",
             "side": "left",
-            "rel_x": 360,
-            "rel_y": 120,
+            "rel_x": 384,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1487,8 +1487,8 @@
           {
             "id": "n4.right",
             "side": "right",
-            "rel_x": 488,
-            "rel_y": 120,
+            "rel_x": 512,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1497,8 +1497,8 @@
           {
             "id": "n4.top",
             "side": "top",
-            "rel_x": 424,
-            "rel_y": 104,
+            "rel_x": 448,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1507,8 +1507,8 @@
           {
             "id": "n4.bottom",
             "side": "bottom",
-            "rel_x": 424,
-            "rel_y": 136,
+            "rel_x": 448,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1517,8 +1517,8 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 536,
-            "rel_y": 128,
+            "rel_x": 72,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1527,8 +1527,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 632,
-            "rel_y": 128,
+            "rel_x": 168,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1537,8 +1537,8 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 584,
-            "rel_y": 112,
+            "rel_x": 120,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1547,8 +1547,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 584,
-            "rel_y": 144,
+            "rel_x": 120,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1557,8 +1557,8 @@
           {
             "id": "n9.left",
             "side": "left",
-            "rel_x": 656,
-            "rel_y": 128,
+            "rel_x": 192,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1567,8 +1567,8 @@
           {
             "id": "n9.right",
             "side": "right",
-            "rel_x": 752,
-            "rel_y": 128,
+            "rel_x": 288,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1577,8 +1577,8 @@
           {
             "id": "n9.top",
             "side": "top",
-            "rel_x": 704,
-            "rel_y": 112,
+            "rel_x": 240,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1587,8 +1587,8 @@
           {
             "id": "n9.bottom",
             "side": "bottom",
-            "rel_x": 704,
-            "rel_y": 144,
+            "rel_x": 240,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1597,8 +1597,8 @@
           {
             "id": "n10.left",
             "side": "left",
-            "rel_x": 776,
-            "rel_y": 128,
+            "rel_x": 312,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1607,8 +1607,8 @@
           {
             "id": "n10.right",
             "side": "right",
-            "rel_x": 872,
-            "rel_y": 128,
+            "rel_x": 408,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1617,8 +1617,8 @@
           {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 824,
-            "rel_y": 112,
+            "rel_x": 360,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1627,8 +1627,8 @@
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 824,
-            "rel_y": 144,
+            "rel_x": 360,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1737,8 +1737,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 24,
-              "y": 104
+              "x": 48,
+              "y": 72
             },
             "svg_fragment": null
           },
@@ -1748,14 +1748,14 @@
             "description": "Text Encoder, Layout Encoder",
             "canvas": {
               "w": 160,
-              "h": 144
+              "h": 128
             },
             "ports": [
               {
                 "id": "n6.left",
                 "side": "left",
                 "rel_x": 32,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1765,7 +1765,7 @@
                 "id": "n6.right",
                 "side": "right",
                 "rel_x": 128,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1775,7 +1775,7 @@
                 "id": "n6.top",
                 "side": "top",
                 "rel_x": 80,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1785,7 +1785,7 @@
                 "id": "n6.bottom",
                 "side": "bottom",
                 "rel_x": 80,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1795,7 +1795,7 @@
                 "id": "n7.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1805,7 +1805,7 @@
                 "id": "n7.right",
                 "side": "right",
                 "rel_x": 136,
-                "rel_y": 104,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1815,7 +1815,7 @@
                 "id": "n7.top",
                 "side": "top",
                 "rel_x": 80,
-                "rel_y": 88,
+                "rel_y": 72,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1825,7 +1825,7 @@
                 "id": "n7.bottom",
                 "side": "bottom",
                 "rel_x": 80,
-                "rel_y": 120,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1935,7 +1935,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 32,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -2022,7 +2022,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 88
+                  "y": 72
                 },
                 "svg_fragment": null
               }
@@ -2031,7 +2031,7 @@
               "x": 0,
               "y": 0,
               "w": 160,
-              "h": 144
+              "h": 128
             },
             "residuals": [],
             "components": [
@@ -2040,8 +2040,8 @@
             ],
             "layout": "vertical",
             "offset": {
-              "x": 176,
-              "y": 48
+              "x": 200,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -2127,8 +2127,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 360,
-              "y": 104
+              "x": 384,
+              "y": 72
             },
             "svg_fragment": null
           },
@@ -2138,14 +2138,14 @@
             "description": "Residual Add, Feed Forward, Classifier",
             "canvas": {
               "w": 384,
-              "h": 96
+              "h": 80
             },
             "ports": [
               {
                 "id": "n8.left",
                 "side": "left",
                 "rel_x": 24,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2155,7 +2155,7 @@
                 "id": "n8.right",
                 "side": "right",
                 "rel_x": 120,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2165,7 +2165,7 @@
                 "id": "n8.top",
                 "side": "top",
                 "rel_x": 72,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2175,7 +2175,7 @@
                 "id": "n8.bottom",
                 "side": "bottom",
                 "rel_x": 72,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2185,7 +2185,7 @@
                 "id": "n9.left",
                 "side": "left",
                 "rel_x": 144,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2195,7 +2195,7 @@
                 "id": "n9.right",
                 "side": "right",
                 "rel_x": 240,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2205,7 +2205,7 @@
                 "id": "n9.top",
                 "side": "top",
                 "rel_x": 192,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2215,7 +2215,7 @@
                 "id": "n9.bottom",
                 "side": "bottom",
                 "rel_x": 192,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2225,7 +2225,7 @@
                 "id": "n10.left",
                 "side": "left",
                 "rel_x": 264,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2235,7 +2235,7 @@
                 "id": "n10.right",
                 "side": "right",
                 "rel_x": 360,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2245,7 +2245,7 @@
                 "id": "n10.top",
                 "side": "top",
                 "rel_x": 312,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2255,7 +2255,7 @@
                 "id": "n10.bottom",
                 "side": "bottom",
                 "rel_x": 312,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2365,7 +2365,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 24,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -2452,7 +2452,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 144,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -2539,7 +2539,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 264,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               }
@@ -2548,7 +2548,7 @@
               "x": 0,
               "y": 0,
               "w": 384,
-              "h": 96
+              "h": 80
             },
             "residuals": [],
             "components": [
@@ -2558,8 +2558,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 512,
-              "y": 72
+              "x": 48,
+              "y": 200
             },
             "svg_fragment": null
           }
@@ -2567,8 +2567,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 920,
-          "h": 216
+          "w": 544,
+          "h": 304
         },
         "residuals": [],
         "components": [
@@ -2580,7 +2580,7 @@
           "Classifier",
           "Residual Add"
         ],
-        "layout": "horizontal",
+        "layout": "rows",
         "offset": {
           "x": 0,
           "y": 0

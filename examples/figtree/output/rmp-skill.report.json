@@ -84,8 +84,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 24,
-          "y": 72
+          "x": 48,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -171,8 +171,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 144,
-          "y": 72
+          "x": 168,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -258,8 +258,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 264,
-          "y": 72
+          "x": 288,
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -346,7 +346,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 48,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -433,7 +433,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 216,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -520,7 +520,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 336,
-          "y": 40
+          "y": 24
         },
         "svg_fragment": null
       },
@@ -530,14 +530,14 @@
         "description": "Adversarial Review, Refine Step, Convergence Check",
         "canvas": {
           "w": 496,
-          "h": 120
+          "h": 104
         },
         "ports": [
           {
             "id": "n6.left",
             "side": "left",
             "rel_x": 48,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -547,7 +547,7 @@
             "id": "n6.right",
             "side": "right",
             "rel_x": 192,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -557,7 +557,7 @@
             "id": "n6.top",
             "side": "top",
             "rel_x": 120,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -567,7 +567,7 @@
             "id": "n6.bottom",
             "side": "bottom",
             "rel_x": 120,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -577,7 +577,7 @@
             "id": "n7.left",
             "side": "left",
             "rel_x": 216,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -587,7 +587,7 @@
             "id": "n7.right",
             "side": "right",
             "rel_x": 312,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -597,7 +597,7 @@
             "id": "n7.top",
             "side": "top",
             "rel_x": 264,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -607,7 +607,7 @@
             "id": "n7.bottom",
             "side": "bottom",
             "rel_x": 264,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -617,7 +617,7 @@
             "id": "n8.left",
             "side": "left",
             "rel_x": 336,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -627,7 +627,7 @@
             "id": "n8.right",
             "side": "right",
             "rel_x": 464,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -637,7 +637,7 @@
             "id": "n8.top",
             "side": "top",
             "rel_x": 400,
-            "rel_y": 40,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -647,7 +647,7 @@
             "id": "n8.bottom",
             "side": "bottom",
             "rel_x": 400,
-            "rel_y": 72,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -757,7 +757,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 48,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -844,7 +844,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 216,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -931,7 +931,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 336,
-              "y": 40
+              "y": 24
             },
             "svg_fragment": null
           }
@@ -940,7 +940,7 @@
           "x": 0,
           "y": 0,
           "w": 496,
-          "h": 120
+          "h": 104
         },
         "residuals": [],
         "components": [
@@ -950,8 +950,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 400,
-          "y": 24
+          "x": 48,
+          "y": 104
         },
         "svg_fragment": null
       },
@@ -960,15 +960,15 @@
         "parent_id": null,
         "description": "Recursive Meta Prompting (RMP) Skill",
         "canvas": {
-          "w": 920,
-          "h": 168
+          "w": 568,
+          "h": 232
         },
         "ports": [
           {
             "id": "n2.left",
             "side": "left",
-            "rel_x": 24,
-            "rel_y": 88,
+            "rel_x": 48,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -977,8 +977,8 @@
           {
             "id": "n2.right",
             "side": "right",
-            "rel_x": 120,
-            "rel_y": 88,
+            "rel_x": 144,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -987,8 +987,8 @@
           {
             "id": "n2.top",
             "side": "top",
-            "rel_x": 72,
-            "rel_y": 72,
+            "rel_x": 96,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -997,8 +997,8 @@
           {
             "id": "n2.bottom",
             "side": "bottom",
-            "rel_x": 72,
-            "rel_y": 104,
+            "rel_x": 96,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1007,8 +1007,8 @@
           {
             "id": "n3.left",
             "side": "left",
-            "rel_x": 144,
-            "rel_y": 88,
+            "rel_x": 168,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1017,8 +1017,8 @@
           {
             "id": "n3.right",
             "side": "right",
-            "rel_x": 240,
-            "rel_y": 88,
+            "rel_x": 264,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1027,8 +1027,8 @@
           {
             "id": "n3.top",
             "side": "top",
-            "rel_x": 192,
-            "rel_y": 72,
+            "rel_x": 216,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1037,8 +1037,8 @@
           {
             "id": "n3.bottom",
             "side": "bottom",
-            "rel_x": 192,
-            "rel_y": 104,
+            "rel_x": 216,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1047,8 +1047,8 @@
           {
             "id": "n4.left",
             "side": "left",
-            "rel_x": 264,
-            "rel_y": 88,
+            "rel_x": 288,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1057,8 +1057,8 @@
           {
             "id": "n4.right",
             "side": "right",
-            "rel_x": 376,
-            "rel_y": 88,
+            "rel_x": 400,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1067,8 +1067,8 @@
           {
             "id": "n4.top",
             "side": "top",
-            "rel_x": 320,
-            "rel_y": 72,
+            "rel_x": 344,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1077,8 +1077,8 @@
           {
             "id": "n4.bottom",
             "side": "bottom",
-            "rel_x": 320,
-            "rel_y": 104,
+            "rel_x": 344,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1087,8 +1087,8 @@
           {
             "id": "n6.left",
             "side": "left",
-            "rel_x": 448,
-            "rel_y": 80,
+            "rel_x": 96,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1097,8 +1097,8 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 592,
-            "rel_y": 80,
+            "rel_x": 240,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1107,8 +1107,8 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 520,
-            "rel_y": 64,
+            "rel_x": 168,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1117,8 +1117,8 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 520,
-            "rel_y": 96,
+            "rel_x": 168,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1127,8 +1127,8 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 616,
-            "rel_y": 80,
+            "rel_x": 264,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1137,8 +1137,8 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 712,
-            "rel_y": 80,
+            "rel_x": 360,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1147,8 +1147,8 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 664,
-            "rel_y": 64,
+            "rel_x": 312,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1157,8 +1157,8 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 664,
-            "rel_y": 96,
+            "rel_x": 312,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1167,8 +1167,8 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 736,
-            "rel_y": 80,
+            "rel_x": 384,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1177,8 +1177,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 864,
-            "rel_y": 80,
+            "rel_x": 512,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1187,8 +1187,8 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 800,
-            "rel_y": 64,
+            "rel_x": 448,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1197,8 +1197,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 800,
-            "rel_y": 96,
+            "rel_x": 448,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1307,8 +1307,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 24,
-              "y": 72
+              "x": 48,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1394,8 +1394,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 144,
-              "y": 72
+              "x": 168,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1481,8 +1481,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 264,
-              "y": 72
+              "x": 288,
+              "y": 24
             },
             "svg_fragment": null
           },
@@ -1492,14 +1492,14 @@
             "description": "Adversarial Review, Refine Step, Convergence Check",
             "canvas": {
               "w": 496,
-              "h": 120
+              "h": 104
             },
             "ports": [
               {
                 "id": "n6.left",
                 "side": "left",
                 "rel_x": 48,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1509,7 +1509,7 @@
                 "id": "n6.right",
                 "side": "right",
                 "rel_x": 192,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1519,7 +1519,7 @@
                 "id": "n6.top",
                 "side": "top",
                 "rel_x": 120,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1529,7 +1529,7 @@
                 "id": "n6.bottom",
                 "side": "bottom",
                 "rel_x": 120,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1539,7 +1539,7 @@
                 "id": "n7.left",
                 "side": "left",
                 "rel_x": 216,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1549,7 +1549,7 @@
                 "id": "n7.right",
                 "side": "right",
                 "rel_x": 312,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1559,7 +1559,7 @@
                 "id": "n7.top",
                 "side": "top",
                 "rel_x": 264,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1569,7 +1569,7 @@
                 "id": "n7.bottom",
                 "side": "bottom",
                 "rel_x": 264,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1579,7 +1579,7 @@
                 "id": "n8.left",
                 "side": "left",
                 "rel_x": 336,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1589,7 +1589,7 @@
                 "id": "n8.right",
                 "side": "right",
                 "rel_x": 464,
-                "rel_y": 56,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1599,7 +1599,7 @@
                 "id": "n8.top",
                 "side": "top",
                 "rel_x": 400,
-                "rel_y": 40,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1609,7 +1609,7 @@
                 "id": "n8.bottom",
                 "side": "bottom",
                 "rel_x": 400,
-                "rel_y": 72,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1719,7 +1719,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 48,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -1806,7 +1806,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 216,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               },
@@ -1893,7 +1893,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 336,
-                  "y": 40
+                  "y": 24
                 },
                 "svg_fragment": null
               }
@@ -1902,7 +1902,7 @@
               "x": 0,
               "y": 0,
               "w": 496,
-              "h": 120
+              "h": 104
             },
             "residuals": [],
             "components": [
@@ -1912,8 +1912,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 400,
-              "y": 24
+              "x": 48,
+              "y": 104
             },
             "svg_fragment": null
           }
@@ -1921,8 +1921,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 920,
-          "h": 168
+          "w": 568,
+          "h": 232
         },
         "residuals": [],
         "components": [
@@ -1933,7 +1933,7 @@
           "Slot Typing",
           "Scaffold Draft"
         ],
-        "layout": "horizontal",
+        "layout": "rows",
         "offset": {
           "x": 0,
           "y": 0
