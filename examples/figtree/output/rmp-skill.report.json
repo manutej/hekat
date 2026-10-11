@@ -1,0 +1,2133 @@
+{
+  "residual_defects": [],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Task Intake",
+        "canvas": {
+          "w": 96,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Task Intake"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Task Intake"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Slot Typing",
+        "canvas": {
+          "w": 96,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Slot Typing"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Slot Typing"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 144,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Scaffold Draft",
+        "canvas": {
+          "w": 112,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 112,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Scaffold Draft"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Scaffold Draft"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 264,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n5",
+        "description": "Adversarial Review",
+        "canvas": {
+          "w": 144,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Adversarial Review"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n5",
+        "description": "Refine Step",
+        "canvas": {
+          "w": 96,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Refine Step"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n5",
+        "description": "Convergence Check",
+        "canvas": {
+          "w": 128,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Convergence Check"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 336,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Adversarial Review, Refine Step, Convergence Check",
+        "canvas": {
+          "w": 496,
+          "h": 120
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 312,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 264,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 264,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 336,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 464,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 400,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 400,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n5",
+            "description": "Adversarial Review",
+            "canvas": {
+              "w": 144,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Adversarial Review"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Adversarial Review"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n5",
+            "description": "Refine Step",
+            "canvas": {
+              "w": 96,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Refine Step"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Refine Step"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n5",
+            "description": "Convergence Check",
+            "canvas": {
+              "w": 128,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Convergence Check"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Convergence Check"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 336,
+              "y": 40
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 496,
+          "h": 120
+        },
+        "residuals": [],
+        "components": [
+          "Adversarial Review",
+          "Refine Step",
+          "Convergence Check"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 400,
+          "y": 24
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Recursive Meta Prompting (RMP) Skill",
+        "canvas": {
+          "w": 920,
+          "h": 168
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 120,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Task Intake"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 144,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 240,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 192,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 192,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Slot Typing"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 264,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 376,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 320,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 320,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Scaffold Draft"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 448,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 592,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 520,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 520,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Adversarial Review"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 616,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 712,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 664,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 664,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Refine Step"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 736,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 864,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 800,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Convergence Check"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 800,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Convergence Check"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Task Intake",
+            "canvas": {
+              "w": 96,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Task Intake"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Task Intake"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Task Intake"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Task Intake"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Task Intake"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Slot Typing",
+            "canvas": {
+              "w": 96,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Slot Typing"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Slot Typing"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Slot Typing"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Slot Typing"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Slot Typing"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 144,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Scaffold Draft",
+            "canvas": {
+              "w": 112,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Scaffold Draft"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 112,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Scaffold Draft"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Scaffold Draft"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Scaffold Draft"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Scaffold Draft"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 264,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Adversarial Review, Refine Step, Convergence Check",
+            "canvas": {
+              "w": 496,
+              "h": 120
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 48,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Adversarial Review"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 312,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 264,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 264,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Refine Step"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 336,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 464,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 400,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Convergence Check"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 400,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Convergence Check"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n5",
+                "description": "Adversarial Review",
+                "canvas": {
+                  "w": 144,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Adversarial Review"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Adversarial Review"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Adversarial Review"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Adversarial Review"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Adversarial Review"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 48,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n5",
+                "description": "Refine Step",
+                "canvas": {
+                  "w": 96,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Refine Step"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 96,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Refine Step"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 48,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Refine Step"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 48,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Refine Step"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 96,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Refine Step"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n5",
+                "description": "Convergence Check",
+                "canvas": {
+                  "w": 128,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Convergence Check"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Convergence Check"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Convergence Check"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Convergence Check"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Convergence Check"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 336,
+                  "y": 40
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 496,
+              "h": 120
+            },
+            "residuals": [],
+            "components": [
+              "Adversarial Review",
+              "Refine Step",
+              "Convergence Check"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 400,
+              "y": 24
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 920,
+          "h": 168
+        },
+        "residuals": [],
+        "components": [
+          "Refine Step",
+          "Adversarial Review",
+          "Convergence Check",
+          "Task Intake",
+          "Slot Typing",
+          "Scaffold Draft"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n1": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      }
+    },
+    "edges": [
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n5",
+        "n8"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n5->n6": true,
+      "n5->n7": true,
+      "n5->n8": true,
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n7.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Refine Step",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Recursive Meta Prompting (RMP) Skill",
+    "components": [
+      {
+        "name": "Refine Step",
+        "evidence_span": "Refine Step"
+      },
+      {
+        "name": "Adversarial Review",
+        "evidence_span": "Adversarial Review"
+      },
+      {
+        "name": "Convergence Check",
+        "evidence_span": "Convergence Check"
+      },
+      {
+        "name": "Task Intake",
+        "evidence_span": "Task Intake"
+      },
+      {
+        "name": "Slot Typing",
+        "evidence_span": "Slot Typing"
+      },
+      {
+        "name": "Scaffold Draft",
+        "evidence_span": "Scaffold Draft"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Adversarial Review",
+        "to": "Refine Step",
+        "type": "data",
+        "evidence_span": "Adversarial Review \u2192 Refine Step \u2192 Convergence Check \u2192 repeat until converged"
+      },
+      {
+        "from": "Refine Step",
+        "to": "Convergence Check",
+        "type": "data",
+        "evidence_span": "Adversarial Review \u2192 Refine Step \u2192 Convergence Check \u2192 repeat until converged"
+      },
+      {
+        "from": "Convergence Check",
+        "to": "Adversarial Review",
+        "type": "control",
+        "evidence_span": "Adversarial Review \u2192 Refine Step \u2192 Convergence Check \u2192 repeat until converged"
+      },
+      {
+        "from": "Task Intake",
+        "to": "Slot Typing",
+        "type": "data",
+        "evidence_span": "Task Intake \u2192 Slot Typing \u2192 Scaffold Draft \u2192 Adversarial Review"
+      },
+      {
+        "from": "Slot Typing",
+        "to": "Scaffold Draft",
+        "type": "data",
+        "evidence_span": "Task Intake \u2192 Slot Typing \u2192 Scaffold Draft \u2192 Adversarial Review"
+      },
+      {
+        "from": "Scaffold Draft",
+        "to": "Adversarial Review",
+        "type": "data",
+        "evidence_span": "Task Intake \u2192 Slot Typing \u2192 Scaffold Draft \u2192 Adversarial Review"
+      }
+    ],
+    "inputs": [
+      "task statement"
+    ],
+    "outputs": [
+      "converged meta-prompt",
+      "residual defect list"
+    ],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F4A460",
+      "processing": "#7BA3C9",
+      "residual": "#FFF3CD",
+      "input": "#D5D5D5",
+      "container": "#F5F5F5",
+      "border": "#333333"
+    },
+    "font": "Times New Roman",
+    "font_size_label": "11-13pt",
+    "font_size_annot": "9-11pt",
+    "stroke_main": 1.2,
+    "stroke_border": 1.4,
+    "grid": 8,
+    "min_arrow": 20,
+    "padding": 24
+  },
+  "faithfulness_failures": [],
+  "events": [],
+  "node_count": 8
+}

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="216" viewBox="0 0 920 216" font-family="Times New Roman" data-figtree="1">
+  <title>Dual-Branch Transformer for Document Grounding</title>
+  <rect id="background" x="0" y="0" width="920" height="216" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <g id="n1" data-bbox="0 0 920 216">
+    <!-- PORT:left x=24 y=120 id=n2.left type=input component="Token Embedding" -->
+    <!-- PORT:right x=152 y=120 id=n2.right type=output component="Token Embedding" -->
+    <!-- PORT:top x=88 y=104 id=n2.top type=input component="Token Embedding" -->
+    <!-- PORT:bottom x=88 y=136 id=n2.bottom type=output component="Token Embedding" -->
+    <!-- PORT:left x=208 y=104 id=n6.left type=input component="Text Encoder" -->
+    <!-- PORT:right x=304 y=104 id=n6.right type=output component="Text Encoder" -->
+    <!-- PORT:top x=256 y=88 id=n6.top type=input component="Text Encoder" -->
+    <!-- PORT:bottom x=256 y=120 id=n6.bottom type=output component="Text Encoder" -->
+    <!-- PORT:left x=200 y=152 id=n7.left type=input component="Layout Encoder" -->
+    <!-- PORT:right x=312 y=152 id=n7.right type=output component="Layout Encoder" -->
+    <!-- PORT:top x=256 y=136 id=n7.top type=input component="Layout Encoder" -->
+    <!-- PORT:bottom x=256 y=168 id=n7.bottom type=output component="Layout Encoder" -->
+    <!-- PORT:left x=360 y=120 id=n4.left type=input component="Cross Attention" -->
+    <!-- PORT:right x=488 y=120 id=n4.right type=output component="Cross Attention" -->
+    <!-- PORT:top x=424 y=104 id=n4.top type=input component="Cross Attention" -->
+    <!-- PORT:bottom x=424 y=136 id=n4.bottom type=output component="Cross Attention" -->
+    <!-- PORT:left x=536 y=128 id=n8.left type=input component="Residual Add" -->
+    <!-- PORT:right x=632 y=128 id=n8.right type=output component="Residual Add" -->
+    <!-- PORT:top x=584 y=112 id=n8.top type=input component="Residual Add" -->
+    <!-- PORT:bottom x=584 y=144 id=n8.bottom type=output component="Residual Add" -->
+    <!-- PORT:left x=656 y=128 id=n9.left type=input component="Feed Forward" -->
+    <!-- PORT:right x=752 y=128 id=n9.right type=output component="Feed Forward" -->
+    <!-- PORT:top x=704 y=112 id=n9.top type=input component="Feed Forward" -->
+    <!-- PORT:bottom x=704 y=144 id=n9.bottom type=output component="Feed Forward" -->
+    <!-- PORT:left x=776 y=128 id=n10.left type=input component="Classifier" -->
+    <!-- PORT:right x=872 y=128 id=n10.right type=output component="Classifier" -->
+    <!-- PORT:top x=824 y=112 id=n10.top type=input component="Classifier" -->
+    <!-- PORT:bottom x=824 y=144 id=n10.bottom type=output component="Classifier" -->
+    <g id="n2" transform="translate(24,104)" data-bbox="24 104 128 32" data-label="Token Embedding">
+      <!-- PORT:left x=0 y=16 id=n2.left type=input component="Token Embedding" -->
+      <!-- PORT:right x=128 y=16 id=n2.right type=output component="Token Embedding" -->
+      <!-- PORT:top x=64 y=0 id=n2.top type=input component="Token Embedding" -->
+      <!-- PORT:bottom x=64 y=32 id=n2.bottom type=output component="Token Embedding" -->
+      <rect id="n2.block" x="0" y="0" width="128" height="32" fill="#D5D5D5" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Token Embedding"/>
+      <text id="n2.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="128">Token Embedding</text>
+    </g>
+    <g id="n3" transform="translate(176,48)" data-bbox="176 48 160 144" data-label="Text Encoder, Layout Encoder">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Text Encoder" -->
+      <!-- PORT:right x=128 y=56 id=n6.right type=output component="Text Encoder" -->
+      <!-- PORT:top x=80 y=40 id=n6.top type=input component="Text Encoder" -->
+      <!-- PORT:bottom x=80 y=72 id=n6.bottom type=output component="Text Encoder" -->
+      <!-- PORT:left x=24 y=104 id=n7.left type=input component="Layout Encoder" -->
+      <!-- PORT:right x=136 y=104 id=n7.right type=output component="Layout Encoder" -->
+      <!-- PORT:top x=80 y=88 id=n7.top type=input component="Layout Encoder" -->
+      <!-- PORT:bottom x=80 y=120 id=n7.bottom type=output component="Layout Encoder" -->
+      <rect id="n3.container" x="0" y="0" width="160" height="144" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <text id="n3.title" x="8" y="16" font-family="Times New Roman" font-size="10" text-anchor="start" dominant-baseline="middle" fill="#333333" data-kind="annot" data-max-width="160">Text Encoder, Layout Encoder</text>
+      <g id="n6" transform="translate(32,40)" data-bbox="32 40 96 32" data-label="Text Encoder">
+        <!-- PORT:left x=0 y=16 id=n6.left type=input component="Text Encoder" -->
+        <!-- PORT:right x=96 y=16 id=n6.right type=output component="Text Encoder" -->
+        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Text Encoder" -->
+        <!-- PORT:bottom x=48 y=32 id=n6.bottom type=output component="Text Encoder" -->
+        <rect id="n6.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Text Encoder"/>
+        <text id="n6.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Text Encoder</text>
+      </g>
+      <g id="n7" transform="translate(24,88)" data-bbox="24 88 112 32" data-label="Layout Encoder">
+        <!-- PORT:left x=0 y=16 id=n7.left type=input component="Layout Encoder" -->
+        <!-- PORT:right x=112 y=16 id=n7.right type=output component="Layout Encoder" -->
+        <!-- PORT:top x=56 y=0 id=n7.top type=input component="Layout Encoder" -->
+        <!-- PORT:bottom x=56 y=32 id=n7.bottom type=output component="Layout Encoder" -->
+        <rect id="n7.block" x="0" y="0" width="112" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Layout Encoder"/>
+        <text id="n7.label" x="56" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="112">Layout Encoder</text>
+      </g>
+    </g>
+    <g id="n4" transform="translate(360,104)" data-bbox="360 104 128 32" data-label="Cross Attention">
+      <!-- PORT:left x=0 y=16 id=n4.left type=input component="Cross Attention" -->
+      <!-- PORT:right x=128 y=16 id=n4.right type=output component="Cross Attention" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="Cross Attention" -->
+      <!-- PORT:bottom x=64 y=32 id=n4.bottom type=output component="Cross Attention" -->
+      <rect id="n4.block" x="0" y="0" width="128" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Cross Attention"/>
+      <text id="n4.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="128">Cross Attention</text>
+    </g>
+    <g id="n5" transform="translate(512,72)" data-bbox="512 72 384 96" data-label="Residual Add, Feed Forward, Classifier">
+      <!-- PORT:left x=24 y=56 id=n8.left type=input component="Residual Add" -->
+      <!-- PORT:right x=120 y=56 id=n8.right type=output component="Residual Add" -->
+      <!-- PORT:top x=72 y=40 id=n8.top type=input component="Residual Add" -->
+      <!-- PORT:bottom x=72 y=72 id=n8.bottom type=output component="Residual Add" -->
+      <!-- PORT:left x=144 y=56 id=n9.left type=input component="Feed Forward" -->
+      <!-- PORT:right x=240 y=56 id=n9.right type=output component="Feed Forward" -->
+      <!-- PORT:top x=192 y=40 id=n9.top type=input component="Feed Forward" -->
+      <!-- PORT:bottom x=192 y=72 id=n9.bottom type=output component="Feed Forward" -->
+      <!-- PORT:left x=264 y=56 id=n10.left type=input component="Classifier" -->
+      <!-- PORT:right x=360 y=56 id=n10.right type=output component="Classifier" -->
+      <!-- PORT:top x=312 y=40 id=n10.top type=input component="Classifier" -->
+      <!-- PORT:bottom x=312 y=72 id=n10.bottom type=output component="Classifier" -->
+      <rect id="n5.container" x="0" y="0" width="384" height="96" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <text id="n5.title" x="8" y="16" font-family="Times New Roman" font-size="10" text-anchor="start" dominant-baseline="middle" fill="#333333" data-kind="annot" data-max-width="384">Residual Add, Feed Forward, Classifier</text>
+      <g id="n8" transform="translate(24,40)" data-bbox="24 40 96 32" data-label="Residual Add">
+        <!-- PORT:left x=0 y=16 id=n8.left type=input component="Residual Add" -->
+        <!-- PORT:right x=96 y=16 id=n8.right type=output component="Residual Add" -->
+        <!-- PORT:top x=48 y=0 id=n8.top type=input component="Residual Add" -->
+        <!-- PORT:bottom x=48 y=32 id=n8.bottom type=output component="Residual Add" -->
+        <rect id="n8.block" x="0" y="0" width="96" height="32" fill="#FFF3CD" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Residual Add"/>
+        <text id="n8.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Residual Add</text>
+      </g>
+      <g id="n9" transform="translate(144,40)" data-bbox="144 40 96 32" data-label="Feed Forward">
+        <!-- PORT:left x=0 y=16 id=n9.left type=input component="Feed Forward" -->
+        <!-- PORT:right x=96 y=16 id=n9.right type=output component="Feed Forward" -->
+        <!-- PORT:top x=48 y=0 id=n9.top type=input component="Feed Forward" -->
+        <!-- PORT:bottom x=48 y=32 id=n9.bottom type=output component="Feed Forward" -->
+        <rect id="n9.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Feed Forward"/>
+        <text id="n9.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Feed Forward</text>
+      </g>
+      <g id="n10" transform="translate(264,40)" data-bbox="264 40 96 32" data-label="Classifier">
+        <!-- PORT:left x=0 y=16 id=n10.left type=input component="Classifier" -->
+        <!-- PORT:right x=96 y=16 id=n10.right type=output component="Classifier" -->
+        <!-- PORT:top x=48 y=0 id=n10.top type=input component="Classifier" -->
+        <!-- PORT:bottom x=48 y=32 id=n10.bottom type=output component="Classifier" -->
+        <rect id="n10.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Classifier"/>
+        <text id="n10.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Classifier</text>
+      </g>
+      <path id="n5.arrow0" d="M240,56 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
+      <path id="n5.arrow1" d="M120,56 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left"/>
+    </g>
+    <path id="n1.arrow0" d="M152,120 H176 V104 H208" fill="none" stroke="#333333" stroke-width="1.2" data-flow="parallel" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n6.left"/>
+    <path id="n1.arrow1" d="M152,120 H176 V152 H200" fill="none" stroke="#333333" stroke-width="1.2" data-flow="parallel" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n7.left"/>
+    <path id="n1.arrow2" d="M304,104 H336 V120 H360" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n4.left"/>
+    <path id="n1.arrow3" d="M312,152 H336 V120 H360" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n4.left"/>
+    <path id="n1.arrow4" d="M488,120 H496 V24 H704 V112" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n9.top"/>
+    <path id="n1.arrow5" d="M488,120 H512 V128 H536" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n8.left"/>
+  </g>
+</svg>

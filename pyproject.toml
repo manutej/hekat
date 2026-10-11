@@ -52,14 +52,15 @@ mcp = [
 
 [project.scripts]
 hekat = "hekat.cli:main"
+figtree = "figtree.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["hekat*"]
+include = ["hekat*", "figtree*"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-ra -q --cov=hekat --cov-report=term-missing"
+addopts = "-ra -q --cov=hekat --cov=figtree --cov-report=term-missing"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]

@@ -21,10 +21,11 @@
 
 This repository contains everything needed for remote agent development:
 
-### Skills Available (3 core)
+### Skills Available (4)
 - `functional-programming` - Pure functions, immutability, composition patterns
 - `fp-ts` - Type-safe functional programming with monadic error handling
 - `typescript-fp` - Advanced TypeScript patterns and generic pipelines
+- `figtree` - Editable SVG methodology figures from documents (`python -m figtree`, see `docs/FIGTREE.md`)
 
 ### Agents Available (5 specialized)
 - `hekat-agent` - Primary L1-L7 orchestration

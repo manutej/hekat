@@ -548,3 +548,16 @@ For questions or contributions to the Hekat DSL project, see the LUXOR project d
 **Hekat**: Precision in measurement, precision in orchestration.
 
 *Ancient wisdom meets modern agent coordination.*
+
+## FigTree Figure Generator
+
+`figtree/` turns a paper, skill.md or methodology document into an editable SVG methodology
+figure using the FigTree recursive construction (Grounder → recursive Generator tree → Worker
+Merge → dual-space Critic loop, with sheaf-stored residuals and an editability proof).
+
+```bash
+python -m figtree examples/figtree/figtree-spec.md -o figure.svg --report report.json
+python -m pytest tests/test_figtree.py
+```
+
+See `docs/FIGTREE.md` for the architecture, constraints, test protocol and backends.

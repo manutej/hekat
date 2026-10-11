@@ -1,0 +1,4161 @@
+{
+  "residual_defects": [],
+  "layout_tree": {
+    "stalks": {
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Grounder",
+        "canvas": {
+          "w": 80,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Grounder"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n2",
+        "description": "Generator",
+        "canvas": {
+          "w": 80,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Generator"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 88
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Grounder, Generator",
+        "canvas": {
+          "w": 128,
+          "h": 144
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 104,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Grounder",
+            "canvas": {
+              "w": 80,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Grounder"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Grounder"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n2",
+            "description": "Generator",
+            "canvas": {
+              "w": 80,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Generator"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Generator"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 88
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        "residuals": [],
+        "components": [
+          "Grounder",
+          "Generator"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 24,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Decompose children",
+        "canvas": {
+          "w": 144,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Decompose children"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n3",
+        "description": "recursive tree",
+        "canvas": {
+          "w": 112,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 112,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "recursive tree"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 88
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Decompose children, recursive tree",
+        "canvas": {
+          "w": 192,
+          "h": 144
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 168,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 96,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 96,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 152,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 96,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 96,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Decompose children",
+            "canvas": {
+              "w": 144,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decompose children"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Decompose children"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n3",
+            "description": "recursive tree",
+            "canvas": {
+              "w": 112,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 112,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "recursive tree"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "recursive tree"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 88
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 192,
+          "h": 144
+        },
+        "residuals": [],
+        "components": [
+          "Decompose children",
+          "recursive tree"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 176,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n10": {
+        "id": "n10",
+        "parent_id": "n4",
+        "description": "Merge",
+        "canvas": {
+          "w": 64,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Merge"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n11": {
+        "id": "n11",
+        "parent_id": "n4",
+        "description": "Critic",
+        "canvas": {
+          "w": 64,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Critic"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 112,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Merge, Critic",
+        "canvas": {
+          "w": 200,
+          "h": 96
+        },
+        "ports": [
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 88,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          },
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 112,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n10",
+            "parent_id": "n4",
+            "description": "Merge",
+            "canvas": {
+              "w": 64,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Merge"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Merge"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n11",
+            "parent_id": "n4",
+            "description": "Critic",
+            "canvas": {
+              "w": 64,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Critic"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Critic"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 112,
+              "y": 40
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 200,
+          "h": 96
+        },
+        "residuals": [],
+        "components": [
+          "Merge",
+          "Critic"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 392,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n12": {
+        "id": "n12",
+        "parent_id": "n5",
+        "description": "Worker",
+        "canvas": {
+          "w": 64,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Worker"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n13": {
+        "id": "n13",
+        "parent_id": "n5",
+        "description": "re-validate invariants",
+        "canvas": {
+          "w": 160,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "re-validate invariants"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 112,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n14": {
+        "id": "n14",
+        "parent_id": "n5",
+        "description": "render",
+        "canvas": {
+          "w": 64,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "render"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 296,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Worker, re-validate invariants, render",
+        "canvas": {
+          "w": 384,
+          "h": 96
+        },
+        "ports": [
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 88,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          },
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 112,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 272,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 192,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 192,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 296,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 328,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 328,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n12",
+            "parent_id": "n5",
+            "description": "Worker",
+            "canvas": {
+              "w": 64,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n12.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Worker"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Worker"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n13",
+            "parent_id": "n5",
+            "description": "re-validate invariants",
+            "canvas": {
+              "w": 160,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n13.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "re-validate invariants"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "re-validate invariants"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 112,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n14",
+            "parent_id": "n5",
+            "description": "render",
+            "canvas": {
+              "w": 64,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n14.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "render"
+              },
+              {
+                "id": "n14.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "render"
+              },
+              {
+                "id": "n14.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "render"
+              },
+              {
+                "id": "n14.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "render"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "render"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 296,
+              "y": 40
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 384,
+          "h": 96
+        },
+        "residuals": [],
+        "components": [
+          "Worker",
+          "re-validate invariants",
+          "render"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 616,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "FigTree-Style Recursive SVG Methodology Figure Generator",
+        "canvas": {
+          "w": 1032,
+          "h": 240
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Grounder"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Grounder"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Generator"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Generator"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 200,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 344,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 272,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 272,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decompose children"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 328,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 272,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 272,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "recursive tree"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 416,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 480,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 448,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Merge"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 448,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Merge"
+          },
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 504,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 568,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 536,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Critic"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 536,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Critic"
+          },
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 640,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 704,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 672,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Worker"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 672,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Worker"
+          },
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 728,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 888,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 808,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 808,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "re-validate invariants"
+          },
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 912,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 976,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 944,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "render"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 944,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "render"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Grounder, Generator",
+            "canvas": {
+              "w": 128,
+              "h": 144
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 24,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 104,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Grounder"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Grounder"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 24,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Generator"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Generator"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Grounder",
+                "canvas": {
+                  "w": 80,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Grounder"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Grounder"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Grounder"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Grounder"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Grounder"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 24,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n2",
+                "description": "Generator",
+                "canvas": {
+                  "w": 80,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Generator"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Generator"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Generator"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Generator"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Generator"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 24,
+                  "y": 88
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 144
+            },
+            "residuals": [],
+            "components": [
+              "Grounder",
+              "Generator"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 24,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Decompose children, recursive tree",
+            "canvas": {
+              "w": 192,
+              "h": 144
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 24,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 168,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 96,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 96,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decompose children"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 152,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 96,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "recursive tree"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 96,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "recursive tree"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Decompose children",
+                "canvas": {
+                  "w": 144,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Decompose children"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Decompose children"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Decompose children"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Decompose children"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Decompose children"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 24,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n3",
+                "description": "recursive tree",
+                "canvas": {
+                  "w": 112,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "recursive tree"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 112,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "recursive tree"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 56,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "recursive tree"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 56,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "recursive tree"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 112,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "recursive tree"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 88
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 192,
+              "h": 144
+            },
+            "residuals": [],
+            "components": [
+              "Decompose children",
+              "recursive tree"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 176,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Merge, Critic",
+            "canvas": {
+              "w": 200,
+              "h": 96
+            },
+            "ports": [
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 24,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 88,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Merge"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Merge"
+              },
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 112,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 144,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Critic"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 144,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Critic"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [
+              {
+                "id": "n10",
+                "parent_id": "n4",
+                "description": "Merge",
+                "canvas": {
+                  "w": 64,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n10.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Merge"
+                  },
+                  {
+                    "id": "n10.right",
+                    "side": "right",
+                    "rel_x": 64,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Merge"
+                  },
+                  {
+                    "id": "n10.top",
+                    "side": "top",
+                    "rel_x": 32,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Merge"
+                  },
+                  {
+                    "id": "n10.bottom",
+                    "side": "bottom",
+                    "rel_x": 32,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Merge"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Merge"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 24,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n11",
+                "parent_id": "n4",
+                "description": "Critic",
+                "canvas": {
+                  "w": 64,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n11.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Critic"
+                  },
+                  {
+                    "id": "n11.right",
+                    "side": "right",
+                    "rel_x": 64,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Critic"
+                  },
+                  {
+                    "id": "n11.top",
+                    "side": "top",
+                    "rel_x": 32,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Critic"
+                  },
+                  {
+                    "id": "n11.bottom",
+                    "side": "bottom",
+                    "rel_x": 32,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Critic"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Critic"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 112,
+                  "y": 40
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 200,
+              "h": 96
+            },
+            "residuals": [],
+            "components": [
+              "Merge",
+              "Critic"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 392,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Worker, re-validate invariants, render",
+            "canvas": {
+              "w": 384,
+              "h": 96
+            },
+            "ports": [
+              {
+                "id": "n12.left",
+                "side": "left",
+                "rel_x": 24,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.right",
+                "side": "right",
+                "rel_x": 88,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Worker"
+              },
+              {
+                "id": "n12.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Worker"
+              },
+              {
+                "id": "n13.left",
+                "side": "left",
+                "rel_x": 112,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.right",
+                "side": "right",
+                "rel_x": 272,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.top",
+                "side": "top",
+                "rel_x": 192,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n13.bottom",
+                "side": "bottom",
+                "rel_x": 192,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "re-validate invariants"
+              },
+              {
+                "id": "n14.left",
+                "side": "left",
+                "rel_x": 296,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "render"
+              },
+              {
+                "id": "n14.right",
+                "side": "right",
+                "rel_x": 360,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "render"
+              },
+              {
+                "id": "n14.top",
+                "side": "top",
+                "rel_x": 328,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "render"
+              },
+              {
+                "id": "n14.bottom",
+                "side": "bottom",
+                "rel_x": 328,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "render"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [
+              {
+                "id": "n12",
+                "parent_id": "n5",
+                "description": "Worker",
+                "canvas": {
+                  "w": 64,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n12.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Worker"
+                  },
+                  {
+                    "id": "n12.right",
+                    "side": "right",
+                    "rel_x": 64,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Worker"
+                  },
+                  {
+                    "id": "n12.top",
+                    "side": "top",
+                    "rel_x": 32,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Worker"
+                  },
+                  {
+                    "id": "n12.bottom",
+                    "side": "bottom",
+                    "rel_x": 32,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Worker"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "Worker"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 24,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n13",
+                "parent_id": "n5",
+                "description": "re-validate invariants",
+                "canvas": {
+                  "w": 160,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n13.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "re-validate invariants"
+                  },
+                  {
+                    "id": "n13.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "re-validate invariants"
+                  },
+                  {
+                    "id": "n13.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "re-validate invariants"
+                  },
+                  {
+                    "id": "n13.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "re-validate invariants"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "re-validate invariants"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 112,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n14",
+                "parent_id": "n5",
+                "description": "render",
+                "canvas": {
+                  "w": 64,
+                  "h": 32
+                },
+                "ports": [
+                  {
+                    "id": "n14.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "render"
+                  },
+                  {
+                    "id": "n14.right",
+                    "side": "right",
+                    "rel_x": 64,
+                    "rel_y": 16,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "render"
+                  },
+                  {
+                    "id": "n14.top",
+                    "side": "top",
+                    "rel_x": 32,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "render"
+                  },
+                  {
+                    "id": "n14.bottom",
+                    "side": "bottom",
+                    "rel_x": 32,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "render"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F4A460",
+                    "processing": "#7BA3C9",
+                    "residual": "#FFF3CD",
+                    "input": "#D5D5D5",
+                    "container": "#F5F5F5",
+                    "border": "#333333"
+                  },
+                  "font": "Times New Roman",
+                  "font_size_label": "11-13pt",
+                  "font_size_annot": "9-11pt",
+                  "stroke_main": 1.2,
+                  "stroke_border": 1.4,
+                  "grid": 8,
+                  "min_arrow": 20,
+                  "padding": 24
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 32
+                },
+                "residuals": [],
+                "components": [
+                  "render"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 296,
+                  "y": 40
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 384,
+              "h": 96
+            },
+            "residuals": [],
+            "components": [
+              "Worker",
+              "re-validate invariants",
+              "render"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 616,
+              "y": 72
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 1032,
+          "h": 240
+        },
+        "residuals": [],
+        "components": [
+          "Grounder",
+          "Generator",
+          "Critic",
+          "Worker",
+          "Decompose children",
+          "Merge",
+          "render",
+          "re-validate invariants",
+          "recursive tree"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n9": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n10": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n11": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n12": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n13": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n14": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n1": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n3",
+        "n9"
+      ],
+      [
+        "n4",
+        "n10"
+      ],
+      [
+        "n4",
+        "n11"
+      ],
+      [
+        "n5",
+        "n12"
+      ],
+      [
+        "n5",
+        "n13"
+      ],
+      [
+        "n5",
+        "n14"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n2->n6": true,
+      "n2->n7": true,
+      "n3->n8": true,
+      "n3->n9": true,
+      "n4->n10": true,
+      "n4->n11": true,
+      "n5->n12": true,
+      "n5->n13": true,
+      "n5->n14": true,
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#edit.arrow"
+    ],
+    "edit": {
+      "op": "add_dashed_arrow",
+      "from": "Critic",
+      "to": "Generator"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "FigTree-Style Recursive SVG Methodology Figure Generator",
+    "components": [
+      {
+        "name": "Grounder",
+        "evidence_span": "Grounder Agent"
+      },
+      {
+        "name": "Generator",
+        "evidence_span": "Generator Agent"
+      },
+      {
+        "name": "Critic",
+        "evidence_span": "Critic Agent"
+      },
+      {
+        "name": "Worker",
+        "evidence_span": "Worker Agent"
+      },
+      {
+        "name": "Decompose children",
+        "evidence_span": "Decompose children"
+      },
+      {
+        "name": "Merge",
+        "evidence_span": "Merge"
+      },
+      {
+        "name": "render",
+        "evidence_span": "render"
+      },
+      {
+        "name": "re-validate invariants",
+        "evidence_span": "re-validate invariants"
+      },
+      {
+        "name": "recursive tree",
+        "evidence_span": "recursive tree"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Generator",
+        "to": "Decompose children",
+        "type": "data",
+        "evidence_span": "Generator \u2192 Decompose children \u2192 Merge \u2192 Critic loop"
+      },
+      {
+        "from": "Decompose children",
+        "to": "Merge",
+        "type": "data",
+        "evidence_span": "Generator \u2192 Decompose children \u2192 Merge \u2192 Critic loop"
+      },
+      {
+        "from": "Merge",
+        "to": "Critic",
+        "type": "data",
+        "evidence_span": "Generator \u2192 Decompose children \u2192 Merge \u2192 Critic loop"
+      },
+      {
+        "from": "render",
+        "to": "Critic",
+        "type": "data",
+        "evidence_span": "render \u2192 Critic \u2192 Worker repair \u2192 re-validate invariants \u2192 repeat \u22643"
+      },
+      {
+        "from": "Critic",
+        "to": "Worker",
+        "type": "data",
+        "evidence_span": "render \u2192 Critic \u2192 Worker repair \u2192 re-validate invariants \u2192 repeat \u22643"
+      },
+      {
+        "from": "Worker",
+        "to": "re-validate invariants",
+        "type": "data",
+        "evidence_span": "render \u2192 Critic \u2192 Worker repair \u2192 re-validate invariants \u2192 repeat \u22643"
+      },
+      {
+        "from": "re-validate invariants",
+        "to": "render",
+        "type": "control",
+        "evidence_span": "render \u2192 Critic \u2192 Worker repair \u2192 re-validate invariants \u2192 repeat \u22643"
+      },
+      {
+        "from": "Grounder",
+        "to": "recursive tree",
+        "type": "data",
+        "evidence_span": "Grounder \u2192 recursive tree \u2192 Critic loop"
+      },
+      {
+        "from": "recursive tree",
+        "to": "Critic",
+        "type": "data",
+        "evidence_span": "Grounder \u2192 recursive tree \u2192 Critic loop"
+      }
+    ],
+    "inputs": [
+      "SourceText"
+    ],
+    "outputs": [
+      "FinalSVG",
+      "ResidualDefects",
+      "LayoutTree",
+      "EditabilityProof"
+    ],
+    "notation": [
+      "\u2192",
+      "+"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F4A460",
+      "processing": "#7BA3C9",
+      "residual": "#FFF3CD",
+      "input": "#D5D5D5",
+      "container": "#F5F5F5",
+      "border": "#333333"
+    },
+    "font": "Times New Roman",
+    "font_size_label": "11-13pt",
+    "font_size_annot": "9-11pt",
+    "stroke_main": 1.2,
+    "stroke_border": 1.4,
+    "grid": 8,
+    "min_arrow": 20,
+    "padding": 24
+  },
+  "faithfulness_failures": [],
+  "events": [],
+  "node_count": 14
+}
