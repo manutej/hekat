@@ -7,6 +7,6 @@
     "compactness.aspect",
     "compactness.blank_margin"
   ],
-  "rationale": "A five-step top-to-bottom process drawn as a single column with 24px margins; the tower shape is the honest layout for a strictly sequential process and reflowing it into rows would add detours. compactness.aspect flags any canvas narrower than 1:1 regardless of whether the flow is vertical.",
+  "rationale": "A six-step top-to-bottom process drawn at page scale as a single column with 24px margins and 16px labels; the tower is the honest layout for a strictly sequential process and reflowing it into rows would add detours and backward arrows. compactness.aspect flags any page-scale canvas narrower than 1:1 regardless of whether every flow is vertical.",
   "source": "adversary-diagram"
 }

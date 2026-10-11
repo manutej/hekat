@@ -28,8 +28,8 @@
   <text id="f.label" x="324" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Score</text>
   <path id="f1" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
   <path id="f2" d="M240,40 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
-  <path id="f3" d="M312,56 V120" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
-  <path id="f4" d="M240,136 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
-  <path id="f5" d="M120,136 H24 V80 H72 V56" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
-  <use id="loop.icon" href="#icon-loop" x="40" y="80" width="16" height="16" color="#333333" data-role="icon"/>
+  <path id="f3" d="M312,56 V88 H72 V120" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f4" d="M120,136 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f5" d="M240,136 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <use id="loop.icon" href="#icon-loop" x="184" y="64" width="16" height="16" color="#333333" data-role="icon"/>
 </svg>

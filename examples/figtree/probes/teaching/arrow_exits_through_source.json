@@ -1,0 +1,11 @@
+{
+  "id": "teaching.arrow_exits_through_source",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "flow.through_block"
+  ],
+  "expect_silent": [],
+  "rationale": "Reader -> Parser starts on Reader's LEFT border and runs right through Reader's interior; Output -> Logger starts on Output's right border and runs left through Output. Each shaft is painted across its own source block. The through-block check drops every block that contains an endpoint from the obstacle list, so a connector that crosses its own source or target body is never reported.",
+  "source": "adversary-diagram"
+}

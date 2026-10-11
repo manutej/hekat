@@ -10,11 +10,11 @@
         "flow_readability": 10.0,
         "text_quality": 1.0,
         "visual_polish": 6.2,
-        "medium_fit": 10.0,
+        "medium_fit": 6.0,
         "compactness": 10.0
       },
       "judged": {
-        "semantic_coverage": 3,
+        "semantic_coverage": 4,
         "hallucination_control": 6,
         "topology_accuracy": 5,
         "flow_readability": 5,
@@ -23,17 +23,17 @@
         "medium_fit": 2,
         "compactness": 6
       },
-      "measured_overall": 7.24,
-      "judged_overall": 4.12,
-      "gap_overall": -3.12,
+      "measured_overall": 6.12,
+      "judged_overall": 4.25,
+      "gap_overall": -1.87,
       "gaps": {
-        "semantic_coverage": -0.5,
+        "semantic_coverage": 0.5,
         "hallucination_control": null,
         "topology_accuracy": -5.0,
         "flow_readability": -5.0,
         "text_quality": 3.0,
         "visual_polish": -4.2,
-        "medium_fit": -8.0,
+        "medium_fit": -4.0,
         "compactness": -4.0
       }
     },
@@ -53,24 +53,24 @@
       "judged": {
         "semantic_coverage": 6,
         "hallucination_control": 7,
-        "topology_accuracy": 7,
-        "flow_readability": 7,
+        "topology_accuracy": 6,
+        "flow_readability": 6,
         "text_quality": 7,
         "visual_polish": 5,
-        "medium_fit": 6,
+        "medium_fit": 5,
         "compactness": 7
       },
-      "measured_overall": 9.86,
-      "judged_overall": 6.5,
-      "gap_overall": -3.36,
+      "measured_overall": 9.83,
+      "judged_overall": 6.12,
+      "gap_overall": -3.71,
       "gaps": {
         "semantic_coverage": -4.0,
         "hallucination_control": null,
-        "topology_accuracy": -3.0,
-        "flow_readability": -3.0,
+        "topology_accuracy": -4.0,
+        "flow_readability": -4.0,
         "text_quality": -3.0,
         "visual_polish": -4.0,
-        "medium_fit": -4.0,
+        "medium_fit": -5.0,
         "compactness": -3.0
       }
     },
@@ -84,7 +84,7 @@
         "flow_readability": 10.0,
         "text_quality": 3.0,
         "visual_polish": 10.0,
-        "medium_fit": 10.0,
+        "medium_fit": 6.0,
         "compactness": 2.0
       },
       "judged": {
@@ -97,9 +97,9 @@
         "medium_fit": 2,
         "compactness": 3
       },
-      "measured_overall": 7.5,
+      "measured_overall": 6.83,
       "judged_overall": 4.0,
-      "gap_overall": -3.5,
+      "gap_overall": -2.83,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": null,
@@ -107,7 +107,7 @@
         "flow_readability": -5.0,
         "text_quality": -1.0,
         "visual_polish": -7.0,
-        "medium_fit": -8.0,
+        "medium_fit": -4.0,
         "compactness": 1.0
       }
     },
@@ -158,7 +158,7 @@
         "flow_readability": 10.0,
         "text_quality": 1.0,
         "visual_polish": 5.5,
-        "medium_fit": 10.0,
+        "medium_fit": 4.0,
         "compactness": 8.5
       },
       "judged": {
@@ -171,9 +171,9 @@
         "medium_fit": 3,
         "compactness": 7
       },
-      "measured_overall": 7.5,
+      "measured_overall": 5.8,
       "judged_overall": 5.25,
-      "gap_overall": -2.25,
+      "gap_overall": -0.55,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": null,
@@ -181,7 +181,7 @@
         "flow_readability": -4.0,
         "text_quality": 3.0,
         "visual_polish": -1.5,
-        "medium_fit": -7.0,
+        "medium_fit": -1.0,
         "compactness": -1.5
       }
     },
@@ -205,12 +205,12 @@
         "flow_readability": 8,
         "text_quality": 8,
         "visual_polish": 8,
-        "medium_fit": 7,
+        "medium_fit": 8,
         "compactness": 7
       },
-      "measured_overall": 9.75,
-      "judged_overall": 7.62,
-      "gap_overall": -2.13,
+      "measured_overall": 9.7,
+      "judged_overall": 7.75,
+      "gap_overall": -1.95,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": null,
@@ -218,7 +218,7 @@
         "flow_readability": -2.0,
         "text_quality": -2.0,
         "visual_polish": -2.0,
-        "medium_fit": -3.0,
+        "medium_fit": -2.0,
         "compactness": -1.5
       }
     },
@@ -232,30 +232,30 @@
         "flow_readability": 10.0,
         "text_quality": 1.0,
         "visual_polish": 6.8,
-        "medium_fit": 10.0,
+        "medium_fit": 5.0,
         "compactness": 10.0
       },
       "judged": {
         "semantic_coverage": 5,
         "hallucination_control": 6,
         "topology_accuracy": 5,
-        "flow_readability": 6,
-        "text_quality": 5,
+        "flow_readability": 5,
+        "text_quality": 4,
         "visual_polish": 4,
-        "medium_fit": 4,
+        "medium_fit": 3,
         "compactness": 6
       },
-      "measured_overall": 7.33,
-      "judged_overall": 5.12,
-      "gap_overall": -2.21,
+      "measured_overall": 6.05,
+      "judged_overall": 4.75,
+      "gap_overall": -1.3,
       "gaps": {
         "semantic_coverage": 1.5,
         "hallucination_control": null,
         "topology_accuracy": -5.0,
-        "flow_readability": -4.0,
-        "text_quality": 4.0,
+        "flow_readability": -5.0,
+        "text_quality": 3.0,
         "visual_polish": -2.8,
-        "medium_fit": -6.0,
+        "medium_fit": -2.0,
         "compactness": -4.0
       }
     },
@@ -279,12 +279,12 @@
         "flow_readability": 8,
         "text_quality": 8,
         "visual_polish": 8,
-        "medium_fit": 8,
+        "medium_fit": 7,
         "compactness": 7
       },
       "measured_overall": 10.0,
-      "judged_overall": 7.62,
-      "gap_overall": -2.38,
+      "judged_overall": 7.5,
+      "gap_overall": -2.5,
       "gaps": {
         "semantic_coverage": -3.0,
         "hallucination_control": null,
@@ -292,7 +292,7 @@
         "flow_readability": -2.0,
         "text_quality": -2.0,
         "visual_polish": -2.0,
-        "medium_fit": -2.0,
+        "medium_fit": -3.0,
         "compactness": -3.0
       }
     },
@@ -302,31 +302,31 @@
       "measured": {
         "semantic_coverage": null,
         "hallucination_control": null,
-        "topology_accuracy": 10.0,
-        "flow_readability": 10.0,
+        "topology_accuracy": null,
+        "flow_readability": null,
         "text_quality": 10.0,
         "visual_polish": 8.5,
         "medium_fit": 3.0,
         "compactness": 10.0
       },
       "judged": {
-        "semantic_coverage": 4,
+        "semantic_coverage": 3,
         "hallucination_control": 6,
-        "topology_accuracy": 5,
+        "topology_accuracy": 4,
         "flow_readability": 4,
         "text_quality": 3,
         "visual_polish": 3,
         "medium_fit": 2,
         "compactness": 4
       },
-      "measured_overall": 8.58,
-      "judged_overall": 3.88,
-      "gap_overall": -4.7,
+      "measured_overall": 7.88,
+      "judged_overall": 3.62,
+      "gap_overall": -4.26,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": null,
-        "topology_accuracy": -5.0,
-        "flow_readability": -6.0,
+        "topology_accuracy": null,
+        "flow_readability": null,
         "text_quality": -7.0,
         "visual_polish": -5.5,
         "medium_fit": -1.0,
@@ -339,8 +339,8 @@
       "measured": {
         "semantic_coverage": null,
         "hallucination_control": null,
-        "topology_accuracy": 10.0,
-        "flow_readability": 10.0,
+        "topology_accuracy": null,
+        "flow_readability": null,
         "text_quality": 10.0,
         "visual_polish": 10.0,
         "medium_fit": 4.0,
@@ -354,20 +354,20 @@
         "text_quality": 3,
         "visual_polish": 4,
         "medium_fit": 2,
-        "compactness": 4
+        "compactness": 3
       },
-      "measured_overall": 8.83,
-      "judged_overall": 3.75,
-      "gap_overall": -5.08,
+      "measured_overall": 8.25,
+      "judged_overall": 3.62,
+      "gap_overall": -4.63,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": null,
-        "topology_accuracy": -6.0,
-        "flow_readability": -6.0,
+        "topology_accuracy": null,
+        "flow_readability": null,
         "text_quality": -7.0,
         "visual_polish": -6.0,
         "medium_fit": -2.0,
-        "compactness": -5.0
+        "compactness": -6.0
       }
     },
     {
@@ -380,11 +380,11 @@
         "flow_readability": 4.9,
         "text_quality": 10.0,
         "visual_polish": 10.0,
-        "medium_fit": 10.0,
+        "medium_fit": 7.0,
         "compactness": 10.0
       },
       "judged": {
-        "semantic_coverage": 5,
+        "semantic_coverage": 6,
         "hallucination_control": 6,
         "topology_accuracy": 5,
         "flow_readability": 4,
@@ -393,9 +393,9 @@
         "medium_fit": 6,
         "compactness": 6
       },
-      "measured_overall": 9.27,
-      "judged_overall": 5.75,
-      "gap_overall": -3.52,
+      "measured_overall": 8.84,
+      "judged_overall": 5.88,
+      "gap_overall": -2.96,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": -4.0,
@@ -403,7 +403,7 @@
         "flow_readability": -0.9,
         "text_quality": -3.0,
         "visual_polish": -3.0,
-        "medium_fit": -4.0,
+        "medium_fit": -1.0,
         "compactness": -4.0
       }
     },
@@ -417,12 +417,12 @@
         "flow_readability": 2.1,
         "text_quality": 10.0,
         "visual_polish": 10.0,
-        "medium_fit": 10.0,
+        "medium_fit": 7.0,
         "compactness": 10.0
       },
       "judged": {
-        "semantic_coverage": 6,
-        "hallucination_control": 7,
+        "semantic_coverage": 7,
+        "hallucination_control": 8,
         "topology_accuracy": 5,
         "flow_readability": 4,
         "text_quality": 7,
@@ -430,17 +430,17 @@
         "medium_fit": 6,
         "compactness": 5
       },
-      "measured_overall": 8.87,
-      "judged_overall": 5.75,
-      "gap_overall": -3.12,
+      "measured_overall": 8.44,
+      "judged_overall": 6.0,
+      "gap_overall": -2.44,
       "gaps": {
         "semantic_coverage": null,
-        "hallucination_control": -3.0,
+        "hallucination_control": -2.0,
         "topology_accuracy": -5.0,
         "flow_readability": 1.9,
         "text_quality": -3.0,
         "visual_polish": -4.0,
-        "medium_fit": -4.0,
+        "medium_fit": -1.0,
         "compactness": -5.0
       }
     },
@@ -454,30 +454,30 @@
         "flow_readability": 9.3,
         "text_quality": 10.0,
         "visual_polish": 10.0,
-        "medium_fit": 10.0,
+        "medium_fit": 7.0,
         "compactness": 10.0
       },
       "judged": {
         "semantic_coverage": 8,
         "hallucination_control": 9,
         "topology_accuracy": 8,
-        "flow_readability": 6,
-        "text_quality": 8,
+        "flow_readability": 7,
+        "text_quality": 7,
         "visual_polish": 7,
         "medium_fit": 7,
         "compactness": 6
       },
-      "measured_overall": 9.83,
+      "measured_overall": 9.4,
       "judged_overall": 7.38,
-      "gap_overall": -2.45,
+      "gap_overall": -2.02,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": -1.0,
         "topology_accuracy": -1.5,
-        "flow_readability": -3.3,
-        "text_quality": -2.0,
+        "flow_readability": -2.3,
+        "text_quality": -3.0,
         "visual_polish": -3.0,
-        "medium_fit": -3.0,
+        "medium_fit": 0.0,
         "compactness": -4.0
       }
     },
@@ -491,22 +491,22 @@
         "flow_readability": 1.0,
         "text_quality": 10.0,
         "visual_polish": 10.0,
-        "medium_fit": 10.0,
+        "medium_fit": 7.0,
         "compactness": 10.0
       },
       "judged": {
-        "semantic_coverage": 6,
+        "semantic_coverage": 5,
         "hallucination_control": 6,
         "topology_accuracy": 4,
         "flow_readability": 3,
         "text_quality": 7,
         "visual_polish": 6,
-        "medium_fit": 6,
+        "medium_fit": 5,
         "compactness": 5
       },
-      "measured_overall": 8.71,
-      "judged_overall": 5.38,
-      "gap_overall": -3.33,
+      "measured_overall": 8.29,
+      "judged_overall": 5.12,
+      "gap_overall": -3.17,
       "gaps": {
         "semantic_coverage": null,
         "hallucination_control": -4.0,
@@ -514,12 +514,12 @@
         "flow_readability": 2.0,
         "text_quality": -3.0,
         "visual_polish": -4.0,
-        "medium_fit": -4.0,
+        "medium_fit": -2.0,
         "compactness": -5.0
       }
     }
   ],
-  "mean_gap": -3.15,
+  "mean_gap": -2.65,
   "findings": [
     {
       "name": "bar-chart before",
@@ -533,13 +533,6 @@
       "dimension": "flow_readability",
       "measured": 10.0,
       "judged": 5,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "bar-chart before",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 2,
       "kind": "rubric blind spot"
     },
     {
@@ -558,6 +551,20 @@
     },
     {
       "name": "bar-chart after",
+      "dimension": "topology_accuracy",
+      "measured": 10.0,
+      "judged": 6,
+      "kind": "rubric blind spot"
+    },
+    {
+      "name": "bar-chart after",
+      "dimension": "flow_readability",
+      "measured": 10.0,
+      "judged": 6,
+      "kind": "rubric blind spot"
+    },
+    {
+      "name": "bar-chart after",
       "dimension": "visual_polish",
       "measured": 9.0,
       "judged": 5,
@@ -567,7 +574,7 @@
       "name": "bar-chart after",
       "dimension": "medium_fit",
       "measured": 10.0,
-      "judged": 6,
+      "judged": 5,
       "kind": "rubric blind spot"
     },
     {
@@ -589,13 +596,6 @@
       "dimension": "visual_polish",
       "measured": 10.0,
       "judged": 3,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "slide-pipeline before",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 2,
       "kind": "rubric blind spot"
     },
     {
@@ -620,13 +620,6 @@
       "kind": "rubric blind spot"
     },
     {
-      "name": "dashboard-tiles before",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 3,
-      "kind": "rubric blind spot"
-    },
-    {
       "name": "trajectory-chart before",
       "dimension": "topology_accuracy",
       "measured": 10.0,
@@ -637,14 +630,7 @@
       "name": "trajectory-chart before",
       "dimension": "flow_readability",
       "measured": 10.0,
-      "judged": 6,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "trajectory-chart before",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 4,
+      "judged": 5,
       "kind": "rubric blind spot"
     },
     {
@@ -652,20 +638,6 @@
       "dimension": "compactness",
       "measured": 10.0,
       "judged": 6,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "process-icon before",
-      "dimension": "topology_accuracy",
-      "measured": 10.0,
-      "judged": 5,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "process-icon before",
-      "dimension": "flow_readability",
-      "measured": 10.0,
-      "judged": 4,
       "kind": "rubric blind spot"
     },
     {
@@ -678,20 +650,6 @@
     {
       "name": "process-icon before",
       "dimension": "compactness",
-      "measured": 10.0,
-      "judged": 4,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "process-icon after",
-      "dimension": "topology_accuracy",
-      "measured": 10.0,
-      "judged": 4,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "process-icon after",
-      "dimension": "flow_readability",
       "measured": 10.0,
       "judged": 4,
       "kind": "rubric blind spot"
@@ -714,7 +672,7 @@
       "name": "process-icon after",
       "dimension": "compactness",
       "measured": 9.0,
-      "judged": 4,
+      "judged": 3,
       "kind": "rubric blind spot"
     },
     {
@@ -729,13 +687,6 @@
       "dimension": "topology_accuracy",
       "measured": 10.0,
       "judged": 5,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "figtree-spec figure",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 6,
       "kind": "rubric blind spot"
     },
     {
@@ -761,23 +712,9 @@
     },
     {
       "name": "transformer-method figure",
-      "dimension": "medium_fit",
-      "measured": 10.0,
-      "judged": 6,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "transformer-method figure",
       "dimension": "compactness",
       "measured": 10.0,
       "judged": 5,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "rmp-skill figure",
-      "dimension": "flow_readability",
-      "measured": 9.3,
-      "judged": 6,
       "kind": "rubric blind spot"
     },
     {
@@ -804,13 +741,6 @@
     {
       "name": "figtree-spec claude",
       "dimension": "visual_polish",
-      "measured": 10.0,
-      "judged": 6,
-      "kind": "rubric blind spot"
-    },
-    {
-      "name": "figtree-spec claude",
-      "dimension": "medium_fit",
       "measured": 10.0,
       "judged": 6,
       "kind": "rubric blind spot"
@@ -823,5 +753,5 @@
       "kind": "rubric blind spot"
     }
   ],
-  "cost_usd": 0.47
+  "cost_usd": 0.471
 }

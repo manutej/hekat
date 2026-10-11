@@ -32,6 +32,6 @@
     "topology.empty_container",
     "content.none"
   ],
-  "rationale": "House-style two-row loop with a <use> icon in every block and a free-standing loop icon beside the feedback arrow. Symbols in defs must not count as shapes, <use> instances must not be mistaken for blocks or text, and the feedback route must not be read as a detour or a block hit.",
+  "rationale": "House-style two-row Z pipeline with a <use> icon in every block and a free-standing loop icon above the row-change connector. Symbols in defs must not count as shapes, <use> instances must not be mistaken for blocks or text, and the Z connector must not be read as a detour or a block hit.",
   "source": "adversary-diagram"
 }

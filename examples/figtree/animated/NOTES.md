@@ -8,8 +8,8 @@ Files in this directory:
 | `figtree-spec.animated.svg`, `figtree-spec.animation.css` | `python -m figtree animate` on the generated figure (standalone SVG + separate stylesheet) |
 | `figtree-spec.refined.svg`, `figtree-spec.trajectory.json` | `python -m figtree refine --rubric teaching`: one mechanical round, labels 12 → 14 px, score 8.25 → 9.75 |
 | `figtree-spec.refined.animated.svg`, `figtree-spec.refined.animation.css` | `animate` on the refined figure; this is what `index.html` inlines |
-| `index.html` | the self-contained explainer (SVG inlined, stylesheet in `<style>`, no external resources; the only URL in the file is the SVG namespace) |
-| `frame-*.png` | headless-Chromium frames at virtual times, round 3 (final) |
+| `index.html` | the self-contained explainer (SVG inlined, stylesheet in `<style>`, no external resources; the only URL in the file is the SVG namespace). Since Round 4 it inlines the redesigned figure `examples/figtree/design/figtree-spec.teaching.animated.svg` (rounds 1-3 used `figtree-spec.refined.animated.svg` from this directory) |
+| `frame-*.png` | headless-Chromium frames at virtual times, round 4 (final) |
 
 ## Score (`python -m figtree score examples/figtree/animated/figtree-spec.svg --rubric teaching`)
 
@@ -125,3 +125,54 @@ scroll) and the captions stack. Headless console reports no script errors. No fu
 Generator → Decompose arrows share the vertical segment at x = 216 between the two containers, so
 the two crossing flows look fused for 48 px; and the 2.54 aspect request above. Both are generator
 layout decisions and were left as the generator produced them.
+
+## Round 4: rebuilt on the redesigned figure
+
+Source: `examples/figtree/design/figtree-spec.teaching.svg` (`--style teaching --icons --shapes
+--max-aspect 2.2`: 904 × 448, sans labels at 15 px, tinted fills #C9DCF0 / #F3C9A4 with #2B3A4A
+strokes, no containers, larger arrowheads) and its `figtree-spec.teaching.animated.svg` +
+`figtree-spec.teaching.animation.css` (`animate.py` now eases with cubic-bezier and gives tokens a
+white ring). The page inlines that SVG and re-times the generated stylesheet by beat; page and
+figure fonts are `"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif` with `@font-face
+src:local(...)` entries only, so a machine without Plex falls through to Helvetica/Arial (here:
+Liberation Sans) and nothing is fetched.
+
+New ids and flows: Grounder `n2`; Generator `n6`, recursive tree `n7`; Decompose children `n8`,
+Merge `n9`; the critic loop is one row: Critic `n10` → Worker `n11` → re-validate invariants `n12`
+→ render `n13` → back to Critic. Ten flows now, including Grounder → Generator (`n1.arrow0`) and
+Grounder → recursive tree (`n1.arrow3`); the control edge is `n5.arrow3`; the feedback edge
+render → Critic is `n5.arrow0` (792 px under the row); Merge → Critic is `n1.arrow2` (1168 px,
+around the left).
+
+| Beat | Starts | Figure |
+|---|---|---|
+| 1 Grounding | 0.0 s | Grounder (0.4) |
+| 2 Recursive construction | 3.0 s | Generator (3.1), Grounder → Generator (3.6), recursive tree (4.4), Grounder → tree (4.8), Decompose children (5.6), Generator → Decompose (6.0) |
+| 3 Merge | 7.6 s | Merge (7.8), Decompose → Merge (8.2) |
+| 4 Render–critic loop | 10.0 s | Critic (10.2), Merge → Critic over 1.2 s (10.6), tree → Critic (11.0), Worker (12.0), Critic → Worker (12.3), re-validate (12.9), Worker → re-validate (13.2), render (13.8), dashed control edge (14.2), render → Critic feedback over 1.0 s (15.0) |
+| 5 Editable output | 16.8 s | token cycle of 10.69 s: Grounder → Generator and → tree together; Generator → Decompose; Decompose → Merge; Merge → Critic (3.65 s) with tree → Critic; Critic → Worker; Worker → re-validate; control token (grey, half speed) re-validate → render; render → Critic (2.5 s); rest; repeat |
+
+Token speed raised to 320 px/s (minimum 0.35 s per hop) because the longest bus grew from 728 to
+1168 px; the ring is kept (`stroke:#FFFFFF 1.6px`, r 4.5 px) so tokens stay visible over the
+tinted blocks and the darker strokes.
+
+Frames: 800, 2500, 5000, 9000, 13000, 18500, 22500 ms plus a new 23500 ms frame (6.7 s into the
+cycle, inside the control token's 6.37–7.07 s window); `frame-dark-18500.png`,
+`frame-reduced-motion.png`. All `frame-*.png` files replaced.
+
+**What the first frames showed.** The figure order read correctly in every frame (5000: Grounder →
+Generator drawn, recursive tree in; 9000: Decompose, Merge, both arrows; 13000: Critic, Worker,
+re-validate fading in, Merge → Critic and tree → Critic drawn; 18500: ringed tokens leaving Merge
+and recursive tree; 22500: token on Critic → Worker). Two layout defects: the new figure's aspect
+is 2.0 instead of 2.5, so at the card's full width it was 440 px tall and the caption strip fell
+below the 620 px viewport in every frame, reduced motion included; and the wider sans title pushed
+the legend onto a second header line.
+
+**Changes.** SVG capped at `width:min(100%, 776px)` and centred (384 px tall, labels ≈ 13 px on
+screen, 600 px minimum kept for phones); subtitle shortened to "beat by beat" so the legend stays
+on the title line; card padding 8 → 4 px, caption body 13 px.
+
+**Re-rendered.** Captions fully visible in all frames (strip ends ≈ 610 px); header on one line;
+23500: the grey control token sits on the dashed edge between re-validate invariants and render,
+clearly dimmer than the black data tokens; dark theme and reduced-motion fallback intact; no
+script errors in the headless console. No further edits.

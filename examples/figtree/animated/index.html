@@ -8,29 +8,32 @@
 <style>
 :root {
   --bg:#F6F4EE; --fg:#1F1F1F; --muted:#5E5A52; --card:#FFFFFF; --line:#D9D4C7; --accent:#B35C1E; --accent-soft:#FBE9DD;
-  --cap-dim:.55; --font:"Times New Roman",Times,Georgia,serif; --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cap-dim:.55; --font:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif; --ui:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) { --bg:#17181A; --fg:#ECEAE4; --muted:#A8A49B; --card:#FFFFFF; --line:#34363B; --accent:#F0A36A; --accent-soft:#3A2A1D; }
 }
 :root[data-theme="dark"] { --bg:#17181A; --fg:#ECEAE4; --muted:#A8A49B; --card:#FFFFFF; --line:#34363B; --accent:#F0A36A; --accent-soft:#3A2A1D; }
+@font-face { font-family:"IBM Plex Sans"; src:local("IBM Plex Sans"), local("IBMPlexSans"), local("IBMPlexSans-Regular"); font-weight:400 }
+@font-face { font-family:"IBM Plex Sans"; src:local("IBM Plex Sans Medium"), local("IBMPlexSans-Medium"); font-weight:500 }
+@font-face { font-family:"IBM Plex Sans"; src:local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"); font-weight:600 }
 * { box-sizing:border-box }
 html,body { margin:0 }
-body { background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.35; padding:14px 16px 20px; }
+body { background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.35; padding:12px 16px 18px; }
 .wrap { max-width:912px; margin:0 auto }
-header { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 10px }
-h1 { font-size:20px; margin:0; font-weight:600; letter-spacing:.01em }
+header { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 8px }
+h1 { font-size:19px; margin:0; font-weight:600; letter-spacing:-.01em }
 h1 small { font-weight:400; color:var(--muted); font-size:14px; margin-left:8px }
 .legend { display:flex; gap:16px; font-family:var(--ui); font-size:12px; color:var(--muted); align-items:center; flex-wrap:wrap }
 .legend span { display:inline-flex; align-items:center; gap:6px }
 .legend svg { width:34px; height:12px; overflow:visible; color:var(--fg) }
-.figure { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 10px; overflow-x:auto; position:relative }
-.figure svg { display:block; width:100%; height:auto; min-width:600px }
+.figure { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:4px 8px; overflow-x:auto; position:relative }
+.figure svg { display:block; width:min(100%, 776px); height:auto; min-width:600px; margin:0 auto; font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif }
 .idchip { position:absolute; right:12px; top:8px; font:12px/1.4 ui-monospace,Menlo,Consolas,monospace; color:#1F1F1F; background:#F5F5F5; border:1px solid #CFCFCF; border-radius:4px; padding:1px 7px; visibility:hidden }
 .idchip.on { visibility:visible }
 #figure [data-role=block], #figure [data-role=container], #figure [data-flow] { cursor:help }
-#figure .hl { stroke:#B35C1E; stroke-width:2.4px }
+#figure .hl { stroke:#B35C1E; stroke-width:2.6px }
 .controls { display:flex; align-items:center; gap:10px; margin:10px 0 8px; font-family:var(--ui); font-size:12px; color:var(--muted) }
 .controls button { font:inherit; color:var(--fg); background:transparent; border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer }
 .controls button:hover { border-color:var(--accent) }
@@ -46,7 +49,7 @@ h1 small { font-weight:400; color:var(--muted); font-size:14px; margin-left:8px 
 .cap[data-last] .cap-btn { animation:cap-on .35s ease-out forwards; animation-delay:var(--on) }
 .cap-btn:focus-visible { outline:2px solid var(--accent); outline-offset:2px }
 .cap-title { display:block; font-family:var(--ui); font-size:12px; font-weight:600; letter-spacing:-.01em; color:var(--accent); margin-bottom:3px }
-.cap-body { display:block; font-size:13.5px; color:var(--fg) }
+.cap-body { display:block; font-size:13px; color:var(--fg) }
 @keyframes cap-on { to { opacity:1; border-left-color:var(--accent); background:var(--accent-soft) } }
 @keyframes cap-off { to { opacity:.8; border-left-color:var(--line); background:transparent } }
 html.paused * { animation-play-state:paused !important }
@@ -71,87 +74,88 @@ html.paused * { animation-play-state:paused !important }
 .motion-note { display:none; font-family:var(--ui); font-size:12px; color:var(--muted); margin:8px 0 }
 /* ---- figure animation (re-timed from figtree-spec.refined.animation.css) ---- */
 @keyframes ft-reveal{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
-#n2\.container{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:0.30s}
-#n6{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:0.60s}
-#n7{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:3.10s}
-#n3\.container{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:3.70s}
-#n8{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:3.90s}
-#n9{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:5.20s}
-#n4\.container{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:7.80s}
-#n10{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:8.00s}
-#n11{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:10.80s}
-#n5\.container{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:12.20s}
-#n12{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:12.40s}
-#n13{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:13.30s}
-#n14{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:14.20s}
+#n2{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:0.40s}
+#n6{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:3.10s}
+#n7{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:4.40s}
+#n8{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:5.60s}
+#n9{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:7.80s}
+#n10{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:10.20s}
+#n11{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:12.00s}
+#n12{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:12.90s}
+#n13{opacity:0;animation:ft-reveal .5s ease-out forwards;animation-delay:13.80s}
 @keyframes ft-draw{to{stroke-dashoffset:0}}
 @keyframes ft-appear{to{opacity:1}}
-#ft-shaft-3{stroke-dasharray:120;stroke-dashoffset:120;animation:ft-draw 0.6s ease-in-out forwards;animation-delay:4.40s}
-#n1\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:4.95s}
-#ft-shaft-7{stroke-dasharray:136;stroke-dashoffset:136;animation:ft-draw 0.6s ease-in-out forwards;animation-delay:5.70s}
-#n1\.arrow4{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:6.25s}
-#ft-shaft-4{stroke-dasharray:680;stroke-dashoffset:680;animation:ft-draw 1.0s ease-in-out forwards;animation-delay:8.50s}
-#n1\.arrow1{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:9.45s}
-#ft-shaft-0{stroke-dasharray:24;stroke-dashoffset:24;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:11.20s}
-#n4\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:11.55s}
-#ft-shaft-8{stroke-dasharray:376;stroke-dashoffset:376;animation:ft-draw 0.8s ease-in-out forwards;animation-delay:11.50s}
-#n1\.arrow5{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:12.25s}
-#ft-shaft-6{stroke-dasharray:72;stroke-dashoffset:72;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:12.80s}
-#n1\.arrow3{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:13.15s}
-#ft-shaft-1{stroke-dasharray:24;stroke-dashoffset:24;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:13.70s}
-#n5\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:14.05s}
-#ft-shaft-2{stroke-dasharray:24;stroke-dashoffset:24;animation:ft-draw 0.8s ease-in-out forwards;animation-delay:14.60s}
-#n5\.arrow1{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:15.35s}
-#ft-shaft-5{stroke-dasharray:728;stroke-dashoffset:728;animation:ft-draw 1.0s ease-in-out forwards;animation-delay:15.40s}
-#n1\.arrow2{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:16.35s}
-[data-role=pulse]{r:4.5px;opacity:0;offset-rotate:0deg;animation-duration:9.92s,9.92s;animation-timing-function:linear,step-end;animation-iteration-count:infinite,infinite;animation-delay:17.0s,17.0s}
-@keyframes ft-pulse-7-move{0%,0.000%{offset-distance:0%}5.712%,100%{offset-distance:100%}}
-@keyframes ft-pulse-7-show{0%{opacity:0}0.000%{opacity:1}5.712%,100%{opacity:0}}
-#ft-pulse-7{offset-path:path('M176,64 H216 V112 H264');fill:#1F1F1F;animation-name:ft-pulse-7-move,ft-pulse-7-show}
-@keyframes ft-pulse-3-move{0%,0.000%{offset-distance:0%}5.040%,100%{offset-distance:100%}}
-@keyframes ft-pulse-3-show{0%{opacity:0}0.000%{opacity:1}5.040%,100%{opacity:0}}
-#ft-pulse-3{offset-path:path('M184,112 H216 V64 H256');fill:#1F1F1F;animation-name:ft-pulse-3-move,ft-pulse-3-show}
-@keyframes ft-pulse-4-move{0%,6.922%{offset-distance:0%}35.484%,100%{offset-distance:100%}}
-@keyframes ft-pulse-4-show{0%{opacity:0}6.922%{opacity:1}35.484%,100%{opacity:0}}
-#ft-pulse-4{offset-path:path('M416,64 H448 V176 H24 V240 H72');fill:#1F1F1F;animation-name:ft-pulse-4-move,ft-pulse-4-show}
-@keyframes ft-pulse-8-move{0%,6.922%{offset-distance:0%}22.715%,100%{offset-distance:100%}}
-@keyframes ft-pulse-8-show{0%{opacity:0}6.922%{opacity:1}22.715%,100%{opacity:0}}
-#ft-pulse-8{offset-path:path('M408,112 H448 V176 H224 V224');fill:#1F1F1F;animation-name:ft-pulse-8-move,ft-pulse-8-show}
-@keyframes ft-pulse-0-move{0%,36.694%{offset-distance:0%}40.222%,100%{offset-distance:100%}}
-@keyframes ft-pulse-0-show{0%{opacity:0}36.694%{opacity:1}40.222%,100%{opacity:0}}
-#ft-pulse-0{offset-path:path('M152,240 H176');fill:#1F1F1F;animation-name:ft-pulse-0-move,ft-pulse-0-show}
-@keyframes ft-pulse-6-move{0%,41.431%{offset-distance:0%}44.960%,100%{offset-distance:100%}}
-@keyframes ft-pulse-6-show{0%{opacity:0}41.431%{opacity:1}44.960%,100%{opacity:0}}
-#ft-pulse-6{offset-path:path('M272,240 H344');fill:#1F1F1F;animation-name:ft-pulse-6-move,ft-pulse-6-show}
-@keyframes ft-pulse-1-move{0%,46.169%{offset-distance:0%}49.698%,100%{offset-distance:100%}}
-@keyframes ft-pulse-1-show{0%{opacity:0}46.169%{opacity:1}49.698%,100%{opacity:0}}
-#ft-pulse-1{offset-path:path('M440,240 H464');fill:#1F1F1F;animation-name:ft-pulse-1-move,ft-pulse-1-show}
-@keyframes ft-pulse-2-move{0%,50.907%{offset-distance:0%}57.964%,100%{offset-distance:100%}}
-@keyframes ft-pulse-2-show{0%{opacity:0}50.907%{opacity:1}57.964%,100%{opacity:0}}
-#ft-pulse-2{offset-path:path('M656,240 H680');fill:#9A9A9A;animation-name:ft-pulse-2-move,ft-pulse-2-show}
-@keyframes ft-pulse-5-move{0%,59.173%{offset-distance:0%}89.751%,100%{offset-distance:100%}}
-@keyframes ft-pulse-5-show{0%{opacity:0}59.173%{opacity:1}89.751%,100%{opacity:0}}
-#ft-pulse-5{offset-path:path('M776,240 H808 V304 H224 V256');fill:#1F1F1F;animation-name:ft-pulse-5-move,ft-pulse-5-show}
+#ft-shaft-5{stroke-dasharray:136;stroke-dashoffset:136;animation:ft-draw 0.5s ease-in-out forwards;animation-delay:3.60s}
+#n1\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:4.05s}
+#ft-shaft-8{stroke-dasharray:104;stroke-dashoffset:104;animation:ft-draw 0.5s ease-in-out forwards;animation-delay:4.80s}
+#n1\.arrow3{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:5.25s}
+#ft-shaft-6{stroke-dasharray:168;stroke-dashoffset:168;animation:ft-draw 0.6s ease-in-out forwards;animation-delay:6.00s}
+#n1\.arrow1{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:6.55s}
+#ft-shaft-0{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:8.20s}
+#n4\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:8.55s}
+#ft-shaft-7{stroke-dasharray:1168;stroke-dashoffset:1168;animation:ft-draw 1.2s ease-in-out forwards;animation-delay:10.60s}
+#n1\.arrow2{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:11.75s}
+#ft-shaft-9{stroke-dasharray:488;stroke-dashoffset:488;animation:ft-draw 0.8s ease-in-out forwards;animation-delay:11.00s}
+#n1\.arrow4{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:11.75s}
+#ft-shaft-2{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:12.30s}
+#n5\.arrow1{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:12.65s}
+#ft-shaft-3{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.4s ease-in-out forwards;animation-delay:13.20s}
+#n5\.arrow2{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:13.55s}
+#ft-shaft-4{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.7s ease-in-out forwards;animation-delay:14.20s}
+#n5\.arrow3{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:14.85s}
+#ft-shaft-1{stroke-dasharray:792;stroke-dashoffset:792;animation:ft-draw 1.0s ease-in-out forwards;animation-delay:15.00s}
+#n5\.arrow0{opacity:0;animation:ft-appear .05s linear forwards;animation-delay:15.95s}
+[data-role=pulse]{r:4.5px;stroke:#FFFFFF;stroke-width:1.6px;opacity:0;offset-rotate:0deg;animation-duration:10.69s,10.69s;animation-timing-function:linear,step-end;animation-iteration-count:infinite,infinite;animation-delay:16.8s,16.8s}
+@keyframes ft-pulse-5-move{0%,0.000%{offset-distance:0%}3.976%,100%{offset-distance:100%}}
+@keyframes ft-pulse-5-show{0%{opacity:0}0.000%{opacity:1}3.976%,100%{opacity:0}}
+#ft-pulse-5{offset-path:path('M168,128 H216 V88 H264');fill:#1F1F1F;animation-name:ft-pulse-5-move,ft-pulse-5-show}
+@keyframes ft-pulse-8-move{0%,0.000%{offset-distance:0%}3.274%,100%{offset-distance:100%}}
+@keyframes ft-pulse-8-show{0%{opacity:0}0.000%{opacity:1}3.274%,100%{opacity:0}}
+#ft-pulse-8{offset-path:path('M168,128 H208 V160 H240');fill:#1F1F1F;animation-name:ft-pulse-8-move,ft-pulse-8-show}
+@keyframes ft-pulse-6-move{0%,5.098%{offset-distance:0%}10.009%,100%{offset-distance:100%}}
+@keyframes ft-pulse-6-show{0%{opacity:0}5.098%{opacity:1}10.009%,100%{opacity:0}}
+#ft-pulse-6{offset-path:path('M376,88 H440 V128 H504');fill:#1F1F1F;animation-name:ft-pulse-6-move,ft-pulse-6-show}
+@keyframes ft-pulse-0-move{0%,11.132%{offset-distance:0%}14.406%,100%{offset-distance:100%}}
+@keyframes ft-pulse-0-show{0%{opacity:0}11.132%{opacity:1}14.406%,100%{opacity:0}}
+#ft-pulse-0{offset-path:path('M696,128 H736');fill:#1F1F1F;animation-name:ft-pulse-0-move,ft-pulse-0-show}
+@keyframes ft-pulse-7-move{0%,15.529%{offset-distance:0%}49.673%,100%{offset-distance:100%}}
+@keyframes ft-pulse-7-show{0%{opacity:0}15.529%{opacity:1}49.673%,100%{opacity:0}}
+#ft-pulse-7{offset-path:path('M832,128 H872 V248 H32 V336 H112');fill:#1F1F1F;animation-name:ft-pulse-7-move,ft-pulse-7-show}
+@keyframes ft-pulse-9-move{0%,15.529%{offset-distance:0%}29.794%,100%{offset-distance:100%}}
+@keyframes ft-pulse-9-show{0%{opacity:0}15.529%{opacity:1}29.794%,100%{opacity:0}}
+#ft-pulse-9{offset-path:path('M400,160 H448 V256 H160 V312');fill:#1F1F1F;animation-name:ft-pulse-9-move,ft-pulse-9-show}
+@keyframes ft-pulse-2-move{0%,50.795%{offset-distance:0%}54.069%,100%{offset-distance:100%}}
+@keyframes ft-pulse-2-show{0%{opacity:0}50.795%{opacity:1}54.069%,100%{opacity:0}}
+#ft-pulse-2{offset-path:path('M208,336 H248');fill:#1F1F1F;animation-name:ft-pulse-2-move,ft-pulse-2-show}
+@keyframes ft-pulse-3-move{0%,55.192%{offset-distance:0%}58.466%,100%{offset-distance:100%}}
+@keyframes ft-pulse-3-show{0%{opacity:0}55.192%{opacity:1}58.466%,100%{opacity:0}}
+#ft-pulse-3{offset-path:path('M344,336 H384');fill:#1F1F1F;animation-name:ft-pulse-3-move,ft-pulse-3-show}
+@keyframes ft-pulse-4-move{0%,59.588%{offset-distance:0%}66.137%,100%{offset-distance:100%}}
+@keyframes ft-pulse-4-show{0%{opacity:0}59.588%{opacity:1}66.137%,100%{opacity:0}}
+#ft-pulse-4{offset-path:path('M608,336 H648');fill:#9A9A9A;animation-name:ft-pulse-4-move,ft-pulse-4-show}
+@keyframes ft-pulse-1-move{0%,67.259%{offset-distance:0%}90.412%,100%{offset-distance:100%}}
+@keyframes ft-pulse-1-show{0%{opacity:0}67.259%{opacity:1}90.412%,100%{opacity:0}}
+#ft-pulse-1{offset-path:path('M744,336 H752 V384 H88 V336 H112');fill:#1F1F1F;animation-name:ft-pulse-1-move,ft-pulse-1-show}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>FigTree, drawing itself<small>the self-application figure, one beat at a time</small></h1>
+    <h1>FigTree, drawing itself<small>the self-application figure, beat by beat</small></h1>
     <div class="legend" aria-label="Legend">
       <span><svg viewBox="0 0 34 12"><path d="M1 6H27" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M26 2.5L33 6L26 9.5z" fill="currentColor"/></svg>data flow</span>
       <span><svg viewBox="0 0 34 12"><path d="M1 6H27" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 2" fill="none"/><path d="M26 2.5L33 6L26 9.5z" fill="currentColor"/></svg>control / feedback</span>
-      <span><svg viewBox="0 0 34 12"><path d="M1 6H33" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2" fill="none"/><circle cx="17" cy="6" r="4.5" fill="currentColor"/></svg>token = what moves</span>
+      <span><svg viewBox="0 0 34 12"><path d="M1 6H33" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2" fill="none"/><circle cx="17" cy="6" r="4.5" fill="currentColor" stroke="var(--bg)" stroke-width="1.4"/></svg>token = what moves</span>
     </div>
   </header>
 
   <div class="figure">
-<svg xmlns="http://www.w3.org/2000/svg" id="figure" role="img" aria-labelledby="e1-title" width="832" height="328" viewBox="0 0 832 328" font-family="Times New Roman" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" id="figure" role="img" aria-labelledby="e1-title" width="904" height="448" viewBox="0 0 904 448" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title id="e1-title">FigTree-Style Recursive SVG Methodology Figure Generator</title>
-  <rect id="background" x="0" y="0" width="832" height="328" fill="#FFFFFF" data-role="background" />
+  <rect id="background" x="0" y="0" width="904" height="448" fill="#FFFFFF" data-role="background" />
   <defs id="e2-defs">
-    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333" id="e3-path" />
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
     </marker>
   <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" id="e4-path" /><circle cx="12" cy="12" r="3" id="e5-circle" /></symbol>
   <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" id="e6-circle" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" id="e7-path" /></symbol>
@@ -160,200 +164,193 @@ html.paused * { animation-play-state:paused !important }
   <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5" id="e13-circle" /><circle cx="5" cy="19" r="2.5" id="e14-circle" /><circle cx="19" cy="19" r="2.5" id="e15-circle" /><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5" id="e16-path" /></symbol>
   <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z" id="e17-path" /></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 832 328">
-    <!-- PORT:left x=80 y=64 id=n6.left type=input component="Grounder" -->
-    <!-- PORT:right x=176 y=64 id=n6.right type=output component="Grounder" -->
-    <!-- PORT:top x=128 y=48 id=n6.top type=input component="Grounder" -->
-    <!-- PORT:bottom x=128 y=80 id=n6.bottom type=output component="Grounder" -->
-    <!-- PORT:left x=72 y=112 id=n7.left type=input component="Generator" -->
-    <!-- PORT:right x=184 y=112 id=n7.right type=output component="Generator" -->
-    <!-- PORT:top x=128 y=96 id=n7.top type=input component="Generator" -->
-    <!-- PORT:bottom x=128 y=128 id=n7.bottom type=output component="Generator" -->
-    <!-- PORT:left x=256 y=64 id=n8.left type=input component="Decompose children" -->
-    <!-- PORT:right x=416 y=64 id=n8.right type=output component="Decompose children" -->
-    <!-- PORT:top x=336 y=48 id=n8.top type=input component="Decompose children" -->
-    <!-- PORT:bottom x=336 y=80 id=n8.bottom type=output component="Decompose children" -->
-    <!-- PORT:left x=264 y=112 id=n9.left type=input component="recursive tree" -->
-    <!-- PORT:right x=408 y=112 id=n9.right type=output component="recursive tree" -->
-    <!-- PORT:top x=336 y=96 id=n9.top type=input component="recursive tree" -->
-    <!-- PORT:bottom x=336 y=128 id=n9.bottom type=output component="recursive tree" -->
-    <!-- PORT:left x=72 y=240 id=n10.left type=input component="Merge" -->
-    <!-- PORT:right x=152 y=240 id=n10.right type=output component="Merge" -->
-    <!-- PORT:top x=112 y=224 id=n10.top type=input component="Merge" -->
-    <!-- PORT:bottom x=112 y=256 id=n10.bottom type=output component="Merge" -->
-    <!-- PORT:left x=176 y=240 id=n11.left type=input component="Critic" -->
-    <!-- PORT:right x=272 y=240 id=n11.right type=output component="Critic" -->
-    <!-- PORT:top x=224 y=224 id=n11.top type=input component="Critic" -->
-    <!-- PORT:bottom x=224 y=256 id=n11.bottom type=output component="Critic" -->
-    <!-- PORT:left x=344 y=240 id=n12.left type=input component="Worker" -->
-    <!-- PORT:right x=440 y=240 id=n12.right type=output component="Worker" -->
-    <!-- PORT:top x=392 y=224 id=n12.top type=input component="Worker" -->
-    <!-- PORT:bottom x=392 y=256 id=n12.bottom type=output component="Worker" -->
-    <!-- PORT:left x=464 y=240 id=n13.left type=input component="re-validate invariants" -->
-    <!-- PORT:right x=656 y=240 id=n13.right type=output component="re-validate invariants" -->
-    <!-- PORT:top x=560 y=224 id=n13.top type=input component="re-validate invariants" -->
-    <!-- PORT:bottom x=560 y=256 id=n13.bottom type=output component="re-validate invariants" -->
-    <!-- PORT:left x=680 y=240 id=n14.left type=input component="render" -->
-    <!-- PORT:right x=776 y=240 id=n14.right type=output component="render" -->
-    <!-- PORT:top x=728 y=224 id=n14.top type=input component="render" -->
-    <!-- PORT:bottom x=728 y=256 id=n14.bottom type=output component="render" -->
-    <g id="n2" transform="translate(48,24)" data-bbox="48 24 160 128" data-label="Grounder, Generator">
-      <!-- PORT:left x=32 y=40 id=n6.left type=input component="Grounder" -->
-      <!-- PORT:right x=128 y=40 id=n6.right type=output component="Grounder" -->
-      <!-- PORT:top x=80 y=24 id=n6.top type=input component="Grounder" -->
-      <!-- PORT:bottom x=80 y=56 id=n6.bottom type=output component="Grounder" -->
-      <!-- PORT:left x=24 y=88 id=n7.left type=input component="Generator" -->
-      <!-- PORT:right x=136 y=88 id=n7.right type=output component="Generator" -->
-      <!-- PORT:top x=80 y=72 id=n7.top type=input component="Generator" -->
-      <!-- PORT:bottom x=80 y=104 id=n7.bottom type=output component="Generator" -->
-      <rect id="n2.container" x="0" y="0" width="160" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2" />
-      <g id="n6" transform="translate(32,24)" data-bbox="32 24 96 32" data-label="Grounder">
-        <!-- PORT:left x=0 y=16 id=n6.left type=input component="Grounder" -->
-        <!-- PORT:right x=96 y=16 id=n6.right type=output component="Grounder" -->
-        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Grounder" -->
-        <!-- PORT:bottom x=48 y=32 id=n6.bottom type=output component="Grounder" -->
-        <rect id="n6.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Grounder" />
-        <use id="n6.icon" href="#icon-search" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n6.label" x="64" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Grounder</text>
+  <g id="n1" data-bbox="0 0 904 448">
+    <!-- PORT:left x=56 y=128 id=n2.left type=input component="Grounder" -->
+    <!-- PORT:right x=168 y=128 id=n2.right type=output component="Grounder" -->
+    <!-- PORT:top x=112 y=104 id=n2.top type=input component="Grounder" -->
+    <!-- PORT:bottom x=112 y=152 id=n2.bottom type=output component="Grounder" -->
+    <!-- PORT:left x=264 y=88 id=n6.left type=input component="Generator" -->
+    <!-- PORT:right x=376 y=88 id=n6.right type=output component="Generator" -->
+    <!-- PORT:top x=320 y=64 id=n6.top type=input component="Generator" -->
+    <!-- PORT:bottom x=320 y=112 id=n6.bottom type=output component="Generator" -->
+    <!-- PORT:left x=240 y=160 id=n7.left type=input component="recursive tree" -->
+    <!-- PORT:right x=400 y=160 id=n7.right type=output component="recursive tree" -->
+    <!-- PORT:top x=320 y=136 id=n7.top type=input component="recursive tree" -->
+    <!-- PORT:bottom x=320 y=184 id=n7.bottom type=output component="recursive tree" -->
+    <!-- PORT:left x=504 y=128 id=n8.left type=input component="Decompose children" -->
+    <!-- PORT:right x=696 y=128 id=n8.right type=output component="Decompose children" -->
+    <!-- PORT:top x=600 y=104 id=n8.top type=input component="Decompose children" -->
+    <!-- PORT:bottom x=600 y=152 id=n8.bottom type=output component="Decompose children" -->
+    <!-- PORT:left x=736 y=128 id=n9.left type=input component="Merge" -->
+    <!-- PORT:right x=832 y=128 id=n9.right type=output component="Merge" -->
+    <!-- PORT:top x=784 y=104 id=n9.top type=input component="Merge" -->
+    <!-- PORT:bottom x=784 y=152 id=n9.bottom type=output component="Merge" -->
+    <!-- PORT:left x=112 y=336 id=n10.left type=input component="Critic" -->
+    <!-- PORT:right x=208 y=336 id=n10.right type=output component="Critic" -->
+    <!-- PORT:top x=160 y=312 id=n10.top type=input component="Critic" -->
+    <!-- PORT:bottom x=160 y=360 id=n10.bottom type=output component="Critic" -->
+    <!-- PORT:left x=248 y=336 id=n11.left type=input component="Worker" -->
+    <!-- PORT:right x=344 y=336 id=n11.right type=output component="Worker" -->
+    <!-- PORT:top x=296 y=312 id=n11.top type=input component="Worker" -->
+    <!-- PORT:bottom x=296 y=360 id=n11.bottom type=output component="Worker" -->
+    <!-- PORT:left x=384 y=336 id=n12.left type=input component="re-validate invariants" -->
+    <!-- PORT:right x=608 y=336 id=n12.right type=output component="re-validate invariants" -->
+    <!-- PORT:top x=496 y=312 id=n12.top type=input component="re-validate invariants" -->
+    <!-- PORT:bottom x=496 y=360 id=n12.bottom type=output component="re-validate invariants" -->
+    <!-- PORT:left x=648 y=336 id=n13.left type=input component="render" -->
+    <!-- PORT:right x=744 y=336 id=n13.right type=output component="render" -->
+    <!-- PORT:top x=696 y=312 id=n13.top type=input component="render" -->
+    <!-- PORT:bottom x=696 y=360 id=n13.bottom type=output component="render" -->
+    <g id="n2" transform="translate(56,104)" data-bbox="56 104 112 48" data-label="Grounder">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Grounder" -->
+      <!-- PORT:right x=112 y=24 id=n2.right type=output component="Grounder" -->
+      <!-- PORT:top x=56 y=0 id=n2.top type=input component="Grounder" -->
+      <!-- PORT:bottom x=56 y=48 id=n2.bottom type=output component="Grounder" -->
+      <rect id="n2.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Grounder" />
+      <use id="n2.icon" href="#icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n2.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Grounder</text>
+    </g>
+    <g id="n3" transform="translate(208,32)" data-bbox="208 32 224 184" data-label="Generator, recursive tree">
+      <!-- PORT:left x=56 y=56 id=n6.left type=input component="Generator" -->
+      <!-- PORT:right x=168 y=56 id=n6.right type=output component="Generator" -->
+      <!-- PORT:top x=112 y=32 id=n6.top type=input component="Generator" -->
+      <!-- PORT:bottom x=112 y=80 id=n6.bottom type=output component="Generator" -->
+      <!-- PORT:left x=32 y=128 id=n7.left type=input component="recursive tree" -->
+      <!-- PORT:right x=192 y=128 id=n7.right type=output component="recursive tree" -->
+      <!-- PORT:top x=112 y=104 id=n7.top type=input component="recursive tree" -->
+      <!-- PORT:bottom x=112 y=152 id=n7.bottom type=output component="recursive tree" -->
+      <g id="n6" transform="translate(56,32)" data-bbox="56 32 112 48" data-label="Generator">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Generator" -->
+        <!-- PORT:right x=112 y=24 id=n6.right type=output component="Generator" -->
+        <!-- PORT:top x=56 y=0 id=n6.top type=input component="Generator" -->
+        <!-- PORT:bottom x=56 y=48 id=n6.bottom type=output component="Generator" -->
+        <rect id="n6.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Generator" />
+        <use id="n6.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Generator</text>
       </g>
-      <g id="n7" transform="translate(24,72)" data-bbox="24 72 112 32" data-label="Generator">
-        <!-- PORT:left x=0 y=16 id=n7.left type=input component="Generator" -->
-        <!-- PORT:right x=112 y=16 id=n7.right type=output component="Generator" -->
-        <!-- PORT:top x=56 y=0 id=n7.top type=input component="Generator" -->
-        <!-- PORT:bottom x=56 y=32 id=n7.bottom type=output component="Generator" -->
-        <rect id="n7.block" x="0" y="0" width="112" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Generator" />
-        <use id="n7.icon" href="#icon-gear" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n7.label" x="72" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="88">Generator</text>
+      <g id="n7" transform="translate(32,104)" data-bbox="32 104 160 48" data-label="recursive tree">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="recursive tree" -->
+        <!-- PORT:right x=160 y=24 id=n7.right type=output component="recursive tree" -->
+        <!-- PORT:top x=80 y=0 id=n7.top type=input component="recursive tree" -->
+        <!-- PORT:bottom x=80 y=48 id=n7.bottom type=output component="recursive tree" -->
+        <rect id="n7.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="recursive tree" />
+        <use id="n7.icon" href="#icon-tree" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">recursive tree</text>
       </g>
     </g>
-    <g id="n3" transform="translate(232,24)" data-bbox="232 24 208 128" data-label="Decompose children, recursive tree">
-      <!-- PORT:left x=24 y=40 id=n8.left type=input component="Decompose children" -->
-      <!-- PORT:right x=184 y=40 id=n8.right type=output component="Decompose children" -->
-      <!-- PORT:top x=104 y=24 id=n8.top type=input component="Decompose children" -->
-      <!-- PORT:bottom x=104 y=56 id=n8.bottom type=output component="Decompose children" -->
-      <!-- PORT:left x=32 y=88 id=n9.left type=input component="recursive tree" -->
-      <!-- PORT:right x=176 y=88 id=n9.right type=output component="recursive tree" -->
-      <!-- PORT:top x=104 y=72 id=n9.top type=input component="recursive tree" -->
-      <!-- PORT:bottom x=104 y=104 id=n9.bottom type=output component="recursive tree" -->
-      <rect id="n3.container" x="0" y="0" width="208" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2" />
-      <g id="n8" transform="translate(24,24)" data-bbox="24 24 160 32" data-label="Decompose children">
-        <!-- PORT:left x=0 y=16 id=n8.left type=input component="Decompose children" -->
-        <!-- PORT:right x=160 y=16 id=n8.right type=output component="Decompose children" -->
-        <!-- PORT:top x=80 y=0 id=n8.top type=input component="Decompose children" -->
-        <!-- PORT:bottom x=80 y=32 id=n8.bottom type=output component="Decompose children" -->
-        <rect id="n8.block" x="0" y="0" width="160" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Decompose children" />
-        <use id="n8.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n8.label" x="96" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="136">Decompose children</text>
+    <g id="n4" transform="translate(472,72)" data-bbox="472 72 392 112" data-label="Decompose children, Merge">
+      <!-- PORT:left x=32 y=56 id=n8.left type=input component="Decompose children" -->
+      <!-- PORT:right x=224 y=56 id=n8.right type=output component="Decompose children" -->
+      <!-- PORT:top x=128 y=32 id=n8.top type=input component="Decompose children" -->
+      <!-- PORT:bottom x=128 y=80 id=n8.bottom type=output component="Decompose children" -->
+      <!-- PORT:left x=264 y=56 id=n9.left type=input component="Merge" -->
+      <!-- PORT:right x=360 y=56 id=n9.right type=output component="Merge" -->
+      <!-- PORT:top x=312 y=32 id=n9.top type=input component="Merge" -->
+      <!-- PORT:bottom x=312 y=80 id=n9.bottom type=output component="Merge" -->
+      <g id="n8" transform="translate(32,32)" data-bbox="32 32 192 48" data-label="Decompose children">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Decompose children" -->
+        <!-- PORT:right x=192 y=24 id=n8.right type=output component="Decompose children" -->
+        <!-- PORT:top x=96 y=0 id=n8.top type=input component="Decompose children" -->
+        <!-- PORT:bottom x=96 y=48 id=n8.bottom type=output component="Decompose children" -->
+        <rect id="n8.block" x="0" y="0" width="192" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Decompose children" />
+        <use id="n8.icon" href="#icon-tree" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="172">Decompose children</text>
       </g>
-      <g id="n9" transform="translate(32,72)" data-bbox="32 72 144 32" data-label="recursive tree">
-        <!-- PORT:left x=0 y=16 id=n9.left type=input component="recursive tree" -->
-        <!-- PORT:right x=144 y=16 id=n9.right type=output component="recursive tree" -->
-        <!-- PORT:top x=72 y=0 id=n9.top type=input component="recursive tree" -->
-        <!-- PORT:bottom x=72 y=32 id=n9.bottom type=output component="recursive tree" -->
-        <rect id="n9.block" x="0" y="0" width="144" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="recursive tree" />
-        <use id="n9.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n9.label" x="88" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="120">recursive tree</text>
+      <g id="n9" transform="translate(264,32)" data-bbox="264 32 96 48" data-label="Merge">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Merge" -->
+        <!-- PORT:right x=96 y=24 id=n9.right type=output component="Merge" -->
+        <!-- PORT:top x=48 y=0 id=n9.top type=input component="Merge" -->
+        <!-- PORT:bottom x=48 y=48 id=n9.bottom type=output component="Merge" -->
+        <rect id="n9.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Merge" />
+        <use id="n9.icon" href="#icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Merge</text>
       </g>
+      <path id="n4.arrow0" d="M224,56 H264" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left" />
     </g>
-    <g id="n4" transform="translate(48,200)" data-bbox="48 200 248 80" data-label="Merge, Critic">
-      <!-- PORT:left x=24 y=40 id=n10.left type=input component="Merge" -->
-      <!-- PORT:right x=104 y=40 id=n10.right type=output component="Merge" -->
-      <!-- PORT:top x=64 y=24 id=n10.top type=input component="Merge" -->
-      <!-- PORT:bottom x=64 y=56 id=n10.bottom type=output component="Merge" -->
-      <!-- PORT:left x=128 y=40 id=n11.left type=input component="Critic" -->
-      <!-- PORT:right x=224 y=40 id=n11.right type=output component="Critic" -->
-      <!-- PORT:top x=176 y=24 id=n11.top type=input component="Critic" -->
-      <!-- PORT:bottom x=176 y=56 id=n11.bottom type=output component="Critic" -->
-      <rect id="n4.container" x="0" y="0" width="248" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2" />
-      <g id="n10" transform="translate(24,24)" data-bbox="24 24 80 32" data-label="Merge">
-        <!-- PORT:left x=0 y=16 id=n10.left type=input component="Merge" -->
-        <!-- PORT:right x=80 y=16 id=n10.right type=output component="Merge" -->
-        <!-- PORT:top x=40 y=0 id=n10.top type=input component="Merge" -->
-        <!-- PORT:bottom x=40 y=32 id=n10.bottom type=output component="Merge" -->
-        <rect id="n10.block" x="0" y="0" width="80" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Merge" />
-        <use id="n10.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n10.label" x="56" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="56">Merge</text>
+    <g id="n5" transform="translate(56,280)" data-bbox="56 280 728 136" data-label="Critic, Worker, re-validate invariants, render">
+      <!-- PORT:left x=56 y=56 id=n10.left type=input component="Critic" -->
+      <!-- PORT:right x=152 y=56 id=n10.right type=output component="Critic" -->
+      <!-- PORT:top x=104 y=32 id=n10.top type=input component="Critic" -->
+      <!-- PORT:bottom x=104 y=80 id=n10.bottom type=output component="Critic" -->
+      <!-- PORT:left x=192 y=56 id=n11.left type=input component="Worker" -->
+      <!-- PORT:right x=288 y=56 id=n11.right type=output component="Worker" -->
+      <!-- PORT:top x=240 y=32 id=n11.top type=input component="Worker" -->
+      <!-- PORT:bottom x=240 y=80 id=n11.bottom type=output component="Worker" -->
+      <!-- PORT:left x=328 y=56 id=n12.left type=input component="re-validate invariants" -->
+      <!-- PORT:right x=552 y=56 id=n12.right type=output component="re-validate invariants" -->
+      <!-- PORT:top x=440 y=32 id=n12.top type=input component="re-validate invariants" -->
+      <!-- PORT:bottom x=440 y=80 id=n12.bottom type=output component="re-validate invariants" -->
+      <!-- PORT:left x=592 y=56 id=n13.left type=input component="render" -->
+      <!-- PORT:right x=688 y=56 id=n13.right type=output component="render" -->
+      <!-- PORT:top x=640 y=32 id=n13.top type=input component="render" -->
+      <!-- PORT:bottom x=640 y=80 id=n13.bottom type=output component="render" -->
+      <g id="n10" transform="translate(56,32)" data-bbox="56 32 96 48" data-label="Critic">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Critic" -->
+        <!-- PORT:right x=96 y=24 id=n10.right type=output component="Critic" -->
+        <!-- PORT:top x=48 y=0 id=n10.top type=input component="Critic" -->
+        <!-- PORT:bottom x=48 y=48 id=n10.bottom type=output component="Critic" -->
+        <rect id="n10.block" x="0" y="0" width="96" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Critic" />
+        <use id="n10.icon" href="#icon-eye" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Critic</text>
       </g>
-      <g id="n11" transform="translate(128,24)" data-bbox="128 24 96 32" data-label="Critic">
-        <!-- PORT:left x=0 y=16 id=n11.left type=input component="Critic" -->
-        <!-- PORT:right x=96 y=16 id=n11.right type=output component="Critic" -->
-        <!-- PORT:top x=48 y=0 id=n11.top type=input component="Critic" -->
-        <!-- PORT:bottom x=48 y=32 id=n11.bottom type=output component="Critic" -->
-        <rect id="n11.block" x="0" y="0" width="96" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Critic" />
-        <use id="n11.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n11.label" x="64" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Critic</text>
+      <g id="n11" transform="translate(192,32)" data-bbox="192 32 96 48" data-label="Worker">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Worker" -->
+        <!-- PORT:right x=96 y=24 id=n11.right type=output component="Worker" -->
+        <!-- PORT:top x=48 y=0 id=n11.top type=input component="Worker" -->
+        <!-- PORT:bottom x=48 y=48 id=n11.bottom type=output component="Worker" -->
+        <rect id="n11.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Worker" />
+        <use id="n11.icon" href="#icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n11.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Worker</text>
       </g>
-      <path id="n4.arrow0" d="M104,40 H128" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left" />
+      <g id="n12" transform="translate(328,32)" data-bbox="328 32 224 48" data-label="re-validate invariants">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="re-validate invariants" -->
+        <!-- PORT:right x=224 y=24 id=n12.right type=output component="re-validate invariants" -->
+        <!-- PORT:top x=112 y=0 id=n12.top type=input component="re-validate invariants" -->
+        <!-- PORT:bottom x=112 y=48 id=n12.bottom type=output component="re-validate invariants" -->
+        <rect id="n12.block" x="0" y="0" width="224" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="re-validate invariants" />
+        <use id="n12.icon" href="#icon-eye" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n12.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="204">re-validate invariants</text>
+      </g>
+      <g id="n13" transform="translate(592,32)" data-bbox="592 32 96 48" data-label="render">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="render" -->
+        <!-- PORT:right x=96 y=24 id=n13.right type=output component="render" -->
+        <!-- PORT:top x=48 y=0 id=n13.top type=input component="render" -->
+        <!-- PORT:bottom x=48 y=48 id=n13.bottom type=output component="render" -->
+        <rect id="n13.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="render" />
+        <use id="n13.icon" href="#icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n13.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">render</text>
+      </g>
+      <path id="n5.arrow0" d="M688,56 H696 V104 H32 V56 H56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n10.left" />
+      <path id="n5.arrow1" d="M152,56 H192" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left" />
+      <path id="n5.arrow2" d="M288,56 H328" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n12.left" />
+      <path id="n5.arrow3" d="M552,56 H592" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left" />
     </g>
-    <g id="n5" transform="translate(320,200)" data-bbox="320 200 480 80" data-label="Worker, re-validate invariants, render">
-      <!-- PORT:left x=24 y=40 id=n12.left type=input component="Worker" -->
-      <!-- PORT:right x=120 y=40 id=n12.right type=output component="Worker" -->
-      <!-- PORT:top x=72 y=24 id=n12.top type=input component="Worker" -->
-      <!-- PORT:bottom x=72 y=56 id=n12.bottom type=output component="Worker" -->
-      <!-- PORT:left x=144 y=40 id=n13.left type=input component="re-validate invariants" -->
-      <!-- PORT:right x=336 y=40 id=n13.right type=output component="re-validate invariants" -->
-      <!-- PORT:top x=240 y=24 id=n13.top type=input component="re-validate invariants" -->
-      <!-- PORT:bottom x=240 y=56 id=n13.bottom type=output component="re-validate invariants" -->
-      <!-- PORT:left x=360 y=40 id=n14.left type=input component="render" -->
-      <!-- PORT:right x=456 y=40 id=n14.right type=output component="render" -->
-      <!-- PORT:top x=408 y=24 id=n14.top type=input component="render" -->
-      <!-- PORT:bottom x=408 y=56 id=n14.bottom type=output component="render" -->
-      <rect id="n5.container" x="0" y="0" width="480" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2" />
-      <g id="n12" transform="translate(24,24)" data-bbox="24 24 96 32" data-label="Worker">
-        <!-- PORT:left x=0 y=16 id=n12.left type=input component="Worker" -->
-        <!-- PORT:right x=96 y=16 id=n12.right type=output component="Worker" -->
-        <!-- PORT:top x=48 y=0 id=n12.top type=input component="Worker" -->
-        <!-- PORT:bottom x=48 y=32 id=n12.bottom type=output component="Worker" -->
-        <rect id="n12.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Worker" />
-        <use id="n12.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n12.label" x="64" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Worker</text>
-      </g>
-      <g id="n13" transform="translate(144,24)" data-bbox="144 24 192 32" data-label="re-validate invariants">
-        <!-- PORT:left x=0 y=16 id=n13.left type=input component="re-validate invariants" -->
-        <!-- PORT:right x=192 y=16 id=n13.right type=output component="re-validate invariants" -->
-        <!-- PORT:top x=96 y=0 id=n13.top type=input component="re-validate invariants" -->
-        <!-- PORT:bottom x=96 y=32 id=n13.bottom type=output component="re-validate invariants" -->
-        <rect id="n13.block" x="0" y="0" width="192" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="re-validate invariants" />
-        <use id="n13.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n13.label" x="112" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="168">re-validate invariants</text>
-      </g>
-      <g id="n14" transform="translate(360,24)" data-bbox="360 24 96 32" data-label="render">
-        <!-- PORT:left x=0 y=16 id=n14.left type=input component="render" -->
-        <!-- PORT:right x=96 y=16 id=n14.right type=output component="render" -->
-        <!-- PORT:top x=48 y=0 id=n14.top type=input component="render" -->
-        <!-- PORT:bottom x=48 y=32 id=n14.bottom type=output component="render" -->
-        <rect id="n14.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="render" />
-        <use id="n14.icon" href="#icon-image" x="8" y="8" width="16" height="16" color="#333333" data-role="icon" />
-        <text id="n14.label" x="64" y="16" font-family="Times New Roman" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">render</text>
-      </g>
-      <path id="n5.arrow0" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left" />
-      <path id="n5.arrow1" d="M336,40 H360" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left" />
-    </g>
-    <path id="n1.arrow0" d="M184,112 H216 V64 H256" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
-    <path id="n1.arrow1" d="M416,64 H448 V176 H24 V240 H72" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n10.left" />
-    <path id="n1.arrow2" d="M776,240 H808 V304 H224 V256" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n14.right" data-to="n11.bottom" />
-    <path id="n1.arrow3" d="M272,240 H344" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n12.left" />
-    <path id="n1.arrow4" d="M176,64 H216 V112 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n9.left" />
-    <path id="n1.arrow5" d="M408,112 H448 V176 H224 V224" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n11.top" />
+    <path id="n1.arrow0" d="M168,128 H216 V88 H264" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n6.left" />
+    <path id="n1.arrow1" d="M376,88 H440 V128 H504" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left" />
+    <path id="n1.arrow2" d="M832,128 H872 V248 H32 V336 H112" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left" />
+    <path id="n1.arrow3" d="M168,128 H208 V160 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n7.left" />
+    <path id="n1.arrow4" d="M400,160 H448 V256 H160 V312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n10.top" />
   </g>
-  <path id="ft-shaft-0" d="M152,240 H176" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-1" d="M440,240 H464" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-2" d="M656,240 H680" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-3" d="M184,112 H216 V64 H256" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-4" d="M416,64 H448 V176 H24 V240 H72" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-5" d="M776,240 H808 V304 H224 V256" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-6" d="M272,240 H344" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-7" d="M176,64 H216 V112 H264" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <path id="ft-shaft-8" d="M408,112 H448 V176 H224 V224" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
-  <circle id="ft-pulse-0" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-1" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-2" r="3" fill="#999999" data-role="pulse"/>
-  <circle id="ft-pulse-3" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-4" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-5" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-6" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-7" r="3" fill="#333333" data-role="pulse"/>
-  <circle id="ft-pulse-8" r="3" fill="#333333" data-role="pulse"/>
+  <path id="ft-shaft-0" d="M696,128 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-1" d="M744,336 H752 V384 H88 V336 H112" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-2" d="M208,336 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-3" d="M344,336 H384" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-4" d="M608,336 H648" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-5" d="M168,128 H216 V88 H264" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-6" d="M376,88 H440 V128 H504" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-7" d="M832,128 H872 V248 H32 V336 H112" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-8" d="M168,128 H208 V160 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ft-shaft-9" d="M400,160 H448 V256 H160 V312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <circle id="ft-pulse-0" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-1" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-2" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-3" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-4" r="3.5" fill="#999999" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-5" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-6" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-7" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-8" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ft-pulse-9" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
 </svg>
     <div class="idchip" id="idchip" aria-live="polite"></div>
   </div>
@@ -362,21 +359,21 @@ html.paused * { animation-play-state:paused !important }
   <div class="controls">
     <button type="button" id="play" aria-label="Pause">Pause</button>
     <button type="button" id="replay">Replay</button>
-    <div class="scrub"><div class="ticks"><i style="left:0.00%" title="1 · Grounding"></i><i style="left:11.14%" title="2 · Recursive construction"></i><i style="left:28.23%" title="3 · Merge"></i><i style="left:39.38%" title="4 · Render–critic loop"></i><i style="left:63.15%" title="5 · Editable output"></i></div><input type="range" id="scrub" min="0" max="26920" step="50" value="0" aria-label="Timeline"></div>
+    <div class="scrub"><div class="ticks"><i style="left:0.00%" title="1 · Grounding"></i><i style="left:10.91%" title="2 · Recursive construction"></i><i style="left:27.65%" title="3 · Merge"></i><i style="left:36.38%" title="4 · Render–critic loop"></i><i style="left:61.11%" title="5 · Editable output"></i></div><input type="range" id="scrub" min="0" max="27490" step="50" value="0" aria-label="Timeline"></div>
     <span class="clock" id="time">0.0 s</span>
   </div>
 
   <ol class="captions" id="captions">
 <li class="cap" data-beat="ground" data-start="0.0" style="--on:0.00s;--off:3.00s"><button type="button" class="cap-btn"><span class="cap-title">1 · Grounding</span><span class="cap-body">The Grounder reads the source and admits only evidenced components and flows. Nothing is invented.</span></button></li>
-<li class="cap" data-beat="build" data-start="3.0" style="--on:3.00s;--off:7.60s"><button type="button" class="cap-btn"><span class="cap-title">2 · Recursive construction</span><span class="cap-body">The Generator draws a leaf or splits a node into 2–4 children, one level at a time: the recursive tree.</span></button></li>
-<li class="cap" data-beat="merge" data-start="7.6" style="--on:7.60s;--off:10.60s"><button type="button" class="cap-btn"><span class="cap-title">3 · Merge</span><span class="cap-body">The Worker places the children and draws parent-owned arrows between their ports, each shaft at least 20 px.</span></button></li>
-<li class="cap" data-beat="loop" data-start="10.6" style="--on:10.60s;--off:17.00s"><button type="button" class="cap-btn"><span class="cap-title">4 · Render–critic loop</span><span class="cap-body">Render → Critic → Worker repair → re-validate invariants, at most three rounds. The dashed edge is control.</span></button></li>
-<li class="cap" data-beat="output" data-start="17.0" style="--on:17.00s;--off:0.00s" data-last><button type="button" class="cap-btn"><span class="cap-title">5 · Editable output</span><span class="cap-body">The result is an SVG program: every element has an id, so one local edit changes one element. Hover to read ids.</span></button></li>
+<li class="cap" data-beat="build" data-start="3.0" style="--on:3.00s;--off:7.60s"><button type="button" class="cap-btn"><span class="cap-title">2 · Recursive construction</span><span class="cap-body">The Grounder's plan feeds the Generator, which draws a leaf or splits a node into 2–4 children, growing the recursive tree.</span></button></li>
+<li class="cap" data-beat="merge" data-start="7.6" style="--on:7.60s;--off:10.00s"><button type="button" class="cap-btn"><span class="cap-title">3 · Merge</span><span class="cap-body">The Worker places the children and draws parent-owned arrows between their ports, each shaft at least 20 px.</span></button></li>
+<li class="cap" data-beat="loop" data-start="10.0" style="--on:10.00s;--off:16.80s"><button type="button" class="cap-btn"><span class="cap-title">4 · Render–critic loop</span><span class="cap-body">Critic → Worker repair → re-validate invariants → render, and back to the Critic, at most three rounds. The dashed edge is control.</span></button></li>
+<li class="cap" data-beat="output" data-start="16.8" style="--on:16.80s;--off:0.00s" data-last><button type="button" class="cap-btn"><span class="cap-title">5 · Editable output</span><span class="cap-body">The result is an SVG program: every element has an id, so one local edit changes one element. Hover to read ids.</span></button></li>
   </ol>
 </div>
 <script>
 (function () {
-  var root = document.documentElement, TOTAL = 26920, LOOP = 17000, PERIOD = 9920;
+  var root = document.documentElement, TOTAL = 27490, LOOP = 16800, PERIOD = 10690;
   var scrub = document.getElementById('scrub'), timeEl = document.getElementById('time');
   var playBtn = document.getElementById('play');
   var q = new URLSearchParams(location.search);
