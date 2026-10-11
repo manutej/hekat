@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200">
+  <defs id="defs">
+    <linearGradient id="tile-grad" x1="0" y1="0" x2="1" y2="1"><stop id="tile-grad-stop-a" offset="0" stop-color="#5B8DEF" /><stop id="tile-grad-stop-b" offset="1" stop-color="#1C3F8F" /></linearGradient>
+  </defs>
+  <rect id="background" width="720" height="200" fill="#ffffff" />
+  <rect id="tile-refined" x="16" y="16" width="218" height="168" rx="8" fill="#F7F7F7" stroke="#E0E0E0" stroke-width="1" />
+  <text id="tile-refined-label" x="36" y="52" font-family="Arial" font-size="13" fill="#333333">Figures refined</text>
+  <text id="tile-refined-value" x="36" y="124" font-family="Arial" font-size="44" fill="#333333" font-weight="bold">4</text>
+  <text id="tile-refined-note" x="36" y="160" font-family="Arial" font-size="12" fill="#555555">bar, slide, icon, spec</text>
+  <rect id="tile-gain" x="251" y="16" width="218" height="168" rx="8" fill="#F7F7F7" stroke="#E0E0E0" stroke-width="1" />
+  <text id="tile-gain-label" x="271" y="52" font-family="Arial" font-size="13" fill="#333333">Mean score gain</text>
+  <text id="tile-gain-value" x="271" y="124" font-family="Arial" font-size="44" fill="#1B7F4B" font-weight="bold">+1.58</text>
+  <text id="tile-gain-note" x="271" y="160" font-family="Arial" font-size="12" fill="#555555">points of 10, 4 trajectories</text>
+  <rect id="tile-requests" x="486" y="16" width="218" height="168" rx="8" fill="#F7F7F7" stroke="#E0E0E0" stroke-width="1" />
+  <text id="tile-requests-label" x="506" y="52" font-family="Arial" font-size="13" fill="#333333">Open requests</text>
+  <text id="tile-requests-value" x="506" y="124" font-family="Arial" font-size="44" fill="#B5452A" font-weight="bold">5</text>
+  <text id="tile-requests-note" x="506" y="160" font-family="Arial" font-size="12" fill="#555555">need a content decision</text>
+</svg>

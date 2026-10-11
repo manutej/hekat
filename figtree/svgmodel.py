@@ -67,6 +67,63 @@ class RectEl:
 
 
 @dataclass
+class ShapeEl:
+    """A non-rectangular block (cylinder, document, diamond, pill, actor) as one path."""
+
+    id: str
+    kind: str
+    x: int
+    y: int
+    w: int
+    h: int
+    fill: str
+    stroke: str
+    stroke_width: float
+    role: str = "block"
+    extra: Dict[str, str] = field(default_factory=dict)
+
+    def bbox(self) -> BBox:
+        return BBox(self.x, self.y, self.w, self.h)
+
+    def svg(self) -> str:
+        from figtree.elements import shape_path
+
+        d = shape_path(self.kind, self.w, self.h)
+        attrs = (
+            f'id="{_esc(self.id)}" d="{d}" fill="{self.fill}" stroke="{self.stroke}" '
+            f'stroke-width="{_num(self.stroke_width)}" stroke-linejoin="round" data-role="{self.role}" data-kind="{self.kind}" '
+            f'data-bbox="{self.x} {self.y} {self.w} {self.h}"'
+        )
+        if self.x or self.y:
+            attrs += f' transform="translate({self.x},{self.y})"'
+        for k, v in self.extra.items():
+            attrs += f' {k}="{_esc(v)}"'
+        return f"<path {attrs}/>"
+
+
+@dataclass
+class UseEl:
+    """An icon placed from a ``<symbol>`` (``href="#icon-name"``)."""
+
+    id: str
+    href: str
+    x: int
+    y: int
+    w: int = 16
+    h: int = 16
+    color: str = "#333333"
+
+    def bbox(self) -> BBox:
+        return BBox(self.x, self.y, self.w, self.h)
+
+    def svg(self) -> str:
+        return (
+            f'<use id="{_esc(self.id)}" href="{_esc(self.href)}" x="{self.x}" y="{self.y}" width="{self.w}" height="{self.h}" '
+            f'color="{self.color}" data-role="icon"/>'
+        )
+
+
+@dataclass
 class TextEl:
     id: str
     x: int
@@ -264,7 +321,11 @@ def marker_defs(style: GlobalStyle) -> str:
 
 def wrap_svg(fragment: Fragment, style: GlobalStyle, title: str = "") -> str:
     """Wrap a fragment as a complete standalone SVG document (white background first)."""
+    from figtree.icons import symbol_defs
+
     w, h = fragment.w, fragment.h
+    used = sorted({e.href[len("#icon-"):] for e, _ in fragment.iter_all() if isinstance(e, UseEl) and e.href.startswith("#icon-")})
+    symbols = symbol_defs(used)
     head = (
         f'<svg xmlns="{SVG_NS}" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
         f'font-family="{_esc(style.font)}" data-figtree="1">'
@@ -273,7 +334,10 @@ def wrap_svg(fragment: Fragment, style: GlobalStyle, title: str = "") -> str:
     if title:
         parts.append(f"  <title>{_esc(title)}</title>")
     parts.append(f'  <rect id="background" x="0" y="0" width="{w}" height="{h}" fill="#FFFFFF" data-role="background"/>')
-    parts.append("  " + marker_defs(style).replace("\n", "\n  "))
+    defs = marker_defs(style)
+    if symbols:
+        defs = defs.replace("</defs>", symbols + "\n</defs>")
+    parts.append("  " + defs.replace("\n", "\n  "))
     parts.append(f'  <g id="{_esc(fragment.node_id)}" data-bbox="0 0 {w} {h}">')
     parts.append(fragment.svg("    "))
     parts.append("  </g>")
@@ -379,6 +443,9 @@ def element_bbox(el: ET.Element, offset: Point) -> Optional[BBox]:
                 int(float(el.get("height", 0))),
             )
         if tag == "path":
+            if el.get("data-bbox"):  # shaped block: trust the declared bbox (translate included)
+                x, y, w, h = (int(float(v)) for v in el.get("data-bbox").split())
+                return BBox(x + ox, y + oy, w, h)
             pts = path_to_points(el.get("d", ""))
             if not pts:
                 return None

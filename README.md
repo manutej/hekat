@@ -564,4 +564,9 @@ python -m pytest tests/test_figtree.py tests/test_figtree_refine.py
 `figtree refine` runs the paper's iterative-editing loop on any SVG (teaching diagrams, data
 figures, slides, dashboard tiles, icons) against a rubric, fixing mechanical defects and
 returning anchored edit requests for everything that needs a decision.
-See `docs/FIGTREE.md` for the architecture, constraints, rubrics, test protocol and backends.
+`figtree animate` adds reveal / draw / pulse motion tied to meaning, `figtree icon` designs
+custom icons through the same loop, and `--backend claude` runs the model agents on the Claude
+Code session's own login. The showcase page is built by
+`examples/figtree/showcase/build_showcase.py`.
+See `docs/FIGTREE.md` for the architecture, constraints, rubrics, test protocol and backends,
+and `docs/META-PROMPT-SVG-ARTIFACTS.md` for the category-level procedure.

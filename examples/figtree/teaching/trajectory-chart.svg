@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="320" viewBox="0 0 560 320">
+  <rect id="background" width="560" height="320" fill="#ffffff"/>
+  <text id="title" x="280" y="26" font-family="Arial" font-size="13" text-anchor="middle" fill="#333333">Scores</text>
+  <line id="grid-7" x1="70" y1="260" x2="400" y2="260" stroke="#DDDDDD" stroke-width="0.5"/>
+  <line id="grid-8" x1="70" y1="190" x2="400" y2="190" stroke="#DDDDDD" stroke-width="0.5"/>
+  <line id="grid-9" x1="70" y1="120" x2="400" y2="120" stroke="#DDDDDD" stroke-width="0.5"/>
+  <line id="grid-10" x1="70" y1="50" x2="400" y2="50" stroke="#DDDDDD" stroke-width="0.5"/>
+  <line id="axis-x" x1="70" y1="260" x2="400" y2="260" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="70" y1="50" x2="70" y2="260" stroke="#000000" stroke-width="1"/>
+  <text id="tick-y-7" x="64" y="263" font-family="Arial" font-size="8" text-anchor="end" fill="#333333">7</text>
+  <text id="tick-y-8" x="64" y="193" font-family="Arial" font-size="8" text-anchor="end" fill="#333333">8</text>
+  <text id="tick-y-9" x="64" y="123" font-family="Arial" font-size="8" text-anchor="end" fill="#333333">9</text>
+  <text id="tick-y-10" x="64" y="53" font-family="Arial" font-size="8" text-anchor="end" fill="#333333">10</text>
+  <text id="tick-x-0" x="120" y="276" font-family="Arial" font-size="8" text-anchor="middle" fill="#333333">0</text>
+  <text id="tick-x-1" x="350" y="276" font-family="Arial" font-size="8" text-anchor="middle" fill="#333333">1</text>
+  <polyline id="series-data-figure" points="120,243.2 350,59.8" fill="none" stroke="#4C72B0" stroke-width="2"/>
+  <polyline id="series-teaching" points="120,140.3 350,50" fill="none" stroke="#DD8452" stroke-width="2"/>
+  <polyline id="series-icon" points="120,149.4 350,131.9" fill="none" stroke="#00FF66" stroke-width="2"/>
+  <polyline id="series-slide" points="120,225 350,73.1" fill="none" stroke="#8172B3" stroke-width="2"/>
+  <circle id="pt-data-figure-0" cx="120" cy="243.2" r="4" fill="#4C72B0"/>
+  <circle id="pt-data-figure-1" cx="350" cy="59.8" r="4" fill="#4C72B0"/>
+  <circle id="pt-teaching-0" cx="120" cy="140.3" r="4" fill="#DD8452"/>
+  <circle id="pt-teaching-1" cx="350" cy="50" r="4" fill="#DD8452"/>
+  <circle id="pt-icon-0" cx="120" cy="149.4" r="4" fill="#00FF66"/>
+  <circle id="pt-icon-1" cx="350" cy="131.9" r="4" fill="#00FF66"/>
+  <circle id="pt-slide-0" cx="120" cy="225" r="4" fill="#8172B3"/>
+  <circle id="pt-slide-1" cx="350" cy="73.1" r="4" fill="#8172B3"/>
+  <rect id="legend-swatch-data-figure" x="420" y="58" width="12" height="12" fill="#4C72B0"/>
+  <text id="legend-data-figure" x="436" y="68" font-family="Arial" font-size="10" fill="#333333">data-figure (bar chart)</text>
+  <rect id="legend-swatch-teaching" x="420" y="68" width="12" height="12" fill="#DD8452"/>
+  <text id="legend-teaching" x="436" y="78" font-family="Arial" font-size="10" fill="#333333">teaching (generated)</text>
+  <rect id="legend-swatch-icon" x="420" y="78" width="12" height="12" fill="#00FF66"/>
+  <text id="legend-icon" x="436" y="88" font-family="Arial" font-size="10" fill="#333333">icon (process icon)</text>
+  <rect id="legend-swatch-slide" x="420" y="88" width="12" height="12" fill="#8172B3"/>
+  <text id="legend-slide" x="436" y="98" font-family="Arial" font-size="10" fill="#333333">slide (pipeline)</text>
+</svg>

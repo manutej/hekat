@@ -157,15 +157,42 @@ The generator itself was improved alongside: wide pipelines fold into rows (`--m
 default 3.0) instead of producing banners, feedback edges loop under or over only the blocks
 they span, and containers are titled only when the title says more than the list of blocks.
 
+## Elements, icons and motion
+
+* **Element kinds** (`figtree/elements.py`, `--shapes`): stores are cylinders, documents have a
+  folded corner, decisions are diamonds, start/end states are pills, people are actors. Each is
+  one `<path data-role="block" data-bbox=…>`, so ports, critic and rubric treat it like a block.
+* **Icons** (`figtree/icons.py`, `--icons`): a monoline family on a 24-grid (stroke 2,
+  `currentColor`, round joins) emitted as `<symbol>` definitions and placed with `<use>` inside
+  blocks by role (grounder → search, critic → eye, worker → wrench, render → image, …).
+* **Animation** (`figtree/animate.py`, `figtree animate`): three motions, each tied to meaning:
+  *reveal* builds the figure in reading order (the way the recursion builds it), *draw* grows
+  each connector before its arrowhead appears (a marker-less shaft copy draws first, so no
+  standalone triangles), *pulse* sends a token along every data flow, slower and dimmer on
+  dashed control edges. Delays are derived from the program, so the timeline is deterministic;
+  `prefers-reduced-motion` shows the final state. Frames can be checked with headless Chromium's
+  `--virtual-time-budget`.
+* **Icon smith** (`figtree/iconsmith.py`, `figtree icon "name: concept | metaphor"`): the same
+  loop applied to icon design. A draughtsman (rule-based composition, or Claude) proposes the
+  inner SVG; the icon rubric plus family rules (safe margin, stroke count, coverage, one stroke
+  width, no fills, no text) score it; mechanical fixes apply; accepted icons join the library.
+
 ## Backends
 
 * **rule** (default, offline): deterministic Grounder (arrow chains, named roles, numbered
   workflow steps, inputs/outputs), deterministic Generator/Worker, structural Critic.
-* **claude**: `ClaudeGrounder` and `ClaudeCritic` in `figtree/agents/llm.py` use the spec's
-  prompts (`figtree/prompts.py`) with JSON-schema structured outputs and the 2-retry rule; the
-  Critic also receives the rendered PNG when a renderer exists. Generator and Worker stay
-  deterministic so the code view is reproducible. Requires the `anthropic` package and
-  credentials; the default model is `claude-opus-5-5`.
+* **claude**: `ClaudeGrounder`, `ClaudeCritic`, `ClaudeEditor` (prose request → edit script)
+  and `ClaudeDraughtsman` (icon brief → inner SVG) in `figtree/agents/llm.py` use the spec's
+  prompts (`figtree/prompts.py`) with JSON-schema structured outputs and the 2-retry rule.
+  Credentials are resolved by `default_backend()`:
+  1. the Anthropic SDK when `ANTHROPIC_API_KEY` / `ANTHROPIC_AUTH_TOKEN` is set (the critic
+     then also receives the rendered PNG);
+  2. otherwise the **Claude Code CLI** (`figtree/agents/claude_code.py`): `claude -p` with
+     `--json-schema`, no tools, no session persistence, running on the OAuth login of the
+     Claude Code session itself. No key to manage; a structured call costs about a cent.
+  Generator and Worker stay deterministic so the code view is reproducible. The Claude critic
+  reviews internal (merged) nodes by default (`scope="internal"`, `max_calls=12`); leaves are
+  fully covered by the structural rules.
 
 ## Integration contracts (spec section 8)
 
@@ -174,6 +201,30 @@ they span, and containers are titled only when the title says more than the list
 * Nodes are stored as sheaf stalks with residual sections (`result.layout_tree.to_dict()`).
 * `figtree.integrations.to_work_graph(result)` emits nodes/edges JSON for a Notion Work Graph,
   p5js or an editorial dashboard; the SVG itself is plain, id-addressable SVG 1.1.
+
+## Showcase and worker rounds
+
+`examples/figtree/showcase/build_showcase.py` assembles every result into one page
+(`showcase.html`): the loop figure generated from `examples/figtree/loop.md`, the three
+methodology figures with icons and shapes, the Claude-grounded variant, five refinement
+before/after pairs with their score trajectories, the icon family sheet, the animated figure,
+the meta-prompt skeleton and the rules the loop learned. Every figure is inlined as editable
+SVG with namespaced ids. The full animated explainer with scrubber and captions is
+`examples/figtree/animated/index.html`.
+
+Three worker agents ran iterative rounds on their own areas and left notes:
+`examples/figtree/icons/NOTES.md` (icon family), `examples/figtree/animated/NOTES.md`
+(explainer: headless virtual time starved by a rAF loop, caption pacing, dark-theme legend),
+`examples/figtree/teaching/NOTES-dashboard-chart.md` (dashboard tiles and trajectory chart:
+mechanical fixes that create overflow, gradient contrast, neon strokes, prominent-text titles).
+
+Findings from the Claude-grounded run (`examples/figtree/claude/`): the model finds components
+the rules cannot (SourceText, Rollback, FinalSVG, resource bounds) but returns a sparser flow
+graph and conditional edges, which the deterministic layout draws less cleanly than a dense
+pipeline; its global style is not adopted by default; its critic findings are advisory (anchor
+`model:`) and never trigger the structural re-decompose rule; it reads up to 16000 characters
+of source rather than the specification's 5000, because a truncated root figure made it report
+the truncation as a defect.
 
 ## Known limitations
 

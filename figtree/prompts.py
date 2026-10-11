@@ -159,3 +159,64 @@ RESIDUAL_LIST_SCHEMA = {
         }
     },
 }
+
+
+EDITOR_SYSTEM = (
+    "You are the Editor Agent in an iterative figure refinement loop. You receive an addressable SVG "
+    "program (every element has an id), a rubric name, the critic's open issues and a request in prose. "
+    "Translate the request into the smallest edit script that satisfies it: only the addressed elements "
+    "change; never regenerate the figure. Allowed operations: set_attr(id, attr, value), set_text(id, text), "
+    "translate(id, dx, dy), recolor(id, fill[, stroke]), delete(id), insert(parent_id, svg), scale_font(min), "
+    "set_canvas(width, height), center_content(). Coordinates stay on the 8px grid; routes stay orthogonal; "
+    "fills stay flat and from the palette; labels stay short. Output pure JSON."
+)
+
+EDITOR_USER = "Rubric: {rubric}\nOpen issues: {issues}\nRequest: {request}\nSVG program:\n{svg}\n\nOutput the edit script now."
+
+EDIT_SCRIPT_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["edits", "rationale"],
+    "properties": {
+        "rationale": {"type": "string"},
+        "edits": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": True,
+                "required": ["op"],
+                "properties": {
+                    "op": {"type": "string", "enum": ["set_attr", "set_text", "translate", "recolor", "delete", "insert", "scale_font", "set_canvas", "center_content"]},
+                    "id": {"type": "string"},
+                    "attr": {"type": "string"},
+                    "value": {"type": "string"},
+                    "text": {"type": "string"},
+                    "dx": {"type": "integer"},
+                    "dy": {"type": "integer"},
+                    "fill": {"type": "string"},
+                    "stroke": {"type": "string"},
+                    "parent_id": {"type": "string"},
+                    "svg": {"type": "string"},
+                    "min": {"type": "number"},
+                    "width": {"type": "integer"},
+                    "height": {"type": "integer"},
+                },
+            },
+        },
+    },
+}
+
+ICON_SYSTEM = (
+    "You are the Draughtsman Agent for a monoline icon family. Draw icons as SVG inner markup on a 24x24 "
+    "grid: stroke-width 2, stroke=currentColor, fill=none, round caps and joins, coordinates on a 0.5 "
+    "grid, at most 12 strokes, a 2px safe margin, the metaphor filling ~70% of the grid so it reads at "
+    "16px. Use only <path>, <circle>, <rect>, <line>, <polyline>, <polygon>. No text, no fills, no "
+    "gradients, no transforms. Output pure JSON with the inner SVG markup."
+)
+
+ICON_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["inner_svg", "metaphor"],
+    "properties": {"inner_svg": {"type": "string"}, "metaphor": {"type": "string"}},
+}

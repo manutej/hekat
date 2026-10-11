@@ -117,7 +117,7 @@ class QualityCritic:
         shapes = prog.shapes()
         texts = prog.texts()
         flows = prog.flows()
-        blocks = [e for e in shapes if e.tag in ("rect", "circle", "ellipse", "polygon") and e.bbox and not (e.tag == "rect" and e.bbox.w >= W and e.bbox.h >= H)]
+        blocks = [e for e in shapes if (e.tag in ("rect", "circle", "ellipse", "polygon") or e.el.get("data-role") == "block") and e.bbox and not (e.tag == "rect" and e.bbox.w >= W and e.bbox.h >= H)]
 
         def add(dim: str, sev: str, desc: str, anchor: str, fix: str, penalty: float, edit: Optional[EditOp] = None) -> None:
             issues.append(Issue(dim, sev, desc, anchor, fix, penalty, edit))
@@ -239,7 +239,10 @@ class QualityCritic:
             # contrast against the shape behind the text
             col = parse_color(t.fill) or (0, 0, 0)
             bg = self._background_for(prog, t, blocks)
-            if bg is not None:
+            host_fill = self._host_fill(prog, t)
+            if host_fill and host_fill.lower().startswith("url("):
+                add("text_quality", "warning", f"{t.id} sits on a gradient/pattern fill; contrast cannot be guaranteed", t.id, "give the host a flat fill", 1.0)
+            elif bg is not None:
                 cr = contrast_ratio(col, bg)
                 if cr < R.min_contrast:
                     fix_col = "#333333" if contrast_ratio((0x33, 0x33, 0x33), bg) >= contrast_ratio((255, 255, 255), bg) else "#FFFFFF"
@@ -275,7 +278,10 @@ class QualityCritic:
             if c is not None and hex_color(c) not in GREYS and saturation(c) > 0.05:
                 palette[hex_color(c)] += 1
                 if saturation(c) > 0.9 and max(c) > 240:
-                    neon.append(s)
+                    neon.append((s, "fill"))
+            sc = parse_color(s.stroke) if s.tag in ("path", "line", "polyline") else None
+            if sc is not None and hex_color(sc) not in GREYS and saturation(sc) > 0.9 and max(sc) > 240:
+                neon.append((s, "stroke"))
             if s.stroke and s.stroke.lower() != "none" and s.stroke_width is not None and s.tag != "text":
                 strokes[round(s.stroke_width, 1)] += 1
             fill = (s.fill or "").lower()
@@ -288,8 +294,9 @@ class QualityCritic:
         metrics["palette_size"] = len(palette)
         if len(palette) > R.max_palette:
             add("visual_polish", "warning", f"{len(palette)} accent colours (limit {R.max_palette}): {', '.join(palette)}", "svg", "reduce to a small semantic palette", 1.0 * (len(palette) - R.max_palette))
-        for s in neon:
-            add("visual_polish", "warning", f"{s.id} uses a neon colour {s.fill}", s.id, "use a muted tone from the palette", 0.8, {"op": "recolor", "id": s.id, "fill": "#7BA3C9"})
+        for s, which in neon:
+            colour = s.fill if which == "fill" else s.stroke
+            add("visual_polish", "warning", f"{s.id} uses a neon {which} colour {colour}", s.id, "use a muted tone from the palette", 0.8, {"op": "recolor", "id": s.id, which: "#7BA3C9"})
         if len(strokes) > R.max_stroke_widths:
             if R.max_stroke_widths == 1:
                 common = strokes.most_common(1)[0][0]
@@ -312,8 +319,11 @@ class QualityCritic:
             rotated = [t for t in texts if "rotate" in (t.el.get("transform") or "")]
             if len(axis_like) + len(rotated) < 2:
                 add("semantic_coverage", "critical", "axis label(s) with units are missing", "svg", "add x and y axis labels with units (insert <text data-role=\"axis-label\">)", 2.5)
-            if not any(t.text and len(t.text.split()) >= 3 for t in texts):
-                add("semantic_coverage", "warning", "no title stating the finding", "svg", "add a one-line title that states what the data shows", 1.0)
+            titled = [t for t in texts if t.text and t.bbox and t.font_size]
+            if titled:
+                top = max(titled, key=lambda t: (t.font_size, -t.bbox.y))
+                if len(top.text.split()) < 3:
+                    add("semantic_coverage", "warning", f"the most prominent text ({top.text[:30]!r}) does not state the finding", top.id, "make the title a one-line statement of what the data shows", 1.0)
 
         # ---------------- topology ----------------
         groups = [e for e in prog.elements if e.tag == "g" and e.el.get("data-bbox")]
@@ -357,6 +367,16 @@ class QualityCritic:
         if not hosts:
             return None
         return min(hosts, key=lambda b: b.bbox.w * b.bbox.h)
+
+    @staticmethod
+    def _host_fill(prog: Program, t: ElementInfo) -> Optional[str]:
+        if t.bbox is None:
+            return None
+        cx, cy = t.bbox.x + t.bbox.w // 2, t.bbox.y + t.bbox.h // 2
+        hosts = [b for b in prog.shapes() if b.tag in ("rect", "circle", "ellipse", "polygon", "path") and b.bbox and b.bbox.contains_point(cx, cy, strict=False) and b.fill and b.fill.lower() != "none" and b.id != t.id]
+        if not hosts:
+            return None
+        return min(hosts, key=lambda b: b.bbox.w * b.bbox.h).fill
 
     def _background_for(self, prog: Program, t: ElementInfo, blocks: List[ElementInfo]) -> Optional[Tuple[int, int, int]]:
         if t.bbox is None:

@@ -30,6 +30,16 @@ requests. Answer them with an edit script (one list per round):
 ```
 Python: `from figtree.refine import Refiner; Refiner("teaching").run(svg, requests)`.
 
+## Elements, icons, animation, custom icons
+```bash
+python -m figtree generate SOURCE.md -o fig.svg --icons --shapes --max-aspect 2.4
+python -m figtree animate fig.svg -o fig.animated.svg [--css fig.css]     # reveal, draw, pulse
+python -m figtree icon "name: concept | metaphor" ... -o icons/ --backend claude --sheet icons/sheet.svg
+```
+`--backend claude` needs no API key inside Claude Code: it drives `claude -p` on the session's
+own OAuth. The category-level procedure for any SVG or animation task is in
+`docs/META-PROMPT-SVG-ARTIFACTS.md`.
+
 ## Refine-step contract (recursive-meta-prompting integration)
 ```python
 from figtree.integrations import refine_step

@@ -1,0 +1,31 @@
+dashboard: overall 7.5
+  semantic_coverage        n/a
+  hallucination_control    n/a
+  topology_accuracy      10.00
+  flow_readability       10.00
+  text_quality            1.00
+  visual_polish           5.50
+  medium_fit             10.00
+  compactness             8.50
+  [warning] compactness: canvas aspect 3.60 outside the dashboard tile range 0.8-2.0 (banner or tower shape) -> re-flow the layout into rows so the figure is closer to the medium's aspect (request)
+  [warning] text_quality: tile-refined-label font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-refined-label has 8 words (limit 6) -> shorten to a keyword label (request)
+  [critical] text_quality: tile-refined-label overflows its block tile-refined -> widen the block or shorten the label (request)
+  [critical] text_quality: tile-refined-value contrast 1.8:1 below 4.5:1 -> use #333333 text on #F7F7F7 (auto)
+  [warning] text_quality: tile-refined-note font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-refined-note contrast 3.3:1 below 4.5:1 -> use #333333 text on #F7F7F7 (auto)
+  [critical] text_quality: tile-refined-note overflows its block tile-refined -> widen the block or shorten the label (request)
+  [warning] text_quality: tile-gain-label font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-gain-note font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-gain-note has 10 words (limit 6) -> shorten to a keyword label (request)
+  [warning] text_quality: tile-requests-label font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-requests-note font size 9px below the dashboard tile minimum 12px -> raise font size to at least 12px (auto)
+  [warning] text_quality: tile-requests-note contrast 3.5:1 below 4.5:1 -> use #333333 text on #FFFFFF (auto)
+  [warning] visual_polish: tile-refined-value uses Georgia; the figure's family is Arial -> set font-family to Arial (auto)
+  [warning] visual_polish: tile-gain-value uses Georgia; the figure's family is Arial -> set font-family to Arial (auto)
+  [warning] visual_polish: tile-requests-value uses Georgia; the figure's family is Arial -> set font-family to Arial (auto)
+  [warning] visual_polish: 2 font families in one figure: Arial, Georgia -> use one font family (Arial) (request)
+  [warning] visual_polish: tile-refined corner radius 24 looks clip-art like -> use rx <= 8 (auto)
+  [warning] visual_polish: tile-gain uses a gradient or pattern fill -> replace with a flat fill (auto)
+  [warning] visual_polish: tile-gain corner radius 24 looks clip-art like -> use rx <= 8 (auto)
+  [warning] visual_polish: tile-requests corner radius 24 looks clip-art like -> use rx <= 8 (auto)

@@ -1,0 +1,255 @@
+{
+  "rubric": "teaching",
+  "initial": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 1.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 8.5
+    },
+    "overall": 8.25,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "canvas aspect 2.54 outside the teaching material range 1.0-2.4 (banner or tower shape)",
+        "code_anchor": "svg",
+        "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+        "penalty": 1.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n6.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n6.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n6.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n7.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n7.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n7.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n8.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n8.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n8.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n9.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n9.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n9.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n10.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n10.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n10.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n11.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n11.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n11.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n12.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n12.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n12.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n13.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n13.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n13.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "n14.label font size 12px below the teaching material minimum 14px",
+        "code_anchor": "n14.label",
+        "fix_instruction": "raise font size to at least 14px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "n14.label",
+          "attr": "font-size",
+          "value": "14"
+        }
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.804,
+      "aspect": 2.54,
+      "mean_detour": 1.1,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 2
+    }
+  },
+  "final": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 8.5
+    },
+    "overall": 9.75,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "canvas aspect 2.54 outside the teaching material range 1.0-2.4 (banner or tower shape)",
+        "code_anchor": "svg",
+        "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+        "penalty": 1.5,
+        "auto_edit": null
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.804,
+      "aspect": 2.54,
+      "mean_detour": 1.1,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 2
+    }
+  },
+  "improvement": 1.5,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 8.25,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 1.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.5
+      },
+      "issues": 10,
+      "critical": 0,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": "/tmp/figtree-kqyr2uo6/round0.png",
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 9.75,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.5
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 9,
+      "edits_failed": 0,
+      "diff_elements": 9,
+      "rendered": "/tmp/figtree-xozyxmax/round1.png",
+      "note": "set_attr:n6.label; set_attr:n7.label; set_attr:n8.label; set_attr:n9.label; set_attr:n10.label; set_attr:n11.label; set_attr:n12.label; set_attr:n13.label; set_attr:n14.label"
+    }
+  ],
+  "requests_remaining": [
+    {
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "canvas aspect 2.54 outside the teaching material range 1.0-2.4 (banner or tower shape)",
+      "code_anchor": "svg",
+      "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+      "penalty": 1.5,
+      "auto_edit": null
+    }
+  ],
+  "stop_reason": "no edits left",
+  "ids_assigned": 17
+}

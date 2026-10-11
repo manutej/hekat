@@ -268,7 +268,7 @@
         "parent_id": "n5",
         "description": "Adversarial Review",
         "canvas": {
-          "w": 144,
+          "w": 160,
           "h": 32
         },
         "ports": [
@@ -285,7 +285,7 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 144,
+            "rel_x": 160,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -295,7 +295,7 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 72,
+            "rel_x": 80,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -305,7 +305,7 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 72,
+            "rel_x": 80,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -336,7 +336,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 144,
+          "w": 160,
           "h": 32
         },
         "residuals": [],
@@ -346,7 +346,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 48,
-          "y": 24
+          "y": 32
         },
         "svg_fragment": null
       },
@@ -355,7 +355,7 @@
         "parent_id": "n5",
         "description": "Refine Step",
         "canvas": {
-          "w": 96,
+          "w": 128,
           "h": 32
         },
         "ports": [
@@ -372,7 +372,7 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 96,
+            "rel_x": 128,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -382,7 +382,7 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 48,
+            "rel_x": 64,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -392,7 +392,7 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 48,
+            "rel_x": 64,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -423,7 +423,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 96,
+          "w": 128,
           "h": 32
         },
         "residuals": [],
@@ -432,8 +432,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 216,
-          "y": 24
+          "x": 232,
+          "y": 32
         },
         "svg_fragment": null
       },
@@ -442,15 +442,15 @@
         "parent_id": "n5",
         "description": "Convergence Check",
         "canvas": {
-          "w": 128,
-          "h": 32
+          "w": 192,
+          "h": 48
         },
         "ports": [
           {
             "id": "n8.left",
             "side": "left",
             "rel_x": 0,
-            "rel_y": 16,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -459,8 +459,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 128,
-            "rel_y": 16,
+            "rel_x": 192,
+            "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -469,7 +469,7 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 64,
+            "rel_x": 96,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -479,8 +479,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 64,
-            "rel_y": 32,
+            "rel_x": 96,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -510,8 +510,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 128,
-          "h": 32
+          "w": 192,
+          "h": 48
         },
         "residuals": [],
         "components": [
@@ -519,7 +519,7 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 336,
+          "x": 384,
           "y": 24
         },
         "svg_fragment": null
@@ -529,15 +529,15 @@
         "parent_id": "n1",
         "description": "Adversarial Review, Refine Step, Convergence Check",
         "canvas": {
-          "w": 496,
-          "h": 104
+          "w": 608,
+          "h": 120
         },
         "ports": [
           {
             "id": "n6.left",
             "side": "left",
             "rel_x": 48,
-            "rel_y": 40,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -546,8 +546,8 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 192,
-            "rel_y": 40,
+            "rel_x": 208,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -556,8 +556,8 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 120,
-            "rel_y": 24,
+            "rel_x": 128,
+            "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -566,8 +566,8 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 120,
-            "rel_y": 56,
+            "rel_x": 128,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -576,8 +576,8 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 216,
-            "rel_y": 40,
+            "rel_x": 232,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -586,8 +586,8 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 312,
-            "rel_y": 40,
+            "rel_x": 360,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -596,8 +596,8 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 264,
-            "rel_y": 24,
+            "rel_x": 296,
+            "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -606,8 +606,8 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 264,
-            "rel_y": 56,
+            "rel_x": 296,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -616,8 +616,8 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 336,
-            "rel_y": 40,
+            "rel_x": 384,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -626,8 +626,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 464,
-            "rel_y": 40,
+            "rel_x": 576,
+            "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -636,7 +636,7 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 400,
+            "rel_x": 480,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
@@ -646,8 +646,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 400,
-            "rel_y": 56,
+            "rel_x": 480,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -679,7 +679,7 @@
             "parent_id": "n5",
             "description": "Adversarial Review",
             "canvas": {
-              "w": 144,
+              "w": 160,
               "h": 32
             },
             "ports": [
@@ -696,7 +696,7 @@
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 144,
+                "rel_x": 160,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -706,7 +706,7 @@
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 72,
+                "rel_x": 80,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -716,7 +716,7 @@
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 72,
+                "rel_x": 80,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -747,7 +747,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 144,
+              "w": 160,
               "h": 32
             },
             "residuals": [],
@@ -757,7 +757,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 48,
-              "y": 24
+              "y": 32
             },
             "svg_fragment": null
           },
@@ -766,7 +766,7 @@
             "parent_id": "n5",
             "description": "Refine Step",
             "canvas": {
-              "w": 96,
+              "w": 128,
               "h": 32
             },
             "ports": [
@@ -783,7 +783,7 @@
               {
                 "id": "n7.right",
                 "side": "right",
-                "rel_x": 96,
+                "rel_x": 128,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -793,7 +793,7 @@
               {
                 "id": "n7.top",
                 "side": "top",
-                "rel_x": 48,
+                "rel_x": 64,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -803,7 +803,7 @@
               {
                 "id": "n7.bottom",
                 "side": "bottom",
-                "rel_x": 48,
+                "rel_x": 64,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -834,7 +834,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 96,
+              "w": 128,
               "h": 32
             },
             "residuals": [],
@@ -843,8 +843,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 216,
-              "y": 24
+              "x": 232,
+              "y": 32
             },
             "svg_fragment": null
           },
@@ -853,15 +853,15 @@
             "parent_id": "n5",
             "description": "Convergence Check",
             "canvas": {
-              "w": 128,
-              "h": 32
+              "w": 192,
+              "h": 48
             },
             "ports": [
               {
                 "id": "n8.left",
                 "side": "left",
                 "rel_x": 0,
-                "rel_y": 16,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -870,8 +870,8 @@
               {
                 "id": "n8.right",
                 "side": "right",
-                "rel_x": 128,
-                "rel_y": 16,
+                "rel_x": 192,
+                "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -880,7 +880,7 @@
               {
                 "id": "n8.top",
                 "side": "top",
-                "rel_x": 64,
+                "rel_x": 96,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -890,8 +890,8 @@
               {
                 "id": "n8.bottom",
                 "side": "bottom",
-                "rel_x": 64,
-                "rel_y": 32,
+                "rel_x": 96,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -921,8 +921,8 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 128,
-              "h": 32
+              "w": 192,
+              "h": 48
             },
             "residuals": [],
             "components": [
@@ -930,7 +930,7 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 336,
+              "x": 384,
               "y": 24
             },
             "svg_fragment": null
@@ -939,8 +939,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 496,
-          "h": 104
+          "w": 608,
+          "h": 120
         },
         "residuals": [],
         "components": [
@@ -960,8 +960,8 @@
         "parent_id": null,
         "description": "Recursive Meta Prompting (RMP) Skill",
         "canvas": {
-          "w": 568,
-          "h": 232
+          "w": 680,
+          "h": 248
         },
         "ports": [
           {
@@ -1088,7 +1088,7 @@
             "id": "n6.left",
             "side": "left",
             "rel_x": 96,
-            "rel_y": 144,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1097,8 +1097,8 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 240,
-            "rel_y": 144,
+            "rel_x": 256,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1107,8 +1107,8 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 168,
-            "rel_y": 128,
+            "rel_x": 176,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1117,8 +1117,8 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 168,
-            "rel_y": 160,
+            "rel_x": 176,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1127,8 +1127,8 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 264,
-            "rel_y": 144,
+            "rel_x": 280,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1137,8 +1137,8 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 360,
-            "rel_y": 144,
+            "rel_x": 408,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1147,8 +1147,8 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 312,
-            "rel_y": 128,
+            "rel_x": 344,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1157,8 +1157,8 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 312,
-            "rel_y": 160,
+            "rel_x": 344,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1167,8 +1167,8 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 384,
-            "rel_y": 144,
+            "rel_x": 432,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1177,8 +1177,8 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 512,
-            "rel_y": 144,
+            "rel_x": 624,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1187,7 +1187,7 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 448,
+            "rel_x": 528,
             "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
@@ -1197,8 +1197,8 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 448,
-            "rel_y": 160,
+            "rel_x": 528,
+            "rel_y": 176,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1491,15 +1491,15 @@
             "parent_id": "n1",
             "description": "Adversarial Review, Refine Step, Convergence Check",
             "canvas": {
-              "w": 496,
-              "h": 104
+              "w": 608,
+              "h": 120
             },
             "ports": [
               {
                 "id": "n6.left",
                 "side": "left",
                 "rel_x": 48,
-                "rel_y": 40,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1508,8 +1508,8 @@
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 192,
-                "rel_y": 40,
+                "rel_x": 208,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1518,8 +1518,8 @@
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 120,
-                "rel_y": 24,
+                "rel_x": 128,
+                "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1528,8 +1528,8 @@
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 120,
-                "rel_y": 56,
+                "rel_x": 128,
+                "rel_y": 64,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1538,8 +1538,8 @@
               {
                 "id": "n7.left",
                 "side": "left",
-                "rel_x": 216,
-                "rel_y": 40,
+                "rel_x": 232,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1548,8 +1548,8 @@
               {
                 "id": "n7.right",
                 "side": "right",
-                "rel_x": 312,
-                "rel_y": 40,
+                "rel_x": 360,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1558,8 +1558,8 @@
               {
                 "id": "n7.top",
                 "side": "top",
-                "rel_x": 264,
-                "rel_y": 24,
+                "rel_x": 296,
+                "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1568,8 +1568,8 @@
               {
                 "id": "n7.bottom",
                 "side": "bottom",
-                "rel_x": 264,
-                "rel_y": 56,
+                "rel_x": 296,
+                "rel_y": 64,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1578,8 +1578,8 @@
               {
                 "id": "n8.left",
                 "side": "left",
-                "rel_x": 336,
-                "rel_y": 40,
+                "rel_x": 384,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1588,8 +1588,8 @@
               {
                 "id": "n8.right",
                 "side": "right",
-                "rel_x": 464,
-                "rel_y": 40,
+                "rel_x": 576,
+                "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1598,7 +1598,7 @@
               {
                 "id": "n8.top",
                 "side": "top",
-                "rel_x": 400,
+                "rel_x": 480,
                 "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1608,8 +1608,8 @@
               {
                 "id": "n8.bottom",
                 "side": "bottom",
-                "rel_x": 400,
-                "rel_y": 56,
+                "rel_x": 480,
+                "rel_y": 72,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1641,7 +1641,7 @@
                 "parent_id": "n5",
                 "description": "Adversarial Review",
                 "canvas": {
-                  "w": 144,
+                  "w": 160,
                   "h": 32
                 },
                 "ports": [
@@ -1658,7 +1658,7 @@
                   {
                     "id": "n6.right",
                     "side": "right",
-                    "rel_x": 144,
+                    "rel_x": 160,
                     "rel_y": 16,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1668,7 +1668,7 @@
                   {
                     "id": "n6.top",
                     "side": "top",
-                    "rel_x": 72,
+                    "rel_x": 80,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1678,7 +1678,7 @@
                   {
                     "id": "n6.bottom",
                     "side": "bottom",
-                    "rel_x": 72,
+                    "rel_x": 80,
                     "rel_y": 32,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1709,7 +1709,7 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 144,
+                  "w": 160,
                   "h": 32
                 },
                 "residuals": [],
@@ -1719,7 +1719,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 48,
-                  "y": 24
+                  "y": 32
                 },
                 "svg_fragment": null
               },
@@ -1728,7 +1728,7 @@
                 "parent_id": "n5",
                 "description": "Refine Step",
                 "canvas": {
-                  "w": 96,
+                  "w": 128,
                   "h": 32
                 },
                 "ports": [
@@ -1745,7 +1745,7 @@
                   {
                     "id": "n7.right",
                     "side": "right",
-                    "rel_x": 96,
+                    "rel_x": 128,
                     "rel_y": 16,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1755,7 +1755,7 @@
                   {
                     "id": "n7.top",
                     "side": "top",
-                    "rel_x": 48,
+                    "rel_x": 64,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1765,7 +1765,7 @@
                   {
                     "id": "n7.bottom",
                     "side": "bottom",
-                    "rel_x": 48,
+                    "rel_x": 64,
                     "rel_y": 32,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1796,7 +1796,7 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 96,
+                  "w": 128,
                   "h": 32
                 },
                 "residuals": [],
@@ -1805,8 +1805,8 @@
                 ],
                 "layout": "horizontal",
                 "offset": {
-                  "x": 216,
-                  "y": 24
+                  "x": 232,
+                  "y": 32
                 },
                 "svg_fragment": null
               },
@@ -1815,15 +1815,15 @@
                 "parent_id": "n5",
                 "description": "Convergence Check",
                 "canvas": {
-                  "w": 128,
-                  "h": 32
+                  "w": 192,
+                  "h": 48
                 },
                 "ports": [
                   {
                     "id": "n8.left",
                     "side": "left",
                     "rel_x": 0,
-                    "rel_y": 16,
+                    "rel_y": 24,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "input",
@@ -1832,8 +1832,8 @@
                   {
                     "id": "n8.right",
                     "side": "right",
-                    "rel_x": 128,
-                    "rel_y": 16,
+                    "rel_x": 192,
+                    "rel_y": 24,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "output",
@@ -1842,7 +1842,7 @@
                   {
                     "id": "n8.top",
                     "side": "top",
-                    "rel_x": 64,
+                    "rel_x": 96,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1852,8 +1852,8 @@
                   {
                     "id": "n8.bottom",
                     "side": "bottom",
-                    "rel_x": 64,
-                    "rel_y": 32,
+                    "rel_x": 96,
+                    "rel_y": 48,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "output",
@@ -1883,8 +1883,8 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 128,
-                  "h": 32
+                  "w": 192,
+                  "h": 48
                 },
                 "residuals": [],
                 "components": [
@@ -1892,7 +1892,7 @@
                 ],
                 "layout": "horizontal",
                 "offset": {
-                  "x": 336,
+                  "x": 384,
                   "y": 24
                 },
                 "svg_fragment": null
@@ -1901,8 +1901,8 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 496,
-              "h": 104
+              "w": 608,
+              "h": 120
             },
             "residuals": [],
             "components": [
@@ -1921,8 +1921,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 568,
-          "h": 232
+          "w": 680,
+          "h": 248
         },
         "residuals": [],
         "components": [

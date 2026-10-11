@@ -1,0 +1,10 @@
+dashboard: overall 9.75
+  semantic_coverage        n/a
+  hallucination_control    n/a
+  topology_accuracy      10.00
+  flow_readability       10.00
+  text_quality           10.00
+  visual_polish          10.00
+  medium_fit             10.00
+  compactness             8.50
+  [warning] compactness: canvas aspect 3.60 outside the dashboard tile range 0.8-2.0 (banner or tower shape) -> re-flow the layout into rows so the figure is closer to the medium's aspect (request)

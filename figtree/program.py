@@ -179,17 +179,13 @@ class Program:
 
 
 def _canvas(root: ET.Element) -> Tuple[int, int]:
+    """Canvas size in user units: the viewBox when present (geometry lives there), else width/height."""
     vb = root.get("viewBox")
-    w = parse_len(root.get("width"), 0)
-    h = parse_len(root.get("height"), 0)
     if vb:
         parts = [float(v) for v in re.split(r"[ ,]+", vb.strip()) if v]
-        if len(parts) == 4:
-            if not w:
-                w = parts[2]
-            if not h:
-                h = parts[3]
-    return int(round(w)), int(round(h))
+        if len(parts) == 4 and parts[2] > 0 and parts[3] > 0:
+            return int(round(parts[2])), int(round(parts[3]))
+    return int(round(parse_len(root.get("width"), 0))), int(round(parse_len(root.get("height"), 0)))
 
 
 def _shape_bbox(el: ET.Element, off: Tuple[int, int]) -> Optional[BBox]:
@@ -259,7 +255,7 @@ def load_program(svg_text: str) -> Program:
             own_off = (off[0] + t[0], off[1] + t[1])
             bbox = _shape_bbox(el, own_off) if tag in SHAPE_TAGS else None
             text = "".join(el.itertext()).strip() if tag == "text" else ""
-            is_flow = tag in ("path", "line", "polyline") and bool(el.get("marker-end") or el.get("data-flow"))
+            is_flow = tag in ("path", "line", "polyline") and bool(el.get("marker-end") or el.get("data-flow")) and el.get("data-role") != "block"
             pts: List[Tuple[int, int]] = []
             if tag == "path":
                 pts = [(x + own_off[0], y + own_off[1]) for x, y in path_to_points(el.get("d", ""))]

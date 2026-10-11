@@ -105,6 +105,8 @@ class StructuralCritic:
                 continue
             # fills / strokes
             fill = (el.get("fill") or "").upper()
+            if tag == "use":
+                fill = ""
             if _URL_REF.search(fill) or _URL_REF.search((el.get("stroke") or "")):
                 add("warning", f"{eid} uses a paint server (gradient/pattern)", eid, self._fix("gradient present", "replace with flat fill from palette"))
             elif tag == "rect" and fill and fill not in palette_values:
@@ -147,6 +149,13 @@ class StructuralCritic:
                 mw = el.get("data-max-width")
                 if mw and bbox is not None and bbox.w > int(mw) - 8:
                     add("critical", f"{eid} text overflows its block", eid, self._fix("text overflow", "reduce font or expand block"))
+            elif tag == "path" and el.get("data-role") == "block":
+                if bbox is not None:
+                    block_boxes.append((eid, bbox))
+                    if any(not on_grid(v, grid) for v in (bbox.x, bbox.y, bbox.w, bbox.h)):
+                        add("warning", f"{eid} not on {grid}px grid", eid, self._fix("ungrid coordinate", "ceil snap to multiple of 8"))
+            elif tag == "use":
+                pass  # icons: library symbols, validated by the icon rubric
             elif tag in ("path", "line", "polyline"):
                 if tag == "path":
                     pts = path_to_points(el.get("d", ""))

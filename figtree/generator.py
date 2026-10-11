@@ -14,7 +14,9 @@ from typing import Dict, List, Optional, Sequence, Set
 from figtree.geometry import ceil_to_grid
 from figtree.ingest import to_noun_phrase
 from figtree.schemas import Flow, GlobalStyle, Node, Port, ResidualDefect
-from figtree.svgmodel import Fragment, PathEl, RectEl, TextEl
+from figtree.elements import kind_for, shape_path, text_inset
+from figtree.icons import icon_for
+from figtree.svgmodel import Fragment, PathEl, RectEl, ShapeEl, TextEl, UseEl
 
 MAX_DEPTH = 8
 LEAF_TOKEN_LIMIT = 40
@@ -118,10 +120,17 @@ def _chunk(items: List[List[str]], k: int) -> List[List[str]]:
 
 @dataclass
 class RuleBasedGenerator:
-    """Deterministic Decompose/Draw.  ``faults`` injects defects for critic-loop testing."""
+    """Deterministic Decompose/Draw.  ``faults`` injects defects for critic-loop testing.
+
+    ``icons`` places a library icon inside each block; ``shapes`` draws stores, documents,
+    decisions, terminals and actors with their conventional silhouettes instead of plain
+    rectangles.
+    """
 
     faults: Set[str] = field(default_factory=set)
     max_depth: int = MAX_DEPTH
+    icons: bool = False
+    shapes: bool = False
 
     # -- Decompose -------------------------------------------------------
     def decompose(self, node: Node, next_id) -> List[Node]:
@@ -164,36 +173,56 @@ class RuleBasedGenerator:
         lines = [n for n in names]
         longest = max(lines, key=len)
         text_w = int(round(len(longest) * label_size * 0.5))
+        kind = kind_for(names[0]) if self.shapes else "block"
+        icon = icon_for(names[0]) if self.icons else None
+        inset_l, inset_r = text_inset(kind)
+        icon_w = 24 if icon else 0  # 16px glyph + 8px gap, starts at x=8
         # compact academic blocks (paper: ~60-100px wide, 20-30px tall); 8-grid forces 32 tall
-        w = ceil_to_grid(max(64, text_w + 2 * 12), 2 * grid)
-        h = ceil_to_grid(max(32, int(label_size * 1.2) * len(lines) + 2 * 8), 2 * grid)
+        w = ceil_to_grid(max(64, text_w + 2 * 12 + inset_l + inset_r + icon_w), 2 * grid)
+        h = ceil_to_grid(max(32 if kind not in ("decision", "actor") else 48, int(label_size * 1.2) * len(lines) + 2 * 8), 2 * grid)
         if "ungrid" in self.faults:
             w += 3
         fill = fill_for(names[0], style.palette)
         if "gradient" in self.faults:
             fill = "url(#fake-gradient)"
-        rect = RectEl(
-            id=f"{node.id}.block",
-            x=0,
-            y=0,
-            w=w,
-            h=h,
-            fill=fill,
-            stroke=style.palette["border"],
-            stroke_width=style.stroke_main,
-            role="block",
-            rx=4,
-            extra={"data-component": names[0]},
-        )
+        if kind == "block":
+            rect = RectEl(
+                id=f"{node.id}.block",
+                x=0,
+                y=0,
+                w=w,
+                h=h,
+                fill=fill,
+                stroke=style.palette["border"],
+                stroke_width=style.stroke_main,
+                role="block",
+                rx=4,
+                extra={"data-component": names[0]},
+            )
+        else:
+            rect = ShapeEl(
+                id=f"{node.id}.block",
+                kind=kind,
+                x=0,
+                y=0,
+                w=w,
+                h=h,
+                fill=fill if kind != "actor" else "none",
+                stroke=style.palette["border"],
+                stroke_width=style.stroke_main,
+                extra={"data-component": names[0]},
+            )
+        text_x = (w + icon_w + inset_l - inset_r) // 2
+        text_x = ceil_to_grid(text_x, grid) if text_x % grid else text_x
         text = TextEl(
             id=f"{node.id}.label",
-            x=w // 2,
+            x=text_x,
             y=h // 2,
             text=lines[0],
             size=label_size,
             kind="label",
             font=style.font,
-            max_width=w,
+            max_width=w - icon_w - inset_l - inset_r,
             lines=lines if len(lines) > 1 else [],
         )
         if "text-overflow" in self.faults:
@@ -216,7 +245,10 @@ class RuleBasedGenerator:
                 Port(id=f"{nid}.{k}.top", side="top", rel_x=w // 2, rel_y=0, type="input", component=extra_comp),
                 Port(id=f"{nid}.{k}.bottom", side="bottom", rel_x=w // 2, rel_y=h, type="output", component=extra_comp),
             ])
-        frag = Fragment(node_id=node.id, w=w, h=h, elements=[rect, text], ports=ports)
+        elements: List = [rect, text]
+        if icon:
+            elements.insert(1, UseEl(id=f"{node.id}.icon", href=f"#icon-{icon}", x=8, y=(h - 16) // 2, w=16, h=16, color=style.palette["border"]))
+        frag = Fragment(node_id=node.id, w=w, h=h, elements=elements, ports=ports)
         if "diagonal" in self.faults:
             frag.elements.append(
                 PathEl(id=f"{node.id}.diag", points=[(0, 0), (w, h)], marker=False, flow_type="data")

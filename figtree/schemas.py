@@ -303,7 +303,8 @@ class Node:
             yield from c.walk()
 
     def critical_count(self) -> int:
-        return sum(1 for r in self.residuals if r.severity == "critical")
+        """Structural criticals only; advisory model findings (anchor ``model:…``) do not count."""
+        return sum(1 for r in self.residuals if r.severity == "critical" and not r.code_anchor.startswith("model:"))
 
     def to_dict(self, include_svg: bool = False) -> Dict[str, Any]:
         d: Dict[str, Any] = {

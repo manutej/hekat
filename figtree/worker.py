@@ -19,7 +19,7 @@ from figtree.geometry import (
     terminal_direction,
 )
 from figtree.schemas import BBox, Flow, GlobalStyle, Node, Port, ResidualDefect
-from figtree.svgmodel import Fragment, GroupEl, PathEl, RectEl, TextEl
+from figtree.svgmodel import Fragment, GroupEl, PathEl, RectEl, ShapeEl, TextEl
 
 
 class RepairError(Exception):
@@ -176,7 +176,7 @@ class Worker:
         leaf_blocks: Dict[str, BBox] = {}
         for c in children:
             for el, off in c.model.iter_all((c.offset["x"], c.offset["y"])):
-                if isinstance(el, RectEl) and el.role == "block":
+                if isinstance(el, (RectEl, ShapeEl)) and el.role == "block":
                     leaf_blocks[el.extra.get("data-component", el.id)] = BBox(el.x + off[0], el.y + off[1], el.w, el.h)
         paths: List[PathEl] = []
         over = under = 0
@@ -387,7 +387,7 @@ class Worker:
         relayout = False
         for d in defects:
             fix = d.fix_instruction.lower()
-            el = frag.find(d.code_anchor)
+            el = frag.find(d.code_anchor[6:] if d.code_anchor.startswith("model:") else d.code_anchor)
             # dispatch in priority order: the most specific instruction wins
             if "expand block" in fix or "text overflow" in fix:
                 if isinstance(el, TextEl):
@@ -466,7 +466,7 @@ class Worker:
     @staticmethod
     def _expand_block_for_text(frag: Fragment, text: TextEl, style: GlobalStyle) -> None:
         need = ceil_to_grid(text.est_width() + 32, 2 * style.grid)
-        block = next((r for r in frag.rects() if r.role == "block"), None)
+        block = next((r for r in frag.elements if isinstance(r, (RectEl, ShapeEl)) and r.role == "block"), None)
         if block is None:
             return
         if block.w < need:
@@ -495,7 +495,7 @@ class Worker:
             return
         max_x = max(b.x2 for b in content)
         max_y = max(b.y2 for b in content)
-        leaf = any(isinstance(e, RectEl) and e.role == "block" for e in frag.elements) and not frag.groups()
+        leaf = any(isinstance(e, (RectEl, ShapeEl)) and e.role == "block" for e in frag.elements) and not frag.groups()
         if leaf:
             frag.w = ceil_to_grid(max_x, style.grid)
             frag.h = ceil_to_grid(max_y, style.grid)

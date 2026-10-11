@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="360" viewBox="0 0 736 360" font-family="Times New Roman" data-figtree="1">
+  <title>The FigTree loop</title>
+  <rect id="background" x="0" y="0" width="736" height="360" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 736 360">
+    <!-- PORT:left x=72 y=64 id=n6.left type=input component="Source" -->
+    <!-- PORT:right x=168 y=64 id=n6.right type=output component="Source" -->
+    <!-- PORT:top x=120 y=48 id=n6.top type=input component="Source" -->
+    <!-- PORT:bottom x=120 y=80 id=n6.bottom type=output component="Source" -->
+    <!-- PORT:left x=192 y=64 id=n7.left type=input component="Grounder" -->
+    <!-- PORT:right x=288 y=64 id=n7.right type=output component="Grounder" -->
+    <!-- PORT:top x=240 y=48 id=n7.top type=input component="Grounder" -->
+    <!-- PORT:bottom x=240 y=80 id=n7.bottom type=output component="Grounder" -->
+    <!-- PORT:left x=368 y=64 id=n8.left type=input component="Content plan" -->
+    <!-- PORT:right x=464 y=64 id=n8.right type=output component="Content plan" -->
+    <!-- PORT:top x=416 y=48 id=n8.top type=input component="Content plan" -->
+    <!-- PORT:bottom x=416 y=80 id=n8.bottom type=output component="Content plan" -->
+    <!-- PORT:left x=488 y=64 id=n9.left type=input component="Recursive construction" -->
+    <!-- PORT:right x=680 y=64 id=n9.right type=output component="Recursive construction" -->
+    <!-- PORT:top x=584 y=48 id=n9.top type=input component="Recursive construction" -->
+    <!-- PORT:bottom x=584 y=80 id=n9.bottom type=output component="Recursive construction" -->
+    <!-- PORT:left x=72 y=232 id=n10.left type=input component="Program" -->
+    <!-- PORT:right x=152 y=232 id=n10.right type=output component="Program" -->
+    <!-- PORT:top x=112 y=216 id=n10.top type=input component="Program" -->
+    <!-- PORT:bottom x=112 y=248 id=n10.bottom type=output component="Program" -->
+    <!-- PORT:left x=176 y=232 id=n11.left type=input component="Render" -->
+    <!-- PORT:right x=272 y=232 id=n11.right type=output component="Render" -->
+    <!-- PORT:top x=224 y=216 id=n11.top type=input component="Render" -->
+    <!-- PORT:bottom x=224 y=248 id=n11.bottom type=output component="Render" -->
+    <!-- PORT:left x=368 y=192 id=n12.left type=input component="Critic" -->
+    <!-- PORT:right x=464 y=192 id=n12.right type=output component="Critic" -->
+    <!-- PORT:top x=416 y=176 id=n12.top type=input component="Critic" -->
+    <!-- PORT:bottom x=416 y=208 id=n12.bottom type=output component="Critic" -->
+    <!-- PORT:left x=488 y=192 id=n13.left type=input component="Edit script" -->
+    <!-- PORT:right x=584 y=192 id=n13.right type=output component="Edit script" -->
+    <!-- PORT:top x=536 y=176 id=n13.top type=input component="Edit script" -->
+    <!-- PORT:bottom x=536 y=208 id=n13.bottom type=output component="Edit script" -->
+    <!-- PORT:left x=368 y=272 id=n14.left type=input component="Score" -->
+    <!-- PORT:right x=448 y=272 id=n14.right type=output component="Score" -->
+    <!-- PORT:top x=408 y=256 id=n14.top type=input component="Score" -->
+    <!-- PORT:bottom x=408 y=288 id=n14.bottom type=output component="Score" -->
+    <!-- PORT:left x=472 y=272 id=n15.left type=input component="Editable SVG" -->
+    <!-- PORT:right x=568 y=272 id=n15.right type=output component="Editable SVG" -->
+    <!-- PORT:top x=520 y=256 id=n15.top type=input component="Editable SVG" -->
+    <!-- PORT:bottom x=520 y=288 id=n15.bottom type=output component="Editable SVG" -->
+    <g id="n2" transform="translate(48,24)" data-bbox="48 24 264 80" data-label="Source, Grounder">
+      <!-- PORT:left x=24 y=40 id=n6.left type=input component="Source" -->
+      <!-- PORT:right x=120 y=40 id=n6.right type=output component="Source" -->
+      <!-- PORT:top x=72 y=24 id=n6.top type=input component="Source" -->
+      <!-- PORT:bottom x=72 y=56 id=n6.bottom type=output component="Source" -->
+      <!-- PORT:left x=144 y=40 id=n7.left type=input component="Grounder" -->
+      <!-- PORT:right x=240 y=40 id=n7.right type=output component="Grounder" -->
+      <!-- PORT:top x=192 y=24 id=n7.top type=input component="Grounder" -->
+      <!-- PORT:bottom x=192 y=56 id=n7.bottom type=output component="Grounder" -->
+      <rect id="n2.container" x="0" y="0" width="264" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n6" transform="translate(24,24)" data-bbox="24 24 96 32" data-label="Source">
+        <!-- PORT:left x=0 y=16 id=n6.left type=input component="Source" -->
+        <!-- PORT:right x=96 y=16 id=n6.right type=output component="Source" -->
+        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Source" -->
+        <!-- PORT:bottom x=48 y=32 id=n6.bottom type=output component="Source" -->
+        <rect id="n6.block" x="0" y="0" width="96" height="32" fill="#D5D5D5" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Source"/>
+        <use id="n6.icon" href="#icon-document" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n6.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Source</text>
+      </g>
+      <g id="n7" transform="translate(144,24)" data-bbox="144 24 96 32" data-label="Grounder">
+        <!-- PORT:left x=0 y=16 id=n7.left type=input component="Grounder" -->
+        <!-- PORT:right x=96 y=16 id=n7.right type=output component="Grounder" -->
+        <!-- PORT:top x=48 y=0 id=n7.top type=input component="Grounder" -->
+        <!-- PORT:bottom x=48 y=32 id=n7.bottom type=output component="Grounder" -->
+        <rect id="n7.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Grounder"/>
+        <use id="n7.icon" href="#icon-search" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n7.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Grounder</text>
+      </g>
+      <path id="n2.arrow0" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    </g>
+    <g id="n3" transform="translate(344,24)" data-bbox="344 24 360 80" data-label="Content plan, Recursive construction">
+      <!-- PORT:left x=24 y=40 id=n8.left type=input component="Content plan" -->
+      <!-- PORT:right x=120 y=40 id=n8.right type=output component="Content plan" -->
+      <!-- PORT:top x=72 y=24 id=n8.top type=input component="Content plan" -->
+      <!-- PORT:bottom x=72 y=56 id=n8.bottom type=output component="Content plan" -->
+      <!-- PORT:left x=144 y=40 id=n9.left type=input component="Recursive construction" -->
+      <!-- PORT:right x=336 y=40 id=n9.right type=output component="Recursive construction" -->
+      <!-- PORT:top x=240 y=24 id=n9.top type=input component="Recursive construction" -->
+      <!-- PORT:bottom x=240 y=56 id=n9.bottom type=output component="Recursive construction" -->
+      <rect id="n3.container" x="0" y="0" width="360" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n8" transform="translate(24,24)" data-bbox="24 24 96 32" data-label="Content plan">
+        <!-- PORT:left x=0 y=16 id=n8.left type=input component="Content plan" -->
+        <!-- PORT:right x=96 y=16 id=n8.right type=output component="Content plan" -->
+        <!-- PORT:top x=48 y=0 id=n8.top type=input component="Content plan" -->
+        <!-- PORT:bottom x=48 y=32 id=n8.bottom type=output component="Content plan" -->
+        <rect id="n8.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Content plan"/>
+        <text id="n8.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Content plan</text>
+      </g>
+      <g id="n9" transform="translate(144,24)" data-bbox="144 24 192 32" data-label="Recursive construction">
+        <!-- PORT:left x=0 y=16 id=n9.left type=input component="Recursive construction" -->
+        <!-- PORT:right x=192 y=16 id=n9.right type=output component="Recursive construction" -->
+        <!-- PORT:top x=96 y=0 id=n9.top type=input component="Recursive construction" -->
+        <!-- PORT:bottom x=96 y=32 id=n9.bottom type=output component="Recursive construction" -->
+        <rect id="n9.block" x="0" y="0" width="192" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Recursive construction"/>
+        <use id="n9.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n9.label" x="112" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="168">Recursive construction</text>
+      </g>
+      <path id="n3.arrow0" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left"/>
+    </g>
+    <g id="n4" transform="translate(48,192)" data-bbox="48 192 248 80" data-label="Program, Render">
+      <!-- PORT:left x=24 y=40 id=n10.left type=input component="Program" -->
+      <!-- PORT:right x=104 y=40 id=n10.right type=output component="Program" -->
+      <!-- PORT:top x=64 y=24 id=n10.top type=input component="Program" -->
+      <!-- PORT:bottom x=64 y=56 id=n10.bottom type=output component="Program" -->
+      <!-- PORT:left x=128 y=40 id=n11.left type=input component="Render" -->
+      <!-- PORT:right x=224 y=40 id=n11.right type=output component="Render" -->
+      <!-- PORT:top x=176 y=24 id=n11.top type=input component="Render" -->
+      <!-- PORT:bottom x=176 y=56 id=n11.bottom type=output component="Render" -->
+      <rect id="n4.container" x="0" y="0" width="248" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n10" transform="translate(24,24)" data-bbox="24 24 80 32" data-label="Program">
+        <!-- PORT:left x=0 y=16 id=n10.left type=input component="Program" -->
+        <!-- PORT:right x=80 y=16 id=n10.right type=output component="Program" -->
+        <!-- PORT:top x=40 y=0 id=n10.top type=input component="Program" -->
+        <!-- PORT:bottom x=40 y=32 id=n10.bottom type=output component="Program" -->
+        <rect id="n10.block" x="0" y="0" width="80" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Program"/>
+        <text id="n10.label" x="40" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="80">Program</text>
+      </g>
+      <g id="n11" transform="translate(128,24)" data-bbox="128 24 96 32" data-label="Render">
+        <!-- PORT:left x=0 y=16 id=n11.left type=input component="Render" -->
+        <!-- PORT:right x=96 y=16 id=n11.right type=output component="Render" -->
+        <!-- PORT:top x=48 y=0 id=n11.top type=input component="Render" -->
+        <!-- PORT:bottom x=48 y=32 id=n11.bottom type=output component="Render" -->
+        <rect id="n11.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Render"/>
+        <use id="n11.icon" href="#icon-image" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n11.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Render</text>
+      </g>
+      <path id="n4.arrow0" d="M104,40 H128" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left"/>
+    </g>
+    <g id="n5" transform="translate(320,152)" data-bbox="320 152 296 160" data-label="Critic, Edit script, Score, Editable SVG">
+      <!-- PORT:left x=48 y=40 id=n12.left type=input component="Critic" -->
+      <!-- PORT:right x=144 y=40 id=n12.right type=output component="Critic" -->
+      <!-- PORT:top x=96 y=24 id=n12.top type=input component="Critic" -->
+      <!-- PORT:bottom x=96 y=56 id=n12.bottom type=output component="Critic" -->
+      <!-- PORT:left x=168 y=40 id=n13.left type=input component="Edit script" -->
+      <!-- PORT:right x=264 y=40 id=n13.right type=output component="Edit script" -->
+      <!-- PORT:top x=216 y=24 id=n13.top type=input component="Edit script" -->
+      <!-- PORT:bottom x=216 y=56 id=n13.bottom type=output component="Edit script" -->
+      <!-- PORT:left x=48 y=120 id=n14.left type=input component="Score" -->
+      <!-- PORT:right x=128 y=120 id=n14.right type=output component="Score" -->
+      <!-- PORT:top x=88 y=104 id=n14.top type=input component="Score" -->
+      <!-- PORT:bottom x=88 y=136 id=n14.bottom type=output component="Score" -->
+      <!-- PORT:left x=152 y=120 id=n15.left type=input component="Editable SVG" -->
+      <!-- PORT:right x=248 y=120 id=n15.right type=output component="Editable SVG" -->
+      <!-- PORT:top x=200 y=104 id=n15.top type=input component="Editable SVG" -->
+      <!-- PORT:bottom x=200 y=136 id=n15.bottom type=output component="Editable SVG" -->
+      <rect id="n5.container" x="0" y="0" width="296" height="160" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n12" transform="translate(48,24)" data-bbox="48 24 96 32" data-label="Critic">
+        <!-- PORT:left x=0 y=16 id=n12.left type=input component="Critic" -->
+        <!-- PORT:right x=96 y=16 id=n12.right type=output component="Critic" -->
+        <!-- PORT:top x=48 y=0 id=n12.top type=input component="Critic" -->
+        <!-- PORT:bottom x=48 y=32 id=n12.bottom type=output component="Critic" -->
+        <rect id="n12.block" x="0" y="0" width="96" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Critic"/>
+        <use id="n12.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n12.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Critic</text>
+      </g>
+      <g id="n13" transform="translate(168,24)" data-bbox="168 24 96 32" data-label="Edit script">
+        <!-- PORT:left x=0 y=16 id=n13.left type=input component="Edit script" -->
+        <!-- PORT:right x=96 y=16 id=n13.right type=output component="Edit script" -->
+        <!-- PORT:top x=48 y=0 id=n13.top type=input component="Edit script" -->
+        <!-- PORT:bottom x=48 y=32 id=n13.bottom type=output component="Edit script" -->
+        <rect id="n13.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Edit script"/>
+        <text id="n13.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Edit script</text>
+      </g>
+      <g id="n14" transform="translate(48,104)" data-bbox="48 104 80 32" data-label="Score">
+        <!-- PORT:left x=0 y=16 id=n14.left type=input component="Score" -->
+        <!-- PORT:right x=80 y=16 id=n14.right type=output component="Score" -->
+        <!-- PORT:top x=40 y=0 id=n14.top type=input component="Score" -->
+        <!-- PORT:bottom x=40 y=32 id=n14.bottom type=output component="Score" -->
+        <rect id="n14.block" x="0" y="0" width="80" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Score"/>
+        <use id="n14.icon" href="#icon-chart" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n14.label" x="56" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="56">Score</text>
+      </g>
+      <g id="n15" transform="translate(152,104)" data-bbox="152 104 96 32" data-label="Editable SVG">
+        <!-- PORT:left x=0 y=16 id=n15.left type=input component="Editable SVG" -->
+        <!-- PORT:right x=96 y=16 id=n15.right type=output component="Editable SVG" -->
+        <!-- PORT:top x=48 y=0 id=n15.top type=input component="Editable SVG" -->
+        <!-- PORT:bottom x=48 y=32 id=n15.bottom type=output component="Editable SVG" -->
+        <rect id="n15.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Editable SVG"/>
+        <text id="n15.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Editable SVG</text>
+      </g>
+      <path id="n5.arrow0" d="M144,40 H168" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left"/>
+      <path id="n5.arrow1" d="M264,40 H272 V80 H24 V120 H48" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left"/>
+      <path id="n5.arrow2" d="M128,120 H152" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n14.right" data-to="n15.left"/>
+    </g>
+    <path id="n1.arrow0" d="M288,64 H368" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    <path id="n1.arrow1" d="M680,64 H712 V128 H24 V232 H72" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
+    <path id="n1.arrow2" d="M272,232 H320 V192 H368" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n12.left"/>
+    <path id="n1.arrow3" d="M408,288 V336 H584 V80" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n14.bottom" data-to="n9.bottom"/>
+  </g>
+</svg>

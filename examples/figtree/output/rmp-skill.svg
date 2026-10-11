@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="568" height="232" viewBox="0 0 568 232" font-family="Times New Roman" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="248" viewBox="0 0 680 248" font-family="Times New Roman" data-figtree="1">
   <title>Recursive Meta Prompting (RMP) Skill</title>
-  <rect id="background" x="0" y="0" width="568" height="232" fill="#FFFFFF" data-role="background"/>
+  <rect id="background" x="0" y="0" width="680" height="248" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
     </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 568 232">
+  <g id="n1" data-bbox="0 0 680 248">
     <!-- PORT:left x=48 y=40 id=n2.left type=input component="Task Intake" -->
     <!-- PORT:right x=144 y=40 id=n2.right type=output component="Task Intake" -->
     <!-- PORT:top x=96 y=24 id=n2.top type=input component="Task Intake" -->
@@ -19,18 +22,18 @@
     <!-- PORT:right x=400 y=40 id=n4.right type=output component="Scaffold Draft" -->
     <!-- PORT:top x=344 y=24 id=n4.top type=input component="Scaffold Draft" -->
     <!-- PORT:bottom x=344 y=56 id=n4.bottom type=output component="Scaffold Draft" -->
-    <!-- PORT:left x=96 y=144 id=n6.left type=input component="Adversarial Review" -->
-    <!-- PORT:right x=240 y=144 id=n6.right type=output component="Adversarial Review" -->
-    <!-- PORT:top x=168 y=128 id=n6.top type=input component="Adversarial Review" -->
-    <!-- PORT:bottom x=168 y=160 id=n6.bottom type=output component="Adversarial Review" -->
-    <!-- PORT:left x=264 y=144 id=n7.left type=input component="Refine Step" -->
-    <!-- PORT:right x=360 y=144 id=n7.right type=output component="Refine Step" -->
-    <!-- PORT:top x=312 y=128 id=n7.top type=input component="Refine Step" -->
-    <!-- PORT:bottom x=312 y=160 id=n7.bottom type=output component="Refine Step" -->
-    <!-- PORT:left x=384 y=144 id=n8.left type=input component="Convergence Check" -->
-    <!-- PORT:right x=512 y=144 id=n8.right type=output component="Convergence Check" -->
-    <!-- PORT:top x=448 y=128 id=n8.top type=input component="Convergence Check" -->
-    <!-- PORT:bottom x=448 y=160 id=n8.bottom type=output component="Convergence Check" -->
+    <!-- PORT:left x=96 y=152 id=n6.left type=input component="Adversarial Review" -->
+    <!-- PORT:right x=256 y=152 id=n6.right type=output component="Adversarial Review" -->
+    <!-- PORT:top x=176 y=136 id=n6.top type=input component="Adversarial Review" -->
+    <!-- PORT:bottom x=176 y=168 id=n6.bottom type=output component="Adversarial Review" -->
+    <!-- PORT:left x=280 y=152 id=n7.left type=input component="Refine Step" -->
+    <!-- PORT:right x=408 y=152 id=n7.right type=output component="Refine Step" -->
+    <!-- PORT:top x=344 y=136 id=n7.top type=input component="Refine Step" -->
+    <!-- PORT:bottom x=344 y=168 id=n7.bottom type=output component="Refine Step" -->
+    <!-- PORT:left x=432 y=152 id=n8.left type=input component="Convergence Check" -->
+    <!-- PORT:right x=624 y=152 id=n8.right type=output component="Convergence Check" -->
+    <!-- PORT:top x=528 y=128 id=n8.top type=input component="Convergence Check" -->
+    <!-- PORT:bottom x=528 y=176 id=n8.bottom type=output component="Convergence Check" -->
     <g id="n2" transform="translate(48,24)" data-bbox="48 24 96 32" data-label="Task Intake">
       <!-- PORT:left x=0 y=16 id=n2.left type=input component="Task Intake" -->
       <!-- PORT:right x=96 y=16 id=n2.right type=output component="Task Intake" -->
@@ -55,50 +58,53 @@
       <rect id="n4.block" x="0" y="0" width="112" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Scaffold Draft"/>
       <text id="n4.label" x="56" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="112">Scaffold Draft</text>
     </g>
-    <g id="n5" transform="translate(48,104)" data-bbox="48 104 496 104" data-label="Adversarial Review, Refine Step, Convergence Check">
-      <!-- PORT:left x=48 y=40 id=n6.left type=input component="Adversarial Review" -->
-      <!-- PORT:right x=192 y=40 id=n6.right type=output component="Adversarial Review" -->
-      <!-- PORT:top x=120 y=24 id=n6.top type=input component="Adversarial Review" -->
-      <!-- PORT:bottom x=120 y=56 id=n6.bottom type=output component="Adversarial Review" -->
-      <!-- PORT:left x=216 y=40 id=n7.left type=input component="Refine Step" -->
-      <!-- PORT:right x=312 y=40 id=n7.right type=output component="Refine Step" -->
-      <!-- PORT:top x=264 y=24 id=n7.top type=input component="Refine Step" -->
-      <!-- PORT:bottom x=264 y=56 id=n7.bottom type=output component="Refine Step" -->
-      <!-- PORT:left x=336 y=40 id=n8.left type=input component="Convergence Check" -->
-      <!-- PORT:right x=464 y=40 id=n8.right type=output component="Convergence Check" -->
-      <!-- PORT:top x=400 y=24 id=n8.top type=input component="Convergence Check" -->
-      <!-- PORT:bottom x=400 y=56 id=n8.bottom type=output component="Convergence Check" -->
-      <rect id="n5.container" x="0" y="0" width="496" height="104" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
-      <g id="n6" transform="translate(48,24)" data-bbox="48 24 144 32" data-label="Adversarial Review">
+    <g id="n5" transform="translate(48,104)" data-bbox="48 104 608 120" data-label="Adversarial Review, Refine Step, Convergence Check">
+      <!-- PORT:left x=48 y=48 id=n6.left type=input component="Adversarial Review" -->
+      <!-- PORT:right x=208 y=48 id=n6.right type=output component="Adversarial Review" -->
+      <!-- PORT:top x=128 y=32 id=n6.top type=input component="Adversarial Review" -->
+      <!-- PORT:bottom x=128 y=64 id=n6.bottom type=output component="Adversarial Review" -->
+      <!-- PORT:left x=232 y=48 id=n7.left type=input component="Refine Step" -->
+      <!-- PORT:right x=360 y=48 id=n7.right type=output component="Refine Step" -->
+      <!-- PORT:top x=296 y=32 id=n7.top type=input component="Refine Step" -->
+      <!-- PORT:bottom x=296 y=64 id=n7.bottom type=output component="Refine Step" -->
+      <!-- PORT:left x=384 y=48 id=n8.left type=input component="Convergence Check" -->
+      <!-- PORT:right x=576 y=48 id=n8.right type=output component="Convergence Check" -->
+      <!-- PORT:top x=480 y=24 id=n8.top type=input component="Convergence Check" -->
+      <!-- PORT:bottom x=480 y=72 id=n8.bottom type=output component="Convergence Check" -->
+      <rect id="n5.container" x="0" y="0" width="608" height="120" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n6" transform="translate(48,32)" data-bbox="48 32 160 32" data-label="Adversarial Review">
         <!-- PORT:left x=0 y=16 id=n6.left type=input component="Adversarial Review" -->
-        <!-- PORT:right x=144 y=16 id=n6.right type=output component="Adversarial Review" -->
-        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Adversarial Review" -->
-        <!-- PORT:bottom x=72 y=32 id=n6.bottom type=output component="Adversarial Review" -->
-        <rect id="n6.block" x="0" y="0" width="144" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Adversarial Review"/>
-        <text id="n6.label" x="72" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="144">Adversarial Review</text>
+        <!-- PORT:right x=160 y=16 id=n6.right type=output component="Adversarial Review" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Adversarial Review" -->
+        <!-- PORT:bottom x=80 y=32 id=n6.bottom type=output component="Adversarial Review" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Adversarial Review"/>
+        <use id="n6.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n6.label" x="96" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="136">Adversarial Review</text>
       </g>
-      <g id="n7" transform="translate(216,24)" data-bbox="216 24 96 32" data-label="Refine Step">
+      <g id="n7" transform="translate(232,32)" data-bbox="232 32 128 32" data-label="Refine Step">
         <!-- PORT:left x=0 y=16 id=n7.left type=input component="Refine Step" -->
-        <!-- PORT:right x=96 y=16 id=n7.right type=output component="Refine Step" -->
-        <!-- PORT:top x=48 y=0 id=n7.top type=input component="Refine Step" -->
-        <!-- PORT:bottom x=48 y=32 id=n7.bottom type=output component="Refine Step" -->
-        <rect id="n7.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Refine Step"/>
-        <text id="n7.label" x="48" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="96">Refine Step</text>
+        <!-- PORT:right x=128 y=16 id=n7.right type=output component="Refine Step" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Refine Step" -->
+        <!-- PORT:bottom x=64 y=32 id=n7.bottom type=output component="Refine Step" -->
+        <rect id="n7.block" x="0" y="0" width="128" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Refine Step"/>
+        <use id="n7.icon" href="#icon-loop" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n7.label" x="80" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="104">Refine Step</text>
       </g>
-      <g id="n8" transform="translate(336,24)" data-bbox="336 24 128 32" data-label="Convergence Check">
-        <!-- PORT:left x=0 y=16 id=n8.left type=input component="Convergence Check" -->
-        <!-- PORT:right x=128 y=16 id=n8.right type=output component="Convergence Check" -->
-        <!-- PORT:top x=64 y=0 id=n8.top type=input component="Convergence Check" -->
-        <!-- PORT:bottom x=64 y=32 id=n8.bottom type=output component="Convergence Check" -->
-        <rect id="n8.block" x="0" y="0" width="128" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Convergence Check"/>
-        <text id="n8.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="128">Convergence Check</text>
+      <g id="n8" transform="translate(384,24)" data-bbox="384 24 192 48" data-label="Convergence Check">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Convergence Check" -->
+        <!-- PORT:right x=192 y=24 id=n8.right type=output component="Convergence Check" -->
+        <!-- PORT:top x=96 y=0 id=n8.top type=input component="Convergence Check" -->
+        <!-- PORT:bottom x=96 y=48 id=n8.bottom type=output component="Convergence Check" -->
+        <path id="n8.block" d="M96,0 L192,24 L96,48 L0,24 Z" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 192 48" data-component="Convergence Check"/>
+        <use id="n8.icon" href="#icon-check" x="8" y="16" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n8.label" x="112" y="24" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="136">Convergence Check</text>
       </g>
-      <path id="n5.arrow0" d="M192,40 H216" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
-      <path id="n5.arrow1" d="M312,40 H336" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
-      <path id="n5.arrow2" d="M464,40 H472 V80 H24 V40 H48" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n6.left"/>
+      <path id="n5.arrow0" d="M208,48 H232" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+      <path id="n5.arrow1" d="M360,48 H384" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+      <path id="n5.arrow2" d="M576,48 H584 V96 H24 V48 H48" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n6.left"/>
     </g>
     <path id="n1.arrow0" d="M144,40 H168" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
     <path id="n1.arrow1" d="M264,40 H288" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
-    <path id="n1.arrow2" d="M400,40 H408 V80 H24 V144 H96" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+    <path id="n1.arrow2" d="M400,40 H408 V80 H24 V152 H96" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
   </g>
 </svg>

@@ -94,11 +94,17 @@ def apply_local_edit(svg_text: str, edit: Dict[str, Any]) -> Tuple[str, bool]:
     if op == "recolor":
         comp = re.escape(edit.get("component", ""))
         fill = edit.get("fill", "#F4A460")
-        pattern = re.compile(rf'(<rect [^>]*?fill=")([^"]*)("[^>]*data-component="{comp}"[^>]*/>)')
-        new, n = pattern.subn(lambda m: m.group(1) + fill + m.group(3), svg_text, count=1)
+        alternates = ["#F4A460", "#7BA3C9", "#FFF3CD", "#D5D5D5"]
+
+        def repl(m):
+            new_fill = fill if m.group(2).upper() != fill.upper() else next(a for a in alternates if a.upper() != m.group(2).upper())
+            return m.group(1) + new_fill + m.group(3)
+
+        pattern = re.compile(rf'(<(?:rect|path) [^>]*?fill=")([^"]*)("[^>]*data-component="{comp}"[^>]*/>)')
+        new, n = pattern.subn(repl, svg_text, count=1)
         if n == 0:  # fall back to the first block
-            pattern = re.compile(r'(<rect [^>]*?fill=")([^"]*)("[^>]*data-role="block"[^>]*/>)')
-            new, n = pattern.subn(lambda m: m.group(1) + fill + m.group(3), svg_text, count=1)
+            pattern = re.compile(r'(<(?:rect|path) [^>]*?fill=")([^"]*)("[^>]*data-role="block"[^>]*/>)')
+            new, n = pattern.subn(repl, svg_text, count=1)
         return new, False
     if op == "add_dashed_arrow":
         ports = extract_ports(svg_text)

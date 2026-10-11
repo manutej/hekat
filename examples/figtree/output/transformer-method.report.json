@@ -7,7 +7,7 @@
         "parent_id": "n1",
         "description": "Token Embedding",
         "canvas": {
-          "w": 128,
+          "w": 144,
           "h": 32
         },
         "ports": [
@@ -24,7 +24,7 @@
           {
             "id": "n2.right",
             "side": "right",
-            "rel_x": 128,
+            "rel_x": 144,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -34,7 +34,7 @@
           {
             "id": "n2.top",
             "side": "top",
-            "rel_x": 64,
+            "rel_x": 72,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -44,7 +44,7 @@
           {
             "id": "n2.bottom",
             "side": "bottom",
-            "rel_x": 64,
+            "rel_x": 72,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -75,7 +75,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 128,
+          "w": 144,
           "h": 32
         },
         "residuals": [],
@@ -94,7 +94,7 @@
         "parent_id": "n3",
         "description": "Text Encoder",
         "canvas": {
-          "w": 96,
+          "w": 128,
           "h": 32
         },
         "ports": [
@@ -111,7 +111,7 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 96,
+            "rel_x": 128,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -121,7 +121,7 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 48,
+            "rel_x": 64,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -131,7 +131,7 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 48,
+            "rel_x": 64,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -162,7 +162,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 96,
+          "w": 128,
           "h": 32
         },
         "residuals": [],
@@ -181,7 +181,7 @@
         "parent_id": "n3",
         "description": "Layout Encoder",
         "canvas": {
-          "w": 112,
+          "w": 144,
           "h": 32
         },
         "ports": [
@@ -198,7 +198,7 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 112,
+            "rel_x": 144,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -208,7 +208,7 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 56,
+            "rel_x": 72,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -218,7 +218,7 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 56,
+            "rel_x": 72,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -249,7 +249,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 112,
+          "w": 144,
           "h": 32
         },
         "residuals": [],
@@ -268,7 +268,7 @@
         "parent_id": "n1",
         "description": "Text Encoder, Layout Encoder",
         "canvas": {
-          "w": 160,
+          "w": 192,
           "h": 128
         },
         "ports": [
@@ -285,7 +285,7 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 128,
+            "rel_x": 160,
             "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
@@ -295,7 +295,7 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 80,
+            "rel_x": 96,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
@@ -305,7 +305,7 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 80,
+            "rel_x": 96,
             "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
@@ -325,7 +325,7 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 136,
+            "rel_x": 168,
             "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
@@ -335,7 +335,7 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 80,
+            "rel_x": 96,
             "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
@@ -345,7 +345,7 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 80,
+            "rel_x": 96,
             "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
@@ -378,7 +378,7 @@
             "parent_id": "n3",
             "description": "Text Encoder",
             "canvas": {
-              "w": 96,
+              "w": 128,
               "h": 32
             },
             "ports": [
@@ -395,7 +395,7 @@
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 96,
+                "rel_x": 128,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -405,7 +405,7 @@
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 48,
+                "rel_x": 64,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -415,7 +415,7 @@
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 48,
+                "rel_x": 64,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -446,7 +446,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 96,
+              "w": 128,
               "h": 32
             },
             "residuals": [],
@@ -465,7 +465,7 @@
             "parent_id": "n3",
             "description": "Layout Encoder",
             "canvas": {
-              "w": 112,
+              "w": 144,
               "h": 32
             },
             "ports": [
@@ -482,7 +482,7 @@
               {
                 "id": "n7.right",
                 "side": "right",
-                "rel_x": 112,
+                "rel_x": 144,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -492,7 +492,7 @@
               {
                 "id": "n7.top",
                 "side": "top",
-                "rel_x": 56,
+                "rel_x": 72,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -502,7 +502,7 @@
               {
                 "id": "n7.bottom",
                 "side": "bottom",
-                "rel_x": 56,
+                "rel_x": 72,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -533,7 +533,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 112,
+              "w": 144,
               "h": 32
             },
             "residuals": [],
@@ -551,7 +551,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 160,
+          "w": 192,
           "h": 128
         },
         "residuals": [],
@@ -561,7 +561,7 @@
         ],
         "layout": "vertical",
         "offset": {
-          "x": 200,
+          "x": 216,
           "y": 24
         },
         "svg_fragment": null
@@ -571,7 +571,7 @@
         "parent_id": "n1",
         "description": "Cross Attention",
         "canvas": {
-          "w": 128,
+          "w": 144,
           "h": 32
         },
         "ports": [
@@ -588,7 +588,7 @@
           {
             "id": "n4.right",
             "side": "right",
-            "rel_x": 128,
+            "rel_x": 144,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -598,7 +598,7 @@
           {
             "id": "n4.top",
             "side": "top",
-            "rel_x": 64,
+            "rel_x": 72,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -608,7 +608,7 @@
           {
             "id": "n4.bottom",
             "side": "bottom",
-            "rel_x": 64,
+            "rel_x": 72,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -639,7 +639,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 128,
+          "w": 144,
           "h": 32
         },
         "residuals": [],
@@ -648,8 +648,8 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 384,
-          "y": 72
+          "x": 48,
+          "y": 224
         },
         "svg_fragment": null
       },
@@ -832,7 +832,7 @@
         "parent_id": "n5",
         "description": "Classifier",
         "canvas": {
-          "w": 96,
+          "w": 112,
           "h": 32
         },
         "ports": [
@@ -849,7 +849,7 @@
           {
             "id": "n10.right",
             "side": "right",
-            "rel_x": 96,
+            "rel_x": 112,
             "rel_y": 16,
             "abs_x": 0,
             "abs_y": 0,
@@ -859,7 +859,7 @@
           {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 48,
+            "rel_x": 56,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
@@ -869,7 +869,7 @@
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 48,
+            "rel_x": 56,
             "rel_y": 32,
             "abs_x": 0,
             "abs_y": 0,
@@ -900,7 +900,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 96,
+          "w": 112,
           "h": 32
         },
         "residuals": [],
@@ -919,7 +919,7 @@
         "parent_id": "n1",
         "description": "Residual Add, Feed Forward, Classifier",
         "canvas": {
-          "w": 384,
+          "w": 400,
           "h": 80
         },
         "ports": [
@@ -1016,7 +1016,7 @@
           {
             "id": "n10.right",
             "side": "right",
-            "rel_x": 360,
+            "rel_x": 376,
             "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
@@ -1026,7 +1026,7 @@
           {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 312,
+            "rel_x": 320,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
@@ -1036,7 +1036,7 @@
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 312,
+            "rel_x": 320,
             "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
@@ -1243,7 +1243,7 @@
             "parent_id": "n5",
             "description": "Classifier",
             "canvas": {
-              "w": 96,
+              "w": 112,
               "h": 32
             },
             "ports": [
@@ -1260,7 +1260,7 @@
               {
                 "id": "n10.right",
                 "side": "right",
-                "rel_x": 96,
+                "rel_x": 112,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1270,7 +1270,7 @@
               {
                 "id": "n10.top",
                 "side": "top",
-                "rel_x": 48,
+                "rel_x": 56,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1280,7 +1280,7 @@
               {
                 "id": "n10.bottom",
                 "side": "bottom",
-                "rel_x": 48,
+                "rel_x": 56,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1311,7 +1311,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 96,
+              "w": 112,
               "h": 32
             },
             "residuals": [],
@@ -1329,7 +1329,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 384,
+          "w": 400,
           "h": 80
         },
         "residuals": [],
@@ -1340,7 +1340,7 @@
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 48,
+          "x": 216,
           "y": 200
         },
         "svg_fragment": null
@@ -1350,7 +1350,7 @@
         "parent_id": null,
         "description": "Dual-Branch Transformer for Document Grounding",
         "canvas": {
-          "w": 544,
+          "w": 640,
           "h": 304
         },
         "ports": [
@@ -1367,7 +1367,7 @@
           {
             "id": "n2.right",
             "side": "right",
-            "rel_x": 176,
+            "rel_x": 192,
             "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
@@ -1377,7 +1377,7 @@
           {
             "id": "n2.top",
             "side": "top",
-            "rel_x": 112,
+            "rel_x": 120,
             "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
@@ -1387,7 +1387,7 @@
           {
             "id": "n2.bottom",
             "side": "bottom",
-            "rel_x": 112,
+            "rel_x": 120,
             "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
@@ -1397,7 +1397,7 @@
           {
             "id": "n6.left",
             "side": "left",
-            "rel_x": 232,
+            "rel_x": 248,
             "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
@@ -1407,7 +1407,7 @@
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 328,
+            "rel_x": 376,
             "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
@@ -1417,7 +1417,7 @@
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 280,
+            "rel_x": 312,
             "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
@@ -1427,7 +1427,7 @@
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 280,
+            "rel_x": 312,
             "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
@@ -1437,7 +1437,7 @@
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 224,
+            "rel_x": 240,
             "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
@@ -1447,7 +1447,7 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 336,
+            "rel_x": 384,
             "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
@@ -1457,7 +1457,7 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 280,
+            "rel_x": 312,
             "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
@@ -1467,7 +1467,7 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 280,
+            "rel_x": 312,
             "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
@@ -1477,8 +1477,8 @@
           {
             "id": "n4.left",
             "side": "left",
-            "rel_x": 384,
-            "rel_y": 88,
+            "rel_x": 48,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1487,8 +1487,8 @@
           {
             "id": "n4.right",
             "side": "right",
-            "rel_x": 512,
-            "rel_y": 88,
+            "rel_x": 192,
+            "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1497,8 +1497,8 @@
           {
             "id": "n4.top",
             "side": "top",
-            "rel_x": 448,
-            "rel_y": 72,
+            "rel_x": 120,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1507,8 +1507,8 @@
           {
             "id": "n4.bottom",
             "side": "bottom",
-            "rel_x": 448,
-            "rel_y": 104,
+            "rel_x": 120,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1517,7 +1517,7 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 72,
+            "rel_x": 240,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1527,7 +1527,7 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 168,
+            "rel_x": 336,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1537,7 +1537,7 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 120,
+            "rel_x": 288,
             "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
@@ -1547,7 +1547,7 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 120,
+            "rel_x": 288,
             "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
@@ -1557,7 +1557,7 @@
           {
             "id": "n9.left",
             "side": "left",
-            "rel_x": 192,
+            "rel_x": 360,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1567,7 +1567,7 @@
           {
             "id": "n9.right",
             "side": "right",
-            "rel_x": 288,
+            "rel_x": 456,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1577,7 +1577,7 @@
           {
             "id": "n9.top",
             "side": "top",
-            "rel_x": 240,
+            "rel_x": 408,
             "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
@@ -1587,7 +1587,7 @@
           {
             "id": "n9.bottom",
             "side": "bottom",
-            "rel_x": 240,
+            "rel_x": 408,
             "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
@@ -1597,7 +1597,7 @@
           {
             "id": "n10.left",
             "side": "left",
-            "rel_x": 312,
+            "rel_x": 480,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1607,7 +1607,7 @@
           {
             "id": "n10.right",
             "side": "right",
-            "rel_x": 408,
+            "rel_x": 592,
             "rel_y": 240,
             "abs_x": 0,
             "abs_y": 0,
@@ -1617,7 +1617,7 @@
           {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 360,
+            "rel_x": 536,
             "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
@@ -1627,7 +1627,7 @@
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 360,
+            "rel_x": 536,
             "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
@@ -1660,7 +1660,7 @@
             "parent_id": "n1",
             "description": "Token Embedding",
             "canvas": {
-              "w": 128,
+              "w": 144,
               "h": 32
             },
             "ports": [
@@ -1677,7 +1677,7 @@
               {
                 "id": "n2.right",
                 "side": "right",
-                "rel_x": 128,
+                "rel_x": 144,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1687,7 +1687,7 @@
               {
                 "id": "n2.top",
                 "side": "top",
-                "rel_x": 64,
+                "rel_x": 72,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1697,7 +1697,7 @@
               {
                 "id": "n2.bottom",
                 "side": "bottom",
-                "rel_x": 64,
+                "rel_x": 72,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1728,7 +1728,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 128,
+              "w": 144,
               "h": 32
             },
             "residuals": [],
@@ -1747,7 +1747,7 @@
             "parent_id": "n1",
             "description": "Text Encoder, Layout Encoder",
             "canvas": {
-              "w": 160,
+              "w": 192,
               "h": 128
             },
             "ports": [
@@ -1764,7 +1764,7 @@
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 128,
+                "rel_x": 160,
                 "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1774,7 +1774,7 @@
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 80,
+                "rel_x": 96,
                 "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1784,7 +1784,7 @@
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 80,
+                "rel_x": 96,
                 "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1804,7 +1804,7 @@
               {
                 "id": "n7.right",
                 "side": "right",
-                "rel_x": 136,
+                "rel_x": 168,
                 "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1814,7 +1814,7 @@
               {
                 "id": "n7.top",
                 "side": "top",
-                "rel_x": 80,
+                "rel_x": 96,
                 "rel_y": 72,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1824,7 +1824,7 @@
               {
                 "id": "n7.bottom",
                 "side": "bottom",
-                "rel_x": 80,
+                "rel_x": 96,
                 "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -1857,7 +1857,7 @@
                 "parent_id": "n3",
                 "description": "Text Encoder",
                 "canvas": {
-                  "w": 96,
+                  "w": 128,
                   "h": 32
                 },
                 "ports": [
@@ -1874,7 +1874,7 @@
                   {
                     "id": "n6.right",
                     "side": "right",
-                    "rel_x": 96,
+                    "rel_x": 128,
                     "rel_y": 16,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1884,7 +1884,7 @@
                   {
                     "id": "n6.top",
                     "side": "top",
-                    "rel_x": 48,
+                    "rel_x": 64,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1894,7 +1894,7 @@
                   {
                     "id": "n6.bottom",
                     "side": "bottom",
-                    "rel_x": 48,
+                    "rel_x": 64,
                     "rel_y": 32,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1925,7 +1925,7 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 96,
+                  "w": 128,
                   "h": 32
                 },
                 "residuals": [],
@@ -1944,7 +1944,7 @@
                 "parent_id": "n3",
                 "description": "Layout Encoder",
                 "canvas": {
-                  "w": 112,
+                  "w": 144,
                   "h": 32
                 },
                 "ports": [
@@ -1961,7 +1961,7 @@
                   {
                     "id": "n7.right",
                     "side": "right",
-                    "rel_x": 112,
+                    "rel_x": 144,
                     "rel_y": 16,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1971,7 +1971,7 @@
                   {
                     "id": "n7.top",
                     "side": "top",
-                    "rel_x": 56,
+                    "rel_x": 72,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -1981,7 +1981,7 @@
                   {
                     "id": "n7.bottom",
                     "side": "bottom",
-                    "rel_x": 56,
+                    "rel_x": 72,
                     "rel_y": 32,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -2012,7 +2012,7 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 112,
+                  "w": 144,
                   "h": 32
                 },
                 "residuals": [],
@@ -2030,7 +2030,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 160,
+              "w": 192,
               "h": 128
             },
             "residuals": [],
@@ -2040,7 +2040,7 @@
             ],
             "layout": "vertical",
             "offset": {
-              "x": 200,
+              "x": 216,
               "y": 24
             },
             "svg_fragment": null
@@ -2050,7 +2050,7 @@
             "parent_id": "n1",
             "description": "Cross Attention",
             "canvas": {
-              "w": 128,
+              "w": 144,
               "h": 32
             },
             "ports": [
@@ -2067,7 +2067,7 @@
               {
                 "id": "n4.right",
                 "side": "right",
-                "rel_x": 128,
+                "rel_x": 144,
                 "rel_y": 16,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2077,7 +2077,7 @@
               {
                 "id": "n4.top",
                 "side": "top",
-                "rel_x": 64,
+                "rel_x": 72,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2087,7 +2087,7 @@
               {
                 "id": "n4.bottom",
                 "side": "bottom",
-                "rel_x": 64,
+                "rel_x": 72,
                 "rel_y": 32,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2118,7 +2118,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 128,
+              "w": 144,
               "h": 32
             },
             "residuals": [],
@@ -2127,8 +2127,8 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 384,
-              "y": 72
+              "x": 48,
+              "y": 224
             },
             "svg_fragment": null
           },
@@ -2137,7 +2137,7 @@
             "parent_id": "n1",
             "description": "Residual Add, Feed Forward, Classifier",
             "canvas": {
-              "w": 384,
+              "w": 400,
               "h": 80
             },
             "ports": [
@@ -2234,7 +2234,7 @@
               {
                 "id": "n10.right",
                 "side": "right",
-                "rel_x": 360,
+                "rel_x": 376,
                 "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2244,7 +2244,7 @@
               {
                 "id": "n10.top",
                 "side": "top",
-                "rel_x": 312,
+                "rel_x": 320,
                 "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2254,7 +2254,7 @@
               {
                 "id": "n10.bottom",
                 "side": "bottom",
-                "rel_x": 312,
+                "rel_x": 320,
                 "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2461,7 +2461,7 @@
                 "parent_id": "n5",
                 "description": "Classifier",
                 "canvas": {
-                  "w": 96,
+                  "w": 112,
                   "h": 32
                 },
                 "ports": [
@@ -2478,7 +2478,7 @@
                   {
                     "id": "n10.right",
                     "side": "right",
-                    "rel_x": 96,
+                    "rel_x": 112,
                     "rel_y": 16,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -2488,7 +2488,7 @@
                   {
                     "id": "n10.top",
                     "side": "top",
-                    "rel_x": 48,
+                    "rel_x": 56,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -2498,7 +2498,7 @@
                   {
                     "id": "n10.bottom",
                     "side": "bottom",
-                    "rel_x": 48,
+                    "rel_x": 56,
                     "rel_y": 32,
                     "abs_x": 0,
                     "abs_y": 0,
@@ -2529,7 +2529,7 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 96,
+                  "w": 112,
                   "h": 32
                 },
                 "residuals": [],
@@ -2547,7 +2547,7 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 384,
+              "w": 400,
               "h": 80
             },
             "residuals": [],
@@ -2558,7 +2558,7 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 48,
+              "x": 216,
               "y": 200
             },
             "svg_fragment": null
@@ -2567,7 +2567,7 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 544,
+          "w": 640,
           "h": 304
         },
         "residuals": [],
