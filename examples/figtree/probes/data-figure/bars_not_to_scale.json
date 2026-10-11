@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.bars_not_to_scale",
+  "rubric": "data-figure",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.bar_scale"
+  ],
+  "expect_silent": [],
+  "rationale": "Bar heights contradict their own value labels and the tick scale (the 87 bar is shorter than the 42 bar). Scores 10. Proposed: fit the y tick labels to their y positions (linear scale) and check each bar's height against its value label or against monotone ordering.",
+  "source": "adversary-chart"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.seven_series_palette",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "polish.palette_size"
+  ],
+  "expect_silent": [],
+  "rationale": "Seven series in seven muted colours: one over the data-figure limit of six and beyond what a colour-blind reader can separate. polish.palette_size must fire on the seven marker fills.",
+  "source": "adversary-chart"
+}

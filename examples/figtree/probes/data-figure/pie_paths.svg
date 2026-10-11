@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300" font-family="Arial">
+  <rect id="background" width="420" height="300" fill="#FFFFFF"/>
+  <text id="title" x="210" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Mobile delivers half of all sessions</text>
+  <text id="subtitle" x="210" y="44" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Sessions per device</text>
+  <path id="slice-mobile" d="M170,160 L170.0,60.0 A100,100 0 0 1 182.5,259.2 Z" fill="#4C72B0" stroke="#FFFFFF" stroke-width="1"/>
+  <path id="slice-desktop" d="M170,160 L182.5,259.2 A100,100 0 0 1 74.9,129.1 Z" fill="#DD8452" stroke="#FFFFFF" stroke-width="1"/>
+  <path id="slice-tablet" d="M170,160 L74.9,129.1 A100,100 0 0 1 133.2,67.0 Z" fill="#55A868" stroke="#FFFFFF" stroke-width="1"/>
+  <path id="slice-other" d="M170,160 L133.2,67.0 A100,100 0 0 1 170.0,60.0 Z" fill="#999999" stroke="#FFFFFF" stroke-width="1"/>
+  <rect id="legend-swatch-mobile" x="300" y="100" width="12" height="12" fill="#4C72B0"/>
+  <text id="legend-mobile" x="318" y="106" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Mobile 48%</text>
+  <rect id="legend-swatch-desktop" x="300" y="122" width="12" height="12" fill="#DD8452"/>
+  <text id="legend-desktop" x="318" y="128" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Desktop 32%</text>
+  <rect id="legend-swatch-tablet" x="300" y="144" width="12" height="12" fill="#55A868"/>
+  <text id="legend-tablet" x="318" y="150" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Tablet 14%</text>
+  <rect id="legend-swatch-other" x="300" y="166" width="12" height="12" fill="#999999"/>
+  <text id="legend-other" x="318" y="172" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Other 6%</text>
+  <text id="footnote" x="16" y="290" font-size="10" text-anchor="start" dominant-baseline="middle" fill="#333333">Count of sessions, 2025</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "id": "dashboard.sparkline_no_baseline",
+  "rubric": "dashboard",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.sparkline_reference"
+  ],
+  "expect_silent": [],
+  "rationale": "A sparkline with no baseline, no first/last value and no time span: the line's rise cannot be read in any unit, and the viewer cannot tell whether the range is 0-1284 or 1200-1284. Nothing is measured, the tile scores 10. Proposed: a polyline inside a tile needs a reference (zero/previous-period line, or labelled end points, or a span caption).",
+  "source": "adversary-chart"
+}

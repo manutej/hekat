@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="96" viewBox="0 0 400 96" font-family="Times New Roman">
+<style>
+@keyframes ft-reveal{from{opacity:0}to{opacity:1}}
+#n1{opacity:0;animation:ft-reveal .5s ease-out 0.00s forwards}
+#n2{opacity:0;animation:ft-reveal .5s ease-out 0.35s forwards}
+#n3{opacity:0;animation:ft-reveal .5s ease-out 0.70s forwards}
+@keyframes ft-draw{to{stroke-dashoffset:0}}
+@keyframes ft-appear{to{opacity:1}}
+#ft-shaft-0{stroke-dasharray:32;stroke-dashoffset:32;animation:ft-draw 0.6s ease-in-out 1.05s forwards}
+#f1{opacity:0;animation:ft-appear .01s linear 1.65s forwards}
+#ft-shaft-1{stroke-dasharray:32;stroke-dashoffset:32;animation:ft-draw 0.6s ease-in-out 1.20s forwards}
+#f2{opacity:0;animation:ft-appear .01s linear 1.80s forwards}
+#ft-shaft-2{stroke-dasharray:296;stroke-dashoffset:296;animation:ft-draw 0.6s ease-in-out 1.35s forwards}
+#f3{opacity:0;animation:ft-appear .01s linear 1.95s forwards}
+@keyframes ft-travel{from{offset-distance:0%}to{offset-distance:100%}}
+#ft-pulse-0{transform-box:fill-box;transform-origin:center;offset-path:path('M120,48 H152');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 2.10s infinite, ft-show .1s linear 2.10s forwards}
+#ft-pulse-1{transform-box:fill-box;transform-origin:center;offset-path:path('M248,48 H280');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 2.50s infinite, ft-show .1s linear 2.50s forwards}
+#ft-pulse-2{transform-box:fill-box;transform-origin:center;offset-path:path('M328,64 V84 H72 V64');offset-rotate:0deg;opacity:0;animation:ft-travel 0.8s linear 2.90s infinite, ft-show .1s linear 2.90s forwards}
+@keyframes ft-show{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){[id^=ft-pulse],[id^=ft-shaft]{display:none}*{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+</style>
+<rect id="background" width="400" height="96" fill="#FFFFFF" />
+<defs id="e1-defs"><marker id="a" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333" id="e2-path" /></marker></defs>
+<g id="n1"><rect id="b1" x="24" y="32" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block" /><text id="t1" x="72" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Source</text></g>
+<g id="n2"><rect id="b2" x="152" y="32" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block" /><text id="t2" x="200" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Model</text></g>
+<g id="n3"><rect id="b3" x="280" y="32" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block" /><text id="t3" x="328" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Output</text></g>
+<path id="f1" d="M120,48 H152" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#a)" />
+<path id="f2" d="M248,48 H280" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#a)" />
+<path id="f3" d="M328,64 V84 H72 V64" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#a)" />
+  <path id="ft-shaft-0" d="M120,48 H152" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
+  <path id="ft-shaft-1" d="M248,48 H280" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
+  <path id="ft-shaft-2" d="M328,64 V84 H72 V64" fill="none" stroke="#333333" stroke-width="1.2" data-role="anim-shaft"/>
+  <circle id="ft-pulse-0" cx="120" cy="48" r="3" fill="#333333" data-role="pulse"/>
+  <circle id="ft-pulse-1" cx="248" cy="48" r="3" fill="#333333" data-role="pulse"/>
+  <circle id="ft-pulse-2" cx="328" cy="64" r="3" fill="#333333" data-role="pulse"/>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "id": "dashboard.clean_tile_grid",
+  "rubric": "dashboard",
+  "kind": "clean",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.min_font",
+    "text.words_per_label",
+    "text.contrast",
+    "text.overflow",
+    "text.overlap",
+    "polish.palette_size",
+    "polish.stroke_widths",
+    "polish.corner_radius",
+    "polish.neon",
+    "compactness.blank_margin",
+    "compactness.overflow",
+    "compactness.aspect",
+    "flow.no_connectors"
+  ],
+  "rationale": "A correct 2x2 tile grid: equal tiles and gutters, label < number > delta hierarchy, red/green only on signed deltas, a sparkline with a dashed reference line and a span caption. Every check must stay silent.",
+  "source": "adversary-chart"
+}

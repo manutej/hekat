@@ -1,0 +1,16 @@
+{
+  "id": "icon.solid-currentcolor",
+  "rubric": "icon",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.icon.solid_fill"
+  ],
+  "expect_silent": [
+    "polish.palette_size",
+    "polish.gradient_fill",
+    "compactness.blank_margin",
+    "content.none"
+  ],
+  "rationale": "A solid (filled) star in an outline family. QualityCritic has no fill-style check for icons; iconsmith.icon_structural_issues exempts 'currentcolor' fills, which is exactly what a solid-style icon uses, so even the family rule is silent. Score 10. Check: any shape with fill not 'none' (currentColor included) whose area exceeds a dot (r > 1.5) in an outline family.",
+  "source": "adversary-icon"
+}

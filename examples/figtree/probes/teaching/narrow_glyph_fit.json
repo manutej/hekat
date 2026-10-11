@@ -1,0 +1,11 @@
+{
+  "id": "teaching.narrow_glyph_fit",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.overflow"
+  ],
+  "rationale": "'Initialisation' (14 chars, est. 98px) sits in an 88px block and 'Illustration' (12 chars, est. 84px) in a 76px block; both are mostly i/l/t glyphs and render at ~71px and ~63px in a serif, fitting with room to spare. The per-character 0.5em estimate reports both as overflowing.",
+  "source": "adversary-diagram"
+}

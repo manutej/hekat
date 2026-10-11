@@ -1,0 +1,14 @@
+{
+  "id": "icon.corner-mass",
+  "rubric": "icon",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.icon.ink_distribution"
+  ],
+  "expect_silent": [
+    "compactness.blank_margin",
+    "medium.icon_elements"
+  ],
+  "rationale": "The bbox spans 18x18 (coverage 56%) because of two axis lines, but all the ink that carries meaning sits in the bottom-left 6x5 corner; at 16px it is an L with a smudge. Coverage is a bbox ratio; a check should rasterise (or sample the strokes) and measure the ink centroid offset and the share of ink per quadrant.",
+  "source": "adversary-icon"
+}

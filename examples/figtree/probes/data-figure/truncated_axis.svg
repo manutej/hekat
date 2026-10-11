@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" font-family="Arial">
+  <rect id="background" width="500" height="300" fill="#FFFFFF"/>
+  <text id="title" x="250" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Variant B leaves the baseline far behind</text>
+  <line id="axis-x" x1="70" y1="250" x2="440" y2="250" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="70" y1="250" x2="70" y2="50" stroke="#000000" stroke-width="1"/>
+  <text id="tick-y-90" x="64" y="250" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">90</text>
+  <text id="tick-y-95" x="64" y="150" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">95</text>
+  <text id="tick-y-100" x="64" y="50" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">100</text>
+  <rect id="bar-0" x="90" y="128" width="60" height="122" fill="#4C72B0"/>
+  <text id="value-0" x="120" y="119" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">96.1</text>
+  <text id="tick-x-0" x="120" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Baseline</text>
+  <rect id="bar-1" x="185" y="114" width="60" height="136" fill="#4C72B0"/>
+  <text id="value-1" x="215" y="105" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">96.8</text>
+  <text id="tick-x-1" x="215" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Variant A</text>
+  <rect id="bar-2" x="280" y="102" width="60" height="148" fill="#4C72B0"/>
+  <text id="value-2" x="310" y="93" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">97.4</text>
+  <text id="tick-x-2" x="310" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Variant B</text>
+  <rect id="bar-3" x="375" y="146" width="60" height="104" fill="#4C72B0"/>
+  <text id="value-3" x="405" y="137" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">95.2</text>
+  <text id="tick-x-3" x="405" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Ablation</text>
+  <text id="axis-x-label" x="255" y="288" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Configuration</text>
+  <text id="axis-y-label" x="22" y="150" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 22 150)">Accuracy (%)</text>
+</svg>

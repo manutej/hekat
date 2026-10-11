@@ -1,0 +1,11 @@
+{
+  "id": "dashboard.grey_delta_contrast",
+  "rubric": "dashboard",
+  "kind": "defect",
+  "expect_fire": [
+    "text.contrast"
+  ],
+  "expect_silent": [],
+  "rationale": "The delta line is #9A9A9A on the #F7F7F7 tile, 2.6:1, below the 4.5:1 threshold; text.contrast must fire with a mechanical recolor.",
+  "source": "adversary-chart"
+}

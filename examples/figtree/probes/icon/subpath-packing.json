@@ -1,0 +1,13 @@
+{
+  "id": "icon.subpath-packing",
+  "rubric": "icon",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.icon.subpath_count"
+  ],
+  "expect_silent": [
+    "medium.icon_elements"
+  ],
+  "rationale": "Eighteen vertical strokes packed into one <path> with eighteen M subpaths. The element count is 1, so medium.icon_elements (limit 12) and the iconsmith stroke count are both silent, yet it is a solid 2px-dense slab. Check: count M/m commands (subpaths) across all paths as strokes, not elements.",
+  "source": "adversary-icon"
+}

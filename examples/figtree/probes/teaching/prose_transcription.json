@@ -1,0 +1,11 @@
+{
+  "id": "teaching.prose_transcription",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.text.sentence_label"
+  ],
+  "expect_silent": [],
+  "rationale": "Six boxes each hold one full sentence of the source, split over two tspans so no label exceeds 8 words; chained boustrophedon, the figure is the prose with borders drawn around it (the textual_overload veto). words_per_label passes; a label that is a sentence (ends in a period, starts with an article/conjunction, carries a finite verb) or a figure whose labels total more words than a short paragraph should trip the veto.",
+  "source": "adversary-diagram"
+}

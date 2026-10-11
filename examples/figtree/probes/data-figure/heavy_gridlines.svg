@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" font-family="Arial">
+  <rect id="background" width="500" height="300" fill="#FFFFFF"/>
+  <text id="title" x="250" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Latency stays flat under load</text>
+  <line id="grid-h-0" x1="70" y1="250" x2="440" y2="250" stroke="#333333" stroke-width="2"/>
+  <line id="grid-h-1" x1="70" y1="200" x2="440" y2="200" stroke="#333333" stroke-width="2"/>
+  <line id="grid-h-2" x1="70" y1="150" x2="440" y2="150" stroke="#333333" stroke-width="2"/>
+  <line id="grid-h-3" x1="70" y1="100" x2="440" y2="100" stroke="#333333" stroke-width="2"/>
+  <line id="grid-h-4" x1="70" y1="50" x2="440" y2="50" stroke="#333333" stroke-width="2"/>
+  <line id="grid-v-0" x1="162" y1="250" x2="162" y2="50" stroke="#333333" stroke-width="2"/>
+  <line id="grid-v-1" x1="255" y1="250" x2="255" y2="50" stroke="#333333" stroke-width="2"/>
+  <line id="grid-v-2" x1="347" y1="250" x2="347" y2="50" stroke="#333333" stroke-width="2"/>
+  <line id="grid-v-3" x1="440" y1="250" x2="440" y2="50" stroke="#333333" stroke-width="2"/>
+  <line id="axis-x" x1="70" y1="250" x2="440" y2="250" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="70" y1="250" x2="70" y2="50" stroke="#000000" stroke-width="1"/>
+  <text id="tick-y-0" x="64" y="250" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-y-100" x="64" y="150" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">100</text>
+  <text id="tick-y-200" x="64" y="50" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">200</text>
+  <text id="tick-x-0" x="70" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-x-250" x="162" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">250</text>
+  <text id="tick-x-500" x="255" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">500</text>
+  <text id="tick-x-750" x="347" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">750</text>
+  <text id="tick-x-1000" x="440" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">1000</text>
+  <polyline id="series-latency" points="70,190 162,186 255,189 347,184 440,187" fill="none" stroke="#A9C4E0" stroke-width="0.75"/>
+  <text id="axis-x-label" x="255" y="288" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Load (req/s)</text>
+  <text id="axis-y-label" x="22" y="150" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 22 150)">Latency (ms)</text>
+</svg>

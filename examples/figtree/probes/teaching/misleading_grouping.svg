@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="176" viewBox="0 0 384 176" font-family="Times New Roman">
+  <rect id="background" x="0" y="0" width="384" height="176" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <g id="grp" data-bbox="144 16 216 144" data-label="Training">
+    <rect id="grp.container" x="144" y="16" width="216" height="144" fill="#F5F5F5" stroke="#333333" stroke-width="1.2" rx="4" stroke-dasharray="4 2" data-role="container"/>
+    <text id="grp.title" x="152" y="28" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333" data-kind="label">Training</text>
+    <rect id="b.block" x="168" y="56" width="160" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="b.label" x="248" y="72" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Deploy</text>
+    <rect id="c.block" x="168" y="112" width="160" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="c.label" x="248" y="128" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Monitor</text>
+  </g>
+  <rect id="a.block" x="24" y="56" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="a.label" x="72" y="72" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Train</text>
+  <path id="f1" d="M120,72 H168" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f2" d="M248,88 V112" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "id": "teaching.collinear_arrows",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.flow.collinear_overlap"
+  ],
+  "expect_silent": [],
+  "rationale": "Fetch->Store and Parse->Index are routed through the same mid column, so their vertical segments coincide and the drawing shows an H shape with two heads: the reader cannot say which source feeds which target. Crossing detection only counts proper H/V intersections, never collinear overlap or T-junctions.",
+  "source": "adversary-diagram"
+}

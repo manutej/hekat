@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="176" viewBox="0 0 384 176" font-family="Times New Roman">
+  <rect id="background" x="0" y="0" width="384" height="176" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <rect id="a.block" x="24" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="a.glyphs" transform="translate(67,36)" data-role="label-glyphs">
+    <path id="a.glyphs.0" d="M2,0 V8 M0,0 H4 M0,8 H4" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="a.glyphs.1" d="M0,8 V0 L4,8 V0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+  </g>
+  <rect id="b.block" x="144" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="b.glyphs" transform="translate(184,36)" data-role="label-glyphs">
+    <path id="b.glyphs.0" d="M0,8 L2,0 L4,8 M1,5 H3" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="b.glyphs.1" d="M0,8 V0 H4 V4 H0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+    <path id="b.glyphs.2" d="M2,0 V8 M0,0 H4 M0,8 H4" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(12,0)"/>
+  </g>
+  <rect id="c.block" x="264" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="c.glyphs" transform="translate(307,36)" data-role="label-glyphs">
+    <path id="c.glyphs.0" d="M0,0 V8 H4 V0 H0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="c.glyphs.1" d="M0,0 V8 H4 V0 H0 M0,4 H4" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+  </g>
+  <rect id="d.block" x="24" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="d.glyphs" transform="translate(67,132)" data-role="label-glyphs">
+    <path id="d.glyphs.0" d="M0,0 V8 H4 V0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="d.glyphs.1" d="M2,0 V8 M0,0 H4 M0,8 H4" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+  </g>
+  <rect id="e.block" x="144" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="e.glyphs" transform="translate(184,132)" data-role="label-glyphs">
+    <path id="e.glyphs.0" d="M0,0 V8 H4" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="e.glyphs.1" d="M0,0 V8 H4 V0 H0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+    <path id="e.glyphs.2" d="M4,0 H0 V8 H4 V4 H2" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(12,0)"/>
+  </g>
+  <rect id="f.block" x="264" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <g id="f.glyphs" transform="translate(304,132)" data-role="label-glyphs">
+    <path id="f.glyphs.0" d="M0,0 V8 H4 V0 H0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(0,0)"/>
+    <path id="f.glyphs.1" d="M0,0 V8 H4 V0" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(6,0)"/>
+    <path id="f.glyphs.2" d="M0,0 H4 M2,0 V8" fill="none" stroke="#333333" stroke-width="1.2" transform="translate(12,0)"/>
+  </g>
+  <path id="f1" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f2" d="M240,40 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f3" d="M192,56 V120" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f4" d="M120,136 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f5" d="M240,136 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+</svg>

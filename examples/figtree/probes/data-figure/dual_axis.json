@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.dual_axis",
+  "rubric": "data-figure",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.dual_axis"
+  ],
+  "expect_silent": [],
+  "rationale": "Two y axes with unrelated scales (revenue $M left, churn % right): the apparent crossing point is an artefact of the scale choice. Both axes carry labels with units, so coverage.axis_labels is satisfied and the figure scores 10. Proposed: fire when two vertical axis lines (or two rotated axis labels) sit on opposite sides of the plot.",
+  "source": "adversary-chart"
+}

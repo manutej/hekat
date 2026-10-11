@@ -1,0 +1,12 @@
+{
+  "id": "icon.scaled-group",
+  "rubric": "icon",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "A magnifier authored on a 48 grid inside a scale(0.5) group: it renders inside 4..21 of the 24 grid, but the bbox parser ignores scale(), reads 8..42 and reports an 18px overflow on two edges (score 8.83). Either apply the full transform to bboxes or report 'transform not understood' as not assessed rather than overflow.",
+  "source": "adversary-icon"
+}

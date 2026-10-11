@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="Arial">
+  <rect id="background" width="400" height="300" fill="#FFFFFF"/>
+  <text id="title" x="200" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Headcount doubled over twelve years of growth</text>
+  <line id="axis-x" x1="100" y1="250" x2="300" y2="250" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="100" y1="250" x2="100" y2="50" stroke="#000000" stroke-width="1"/>
+  <text id="tick-y-0" x="94" y="250" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-y-100" x="94" y="150" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">100</text>
+  <text id="tick-y-200" x="94" y="50" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">200</text>
+  <text id="tick-x-2020" x="100" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2020</text>
+  <text id="tick-x-2021" x="118" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2021</text>
+  <text id="tick-x-2022" x="136" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2022</text>
+  <text id="tick-x-2023" x="154" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2023</text>
+  <text id="tick-x-2024" x="172" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2024</text>
+  <text id="tick-x-2025" x="190" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2025</text>
+  <text id="tick-x-2026" x="208" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2026</text>
+  <text id="tick-x-2027" x="226" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2027</text>
+  <text id="tick-x-2028" x="244" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2028</text>
+  <text id="tick-x-2029" x="262" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2029</text>
+  <text id="tick-x-2030" x="280" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2030</text>
+  <text id="tick-x-2031" x="298" y="266" font-size="10" text-anchor="middle" dominant-baseline="middle" fill="#333333">2031</text>
+  <polyline id="series-headcount" points="100,150 118,141 136,132 154,123 172,114 190,105 208,96 226,87 244,78 262,69 280,60 298,51" fill="none" stroke="#4C72B0" stroke-width="2"/>
+  <text id="axis-x-label" x="200" y="288" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Year</text>
+  <text id="axis-y-label" x="50" y="150" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 50 150)">Headcount (people)</text>
+</svg>

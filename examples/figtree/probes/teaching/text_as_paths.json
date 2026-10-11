@@ -1,0 +1,12 @@
+{
+  "id": "teaching.text_as_paths",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.text.outlined_glyphs",
+    "text.min_font"
+  ],
+  "expect_silent": [],
+  "rationale": "Every label is a cluster of 8px-tall stroked paths, so the figure has no <text> element at all: min_font, contrast, overflow and word-count checks all pass vacuously and the score is 10 while the labels are unreadable at teaching size. A block with no <text> child, or a path cluster of many tiny segments inside a block, should be reported as an outlined (non-addressable) label.",
+  "source": "adversary-diagram"
+}

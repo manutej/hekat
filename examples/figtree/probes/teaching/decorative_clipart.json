@@ -1,0 +1,11 @@
+{
+  "id": "teaching.decorative_clipart",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.polish.decoration"
+  ],
+  "expect_silent": [],
+  "rationale": "A clip-art cloud of three overlapping grey ellipses hovers over Server with no label and no connector; it is pure decoration (the clip_art veto) but the only clip-art signal the critic has is rect corner radius. Unlabelled, unconnected shapes, and stacks of overlapping ellipses/circles, should be reported as decoration.",
+  "source": "adversary-diagram"
+}

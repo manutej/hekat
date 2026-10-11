@@ -1,0 +1,11 @@
+{
+  "id": "teaching.legend_inside_drawing",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.layout.legend_in_drawing"
+  ],
+  "expect_silent": [],
+  "rationale": "A legend box sits in the second row of the grid, directly under the pipeline and level with Deploy, so it reads as a fourth stage. The critic sees only one more rect with two short labels; a legend-like group (swatches plus labels, data-role=legend) inside the block grid, rather than in a margin, should be flagged.",
+  "source": "adversary-diagram"
+}

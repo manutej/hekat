@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.truncated_axis",
+  "rubric": "data-figure",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.bar_axis_zero"
+  ],
+  "expect_silent": [],
+  "rationale": "Bar chart whose y axis starts at 90 %, so a 1.3-point spread looks like a 3x difference. Every measurable check passes. Proposed: for a bar chart (rects standing on the x axis line) the lowest y tick label must be 0.",
+  "source": "adversary-chart"
+}

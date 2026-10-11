@@ -1,0 +1,14 @@
+{
+  "id": "icon.merge-at-16px",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "proposed.icon.min_gap"
+  ],
+  "expect_silent": [
+    "medium.icon_elements",
+    "polish.stroke_widths"
+  ],
+  "rationale": "Four menu lines; two of them are 2.5px apart centre to centre, i.e. a 0.5px gap between 2px strokes. At 16px (scale 0.67) the gap is 0.33 device px and the pair renders as one 3px bar (the merge/edit-script failure from NOTES.md). Nothing measures the distance between strokes.",
+  "source": "adversary-icon"
+}

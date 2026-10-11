@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.heavy_gridlines",
+  "rubric": "data-figure",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.gridline_weight"
+  ],
+  "expect_silent": [],
+  "rationale": "Gridlines are 2 px #333333 while the data line is 0.75 px pale blue: the scaffolding dominates the data. Three stroke widths (limit 3), no neon, so the figure scores 10. Proposed: a gridline (horizontal or vertical line spanning the plot area) must be lighter and thinner than every series mark.",
+  "source": "adversary-chart"
+}

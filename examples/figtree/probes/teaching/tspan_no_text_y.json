@@ -1,0 +1,17 @@
+{
+  "id": "teaching.tspan_no_text_y",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.overflow",
+    "text.overlap",
+    "text.min_font",
+    "text.contrast",
+    "text.words_per_label",
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "Identical rendering to tspan_multiline, but the <text> elements have no x/y: the coordinates live on the tspans, which is how most editors export multi-line labels. element_bbox reads only the <text> x/y (defaulting to 0), so every label is placed at the origin: labels overlap each other, no host block is found and the content bbox leaks past the left/top edge.",
+  "source": "adversary-diagram"
+}

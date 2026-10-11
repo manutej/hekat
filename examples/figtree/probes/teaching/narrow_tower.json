@@ -1,0 +1,12 @@
+{
+  "id": "teaching.narrow_tower",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "compactness.aspect",
+    "compactness.blank_margin"
+  ],
+  "rationale": "A five-step top-to-bottom process drawn as a single column with 24px margins; the tower shape is the honest layout for a strictly sequential process and reflowing it into rows would add detours. compactness.aspect flags any canvas narrower than 1:1 regardless of whether the flow is vertical.",
+  "source": "adversary-diagram"
+}

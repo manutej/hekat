@@ -1,0 +1,12 @@
+{
+  "id": "teaching.semantic_diagonal",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "flow.diagonal",
+    "flow.through_block"
+  ],
+  "rationale": "Query fans out to Index (horizontal) and to Rank (a flagged semantic diagonal), Docs feeds Rank; the diagonal crosses empty canvas. data-diagonal=semantic silences flow.diagonal, but segment_hits_box returns True for any diagonal segment against any block, so Docs and Index are reported as pierced.",
+  "source": "adversary-diagram"
+}

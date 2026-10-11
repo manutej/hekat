@@ -1,0 +1,12 @@
+{
+  "id": "teaching.inherited_style_defects",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "text.contrast",
+    "text.overlap"
+  ],
+  "expect_silent": [],
+  "rationale": "'Tokenise' takes fill #999999 from its group and sits on a #7BA3C9 block (1.1:1), and 'Encoder' is translated by a group onto 'Embedding'. Both defects are only visible once inherited fill and group transforms are resolved.",
+  "source": "adversary-diagram"
+}

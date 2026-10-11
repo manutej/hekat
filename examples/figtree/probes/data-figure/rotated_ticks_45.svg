@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320" font-family="Arial">
+  <rect id="background" width="520" height="320" fill="#FFFFFF"/>
+  <text id="title" x="260" y="22" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">East Asia leads regional revenue</text>
+  <line id="axis-x" x1="70" y1="200" x2="470" y2="200" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="70" y1="200" x2="70" y2="44" stroke="#000000" stroke-width="1"/>
+  <text id="tick-y-0" x="64" y="200" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-y-50" x="64" y="122" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">50</text>
+  <text id="tick-y-100" x="64" y="44" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">100</text>
+  <rect id="bar-0" x="79" y="88" width="30" height="112" fill="#4C72B0"/>
+  <text id="tick-x-0" x="94" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 94 212)">North America</text>
+  <rect id="bar-1" x="127" y="136" width="30" height="64" fill="#4C72B0"/>
+  <text id="tick-x-1" x="142" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 142 212)">South America</text>
+  <rect id="bar-2" x="175" y="97" width="30" height="103" fill="#4C72B0"/>
+  <text id="tick-x-2" x="190" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 190 212)">Western Europe</text>
+  <rect id="bar-3" x="223" y="141" width="30" height="59" fill="#4C72B0"/>
+  <text id="tick-x-3" x="238" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 238 212)">Eastern Europe</text>
+  <rect id="bar-4" x="271" y="155" width="30" height="45" fill="#4C72B0"/>
+  <text id="tick-x-4" x="286" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 286 212)">Middle East</text>
+  <rect id="bar-5" x="319" y="166" width="30" height="34" fill="#4C72B0"/>
+  <text id="tick-x-5" x="334" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 334 212)">Sub-Saharan Africa</text>
+  <rect id="bar-6" x="367" y="125" width="30" height="75" fill="#4C72B0"/>
+  <text id="tick-x-6" x="382" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 382 212)">South Asia</text>
+  <rect id="bar-7" x="415" y="52" width="30" height="148" fill="#4C72B0"/>
+  <text id="tick-x-7" x="430" y="212" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333" transform="rotate(-45 430 212)">East Asia</text>
+  <text id="axis-x-label" x="270" y="308" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Region</text>
+  <text id="axis-y-label" x="22" y="122" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 22 122)">Revenue ($M)</text>
+</svg>

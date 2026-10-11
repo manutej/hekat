@@ -1,0 +1,11 @@
+{
+  "id": "icon.rotated-into-margin",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.overflow"
+  ],
+  "expect_silent": [],
+  "rationale": "A 17x17 square rotated 45 degrees: its corners sit at 12 +/- 12.02, so with the stroke the tips run to -1 and 25 and are clipped. The bbox parser only honours translate(); rotate() is ignored, so the critic sees a 3.5..20.5 box and stays silent on overflow (and the iconsmith safe-margin rule too).",
+  "source": "adversary-icon"
+}

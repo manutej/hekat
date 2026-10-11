@@ -1,0 +1,11 @@
+{
+  "id": "teaching.overflow_inherited_font",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "text.overflow"
+  ],
+  "expect_silent": [],
+  "rationale": "'Preprocessing' inherits font-size 24 from its group and is ~150px wide in a 112px block, overflowing on both sides. The critic resolves the inherited size for min_font but element_bbox reads only the element's own font-size attribute (default 12), so the bbox is computed at half the real size and the overflow is missed.",
+  "source": "adversary-diagram"
+}

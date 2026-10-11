@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="176" viewBox="0 0 384 176" font-family="Times New Roman">
+  <rect id="background" x="0" y="0" width="384" height="176" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <rect id="a.block" x="24" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="a.label" x="72" y="40" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Fetch</text>
+  <rect id="b.block" x="24" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="b.label" x="72" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Parse</text>
+  <rect id="c.block" x="264" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="c.label" x="312" y="40" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Index</text>
+  <rect id="d.block" x="264" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="d.label" x="312" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Store</text>
+  <path id="f1" d="M120,40 H180 V136 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f2" d="M120,136 H150 V88 H210 V40 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "id": "dashboard.uneven_tiles",
+  "rubric": "dashboard",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.tile_grid_uniform"
+  ],
+  "expect_silent": [],
+  "rationale": "Three tiles 150 / 280 / 146 px wide with 12 and 20 px gutters: the middle metric looks more important for no reason. Nothing measures tile geometry (NOTES-dashboard-chart already flagged this). Proposed: tiles in one row must share width within 4 px and gutters within 2 px, and share border and fill treatment.",
+  "source": "adversary-chart"
+}

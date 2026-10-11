@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" font-family="Arial">
+  <rect id="background" width="480" height="300" fill="#FFFFFF"/>
+  <rect id="tile" x="16" y="16" width="448" height="268" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-label" x="40" y="70" font-size="36" text-anchor="start" dominant-baseline="middle" fill="#333333" font-weight="bold">Active users</text>
+  <text id="tile-value" x="40" y="150" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#333333">12,480</text>
+  <text id="tile-note" x="40" y="240" font-size="24" text-anchor="start" dominant-baseline="middle" fill="#555555">vs. previous 7 days</text>
+</svg>

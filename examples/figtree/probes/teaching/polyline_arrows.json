@@ -1,0 +1,11 @@
+{
+  "id": "teaching.polyline_arrows",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.through_block"
+  ],
+  "expect_silent": [],
+  "rationale": "The same Fetch -> Render through Cache as through_block_nested, drawn with <polyline> (what draw.io and Inkscape emit). The loader recognises polylines as flows but never parses their points, so every flow check sees an empty route and stays silent.",
+  "source": "adversary-diagram"
+}

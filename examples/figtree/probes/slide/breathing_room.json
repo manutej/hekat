@@ -1,0 +1,11 @@
+{
+  "id": "slide.breathing_room",
+  "rubric": "slide",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "compactness.blank_margin"
+  ],
+  "rationale": "A five-block pipeline centred on a 16:9 slide with 20px labels, 96px above and below (27% each) so the deck's own title and footer have room. The fixed-canvas rule flags both bands and asks to 'enlarge the content to fill the canvas', which would bloat the boxes; symmetric margins on a fixed canvas are composition, not waste, up to roughly a third of the side.",
+  "source": "adversary-diagram"
+}

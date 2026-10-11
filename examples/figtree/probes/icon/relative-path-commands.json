@@ -1,0 +1,13 @@
+{
+  "id": "icon.relative-path-commands",
+  "rubric": "icon",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "content.none",
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "The library 'page' icon written with relative commands (m, h, l, v). geometry.path_to_points matches lowercase letters but only handles uppercase, so both paths yield no points, no bbox, no shapes: the critic reports 'no drawable content' (critical) and scores 8.88 for a correct icon. NOTES.md saw the same parser under-read the critic icon's bbox.",
+  "source": "adversary-icon"
+}

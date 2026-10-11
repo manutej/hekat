@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="Arial">
+  <rect id="background" width="640" height="360" fill="#FFFFFF"/>
+  <rect id="tile-sessions" x="16" y="16" width="192" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <rect id="tile-sessions-stripe" x="16" y="16" width="192" height="6" fill="#B5452A"/>
+  <text id="tile-sessions-label" x="36" y="60" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Sessions</text>
+  <text id="tile-sessions-value" x="36" y="150" font-size="40" text-anchor="start" dominant-baseline="middle" fill="#B5452A" font-weight="bold">48,210</text>
+  <text id="tile-sessions-note" x="36" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+  <rect id="tile-views" x="224" y="16" width="192" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <rect id="tile-views-stripe" x="224" y="16" width="192" height="6" fill="#1B7F4B"/>
+  <text id="tile-views-label" x="244" y="60" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Page views</text>
+  <text id="tile-views-value" x="244" y="150" font-size="40" text-anchor="start" dominant-baseline="middle" fill="#1B7F4B" font-weight="bold">131,904</text>
+  <text id="tile-views-note" x="244" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+  <rect id="tile-duration" x="432" y="16" width="192" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <rect id="tile-duration-stripe" x="432" y="16" width="192" height="6" fill="#B5452A"/>
+  <text id="tile-duration-label" x="452" y="60" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Avg. duration</text>
+  <text id="tile-duration-value" x="452" y="150" font-size="40" text-anchor="start" dominant-baseline="middle" fill="#B5452A" font-weight="bold">3m 42s</text>
+  <text id="tile-duration-note" x="452" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+</svg>

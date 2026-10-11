@@ -1,0 +1,11 @@
+{
+  "id": "dashboard.label_seven_words",
+  "rubric": "dashboard",
+  "kind": "defect",
+  "expect_fire": [
+    "text.words_per_label"
+  ],
+  "expect_silent": [],
+  "rationale": "A seven-word tile title on a six-word limit; text.words_per_label must fire (and here, unlike category labels in a chart, the limit is right: a tile title is a keyword label).",
+  "source": "adversary-chart"
+}

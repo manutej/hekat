@@ -1,0 +1,13 @@
+{
+  "id": "data-figure.units_in_parens_unrotated",
+  "rubric": "data-figure",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "coverage.axis_labels",
+    "coverage.title",
+    "text.overlap"
+  ],
+  "rationale": "Both axis labels carry units in parentheses, the y label sits horizontally above the axis (the modern convention) and neither has data-role. AXIS_WORDS wraps '(.*)' and '%' in \\b, which never matches after a space or at the end of a string, so the critic reports 'axis label(s) with units are missing'. Rule change: detect a parenthesised unit or a trailing % without word boundaries, and accept an unrotated text whose bbox sits just above the y axis.",
+  "source": "adversary-chart"
+}
