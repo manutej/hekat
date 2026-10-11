@@ -178,8 +178,81 @@ def _icon_main(argv: list) -> int:
     return 0
 
 
+def _eval_main(argv: list) -> int:
+    from figtree.probes import evaluate, load_probes, seed_probes
+    from figtree.rubric_spec import CHECKS
+
+    ap = argparse.ArgumentParser(prog="figtree eval", description="Measure the evaluators: recall and precision of every check on probes")
+    ap.add_argument("--rubric", default=None)
+    ap.add_argument("--probes", default="examples/figtree/probes", help="directory of adversarial probes (<id>.svg + <id>.json)")
+    ap.add_argument("--report", help="write the evaluation as JSON")
+    ap.add_argument("--specs", help="also write the rubric specs to this directory")
+    args = ap.parse_args(argv)
+    probes = seed_probes() + (load_probes(args.probes) if os.path.isdir(args.probes) else [])
+    res = evaluate(probes, args.rubric)
+    s = res.summary()
+    print(f"{s['probes']} probes, recall {s['recall']}, precision {s['precision']}, missed {s['missed']}, false positives {s['false_positives']}")
+    for r in res.probe_results:
+        if not r["passed"]:
+            print(f"  FAIL {r['id']} ({r['kind']}, {r['source']}): missed {r['missed']} false {r['false_positive']} overall {r['overall']}")
+    covered = {c for c in res.per_check}
+    uncovered = [c.id for c in CHECKS if c.id not in covered]
+    if uncovered:
+        print("  checks without probes:", ", ".join(uncovered))
+    if args.report:
+        with open(args.report, "w", encoding="utf-8") as fh:
+            json.dump(res.to_dict(), fh, indent=2)
+    if args.specs:
+        from figtree.rubric_spec import write_specs
+
+        write_specs(args.specs)
+    return 0 if not s["failing_probes"] else 1
+
+
+def _judge_main(argv: list) -> int:
+    from figtree.judge import calibrate, judge
+
+    ap = argparse.ArgumentParser(prog="figtree judge", description="Image-space judge (Claude reads the rendered PNG) and calibration against the measured scores")
+    ap.add_argument("svg", nargs="?")
+    ap.add_argument("--rubric", default="teaching")
+    ap.add_argument("--source")
+    ap.add_argument("--calibrate", help="JSON list of {name, svg, rubric, source?}")
+    ap.add_argument("--report")
+    args = ap.parse_args(argv)
+    if args.calibrate:
+        with open(args.calibrate, encoding="utf-8") as fh:
+            items = json.load(fh)
+        res = calibrate(items)
+        for r in res["rows"]:
+            print(f"  {r['name']:28s} measured {r['measured_overall']:5.2f}  judged {r['judged_overall']:5.2f}  gap {r['gap_overall']:+.2f}")
+        print(f"mean gap {res['mean_gap']}, findings {len(res['findings'])}, cost ${res['cost_usd']}")
+        for f in res["findings"]:
+            print(f"  {f['kind']}: {f['name']} / {f['dimension']} measured {f['measured']} judged {f['judged']}")
+        if args.report:
+            with open(args.report, "w", encoding="utf-8") as fh:
+                json.dump(res, fh, indent=2)
+        return 0
+    with open(args.svg, encoding="utf-8") as fh:
+        svg = fh.read()
+    src = open(args.source, encoding="utf-8").read() if args.source else None
+    j = judge(svg, args.rubric, src)
+    print(f"{args.rubric}: judged overall {j.overall} (${j.cost_usd:.3f})")
+    for d, sc in j.scores.items():
+        print(f"  {d:22s} {sc:2d}  {j.justifications[d][:110]}")
+    if j.vetoes:
+        print("  vetoes:", ", ".join(j.vetoes))
+    if args.report:
+        with open(args.report, "w", encoding="utf-8") as fh:
+            json.dump(j.to_dict(), fh, indent=2)
+    return 0
+
+
 def main(argv: Optional[list] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] == "eval":
+        return _eval_main(argv[1:])
+    if argv and argv[0] == "judge":
+        return _judge_main(argv[1:])
     if argv and argv[0] == "refine":
         return _refine_main(argv[1:])
     if argv and argv[0] == "score":

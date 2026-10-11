@@ -100,9 +100,33 @@ Convergence:       {no_edits_left | plateau(k=2) | budget} and requests_remainin
   rule. *Edit script:* `center_content` for fixed canvases; `set_canvas` only for free canvases.
   Pass 4 returned an empty edit script.
 
+## 6b. Evaluating the evaluators (adversarial loop)
+
+A rubric is itself an artifact under this meta-prompt, so it gets the same loop:
+
+```
+RubricSpec:     {dimensions[anchors, judge_question], checks[id, signal, severity, mechanical], vetoes}
+Probe:          {svg, kind ∈ {defect, clean, gaming, false_positive}, expect_fire[], expect_silent[]}
+EvalReport:     per-check recall and precision over all probes; gaming probes record what fooled the critic
+Judgement:      image-space scores per dimension with justification and tags (the paper's evaluator)
+Calibration:    judged − measured per dimension over a set; |gap| ≥ 3 is a blind spot or a rule to reconsider
+```
+
+Procedure: (1) publish the spec (`figtree eval --specs`); (2) adversaries write probes that game the
+checks, trip false positives, or expose misses, each with the check that should have fired
+(possibly `proposed.*`); (3) every probe becomes a regression test; (4) misses and proposals become
+checks or veto rules; (5) the image judge runs over the example set and the gaps name what no
+measurable check can see; (6) repeat until recall and precision hold at 1.0 on the probe set and
+the mean judge gap is small and explained.
+
+Binding rules: a check without a probe is unproven; a gaming probe that stays gaming after a
+round means the judge is the only defence and the showcase says so; a false-positive probe that
+fires means the rule is wrong for that medium, not the figure.
+
 ## 7. Where it is implemented
 
 `figtree/` realises each slot: `grounder.py` (1), `elements.py` + `icons.py` + `animate.py`
 (2), `generator.py` + `worker.py` (3), `critic.py` + `quality.py` + `rubrics.py` (4),
-`edits.py` (5), `refine.py` (6), `iconsmith.py` + `memory.py` (7). The Claude-backed agents
+`edits.py` (5), `refine.py` (6), `iconsmith.py` + `memory.py` (7), `rubric_spec.py` + `probes.py` +
+`judge.py` (6b). The Claude-backed agents
 (`figtree/agents/`) run on this session's OAuth through the `claude` CLI or on an API key.

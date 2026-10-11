@@ -226,6 +226,27 @@ pipeline; its global style is not adopted by default; its critic findings are ad
 of source rather than the specification's 5000, because a truncated root figure made it report
 the truncation as a defect.
 
+## Evaluating the evaluators
+
+* `examples/figtree/rubrics/<rubric>.json` (`figtree eval --specs DIR`): the machine-readable
+  rubric specs: eight dimensions with 1-10 anchors and judge questions, every check with its id,
+  signal, severity and whether a mechanical fix exists, the veto rules after PaperBananaBench,
+  and the scoring formula. Critic issues carry a `check_id`.
+* `figtree eval [--rubric R] [--probes DIR] [--report out.json]`: runs seed probes
+  (`figtree/probes.py`) plus adversarial probes (`examples/figtree/probes/<rubric>/<id>.svg` +
+  `.json`) and reports recall and precision per check, failing probes, and checks without a probe.
+  Gaming probes (bad figures that pass every measurable check) are recorded, not failed: they are
+  the judge's job.
+* `figtree judge FILE --rubric R [--source TEXT]`: the paper's fine-grained diagnostic evaluator
+  reading the rendered PNG through the Claude Code CLI's Read tool on the session's own login;
+  scores, justification and tags per dimension, veto rules applied.
+  `figtree judge --calibrate set.json --report out.json` compares judged and measured scores
+  over a set and lists blind spots (measured ≥ 9, judged ≤ 6) and rules to reconsider
+  (measured ≤ 6, judged ≥ 9).
+* Adversaries (worker agents) write probes against each rubric; their tables live in
+  `examples/figtree/probes/ADVERSARY-*.md`, and the resulting rule changes are recorded in the
+  showcase.
+
 ## Known limitations
 
 * The rule-based Grounder only admits explicit structure (arrow chains, "X Agent" names,

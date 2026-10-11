@@ -40,9 +40,11 @@ class Issue:
     fix_instruction: str
     penalty: float
     auto_edit: Optional[EditOp] = None
+    check_id: Optional[str] = None  # from figtree.rubric_spec.classify
 
     def to_dict(self) -> Dict[str, object]:
         return {
+            "check_id": self.check_id,
             "dimension": self.dimension,
             "severity": self.severity,
             "visual_description": self.visual_description,
@@ -93,13 +95,18 @@ def _segments(pts: Sequence[Tuple[int, int]]):
 
 
 def _cross(a, b) -> bool:
-    """Proper crossing of an H and a V segment (shared endpoints excluded)."""
+    """Proper crossing of an H and a V segment (shared endpoints excluded), or two collinear
+    segments of different arrows overlapping for more than 8px (lines that merge read as one)."""
     (ax1, ay1), (ax2, ay2) = a
     (bx1, by1), (bx2, by2) = b
     if ay1 == ay2 and bx1 == bx2:
         return min(ax1, ax2) < bx1 < max(ax1, ax2) and min(by1, by2) < ay1 < max(by1, by2)
     if ax1 == ax2 and by1 == by2:
         return min(bx1, bx2) < ax1 < max(bx1, bx2) and min(ay1, ay2) < by1 < max(ay1, ay2)
+    if ay1 == ay2 == by1 == by2:  # collinear horizontals
+        return min(max(ax1, ax2), max(bx1, bx2)) - max(min(ax1, ax2), min(bx1, bx2)) > 8
+    if ax1 == ax2 == bx1 == bx2:  # collinear verticals
+        return min(max(ay1, ay2), max(by1, by2)) - max(min(ay1, ay2), min(by1, by2)) > 8
     return False
 
 
@@ -163,7 +170,8 @@ class QualityCritic:
                 add("compactness", "critical", f"content overflows the {side} edge by {-m}px", "svg", fix, 3.0, edit)
         aspect = W / float(H)
         metrics["aspect"] = round(aspect, 2)
-        if not (R.aspect[0] <= aspect <= R.aspect[1]):
+        # a small figure's aspect is dictated by its content; the medium's range applies at page scale
+        if not (R.aspect[0] <= aspect <= R.aspect[1]) and (max(W, H) >= 480 or R.require_square):
             if R.require_square:
                 side_px = max(W, H)
                 add("medium_fit", "critical", f"canvas aspect {aspect:.2f} is not square", "svg", "use a square viewBox", 3,
@@ -392,6 +400,11 @@ class QualityCritic:
         """Scores follow the paper's anchors: a dimension with any critical defect is at most 5
         ("average / mediocre"), each further defect subtracts its penalty, floor 1.  Dimensions
         without evidence (no source text / plan) are reported as None and excluded."""
+        from figtree.rubric_spec import classify
+
+        for i in issues:
+            if i.check_id is None:
+                i.check_id = classify(i.visual_description)
         unassessed = unassessed or []
         scores: Dict[str, Optional[float]] = {d: 10.0 for d in DIMENSIONS}
         for d in DIMENSIONS:

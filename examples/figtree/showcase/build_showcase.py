@@ -112,7 +112,7 @@ def build() -> str:
     <div><dt>icons designed</dt><dd>{max(icons_n, 0)}</dd></div>
   </dl>
 </header>
-<nav class="toc"><a href="#loop">The loop</a><a href="#figures">1 · Figures from text</a><a href="#refine">2 · Refinement</a><a href="#icons">3 · Icons</a><a href="#motion">4 · Motion</a><a href="#meta">5 · Meta-prompt</a><a href="#learned">What the loop caught</a></nav>
+<nav class="toc"><a href="#loop">The loop</a><a href="#figures">1 · Figures from text</a><a href="#refine">2 · Refinement</a><a href="#icons">3 · Icons</a><a href="#motion">4 · Motion</a><a href="#meta">5 · Meta-prompt</a><a href="#evaluation">6 · Evaluation</a><a href="#learned">What the loop caught</a></nav>
 ''')
 
     # ---- the loop
@@ -203,6 +203,36 @@ def build() -> str:
   <div><h4>Binding rules</h4><ul><li>The content plan is immutable downstream</li><li>Ids are stable; edits address existing ids</li><li>Data flow → pulse; control → slower pulse; construction → reveal and draw</li><li>No evidence → not assessed, never a 10</li><li>Fixed canvases centre; free canvases shrink</li></ul></div>
   <div><h4>Refinement log</h4><ul><li>Pass 1 added icons and motion as slots</li><li>Pass 2 bound motion to flow types; fixed score inflation</li><li>Pass 3 separated fixed from free canvases</li><li>Pass 4 returned an empty edit script</li></ul></div>
 </div></section>''')
+
+    # ---- evaluation
+    ev = os.path.join(EX, "eval")
+    if os.path.exists(os.path.join(ev, "eval.json")):
+        e = json.load(open(os.path.join(ev, "eval.json"), encoding="utf-8"))
+        s_ = e["summary"]
+        per = e["per_check"]
+        rows = "".join(f'<tr><td>{html.escape(k)}</td><td>{v.get("tp",0)}/{v.get("tp",0)+v.get("fn",0)}</td><td>{v.get("fp",0)}</td></tr>' for k, v in sorted(per.items()))
+        gaming = [r for r in e["probes"] if r["kind"] == "gaming"]
+        fps = [r for r in e["probes"] if r["kind"] == "false_positive"]
+        glist = "".join(f"<li><code>{html.escape(r['id'])}</code> scored {r['overall']:.2f}; should fire {', '.join(r['missed']) or '(now caught)'}</li>" for r in gaming) or "<li>none</li>"
+        parts.append(f'''<section id="evaluation"><h2>6 · Evaluating the evaluators</h2>
+<p>A rubric is an artifact too, so it gets the same loop. Each rubric is a machine-readable spec (dimensions with anchors, checks with signals, veto rules, judge questions). Probes are minimal figures with a known verdict; adversaries wrote probes to game the checks, trip false positives and expose misses. Every probe is now a regression test.</p>
+<dl class="stats"><div><dt>probes</dt><dd>{s_["probes"]}</dd></div><div><dt>recall</dt><dd>{s_["recall"]}</dd></div><div><dt>precision</dt><dd>{s_["precision"]}</dd></div><div><dt>gaming probes</dt><dd>{len(gaming)}</dd></div><div><dt>false-positive probes</dt><dd>{len(fps)}</dd></div></dl>
+<details><summary>Per-check recall (caught / expected) and false positives</summary><table class="traj"><thead><tr><th>check</th><th>recall</th><th>false pos.</th></tr></thead><tbody>{rows}</tbody></table></details>
+<h3>What still fools the measurable critic</h3><ul class="learned">{glist}</ul>''')
+        cal = os.path.join(ev, "calibration.json")
+        if os.path.exists(cal):
+            c = json.load(open(cal, encoding="utf-8"))
+            crow = "".join(f'<tr><td>{html.escape(r["name"])}</td><td>{r["rubric"]}</td><td>{r["measured_overall"]:.2f}</td><td>{r["judged_overall"]:.2f}</td><td>{r["gap_overall"]:+.2f}</td></tr>' for r in c["rows"])
+            flist = "".join(f"<li><strong>{html.escape(f['kind'])}</strong>: {html.escape(f['name'])}, {f['dimension']} measured {f['measured']} vs judged {f['judged']}</li>" for f in c["findings"]) or "<li>none</li>"
+            parts.append(f'''<h3>Image judge versus measured rubric</h3>
+<p>The paper's diagnostic evaluator, reading the rendered PNG on this session's login, scored the same figures. Mean gap (judged minus measured) {c["mean_gap"]:+.2f} over {len(c["rows"])} figures, ${c["cost_usd"]} in total. A measured 9 that the judge scores 6 is a rubric blind spot; the reverse is a rule to reconsider.</p>
+<table class="traj"><thead><tr><th>figure</th><th>rubric</th><th>measured</th><th>judged</th><th>gap</th></tr></thead><tbody>{crow}</tbody></table>
+<ul class="learned">{flist}</ul>''')
+        for name in ("ADVERSARY-diagram.md", "ADVERSARY-chart.md", "ADVERSARY-icon-motion.md"):
+            ap = os.path.join(EX, "probes", name)
+            if os.path.exists(ap):
+                parts.append(f"<details><summary>{html.escape(name)}</summary><pre class=\"notes-pre\">{html.escape(read(ap))}</pre></details>")
+        parts.append("</section>")
 
     # ---- learned
     parts.append('''<section id="learned"><h2>What the loop caught, and what the eye caught</h2>

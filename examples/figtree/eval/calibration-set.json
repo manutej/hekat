@@ -1,0 +1,76 @@
+[
+ {
+  "name": "bar-chart before",
+  "svg": "examples/figtree/teaching/bar-chart.svg",
+  "rubric": "data-figure"
+ },
+ {
+  "name": "bar-chart after",
+  "svg": "examples/figtree/teaching/output/bar-chart.refined.svg",
+  "rubric": "data-figure"
+ },
+ {
+  "name": "slide-pipeline before",
+  "svg": "examples/figtree/teaching/slide-pipeline.svg",
+  "rubric": "slide"
+ },
+ {
+  "name": "slide-pipeline after",
+  "svg": "examples/figtree/teaching/output/slide-pipeline.refined.svg",
+  "rubric": "slide"
+ },
+ {
+  "name": "dashboard-tiles before",
+  "svg": "examples/figtree/teaching/dashboard-tiles.svg",
+  "rubric": "dashboard"
+ },
+ {
+  "name": "dashboard-tiles after",
+  "svg": "examples/figtree/teaching/output/dashboard-tiles.refined.svg",
+  "rubric": "dashboard"
+ },
+ {
+  "name": "trajectory-chart before",
+  "svg": "examples/figtree/teaching/trajectory-chart.svg",
+  "rubric": "data-figure"
+ },
+ {
+  "name": "trajectory-chart after",
+  "svg": "examples/figtree/teaching/output/trajectory-chart.refined.svg",
+  "rubric": "data-figure"
+ },
+ {
+  "name": "process-icon before",
+  "svg": "examples/figtree/teaching/process-icon.svg",
+  "rubric": "icon"
+ },
+ {
+  "name": "process-icon after",
+  "svg": "examples/figtree/teaching/output/process-icon.refined.svg",
+  "rubric": "icon"
+ },
+ {
+  "name": "figtree-spec figure",
+  "svg": "examples/figtree/output/figtree-spec.svg",
+  "rubric": "methodology",
+  "source": "examples/figtree/figtree-spec.md"
+ },
+ {
+  "name": "transformer-method figure",
+  "svg": "examples/figtree/output/transformer-method.svg",
+  "rubric": "methodology",
+  "source": "examples/figtree/transformer-method.md"
+ },
+ {
+  "name": "rmp-skill figure",
+  "svg": "examples/figtree/output/rmp-skill.svg",
+  "rubric": "methodology",
+  "source": "examples/figtree/rmp-skill.md"
+ },
+ {
+  "name": "figtree-spec claude",
+  "svg": "examples/figtree/claude/figtree-spec.claude.svg",
+  "rubric": "methodology",
+  "source": "examples/figtree/figtree-spec.md"
+ }
+]
