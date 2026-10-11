@@ -1,0 +1,45 @@
+@keyframes ft-reveal{from{opacity:0}to{opacity:1}}
+#n2{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.00s forwards}
+#n6{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.35s forwards}
+#n7{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.40s forwards}
+#n8{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.70s forwards}
+#n9{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.05s forwards}
+#n10{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.75s forwards}
+#n11{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.10s forwards}
+#n12{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.45s forwards}
+#n13{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.80s forwards}
+@keyframes ft-draw{to{stroke-dashoffset:0}}
+@keyframes ft-appear{to{opacity:1}}
+#ft-shaft-0{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.15s forwards}
+#n4\.arrow0{opacity:0;animation:ft-appear .01s linear 3.75s forwards}
+#ft-shaft-1{stroke-dasharray:792;stroke-dashoffset:792;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.30s forwards}
+#n5\.arrow0{opacity:0;animation:ft-appear .01s linear 3.90s forwards}
+#ft-shaft-2{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.45s forwards}
+#n5\.arrow1{opacity:0;animation:ft-appear .01s linear 4.05s forwards}
+#ft-shaft-3{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.60s forwards}
+#n5\.arrow2{opacity:0;animation:ft-appear .01s linear 4.20s forwards}
+#ft-shaft-4{stroke-dasharray:40;stroke-dashoffset:40;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.75s forwards}
+#n5\.arrow3{opacity:0;animation:ft-appear .01s linear 4.35s forwards}
+#ft-shaft-5{stroke-dasharray:136;stroke-dashoffset:136;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.90s forwards}
+#n1\.arrow0{opacity:0;animation:ft-appear .01s linear 4.50s forwards}
+#ft-shaft-6{stroke-dasharray:168;stroke-dashoffset:168;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.05s forwards}
+#n1\.arrow1{opacity:0;animation:ft-appear .01s linear 4.65s forwards}
+#ft-shaft-7{stroke-dasharray:1168;stroke-dashoffset:1168;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.20s forwards}
+#n1\.arrow2{opacity:0;animation:ft-appear .01s linear 4.80s forwards}
+#ft-shaft-8{stroke-dasharray:104;stroke-dashoffset:104;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.35s forwards}
+#n1\.arrow3{opacity:0;animation:ft-appear .01s linear 4.95s forwards}
+#ft-shaft-9{stroke-dasharray:488;stroke-dashoffset:488;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.50s forwards}
+#n1\.arrow4{opacity:0;animation:ft-appear .01s linear 5.10s forwards}
+@keyframes ft-travel{from{offset-distance:0%}to{offset-distance:100%}}
+#ft-pulse-0{offset-path:path('M696,128 H736');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 5.25s infinite, ft-show .1s linear 5.25s forwards}
+#ft-pulse-1{offset-path:path('M744,336 H752 V384 H88 V336 H112');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 5.65s infinite, ft-show .1s linear 5.65s forwards}
+#ft-pulse-2{offset-path:path('M208,336 H248');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 6.05s infinite, ft-show .1s linear 6.05s forwards}
+#ft-pulse-3{offset-path:path('M344,336 H384');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 6.45s infinite, ft-show .1s linear 6.45s forwards}
+#ft-pulse-4{offset-path:path('M608,336 H648');offset-rotate:0deg;opacity:0;animation:ft-travel 3.8s linear 6.85s infinite, ft-show .1s linear 6.85s forwards}
+#ft-pulse-5{offset-path:path('M168,128 H216 V88 H264');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 7.25s infinite, ft-show .1s linear 7.25s forwards}
+#ft-pulse-6{offset-path:path('M376,88 H440 V128 H504');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 7.65s infinite, ft-show .1s linear 7.65s forwards}
+#ft-pulse-7{offset-path:path('M832,128 H872 V248 H32 V336 H112');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 8.05s infinite, ft-show .1s linear 8.05s forwards}
+#ft-pulse-8{offset-path:path('M168,128 H208 V160 H240');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 8.45s infinite, ft-show .1s linear 8.45s forwards}
+#ft-pulse-9{offset-path:path('M400,160 H448 V256 H160 V312');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 8.85s infinite, ft-show .1s linear 8.85s forwards}
+@keyframes ft-show{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){[id^=ft-pulse],[id^=ft-shaft]{display:none}*{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}

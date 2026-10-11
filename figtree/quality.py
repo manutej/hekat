@@ -420,7 +420,21 @@ class QualityCritic:
             if not any(i.dimension == d for i in issues):
                 scores[d] = None
         weights = self.rubric.weights
-        assessed = [d for d in DIMENSIONS if scores[d] is not None]
+        for d in DIMENSIONS:  # a dimension the medium does not use is not assessed
+            if weights.get(d, 1.0) == 0 and not any(i.dimension == d for i in issues):
+                scores[d] = None
+        # veto-class defects also count against medium fit (a chart with a gradient is not a chart
+        # for publication, whatever its other dimensions say)
+        from figtree.rubric_spec import VETOES
+
+        fired = {i.check_id for i in issues if i.check_id}
+        vetoed = [name for name, v in VETOES.items() if any(c in fired for c in v["checks"])]
+        if vetoed and scores["medium_fit"] is not None:
+            scores["medium_fit"] = max(1.0, min(scores["medium_fit"], 7.0) - 1.0 * (len(vetoed) - 1))
+            metrics["vetoes"] = len(vetoed)
+            self._vetoed = vetoed
+        assessed = [d for d in DIMENSIONS if scores[d] is not None and weights.get(d, 1.0) > 0]
         overall = sum(scores[d] * weights.get(d, 1.0) for d in assessed) / sum(weights.get(d, 1.0) for d in assessed)
-        tags = sorted({i.dimension for i in issues if i.severity == "critical"})
+        tags = sorted({i.dimension for i in issues if i.severity == "critical"}) + [f"veto:{v}" for v in getattr(self, "_vetoed", [])]
+        self._vetoed = []
         return QualityReport(self.rubric.name, {k: (round(v, 2) if v is not None else None) for k, v in scores.items()}, round(overall, 2), issues, tags, metrics)

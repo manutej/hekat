@@ -33,14 +33,28 @@ class Worker:
     detour: int = 24
     max_aspect: float = 3.0  # wider layouts are folded into rows (left-to-right, top-to-bottom)
     row_gap: int = 48
+    box_untitled: Optional[bool] = None  # container around untitled groups; None = preset default (paper yes, editorial no)
     spacing_iterations: int = 5
     events: List[str] = field(default_factory=list)
 
     # ==================================================================
     # Merge
     # ==================================================================
+    def _apply_preset(self, style: GlobalStyle) -> None:
+        from figtree.styles import PRESETS
+
+        pr = PRESETS.get(getattr(style, "preset", "paper"))
+        if pr is not None and getattr(style, "preset", "paper") != "paper":
+            self.gap_h, self.gap_v, self.row_gap = pr.gap_h, pr.gap_v, pr.row_gap
+            self.detour = max(24, style.min_arrow)
+            if self.box_untitled is None:
+                self.box_untitled = False  # editorial presets draw stages without arbitrary boxes
+        elif self.box_untitled is None:
+            self.box_untitled = True
+
     def merge(self, node: Node, children: Sequence[Node]) -> Fragment:
         style = node.style
+        self._apply_preset(style)
         grid = style.grid
         child_of: Dict[str, Node] = {}
         for c in children:
@@ -69,11 +83,12 @@ class Worker:
             node.layout = "horizontal"
         by_id = {c.id: c for c in children}
         columns: List[List[Node]] = [[by_id[cid] for cid in layer] for layer in layers]
+        self._barycenter(columns, owned)
         column_of: Dict[str, int] = {c.id: i for i, col in enumerate(columns) for c in col}
 
         titled = node.depth >= 1 and self.has_title(node)
         origin_y = style.padding + (16 if titled else 0)
-        rows = self._wrap_rows(columns)
+        rows = self._wrap_rows(columns) if node.depth == 0 else [columns]  # only the root folds into rows
         row_of: Dict[str, int] = {c.id: r for r, row in enumerate(rows) for col in row for c in col}
         y = origin_y
         for row in rows:
@@ -81,8 +96,18 @@ class Worker:
         if len(rows) > 1:
             node.layout = "rows"
 
-        fragment = self._assemble(node, children, columns, column_of, owned, titled, boxed=node.depth >= 1, row_of=row_of)
+        fragment = self._assemble(node, children, columns, column_of, owned, titled, boxed=node.depth >= 1 and (titled or self.box_untitled), row_of=row_of)
         return fragment
+
+    @staticmethod
+    def _barycenter(columns: List[List[Node]], owned: List[Tuple[Flow, Node, Node]]) -> None:
+        """Order each column by the mean position of its sources in the previous column (fewer crossings)."""
+        for i in range(1, len(columns)):
+            prev_pos = {c.id: k for k, c in enumerate(columns[i - 1])}
+            def key(c: Node) -> float:
+                srcs = [prev_pos[a.id] for f, a, b in owned if b.id == c.id and a.id in prev_pos]
+                return sum(srcs) / len(srcs) if srcs else float(columns[i].index(c))
+            columns[i].sort(key=key)
 
     def _wrap_rows(self, columns: List[List[Node]]) -> List[List[List[Node]]]:
         """Fold the column sequence into rows so the canvas aspect stays below ``max_aspect``."""
@@ -100,16 +125,30 @@ class Worker:
             if est_w / est_h <= self.max_aspect:
                 break
             rows_n += 1
-        target = total_w / rows_n
-        rows: List[List[List[Node]]] = [[]]
-        cum = 0
-        for col, w in zip(columns, widths):
-            if rows[-1] and cum + w > target * 1.1 and len(rows) < rows_n:
-                rows.append([])
-                cum = 0
-            rows[-1].append(col)
-            cum += w + self.gap_h
-        return rows
+        # split into rows_n contiguous groups minimising the widest row (dynamic programming)
+        n_cols = len(columns)
+        import functools
+
+        @functools.lru_cache(maxsize=None)
+        def best(start: int, groups: int) -> Tuple[int, Tuple[int, ...]]:
+            if groups == 1:
+                return sum(widths[start:]) + self.gap_h * (n_cols - start - 1), (n_cols,)
+            res = (10**9, ())
+            for cut in range(start + 1, n_cols - groups + 2):
+                w = sum(widths[start:cut]) + self.gap_h * (cut - start - 1)
+                rest, cuts = best(cut, groups - 1)
+                cand = max(w, rest)
+                if cand < res[0]:
+                    res = (cand, (cut,) + cuts)
+            return res
+
+        _, cuts = best(0, rows_n)
+        rows: List[List[List[Node]]] = []
+        start = 0
+        for cut in cuts:
+            rows.append(columns[start:cut])
+            start = cut
+        return [r for r in rows if r]
 
     @staticmethod
     def has_title(node: Node) -> bool:
@@ -180,6 +219,9 @@ class Worker:
                     leaf_blocks[el.extra.get("data-component", el.id)] = BBox(el.x + off[0], el.y + off[1], el.w, el.h)
         paths: List[PathEl] = []
         over = under = 0
+        lanes: Dict[Tuple[int, int], int] = {}  # (col a, col b) -> Z-route lanes used
+        gap_lanes: Dict[Tuple[int, int], int] = {}  # (row a, row b) -> cross-row lanes used
+        used_ports: set = set()  # a second arrow into the same port enters from another side
 
         def port_pt(child: Node, port: Port) -> Point:
             return (child.offset["x"] + port.rel_x, child.offset["y"] + port.rel_y)
@@ -208,16 +250,29 @@ class Worker:
                     y = round_to_grid((max(bx.y2 for bx in above) + min(bx.y for cid, bx in boxes.items() if row_of[cid] == ra)) / 2, node.style.grid)
                 left_blocks = [bx for comp, bx in leaf_blocks.items() if comp != f.dst and bx.x2 <= d[0] and bx.y <= d[1] <= bx.y2 and row_of.get(child_of_comp.get(comp, ""), -1) == rb]
                 xl = (max(bx.x2 for bx in left_blocks) + 8) if left_blocks else boxes[b.id].x - self.detour
+                k = gap_lanes.get((ra, rb), 0)
+                gap_lanes[(ra, rb)] = k + 1
+                y += 8 * k  # each cross-row arrow travels its own lane in the row gap
+                gx1 += 8 * k
                 cand_a = [s, (gx1, s[1]), (gx1, y), (xl, y), (xl, d[1]), d]
                 dp_t = self._leaf_port(b, f.dst, "top")
                 d_t = port_pt(b, dp_t)
                 cand_b = [s, (gx1, s[1]), (gx1, y), (d_t[0], y), d_t]
-                if d[0] - xl >= node.style.min_arrow and not path_hits_boxes(cand_a, obstacles):
+                if dp.id not in used_ports and d[0] - xl >= node.style.min_arrow and not path_hits_boxes(cand_a, obstacles):
                     pts = cand_a
-                elif not path_hits_boxes(cand_b, obstacles):
+                elif dp_t.id not in used_ports and not path_hits_boxes(cand_b, obstacles):
                     pts, dp = cand_b, dp_t
+                elif not path_hits_boxes(cand_a, obstacles):
+                    pts = cand_a
             elif fwd:
                 direct = route(s, d, "right", "left", node.style.grid)
+                if len(direct) == 4:  # Z-route: give each arrow between these columns its own vertical lane
+                    key = (column_of[a.id], column_of[b.id])
+                    k = lanes.get(key, 0)
+                    lanes[key] = k + 1
+                    if k:
+                        mx = direct[1][0] + 8 * k
+                        direct = [direct[0], (mx, direct[1][1]), (mx, direct[2][1]), direct[3]]
                 if not path_hits_boxes(direct, obstacles):
                     pts = direct
             if pts is None:
@@ -255,6 +310,7 @@ class Worker:
                 ok = [c for c in candidates if not path_hits_boxes(c[0], obstacles) and final_segment_length(c[0]) >= node.style.min_arrow]
                 chosen = ok[0] if ok else next((c for c in candidates if not path_hits_boxes(c[0], obstacles)), candidates[0])
                 pts, sp, dp = chosen
+            used_ports.add(dp.id)
             paths.append(
                 PathEl(
                     id=f"{node.id}.arrow{i}",
@@ -333,7 +389,11 @@ class Worker:
         h = ceil_to_grid(max_y + style.padding, grid)
 
         elements: List = []
+        from figtree.styles import PRESETS
+
+        pr = PRESETS.get(getattr(style, "preset", "paper")) or PRESETS["paper"]
         if boxed:
+            extra = {"stroke-dasharray": pr.container_dash} if pr.container_dash else {}
             elements.append(
                 RectEl(
                     id=f"{node.id}.container",
@@ -341,12 +401,12 @@ class Worker:
                     y=0,
                     w=w,
                     h=h,
-                    fill=style.palette["container"],
-                    stroke=style.palette["border"],
+                    fill=pr.container_fill,
+                    stroke=pr.container_stroke,
                     stroke_width=style.stroke_border,
                     role="container",
-                    rx=4,
-                    extra={"stroke-dasharray": "4 2"},
+                    rx=pr.container_rx,
+                    extra=extra,
                 )
             )
         if titled:
@@ -364,6 +424,7 @@ class Worker:
                     kind="annot",
                     font=style.font,
                     anchor="start",
+                    fill=pr.title_color,
                     max_width=w,
                 )
             )

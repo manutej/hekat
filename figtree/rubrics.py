@@ -109,6 +109,7 @@ RUBRICS: Dict[str, Rubric] = {
         description="Data figure: labelled axes with units, tick labels legible, colour-blind-safe series count, no 3D or gradients.",
         min_font=10, min_contrast=4.5, max_palette=6, max_words_per_label=8, aspect=(1.0, 2.2), margin=16,
         max_margin_ratio=0.15, max_stroke_widths=3, max_font_families=1, require_axis_labels=True,
+        weights={**{k: 1.0 for k in DIMENSIONS}, "topology_accuracy": 0.5, "flow_readability": 0.5},
         notes=["direct labelling beats a legend", "title states the finding"],
     ),
     "dashboard": Rubric(
@@ -117,6 +118,7 @@ RUBRICS: Dict[str, Rubric] = {
         description="Dashboard tile: one title, one key number or trend, compact, high contrast, no decoration.",
         min_font=12, min_contrast=4.5, max_palette=4, max_words_per_label=6, aspect=(0.8, 2.0), margin=16,
         max_margin_ratio=0.2, max_stroke_widths=2, max_font_families=1, fixed_canvas=True,
+        weights={**{k: 1.0 for k in DIMENSIONS}, "topology_accuracy": 0.5, "flow_readability": 0.5},
     ),
     "icon": Rubric(
         name="icon",
@@ -125,6 +127,7 @@ RUBRICS: Dict[str, Rubric] = {
         min_font=0, min_contrast=3.0, max_palette=2, max_words_per_label=0, aspect=(1.0, 1.0), margin=2,
         max_margin_ratio=0.25, max_stroke_widths=1, max_font_families=0, max_elements=12, allow_text=False,
         require_square=True, max_corner_radius=4, fixed_canvas=True,
+        weights={**{k: 1.0 for k in DIMENSIONS}, "semantic_coverage": 0.0, "hallucination_control": 0.0, "topology_accuracy": 0.0, "flow_readability": 0.0},
     ),
 }
 

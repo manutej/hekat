@@ -59,7 +59,7 @@ def animate_svg(svg_text: str, modes: Tuple[str, ...] = ("reveal", "draw", "puls
         # opacity only: a CSS transform would replace the group's own SVG translate()
         css.append("@keyframes ft-reveal{from{opacity:0}to{opacity:1}}")
         for gid, delay in group_delay.items():
-            css.append(f"#{_css_id(gid)}{{opacity:0;animation:ft-reveal .5s ease-out {delay:.2f}s forwards}}")
+            css.append(f"#{_css_id(gid)}{{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) {delay:.2f}s forwards}}")
 
     flows = [e for e in prog.flows() if e.points]
     shafts: List[str] = []
@@ -79,7 +79,7 @@ def animate_svg(svg_text: str, modes: Tuple[str, ...] = ("reveal", "draw", "puls
             )
             css.append(
                 f"#{sid}{{stroke-dasharray:{length};stroke-dashoffset:{length};"
-                f"animation:ft-draw {tl.draw}s ease-in-out {delay:.2f}s forwards}}"
+                f"animation:ft-draw {tl.draw}s cubic-bezier(.4,0,.2,1) {delay:.2f}s forwards}}"
             )
             css.append(f"#{_css_id(f.id)}{{opacity:0;animation:ft-appear .01s linear {delay + tl.draw:.2f}s forwards}}")
     pulses: List[str] = []
@@ -91,7 +91,7 @@ def animate_svg(svg_text: str, modes: Tuple[str, ...] = ("reveal", "draw", "puls
             dur = tl.pulse * (1.6 if is_control else 1.0)
             pid = f"ft-pulse-{i}"
             fill = "#333333" if not is_control else "#999999"
-            pulses.append(f'<circle id="{pid}" r="3" fill="{fill}" data-role="pulse"/>')
+            pulses.append(f'<circle id="{pid}" r="3.5" fill="{fill}" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>')
             css.append(
                 f"#{pid}{{offset-path:path('{points_to_path(f.points)}');offset-rotate:0deg;opacity:0;"
                 f"animation:ft-travel {dur:.1f}s linear {start + i * 0.4:.2f}s infinite, ft-show .1s linear {start + i * 0.4:.2f}s forwards}}"

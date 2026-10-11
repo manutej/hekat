@@ -85,6 +85,7 @@ class FigTree:
         self.render = render
         self.render_dir = render_dir
         self.sheaf = SheafGraph()
+        self.style_override: Optional[GlobalStyle] = None  # a design preset replaces the grounder's style
         self.events: List[str] = []
         self._counter = 0
         self._node_count = 0
@@ -104,6 +105,8 @@ class FigTree:
         self._source = source_text
         grounded = self._ground_with_retry(source_text)
         plan, style = grounded.content_plan, grounded.global_style
+        if self.style_override is not None:
+            style = self.style_override
         faith = check_faithfulness(plan, source_text)
         root = Node(
             id=self._next_id(),

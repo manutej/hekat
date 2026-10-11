@@ -1,0 +1,65 @@
+{
+  "rubric": "teaching",
+  "overall": 5.88,
+  "scores": {
+    "semantic_coverage": 6,
+    "hallucination_control": 7,
+    "topology_accuracy": 5,
+    "flow_readability": 4,
+    "text_quality": 8,
+    "visual_polish": 6,
+    "medium_fit": 5,
+    "compactness": 6
+  },
+  "justifications": {
+    "semantic_coverage": "Shows Grounder, Generator, recursive tree, Decompose, Merge, Critic, Worker, render, re-validate; the critic loop is present but the render\u2192Critic\u2192Worker\u2192re-validate cycle is unclear.",
+    "hallucination_control": "All labels come from the source, but Grounder\u2192recursive tree and Grounder\u2192Generator are drawn as a split, and the dashed re-validate\u2192render arrow is odd.",
+    "topology_accuracy": "Recursive tree is placed as a sibling of Generator instead of a recursive structure under it. The Critic loop is a flat row with no clear grouping or containment.",
+    "flow_readability": "Long merged connectors from recursive tree and Merge run to Critic and overlap along the left. The Worker\u2192re-validate and render return lines run in parallel and are ambiguous, and arrow endpoints are hard to trace.",
+    "text_quality": "Short, clean, legible labels at a consistent font size with no overflow.",
+    "visual_polish": "Restrained blue/orange palette with consistent strokes and small icons. The overlapping lines are messy and the orange highlighting has no legend.",
+    "medium_fit": "Labels are short and colours few, but the figure mixes several ideas, with a weak reading order and small text for teaching.",
+    "compactness": "Layout is reasonably filled, but the long connectors and the empty space in the middle and right-bottom are wasteful."
+  },
+  "tags": {
+    "semantic_coverage": [
+      "main_idea_present",
+      "loop_unclear"
+    ],
+    "hallucination_control": [
+      "source_grounded",
+      "questionable_edges"
+    ],
+    "topology_accuracy": [
+      "flat_hierarchy",
+      "no_grouping"
+    ],
+    "flow_readability": [
+      "overlapping_routes",
+      "ambiguous_loop",
+      "long_connectors"
+    ],
+    "text_quality": [
+      "legible",
+      "concise"
+    ],
+    "visual_polish": [
+      "restrained_palette",
+      "messy_lines"
+    ],
+    "medium_fit": [
+      "weak_reading_order",
+      "small_labels"
+    ],
+    "compactness": [
+      "uneven_density",
+      "stretched_connectors"
+    ]
+  },
+  "vetoes": [
+    "chaotic_routing"
+  ],
+  "comment": "Source-grounded labels with clean text, but the routing is confusing: long overlapping connectors, a flat topology, and an unclear Critic loop weaken the teaching value.",
+  "png": "/tmp/figtree-judge-3omc5vgj/judge.png",
+  "cost_usd": 0.0405276
+}

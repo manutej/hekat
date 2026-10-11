@@ -45,6 +45,7 @@ class GlobalStyle:
     grid: int = 8
     min_arrow: int = 20
     padding: int = 24
+    preset: str = "paper"  # design preset name (figtree.styles); not a conserved quantity by itself
 
     # -- derived helpers -------------------------------------------------
     @property
@@ -90,6 +91,7 @@ class GlobalStyle:
             "grid": self.grid,
             "min_arrow": self.min_arrow,
             "padding": self.padding,
+            "preset": self.preset,
         }
 
     @classmethod
@@ -107,6 +109,7 @@ class GlobalStyle:
             grid=int(d.get("grid", 8)),
             min_arrow=int(d.get("min_arrow", 20)),
             padding=int(d.get("padding", 24)),
+            preset=str(d.get("preset", "paper")),
         )
 
 

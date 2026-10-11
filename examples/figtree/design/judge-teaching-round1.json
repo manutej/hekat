@@ -1,0 +1,63 @@
+{
+  "rubric": "teaching",
+  "overall": 4.88,
+  "scores": {
+    "semantic_coverage": 5,
+    "hallucination_control": 6,
+    "topology_accuracy": 4,
+    "flow_readability": 4,
+    "text_quality": 6,
+    "visual_polish": 6,
+    "medium_fit": 4,
+    "compactness": 4
+  },
+  "justifications": {
+    "semantic_coverage": "Names Grounder, Generator, recursive tree, Decompose, Merge, Critic, Worker, re-validate, render, but omits the \u22643 repeat bound, the 32-node/depth limits and any depiction of the tree itself.",
+    "hallucination_control": "All labels come from the source, but the Grounder\u2192recursive tree and Generator\u2192Decompose arrows are questionable, and the dashed arrow into render is unexplained.",
+    "topology_accuracy": "Grounder and Generator appear as parallel chains rather than Grounder\u2192Generator\u2192Decompose within a tree. The critic loop is a flat chain with a long return, and nothing is grouped or nested.",
+    "flow_readability": "Two long elbow connectors cross, and the return from render runs under everything and into the Merge/Critic junction. The lines overlap at Merge\u2192Critic, so it is unclear where the return enters.",
+    "text_quality": "Labels are correct and clean, but at roughly 13px they are small for teaching material. The icon-to-text spacing is uneven.",
+    "visual_polish": "The two-colour palette is restrained and strokes are consistent, but the composition is unbalanced and the orange/blue meaning is unexplained.",
+    "medium_fit": "A teaching figure needs large labels and one clear idea. Here the small text and the tangled routing make the reading order weak.",
+    "compactness": "There are large empty margins and a blank middle-right area. The connectors are stretched, and the content is spread across a wide canvas."
+  },
+  "tags": {
+    "semantic_coverage": [
+      "partial",
+      "missing_bounds"
+    ],
+    "hallucination_control": [
+      "questionable_edges"
+    ],
+    "topology_accuracy": [
+      "flat",
+      "wrong_grouping"
+    ],
+    "flow_readability": [
+      "crossings",
+      "long_connectors",
+      "ambiguous_loop"
+    ],
+    "text_quality": [
+      "small_font"
+    ],
+    "visual_polish": [
+      "restrained_palette",
+      "unbalanced"
+    ],
+    "medium_fit": [
+      "small_labels",
+      "weak_order"
+    ],
+    "compactness": [
+      "wasted_space",
+      "stretched_connectors"
+    ]
+  },
+  "vetoes": [
+    "chaotic_routing"
+  ],
+  "comment": "The figure uses correct source labels and a restrained palette, but its topology is flat. The routing is confusing, with crossing long connectors and an ambiguous loop return. Labels are small for teaching and the canvas is used poorly.",
+  "png": "/tmp/figtree-judge-szhxdlxo/judge.png",
+  "cost_usd": 0.0399585
+}

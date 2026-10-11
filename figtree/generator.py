@@ -98,6 +98,19 @@ def _layers(components: Sequence[str], flows: Sequence[Flow]) -> List[List[str]]
     return [l for l in out if l]
 
 
+def _order_layers(layers: List[List[str]], flows: Sequence[Flow]) -> List[List[str]]:
+    """Barycenter ordering: each layer sorted by the mean position of its sources in the previous
+    layer, so arrows between adjacent layers do not cross (the Sugiyama ordering step)."""
+    out: List[List[str]] = [list(layers[0])] if layers else []
+    for i in range(1, len(layers)):
+        prev = {c: k for k, c in enumerate(out[i - 1])}
+        def key(c: str) -> float:
+            srcs = [prev[f.src] for f in flows if f.dst == c and f.src in prev]
+            return sum(srcs) / len(srcs) if srcs else float(layers[i].index(c))
+        out.append(sorted(layers[i], key=key))
+    return out
+
+
 def _chunk(items: List[List[str]], k: int) -> List[List[str]]:
     """Group consecutive layers into ``k`` contiguous groups of balanced size."""
     total = sum(len(l) for l in items)
@@ -135,7 +148,8 @@ class RuleBasedGenerator:
     # -- Decompose -------------------------------------------------------
     def decompose(self, node: Node, next_id) -> List[Node]:
         comps = list(node.components)
-        layers = _layers(comps, node.flows)
+        layers = _order_layers(_layers(comps, node.flows), node.flows)
+        comps = [c for layer in layers for c in layer]  # reading order follows the layering
         if len(comps) <= 4:
             groups = [[c] for c in comps]
         else:
@@ -173,10 +187,13 @@ class RuleBasedGenerator:
         lines = [n for n in names]
         longest = max(lines, key=len)
         text_w = int(round(len(longest) * label_size * 0.5))
+        from figtree.styles import PRESETS
+
+        pr = PRESETS.get(getattr(style, "preset", "paper")) or PRESETS["paper"]
         kind = kind_for(names[0]) if self.shapes else "block"
         icon = icon_for(names[0]) if self.icons else None
         inset_l, inset_r = text_inset(kind)
-        icon_w = 24 if icon else 0  # 16px glyph + 8px gap, starts at x=8
+        icon_w = 20 if icon else 0  # glyph at x=8..24, label from x=32: 20px more than a plain block
         # compact academic blocks (paper: ~60-100px wide, 20-30px tall); 8-grid forces 32 tall
         w = ceil_to_grid(max(64, text_w + 2 * 12 + inset_l + inset_r + icon_w), 2 * grid)
         h = ceil_to_grid(max(32 if kind not in ("decision", "actor") else 48, int(label_size * 1.2) * len(lines) + 2 * 8), 2 * grid)
@@ -196,7 +213,7 @@ class RuleBasedGenerator:
                 stroke=style.palette["border"],
                 stroke_width=style.stroke_main,
                 role="block",
-                rx=4,
+                rx=pr.block_rx,
                 extra={"data-component": names[0]},
             )
         else:
@@ -212,8 +229,12 @@ class RuleBasedGenerator:
                 stroke_width=style.stroke_main,
                 extra={"data-component": names[0]},
             )
-        text_x = (w + icon_w + inset_l - inset_r) // 2
-        text_x = ceil_to_grid(text_x, grid) if text_x % grid else text_x
+        if icon:  # a constant 8px gap after the glyph: label starts at x=32
+            text_x, anchor = 32 + inset_l, "start"
+        else:
+            text_x = (w + inset_l - inset_r) // 2
+            text_x = ceil_to_grid(text_x, grid) if text_x % grid else text_x
+            anchor = "middle"
         text = TextEl(
             id=f"{node.id}.label",
             x=text_x,
@@ -222,6 +243,8 @@ class RuleBasedGenerator:
             size=label_size,
             kind="label",
             font=style.font,
+            anchor=anchor,
+            fill=pr.label_color,
             max_width=w - icon_w - inset_l - inset_r,
             lines=lines if len(lines) > 1 else [],
         )
@@ -247,7 +270,7 @@ class RuleBasedGenerator:
             ])
         elements: List = [rect, text]
         if icon:
-            elements.insert(1, UseEl(id=f"{node.id}.icon", href=f"#icon-{icon}", x=8, y=(h - 16) // 2, w=16, h=16, color=style.palette["border"]))
+            elements.insert(1, UseEl(id=f"{node.id}.icon", href=f"#icon-{icon}", x=8, y=(h - 16) // 2, w=16, h=16, color=pr.icon_color))
         frag = Fragment(node_id=node.id, w=w, h=h, elements=elements, ports=ports)
         if "diagonal" in self.faults:
             frag.elements.append(

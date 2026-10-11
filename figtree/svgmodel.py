@@ -310,7 +310,10 @@ class Fragment:
 
 
 def marker_defs(style: GlobalStyle) -> str:
-    w, h = MARKER_W, MARKER_H
+    from figtree.styles import PRESETS
+
+    pr = PRESETS.get(getattr(style, "preset", "paper"))
+    w, h = (pr.marker_w, pr.marker_h) if pr else (MARKER_W, MARKER_H)
     return (
         f'<defs>\n  <marker id="{MARKER_ID}" markerWidth="{w}" markerHeight="{h:g}" refX="{w}" '
         f'refY="{h / 2:g}" orient="auto" markerUnits="userSpaceOnUse">\n'

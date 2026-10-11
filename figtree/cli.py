@@ -277,6 +277,8 @@ def main(argv: Optional[list] = None) -> int:
     ap.add_argument("--max-nodes", type=int, default=32)
     ap.add_argument("--max-depth", type=int, default=8)
     ap.add_argument("--max-aspect", type=float, default=3.0, help="fold wide layouts into rows above this width/height ratio")
+    ap.add_argument("--style", choices=["paper", "teaching", "slide"], default="paper", help="design preset")
+    ap.add_argument("--no-containers", action="store_true", help="do not box untitled stage groups")
     ap.add_argument("--icons", action="store_true", help="place a library icon inside each block")
     ap.add_argument("--shapes", action="store_true", help="draw stores, documents, decisions, terminals and actors with their silhouettes")
     args = ap.parse_args(argv)
@@ -297,7 +299,11 @@ def main(argv: Optional[list] = None) -> int:
 
     ft = FigTree(grounder=grounder, critic=critic, limits=limits, render=not args.no_render,
                  generator=RuleBasedGenerator(max_depth=limits.max_depth, icons=args.icons, shapes=args.shapes),
-                 worker=Worker(spacing_iterations=limits.spacing_iterations, max_aspect=args.max_aspect))
+                 worker=Worker(spacing_iterations=limits.spacing_iterations, max_aspect=args.max_aspect, box_untitled=False if args.no_containers else None))
+    if args.style != "paper":
+        from figtree.styles import get_preset
+
+        ft.style_override = get_preset(args.style).style
     result = ft.run(source, edit=_parse_edit(args.edit))
     with open(args.output, "w", encoding="utf-8") as fh:
         fh.write(result.final_svg)

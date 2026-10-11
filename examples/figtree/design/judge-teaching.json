@@ -1,0 +1,63 @@
+{
+  "rubric": "teaching",
+  "overall": 6.38,
+  "scores": {
+    "semantic_coverage": 7,
+    "hallucination_control": 7,
+    "topology_accuracy": 5,
+    "flow_readability": 5,
+    "text_quality": 8,
+    "visual_polish": 7,
+    "medium_fit": 6,
+    "compactness": 6
+  },
+  "justifications": {
+    "semantic_coverage": "Shows Grounder, Generator, recursive tree, Decompose children, Merge, and the Critic loop of Critic, Worker, re-validate, render. It omits bounds and residuals, and the top and bottom rows are not clearly tied to the source's hierarchy.",
+    "hallucination_control": "All labels come from the source. Grounder fans out to both Generator and recursive tree, and the recursive tree box sits beside Generator as if it were a peer stage. The icons are generic decoration.",
+    "topology_accuracy": "Recursive tree is shown as a sibling of Generator rather than as the build/decompose structure. Both the tree and Merge feed into Critic. The render-to-Critic order is odd, since the source says render comes before the Critic. No grouping or containment is shown.",
+    "flow_readability": "Long orthogonal connectors run from Merge and the recursive tree down to Critic. They nearly overlap near Critic, and the loop-back from render runs under the row. The dashed arrow is unexplained. The reading order is only inferable.",
+    "text_quality": "Labels are short, crisp, and consistent in font, with no overflow. Size is moderate and could be larger for teaching material.",
+    "visual_polish": "The palette is restrained, blue with orange accents, and strokes are consistent. The orange highlight on Critic and re-validate has no stated meaning, and the connectors look slightly cluttered.",
+    "medium_fit": "Labels are clear and few, but the figure carries two ideas and there are no step numbers or legend. The font is smallish for teaching, and the reading order is not strong.",
+    "compactness": "The right side of the top row and the area around the middle are left empty. The long connectors waste space, and the margins are fairly even."
+  },
+  "tags": {
+    "semantic_coverage": [
+      "main_stages_present",
+      "minor_omissions"
+    ],
+    "hallucination_control": [
+      "source_grounded",
+      "dubious_edges"
+    ],
+    "topology_accuracy": [
+      "flat_structure",
+      "order_mismatch"
+    ],
+    "flow_readability": [
+      "long_connectors",
+      "near_merging_arrows",
+      "loop_back"
+    ],
+    "text_quality": [
+      "legible",
+      "consistent"
+    ],
+    "visual_polish": [
+      "restrained_palette",
+      "unexplained_color"
+    ],
+    "medium_fit": [
+      "multiple_ideas",
+      "weak_reading_order"
+    ],
+    "compactness": [
+      "empty_middle",
+      "long_connectors"
+    ]
+  },
+  "vetoes": [],
+  "comment": "The figure has the right components and clean, legible boxes. Its topology and flow are muddled: the recursive tree is placed as a sibling stage, the connectors are long, and render is placed after re-validate with a loop-back to Critic.",
+  "png": "/tmp/figtree-judge-ogf638m2/judge.png",
+  "cost_usd": 0.0411532
+}

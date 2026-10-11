@@ -112,7 +112,7 @@ def build() -> str:
     <div><dt>icons designed</dt><dd>{max(icons_n, 0)}</dd></div>
   </dl>
 </header>
-<nav class="toc"><a href="#loop">The loop</a><a href="#figures">1 · Figures from text</a><a href="#refine">2 · Refinement</a><a href="#icons">3 · Icons</a><a href="#motion">4 · Motion</a><a href="#meta">5 · Meta-prompt</a><a href="#evaluation">6 · Evaluation</a><a href="#learned">What the loop caught</a></nav>
+<nav class="toc"><a href="#loop">The loop</a><a href="#figures">1 · Figures from text</a><a href="#refine">2 · Refinement</a><a href="#icons">3 · Icons</a><a href="#design">4 · Design round</a><a href="#motion">5 · Motion</a><a href="#meta">6 · Meta-prompt</a><a href="#evaluation">7 · Evaluation</a><a href="#learned">What the loop caught</a></nav>
 ''')
 
     # ---- the loop
@@ -174,8 +174,30 @@ def build() -> str:
             parts.append('<details><summary>Worker notes</summary><pre class="notes-pre">' + html.escape(read(notes)) + "</pre></details>")
         parts.append("</section>")
 
+    # ---- design round
+    dz = os.path.join(EX, "design")
+    if os.path.exists(os.path.join(dz, "judge-teaching.json")):
+        jb = json.load(open(os.path.join(dz, "judge-paper.json"), encoding="utf-8"))
+        ja = json.load(open(os.path.join(dz, "judge-teaching.json"), encoding="utf-8"))
+        rounds = [("paper register", jb)]
+        for n, fn in ((1, "judge-teaching-round1.json"), (2, "judge-teaching-round2.json")):
+            fp = os.path.join(dz, fn)
+            if os.path.exists(fp):
+                rounds.append((f"teaching, round {n}", json.load(open(fp, encoding="utf-8"))))
+        rounds.append(("teaching, round 3", ja))
+        dims = list(jb["scores"])
+        head = "".join(f"<th>{d.replace('_', ' ')}</th>" for d in dims)
+        body = "".join("<tr><td>" + html.escape(lbl) + "</td><td><strong>" + f"{j['overall']:.2f}" + "</strong></td>" + "".join(f"<td>{j['scores'][d]}</td>" for d in dims) + "</tr>" for lbl, j in rounds)
+        parts.append(f'''<section id="design"><h2>4 · Design round: the figure, redesigned under critique</h2>
+<p>The generated figure was judged in image space (the paper's diagnostic evaluator, reading the rendered PNG on this session's login), then redesigned and re-judged three times. The critique drove four changes: a <em>teaching</em> design preset (sans labels, tinted fills with an ink border, no arbitrary containers, larger arrowheads, more air), barycenter ordering of layers so sibling arrows stop crossing, lane allocation so cross-row arrows never share a segment, and row balancing by minimum maximum width so the critic loop stays on one row. The source also gained the one flow it had implied but never stated (Grounder → Generator).</p>
+<div class="pair">{inline(os.path.join(dz, "figtree-spec.paper.svg"), "dz-paper-", "Paper register", f"Paper register: judged {jb['overall']:.2f}. {html.escape(jb['comment'])}")}{inline(os.path.join(dz, "figtree-spec.teaching.svg"), "dz-teach-", "Teaching register, round 3", f"Teaching register, round 3: judged {ja['overall']:.2f}. {html.escape(ja['comment'])}")}</div>
+<div style="overflow-x:auto"><table class="traj"><thead><tr><th>version</th><th>overall</th>{head}</tr></thead><tbody>{body}</tbody></table></div>
+<p>What the judge still asks for is not in the generator's gift: the source text places the recursive tree beside the Generator rather than under it, and a teaching figure wants step numbers and a legend, which the explainer page supplies.</p></section>''')
+
     # ---- level 4 motion
-    anim_svg = os.path.join(EX, "animated", "figtree-spec.refined.animated.svg")
+    anim_svg = os.path.join(EX, "design", "figtree-spec.teaching.animated.svg")
+    if not os.path.exists(anim_svg):
+        anim_svg = os.path.join(EX, "animated", "figtree-spec.refined.animated.svg")
     if not os.path.exists(anim_svg):
         anim_svg = os.path.join(EX, "animated", "figtree-spec.animated.svg")
     if os.path.exists(anim_svg):
@@ -185,7 +207,7 @@ def build() -> str:
         sibling = anim_svg.replace(".animated.svg", ".animation.css")
         if not css_text and os.path.exists(sibling):
             css_text = read(sibling)
-        parts.append('<section id="motion"><h2>4 · The figure comes to life</h2><p>Three motions, each with a meaning: blocks appear in the order the recursion builds them; connectors draw themselves before their arrowheads appear; a token travels every data flow, slower and dimmer on dashed control edges. The timeline is derived from the program, so every frame is reproducible; readers who prefer reduced motion see the final state.</p><p><button id="replay" type="button">Replay</button> <a class="explainer-link" href="explainer/index.html">Open the full explainer with scrubber, captions and legend</a></p>')
+        parts.append('<section id="motion"><h2>5 · The figure comes to life</h2><p>Three motions, each with a meaning: blocks appear in the order the recursion builds them; connectors draw themselves before their arrowheads appear; a token travels every data flow, slower and dimmer on dashed control edges. The timeline is derived from the program, so every frame is reproducible; readers who prefer reduced motion see the final state.</p><p><button id="replay" type="button">Replay</button> <a class="explainer-link" href="explainer/index.html">Open the full explainer with scrubber, captions and legend</a></p>')
         parts.append(inline(anim_svg, "anim-", "Animated self-application figure", "Reveal, draw, pulse. Press Replay to watch the figure build itself again.", css_text))
         parts.append('''<script>
 (function(){var b=document.getElementById('replay');if(!b)return;b.addEventListener('click',function(){var f=b.parentNode.nextElementSibling;var s=f.querySelector('.sheet');var h=s.innerHTML;s.innerHTML='';void s.offsetWidth;s.innerHTML=h;});})();
@@ -195,7 +217,7 @@ def build() -> str:
             parts.insert(len(parts) - 1, '<details><summary>Worker notes</summary><pre class="notes-pre">' + html.escape(read(notes)) + "</pre></details>")
 
     # ---- level 5 meta
-    parts.append('''<section id="meta"><h2>5 · The meta-prompt behind all of it</h2>
+    parts.append('''<section id="meta"><h2>6 · The meta-prompt behind all of it</h2>
 <p>The category is <em>editable-SVG artifact synthesis under a rubric</em>. What varies per instance is the source, the medium and the motion grammar; what never varies is the loop. The full typed version lives in <code>docs/META-PROMPT-SVG-ARTIFACTS.md</code>; this is its skeleton.</p>
 <div class="meta-grid">
   <div><h4>Typed slots</h4><ul><li>Source · Medium · Rubric(Medium)</li><li>Vocabulary of element kinds · IconFamily · MotionGrammar</li><li>ContentPlan with evidence spans</li><li>LayoutTree (2–4 children, depth ≤ 8, ≤ 32 nodes)</li><li>Program · Render · CriticReport · EditScript</li><li>Trajectory · Convergence · Requests</li></ul></div>
@@ -214,7 +236,7 @@ def build() -> str:
         gaming = [r for r in e["probes"] if r["kind"] == "gaming"]
         fps = [r for r in e["probes"] if r["kind"] == "false_positive"]
         glist = "".join(f"<li><code>{html.escape(r['id'])}</code> scored {r['overall']:.2f}; should fire {', '.join(r['missed']) or '(now caught)'}</li>" for r in gaming) or "<li>none</li>"
-        parts.append(f'''<section id="evaluation"><h2>6 · Evaluating the evaluators</h2>
+        parts.append(f'''<section id="evaluation"><h2>7 · Evaluating the evaluators</h2>
 <p>A rubric is an artifact too, so it gets the same loop. Each rubric is a machine-readable spec (dimensions with anchors, checks with signals, veto rules, judge questions). Probes are minimal figures with a known verdict; adversaries wrote probes to game the checks, trip false positives and expose misses. Every probe is now a regression test.</p>
 <dl class="stats"><div><dt>probes</dt><dd>{s_["probes"]}</dd></div><div><dt>recall</dt><dd>{s_["recall"]}</dd></div><div><dt>precision</dt><dd>{s_["precision"]}</dd></div><div><dt>gaming probes</dt><dd>{len(gaming)}</dd></div><div><dt>false-positive probes</dt><dd>{len(fps)}</dd></div></dl>
 <details><summary>Per-check recall (caught / expected) and false positives</summary><table class="traj"><thead><tr><th>check</th><th>recall</th><th>false pos.</th></tr></thead><tbody>{rows}</tbody></table></details>

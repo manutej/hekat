@@ -58,7 +58,12 @@ class StructuralCritic:
         H = int(float(root.get("height", 0)))
         canvas = BBox(0, 0, W, H)
         grid, pad = style.grid, style.padding
+        from figtree.styles import PRESETS
+
+        pr = PRESETS.get(getattr(style, "preset", "paper"))
         palette_values = {v.upper() for v in style.palette.values()} | {"#FFFFFF", "NONE"}
+        if pr is not None:
+            palette_values |= {pr.container_fill.upper(), pr.container_stroke.upper()}
 
         # white background first
         first = next((c for c in root if local(c.tag) not in ("comment", "title")), None)

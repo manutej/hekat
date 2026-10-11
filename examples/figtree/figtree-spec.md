@@ -16,6 +16,7 @@ Worker System: You are the Worker Agent. Execute Merge or local repair. Merge: p
 ## 4. Orchestrator
 root = Grounder(SourceText)
 final = build(root)
+The content plan flows from the Grounder to the Generator: Grounder → Generator
 build: Generator → Decompose children → Merge → Critic loop
 critic_loop: render → Critic → Worker repair → re-validate invariants → repeat ≤3
 Residual defects bubble up. Post-repair: re-extract ports/bbox; if broken, roll back to last valid fragment + residual.
