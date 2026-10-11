@@ -37,6 +37,19 @@ ICONS: Dict[str, str] = {
     "bolt": '<path d="M13 2L5 14h6l-1 8 9-12h-6z"/>',
     "text": '<path d="M5 6h14M12 6v14M8 20h8"/>',
     "palette": '<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-.9 2-2 0-1.2-.9-1.6-.9-2.5 0-1 .9-1.5 2.4-1.5H17a4 4 0 0 0 4-4c0-4.5-4-8-9-8z"/><circle cx="7.5" cy="11.5" r="1.3"/><circle cx="10.5" cy="7.5" r="1.3"/><circle cx="15" cy="7.5" r="1.3"/>',
+    # FigTree showcase family (designed with the icon-smith loop, examples/figtree/icons/)
+    "grounder": '<path d="M9 21H5V3h8l6 6v1"/><path d="M13 3v6h6"/><circle cx="14.5" cy="15.5" r="3.5"/><path d="M17 18l3.5 3.5"/>',
+    "decompose": '<circle cx="12" cy="5" r="2"/><circle cx="4.5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19.5" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M4.5 17v-4a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v4"/>',
+    "draw-leaf": '<rect x="3" y="3" width="10" height="10" rx="1"/><path d="M11 21l.5-3.5L19 10l3 3-7.5 7.5z"/><path d="M17 12l3 3"/>',
+    "merge": '<rect x="3" y="3" width="5" height="6" rx="1"/><rect x="3" y="15" width="5" height="6" rx="1"/><path d="M8 6h3v12H8"/><path d="M11 12h3"/><path d="M12.5 10l2 2-2 2"/><rect x="16.5" y="8" width="5" height="8" rx="1"/>',
+    "render": '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/>',
+    "critic": '<path d="M3 8.5C6 3 18 3 21 8.5C18 14 6 14 3 8.5Z"/><circle cx="12" cy="8.5" r="2"/><polyline points="7 15.5 4 18.5 7 21.5"/><polyline points="17 15.5 20 18.5 17 21.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/>',
+    "repair": '<rect x="3" y="16" width="5" height="5" rx="1"/><path d="M17.5 3a3.75 3.75 0 0 0-3.5 5.25l-5.25 5.25 1.5 1.5 5.25-5.25A3.75 3.75 0 0 0 21 6.5l-2.25.75-1.5-1.5.75-2.25z"/>',
+    "residual": '<polygon points="12,3 20,16 4,16"/><line x1="12" y1="8" x2="12" y2="10.5"/><line x1="12" y1="13.5" x2="12" y2="13.5"/><line x1="12" y1="16" x2="12" y2="21"/>',
+    "sheaf": '<polygon points="12,3 21,7.5 12,12 3,7.5"/><polyline points="3,12 12,16.5 21,12"/><polyline points="3,16.5 12,21 21,16.5"/>',
+    "ports": '<path d="M10 5H5V10"/><path d="M14 5H19V10"/><path d="M19 14V19H14"/><path d="M10 19H5V14"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/>',
+    "edit-script": '<path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/>',
+    "trajectory": '<circle cx="5" cy="18" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="6" r="1.5"/><line x1="6.5" y1="16.5" x2="10.5" y2="13.5"/><line x1="13.5" y1="10.5" x2="17.5" y2="7.5"/>',
 }
 
 # component keyword -> icon name (first match wins; order matters)

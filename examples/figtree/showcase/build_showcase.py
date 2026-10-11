@@ -99,7 +99,7 @@ def build() -> str:
     for f in trajs:
         d = json.load(open(os.path.join(EX, "teaching", "output", f), encoding="utf-8"))
         gains.append(d["final"]["overall"] - d["initial"]["overall"])
-    icons_n = len([f for f in os.listdir(os.path.join(EX, "icons"))]) - 3 if exists("icons", "sheet.svg") else 0
+    icons_n = len([f for f in os.listdir(os.path.join(EX, "icons")) if f.endswith(".svg") and f != "sheet.svg"]) if exists("icons", "sheet.svg") else 0
     parts.append(f'''
 <header class="hero">
   <p class="eyebrow">Figures as programs</p>

@@ -188,6 +188,75 @@ def _canvas(root: ET.Element) -> Tuple[int, int]:
     return int(round(parse_len(root.get("width"), 0))), int(round(parse_len(root.get("height"), 0)))
 
 
+_CMD = re.compile(r"([MmLlHhVvCcSsQqTtAaZz])([^MmLlHhVvCcSsQqTtAaZz]*)")
+
+
+def path_extent_points(d: str) -> List[Tuple[float, float]]:
+    """Every endpoint and control point of a path, absolute or relative commands alike.
+
+    Curves are bounded by their control polygon, which is a safe (slightly generous) bbox.
+    """
+    pts: List[Tuple[float, float]] = []
+    cx = cy = 0.0
+    sx = sy = 0.0
+    for cmd, args in _CMD.findall(d):
+        nums = [float(n) for n in re.findall(r"-?\d*\.?\d+(?:e-?\d+)?", args)]
+        rel = cmd.islower()
+        c = cmd.upper()
+        i = 0
+
+        def take(n: int):
+            nonlocal i
+            vals = nums[i : i + n]
+            i += n
+            return vals
+
+        if c == "Z":
+            cx, cy = sx, sy
+            continue
+        while i < len(nums) or (c in "Z"):
+            if c == "M":
+                x, y = take(2)
+                cx, cy = (cx + x, cy + y) if rel else (x, y)
+                sx, sy = cx, cy
+                pts.append((cx, cy))
+                c = "L"  # subsequent pairs are implicit linetos
+            elif c == "L" or c == "T":
+                x, y = take(2)
+                cx, cy = (cx + x, cy + y) if rel else (x, y)
+                pts.append((cx, cy))
+            elif c == "H":
+                (x,) = take(1)
+                cx = cx + x if rel else x
+                pts.append((cx, cy))
+            elif c == "V":
+                (y,) = take(1)
+                cy = cy + y if rel else y
+                pts.append((cx, cy))
+            elif c == "C":
+                vals = take(6)
+                for k in range(0, 6, 2):
+                    px, py = (cx + vals[k], cy + vals[k + 1]) if rel else (vals[k], vals[k + 1])
+                    pts.append((px, py))
+                cx, cy = pts[-1]
+            elif c in ("S", "Q"):
+                vals = take(4)
+                for k in range(0, 4, 2):
+                    px, py = (cx + vals[k], cy + vals[k + 1]) if rel else (vals[k], vals[k + 1])
+                    pts.append((px, py))
+                cx, cy = pts[-1]
+            elif c == "A":
+                vals = take(7)
+                ex, ey = (cx + vals[5], cy + vals[6]) if rel else (vals[5], vals[6])
+                pts.append((ex, ey))  # arcs are bounded by their endpoints (radii ignored)
+                cx, cy = ex, ey
+            else:
+                break
+            if i >= len(nums):
+                break
+    return pts
+
+
 def _shape_bbox(el: ET.Element, off: Tuple[int, int]) -> Optional[BBox]:
     tag = local(el.tag)
     ox, oy = off
