@@ -8,3 +8,6 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# FigTree run logs
+examples/figtree/**/*.log
