@@ -286,6 +286,8 @@ def build() -> str:
 <table class="traj"><thead><tr><th>workflow</th><th>what it does</th><th>when to use</th></tr></thead><tbody>{wf_rows}</tbody></table>
 <p>The contract that keeps contexts small: one command and one file in, a JSON verdict out; artifacts stay on disk; the orchestrator sees scores, anchored issues and requests, never markup. <code>figtree digest</code> plans a body of documents into units so the same loop fans out over a whole corpus.</p>
 <h3>Skill family (<code>.claude/skills/</code>)</h3><ul class="learned">{sk_items}</ul>
+<h3>Contract and process</h3>
+<p>The pipeline and the design meet at a typed contract, <code>FigureProgram</code> (<code>design/contract/</code>): design-free ids, boxes, kinds, tones, icons and flow types that any renderer can draw and the critic can still read. <code>python -m figtree contract export|validate|render</code> round-trips a figure; the design system renders the same program through its house adapter, the paper preset or a swapped adapter. How the effort itself is run (meta-prompt first, self-apply, tiny-context workers, adversarial fold, package every round) is the <code>figtree-process</code> skill, and <code>docs/HANDOFF.md</code> is the four-level handoff.</p>
 <h3>Design system (<code>design/figtree-ds</code>)</h3>
 <p>Tokens for the paper, teaching and slide presets, the 31-icon family generated from the Python library, and six components (Figure, Container, Block, Flow, Icon, Caption) whose output is the same addressable program the critic reads. Synced to the Claude Design project <a href="https://claude.ai/design/p/c8a71e84-1610-4de9-92c2-2d4debce8292">FigTree Design System</a> with 18 authored, render-checked preview cells.</p>
 </section>''')
