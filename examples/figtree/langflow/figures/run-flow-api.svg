@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Running a Flow from an Application through the API</title>
+  <rect id="background" x="0" y="0" width="640" height="360" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></symbol>
+  <symbol id="icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 640 360">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="API Access" -->
+    <!-- PORT:right x=200 y=56 id=n2.right type=output component="API Access" -->
+    <!-- PORT:top x=128 y=32 id=n2.top type=input component="API Access" -->
+    <!-- PORT:bottom x=128 y=80 id=n2.bottom type=output component="API Access" -->
+    <!-- PORT:left x=240 y=56 id=n3.left type=input component="External Application" -->
+    <!-- PORT:right x=464 y=56 id=n3.right type=output component="External Application" -->
+    <!-- PORT:top x=352 y=32 id=n3.top type=input component="External Application" -->
+    <!-- PORT:bottom x=352 y=80 id=n3.bottom type=output component="External Application" -->
+    <!-- PORT:left x=56 y=240 id=n4.left type=input component="Workflow API" -->
+    <!-- PORT:right x=200 y=240 id=n4.right type=output component="Workflow API" -->
+    <!-- PORT:top x=128 y=216 id=n4.top type=input component="Workflow API" -->
+    <!-- PORT:bottom x=128 y=264 id=n4.bottom type=output component="Workflow API" -->
+    <!-- PORT:left x=280 y=200 id=n6.left type=input component="Flow" -->
+    <!-- PORT:right x=360 y=200 id=n6.right type=output component="Flow" -->
+    <!-- PORT:top x=320 y=176 id=n6.top type=input component="Flow" -->
+    <!-- PORT:bottom x=320 y=224 id=n6.bottom type=output component="Flow" -->
+    <!-- PORT:left x=272 y=272 id=n7.left type=input component="Job" -->
+    <!-- PORT:right x=368 y=272 id=n7.right type=output component="Job" -->
+    <!-- PORT:top x=320 y=248 id=n7.top type=input component="Job" -->
+    <!-- PORT:bottom x=320 y=296 id=n7.bottom type=output component="Job" -->
+    <!-- PORT:left x=408 y=200 id=n8.left type=input component="Event Stream" -->
+    <!-- PORT:right x=568 y=200 id=n8.right type=output component="Event Stream" -->
+    <!-- PORT:top x=488 y=176 id=n8.top type=input component="Event Stream" -->
+    <!-- PORT:bottom x=488 y=224 id=n8.bottom type=output component="Event Stream" -->
+    <!-- PORT:left x=408 y=272 id=n9.left type=input component="Status Endpoint" -->
+    <!-- PORT:right x=568 y=272 id=n9.right type=output component="Status Endpoint" -->
+    <!-- PORT:top x=488 y=248 id=n9.top type=input component="Status Endpoint" -->
+    <!-- PORT:bottom x=488 y=296 id=n9.bottom type=output component="Status Endpoint" -->
+    <g id="n2" transform="translate(56,32)" data-bbox="56 32 144 48" data-label="API Access">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="API Access" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="API Access" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="API Access" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="API Access" -->
+      <path id="n2.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="API Access"/>
+      <use id="n2.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">API Access</text>
+    </g>
+    <g id="n3" transform="translate(240,32)" data-bbox="240 32 224 48" data-label="External Application">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="External Application" -->
+      <!-- PORT:right x=224 y=24 id=n3.right type=output component="External Application" -->
+      <!-- PORT:top x=112 y=0 id=n3.top type=input component="External Application" -->
+      <!-- PORT:bottom x=112 y=48 id=n3.bottom type=output component="External Application" -->
+      <path id="n3.block" d="M24,0 H200 A24,24 0 0 1 200,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 224 48" data-component="External Application"/>
+      <use id="n3.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">External Application</text>
+    </g>
+    <g id="n4" transform="translate(56,216)" data-bbox="56 216 144 48" data-label="Workflow API">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Workflow API" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Workflow API" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Workflow API" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Workflow API" -->
+      <rect id="n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Workflow API"/>
+      <use id="n4.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Workflow API</text>
+    </g>
+    <g id="n5" transform="translate(240,144)" data-bbox="240 144 360 184" data-label="Flow, Job, Event Stream, Status Endpoint">
+      <!-- PORT:left x=40 y=56 id=n6.left type=input component="Flow" -->
+      <!-- PORT:right x=120 y=56 id=n6.right type=output component="Flow" -->
+      <!-- PORT:top x=80 y=32 id=n6.top type=input component="Flow" -->
+      <!-- PORT:bottom x=80 y=80 id=n6.bottom type=output component="Flow" -->
+      <!-- PORT:left x=32 y=128 id=n7.left type=input component="Job" -->
+      <!-- PORT:right x=128 y=128 id=n7.right type=output component="Job" -->
+      <!-- PORT:top x=80 y=104 id=n7.top type=input component="Job" -->
+      <!-- PORT:bottom x=80 y=152 id=n7.bottom type=output component="Job" -->
+      <!-- PORT:left x=168 y=56 id=n8.left type=input component="Event Stream" -->
+      <!-- PORT:right x=328 y=56 id=n8.right type=output component="Event Stream" -->
+      <!-- PORT:top x=248 y=32 id=n8.top type=input component="Event Stream" -->
+      <!-- PORT:bottom x=248 y=80 id=n8.bottom type=output component="Event Stream" -->
+      <!-- PORT:left x=168 y=128 id=n9.left type=input component="Status Endpoint" -->
+      <!-- PORT:right x=328 y=128 id=n9.right type=output component="Status Endpoint" -->
+      <!-- PORT:top x=248 y=104 id=n9.top type=input component="Status Endpoint" -->
+      <!-- PORT:bottom x=248 y=152 id=n9.bottom type=output component="Status Endpoint" -->
+      <g id="n6" transform="translate(40,32)" data-bbox="40 32 80 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Flow" -->
+        <!-- PORT:right x=80 y=24 id=n6.right type=output component="Flow" -->
+        <!-- PORT:top x=40 y=0 id=n6.top type=input component="Flow" -->
+        <!-- PORT:bottom x=40 y=48 id=n6.bottom type=output component="Flow" -->
+        <rect id="n6.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow"/>
+        <use id="n6.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Flow</text>
+      </g>
+      <g id="n7" transform="translate(32,104)" data-bbox="32 104 96 48" data-label="Job">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Job" -->
+        <!-- PORT:right x=96 y=24 id=n7.right type=output component="Job" -->
+        <!-- PORT:top x=48 y=0 id=n7.top type=input component="Job" -->
+        <!-- PORT:bottom x=48 y=48 id=n7.bottom type=output component="Job" -->
+        <path id="n7.block" d="M0,0 H96 V48 H0 Z M6,0 V48 M90,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 96 48" data-component="Job"/>
+        <use id="n7.icon" href="#icon-loop" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Job</text>
+      </g>
+      <g id="n8" transform="translate(168,32)" data-bbox="168 32 160 48" data-label="Event Stream">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Event Stream" -->
+        <!-- PORT:right x=160 y=24 id=n8.right type=output component="Event Stream" -->
+        <!-- PORT:top x=80 y=0 id=n8.top type=input component="Event Stream" -->
+        <!-- PORT:bottom x=80 y=48 id=n8.bottom type=output component="Event Stream" -->
+        <path id="n8.block" d="M0,0 H152 L160,8 V48 H0 Z M152,0 V8 H160" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 160 48" data-component="Event Stream"/>
+        <use id="n8.icon" href="#icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Event Stream</text>
+      </g>
+      <g id="n9" transform="translate(168,104)" data-bbox="168 104 160 48" data-label="Status Endpoint">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Status Endpoint" -->
+        <!-- PORT:right x=160 y=24 id=n9.right type=output component="Status Endpoint" -->
+        <!-- PORT:top x=80 y=0 id=n9.top type=input component="Status Endpoint" -->
+        <!-- PORT:bottom x=80 y=48 id=n9.bottom type=output component="Status Endpoint" -->
+        <rect id="n9.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Status Endpoint"/>
+        <use id="n9.icon" href="#icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Status Endpoint</text>
+      </g>
+      <path id="n5.arrow0" d="M120,56 H168" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left"/>
+      <path id="n5.arrow1" d="M128,128 H168" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
+    </g>
+    <path id="n1.arrow0" d="M200,56 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="n1.arrow1" d="M464,56 H472 V112 H32 V240 H56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M200,240 H240 V200 H280" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+    <path id="n1.arrow3" d="M568,200 H608 V112 H352 V32" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n3.top"/>
+    <path id="n1.arrow4" d="M200,240 H240 V272 H272" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.left"/>
+    <path id="n1.arrow5" d="M464,56 H480 V120 H376 V272 H408" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n9.left"/>
+  </g>
+</svg>

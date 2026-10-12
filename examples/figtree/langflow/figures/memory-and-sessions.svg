@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="496" viewBox="0 0 672 496" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Conversation memory across turns and sessions</title>
+  <rect id="background" x="0" y="0" width="672" height="496" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 672 496">
+    <!-- PORT:left x=104 y=88 id=n6.left type=input component="Chat Input" -->
+    <!-- PORT:right x=248 y=88 id=n6.right type=output component="Chat Input" -->
+    <!-- PORT:top x=176 y=64 id=n6.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=176 y=112 id=n6.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=104 y=160 id=n7.left type=input component="Session ID" -->
+    <!-- PORT:right x=248 y=160 id=n7.right type=output component="Session ID" -->
+    <!-- PORT:top x=176 y=136 id=n7.top type=input component="Session ID" -->
+    <!-- PORT:bottom x=176 y=184 id=n7.bottom type=output component="Session ID" -->
+    <!-- PORT:left x=88 y=232 id=n8.left type=input component="Langflow Storage" -->
+    <!-- PORT:right x=264 y=232 id=n8.right type=output component="Langflow Storage" -->
+    <!-- PORT:top x=176 y=208 id=n8.top type=input component="Langflow Storage" -->
+    <!-- PORT:bottom x=176 y=256 id=n8.bottom type=output component="Langflow Storage" -->
+    <!-- PORT:left x=336 y=160 id=n3.left type=input component="Agent" -->
+    <!-- PORT:right x=432 y=160 id=n3.right type=output component="Agent" -->
+    <!-- PORT:top x=384 y=136 id=n3.top type=input component="Agent" -->
+    <!-- PORT:bottom x=384 y=184 id=n3.bottom type=output component="Agent" -->
+    <!-- PORT:left x=472 y=160 id=n4.left type=input component="Chat Output" -->
+    <!-- PORT:right x=616 y=160 id=n4.right type=output component="Chat Output" -->
+    <!-- PORT:top x=544 y=136 id=n4.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=544 y=184 id=n4.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=88 y=408 id=n9.left type=input component="Message History" -->
+    <!-- PORT:right x=248 y=408 id=n9.right type=output component="Message History" -->
+    <!-- PORT:top x=168 y=384 id=n9.top type=input component="Message History" -->
+    <!-- PORT:bottom x=168 y=432 id=n9.bottom type=output component="Message History" -->
+    <!-- PORT:left x=288 y=408 id=n10.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=448 y=408 id=n10.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=368 y=384 id=n10.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=368 y=432 id=n10.bottom type=output component="Prompt Template" -->
+    <g id="n2" transform="translate(56,32)" data-bbox="56 32 240 256" data-label="Chat Input, Session ID, Langflow Storage">
+      <!-- PORT:left x=48 y=56 id=n6.left type=input component="Chat Input" -->
+      <!-- PORT:right x=192 y=56 id=n6.right type=output component="Chat Input" -->
+      <!-- PORT:top x=120 y=32 id=n6.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=120 y=80 id=n6.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=48 y=128 id=n7.left type=input component="Session ID" -->
+      <!-- PORT:right x=192 y=128 id=n7.right type=output component="Session ID" -->
+      <!-- PORT:top x=120 y=104 id=n7.top type=input component="Session ID" -->
+      <!-- PORT:bottom x=120 y=152 id=n7.bottom type=output component="Session ID" -->
+      <!-- PORT:left x=32 y=200 id=n8.left type=input component="Langflow Storage" -->
+      <!-- PORT:right x=208 y=200 id=n8.right type=output component="Langflow Storage" -->
+      <!-- PORT:top x=120 y=176 id=n8.top type=input component="Langflow Storage" -->
+      <!-- PORT:bottom x=120 y=224 id=n8.bottom type=output component="Langflow Storage" -->
+      <g id="n6" transform="translate(48,32)" data-bbox="48 32 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Input" -->
+        <path id="n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="n6.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="n7" transform="translate(48,104)" data-bbox="48 104 144 48" data-label="Session ID">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Session ID" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Session ID" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Session ID" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Session ID" -->
+        <path id="n7.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="Session ID"/>
+        <use id="n7.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Session ID</text>
+      </g>
+      <g id="n8" transform="translate(32,176)" data-bbox="32 176 176 48" data-label="Langflow Storage">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Langflow Storage" -->
+        <!-- PORT:right x=176 y=24 id=n8.right type=output component="Langflow Storage" -->
+        <!-- PORT:top x=88 y=0 id=n8.top type=input component="Langflow Storage" -->
+        <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="Langflow Storage" -->
+        <path id="n8.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Langflow Storage"/>
+        <use id="n8.icon" href="#icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Langflow Storage</text>
+      </g>
+    </g>
+    <g id="n3" transform="translate(336,136)" data-bbox="336 136 96 48" data-label="Agent">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Agent" -->
+      <!-- PORT:right x=96 y=24 id=n3.right type=output component="Agent" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Agent" -->
+      <!-- PORT:bottom x=48 y=48 id=n3.bottom type=output component="Agent" -->
+      <rect id="n3.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+      <use id="n3.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+    </g>
+    <g id="n4" transform="translate(472,136)" data-bbox="472 136 144 48" data-label="Chat Output">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Output" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Output" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Output" -->
+      <path id="n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+      <use id="n4.icon" href="#icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+    </g>
+    <g id="n5" transform="translate(56,352)" data-bbox="56 352 424 112" data-label="Message History, Prompt Template">
+      <!-- PORT:left x=32 y=56 id=n9.left type=input component="Message History" -->
+      <!-- PORT:right x=192 y=56 id=n9.right type=output component="Message History" -->
+      <!-- PORT:top x=112 y=32 id=n9.top type=input component="Message History" -->
+      <!-- PORT:bottom x=112 y=80 id=n9.bottom type=output component="Message History" -->
+      <!-- PORT:left x=232 y=56 id=n10.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=392 y=56 id=n10.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=312 y=32 id=n10.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=312 y=80 id=n10.bottom type=output component="Prompt Template" -->
+      <g id="n9" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Message History">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Message History" -->
+        <!-- PORT:right x=160 y=24 id=n9.right type=output component="Message History" -->
+        <!-- PORT:top x=80 y=0 id=n9.top type=input component="Message History" -->
+        <!-- PORT:bottom x=80 y=48 id=n9.bottom type=output component="Message History" -->
+        <rect id="n9.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Message History"/>
+        <use id="n9.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Message History</text>
+      </g>
+      <g id="n10" transform="translate(232,32)" data-bbox="232 32 160 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=160 y=24 id=n10.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=80 y=0 id=n10.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=80 y=48 id=n10.bottom type=output component="Prompt Template" -->
+        <rect id="n10.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Prompt Template"/>
+        <use id="n10.icon" href="#icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="n5.arrow0" d="M192,56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
+    </g>
+    <path id="n1.arrow0" d="M248,88 H296 V160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n3.left"/>
+    <path id="n1.arrow1" d="M432,160 H472" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M248,160 H304 V320 H32 V408 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
+    <path id="n1.arrow3" d="M248,160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n3.left"/>
+    <path id="n1.arrow4" d="M264,232 H312 V328 H168 V384" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.top"/>
+    <path id="n1.arrow5" d="M264,232 H304 V160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n3.left"/>
+    <path id="n1.arrow6" d="M448,408 H488 V320 H384 V136" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n3.top"/>
+    <path id="n1.arrow7" d="M616,160 H640 V336 H32 V408 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n9.left"/>
+  </g>
+</svg>

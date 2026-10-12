@@ -1,0 +1,48 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 9.0
+  },
+  "overall": 9.86,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 976,
+        "height": 161
+      }
+    }
+  ],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.462,
+    "aspect": 4.88,
+    "mean_detour": 1.07,
+    "crossings": 0,
+    "forward_ratio": 1.0,
+    "palette_size": 1
+  },
+  "unit": "mcp-client",
+  "title": "An agent using an MCP server's tools",
+  "source": "examples/figtree/langflow/specs/mcp-client.md",
+  "svg": "/home/user/hekat/examples/figtree/langflow/figures/mcp-client.svg",
+  "report": "/home/user/hekat/examples/figtree/langflow/figures/mcp-client.report.json",
+  "style": "teaching",
+  "components": 5,
+  "flows": 4,
+  "faithfulness_failures": []
+}

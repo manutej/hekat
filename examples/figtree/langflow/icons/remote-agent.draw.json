@@ -1,0 +1,28 @@
+[
+  {
+    "name": "remote-agent",
+    "concept": "an agent reached by URL over the A2A protocol",
+    "score": 9.75,
+    "accepted": true,
+    "issues": [
+      {
+        "check_id": "icon.min_feature_size",
+        "dimension": "medium_fit",
+        "severity": "warning",
+        "visual_description": "1 stroke(s) shorter than 1.5 device px at 16px (e5-circle): sub-pixel detail smudges",
+        "code_anchor": "e5-circle",
+        "fix_instruction": "drop the detail or enlarge it to at least 2 grid units",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 9.75,
+        "issues": 1
+      }
+    ],
+    "inner": "<path d=\"M5 11a7 7 0 0 0 14 0z\" id=\"e1-path\" /><path d=\"M12 18v3\" id=\"e2-path\" /><path d=\"M8.5 21h7\" id=\"e3-path\" /><path d=\"M12 11V8\" id=\"e4-path\" /><circle cx=\"12\" cy=\"6\" r=\"1\" id=\"e5-circle\" /><path d=\"M15.5 3.5A4.5 4.5 0 0 1 15.5 8.5\" id=\"e6-path\" /><path d=\"M8.5 8.5A4.5 4.5 0 0 1 8.5 3.5\" id=\"e7-path\" />"
+  }
+]

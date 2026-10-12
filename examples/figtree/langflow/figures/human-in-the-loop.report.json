@@ -1,0 +1,2409 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Agent",
+        "canvas": {
+          "w": 112,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 112,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Playground",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Playground"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 120
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Human Input",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Human Input:"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 240,
+          "y": 88
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Agent, Playground, Human Input",
+        "canvas": {
+          "w": 448,
+          "h": 200
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 240,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 416,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 328,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 328,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Agent",
+            "canvas": {
+              "w": 112,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 112,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Playground",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Playground"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Playground"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 120
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Human Input",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input:"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Human Input:"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 240,
+              "y": 88
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 448,
+          "h": 200
+        },
+        "residuals": [],
+        "components": [
+          "Agent",
+          "Playground",
+          "Human Input:"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n3",
+        "description": "Git Commit",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Git Commit"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Git Commit, Chat Output",
+        "canvas": {
+          "w": 208,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 168,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n7",
+            "parent_id": "n3",
+            "description": "Git Commit",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Git Commit"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Git Commit"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 208,
+          "h": 184
+        },
+        "residuals": [],
+        "components": [
+          "Git Commit",
+          "Chat Output"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 520,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Pausing a Flow for a Human",
+        "canvas": {
+          "w": 760,
+          "h": 264
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 80,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Playground"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Playground"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 272,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 448,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 360,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 360,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input:"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 560,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 688,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 624,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 624,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Git Commit"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 552,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 696,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 624,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 624,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Agent, Playground, Human Input",
+            "canvas": {
+              "w": 448,
+              "h": 200
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 48,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 144,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 144,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Playground"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 168,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Playground"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 240,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 416,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 328,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input:"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 328,
+                "rel_y": 136,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input:"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Agent",
+                "canvas": {
+                  "w": 112,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 112,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 56,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 56,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 112,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Agent"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 48,
+                  "y": 48
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Playground",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Playground"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Playground"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Playground"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Playground"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Playground"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 120
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Human Input",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Human Input:"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Human Input:"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Human Input:"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Human Input:"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Human Input:"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 240,
+                  "y": 88
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 448,
+              "h": 200
+            },
+            "residuals": [],
+            "components": [
+              "Agent",
+              "Playground",
+              "Human Input:"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Git Commit, Chat Output",
+            "canvas": {
+              "w": 208,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 168,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Git Commit"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n7",
+                "parent_id": "n3",
+                "description": "Git Commit",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Git Commit"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Git Commit"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Git Commit"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Git Commit"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Git Commit"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 104
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 208,
+              "h": 184
+            },
+            "residuals": [],
+            "components": [
+              "Git Commit",
+              "Chat Output"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 520,
+              "y": 40
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 760,
+          "h": 264
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Agent",
+          "Human Input:",
+          "Git Commit",
+          "Chat Output",
+          "Playground"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n3->n7": true,
+      "n3->n8": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Agent",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Pausing a Flow for a Human",
+    "components": [
+      {
+        "name": "Agent",
+        "evidence_span": "Agent",
+        "kind": "actor",
+        "icon": "gear"
+      },
+      {
+        "name": "Human Input:",
+        "evidence_span": "Human Input:",
+        "kind": "decision",
+        "icon": "split"
+      },
+      {
+        "name": "Git Commit",
+        "evidence_span": "Git Commit",
+        "kind": "block",
+        "icon": "wrench"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "document"
+      },
+      {
+        "name": "Playground",
+        "evidence_span": "Playground",
+        "kind": "actor",
+        "icon": "user"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Agent",
+        "to": "Human Input:",
+        "type": "data",
+        "evidence_span": "Agent \u2192 Human Input:"
+      },
+      {
+        "from": "Human Input:",
+        "to": "Git Commit",
+        "type": "control",
+        "evidence_span": "Human Input \u2192 Git Commit"
+      },
+      {
+        "from": "Human Input:",
+        "to": "Chat Output",
+        "type": "control",
+        "evidence_span": "Human Input \u2192 Chat Output"
+      },
+      {
+        "from": "Agent",
+        "to": "Git Commit",
+        "type": "control",
+        "evidence_span": "Agent \u2192 Git Commit"
+      },
+      {
+        "from": "Playground",
+        "to": "Human Input:",
+        "type": "control",
+        "evidence_span": "Playground \u2192 Human Input"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals",
+    "spacing shift at n2: n2.arrow1 by 8",
+    "spacing shift at n2: n2.arrow1 by 8",
+    "spacing shift at n2: n2.arrow1 by 8"
+  ],
+  "node_count": 8,
+  "unit": {
+    "id": "human-in-the-loop",
+    "source": "examples/figtree/langflow/specs/human-in-the-loop.md",
+    "title": "Pausing a Flow for a Human",
+    "span": [
+      1,
+      39
+    ],
+    "chars": 2955,
+    "est_components": 5,
+    "est_flows": 5
+  }
+}

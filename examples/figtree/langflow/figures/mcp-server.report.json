@@ -1,0 +1,2809 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Langflow Project",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Langflow Project"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Flow",
+        "canvas": {
+          "w": 80,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Flow"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 80,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "MCP Client",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "MCP Client"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 176
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Langflow Project, Flow, MCP Client",
+        "canvas": {
+          "w": 240,
+          "h": 256
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 80,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Langflow Project",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Langflow Project"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Flow",
+            "canvas": {
+              "w": 80,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Flow"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 80,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "MCP Client",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Client"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "MCP Client"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 176
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 240,
+          "h": 256
+        },
+        "residuals": [],
+        "components": [
+          "Langflow Project",
+          "Flow",
+          "MCP Client"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 32,
+          "y": 64
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n3",
+        "description": "MCP Inspector",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "MCP Inspector"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n3",
+        "description": "MCP Server",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 232,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "MCP Inspector, Chat Output, MCP Server",
+        "canvas": {
+          "w": 392,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 184,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 232,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 296,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 296,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n7",
+            "parent_id": "n3",
+            "description": "MCP Inspector",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Inspector"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "MCP Inspector"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n3",
+            "description": "MCP Server",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 232,
+              "y": 72
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 392,
+          "h": 184
+        },
+        "residuals": [],
+        "components": [
+          "MCP Inspector",
+          "Chat Output",
+          "MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 312,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Flows exposed as tools to MCP clients",
+        "canvas": {
+          "w": 736,
+          "h": 352
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 240,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 152,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 152,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 112,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 152,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 152,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 80,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 152,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 152,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Client"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 344,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 504,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 424,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 424,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Inspector"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 352,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 496,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 424,
+            "rel_y": 208,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 424,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 544,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 672,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 608,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 608,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Langflow Project, Flow, MCP Client",
+            "canvas": {
+              "w": 240,
+              "h": 256
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 208,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 80,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 48,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 176,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Client"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 224,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Client"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Langflow Project",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Project"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Langflow Project"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Flow",
+                "canvas": {
+                  "w": 80,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Flow"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 80,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "MCP Client",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Client"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Client"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Client"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Client"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "MCP Client"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 48,
+                  "y": 176
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 240,
+              "h": 256
+            },
+            "residuals": [],
+            "components": [
+              "Langflow Project",
+              "Flow",
+              "MCP Client"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 32,
+              "y": 64
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "MCP Inspector, Chat Output, MCP Server",
+            "canvas": {
+              "w": 392,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Inspector"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 184,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 232,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 360,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 296,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 296,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n7",
+                "parent_id": "n3",
+                "description": "MCP Inspector",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Inspector"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Inspector"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Inspector"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Inspector"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "MCP Inspector"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n3",
+                "description": "MCP Server",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Server"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "MCP Server"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 232,
+                  "y": 72
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 392,
+              "h": 184
+            },
+            "residuals": [],
+            "components": [
+              "MCP Inspector",
+              "Chat Output",
+              "MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 312,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 736,
+          "h": 352
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Langflow Project",
+          "MCP Server",
+          "Flow",
+          "Chat Output",
+          "MCP Client",
+          "MCP Inspector"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n9": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n3",
+        "n9"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n3->n7": true,
+      "n3->n8": true,
+      "n3->n9": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Langflow Project",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Flows exposed as tools to MCP clients",
+    "components": [
+      {
+        "name": "Langflow Project",
+        "evidence_span": "Langflow Project",
+        "kind": "store",
+        "icon": "layers"
+      },
+      {
+        "name": "MCP Server",
+        "evidence_span": "MCP Server",
+        "kind": "block",
+        "icon": "ports"
+      },
+      {
+        "name": "Flow",
+        "evidence_span": "Flow",
+        "kind": "block",
+        "icon": "gear"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "document"
+      },
+      {
+        "name": "MCP Client",
+        "evidence_span": "MCP Client",
+        "kind": "actor",
+        "icon": "user"
+      },
+      {
+        "name": "MCP Inspector",
+        "evidence_span": "MCP Inspector",
+        "kind": "actor",
+        "icon": "eye"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Langflow Project",
+        "to": "MCP Server",
+        "type": "data",
+        "evidence_span": "Langflow Project \u2192 MCP Server"
+      },
+      {
+        "from": "Flow",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Flow \u2192 Chat Output"
+      },
+      {
+        "from": "Flow",
+        "to": "MCP Server",
+        "type": "data",
+        "evidence_span": "Flow \u2192 MCP Server"
+      },
+      {
+        "from": "MCP Client",
+        "to": "MCP Server",
+        "type": "control",
+        "evidence_span": "MCP Client \u2192 MCP Server"
+      },
+      {
+        "from": "MCP Inspector",
+        "to": "MCP Server",
+        "type": "control",
+        "evidence_span": "MCP Inspector \u2192 MCP Server"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n4 round 1: 1 defect(s)",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 9,
+  "unit": {
+    "id": "mcp-server",
+    "source": "examples/figtree/langflow/specs/mcp-server.md",
+    "title": "Flows exposed as tools to MCP clients",
+    "span": [
+      1,
+      41
+    ],
+    "chars": 3368,
+    "est_components": 6,
+    "est_flows": 5
+  }
+}

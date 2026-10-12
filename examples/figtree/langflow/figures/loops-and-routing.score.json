@@ -1,0 +1,59 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 2.1,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 6.0,
+    "compactness": 10.0
+  },
+  "overall": 8.3,
+  "issues": [
+    {
+      "check_id": "flow.crossings",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "visual_description": "7 arrow crossing(s)",
+      "code_anchor": "n2.arrow0",
+      "fix_instruction": "re-order or re-route to remove crossings",
+      "penalty": 4.8999999999999995,
+      "auto_edit": null
+    },
+    {
+      "check_id": "flow.collinear_overlap",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "visual_description": "arrows n1.arrow0 and n1.arrow4 share a collinear shaft for 32px (two heads, ambiguous endpoints)",
+      "code_anchor": "n1.arrow0",
+      "fix_instruction": "offset one arrow by a grid step or merge them into one connector",
+      "penalty": 1.5,
+      "auto_edit": null
+    }
+  ],
+  "tags": [
+    "flow_readability",
+    "veto:occlusion",
+    "veto:chaotic_routing"
+  ],
+  "metrics": {
+    "fill_ratio": 0.804,
+    "aspect": 2.07,
+    "mean_detour": 1.27,
+    "crossings": 7,
+    "forward_ratio": 0.86,
+    "palette_size": 1,
+    "vetoes": 2
+  },
+  "unit": "loops-and-routing",
+  "title": "Branching, looping and sub-flows inside a flow",
+  "source": "examples/figtree/langflow/specs/loops-and-routing.md",
+  "svg": "/home/user/hekat/examples/figtree/langflow/figures/loops-and-routing.svg",
+  "report": "/home/user/hekat/examples/figtree/langflow/figures/loops-and-routing.report.json",
+  "style": "teaching",
+  "components": 9,
+  "flows": 7,
+  "faithfulness_failures": []
+}

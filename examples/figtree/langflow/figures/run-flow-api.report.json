@@ -1,0 +1,2615 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "API Access",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "API Access"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "API Access"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "External Application",
+        "canvas": {
+          "w": 224,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 224,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "External Application"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 240,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Workflow API",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Workflow API"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 216
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n5",
+        "description": "Flow",
+        "canvas": {
+          "w": 80,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Flow"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n5",
+        "description": "Job",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Job"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n5",
+        "description": "Event Stream",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Event Stream"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 168,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n5",
+        "description": "Status Endpoint",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Status Endpoint"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 168,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Flow, Job, Event Stream, Status Endpoint",
+        "canvas": {
+          "w": 360,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 120,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 168,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 328,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 248,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 248,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 168,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 328,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 248,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 248,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n5",
+            "description": "Flow",
+            "canvas": {
+              "w": 80,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Flow"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n5",
+            "description": "Job",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Job"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Job"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Job"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Job"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Job"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n5",
+            "description": "Event Stream",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Event Stream"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Event Stream"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 168,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n5",
+            "description": "Status Endpoint",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Status Endpoint"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Status Endpoint"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 168,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 360,
+          "h": 184
+        },
+        "residuals": [],
+        "components": [
+          "Flow",
+          "Job",
+          "Event Stream",
+          "Status Endpoint"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 240,
+          "y": 144
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Running a Flow from an Application through the API",
+        "canvas": {
+          "w": 640,
+          "h": 360
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 200,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 128,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "API Access"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 128,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "API Access"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 240,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 464,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 352,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 352,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 200,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 128,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 128,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 280,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 320,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 320,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 272,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 368,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 320,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Job"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 320,
+            "rel_y": 296,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Job"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 408,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 568,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 488,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 488,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Event Stream"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 408,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 568,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 488,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Status Endpoint"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 488,
+            "rel_y": 296,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Status Endpoint"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "API Access",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "API Access"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "API Access"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "API Access"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "API Access"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "API Access"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "External Application",
+            "canvas": {
+              "w": 224,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 224,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 224,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "External Application"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 240,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Workflow API",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Workflow API"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 216
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Flow, Job, Event Stream, Status Endpoint",
+            "canvas": {
+              "w": 360,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 120,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Job"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Job"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Job"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Job"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 168,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 328,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 248,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 248,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Event Stream"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 168,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 328,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 248,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Status Endpoint"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 248,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Status Endpoint"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n5",
+                "description": "Flow",
+                "canvas": {
+                  "w": 80,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Flow"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n5",
+                "description": "Job",
+                "canvas": {
+                  "w": 96,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Job"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 96,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Job"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 48,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Job"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 48,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Job"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 96,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Job"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n5",
+                "description": "Event Stream",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Event Stream"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Event Stream"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Event Stream"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Event Stream"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Event Stream"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 168,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n5",
+                "description": "Status Endpoint",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Status Endpoint"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Status Endpoint"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Status Endpoint"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Status Endpoint"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Status Endpoint"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 168,
+                  "y": 104
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 360,
+              "h": 184
+            },
+            "residuals": [],
+            "components": [
+              "Flow",
+              "Job",
+              "Event Stream",
+              "Status Endpoint"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 240,
+              "y": 144
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 360
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "API Access",
+          "External Application",
+          "Workflow API",
+          "Flow",
+          "Event Stream",
+          "Job",
+          "Status Endpoint"
+        ],
+        "layout": "rows",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n9": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n5",
+        "n8"
+      ],
+      [
+        "n5",
+        "n9"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n5->n6": true,
+      "n5->n7": true,
+      "n5->n8": true,
+      "n5->n9": true,
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "API Access",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Running a Flow from an Application through the API",
+    "components": [
+      {
+        "name": "API Access",
+        "evidence_span": "API Access",
+        "kind": "document",
+        "icon": "text"
+      },
+      {
+        "name": "External Application",
+        "evidence_span": "External Application",
+        "kind": "actor",
+        "icon": "user"
+      },
+      {
+        "name": "Workflow API",
+        "evidence_span": "Workflow API",
+        "kind": "block",
+        "icon": "gear"
+      },
+      {
+        "name": "Flow",
+        "evidence_span": "Flow",
+        "kind": "block",
+        "icon": "layers"
+      },
+      {
+        "name": "Event Stream",
+        "evidence_span": "Event Stream",
+        "kind": "document",
+        "icon": "render"
+      },
+      {
+        "name": "Job",
+        "evidence_span": "Job",
+        "kind": "process",
+        "icon": "loop"
+      },
+      {
+        "name": "Status Endpoint",
+        "evidence_span": "Status Endpoint",
+        "kind": "block",
+        "icon": "search"
+      }
+    ],
+    "flows": [
+      {
+        "from": "API Access",
+        "to": "External Application",
+        "type": "data",
+        "evidence_span": "API Access \u2192 External Application"
+      },
+      {
+        "from": "External Application",
+        "to": "Workflow API",
+        "type": "control",
+        "evidence_span": "External Application \u2192 Workflow API"
+      },
+      {
+        "from": "Workflow API",
+        "to": "Flow",
+        "type": "control",
+        "evidence_span": "Workflow API \u2192 Flow"
+      },
+      {
+        "from": "Flow",
+        "to": "Event Stream",
+        "type": "data",
+        "evidence_span": "Flow \u2192 Event Stream"
+      },
+      {
+        "from": "Event Stream",
+        "to": "External Application",
+        "type": "data",
+        "evidence_span": "Event Stream \u2192 External Application"
+      },
+      {
+        "from": "Workflow API",
+        "to": "Job",
+        "type": "data",
+        "evidence_span": "Workflow API \u2192 Job"
+      },
+      {
+        "from": "Job",
+        "to": "Status Endpoint",
+        "type": "data",
+        "evidence_span": "Job \u2192 Status Endpoint"
+      },
+      {
+        "from": "External Application",
+        "to": "Status Endpoint",
+        "type": "control",
+        "evidence_span": "External Application \u2192 Status Endpoint"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n2 round 1: 1 defect(s)",
+    "n8 round 1: 1 defect(s)",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 9,
+  "unit": {
+    "id": "run-flow-api",
+    "source": "examples/figtree/langflow/specs/run-flow-api.md",
+    "title": "Running a Flow from an Application through the API",
+    "span": [
+      1,
+      46
+    ],
+    "chars": 3750,
+    "est_components": 7,
+    "est_flows": 8
+  }
+}

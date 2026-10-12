@@ -1,0 +1,17 @@
+[
+  {
+    "name": "tool-mode",
+    "concept": "a component exposed to an agent as a callable tool",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<line x1=\"2\" y1=\"12\" x2=\"5\" y2=\"12\" id=\"e1-line\" /><rect x=\"5\" y=\"7\" width=\"4\" height=\"10\" id=\"e2-rect\" /><line x1=\"9\" y1=\"9.5\" x2=\"16\" y2=\"9.5\" id=\"e3-line\" /><line x1=\"9\" y1=\"14.5\" x2=\"16\" y2=\"14.5\" id=\"e4-line\" /><path d=\"M13 5H20V19H13\" id=\"e5-path\" />"
+  }
+]

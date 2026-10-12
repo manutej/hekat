@@ -1,0 +1,28 @@
+[
+  {
+    "name": "api-endpoint",
+    "concept": "a callable URL that runs a flow or returns its status",
+    "score": 9.75,
+    "accepted": true,
+    "issues": [
+      {
+        "check_id": "icon.min_gap",
+        "dimension": "medium_fit",
+        "severity": "warning",
+        "visual_description": "parallel strokes e1-path and e2-path are 1.0px apart (0.7 device px at 16px): they fuse",
+        "code_anchor": "e1-path",
+        "fix_instruction": "space parallel strokes at least 1.5 grid units apart (centre to centre minus the stroke width)",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 9.75,
+        "issues": 1
+      }
+    ],
+    "inner": "<path d=\"M3 17v-5a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v5z\" id=\"e1-path\" /><path d=\"M15 13h3V4h3v3h-3\" id=\"e2-path\" /><path d=\"M7 12h4\" id=\"e3-path\" /><path d=\"M9 17v4\" id=\"e4-path\" /><path d=\"M6 21h6\" id=\"e5-path\" />"
+  }
+]

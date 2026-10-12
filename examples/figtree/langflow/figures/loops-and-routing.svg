@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="928" height="448" viewBox="0 0 928 448" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Branching, looping and sub-flows inside a flow</title>
+  <rect id="background" x="0" y="0" width="928" height="448" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></symbol>
+  <symbol id="icon-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="6" rx="1"/><rect x="3" y="15" width="5" height="6" rx="1"/><path d="M8 6h3v12H8"/><path d="M11 12h3"/><path d="M12.5 10l2 2-2 2"/><rect x="16.5" y="8" width="5" height="8" rx="1"/></symbol>
+  <symbol id="icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l6-6h4M10 12l6 6h4"/><path d="M17 3l3 3-3 3M17 15l3 3-3 3"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5"/></symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 928 448">
+    <!-- PORT:left x=160 y=160 id=n6.left type=input component="Loop" -->
+    <!-- PORT:right x=256 y=160 id=n6.right type=output component="Loop" -->
+    <!-- PORT:top x=208 y=136 id=n6.top type=input component="Loop" -->
+    <!-- PORT:bottom x=208 y=184 id=n6.bottom type=output component="Loop" -->
+    <!-- PORT:left x=144 y=232 id=n7.left type=input component="If-Else" -->
+    <!-- PORT:right x=272 y=232 id=n7.right type=output component="If-Else" -->
+    <!-- PORT:top x=208 y=208 id=n7.top type=input component="If-Else" -->
+    <!-- PORT:bottom x=208 y=256 id=n7.bottom type=output component="If-Else" -->
+    <!-- PORT:left x=120 y=304 id=n8.left type=input component="Smart Router" -->
+    <!-- PORT:right x=296 y=304 id=n8.right type=output component="Smart Router" -->
+    <!-- PORT:top x=208 y=280 id=n8.top type=input component="Smart Router" -->
+    <!-- PORT:bottom x=208 y=328 id=n8.bottom type=output component="Smart Router" -->
+    <!-- PORT:left x=416 y=200 id=n9.left type=input component="Agent" -->
+    <!-- PORT:right x=528 y=200 id=n9.right type=output component="Agent" -->
+    <!-- PORT:top x=472 y=176 id=n9.top type=input component="Agent" -->
+    <!-- PORT:bottom x=472 y=224 id=n9.bottom type=output component="Agent" -->
+    <!-- PORT:left x=400 y=272 id=n10.left type=input component="Type Convert" -->
+    <!-- PORT:right x=544 y=272 id=n10.right type=output component="Type Convert" -->
+    <!-- PORT:top x=472 y=248 id=n10.top type=input component="Type Convert" -->
+    <!-- PORT:bottom x=472 y=296 id=n10.bottom type=output component="Type Convert" -->
+    <!-- PORT:left x=704 y=120 id=n11.left type=input component="Chroma DB" -->
+    <!-- PORT:right x=832 y=120 id=n11.right type=output component="Chroma DB" -->
+    <!-- PORT:top x=768 y=96 id=n11.top type=input component="Chroma DB" -->
+    <!-- PORT:bottom x=768 y=144 id=n11.bottom type=output component="Chroma DB" -->
+    <!-- PORT:left x=688 y=192 id=n12.left type=input component="Language Model" -->
+    <!-- PORT:right x=848 y=192 id=n12.right type=output component="Language Model" -->
+    <!-- PORT:top x=768 y=168 id=n12.top type=input component="Language Model" -->
+    <!-- PORT:bottom x=768 y=216 id=n12.bottom type=output component="Language Model" -->
+    <!-- PORT:left x=704 y=264 id=n13.left type=input component="Run Flow" -->
+    <!-- PORT:right x=832 y=264 id=n13.right type=output component="Run Flow" -->
+    <!-- PORT:top x=768 y=240 id=n13.top type=input component="Run Flow" -->
+    <!-- PORT:bottom x=768 y=288 id=n13.bottom type=output component="Run Flow" -->
+    <!-- PORT:left x=680 y=336 id=n14.left type=input component="Structured Output" -->
+    <!-- PORT:right x=856 y=336 id=n14.right type=output component="Structured Output" -->
+    <!-- PORT:top x=768 y=312 id=n14.top type=input component="Structured Output" -->
+    <!-- PORT:bottom x=768 y=360 id=n14.bottom type=output component="Structured Output" -->
+    <g id="n2" transform="translate(56,72)" data-bbox="56 72 552 320" data-label="Loop, If-Else, Smart Router, Agent, Type Convert">
+      <!-- PORT:left x=104 y=88 id=n6.left type=input component="Loop" -->
+      <!-- PORT:right x=200 y=88 id=n6.right type=output component="Loop" -->
+      <!-- PORT:top x=152 y=64 id=n6.top type=input component="Loop" -->
+      <!-- PORT:bottom x=152 y=112 id=n6.bottom type=output component="Loop" -->
+      <!-- PORT:left x=88 y=160 id=n7.left type=input component="If-Else" -->
+      <!-- PORT:right x=216 y=160 id=n7.right type=output component="If-Else" -->
+      <!-- PORT:top x=152 y=136 id=n7.top type=input component="If-Else" -->
+      <!-- PORT:bottom x=152 y=184 id=n7.bottom type=output component="If-Else" -->
+      <!-- PORT:left x=64 y=232 id=n8.left type=input component="Smart Router" -->
+      <!-- PORT:right x=240 y=232 id=n8.right type=output component="Smart Router" -->
+      <!-- PORT:top x=152 y=208 id=n8.top type=input component="Smart Router" -->
+      <!-- PORT:bottom x=152 y=256 id=n8.bottom type=output component="Smart Router" -->
+      <!-- PORT:left x=360 y=128 id=n9.left type=input component="Agent" -->
+      <!-- PORT:right x=472 y=128 id=n9.right type=output component="Agent" -->
+      <!-- PORT:top x=416 y=104 id=n9.top type=input component="Agent" -->
+      <!-- PORT:bottom x=416 y=152 id=n9.bottom type=output component="Agent" -->
+      <!-- PORT:left x=344 y=200 id=n10.left type=input component="Type Convert" -->
+      <!-- PORT:right x=488 y=200 id=n10.right type=output component="Type Convert" -->
+      <!-- PORT:top x=416 y=176 id=n10.top type=input component="Type Convert" -->
+      <!-- PORT:bottom x=416 y=224 id=n10.bottom type=output component="Type Convert" -->
+      <g id="n4" transform="translate(32,32)" data-bbox="32 32 240 256" data-label="Loop, If-Else, Smart Router">
+        <!-- PORT:left x=72 y=56 id=n6.left type=input component="Loop" -->
+        <!-- PORT:right x=168 y=56 id=n6.right type=output component="Loop" -->
+        <!-- PORT:top x=120 y=32 id=n6.top type=input component="Loop" -->
+        <!-- PORT:bottom x=120 y=80 id=n6.bottom type=output component="Loop" -->
+        <!-- PORT:left x=56 y=128 id=n7.left type=input component="If-Else" -->
+        <!-- PORT:right x=184 y=128 id=n7.right type=output component="If-Else" -->
+        <!-- PORT:top x=120 y=104 id=n7.top type=input component="If-Else" -->
+        <!-- PORT:bottom x=120 y=152 id=n7.bottom type=output component="If-Else" -->
+        <!-- PORT:left x=32 y=200 id=n8.left type=input component="Smart Router" -->
+        <!-- PORT:right x=208 y=200 id=n8.right type=output component="Smart Router" -->
+        <!-- PORT:top x=120 y=176 id=n8.top type=input component="Smart Router" -->
+        <!-- PORT:bottom x=120 y=224 id=n8.bottom type=output component="Smart Router" -->
+        <g id="n6" transform="translate(72,32)" data-bbox="72 32 96 48" data-label="Loop">
+          <!-- PORT:left x=0 y=24 id=n6.left type=input component="Loop" -->
+          <!-- PORT:right x=96 y=24 id=n6.right type=output component="Loop" -->
+          <!-- PORT:top x=48 y=0 id=n6.top type=input component="Loop" -->
+          <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="Loop" -->
+          <path id="n6.block" d="M0,0 H96 V48 H0 Z M6,0 V48 M90,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 96 48" data-component="Loop"/>
+          <use id="n6.icon" href="#icon-loop" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+          <text id="n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Loop</text>
+        </g>
+        <g id="n7" transform="translate(56,104)" data-bbox="56 104 128 48" data-label="If-Else">
+          <!-- PORT:left x=0 y=24 id=n7.left type=input component="If-Else" -->
+          <!-- PORT:right x=128 y=24 id=n7.right type=output component="If-Else" -->
+          <!-- PORT:top x=64 y=0 id=n7.top type=input component="If-Else" -->
+          <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="If-Else" -->
+          <path id="n7.block" d="M64,0 L128,24 L64,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 128 48" data-component="If-Else"/>
+          <use id="n7.icon" href="#icon-split" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+          <text id="n7.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">If-Else</text>
+        </g>
+        <g id="n8" transform="translate(32,176)" data-bbox="32 176 176 48" data-label="Smart Router">
+          <!-- PORT:left x=0 y=24 id=n8.left type=input component="Smart Router" -->
+          <!-- PORT:right x=176 y=24 id=n8.right type=output component="Smart Router" -->
+          <!-- PORT:top x=88 y=0 id=n8.top type=input component="Smart Router" -->
+          <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="Smart Router" -->
+          <path id="n8.block" d="M88,0 L176,24 L88,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 176 48" data-component="Smart Router"/>
+          <use id="n8.icon" href="#icon-tree" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+          <text id="n8.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Smart Router</text>
+        </g>
+      </g>
+      <g id="n5" transform="translate(312,72)" data-bbox="312 72 208 184" data-label="Agent, Type Convert">
+        <!-- PORT:left x=48 y=56 id=n9.left type=input component="Agent" -->
+        <!-- PORT:right x=160 y=56 id=n9.right type=output component="Agent" -->
+        <!-- PORT:top x=104 y=32 id=n9.top type=input component="Agent" -->
+        <!-- PORT:bottom x=104 y=80 id=n9.bottom type=output component="Agent" -->
+        <!-- PORT:left x=32 y=128 id=n10.left type=input component="Type Convert" -->
+        <!-- PORT:right x=176 y=128 id=n10.right type=output component="Type Convert" -->
+        <!-- PORT:top x=104 y=104 id=n10.top type=input component="Type Convert" -->
+        <!-- PORT:bottom x=104 y=152 id=n10.bottom type=output component="Type Convert" -->
+        <g id="n9" transform="translate(48,32)" data-bbox="48 32 112 48" data-label="Agent">
+          <!-- PORT:left x=0 y=24 id=n9.left type=input component="Agent" -->
+          <!-- PORT:right x=112 y=24 id=n9.right type=output component="Agent" -->
+          <!-- PORT:top x=56 y=0 id=n9.top type=input component="Agent" -->
+          <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Agent" -->
+          <path id="n9.block" d="M24,0 H88 A24,24 0 0 1 88,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 112 48" data-component="Agent"/>
+          <use id="n9.icon" href="#icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+          <text id="n9.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+        </g>
+        <g id="n10" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Type Convert">
+          <!-- PORT:left x=0 y=24 id=n10.left type=input component="Type Convert" -->
+          <!-- PORT:right x=144 y=24 id=n10.right type=output component="Type Convert" -->
+          <!-- PORT:top x=72 y=0 id=n10.top type=input component="Type Convert" -->
+          <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Type Convert" -->
+          <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Type Convert"/>
+          <use id="n10.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+          <text id="n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Type Convert</text>
+        </g>
+      </g>
+      <path id="n2.arrow0" d="M200,88 H272 V200 H344" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n10.left"/>
+    </g>
+    <g id="n3" transform="translate(648,64)" data-bbox="648 64 240 328" data-label="Chroma DB, Language Model, Run Flow, Structured Output">
+      <!-- PORT:left x=56 y=56 id=n11.left type=input component="Chroma DB" -->
+      <!-- PORT:right x=184 y=56 id=n11.right type=output component="Chroma DB" -->
+      <!-- PORT:top x=120 y=32 id=n11.top type=input component="Chroma DB" -->
+      <!-- PORT:bottom x=120 y=80 id=n11.bottom type=output component="Chroma DB" -->
+      <!-- PORT:left x=40 y=128 id=n12.left type=input component="Language Model" -->
+      <!-- PORT:right x=200 y=128 id=n12.right type=output component="Language Model" -->
+      <!-- PORT:top x=120 y=104 id=n12.top type=input component="Language Model" -->
+      <!-- PORT:bottom x=120 y=152 id=n12.bottom type=output component="Language Model" -->
+      <!-- PORT:left x=56 y=200 id=n13.left type=input component="Run Flow" -->
+      <!-- PORT:right x=184 y=200 id=n13.right type=output component="Run Flow" -->
+      <!-- PORT:top x=120 y=176 id=n13.top type=input component="Run Flow" -->
+      <!-- PORT:bottom x=120 y=224 id=n13.bottom type=output component="Run Flow" -->
+      <!-- PORT:left x=32 y=272 id=n14.left type=input component="Structured Output" -->
+      <!-- PORT:right x=208 y=272 id=n14.right type=output component="Structured Output" -->
+      <!-- PORT:top x=120 y=248 id=n14.top type=input component="Structured Output" -->
+      <!-- PORT:bottom x=120 y=296 id=n14.bottom type=output component="Structured Output" -->
+      <g id="n11" transform="translate(56,32)" data-bbox="56 32 128 48" data-label="Chroma DB">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Chroma DB" -->
+        <!-- PORT:right x=128 y=24 id=n11.right type=output component="Chroma DB" -->
+        <!-- PORT:top x=64 y=0 id=n11.top type=input component="Chroma DB" -->
+        <!-- PORT:bottom x=64 y=48 id=n11.bottom type=output component="Chroma DB" -->
+        <path id="n11.block" d="M0,8 A64,8 0 0 1 128,8 V40 A64,8 0 0 1 0,40 Z M0,8 A64,8 0 0 0 128,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 128 48" data-component="Chroma DB"/>
+        <use id="n11.icon" href="#icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n11.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="100">Chroma DB</text>
+      </g>
+      <g id="n12" transform="translate(40,104)" data-bbox="40 104 160 48" data-label="Language Model">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="Language Model" -->
+        <!-- PORT:right x=160 y=24 id=n12.right type=output component="Language Model" -->
+        <!-- PORT:top x=80 y=0 id=n12.top type=input component="Language Model" -->
+        <!-- PORT:bottom x=80 y=48 id=n12.bottom type=output component="Language Model" -->
+        <rect id="n12.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Language Model"/>
+        <use id="n12.icon" href="#icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n12.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Language Model</text>
+      </g>
+      <g id="n13" transform="translate(56,176)" data-bbox="56 176 128 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="Run Flow" -->
+        <!-- PORT:right x=128 y=24 id=n13.right type=output component="Run Flow" -->
+        <!-- PORT:top x=64 y=0 id=n13.top type=input component="Run Flow" -->
+        <!-- PORT:bottom x=64 y=48 id=n13.bottom type=output component="Run Flow" -->
+        <path id="n13.block" d="M0,0 H128 V48 H0 Z M6,0 V48 M122,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 128 48" data-component="Run Flow"/>
+        <use id="n13.icon" href="#icon-merge" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n13.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Run Flow</text>
+      </g>
+      <g id="n14" transform="translate(32,248)" data-bbox="32 248 176 48" data-label="Structured Output">
+        <!-- PORT:left x=0 y=24 id=n14.left type=input component="Structured Output" -->
+        <!-- PORT:right x=176 y=24 id=n14.right type=output component="Structured Output" -->
+        <!-- PORT:top x=88 y=0 id=n14.top type=input component="Structured Output" -->
+        <!-- PORT:bottom x=88 y=48 id=n14.bottom type=output component="Structured Output" -->
+        <rect id="n14.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structured Output"/>
+        <use id="n14.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n14.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Structured Output</text>
+      </g>
+    </g>
+    <path id="n1.arrow0" d="M544,272 H616 V336 H680" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n14.left"/>
+    <path id="n1.arrow1" d="M856,336 H896 V416 H32 V160 H160" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n14.right" data-to="n6.left"/>
+    <path id="n1.arrow2" d="M256,160 H488 V120 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n11.left"/>
+    <path id="n1.arrow3" d="M272,232 H616 V40 V192 H688" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n12.left"/>
+    <path id="n1.arrow4" d="M296,304 H616 V32 V192 H688" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n12.left"/>
+    <path id="n1.arrow5" d="M528,200 H648 V264 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n13.left"/>
+  </g>
+</svg>

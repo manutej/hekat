@@ -1,0 +1,38 @@
+[
+  {
+    "name": "mcp-server",
+    "concept": "a server that hosts tools and flows for MCP clients",
+    "score": 9.5,
+    "accepted": true,
+    "issues": [
+      {
+        "check_id": "icon.min_feature_size",
+        "dimension": "medium_fit",
+        "severity": "warning",
+        "visual_description": "2 stroke(s) shorter than 1.5 device px at 16px (e3-line, e4-line): sub-pixel detail smudges",
+        "code_anchor": "e3-line",
+        "fix_instruction": "drop the detail or enlarge it to at least 2 grid units",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "icon.min_gap",
+        "dimension": "medium_fit",
+        "severity": "warning",
+        "visual_description": "parallel strokes e1-rect and e3-line are 1.0px apart (0.7 device px at 16px): they fuse",
+        "code_anchor": "e1-rect",
+        "fix_instruction": "space parallel strokes at least 1.5 grid units apart (centre to centre minus the stroke width)",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 9.5,
+        "issues": 2
+      }
+    ],
+    "inner": "<rect x=\"3\" y=\"3\" width=\"12\" height=\"7\" rx=\"1.5\" id=\"e1-rect\" /><rect x=\"3\" y=\"14\" width=\"12\" height=\"7\" rx=\"1.5\" id=\"e2-rect\" /><line x1=\"6.5\" y1=\"6.5\" x2=\"7\" y2=\"6.5\" id=\"e3-line\" /><line x1=\"6.5\" y1=\"17.5\" x2=\"7\" y2=\"17.5\" id=\"e4-line\" /><line x1=\"15\" y1=\"12\" x2=\"18\" y2=\"12\" id=\"e5-line\" /><line x1=\"18\" y1=\"8\" x2=\"18\" y2=\"16\" id=\"e6-line\" /><line x1=\"18\" y1=\"10\" x2=\"21\" y2=\"10\" id=\"e7-line\" /><line x1=\"18\" y1=\"14\" x2=\"21\" y2=\"14\" id=\"e8-line\" />"
+  }
+]

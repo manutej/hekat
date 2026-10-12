@@ -1,0 +1,17 @@
+[
+  {
+    "name": "flow-graph",
+    "concept": "a flow: connected components on the Langflow canvas",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\" id=\"e1-rect\" /><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\" id=\"e2-rect\" /><path d=\"M6.5 10V14A3.5 3.5 0 0 0 10 17.5H14\" id=\"e3-path\" />"
+  }
+]

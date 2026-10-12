@@ -1,0 +1,17 @@
+[
+  {
+    "name": "approval-gate",
+    "concept": "a point where the flow pauses for a human decision",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<polyline points=\"3,20 3,4 21,4 21,20\" id=\"e1-polyline\" /><circle cx=\"8\" cy=\"12\" r=\"2\" id=\"e2-circle\" /><line x1=\"10\" y1=\"12\" x2=\"21\" y2=\"12\" id=\"e3-line\" /><line x1=\"8\" y1=\"14\" x2=\"8\" y2=\"20\" id=\"e4-line\" />"
+  }
+]
