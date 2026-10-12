@@ -1,11 +1,12 @@
-# Icon gotchas: what the icon critic misses
+# Icon gotchas: what the icon critic missed
 
 Source: `examples/figtree/probes/ADVERSARY-icon-motion.md` (19 icon probes under `icon/`) and
-`examples/figtree/icons/NOTES.md`. The **status** column is the critic at HEAD (2026-10-12):
-the adversary's proposals became the `icon.*` checks (`safe_margin`, `coverage`,
-`subpath_count`, `solid_fill`, `invisible_shape`, `min_feature_size`, `min_gap`,
-`crossing_density`, `ink_distribution`), which now run inside `QualityCritic` for the icon
-rubric, so `figtree score` and `figtree eval` see them. Two harness facts:
+`examples/figtree/icons/NOTES.md`. The **status** column is the critic at HEAD (2026-10-12,
+computed with `figtree.probes.evaluate`; re-run `python -m figtree eval` before quoting): the
+adversary's proposals became the `icon.*` checks (`safe_margin`, `coverage`, `subpath_count`,
+`solid_fill`, `invisible_shape`, `min_feature_size`, `min_gap`, `crossing_density`,
+`ink_distribution`), which run inside `QualityCritic` for the icon rubric, so `figtree score`
+and `figtree eval` see them. Two harness facts:
 
 1. When the adversary ran, the family rules lived only in `IconSmith.score`; now they are
    `figtree.quality.icon_family_issues`, and `IconSmith` only adds the brief's `max_strokes` and
@@ -13,39 +14,46 @@ rubric, so `figtree score` and `figtree eval` see them. Two harness facts:
 2. `flow.*` is skipped for the icon medium (a marker is drawing, not a flow); on a textless icon
    the checks that can fire are `compactness.*`, `polish.*`, `medium.*`, `icon.*` and `content.none`.
 
-## Check this by eye at 16 px (gaming probes, all scored 10.0)
+## Check this by eye at 16 px (gaming probes; all scored 10.0 when written)
 
-| Look for | Why the critic is silent | Probe | Status at HEAD |
+| Look for | Why the critic was silent | Probe | Status at HEAD |
 |---|---|---|---|
-| **Sub-pixel detail**: a ring plus five 0.5 px stubs (the grounder's round-1 "text") | no minimum feature size | fires `icon.min_feature_size` (9.75) |
-| **Mirrored metaphor**: magnifier handle up-left reads as a balloon | orientation is not measured | silent, still fooled (10.00) |
-| **Solid fill in an outline family** (a filled star) | the family rule exempts `currentcolor` fills, exactly what solid icons use | fires `icon.solid_fill` (9.80) |
-| **Twelve strokes 1.5 px apart**: a grey slab | 12 is the limit; gaps are not measured | fires `icon.min_gap` (9.75) |
-| **Ink in one corner** behind two axis lines that fake a 56 % bbox | coverage is a bbox ratio, not an ink distribution | fires `icon.ink_distribution`, `icon.min_feature_size`, `icon.min_gap` (9.25) |
-| **18 strokes packed into one `<path>`** with 18 `M` subpaths | the element count sees one element | fires `icon.min_gap`, `icon.subpath_count` (9.50) |
-| **Invisible rect** (`fill=none stroke=none`) that supplies the bbox around a 3 px glyph | invisible shapes count toward the content bbox | fires `icon.coverage`, `icon.invisible_shape` (8.38) |
+| **Sub-pixel detail**: a ring plus five 0.5 px stubs (the grounder's round-1 "text") | no minimum feature size | `icon.stub-detail` | fires `icon.min_feature_size` (9.75) |
+| **Mirrored metaphor**: magnifier handle up-left reads as a balloon | orientation is not measured | `icon.mirrored-magnifier` | silent, still fooled (10.00) |
+| **Solid fill in an outline family** (a filled star) | the family rule exempted `currentcolor` fills, exactly what solid icons use | `icon.solid-currentcolor` | fires `icon.solid_fill` (9.80) |
+| **Twelve strokes 1.5 px apart**: a grey slab | 12 is the limit; gaps were not measured | `icon.twelve-stroke-noise` | fires `icon.min_gap` (9.75) |
+| **Ink in one corner** behind two axis lines that fake a 56 % bbox | coverage was a bbox ratio, not an ink distribution | `icon.corner-mass` | fires `icon.ink_distribution`, `icon.min_feature_size`, `icon.min_gap` (9.25) |
+| **18 strokes packed into one `<path>`** with 18 `M` subpaths | the element count saw one element | `icon.subpath-packing` | fires `icon.min_gap`, `icon.subpath_count` (9.50) |
+| **Invisible rect** (`fill=none stroke=none`) that supplies the bbox around a 3 px glyph | invisible shapes counted toward the content bbox | `icon.invisible-coverage` | fires `icon.coverage`, `icon.invisible_shape` (8.38) |
 
 ## Defects the critic missed
 
 | Look for | Why | Probe | Status at HEAD |
 |---|---|---|---|
-| Four 2 px strokes crossing at one point: a 4 px blob | `flow.crossings` only sees flows | fires `icon.crossing_density` (9.75) |
-| Two lines 2.5 px apart centre to centre fuse at 16 px | no minimum gap | fires `icon.min_gap` (9.75) |
-| Ring `r=12.4` with a 2 px stroke clipped on all sides | bbox ignored stroke width; `int()` truncated -0.4 to 0 | fires `compactness.overflow`, `icon.safe_margin` (7.75) |
-| 17x17 square rotated 45 degrees, tips at -1 and 25, clipped | `rotate()` was not applied to bboxes; at HEAD the overflow is still missed and `content.none` fires instead (a new false positive) | fires `compactness.overflow`, `icon.safe_margin` (7.75) |
-| A 1.5 px detail stroke beside 2 px strokes | caught: `polish.stroke_widths` (true positive, auto-fix to 2 is right) | fires `polish.stroke_widths` (9.88) |
-| Calendar with nine `h.01` dots, 13 elements, 1 px gaps | caught: `medium.icon_elements`; the dot rows still fuse at 16 px | fires `icon.subpath_count`, `medium.icon_elements` (9.62) |
+| Four 2 px strokes crossing at one point: a 4 px blob | `flow.crossings` only sees flows | `icon.crossing-asterisk` | fires `icon.crossing_density` (9.75) |
+| Two lines 2.5 px apart centre to centre fuse at 16 px | no minimum gap | `icon.merge-at-16px` | fires `icon.min_gap` (9.75) |
+| Ring `r=12.4` with a 2 px stroke clipped on all sides | bbox ignored stroke width; `int()` truncated -0.4 to 0 | `icon.stroke-clipped` | fires `compactness.overflow`, `icon.safe_margin` (7.75) |
+| 17x17 square rotated 45 degrees, tips at -1 and 25, clipped | `rotate()` was not applied to bboxes | `icon.rotated-into-margin` | fires `compactness.overflow`, `icon.safe_margin` (7.75) |
+| A 1.5 px detail stroke beside 2 px strokes | caught: `polish.stroke_widths` (true positive, auto-fix to 2 is right) | `icon.detail-stroke-1-5` | fires `polish.stroke_widths` (9.88) |
+| Calendar with nine `h.01` dots, 13 elements, 1 px gaps | caught: `medium.icon_elements`; the dot rows still fuse at 16 px | `icon.thirteen-elements` | fires `icon.subpath_count`, `medium.icon_elements` (9.62) |
 
 ## False positives (the icon is right)
 
-| Look for | Why it fires | Probe | What to do | Status at HEAD |
+| Look for | Why it fired | Probe | What to do | Status at HEAD |
 |---|---|---|---|---|
-| Library page icon written with relative `m h l v` | `path_to_points` handled only `M H V L`: `content.none` critical | `icon.relative-path-commands` | silent (10.00) |
-| External-link icon whose arrowhead is a `<marker>` | `flow.diagonal`, `flow.short_shaft` fire | `icon.marker-arrowhead` | silent (10.00) |
-| Toggle switch with `rx = h/2` (a pill) | `polish.corner_radius`; the auto-fix would square it | `icon.pill-toggle` | silent (10.00) |
-| Magnifier authored on a 48 grid in `<g transform="scale(0.5)">` | `scale()` was not applied: `compactness.overflow` critical, 8.25 | `icon.scaled-group` | silent (10.00) |
-| Trending-up icon with `<polyline>` + `<polygon>`, flat metaphor | rubric silent; smith reports 31 % coverage ("will vanish") | `icon.polyline-polygon` | fires `icon.ink_distribution` (9.75) |
-| Family magnifier at `width="16" height="16"` with viewBox 24 and `<title>`/`<desc>` | silent (guard) | `icon.viewbox24-size16` | silent (10.00) |
+| Library page icon written with relative `m h l v` | `path_to_points` handled only `M H V L`: `content.none` critical | `icon.relative-path-commands` | relative commands parse now; absolute commands still read more safely | silent (10.00) |
+| External-link icon whose arrowhead is a `<marker>` | `flow.diagonal`, `flow.short_shaft` fired | `icon.marker-arrowhead` | `flow.*` is skipped for icons now; draw arrowheads as polylines anyway | silent (10.00) |
+| Toggle switch with `rx = h/2` (a pill) | `polish.corner_radius`; the auto-fix would have squared it | `icon.pill-toggle` | pills are exempt on icons now | silent (10.00) |
+| Magnifier authored on a 48 grid in `<g transform="scale(0.5)">` | `scale()` was not applied: `compactness.overflow` critical, 8.25 | `icon.scaled-group` | full transform parsing landed; bake the scale in anyway | silent (10.00) |
+| Trending-up icon with `<polyline>` + `<polygon>`, flat metaphor | rubric silent; the smith reported 31 % coverage ("will vanish") | `icon.polyline-polygon` | flat metaphors (minus, equals, trending, toggle) are measured by their long side now | fires `icon.ink_distribution` (9.75) |
+| Family magnifier at `width="16" height="16"` with viewBox 24 and `<title>`/`<desc>` | silent (guard) | `icon.viewbox24-size16` | this is the 16 px cold-eye copy form | silent (10.00) |
+
+## Eval numbers
+
+```
+# adversary run: 23 probes, recall 0.312, precision 0.5, missed 11, fp 5
+# HEAD 2026-10-12: 23 probes, recall 0.938, precision 1.0, missed 1, fp 0
+```
 
 ## What the first family taught (NOTES.md)
 

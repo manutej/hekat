@@ -143,3 +143,7 @@ Args as the scripts read them today:
 ## Reference index
 
 `references/README.md` lists every reference and asset in the family with one line each.
+
+## Process and handoff
+
+How this effort is developed (meta-prompt first, self-apply, tiny-context workers, adversarial fold, package every round) is the `figtree-process` skill; the resume point is `docs/HANDOFF.md`. The boundary between the pipeline and any design is the `FigureProgram` contract (`design/contract/README.md`; `python -m figtree contract export|validate|render`).

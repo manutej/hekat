@@ -75,19 +75,21 @@ unless the person wants a link; offer the URL once.
 ## 4. Design-system handoff (`design/figtree-ds/`, if present)
 
 A React/TypeScript package `@hekat/figtree-ds` (built with tsup, `react >= 18` peer) exposes
-what a front end needs to draw in the house style without Python:
+what a front end needs to draw in the house style without Python (`src/index.ts`):
+- Components: `Figure` (+ `MARKER_ID`), `Container`, `Block`, `Flow` (`FlowType`), `Icon`,
+  `Caption`, with their `*Props` types; their output is the same addressable program the critic
+  reads (ids, `data-role`, `data-flow`).
 - `tokens.ts`: `PRESETS` (`paper | teaching | slide`) with palette tones (`attention`,
-  `processing`, `residual`, `input`), font, sizes, strokes, gaps; `snap(v, grid = 8)`.
-- `tokens.css`: the same as CSS custom properties (`./tokens.css` export).
-- `shapes.ts`: `KINDS`, `shapePath(kind, w, h)` and `textInset(kind)`, ports of
-  `figtree/elements.py`.
+  `processing`, `residual`, `input`), font, sizes, strokes, gaps; `snap(v, grid = 8)`;
+  `tokens.css` as CSS custom properties (`./tokens.css` export).
+- `shapes.ts`: `KINDS`, `shapePath(kind, w, h)`, `textInset(kind)`, ports of `figtree/elements.py`.
 - `icons.generated.ts`: `ICON_VIEWBOX`, `ICON_PATHS` (every library and family icon's inner
   markup), `IconName`, `ICON_NAMES`; regenerated from `figtree/icons.py` by
   `scripts/gen_icons.py` (`npm run gen:icons`).
 
-It is owned by another worker and may be mid-build (no `index.ts` barrel at the time of
-writing): check `design/figtree-ds/src/` before promising an export. Hand off the figures as
-SVG files plus the trajectories; hand off the style as the preset the figures used.
+It is owned by another worker: check `design/figtree-ds/src/index.ts` before promising an
+export. Hand off the figures as SVG files plus their trajectories; hand off the style as the
+preset the figures used; point the front end at the components for new figures.
 
 ## 5. Check the page like a figure
 

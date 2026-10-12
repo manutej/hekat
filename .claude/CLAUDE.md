@@ -21,7 +21,7 @@
 
 This repository contains everything needed for remote agent development:
 
-### Skills Available (10)
+### Skills Available (11)
 - `functional-programming` - Pure functions, immutability, composition patterns
 - `fp-ts` - Type-safe functional programming with monadic error handling
 - `typescript-fp` - Advanced TypeScript patterns and generic pipelines
@@ -32,6 +32,7 @@ This repository contains everything needed for remote agent development:
 - `svg-animation` - Explainers and motion grammar: reveal/draw/pulse, one clock, reduced motion, virtual-time frame capture, player template
 - `svg-eval` - Evaluating the evaluators: probes, recall/precision, judge calibration, when a gaming probe becomes a rule
 - `svg-showcase` - Assembling figures into an Artifact page or design-system handoff: namespacing, explainer as supporting file, builder script
+- `figtree-process` - How the FigTree effort is developed and handed off: meta-prompt first, self-apply, tiny-context workers, adversarial fold, package every round, progressive-disclosure handoff (`docs/HANDOFF.md`)
 
 ### Agents Available (5 specialized)
 - `hekat-agent` - Primary L1-L7 orchestration
@@ -221,7 +222,7 @@ Advanced type-level programming with generics and functors
 ## Resources
 
 - **Specifications**: `.specify/` directory (4 comprehensive documents)
-- **Skills**: `.claude/skills/` (10 skills; `figtree/references/README.md` indexes the SVG family)
+- **Skills**: `.claude/skills/` (11 skills; `figtree/references/README.md` indexes the SVG family; `figtree-process` is the development process)
 - **Agents**: `.claude/agents/` (5 specialized agents)
 - **Constitutional Framework**: `.specify/constitution.md`
 - **DSL Reference**: `.specify/hekat-dsl-spec.md`

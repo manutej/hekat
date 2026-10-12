@@ -262,13 +262,17 @@ def main(argv: Optional[list] = None) -> int:
         return _animate_main(argv[1:])
     if argv and argv[0] == "icon":
         return _icon_main(argv[1:])
+    if argv and argv[0] == "contract":
+        from figtree.contract import main as contract_main
+
+        return contract_main(argv[1:])
     if argv and argv[0] == "digest":
         from figtree.digest import main as digest_main
 
         return digest_main(argv[1:])
     if argv and argv[0] == "generate":
         argv = argv[1:]
-    ap = argparse.ArgumentParser(prog="figtree", description="FigTree-style recursive SVG methodology figure generator (subcommands: generate, refine, score, animate, icon, eval, judge, digest)")
+    ap = argparse.ArgumentParser(prog="figtree", description="FigTree-style recursive SVG methodology figure generator (subcommands: generate, refine, score, animate, icon, eval, judge, digest, contract)")
     ap.add_argument("source", help="paper, skill.md or methodology document")
     ap.add_argument("-o", "--output", default="figure.svg")
     ap.add_argument("--tree", help="write the layout tree (sheaf graph) as JSON")

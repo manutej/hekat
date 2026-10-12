@@ -143,5 +143,5 @@ question only: the measurable critic will score the figure 10.0 and you must cat
 - `medium.square` is critical with a mechanical fix (`set_canvas` to the longer side); `medium.icon_text` is critical with no fix (removing text is a design decision).
 - `polish.stroke_widths` compares every shape's width with the icon's most common one and sets it mechanically; `polish.corner_radius` exempts a pill (rx = h/2) on icons.
 - `flow.*` checks are skipped for the icon medium (a marker is drawing, not a flow): probe `icon.marker-arrowhead` is silent.
-- The bbox parser applies the full transform list and stroke width (`icon.scaled-group`, `icon.relative-path-commands` silent; `icon.stroke-clipped` fires `compactness.overflow`); a 45-degree rotated square's clipped tips still trip `content.none` instead of overflow (`icon.rotated-into-margin`).
+- The bbox parser applies the full transform list and stroke width (`icon.scaled-group` and `icon.relative-path-commands` silent; `icon.stroke-clipped` and `icon.rotated-into-margin` fire `compactness.overflow`); the status column in `icon-gotchas.md` is the authority, re-run `figtree eval --rubric icon`.
 - Metaphor orientation has no check (`icon.mirrored-magnifier` scores 10.0): the cold eye and the judge.

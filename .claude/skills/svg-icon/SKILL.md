@@ -27,7 +27,7 @@ second round for 7 of 12, because the defects only showed at 16 px (`examples/fi
 | colour | <= 2 palette colours; `currentColor` so it works on light and dark | `polish.palette_size` |
 | corners | `rx <= 4` | `polish.corner_radius` (auto; a pill with rx = h/2 is exempt on icons) |
 | markers / data-flow | never | `flow.*` is skipped for the icon medium; a marker is still not family style |
-| transforms | avoid; author on the 24 grid with absolute coordinates | the bbox parser applies the full transform list at HEAD, but a rotated square's clipped tips are still missed (`icon.rotated-into-margin`) |
+| transforms | avoid; author on the 24 grid with absolute coordinates | the bbox parser applies the full transform list and stroke width at HEAD (`icon.scaled-group`, `icon.stroke-clipped`, `icon.rotated-into-margin` in `icon-gotchas.md`) |
 
 Family rules live in `figtree.quality.icon_family_issues` and run inside `QualityCritic` for
 the icon rubric, so `figtree score --rubric icon` and `figtree eval` see them; `IconSmith`

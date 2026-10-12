@@ -2,7 +2,8 @@
 
 Reference implementation: `examples/figtree/showcase/build_showcase.py` (+ `showcase.css`, a
 `<title>` + Google Fonts `<link>` + `<style>` head fragment it reads verbatim). Output:
-`examples/figtree/showcase/showcase.html`, ~1.7 MB with every figure inlined.
+`examples/figtree/showcase/showcase.html`, ~1.7 MB with every figure inlined (size grows with the
+sections present; check it against the 16 MB Artifact limit).
 
 ## Section order and what each needs
 
@@ -29,7 +30,12 @@ Reference implementation: `examples/figtree/showcase/build_showcase.py` (+ `show
 10. `#evaluation`: stats from `eval.json` (probes, recall, precision, gaming and false-positive
     counts), per-check table in a `<details>`, "what still fools the measurable critic" list,
     the calibration table and findings, the three adversary tables in `<details>`.
-11. `#learned`: the rules the loop learned, and the footer.
+11. `#system`: what the loop folded back into the repo: the checks that grew out of the adversary
+    tables (with before/after recall and precision), a table of the `.claude/workflows/` scripts
+    (name, what it does, when to use), the skill family list, and the design-system note
+    (`design/figtree-ds`: presets as tokens, the icon family generated from `figtree/icons.py`,
+    components whose output is the same addressable program the critic reads).
+12. `#learned`: the rules the loop learned, and the footer.
 
 ## The builder's functions
 

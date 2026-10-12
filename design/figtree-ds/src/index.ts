@@ -16,3 +16,7 @@ export { KINDS, shapePath, textInset } from './shapes';
 export type { Kind } from './shapes';
 export { ICON_NAMES, ICON_PATHS, ICON_VIEWBOX } from './icons.generated';
 export type { IconName } from './icons.generated';
+export { renderProgram, houseAdapter, ProgramView } from './renderProgram';
+export type { ProgramViewProps } from './renderProgram';
+export { validateProgram } from './contract';
+export type { FigureProgram, DesignAdapter, ProgramNode, ProgramContainer, ProgramFlow, ProgramPort, ProgramResidual, ProgramCanvas, BBox, Point, FlowType as ProgramFlowType } from './contract';

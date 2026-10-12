@@ -1,0 +1,114 @@
+{
+  "rubric": "teaching",
+  "initial": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 9.0
+    },
+    "overall": 9.86,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 56px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 904,
+          "height": 377
+        }
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.733,
+      "aspect": 2.21,
+      "mean_detour": 1.09,
+      "crossings": 0,
+      "forward_ratio": 0.7,
+      "palette_size": 2
+    }
+  },
+  "final": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 10.0,
+    "issues": [],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.796,
+      "aspect": 2.4,
+      "mean_detour": 1.09,
+      "crossings": 0,
+      "forward_ratio": 0.7,
+      "palette_size": 2
+    }
+  },
+  "improvement": 0.14,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 9.86,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 9.0
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": "/tmp/figtree-kdanw3ur/round0.png",
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 10.0,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 10.0
+      },
+      "issues": 0,
+      "critical": 0,
+      "edits_applied": 1,
+      "edits_failed": 0,
+      "diff_elements": 1,
+      "rendered": "/tmp/figtree-seyjz__v/round1.png",
+      "note": "set_canvas:"
+    }
+  ],
+  "requests_remaining": [],
+  "stop_reason": "round budget exhausted",
+  "ids_assigned": 0
+}

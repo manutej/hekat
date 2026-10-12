@@ -25,6 +25,9 @@
     },
     "Caption": {
       "cardMode": "column"
+    },
+    "ProgramView": {
+      "cardMode": "column"
     }
   },
   "readmeHeader": ".design-sync/conventions.md",

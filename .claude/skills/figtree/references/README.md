@@ -53,3 +53,11 @@ Paths are relative to `.claude/skills/`.
 - `docs/FIGTREE.md`: pipeline, constraints, failure modes, refinement, backends, digest, evaluation.
 - `docs/workflows/WORKFLOW-API.md`, `docs/workflows/README.md`: the Workflow script API and the five figtree workflows.
 - `examples/figtree/`: outputs, teaching trajectories, icons, animated explainer, design round, probes and adversary tables, eval and calibration, showcase builder.
+
+## figtree-process (the development process)
+
+- `../../figtree-process/SKILL.md`: the loop at project scale.
+- `../../figtree-process/references/worker-brief.md`: brief template and two real briefs.
+- `../../figtree-process/references/verdict-schemas.md`: the JSON shapes workers return.
+- `../../figtree-process/references/round-log.md`: the effort as critique -> edit.
+- `design/contract/README.md`: the FigureProgram contract and how to swap a design.

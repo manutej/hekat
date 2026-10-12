@@ -1,6 +1,6 @@
 # FigTree workflows (`.claude/workflows/`)
 
-Five Claude Code `Workflow` scripts turn the loops we used to run by hand with subagents
+Six Claude Code `Workflow` scripts turn the loops we used to run by hand with subagents
 (score → repair, adversary → refute, judge panel, icon draw → cold eye, digest a directory)
 into reusable orchestrations. The script API is in `WORKFLOW-API.md`; this page is the
 contract the five scripts share, a table of their arguments, and a worked chain.
@@ -35,7 +35,7 @@ the previous results at once:
 
 Everything else (flatten, filter, threshold) is plain code inside a stage.
 
-## The five workflows
+## The six workflows
 
 | Workflow | Args | Stages (agents) | Returns |
 |---|---|---|---|
@@ -44,6 +44,7 @@ Everything else (flatten, filter, threshold) is plain code inside a stage.
 | `figtree-judge-panel` | `{svgs:[path \| {svg, source?}], rubric, source?, out_dir?}` | per SVG: 3 **judges** in parallel (faithfulness-vs-source, readability-at-a-glance, aesthetics/medium fit; each runs `figtree judge --report`) → arithmetic synthesis (mean, min, spread, union of vetoes) | `{ranking:[{rank, svg, overall, vetoes, spread}], verdicts:[{svg, dimensions:{d:{score, min, why[]}}, headlines}], missing}` |
 | `figtree-icon-family` | `{briefs:[{name, concept, metaphor?}], out_dir}` | per brief: **draughtsman** (`figtree icon --backend claude`, rule/hand fallback) → **cold-eye reviewer** (renders 16/24/48 px, `{score, defects}`) → **repair** + re-review once when < 9.5 → one **sheet** agent (`iconsmith.sheet`) | `{out_dir, sheet, icons:[{name, svg, score, defects, repaired, status}], failed}` |
 | `figtree-digest` | `{inputs:[paths] \| {dir}, rubric, out_dir, max_units?, style?}` | **scout** (`figtree digest --plan` → manifest) → per unit: **generate** (`figtree digest --unit ID`) → **score** (reads `<id>.score.json`) → **refine** one round when < 8 → **completeness critic** (reads the manifest's `skipped`) | `{manifest_path, units:[{id, title, svg, overall, status}], skipped:[{source, title, reason, worth_a_figure}], not_covered, failed}` |
+| `figtree-handoff` | `{out?='docs/HANDOFF-STATUS.md', branch?}` | 4 **measurers** in parallel (tests, `figtree eval`, git state, open items from FOLD-REPORT / NOTES / workflows README) → 1 **writer** composes the resume-today status | `{tests, eval, git, open_items, status_md, missing}` |
 
 Example calls:
 
@@ -52,6 +53,7 @@ Workflow({ name: 'figtree-refine', args: { svg: 'examples/figtree/teaching/slide
 Workflow({ name: 'figtree-adversary', args: { rubric: 'teaching', n_probes: 4, out_dir: '/tmp/adversary' } })
 Workflow({ name: 'figtree-judge-panel', args: { svgs: ['/tmp/a.svg', { svg: '/tmp/b.svg', source: 'examples/figtree/loop.md' }], rubric: 'teaching' } })
 Workflow({ name: 'figtree-icon-family', args: { briefs: [{ name: 'grounder', concept: 'extract only evidenced elements', metaphor: 'magnifier over a page' }, { name: 'critic', concept: 'dual-space review' }], out_dir: 'examples/figtree/icons/wf' } })
+Workflow({ name: 'figtree-handoff', args: { out: 'docs/HANDOFF-STATUS.md' } })
 Workflow({ name: 'figtree-digest', args: { inputs: { dir: 'examples/figtree' }, rubric: 'teaching', out_dir: '/tmp/digest', max_units: 12 } })
 ```
 

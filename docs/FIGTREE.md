@@ -271,3 +271,13 @@ the truncation as a defect.
   paper's content-adaptive subregions are approximated by the spacing pass and detour buses.
 * Text widths are estimated (0.5 em per character); the image critic catches real overflow only
   when a renderer is available.
+
+## The FigureProgram contract (generative UI)
+
+`python -m figtree contract export FIG.svg -o prog.json` lifts any FigTree SVG into a design-free
+program (`design/contract/figure-program.schema.json`: canvas, containers, nodes with kind/tone/icon,
+flows with type and polyline, ports, caption, residuals); `contract validate` checks it;
+`contract render prog.json -o out.svg [--preset paper|teaching|slide]` draws it through the
+reference `HouseRenderer`. Swapping the design means implementing another `Renderer`
+(`figtree/contract.py`) or `DesignAdapter` (`design/figtree-ds/src/contract.ts`); ids survive, so
+the critic and the edit scripts keep working. See `design/contract/README.md`.
