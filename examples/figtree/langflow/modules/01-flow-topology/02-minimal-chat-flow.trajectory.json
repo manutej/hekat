@@ -1,0 +1,182 @@
+{
+  "rubric": "teaching",
+  "initial": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 9.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 9.0
+    },
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 904,
+          "height": 377
+        }
+      },
+      {
+        "check_id": "topology.empty_container",
+        "dimension": "topology_accuracy",
+        "severity": "warning",
+        "visual_description": "empty container n7",
+        "code_anchor": "n7",
+        "fix_instruction": "remove the empty container",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "delete",
+          "id": "n7"
+        }
+      },
+      {
+        "check_id": "topology.empty_container",
+        "dimension": "topology_accuracy",
+        "severity": "warning",
+        "visual_description": "empty container n10",
+        "code_anchor": "n10",
+        "fix_instruction": "remove the empty container",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "delete",
+          "id": "n10"
+        }
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.666,
+      "aspect": 2.17,
+      "mean_detour": 1.31,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 1
+    }
+  },
+  "final": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 10.0,
+    "issues": [],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.733,
+      "aspect": 2.04,
+      "mean_detour": 1.31,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 1
+    }
+  },
+  "improvement": 0.29,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 9.71,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 9.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 9.0
+      },
+      "issues": 3,
+      "critical": 0,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 9.71,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.0
+      },
+      "issues": 2,
+      "critical": 0,
+      "edits_applied": 3,
+      "edits_failed": 0,
+      "diff_elements": 17,
+      "rendered": null,
+      "note": "set_canvas:; delete:n7; delete:n10"
+    },
+    {
+      "round": 2,
+      "overall": 9.86,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 9.0
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 2,
+      "edits_failed": 0,
+      "diff_elements": 1,
+      "rendered": null,
+      "note": "set_canvas:; set_canvas:"
+    },
+    {
+      "round": 3,
+      "overall": 10.0,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 10.0
+      },
+      "issues": 0,
+      "critical": 0,
+      "edits_applied": 1,
+      "edits_failed": 0,
+      "diff_elements": 1,
+      "rendered": null,
+      "note": "set_canvas:"
+    }
+  ],
+  "requests_remaining": [],
+  "stop_reason": "round budget exhausted",
+  "ids_assigned": 10
+}

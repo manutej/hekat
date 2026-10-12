@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="385" viewBox="0 0 672 385" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Model Providers and Language Model selection</title>
+  <rect id="background" x="0" y="0" width="672" height="385" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e4-path" /><path d="M3 13l9 5 9-5" id="e5-path" /><path d="M3 17l9 5 9-5" id="e6-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 672 424">
+    <!-- PORT:left x=160 y=88 id=n6.left type=input component="Agent" -->
+    <!-- PORT:right x=224 y=88 id=n6.right type=output component="Agent" -->
+    <!-- PORT:top x=192 y=64 id=n6.top type=input component="Agent" -->
+    <!-- PORT:bottom x=192 y=112 id=n6.bottom type=output component="Agent" -->
+    <!-- PORT:left x=88 y=160 id=n7.left type=input component="Model Providers Pane" -->
+    <!-- PORT:right x=296 y=160 id=n7.right type=output component="Model Providers Pane" -->
+    <!-- PORT:top x=192 y=136 id=n7.top type=input component="Model Providers Pane" -->
+    <!-- PORT:bottom x=192 y=184 id=n7.bottom type=output component="Model Providers Pane" -->
+    <!-- PORT:left x=368 y=128 id=n3.left type=input component="Provider" -->
+    <!-- PORT:right x=464 y=128 id=n3.right type=output component="Provider" -->
+    <!-- PORT:top x=416 y=104 id=n3.top type=input component="Provider" -->
+    <!-- PORT:bottom x=416 y=152 id=n3.bottom type=output component="Provider" -->
+    <!-- PORT:left x=504 y=128 id=n4.left type=input component="API Key Field" -->
+    <!-- PORT:right x=632 y=128 id=n4.right type=output component="API Key Field" -->
+    <!-- PORT:top x=568 y=104 id=n4.top type=input component="API Key Field" -->
+    <!-- PORT:bottom x=568 y=152 id=n4.bottom type=output component="API Key Field" -->
+    <!-- PORT:left x=88 y=336 id=n8.left type=input component="Enabled Language Model" -->
+    <!-- PORT:right x=312 y=336 id=n8.right type=output component="Enabled Language Model" -->
+    <!-- PORT:top x=200 y=312 id=n8.top type=input component="Enabled Language Model" -->
+    <!-- PORT:bottom x=200 y=360 id=n8.bottom type=output component="Enabled Language Model" -->
+    <!-- PORT:left x=352 y=336 id=n9.left type=input component="Agent Component" -->
+    <!-- PORT:right x=496 y=336 id=n9.right type=output component="Agent Component" -->
+    <!-- PORT:top x=424 y=312 id=n9.top type=input component="Agent Component" -->
+    <!-- PORT:bottom x=424 y=360 id=n9.bottom type=output component="Agent Component" -->
+    <g id="n2" transform="translate(56,32)" data-bbox="56 32 272 184" data-label="Agent, Model Providers Pane">
+      <!-- PORT:left x=104 y=56 id=n6.left type=input component="Agent" -->
+      <!-- PORT:right x=168 y=56 id=n6.right type=output component="Agent" -->
+      <!-- PORT:top x=136 y=32 id=n6.top type=input component="Agent" -->
+      <!-- PORT:bottom x=136 y=80 id=n6.bottom type=output component="Agent" -->
+      <!-- PORT:left x=32 y=128 id=n7.left type=input component="Model Providers Pane" -->
+      <!-- PORT:right x=240 y=128 id=n7.right type=output component="Model Providers Pane" -->
+      <!-- PORT:top x=136 y=104 id=n7.top type=input component="Model Providers Pane" -->
+      <!-- PORT:bottom x=136 y=152 id=n7.bottom type=output component="Model Providers Pane" -->
+      <g id="n6" transform="translate(104,32)" data-bbox="104 32 64 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Agent" -->
+        <!-- PORT:right x=64 y=24 id=n6.right type=output component="Agent" -->
+        <!-- PORT:top x=32 y=0 id=n6.top type=input component="Agent" -->
+        <!-- PORT:bottom x=32 y=48 id=n6.bottom type=output component="Agent" -->
+        <rect id="n6.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+      </g>
+      <g id="n7" transform="translate(32,104)" data-bbox="32 104 208 48" data-label="Model Providers Pane">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Model Providers Pane" -->
+        <!-- PORT:right x=208 y=24 id=n7.right type=output component="Model Providers Pane" -->
+        <!-- PORT:top x=104 y=0 id=n7.top type=input component="Model Providers Pane" -->
+        <!-- PORT:bottom x=104 y=48 id=n7.bottom type=output component="Model Providers Pane" -->
+        <rect id="n7.block" x="0" y="0" width="208" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Model Providers Pane" />
+        <use id="n7.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">Model Providers Pane</text>
+      </g>
+    </g>
+    <g id="n3" transform="translate(368,104)" data-bbox="368 104 96 48" data-label="Provider">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Provider" -->
+      <!-- PORT:right x=96 y=24 id=n3.right type=output component="Provider" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Provider" -->
+      <!-- PORT:bottom x=48 y=48 id=n3.bottom type=output component="Provider" -->
+      <rect id="n3.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Provider" />
+      <text id="n3.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Provider</text>
+    </g>
+    <g id="n4" transform="translate(504,104)" data-bbox="504 104 128 48" data-label="API Key Field">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="API Key Field" -->
+      <!-- PORT:right x=128 y=24 id=n4.right type=output component="API Key Field" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="API Key Field" -->
+      <!-- PORT:bottom x=64 y=48 id=n4.bottom type=output component="API Key Field" -->
+      <rect id="n4.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="API Key Field" />
+      <text id="n4.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">API Key Field</text>
+    </g>
+    <g id="n5" transform="translate(56,280)" data-bbox="56 280 472 112" data-label="Enabled Language Model, Agent Component">
+      <!-- PORT:left x=32 y=56 id=n8.left type=input component="Enabled Language Model" -->
+      <!-- PORT:right x=256 y=56 id=n8.right type=output component="Enabled Language Model" -->
+      <!-- PORT:top x=144 y=32 id=n8.top type=input component="Enabled Language Model" -->
+      <!-- PORT:bottom x=144 y=80 id=n8.bottom type=output component="Enabled Language Model" -->
+      <!-- PORT:left x=296 y=56 id=n9.left type=input component="Agent Component" -->
+      <!-- PORT:right x=440 y=56 id=n9.right type=output component="Agent Component" -->
+      <!-- PORT:top x=368 y=32 id=n9.top type=input component="Agent Component" -->
+      <!-- PORT:bottom x=368 y=80 id=n9.bottom type=output component="Agent Component" -->
+      <g id="n8" transform="translate(32,32)" data-bbox="32 32 224 48" data-label="Enabled Language Model">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Enabled Language Model" -->
+        <!-- PORT:right x=224 y=24 id=n8.right type=output component="Enabled Language Model" -->
+        <!-- PORT:top x=112 y=0 id=n8.top type=input component="Enabled Language Model" -->
+        <!-- PORT:bottom x=112 y=48 id=n8.bottom type=output component="Enabled Language Model" -->
+        <rect id="n8.block" x="0" y="0" width="224" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Enabled Language Model" />
+        <use id="n8.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="204">Enabled Language Model</text>
+      </g>
+      <g id="n9" transform="translate(296,32)" data-bbox="296 32 144 48" data-label="Agent Component">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Agent Component" -->
+        <!-- PORT:right x=144 y=24 id=n9.right type=output component="Agent Component" -->
+        <!-- PORT:top x=72 y=0 id=n9.top type=input component="Agent Component" -->
+        <!-- PORT:bottom x=72 y=48 id=n9.bottom type=output component="Agent Component" -->
+        <rect id="n9.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
+        <text id="n9.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
+      </g>
+      <path id="n5.arrow0" d="M256,56 H296" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left" />
+    </g>
+    <path id="n1.arrow0" d="M296,160 H328 V128 H368" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M464,128 H504" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+    <path id="n1.arrow2" d="M632,128 H640 V248 H32 V336 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n8.left" />
+  </g>
+</svg>

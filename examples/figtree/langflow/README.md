@@ -22,6 +22,11 @@ python3 -m figtree digest --plan docs/research/langflow-agentic-workflows/ \
 python3 -m figtree digest --all -o examples/figtree/langflow/ --rubric teaching --no-render
 ```
 
+## Module depth
+
+- **Module 01 — flow topology:** [`modules/01-flow-topology/index.html`](modules/01-flow-topology/index.html) (7 clear teaching diagrams with icons)
+- Hub: [`modules/index.html`](modules/index.html)
+
 ## Adversarial three-layer pass
 
 See [`adversarial/ITERATION-LOG.md`](adversarial/ITERATION-LOG.md) and

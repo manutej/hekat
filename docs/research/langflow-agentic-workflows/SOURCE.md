@@ -14,6 +14,8 @@ Language Model -> Agent Component
 
 The Agent Component uses the Language Model as a reasoning engine. The Agent Component selects tools and returns a Response output.
 
+Deep-dive figures (module 01): [`modules/01-flow-topology/README.md`](modules/01-flow-topology/README.md).
+
 ## Single-agent tool loop
 
 Agents extend LLMs by **tool registration**: tools are functions wrapped as Tool objects with descriptions the Agent Component reads at initialization.

@@ -1,0 +1,71 @@
+{
+  "out_dir": "/workspace/examples/figtree/langflow/modules/01-flow-topology",
+  "rubric": "teaching",
+  "style": "teaching",
+  "inputs": [
+    "/workspace/docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
+  ],
+  "units": [
+    {
+      "id": "01-flow-canvas",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams/01-flow-canvas.md",
+      "title": "Flow canvas and components",
+      "span": [
+        1,
+        11
+      ],
+      "chars": 312,
+      "est_components": 3,
+      "est_flows": 2
+    },
+    {
+      "id": "02-minimal-chat-flow",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams/02-minimal-chat-flow.md",
+      "title": "Minimal chat agent flow",
+      "span": [
+        1,
+        22
+      ],
+      "chars": 498,
+      "est_components": 7,
+      "est_flows": 3
+    },
+    {
+      "id": "03-model-providers",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams/03-model-providers.md",
+      "title": "Model Providers and Language Model selection",
+      "span": [
+        1,
+        20
+      ],
+      "chars": 465,
+      "est_components": 8,
+      "est_flows": 4
+    },
+    {
+      "id": "04-playground-path",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams/04-playground-path.md",
+      "title": "Playground execution path",
+      "span": [
+        1,
+        16
+      ],
+      "chars": 361,
+      "est_components": 5,
+      "est_flows": 3
+    },
+    {
+      "id": "05-simple-agent-template",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams/05-simple-agent-template.md",
+      "title": "Simple Agent template layout",
+      "span": [
+        1,
+        12
+      ],
+      "chars": 369,
+      "est_components": 9,
+      "est_flows": 4
+    }
+  ],
+  "skipped": []
+}

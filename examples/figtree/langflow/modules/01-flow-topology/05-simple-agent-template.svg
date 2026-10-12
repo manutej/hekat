@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="801" height="545" viewBox="0 0 801 545" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Simple Agent template layout</title>
+  <rect id="background" x="0" y="0" width="801" height="545" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 984 616">
+    <!-- PORT:left x=128 y=144 id=n6.left type=input component="Simple" -->
+    <!-- PORT:right x=208 y=144 id=n6.right type=output component="Simple" -->
+    <!-- PORT:top x=168 y=120 id=n6.top type=input component="Simple" -->
+    <!-- PORT:bottom x=168 y=168 id=n6.bottom type=output component="Simple" -->
+    <!-- PORT:left x=136 y=216 id=n7.left type=input component="Agent" -->
+    <!-- PORT:right x=200 y=216 id=n7.right type=output component="Agent" -->
+    <!-- PORT:top x=168 y=192 id=n7.top type=input component="Agent" -->
+    <!-- PORT:bottom x=168 y=240 id=n7.bottom type=output component="Agent" -->
+    <!-- PORT:left x=112 y=288 id=n8.left type=input component="Calculator" -->
+    <!-- PORT:right x=224 y=288 id=n8.right type=output component="Calculator" -->
+    <!-- PORT:top x=168 y=264 id=n8.top type=input component="Calculator" -->
+    <!-- PORT:bottom x=168 y=312 id=n8.bottom type=output component="Calculator" -->
+    <!-- PORT:left x=136 y=424 id=n9.left type=input component="URL" -->
+    <!-- PORT:right x=200 y=424 id=n9.right type=output component="URL" -->
+    <!-- PORT:top x=168 y=400 id=n9.top type=input component="URL" -->
+    <!-- PORT:bottom x=168 y=448 id=n9.bottom type=output component="URL" -->
+    <!-- PORT:left x=96 y=496 id=n10.left type=input component="Chat Input" -->
+    <!-- PORT:right x=240 y=496 id=n10.right type=output component="Chat Input" -->
+    <!-- PORT:top x=168 y=472 id=n10.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=168 y=520 id=n10.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=376 y=288 id=n11.left type=input component="Calculator Component" -->
+    <!-- PORT:right x=552 y=288 id=n11.right type=output component="Calculator Component" -->
+    <!-- PORT:top x=464 y=264 id=n11.top type=input component="Calculator Component" -->
+    <!-- PORT:bottom x=464 y=312 id=n11.bottom type=output component="Calculator Component" -->
+    <!-- PORT:left x=400 y=360 id=n12.left type=input component="URL Component" -->
+    <!-- PORT:right x=528 y=360 id=n12.right type=output component="URL Component" -->
+    <!-- PORT:top x=464 y=336 id=n12.top type=input component="URL Component" -->
+    <!-- PORT:bottom x=464 y=384 id=n12.bottom type=output component="URL Component" -->
+    <!-- PORT:left x=592 y=328 id=n13.left type=input component="Agent Component" -->
+    <!-- PORT:right x=736 y=328 id=n13.right type=output component="Agent Component" -->
+    <!-- PORT:top x=664 y=304 id=n13.top type=input component="Agent Component" -->
+    <!-- PORT:bottom x=664 y=352 id=n13.bottom type=output component="Agent Component" -->
+    <!-- PORT:left x=776 y=328 id=n14.left type=input component="Chat Output" -->
+    <!-- PORT:right x=920 y=328 id=n14.right type=output component="Chat Output" -->
+    <!-- PORT:top x=848 y=304 id=n14.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=848 y=352 id=n14.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,56)" data-bbox="32 56 272 528" data-label="Simple, Agent, Calculator, URL, Chat Input">
+      <!-- PORT:left x=96 y=88 id=n6.left type=input component="Simple" -->
+      <!-- PORT:right x=176 y=88 id=n6.right type=output component="Simple" -->
+      <!-- PORT:top x=136 y=64 id=n6.top type=input component="Simple" -->
+      <!-- PORT:bottom x=136 y=112 id=n6.bottom type=output component="Simple" -->
+      <!-- PORT:left x=104 y=160 id=n7.left type=input component="Agent" -->
+      <!-- PORT:right x=168 y=160 id=n7.right type=output component="Agent" -->
+      <!-- PORT:top x=136 y=136 id=n7.top type=input component="Agent" -->
+      <!-- PORT:bottom x=136 y=184 id=n7.bottom type=output component="Agent" -->
+      <!-- PORT:left x=80 y=232 id=n8.left type=input component="Calculator" -->
+      <!-- PORT:right x=192 y=232 id=n8.right type=output component="Calculator" -->
+      <!-- PORT:top x=136 y=208 id=n8.top type=input component="Calculator" -->
+      <!-- PORT:bottom x=136 y=256 id=n8.bottom type=output component="Calculator" -->
+      <!-- PORT:left x=104 y=368 id=n9.left type=input component="URL" -->
+      <!-- PORT:right x=168 y=368 id=n9.right type=output component="URL" -->
+      <!-- PORT:top x=136 y=344 id=n9.top type=input component="URL" -->
+      <!-- PORT:bottom x=136 y=392 id=n9.bottom type=output component="URL" -->
+      <!-- PORT:left x=64 y=440 id=n10.left type=input component="Chat Input" -->
+      <!-- PORT:right x=208 y=440 id=n10.right type=output component="Chat Input" -->
+      <!-- PORT:top x=136 y=416 id=n10.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=136 y=464 id=n10.bottom type=output component="Chat Input" -->
+      <g id="n4" transform="translate(48,32)" data-bbox="48 32 176 256" data-label="Simple, Agent, Calculator">
+        <!-- PORT:left x=48 y=56 id=n6.left type=input component="Simple" -->
+        <!-- PORT:right x=128 y=56 id=n6.right type=output component="Simple" -->
+        <!-- PORT:top x=88 y=32 id=n6.top type=input component="Simple" -->
+        <!-- PORT:bottom x=88 y=80 id=n6.bottom type=output component="Simple" -->
+        <!-- PORT:left x=56 y=128 id=n7.left type=input component="Agent" -->
+        <!-- PORT:right x=120 y=128 id=n7.right type=output component="Agent" -->
+        <!-- PORT:top x=88 y=104 id=n7.top type=input component="Agent" -->
+        <!-- PORT:bottom x=88 y=152 id=n7.bottom type=output component="Agent" -->
+        <!-- PORT:left x=32 y=200 id=n8.left type=input component="Calculator" -->
+        <!-- PORT:right x=144 y=200 id=n8.right type=output component="Calculator" -->
+        <!-- PORT:top x=88 y=176 id=n8.top type=input component="Calculator" -->
+        <!-- PORT:bottom x=88 y=224 id=n8.bottom type=output component="Calculator" -->
+        <g id="n6" transform="translate(48,32)" data-bbox="48 32 80 48" data-label="Simple">
+          <!-- PORT:left x=0 y=24 id=n6.left type=input component="Simple" -->
+          <!-- PORT:right x=80 y=24 id=n6.right type=output component="Simple" -->
+          <!-- PORT:top x=40 y=0 id=n6.top type=input component="Simple" -->
+          <!-- PORT:bottom x=40 y=48 id=n6.bottom type=output component="Simple" -->
+          <rect id="n6.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Simple" />
+          <text id="n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="80">Simple</text>
+        </g>
+        <g id="n7" transform="translate(56,104)" data-bbox="56 104 64 48" data-label="Agent">
+          <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent" -->
+          <!-- PORT:right x=64 y=24 id=n7.right type=output component="Agent" -->
+          <!-- PORT:top x=32 y=0 id=n7.top type=input component="Agent" -->
+          <!-- PORT:bottom x=32 y=48 id=n7.bottom type=output component="Agent" -->
+          <rect id="n7.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+          <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+        </g>
+        <g id="n8" transform="translate(32,176)" data-bbox="32 176 112 48" data-label="Calculator">
+          <!-- PORT:left x=0 y=24 id=n8.left type=input component="Calculator" -->
+          <!-- PORT:right x=112 y=24 id=n8.right type=output component="Calculator" -->
+          <!-- PORT:top x=56 y=0 id=n8.top type=input component="Calculator" -->
+          <!-- PORT:bottom x=56 y=48 id=n8.bottom type=output component="Calculator" -->
+          <rect id="n8.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Calculator" />
+          <text id="n8.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Calculator</text>
+        </g>
+      </g>
+      <g id="n5" transform="translate(32,312)" data-bbox="32 312 208 184" data-label="URL, Chat Input">
+        <!-- PORT:left x=72 y=56 id=n9.left type=input component="URL" -->
+        <!-- PORT:right x=136 y=56 id=n9.right type=output component="URL" -->
+        <!-- PORT:top x=104 y=32 id=n9.top type=input component="URL" -->
+        <!-- PORT:bottom x=104 y=80 id=n9.bottom type=output component="URL" -->
+        <!-- PORT:left x=32 y=128 id=n10.left type=input component="Chat Input" -->
+        <!-- PORT:right x=176 y=128 id=n10.right type=output component="Chat Input" -->
+        <!-- PORT:top x=104 y=104 id=n10.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=104 y=152 id=n10.bottom type=output component="Chat Input" -->
+        <g id="n9" transform="translate(72,32)" data-bbox="72 32 64 48" data-label="URL">
+          <!-- PORT:left x=0 y=24 id=n9.left type=input component="URL" -->
+          <!-- PORT:right x=64 y=24 id=n9.right type=output component="URL" -->
+          <!-- PORT:top x=32 y=0 id=n9.top type=input component="URL" -->
+          <!-- PORT:bottom x=32 y=48 id=n9.bottom type=output component="URL" -->
+          <rect id="n9.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="URL" />
+          <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">URL</text>
+        </g>
+        </g>
+    </g>
+    <g id="n3" transform="translate(344,232)" data-bbox="344 232 608 184" data-label="Calculator Component, URL Component, Agent Component, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n11.left type=input component="Calculator Component" -->
+      <!-- PORT:right x=208 y=56 id=n11.right type=output component="Calculator Component" -->
+      <!-- PORT:top x=120 y=32 id=n11.top type=input component="Calculator Component" -->
+      <!-- PORT:bottom x=120 y=80 id=n11.bottom type=output component="Calculator Component" -->
+      <!-- PORT:left x=56 y=128 id=n12.left type=input component="URL Component" -->
+      <!-- PORT:right x=184 y=128 id=n12.right type=output component="URL Component" -->
+      <!-- PORT:top x=120 y=104 id=n12.top type=input component="URL Component" -->
+      <!-- PORT:bottom x=120 y=152 id=n12.bottom type=output component="URL Component" -->
+      <!-- PORT:left x=248 y=96 id=n13.left type=input component="Agent Component" -->
+      <!-- PORT:right x=392 y=96 id=n13.right type=output component="Agent Component" -->
+      <!-- PORT:top x=320 y=72 id=n13.top type=input component="Agent Component" -->
+      <!-- PORT:bottom x=320 y=120 id=n13.bottom type=output component="Agent Component" -->
+      <!-- PORT:left x=432 y=96 id=n14.left type=input component="Chat Output" -->
+      <!-- PORT:right x=576 y=96 id=n14.right type=output component="Chat Output" -->
+      <!-- PORT:top x=504 y=72 id=n14.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=504 y=120 id=n14.bottom type=output component="Chat Output" -->
+      <g id="n11" transform="translate(32,32)" data-bbox="32 32 176 48" data-label="Calculator Component">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Calculator Component" -->
+        <!-- PORT:right x=176 y=24 id=n11.right type=output component="Calculator Component" -->
+        <!-- PORT:top x=88 y=0 id=n11.top type=input component="Calculator Component" -->
+        <!-- PORT:bottom x=88 y=48 id=n11.bottom type=output component="Calculator Component" -->
+        <rect id="n11.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Calculator Component" />
+        <text id="n11.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">Calculator Component</text>
+      </g>
+      <g id="n12" transform="translate(56,104)" data-bbox="56 104 128 48" data-label="URL Component">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="URL Component" -->
+        <!-- PORT:right x=128 y=24 id=n12.right type=output component="URL Component" -->
+        <!-- PORT:top x=64 y=0 id=n12.top type=input component="URL Component" -->
+        <!-- PORT:bottom x=64 y=48 id=n12.bottom type=output component="URL Component" -->
+        <rect id="n12.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="URL Component" />
+        <text id="n12.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">URL Component</text>
+      </g>
+      <g id="n13" transform="translate(248,72)" data-bbox="248 72 144 48" data-label="Agent Component">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="Agent Component" -->
+        <!-- PORT:right x=144 y=24 id=n13.right type=output component="Agent Component" -->
+        <!-- PORT:top x=72 y=0 id=n13.top type=input component="Agent Component" -->
+        <!-- PORT:bottom x=72 y=48 id=n13.bottom type=output component="Agent Component" -->
+        <rect id="n13.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
+        <text id="n13.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
+      </g>
+      <path id="n3.arrow0" d="M392,96 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left" />
+      <path id="n3.arrow1" d="M208,56 H224 V96 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n13.left" />
+      <path id="n3.arrow2" d="M184,128 H224 V96 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left" />
+    </g>
+    <path id="n1.arrow0" d="M240,496 H312 V32 V328 H592" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n13.left" />
+  </g>
+</svg>

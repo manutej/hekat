@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="665" height="281" viewBox="0 0 665 281" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Custom Language Model port</title>
+  <rect id="background" x="0" y="0" width="665" height="281" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e5-path" /><path d="M3 13l9 5 9-5" id="e6-path" /><path d="M3 17l9 5 9-5" id="e7-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 848 320">
+    <!-- PORT:left x=104 y=88 id=n4.left type=input component="Custom Language Model" -->
+    <!-- PORT:right x=312 y=88 id=n4.right type=output component="Custom Language Model" -->
+    <!-- PORT:top x=208 y=64 id=n4.top type=input component="Custom Language Model" -->
+    <!-- PORT:bottom x=208 y=112 id=n4.bottom type=output component="Custom Language Model" -->
+    <!-- PORT:left x=176 y=160 id=n5.left type=input component="Agent" -->
+    <!-- PORT:right x=240 y=160 id=n5.right type=output component="Agent" -->
+    <!-- PORT:top x=208 y=136 id=n5.top type=input component="Agent" -->
+    <!-- PORT:bottom x=208 y=184 id=n5.bottom type=output component="Agent" -->
+    <!-- PORT:left x=64 y=232 id=n6.left type=input component="Custom Language Model Component" -->
+    <!-- PORT:right x=352 y=232 id=n6.right type=output component="Custom Language Model Component" -->
+    <!-- PORT:top x=208 y=208 id=n6.top type=input component="Custom Language Model Component" -->
+    <!-- PORT:bottom x=208 y=256 id=n6.bottom type=output component="Custom Language Model Component" -->
+    <!-- PORT:left x=456 y=160 id=n7.left type=input component="Agent Component" -->
+    <!-- PORT:right x=600 y=160 id=n7.right type=output component="Agent Component" -->
+    <!-- PORT:top x=528 y=136 id=n7.top type=input component="Agent Component" -->
+    <!-- PORT:bottom x=528 y=184 id=n7.bottom type=output component="Agent Component" -->
+    <!-- PORT:left x=640 y=160 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=784 y=160 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=712 y=136 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=712 y=184 id=n8.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 352 256" data-label="Custom Language Model, Agent, Custom Language Model Component">
+      <!-- PORT:left x=72 y=56 id=n4.left type=input component="Custom Language Model" -->
+      <!-- PORT:right x=280 y=56 id=n4.right type=output component="Custom Language Model" -->
+      <!-- PORT:top x=176 y=32 id=n4.top type=input component="Custom Language Model" -->
+      <!-- PORT:bottom x=176 y=80 id=n4.bottom type=output component="Custom Language Model" -->
+      <!-- PORT:left x=144 y=128 id=n5.left type=input component="Agent" -->
+      <!-- PORT:right x=208 y=128 id=n5.right type=output component="Agent" -->
+      <!-- PORT:top x=176 y=104 id=n5.top type=input component="Agent" -->
+      <!-- PORT:bottom x=176 y=152 id=n5.bottom type=output component="Agent" -->
+      <!-- PORT:left x=32 y=200 id=n6.left type=input component="Custom Language Model Component" -->
+      <!-- PORT:right x=320 y=200 id=n6.right type=output component="Custom Language Model Component" -->
+      <!-- PORT:top x=176 y=176 id=n6.top type=input component="Custom Language Model Component" -->
+      <!-- PORT:bottom x=176 y=224 id=n6.bottom type=output component="Custom Language Model Component" -->
+      <g id="n4" transform="translate(72,32)" data-bbox="72 32 208 48" data-label="Custom Language Model">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Custom Language Model" -->
+        <!-- PORT:right x=208 y=24 id=n4.right type=output component="Custom Language Model" -->
+        <!-- PORT:top x=104 y=0 id=n4.top type=input component="Custom Language Model" -->
+        <!-- PORT:bottom x=104 y=48 id=n4.bottom type=output component="Custom Language Model" -->
+        <rect id="n4.block" x="0" y="0" width="208" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Custom Language Model" />
+        <use id="n4.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">Custom Language Model</text>
+      </g>
+      <g id="n5" transform="translate(144,104)" data-bbox="144 104 64 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Agent" -->
+        <!-- PORT:right x=64 y=24 id=n5.right type=output component="Agent" -->
+        <!-- PORT:top x=32 y=0 id=n5.top type=input component="Agent" -->
+        <!-- PORT:bottom x=32 y=48 id=n5.bottom type=output component="Agent" -->
+        <rect id="n5.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+        <text id="n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+      </g>
+      <g id="n6" transform="translate(32,176)" data-bbox="32 176 288 48" data-label="Custom Language Model Component">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Custom Language Model Component" -->
+        <!-- PORT:right x=288 y=24 id=n6.right type=output component="Custom Language Model Component" -->
+        <!-- PORT:top x=144 y=0 id=n6.top type=input component="Custom Language Model Component" -->
+        <!-- PORT:bottom x=144 y=48 id=n6.bottom type=output component="Custom Language Model Component" -->
+        <rect id="n6.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Custom Language Model Component" />
+        <use id="n6.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="268">Custom Language Model Component</text>
+      </g>
+    </g>
+    <g id="n3" transform="translate(424,104)" data-bbox="424 104 392 112" data-label="Agent Component, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Agent Component" -->
+      <!-- PORT:right x=176 y=56 id=n7.right type=output component="Agent Component" -->
+      <!-- PORT:top x=104 y=32 id=n7.top type=input component="Agent Component" -->
+      <!-- PORT:bottom x=104 y=80 id=n7.bottom type=output component="Agent Component" -->
+      <!-- PORT:left x=216 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=360 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=288 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=288 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Agent Component">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent Component" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Agent Component" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Agent Component" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Agent Component" -->
+        <rect id="n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
+        <text id="n7.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
+      </g>
+      <path id="n3.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
+    </g>
+    <path id="n1.arrow0" d="M352,232 H400 V160 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "manifest": "/workspace/examples/figtree/langflow/modules/01-flow-topology/manifest.json",
+  "index": "/workspace/examples/figtree/langflow/modules/01-flow-topology/index.html",
+  "units": [
+    {
+      "id": "source",
+      "title": "Module 01 \u2014 Langflow flow topology",
+      "source": "docs/research/langflow-agentic-workflows/modules/01-flow-topology/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/modules/01-flow-topology/source.svg",
+      "overall": 8.29,
+      "issues": 1,
+      "critical": 1,
+      "status": "ok"
+    }
+  ],
+  "failed": [],
+  "skipped": []
+}
