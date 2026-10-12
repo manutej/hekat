@@ -12,11 +12,13 @@ FigTree-backed SVG pipeline for the **Agentic AI with Langflow** course companio
 | [`scripts/extract_module_figures.py`](scripts/extract_module_figures.py) | Extract `#m1` inventory from HTML |
 | [`scripts/compare_gold.py`](scripts/compare_gold.py) | Gold structural compare (`data-component` Jaccard) |
 
-## Learner-facing pipeline (Pursuit tier)
+## Learner-facing pipeline (narrative tier)
 
 ```bash
 python3 examples/course/agentic-ai-langflow/module-01/build_course_narrative.py
 ```
+
+Ships `module-01/narrative/*.svg` (Pursuit baseline; m1b/m1-capstone pilots try `course-narrative` generate when they beat Pursuit richness). Score lab SVGs against Pursuit: `figtree score ... --reference pursuit/figures/....svg`.
 
 ## Lab / generator loop (teaching rubric)
 

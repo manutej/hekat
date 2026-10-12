@@ -11,7 +11,7 @@ PURSUIT_DIR = ROOT / "examples/figtree/langflow/pursuit/module-01/figures"
 PURSUIT_MANIFEST = ROOT / "examples/figtree/langflow/pursuit/module-01/manifest.json"
 GOLD = COURSE_MODULE / "gold"
 
-Tier = str  # "pursuit" | "gold" | "production"
+Tier = str  # "narrative" | "pursuit" | "gold" | "production"
 
 
 def _pursuit_by_course_id() -> dict[str, Path]:
@@ -32,7 +32,10 @@ def _pursuit_by_course_id() -> dict[str, Path]:
 def resolve(course_id: str, tier: Tier = "pursuit") -> Path | None:
     prod = COURSE_MODULE / f"{course_id}.svg"
     gold = GOLD / f"{course_id}.svg"
+    narrative = COURSE_MODULE / "narrative" / f"{course_id}.svg"
     pursuit = _pursuit_by_course_id().get(course_id)
+    if tier == "narrative" and narrative.exists():
+        return narrative
     if tier == "pursuit" and pursuit:
         return pursuit
     if tier == "gold" and gold.exists():

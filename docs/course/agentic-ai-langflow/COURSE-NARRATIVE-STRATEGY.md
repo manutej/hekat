@@ -89,9 +89,9 @@ python3 examples/figtree/langflow/adversarial/run_module_adversarial.py \
 
 ## 6. Module 1 rollout order
 
-1. **Done:** Pursuit tree, tier resolver, preview `--tier pursuit`, ASCII audit, teaching lab fixes.
-2. **This pass:** `course-narrative` rubric, Pursuit gate CI, narrative adversarial runner, strategy docs.
-3. **Next:** Per-figure `--request` refine from brief + Pursuit diff; optional `course-narrative` generate from enriched briefs (m1b, capstone first).
+1. **Done:** Pursuit tree, tier resolver, ASCII audit, teaching lab fixes, `course-narrative` rubric + gate CI.
+2. **Done:** `build_narrative_figures.py` (Pursuit baseline in `module-01/narrative/`, pilots m1b + capstone generate/refine), `figtree score --reference`, preview `--tier narrative`.
+3. **Next:** Claude `--request` rounds using `pursuit_requests.py` (local/dev); close m1b gap without replacing Pursuit until `_beats_pursuit` passes.
 4. **Later modules:** Repeat manifest + Pursuit `figures/` + gate before preview.
 
 ## 7. Success criteria

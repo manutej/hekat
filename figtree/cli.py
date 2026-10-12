@@ -102,12 +102,14 @@ def _score_main(argv: list) -> int:
     ap.add_argument("svg")
     ap.add_argument("--rubric", choices=sorted(RUBRICS), default="teaching")
     ap.add_argument("--source")
+    ap.add_argument("--reference", help="Pursuit or gold SVG to compare richness (course-narrative)")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
     with open(args.svg, encoding="utf-8") as fh:
         svg = fh.read()
     source = open(args.source, encoding="utf-8").read() if args.source else None
-    report = QualityCritic(args.rubric).review(svg, source)
+    reference = open(args.reference, encoding="utf-8").read() if args.reference else None
+    report = QualityCritic(args.rubric).review(svg, source, reference_svg=reference)
     if args.json:
         print(json.dumps(report.to_dict(), indent=2))
         return 0

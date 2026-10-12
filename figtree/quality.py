@@ -381,7 +381,14 @@ class QualityCritic:
         self.rubric = get_rubric(rubric) if isinstance(rubric, str) else rubric
 
     # ------------------------------------------------------------------
-    def review(self, svg_text: str, source_text: Optional[str] = None, plan_terms: Optional[Sequence[str]] = None, rendered_path: Optional[str] = None) -> QualityReport:
+    def review(
+        self,
+        svg_text: str,
+        source_text: Optional[str] = None,
+        plan_terms: Optional[Sequence[str]] = None,
+        rendered_path: Optional[str] = None,
+        reference_svg: Optional[str] = None,
+    ) -> QualityReport:
         R = self.rubric
         prog = load_program(svg_text)
         issues: List[Issue] = []
@@ -541,6 +548,22 @@ class QualityCritic:
             unassessed.append("semantic_coverage")
         if not source_text:
             unassessed.append("hallucination_control")
+        if reference_svg:
+            from figtree.pursuit_compare import gaps_vs_reference
+
+            for gap in gaps_vs_reference(reference_svg, svg_text):
+                issues.append(
+                    Issue(
+                        gap.dimension,
+                        gap.severity,
+                        gap.visual_description,
+                        "svg",
+                        "match Pursuit reference richness (panels, annotations, canvas height)",
+                        gap.penalty,
+                        None,
+                        check_id=gap.check_id,
+                    )
+                )
         return self._finish(issues, metrics, unassessed)
 
     # ------------------------------------------------------------------

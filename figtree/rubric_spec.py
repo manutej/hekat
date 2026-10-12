@@ -85,6 +85,9 @@ CHECKS: List[Check] = [
     Check("narrative.panel_support", "semantic_coverage", "warning", "large panels without supporting annotation text", "panel blocks vs annot", False, ["course narrative"], pattern=r"large panels but fewer than 2 annotation"),
     Check("narrative.section_title", "medium_fit", "warning", "multi-panel layout without a section title", "title text or font-weight", False, ["course narrative"], pattern=r"no section title"),
     Check("narrative.example_panels", "visual_polish", "warning", "multi-column layout without example panels or annotations", "nested white rects vs annot", False, ["course narrative"], pattern=r"without nested example panels"),
+    Check("narrative.ref_height", "medium_fit", "warning", "canvas height far below Pursuit reference", "viewBox height ratio", False, ["course narrative"], pattern=r"canvas height .* of reference"),
+    Check("narrative.ref_annot", "semantic_coverage", "warning", "annotation count far below Pursuit reference", "annot ratio", False, ["course narrative"], pattern=r"annotation count .* of reference"),
+    Check("narrative.ref_text", "text_quality", "warning", "text count far below Pursuit reference", "text ratio", False, ["course narrative"], pattern=r"text element count .* of reference"),
     Check("content.none", "semantic_coverage", "critical", "nothing drawn", "shape count", False, pattern=r"no drawable content"),
     Check("medium.no_canvas", "medium_fit", "critical", "no canvas size", "width/height/viewBox", False, pattern=r"canvas has no width"),
     # --- folded in from the adversary reports (diagram) ---
