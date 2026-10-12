@@ -1,7 +1,7 @@
 {
   "name": "dashboard",
   "medium": "dashboard tile",
-  "description": "Dashboard tile: one title, one key number or trend, compact, high contrast, no decoration.",
+  "description": "Dashboard tile: one title, one key number (the largest text) or trend with a reference, uniform tiles, red/green only on a signed change, no decoration.",
   "thresholds": {
     "min_font": 12,
     "min_contrast": 4.5,
@@ -16,7 +16,20 @@
     "allow_text": true,
     "require_axis_labels": false,
     "require_square": false,
-    "fixed_canvas": true
+    "fixed_canvas": true,
+    "max_centred_margin_ratio": 0.34,
+    "flow_halo": 4.0,
+    "title_min_words": 5,
+    "bar_scale_tolerance": 0.05,
+    "tile_width_tolerance": 4,
+    "tile_gutter_tolerance": 2,
+    "must_read_at": 16,
+    "max_strokes": 12,
+    "icon_safe_margin": 2.0,
+    "min_coverage": 0.4,
+    "min_feature_px": 1.5,
+    "min_gap_px": 1.0,
+    "max_ink_offset": 3.0
   },
   "dimensions": {
     "semantic_coverage": {
@@ -53,7 +66,7 @@
         "9-10": "precise, publication-grade topology"
       },
       "judge": "Do grouping, hierarchy and containment match the structure of the method?",
-      "weight": 1.0
+      "weight": 0.5
     },
     "flow_readability": {
       "question": "Can a reader follow the flow: arrow direction, endpoints, crossings, reading order?",
@@ -65,7 +78,7 @@
         "9-10": "very clear, economical flow, no ambiguity"
       },
       "judge": "Can a cold reader follow the flow: arrow direction, endpoints, crossings, reading order, spacing?",
-      "weight": 1.0
+      "weight": 0.5
     },
     "text_quality": {
       "question": "Label correctness, font consistency, legibility, placement, overflow.",
@@ -413,27 +426,184 @@
       "media": [
         "*"
       ]
+    },
+    {
+      "id": "medium.no_canvas",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "no canvas size",
+      "signal": "width/height/viewBox",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.collinear_overlap",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "two arrows sharing a collinear shaft (two heads, ambiguous endpoints)",
+      "signal": "collinear segment overlap > 8px",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.through_text",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "an arrow striking through a label",
+      "signal": "segment vs text bbox interior",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.sentence_label",
+      "dimension": "text_quality",
+      "severity": "critical",
+      "description": "a label that is a sentence (trailing full stop or sentence opener)",
+      "signal": "label text",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.invisible_elements",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "elements that draw nothing but stretch the content box",
+      "signal": "opacity 0, display none, no fill and no stroke, background-coloured",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "tile.hierarchy",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "the key number is not the largest text in its tile",
+      "signal": "font sizes of numeric vs other texts per tile",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.status_colour",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "red/green without a signed delta, threshold or status word",
+      "signal": "hue class of value text / stripe / border vs tile text",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.sparkline_reference",
+      "dimension": "medium_fit",
+      "severity": "warning",
+      "description": "a sparkline without baseline, end values or span caption",
+      "signal": "line / end labels / caption inside the tile",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.grid_uniform",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "tiles in one row with different widths, gutters or styles",
+      "signal": "tile rects grouped by row",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "motion.pulse_direction",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "a token travelling from arrowhead to tail",
+      "signal": "offset-distance keyframes, animation-direction, path vs reversed flow",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.reveal_order",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "a target revealed before its source",
+      "signal": "reveal delays along data flows",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.control_tempo",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "a control token faster or as dark as data tokens",
+      "signal": "travel duration and fill luminance per token",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.reduced_motion",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "no (or an incomplete) prefers-reduced-motion block",
+      "signal": "@media (prefers-reduced-motion: reduce) rules",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.decorative",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "motion that encodes nothing",
+      "signal": "paths that are no flow, infinite/alternate on non-tokens, animated properties beyond opacity/dashoffset",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
     }
   ],
   "vetoes": {
     "textual_overload": {
       "description": "full sentences or more than 15 words in a box; literal copying of the source",
       "checks": [
-        "text.words_per_label"
+        "text.words_per_label",
+        "text.sentence_label"
       ]
     },
     "occlusion": {
       "description": "overlapping elements or labels",
       "checks": [
         "text.overlap",
-        "flow.through_block"
+        "flow.through_block",
+        "flow.through_text",
+        "flow.collinear_overlap"
       ]
     },
     "chaotic_routing": {
       "description": "crossings and detours that defeat reading order",
       "checks": [
         "flow.crossings",
-        "flow.detour",
+        "compactness.detour",
         "flow.reading_order"
       ]
     },
@@ -441,7 +611,8 @@
       "description": "fonts below the medium's minimum or low contrast",
       "checks": [
         "text.min_font",
-        "text.contrast"
+        "text.contrast",
+        "text.outlined_glyphs"
       ]
     },
     "black_background": {
@@ -466,12 +637,31 @@
     },
     "embedded_title_or_watermark": {
       "description": "figure title or watermark inside the drawing (paper figures)",
-      "checks": []
+      "checks": [
+        "medium.embedded_title"
+      ]
     },
     "clip_art": {
       "description": "decorative, cartoonish or photorealistic elements",
       "checks": [
-        "polish.corner_radius"
+        "polish.corner_radius",
+        "polish.decoration"
+      ]
+    },
+    "misleading_data": {
+      "description": "a chart that misstates the data: truncated bar axis, bars not to scale, dual axis, legend that names the wrong series",
+      "checks": [
+        "chart.bar_axis_zero",
+        "chart.bar_scale",
+        "chart.dual_axis",
+        "chart.legend_swatch_colour"
+      ]
+    },
+    "motion_misleads": {
+      "description": "animation that runs against the flow or is lost to reduced-motion users",
+      "checks": [
+        "motion.pulse_direction",
+        "motion.reduced_motion"
       ]
     }
   },

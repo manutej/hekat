@@ -1,0 +1,114 @@
+/* FigTree design tokens. Three presets share one vocabulary: paper (academic register),
+   teaching (editorial, sans, softer tints) and slide (teaching at projector scale).
+   Set data-preset="teaching" on any ancestor (the <Figure> does it for you). */
+:root,
+[data-preset="paper"] {
+  --ft-color-attention: #d4a574;
+  --ft-color-processing: #7ba3c9;
+  --ft-color-residual: #e8d4a0;
+  --ft-color-input: #e8e8e8;
+  --ft-color-container: #f5f5f5;
+  --ft-color-container-stroke: #333333;
+  --ft-color-border: #333333;
+  --ft-color-ink: #333333;
+  --ft-color-label: #333333;
+  --ft-color-title: #333333;
+  --ft-color-icon: #333333;
+  --ft-color-background: #ffffff;
+  --ft-color-control: #9a9a9a;
+  --ft-font: "Times New Roman", Times, serif;
+  --ft-font-size-label: 12px;
+  --ft-font-size-annot: 10px;
+  --ft-font-size-title: 12px;
+  --ft-font-size-caption: 11px;
+  --ft-stroke-main: 1.2;
+  --ft-stroke-border: 0.8;
+  --ft-container-dash: 4 2;
+  --ft-radius-block: 4px;
+  --ft-radius-container: 4px;
+  --ft-grid: 8px;
+  --ft-space-gap-h: 24px;
+  --ft-space-gap-v: 16px;
+  --ft-space-row: 48px;
+  --ft-space-padding: 24px;
+  --ft-min-arrow: 20px;
+  --ft-marker-w: 5;
+  --ft-marker-h: 3.5;
+}
+[data-preset="teaching"] {
+  --ft-color-attention: #f3c9a4;
+  --ft-color-processing: #c9dcf0;
+  --ft-color-residual: #f6efd2;
+  --ft-color-input: #e6e8ec;
+  --ft-color-container: #f8f9fb;
+  --ft-color-container-stroke: #d5dbe4;
+  --ft-color-border: #2b3a4a;
+  --ft-color-ink: #2b3a4a;
+  --ft-color-label: #1c2630;
+  --ft-color-title: #5b6b7c;
+  --ft-color-icon: #2b3a4a;
+  --ft-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --ft-font-size-label: 14px;
+  --ft-font-size-annot: 11px;
+  --ft-font-size-title: 12px;
+  --ft-font-size-caption: 13px;
+  --ft-stroke-main: 1.4;
+  --ft-stroke-border: 1;
+  --ft-container-dash: none;
+  --ft-radius-block: 6px;
+  --ft-radius-container: 10px;
+  --ft-space-gap-h: 40px;
+  --ft-space-gap-v: 24px;
+  --ft-space-row: 64px;
+  --ft-space-padding: 32px;
+  --ft-min-arrow: 24px;
+  --ft-marker-w: 8;
+  --ft-marker-h: 6;
+}
+[data-preset="slide"] {
+  --ft-color-attention: #f3c9a4;
+  --ft-color-processing: #c9dcf0;
+  --ft-color-residual: #f6efd2;
+  --ft-color-input: #e6e8ec;
+  --ft-color-container: #f8f9fb;
+  --ft-color-container-stroke: #d5dbe4;
+  --ft-color-border: #2b3a4a;
+  --ft-color-ink: #2b3a4a;
+  --ft-color-label: #1c2630;
+  --ft-color-title: #5b6b7c;
+  --ft-color-icon: #2b3a4a;
+  --ft-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --ft-font-size-label: 18px;
+  --ft-font-size-annot: 13px;
+  --ft-font-size-title: 14px;
+  --ft-font-size-caption: 15px;
+  --ft-stroke-main: 1.6;
+  --ft-stroke-border: 1.2;
+  --ft-container-dash: none;
+  --ft-radius-block: 8px;
+  --ft-radius-container: 12px;
+  --ft-space-gap-h: 56px;
+  --ft-space-gap-v: 32px;
+  --ft-space-row: 80px;
+  --ft-space-padding: 40px;
+  --ft-min-arrow: 28px;
+  --ft-marker-w: 10;
+  --ft-marker-h: 7;
+}
+.ft-figure {
+  display: block;
+  background: var(--ft-color-background);
+  font-family: var(--ft-font);
+  color: var(--ft-color-ink);
+}
+.ft-caption {
+  font-family: var(--ft-font);
+  font-size: var(--ft-font-size-caption);
+  color: var(--ft-color-title);
+  line-height: 1.4;
+  margin: 8px 0 0;
+}
+.ft-caption b { color: var(--ft-color-label); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .ft-figure * { animation: none !important; transition: none !important; }
+}

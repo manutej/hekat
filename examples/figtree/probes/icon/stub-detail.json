@@ -1,9 +1,9 @@
 {
   "id": "icon.stub-detail",
   "rubric": "icon",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.icon.min_feature_size"
+    "icon.min_feature_size"
   ],
   "expect_silent": [
     "medium.icon_elements",
@@ -11,5 +11,6 @@
     "polish.stroke_widths"
   ],
   "rationale": "One r=9.5 circle satisfies coverage and the safe margin; the 'detail' is five 0.5px stubs that are sub-pixel at 16px (the grounder round-1 failure from NOTES.md). Score 10. A check should measure each stroke's extent (path length and bbox) in device px at must_read_at and flag features under ~1.5 device px.",
-  "source": "adversary-icon"
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

@@ -1,0 +1,32 @@
+{
+  "pkg": "@hekat/figtree-ds",
+  "globalName": "FigTreeDS",
+  "shape": "package",
+  "buildCmd": "cd design/figtree-ds && npm run build",
+  "srcDir": "src",
+  "cssEntry": "src/tokens.css",
+  "tokensGlob": "src/tokens.css",
+  "extraFonts": [
+    "node_modules/@fontsource/ibm-plex-sans/400.css",
+    "node_modules/@fontsource/ibm-plex-sans/600.css"
+  ],
+  "overrides": {
+    "Figure": {
+      "cardMode": "column"
+    },
+    "Container": {
+      "cardMode": "column"
+    },
+    "Flow": {
+      "cardMode": "column"
+    },
+    "Block": {
+      "cardMode": "column"
+    },
+    "Caption": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md",
+  "projectId": "c8a71e84-1610-4de9-92c2-2d4debce8292"
+}

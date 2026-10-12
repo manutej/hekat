@@ -3,7 +3,7 @@
   "rubric": "teaching",
   "kind": "defect",
   "expect_fire": [
-    "flow.crossings"
+    "flow.collinear_overlap"
   ],
   "expect_silent": [],
   "rationale": "Fetch->Store and Parse->Index are routed through the same mid column, so their vertical segments coincide and the drawing shows an H shape with two heads: the reader cannot say which source feeds which target. The collinear branch of _cross reports this under flow.crossings as '1 arrow crossing(s)' with a 0.7 penalty (overall 9.38); a merged shaft is an ambiguity of endpoints, not a crossing, and deserves its own message and a critical severity.",

@@ -1,11 +1,12 @@
 {
   "id": "dashboard.status_colour_decoration",
   "rubric": "dashboard",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.status_colour_semantics"
+    "tile.status_colour"
   ],
   "expect_silent": [],
   "rationale": "Three neutral metrics painted red, green, red (value and top stripe) with no delta, threshold or sign: the status colours are decoration, and a reader will read 'Sessions' as failing. Two accent fills, high contrast, so the strip scores 10. Proposed: red/green on a value or stripe must be paired with a signed delta, a threshold or a status word in the same tile.",
-  "source": "adversary-chart"
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

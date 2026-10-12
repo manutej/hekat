@@ -1,11 +1,12 @@
 {
   "id": "teaching.up_arrows_jog_right",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
     "flow.reading_order"
   ],
   "expect_silent": [],
   "rationale": "Both columns flow Input -> Compute -> Result from the bottom up; every arrow starts with an 8px horizontal jog to the right before the 24px climb, so 'ends to the right OR below' counts all four as forward. Reading order should be judged on the dominant axis of displacement.",
-  "source": "adversary-diagram"
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

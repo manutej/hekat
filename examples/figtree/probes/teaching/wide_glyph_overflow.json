@@ -1,11 +1,12 @@
 {
   "id": "teaching.wide_glyph_overflow",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
     "text.overflow"
   ],
   "expect_silent": [],
   "rationale": "'WORKFLOW MANAGER' and 'DOWNSTREAM MODEL' are 16 characters at 14px, so the 0.5em estimate gives exactly the 112px block width and the overflow check stays silent; rendered in a serif the capitals average ~0.7em and both labels spill ~40px past their boxes.",
-  "source": "adversary-diagram"
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

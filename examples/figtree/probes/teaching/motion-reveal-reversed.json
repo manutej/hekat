@@ -1,14 +1,15 @@
 {
   "id": "teaching.motion-reveal-reversed",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.motion.reveal_order"
+    "motion.reveal_order"
   ],
   "expect_silent": [
     "compactness.overflow",
     "flow.reading_order"
   ],
   "rationale": "The Output block appears first, then Model, then Source: the construction order contradicts reading order and the arrows, while the final frame is identical to the clean figure. Check: parse each reveal rule's animation-delay, order blocks by (row, x) as animate._order does, and require a non-negative rank correlation (or a monotone sequence along each flow: a target never reveals before its source).",
-  "source": "adversary-icon"
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

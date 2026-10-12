@@ -44,6 +44,8 @@ class Check:
         return {"id": self.id, "dimension": self.dimension, "severity": self.severity, "description": self.description, "signal": self.signal, "mechanical": self.mechanical, "media": list(self.media)}
 
 
+DIAGRAM_MEDIA = ["paper", "teaching material", "presentation"]
+
 CHECKS: List[Check] = [
     Check("compactness.blank_margin", "compactness", "warning", "a blank band wider than the medium's margin on any side", "content bbox vs canvas", True, pattern=r"margin is \d+px of blank canvas"),
     Check("compactness.overflow", "compactness", "critical", "content outside the canvas", "content bbox vs canvas", True, pattern=r"overflows the (left|top|right|bottom) edge"),
@@ -79,20 +81,66 @@ CHECKS: List[Check] = [
     Check("topology.ungrouped", "topology_accuracy", "warning", "many blocks without grouping", "block count vs containers", False, ["paper", "teaching material", "presentation"], pattern=r"blocks without any grouping"),
     Check("topology.empty_container", "topology_accuracy", "warning", "an empty container", "container children", True, pattern=r"empty container"),
     Check("content.none", "semantic_coverage", "critical", "nothing drawn", "shape count", False, pattern=r"no drawable content"),
+    Check("medium.no_canvas", "medium_fit", "critical", "no canvas size", "width/height/viewBox", False, pattern=r"canvas has no width"),
+    # --- folded in from the adversary reports (diagram) ---
+    Check("flow.collinear_overlap", "flow_readability", "critical", "two arrows sharing a collinear shaft (two heads, ambiguous endpoints)", "collinear segment overlap > 8px", False, pattern=r"share a collinear shaft"),
+    Check("flow.through_text", "flow_readability", "critical", "an arrow striking through a label", "segment vs text bbox interior", False, pattern=r"strikes through label"),
+    Check("flow.semantic_direction", "flow_readability", "critical", "a sink that only emits or a source that only receives data (judge request)", "role lexicon vs arrow endpoints", False, DIAGRAM_MEDIA, pattern=r"reads as a (sink|source) but only"),
+    Check("text.sentence_label", "text_quality", "critical", "a label that is a sentence (trailing full stop or sentence opener)", "label text", False, pattern=r"is a sentence, not a label"),
+    Check("text.duplicate_labels", "text_quality", "warning", "two blocks with the same label", "case-folded hosted labels", False, DIAGRAM_MEDIA, pattern=r"carry the same label"),
+    Check("text.outlined_glyphs", "text_quality", "critical", "a block label drawn as path glyphs, not addressable text", "small stroked paths inside a block with no text", False, DIAGRAM_MEDIA, pattern=r"drawn as \d+ path glyphs"),
+    Check("medium.embedded_title", "medium_fit", "critical", "a figure caption or title inside the drawing", "text matching 'Figure N' / 'Table N'", False, DIAGRAM_MEDIA, pattern=r"embeds a figure title"),
+    Check("polish.invisible_elements", "visual_polish", "warning", "elements that draw nothing but stretch the content box", "opacity 0, display none, no fill and no stroke, background-coloured", True, pattern=r"invisible element\(s\)"),
+    Check("polish.decoration", "visual_polish", "critical", "overlapping ellipses with no label or connector (clip art)", "unlabelled round shapes that intersect", False, DIAGRAM_MEDIA, pattern=r"decorative cluster"),
+    Check("topology.container_label_mismatch", "topology_accuracy", "critical", "a container whose title names a block outside it (judge request)", "container title stem vs child/outside labels", False, DIAGRAM_MEDIA, pattern=r"but the matching block .* sits outside"),
+    Check("layout.legend_in_drawing", "topology_accuracy", "warning", "a legend inside the block grid", "legend bbox inside the union of blocks", False, DIAGRAM_MEDIA, pattern=r"legend .* sits inside the block grid"),
+    # --- charts ---
+    Check("chart.axis_units", "semantic_coverage", "critical", "the label of a numeric axis without a unit", "parenthesised unit / % / currency on the axis label", False, ["chart"], pattern=r"axis label .* carries no unit"),
+    Check("chart.bar_axis_zero", "semantic_coverage", "critical", "bars on an axis that does not start at zero", "lowest numeric tick at the bar baseline", False, ["chart"], pattern=r"lowest tick reads|first tick reads"),
+    Check("chart.bar_scale", "semantic_coverage", "critical", "bar heights that contradict the tick scale or their value labels", "linear fit of tick labels vs bar tops", False, ["chart"], pattern=r"not to scale"),
+    Check("chart.dual_axis", "semantic_coverage", "critical", "two y axes on opposite sides of the plot", "two vertical axis lines with ticks, or two rotated labels", False, ["chart"], pattern=r"dual y axis"),
+    Check("chart.pie", "semantic_coverage", "critical", "a pie chart", "three or more filled arc paths sharing one start point", False, ["chart"], pattern=r"pie chart of"),
+    Check("chart.rainbow_categorical", "visual_polish", "warning", "one series coloured with many hues", "distinct hues on bars with no legend", False, ["chart"], pattern=r"rainbow categorical"),
+    Check("chart.legend_swatch_colour", "semantic_coverage", "critical", "a legend swatch that matches no series colour", "swatch fill vs series fills/strokes", False, ["chart"], pattern=r"legend swatch .* matches no series"),
+    Check("chart.pseudo_3d", "visual_polish", "critical", "pseudo-3D faces on bars", "polygon sharing an edge with a rect and carrying slanted edges", False, ["chart"], pattern=r"pseudo-3D face"),
+    Check("chart.gridline_weight", "visual_polish", "critical", "gridlines heavier or darker than the series marks", "gridline stroke width / luminance vs series", False, ["chart"], pattern=r"gridlines .* heavier or darker"),
+    # --- dashboard tiles ---
+    Check("tile.hierarchy", "medium_fit", "critical", "the key number is not the largest text in its tile", "font sizes of numeric vs other texts per tile", False, ["dashboard tile"], pattern=r"key number .* is smaller than its label"),
+    Check("tile.status_colour", "medium_fit", "critical", "red/green without a signed delta, threshold or status word", "hue class of value text / stripe / border vs tile text", False, ["dashboard tile"], pattern=r"status colour as decoration"),
+    Check("tile.sparkline_reference", "medium_fit", "warning", "a sparkline without baseline, end values or span caption", "line / end labels / caption inside the tile", False, ["dashboard tile"], pattern=r"sparkline .* has no baseline"),
+    Check("tile.grid_uniform", "visual_polish", "warning", "tiles in one row with different widths, gutters or styles", "tile rects grouped by row", False, ["dashboard tile"], pattern=r"tiles in one row differ"),
+    # --- icon family (shared with IconSmith) ---
+    Check("icon.safe_margin", "compactness", "warning", "strokes inside the safe margin", "content extent vs 2-unit margin", False, ["icon"], pattern=r"safe margin"),
+    Check("icon.coverage", "compactness", "warning", "the icon covers too little of the grid", "content box area (flat metaphors by their long side)", False, ["icon"], pattern=r"icon covers .* of the grid"),
+    Check("icon.subpath_count", "medium_fit", "warning", "more strokes (subpaths) than the family allows", "M commands across paths plus other shapes", False, ["icon"], pattern=r"strokes \(subpaths\)"),
+    Check("icon.solid_fill", "visual_polish", "warning", "a solid fill in an outline family", "resolved fill not none on a shape larger than a dot", False, ["icon"], pattern=r"solid fill on"),
+    Check("icon.invisible_shape", "visual_polish", "critical", "an invisible shape that stretches the content box", "no fill and no stroke, opacity 0, hidden", True, ["icon"], pattern=r"invisible element\(s\)"),
+    Check("icon.min_feature_size", "medium_fit", "warning", "a stroke that is sub-pixel at the must-read size", "stroke extent x (must_read_at / grid)", False, ["icon"], pattern=r"shorter than .* device px"),
+    Check("icon.min_gap", "medium_fit", "warning", "parallel strokes that fuse at the must-read size", "centre distance minus stroke width in device px", False, ["icon"], pattern=r"parallel strokes .* fuse"),
+    Check("icon.crossing_density", "medium_fit", "warning", "more than two strokes through one 2px cell", "pairwise segment intersections bucketed", False, ["icon"], pattern=r"strokes cross in one 2px cell"),
+    Check("icon.ink_distribution", "visual_polish", "warning", "ink crowded into one corner of the content box", "length-weighted ink centroid vs content box centre", False, ["icon"], pattern=r"ink centroid"),
+    # --- motion (any medium with CSS animation) ---
+    Check("motion.pulse_direction", "flow_readability", "critical", "a token travelling from arrowhead to tail", "offset-distance keyframes, animation-direction, path vs reversed flow", False, pattern=r"travels from the arrowhead|alternates direction"),
+    Check("motion.reveal_order", "flow_readability", "warning", "a target revealed before its source", "reveal delays along data flows", False, pattern=r"is revealed at .* before its source"),
+    Check("motion.control_tempo", "flow_readability", "warning", "a control token faster or as dark as data tokens", "travel duration and fill luminance per token", False, pattern=r"control token .* is faster or as dark"),
+    Check("motion.reduced_motion", "medium_fit", "critical", "no (or an incomplete) prefers-reduced-motion block", "@media (prefers-reduced-motion: reduce) rules", False, pattern=r"reduced-motion"),
+    Check("motion.decorative", "visual_polish", "warning", "motion that encodes nothing", "paths that are no flow, infinite/alternate on non-tokens, animated properties beyond opacity/dashoffset", False, pattern=r"decorative motion"),
 ]
 
 # Veto rules (after PaperBananaBench): disqualifying whatever else is good.  A veto maps to the
 # checks that detect it; a veto with no measurable check is a judge question only.
 VETOES: Dict[str, Dict[str, object]] = {
-    "textual_overload": {"description": "full sentences or more than 15 words in a box; literal copying of the source", "checks": ["text.words_per_label"]},
-    "occlusion": {"description": "overlapping elements or labels", "checks": ["text.overlap", "flow.through_block"]},
+    "textual_overload": {"description": "full sentences or more than 15 words in a box; literal copying of the source", "checks": ["text.words_per_label", "text.sentence_label"]},
+    "occlusion": {"description": "overlapping elements or labels", "checks": ["text.overlap", "flow.through_block", "flow.through_text", "flow.collinear_overlap"]},
     "chaotic_routing": {"description": "crossings and detours that defeat reading order", "checks": ["flow.crossings", "compactness.detour", "flow.reading_order"]},
-    "illegible_type": {"description": "fonts below the medium's minimum or low contrast", "checks": ["text.min_font", "text.contrast"]},
+    "illegible_type": {"description": "fonts below the medium's minimum or low contrast", "checks": ["text.min_font", "text.contrast", "text.outlined_glyphs"]},
     "black_background": {"description": "dark page background", "checks": ["medium.black_background"]},
     "neon_or_gradient": {"description": "jarring colour, gradients, filters", "checks": ["polish.neon", "polish.gradient_fill", "polish.filter"]},
     "hallucination": {"description": "elements with no basis in the source", "checks": ["hallucination.label_source"]},
-    "embedded_title_or_watermark": {"description": "figure title or watermark inside the drawing (paper figures)", "checks": []},
-    "clip_art": {"description": "decorative, cartoonish or photorealistic elements", "checks": ["polish.corner_radius"]},
+    "embedded_title_or_watermark": {"description": "figure title or watermark inside the drawing (paper figures)", "checks": ["medium.embedded_title"]},
+    "clip_art": {"description": "decorative, cartoonish or photorealistic elements", "checks": ["polish.corner_radius", "polish.decoration"]},
+    "misleading_data": {"description": "a chart that misstates the data: truncated bar axis, bars not to scale, dual axis, legend that names the wrong series", "checks": ["chart.bar_axis_zero", "chart.bar_scale", "chart.dual_axis", "chart.legend_swatch_colour"]},
+    "motion_misleads": {"description": "animation that runs against the flow or is lost to reduced-motion users", "checks": ["motion.pulse_direction", "motion.reduced_motion"]},
 }
 
 JUDGE_QUESTIONS: Dict[str, str] = {

@@ -5,6 +5,7 @@
     python -m figtree score FIG.svg --rubric slide
     python -m figtree animate FIG.svg -o FIG.animated.svg [--modes reveal,draw,pulse]
     python -m figtree icon "name: concept | metaphor" ... -o icons/ [--backend claude] [--sheet sheet.svg]
+    python -m figtree digest --plan DOCS/ -o out/ | --unit ID -o out/ | --all -o out/ [--rubric R]
 """
 
 from __future__ import annotations
@@ -261,9 +262,13 @@ def main(argv: Optional[list] = None) -> int:
         return _animate_main(argv[1:])
     if argv and argv[0] == "icon":
         return _icon_main(argv[1:])
+    if argv and argv[0] == "digest":
+        from figtree.digest import main as digest_main
+
+        return digest_main(argv[1:])
     if argv and argv[0] == "generate":
         argv = argv[1:]
-    ap = argparse.ArgumentParser(prog="figtree", description="FigTree-style recursive SVG methodology figure generator (subcommands: generate, refine, score)")
+    ap = argparse.ArgumentParser(prog="figtree", description="FigTree-style recursive SVG methodology figure generator (subcommands: generate, refine, score, animate, icon, eval, judge, digest)")
     ap.add_argument("source", help="paper, skill.md or methodology document")
     ap.add_argument("-o", "--output", default="figure.svg")
     ap.add_argument("--tree", help="write the layout tree (sheaf graph) as JSON")

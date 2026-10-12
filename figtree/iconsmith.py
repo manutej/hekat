@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from figtree.icons import ICONS, ICON_VIEWBOX, standalone_icon
 from figtree.program import load_program
-from figtree.quality import Issue, QualityCritic
+from figtree.quality import Issue, QualityCritic, icon_family_issues
 from figtree.refine import Refiner
 from figtree.rubrics import get_rubric
 
@@ -104,27 +104,14 @@ class IconResult:
 
 
 def icon_structural_issues(svg: str, spec: IconSpec) -> List[Issue]:
-    """Family rules beyond the generic icon rubric: safe margin, stroke count, coverage."""
-    prog = load_program(svg)
-    issues: List[Issue] = []
-    shapes = [s for s in prog.shapes() if s.tag != "svg"]
-    if len(shapes) > spec.max_strokes:
-        issues.append(Issue("medium_fit", "warning", f"{len(shapes)} strokes; family limit is {spec.max_strokes}", "svg", "merge or drop strokes", 1.0))
-    cb = prog.content_bbox()
-    if cb is not None:
-        scale = prog.width / 24.0
-        if cb.x < 2 * scale - 1 or cb.y < 2 * scale - 1 or cb.x2 > 22 * scale + 1 or cb.y2 > 22 * scale + 1:
-            issues.append(Issue("compactness", "warning", "strokes enter the 2px safe margin", "svg", "keep all strokes inside 2..22 of the 24 grid", 1.0))
-        coverage = (cb.w * cb.h) / float(prog.width * prog.height)
-        if coverage < 0.4:
-            issues.append(Issue("compactness", "warning", f"icon covers {coverage:.0%} of the grid; it will vanish at 16px", "svg", "enlarge the metaphor to fill ~70% of the grid", 1.5))
-    sw = {s.stroke_width for s in shapes if s.stroke_width is not None}
-    if len(sw) > 1:
-        issues.append(Issue("visual_polish", "warning", f"stroke widths {sorted(sw)} differ", "svg", "use stroke-width 2 everywhere", 1.0))
-    fills = {(s.fill or "none").lower() for s in shapes}
-    if any(f not in ("none", "currentcolor") for f in fills):
-        issues.append(Issue("visual_polish", "warning", "filled shapes in an outline family", "svg", "use fill=none", 0.8))
-    return issues
+    """Family rules beyond the generic icon rubric (safe margin, coverage, stroke count, fills, feature
+    size, gaps, crossings, ink balance).  They live in ``figtree.quality.icon_family_issues`` and run
+    inside ``QualityCritic`` for the icon rubric, so ``figtree eval`` measures them; this wrapper keeps
+    the spec's own limits (``max_strokes``, ``must_read_at``) for callers that score an icon directly."""
+    from dataclasses import replace
+
+    rubric = replace(get_rubric("icon"), max_strokes=spec.max_strokes, must_read_at=spec.must_read_at)
+    return icon_family_issues(load_program(svg), rubric)
 
 
 class IconSmith:
@@ -135,16 +122,12 @@ class IconSmith:
         self.critic = QualityCritic("icon")
 
     def score(self, inner: str, spec: IconSpec) -> tuple:
+        from dataclasses import replace
+
         svg = standalone_icon(spec.name, inner, size=48)
-        report = self.critic.review(svg)
-        extra = icon_structural_issues(svg, spec)
-        report.issues.extend(extra)
-        for i in extra:
-            cur = report.scores.get(i.dimension)
-            if cur is not None:
-                report.scores[i.dimension] = max(1.0, cur - i.penalty)
-        assessed = [v for v in report.scores.values() if v is not None]
-        report.overall = round(sum(assessed) / len(assessed), 2)
+        # the family rules run inside the critic (icon rubric) with the spec's own limits
+        critic = QualityCritic(replace(self.critic.rubric, max_strokes=spec.max_strokes, must_read_at=spec.must_read_at))
+        report = critic.review(svg)
         return svg, report
 
     def design(self, spec: IconSpec, requests: Optional[Sequence[Sequence[Dict[str, Any]]]] = None) -> IconResult:

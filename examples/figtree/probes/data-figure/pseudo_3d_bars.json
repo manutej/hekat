@@ -1,11 +1,12 @@
 {
   "id": "data-figure.pseudo_3d_bars",
   "rubric": "data-figure",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.pseudo_3d"
+    "chart.pseudo_3d"
   ],
   "expect_silent": [],
   "rationale": "Each bar has a skewed top and side face, the classic 3D effect the rubric description forbids ('no 3D or gradients'); the reader cannot tell whether the front or the back edge marks the value. Three flat fills, no gradient, no filter, so nothing fires. Proposed: a polygon that shares an edge with a rect and has non-axis-aligned edges is a 3D face.",
-  "source": "adversary-chart"
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

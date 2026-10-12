@@ -1,11 +1,12 @@
 {
   "id": "teaching.arrow_through_text",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.flow.through_text"
+    "flow.through_text"
   ],
   "expect_silent": [],
   "rationale": "The annotation 'on a miss' is centred on the Cache-to-Origin arrow, so the shaft is drawn through the letters. through_block only tests block interiors and overlap only tests text against text; a connector segment crossing a text bbox is never reported.",
-  "source": "adversary-diagram"
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

@@ -52,6 +52,19 @@ class Rubric:
     require_square: bool = False
     max_corner_radius: int = 8
     fixed_canvas: bool = False  # slides, tiles and icons keep their canvas; content is centred instead
+    max_centred_margin_ratio: float = 0.34  # fixed canvas: a centred figure may leave symmetric bands up to this fraction
+    flow_halo: float = 4.0  # px of clear space an arrow must keep from any block it does not connect
+    title_min_words: int = 5  # charts: a title shorter than this must carry a verb or comparison
+    bar_scale_tolerance: float = 0.05  # charts: bar height vs value label, as a fraction of the tick range
+    tile_width_tolerance: int = 4  # dashboard: tiles in one row share a width within this many px
+    tile_gutter_tolerance: int = 2  # dashboard: gutters in one row agree within this many px
+    must_read_at: int = 16  # icons: the device size at which every feature must survive
+    max_strokes: int = 12  # icons: strokes (subpaths) per icon
+    icon_safe_margin: float = 2.0  # icons: grid units kept clear on every side
+    min_coverage: float = 0.4  # icons: share of the grid the content box must cover (flat metaphors judged by their long side)
+    min_feature_px: float = 1.5  # icons: smallest stroke extent in device px at must_read_at
+    min_gap_px: float = 1.0  # icons: smallest clear gap between parallel strokes in device px at must_read_at
+    max_ink_offset: float = 3.0  # icons: grid units the ink centroid may sit off the centre of the content box
     weights: Dict[str, float] = field(default_factory=lambda: {k: 1.0 for k in DIMENSIONS})
     notes: List[str] = field(default_factory=list)
 
@@ -72,6 +85,19 @@ class Rubric:
                 "require_axis_labels": self.require_axis_labels,
                 "require_square": self.require_square,
                 "fixed_canvas": self.fixed_canvas,
+                "max_centred_margin_ratio": self.max_centred_margin_ratio,
+                "flow_halo": self.flow_halo,
+                "title_min_words": self.title_min_words,
+                "bar_scale_tolerance": self.bar_scale_tolerance,
+                "tile_width_tolerance": self.tile_width_tolerance,
+                "tile_gutter_tolerance": self.tile_gutter_tolerance,
+                "must_read_at": self.must_read_at,
+                "max_strokes": self.max_strokes,
+                "icon_safe_margin": self.icon_safe_margin,
+                "min_coverage": self.min_coverage,
+                "min_feature_px": self.min_feature_px,
+                "min_gap_px": self.min_gap_px,
+                "max_ink_offset": self.max_ink_offset,
             },
             "dimensions": dict(DIMENSIONS),
             "anchors": dict(ANCHORS),
@@ -106,7 +132,7 @@ RUBRICS: Dict[str, Rubric] = {
     "data-figure": Rubric(
         name="data-figure",
         medium="chart",
-        description="Data figure: labelled axes with units, tick labels legible, colour-blind-safe series count, no 3D or gradients.",
+        description="Data figure: labelled axes with units, zero-based bars to scale, one y axis, no pie, no 3D or gradients, legend swatches that match the series, a title that states the finding.",
         min_font=10, min_contrast=4.5, max_palette=6, max_words_per_label=8, aspect=(1.0, 2.2), margin=16,
         max_margin_ratio=0.15, max_stroke_widths=3, max_font_families=1, require_axis_labels=True,
         weights={**{k: 1.0 for k in DIMENSIONS}, "topology_accuracy": 0.5, "flow_readability": 0.5},
@@ -115,7 +141,7 @@ RUBRICS: Dict[str, Rubric] = {
     "dashboard": Rubric(
         name="dashboard",
         medium="dashboard tile",
-        description="Dashboard tile: one title, one key number or trend, compact, high contrast, no decoration.",
+        description="Dashboard tile: one title, one key number (the largest text) or trend with a reference, uniform tiles, red/green only on a signed change, no decoration.",
         min_font=12, min_contrast=4.5, max_palette=4, max_words_per_label=6, aspect=(0.8, 2.0), margin=16,
         max_margin_ratio=0.2, max_stroke_widths=2, max_font_families=1, fixed_canvas=True,
         weights={**{k: 1.0 for k in DIMENSIONS}, "topology_accuracy": 0.5, "flow_readability": 0.5},
@@ -123,7 +149,7 @@ RUBRICS: Dict[str, Rubric] = {
     "icon": Rubric(
         name="icon",
         medium="icon",
-        description="Icon: square viewBox, a dozen strokes at most, one stroke width, no text, recognisable at 24px.",
+        description="Icon: square viewBox, a dozen strokes at most, one stroke width, no text, no fills, recognisable at 16px.",
         min_font=0, min_contrast=3.0, max_palette=2, max_words_per_label=0, aspect=(1.0, 1.0), margin=2,
         max_margin_ratio=0.25, max_stroke_widths=1, max_font_families=0, max_elements=12, allow_text=False,
         require_square=True, max_corner_radius=4, fixed_canvas=True,

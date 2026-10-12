@@ -1,14 +1,15 @@
 {
   "id": "teaching.motion-control-faster",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.motion.control_tempo"
+    "motion.control_tempo"
   ],
   "expect_silent": [
     "compactness.overflow",
     "polish.palette_size"
   ],
   "rationale": "The dashed control edge's token runs the 296px loop in 0.8s (370 px/s) while data tokens cover 32px in 2.4s (13 px/s), and it is as dark as the data tokens. The grammar binds control to a slower, dimmer pulse; here the control loop is the most prominent motion in the figure. Check: speed = path length / duration per token; require control speed <= data speed and control fill luminance > data fill luminance.",
-  "source": "adversary-icon"
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

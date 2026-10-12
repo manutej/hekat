@@ -1,9 +1,9 @@
 {
   "id": "teaching.motion-decorative-pulse",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.motion.decorative"
+    "motion.decorative"
   ],
   "expect_silent": [
     "compactness.overflow",
@@ -11,5 +11,6 @@
     "topology.ungrouped"
   ],
   "rationale": "A token orbits the Model block's border (a path that is no flow) and the Output block blinks forever. Both are decoration: no flow type binds them and they add no meaning. The static critic sees one extra 3px circle on a block edge and scores 10. Check: every offset-path must equal (or be a reversal-free sub-path of) a data-flow/marker-end path's d; every infinite or alternate animation must target a pulse token; blocks and labels may only animate opacity once (reveal). Side finding: the four 3px tokens count as blocks, so topology.ungrouped ('7 blocks without any grouping') fires on a three-block figure; pulse tokens (data-role=pulse) must be excluded from the block set.",
-  "source": "adversary-icon"
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

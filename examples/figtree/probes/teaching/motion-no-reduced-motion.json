@@ -1,13 +1,14 @@
 {
   "id": "teaching.motion-no-reduced-motion",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.motion.reduced_motion"
+    "motion.reduced_motion"
   ],
   "expect_silent": [
     "compactness.overflow"
   ],
   "rationale": "Identical figure and CSS without the @media (prefers-reduced-motion: reduce) block. A reduced-motion viewer gets the full reveal/draw/pulse sequence instead of the final state the grammar promises. Check: the stylesheet must contain a prefers-reduced-motion: reduce block that neutralises every animation declared outside it (animation:none and opacity/dashoffset at their final values) and hides pulse tokens and shafts.",
-  "source": "adversary-icon"
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

@@ -1,12 +1,12 @@
 {
   "id": "data-figure.three_word_title",
   "rubric": "data-figure",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.title_is_finding",
     "coverage.title"
   ],
   "expect_silent": [],
   "rationale": "'Quarterly Sales Overview' is a topic, not a finding, but it has three words so coverage.title ('fewer than 3 words') is silent. Proposed: a finding needs a verb or a comparative (rises, falls, leads, outperforms, higher, by N %) or at least five words.",
-  "source": "adversary-chart"
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

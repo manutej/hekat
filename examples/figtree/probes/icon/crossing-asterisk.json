@@ -3,7 +3,7 @@
   "rubric": "icon",
   "kind": "defect",
   "expect_fire": [
-    "proposed.icon.crossing_density"
+    "icon.crossing_density"
   ],
   "expect_silent": [
     "flow.crossings",

@@ -1,11 +1,12 @@
 {
   "id": "teaching.backwards_semantics",
   "rubric": "teaching",
-  "kind": "gaming",
+  "kind": "defect",
   "expect_fire": [
-    "proposed.flow.semantic_direction"
+    "flow.semantic_direction"
   ],
   "expect_silent": [],
   "rationale": "Every arrow points right, so forward_ratio is 1.0 and reading order passes, yet the figure claims a report produces raw data and a dashboard produces sensors. Direction is only checked geometrically; nothing relates arrow direction to the source/sink roles the labels imply.",
-  "source": "adversary-diagram"
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
 }

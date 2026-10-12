@@ -247,6 +247,21 @@ the truncation as a defect.
   `examples/figtree/probes/ADVERSARY-*.md`, and the resulting rule changes are recorded in the
   showcase.
 
+## Digest: a body of work at once
+
+* `figtree digest --plan DOCS… -o OUT [--rubric R]` scans markdown/text files (a directory
+  recursively) and splits each into *units*: H1/H2 sections that ground to ≥ 3 components
+  (arrow chains, named roles, numbered steps, as `RuleBasedGrounder` sees them), or the whole
+  file when it is small. `OUT/manifest.json` lists `units[{id, source, title, span, chars,
+  est_components}]` and `skipped[{…, reason}]`.
+* `figtree digest --unit ID -o OUT` generates that unit (`OUT/ID.svg`, `ID.report.json`), scores
+  it with the rubric (`ID.score.json`) and prints one JSON line; teaching/slide rubrics use their
+  style preset, the others the paper preset. `--all` does every unit and writes `OUT/index.html`
+  (title, score badge, inline SVG per unit) plus `digest.json`.
+* The Claude Code workflow scripts under `.claude/workflows/` (`figtree-digest`, `-refine`,
+  `-adversary`, `-judge-panel`, `-icon-family`) fan these commands out over small-context
+  subagents that hand back JSON verdicts only; see `docs/workflows/README.md`.
+
 ## Known limitations
 
 * The rule-based Grounder only admits explicit structure (arrow chains, "X Agent" names,

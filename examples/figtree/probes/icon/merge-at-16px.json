@@ -3,7 +3,7 @@
   "rubric": "icon",
   "kind": "defect",
   "expect_fire": [
-    "proposed.icon.min_gap"
+    "icon.min_gap"
   ],
   "expect_silent": [
     "medium.icon_elements",
