@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="801" height="545" viewBox="0 0 801 545" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="714" height="514" viewBox="0 0 714 514" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title id="e1-title">Simple Agent template layout</title>
-  <rect id="background" x="0" y="0" width="801" height="545" fill="#FFFFFF" data-role="background" />
+  <rect id="background" x="0" y="0" width="714" height="514" fill="#FFFFFF" data-role="background" />
   <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
@@ -8,7 +8,7 @@
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
   <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 984 616">
+  <g id="n1" data-bbox="0 0 984 616" transform="translate(-87,-7)">
     <!-- PORT:left x=128 y=144 id=n6.left type=input component="Simple" -->
     <!-- PORT:right x=208 y=144 id=n6.right type=output component="Simple" -->
     <!-- PORT:top x=168 y=120 id=n6.top type=input component="Simple" -->

@@ -4,6 +4,8 @@ This document describes how research agents coordinate to produce grounded markd
 
 ## Documentation research pipeline
 
+Teaching figure: [`modules/00-research-meta/diagrams/01-documentation-research-pipeline.md`](modules/00-research-meta/diagrams/01-documentation-research-pipeline.md)
+
 The research workflow stages:
 
 1. Doc Scout Agent — fetch Langflow docs index and agent/MCP pages
@@ -11,24 +13,15 @@ The research workflow stages:
 3. Structure Writer Agent — write SOURCE.md with arrow chains and H2 units only from facts
 4. FigTree Scout Agent — validate MIN_COMPONENTS per section via digest --plan
 
-Coordination chain:
-
-Doc Scout Agent -> Fact Extractor Agent
-Fact Extractor Agent -> Structure Writer Agent
-Structure Writer Agent -> FigTree Scout Agent
-
 ## Verification workflow
+
+Teaching figure: [`modules/00-research-meta/diagrams/02-verification-workflow.md`](modules/00-research-meta/diagrams/02-verification-workflow.md)
 
 After SOURCE.md exists, the verification workflow runs:
 
 1. Bibliography Checker Agent — every H2 claim maps to BIBLIOGRAPHY.md URL
 2. Grounder Preview Agent — run RuleBasedGrounder on each section
 3. Digest Planner Agent — run figtree digest --plan and report skipped units
-
-Verification chain:
-
-Bibliography Checker Agent -> Grounder Preview Agent
-Grounder Preview Agent -> Digest Planner Agent
 
 ## Agent responsibilities
 

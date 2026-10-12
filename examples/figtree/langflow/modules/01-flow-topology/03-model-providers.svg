@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="672" height="385" viewBox="0 0 672 385" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="658" height="346" viewBox="0 0 658 346" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title id="e1-title">Model Providers and Language Model selection</title>
-  <rect id="background" x="0" y="0" width="672" height="385" fill="#FFFFFF" data-role="background" />
+  <rect id="background" x="0" y="0" width="658" height="346" fill="#FFFFFF" data-role="background" />
   <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
     </marker>
   <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e4-path" /><path d="M3 13l9 5 9-5" id="e5-path" /><path d="M3 17l9 5 9-5" id="e6-path" /></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 672 424">
+  <g id="n1" data-bbox="0 0 672 424" transform="translate(-7,-39)">
     <!-- PORT:left x=160 y=88 id=n6.left type=input component="Agent" -->
     <!-- PORT:right x=224 y=88 id=n6.right type=output component="Agent" -->
     <!-- PORT:top x=192 y=64 id=n6.top type=input component="Agent" -->

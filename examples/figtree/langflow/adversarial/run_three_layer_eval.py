@@ -20,6 +20,12 @@ ROOT = Path(__file__).resolve().parents[4]
 LANGFLOW = ROOT / "examples" / "figtree" / "langflow"
 ADV = LANGFLOW / "adversarial"
 PROBES = ROOT / "examples" / "figtree" / "probes" / "langflow-teaching"
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+from compact_trim import trim_teaching_canvas  # noqa: E402
+
+META = ROOT / "docs/research/langflow-agentic-workflows/modules/00-research-meta/diagrams"
 
 
 @dataclass
@@ -31,12 +37,14 @@ class Unit:
 
 def units() -> List[Unit]:
     mapping = {
-        "research-workflow.svg": ROOT / "docs/research/langflow-agentic-workflows/RESEARCH-WORKFLOW.md",
+        "research-documentation-pipeline.svg": META / "01-documentation-research-pipeline.md",
+        "research-verification-workflow.svg": META / "02-verification-workflow.md",
     }
     default_src = ROOT / "docs/research/langflow-agentic-workflows/SOURCE.md"
+    skip = {"research-workflow.svg"}
     out: List[Unit] = []
     for svg in sorted(LANGFLOW.glob("*.svg")):
-        if "refined" in svg.name:
+        if "refined" in svg.name or svg.name in skip:
             continue
         src = mapping.get(svg.name, default_src)
         out.append(Unit(svg=svg, source=src, unit_id=svg.stem))
@@ -96,7 +104,12 @@ def refine_unit(u: Unit, rounds: int = 3) -> Dict[str, Any]:
     print(cp.stdout)
     if cp.returncode != 0:
         raise RuntimeError(cp.stderr or cp.stdout)
+    svg_text = out_svg.read_text(encoding="utf-8")
     after = score_path(out_svg, u.source)
+    if any(i.get("check_id") == "compactness.blank_margin" for i in after.get("issues", [])):
+        svg_text = trim_teaching_canvas(svg_text)
+        out_svg.write_text(svg_text, encoding="utf-8")
+        after = score_path(out_svg, u.source)
     return {"output": str(out_svg), "trajectory": str(traj), "score": after}
 
 

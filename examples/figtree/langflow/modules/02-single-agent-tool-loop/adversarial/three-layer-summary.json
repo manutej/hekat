@@ -1,0 +1,64 @@
+{
+  "layer1": [
+    {
+      "stem": "01-tool-attachment",
+      "overall": 9.86,
+      "issues": [
+        {
+          "check_id": "compactness.blank_margin",
+          "dimension": "compactness",
+          "severity": "warning",
+          "visual_description": "top margin is 63px of blank canvas",
+          "code_anchor": "svg",
+          "fix_instruction": "move the content towards the edge and shrink the canvas",
+          "penalty": 1.0,
+          "auto_edit": null
+        }
+      ]
+    },
+    {
+      "stem": "02-tool-loop-hub",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "03-playground-events",
+      "overall": 10.0,
+      "issues": []
+    }
+  ],
+  "layer2": [
+    {
+      "stem": "01-tool-attachment",
+      "before": 9.86,
+      "after": 10.0
+    },
+    {
+      "stem": "02-tool-loop-hub",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "03-playground-events",
+      "before": 10.0,
+      "after": 10.0
+    }
+  ],
+  "layer3": [
+    {
+      "stem": "01-tool-attachment",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "02-tool-loop-hub",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "03-playground-events",
+      "overall": 10.0,
+      "issues": 0
+    }
+  ]
+}

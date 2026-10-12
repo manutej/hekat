@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1032" height="241" viewBox="0 0 1032 241" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Playground run events</title>
+  <rect id="background" x="0" y="0" width="1032" height="241" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e4-path" /><path d="M14 3v5h5" id="e5-path" /><path d="M9 13h7M9 17h7" id="e6-path" /></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6" id="e7-circle" /><path d="M15 15l5.5 5.5" id="e8-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 1032 280">
+    <!-- PORT:left x=64 y=160 id=n4.left type=input component="Playground Run" -->
+    <!-- PORT:right x=224 y=160 id=n4.right type=output component="Playground Run" -->
+    <!-- PORT:top x=144 y=136 id=n4.top type=input component="Playground Run" -->
+    <!-- PORT:bottom x=144 y=184 id=n4.bottom type=output component="Playground Run" -->
+    <!-- PORT:left x=264 y=120 id=n5.left type=input component="Input Message Event" -->
+    <!-- PORT:right x=472 y=120 id=n5.right type=output component="Input Message Event" -->
+    <!-- PORT:top x=368 y=96 id=n5.top type=input component="Input Message Event" -->
+    <!-- PORT:bottom x=368 y=144 id=n5.bottom type=output component="Input Message Event" -->
+    <!-- PORT:left x=296 y=192 id=n6.left type=input component="Tool Call Event" -->
+    <!-- PORT:right x=440 y=192 id=n6.right type=output component="Tool Call Event" -->
+    <!-- PORT:top x=368 y=168 id=n6.top type=input component="Tool Call Event" -->
+    <!-- PORT:bottom x=368 y=216 id=n6.bottom type=output component="Tool Call Event" -->
+    <!-- PORT:left x=576 y=120 id=n7.left type=input component="Streaming Tokens Event" -->
+    <!-- PORT:right x=800 y=120 id=n7.right type=output component="Streaming Tokens Event" -->
+    <!-- PORT:top x=688 y=96 id=n7.top type=input component="Streaming Tokens Event" -->
+    <!-- PORT:bottom x=688 y=144 id=n7.bottom type=output component="Streaming Tokens Event" -->
+    <!-- PORT:left x=600 y=192 id=n8.left type=input component="Final Answer Event" -->
+    <!-- PORT:right x=776 y=192 id=n8.right type=output component="Final Answer Event" -->
+    <!-- PORT:top x=688 y=168 id=n8.top type=input component="Final Answer Event" -->
+    <!-- PORT:bottom x=688 y=216 id=n8.bottom type=output component="Final Answer Event" -->
+    <!-- PORT:left x=840 y=160 id=n9.left type=input component="Chat History" -->
+    <!-- PORT:right x=968 y=160 id=n9.right type=output component="Chat History" -->
+    <!-- PORT:top x=904 y=136 id=n9.top type=input component="Chat History" -->
+    <!-- PORT:bottom x=904 y=184 id=n9.bottom type=output component="Chat History" -->
+    <g id="n2" transform="translate(32,64)" data-bbox="32 64 472 184" data-label="Playground Run, Input Message Event, Tool Call Event">
+      <!-- PORT:left x=32 y=96 id=n4.left type=input component="Playground Run" -->
+      <!-- PORT:right x=192 y=96 id=n4.right type=output component="Playground Run" -->
+      <!-- PORT:top x=112 y=72 id=n4.top type=input component="Playground Run" -->
+      <!-- PORT:bottom x=112 y=120 id=n4.bottom type=output component="Playground Run" -->
+      <!-- PORT:left x=232 y=56 id=n5.left type=input component="Input Message Event" -->
+      <!-- PORT:right x=440 y=56 id=n5.right type=output component="Input Message Event" -->
+      <!-- PORT:top x=336 y=32 id=n5.top type=input component="Input Message Event" -->
+      <!-- PORT:bottom x=336 y=80 id=n5.bottom type=output component="Input Message Event" -->
+      <!-- PORT:left x=264 y=128 id=n6.left type=input component="Tool Call Event" -->
+      <!-- PORT:right x=408 y=128 id=n6.right type=output component="Tool Call Event" -->
+      <!-- PORT:top x=336 y=104 id=n6.top type=input component="Tool Call Event" -->
+      <!-- PORT:bottom x=336 y=152 id=n6.bottom type=output component="Tool Call Event" -->
+      <g id="n4" transform="translate(32,72)" data-bbox="32 72 160 48" data-label="Playground Run">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Playground Run" -->
+        <!-- PORT:right x=160 y=24 id=n4.right type=output component="Playground Run" -->
+        <!-- PORT:top x=80 y=0 id=n4.top type=input component="Playground Run" -->
+        <!-- PORT:bottom x=80 y=48 id=n4.bottom type=output component="Playground Run" -->
+        <rect id="n4.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Playground Run" />
+        <use id="n4.icon" href="#icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Playground Run</text>
+      </g>
+      <g id="n6" transform="translate(264,104)" data-bbox="264 104 144 48" data-label="Tool Call Event">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Tool Call Event" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Tool Call Event" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Tool Call Event" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Tool Call Event" -->
+        <rect id="n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Tool Call Event" />
+        <text id="n6.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Tool Call Event</text>
+      </g>
+      <path id="n2.arrow0" d="M192,96 H208 V56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left" />
+      <path id="n2.arrow1" d="M192,96 H232 V128 H264" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(544,64)" data-bbox="544 64 456 184" data-label="Streaming Tokens Event, Final Answer Event, Chat History">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Streaming Tokens Event" -->
+      <!-- PORT:right x=256 y=56 id=n7.right type=output component="Streaming Tokens Event" -->
+      <!-- PORT:top x=144 y=32 id=n7.top type=input component="Streaming Tokens Event" -->
+      <!-- PORT:bottom x=144 y=80 id=n7.bottom type=output component="Streaming Tokens Event" -->
+      <!-- PORT:left x=56 y=128 id=n8.left type=input component="Final Answer Event" -->
+      <!-- PORT:right x=232 y=128 id=n8.right type=output component="Final Answer Event" -->
+      <!-- PORT:top x=144 y=104 id=n8.top type=input component="Final Answer Event" -->
+      <!-- PORT:bottom x=144 y=152 id=n8.bottom type=output component="Final Answer Event" -->
+      <!-- PORT:left x=296 y=96 id=n9.left type=input component="Chat History" -->
+      <!-- PORT:right x=424 y=96 id=n9.right type=output component="Chat History" -->
+      <!-- PORT:top x=360 y=72 id=n9.top type=input component="Chat History" -->
+      <!-- PORT:bottom x=360 y=120 id=n9.bottom type=output component="Chat History" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 224 48" data-label="Streaming Tokens Event">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Streaming Tokens Event" -->
+        <!-- PORT:right x=224 y=24 id=n7.right type=output component="Streaming Tokens Event" -->
+        <!-- PORT:top x=112 y=0 id=n7.top type=input component="Streaming Tokens Event" -->
+        <!-- PORT:bottom x=112 y=48 id=n7.bottom type=output component="Streaming Tokens Event" -->
+        <rect id="n7.block" x="0" y="0" width="224" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Streaming Tokens Event" />
+        <use id="n7.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="204">Streaming Tokens Event</text>
+      </g>
+      <g id="n9" transform="translate(296,72)" data-bbox="296 72 128 48" data-label="Chat History">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Chat History" -->
+        <!-- PORT:right x=128 y=24 id=n9.right type=output component="Chat History" -->
+        <!-- PORT:top x=64 y=0 id=n9.top type=input component="Chat History" -->
+        <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="Chat History" -->
+        <rect id="n9.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat History" />
+        <text id="n9.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Chat History</text>
+      </g>
+      <path id="n3.arrow0" d="M232,128 H264 V96 H296" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left" />
+    </g>
+    <path id="n1.arrow0" d="M224,160 H512 V40 V120 H576" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M224,160 H512 V32 V192 H600" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n8.left" />
+  </g>
+</svg>

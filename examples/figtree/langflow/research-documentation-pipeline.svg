@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="402" height="210" viewBox="0 0 402 210" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Documentation research pipeline</title>
+  <rect id="background" x="0" y="0" width="402" height="210" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6" id="e4-circle" /><path d="M15 15l5.5 5.5" id="e5-path" /></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5" id="e6-circle" /><circle cx="5" cy="19" r="2.5" id="e7-circle" /><circle cx="19" cy="19" r="2.5" id="e8-circle" /><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5" id="e9-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 416 224" transform="translate(-7,-7)">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Doc Scout" -->
+    <!-- PORT:right x=152 y=56 id=n2.right type=output component="Doc Scout" -->
+    <!-- PORT:top x=104 y=32 id=n2.top type=input component="Doc Scout" -->
+    <!-- PORT:bottom x=104 y=80 id=n2.bottom type=output component="Doc Scout" -->
+    <!-- PORT:left x=192 y=56 id=n3.left type=input component="Fact Extractor" -->
+    <!-- PORT:right x=352 y=56 id=n3.right type=output component="Fact Extractor" -->
+    <!-- PORT:top x=272 y=32 id=n3.top type=input component="Fact Extractor" -->
+    <!-- PORT:bottom x=272 y=80 id=n3.bottom type=output component="Fact Extractor" -->
+    <!-- PORT:left x=56 y=168 id=n4.left type=input component="Structure Writer" -->
+    <!-- PORT:right x=200 y=168 id=n4.right type=output component="Structure Writer" -->
+    <!-- PORT:top x=128 y=144 id=n4.top type=input component="Structure Writer" -->
+    <!-- PORT:bottom x=128 y=192 id=n4.bottom type=output component="Structure Writer" -->
+    <!-- PORT:left x=240 y=168 id=n5.left type=input component="FigTree Scout" -->
+    <!-- PORT:right x=384 y=168 id=n5.right type=output component="FigTree Scout" -->
+    <!-- PORT:top x=312 y=144 id=n5.top type=input component="FigTree Scout" -->
+    <!-- PORT:bottom x=312 y=192 id=n5.bottom type=output component="FigTree Scout" -->
+    <g id="n2" transform="translate(56,32)" data-bbox="56 32 96 48" data-label="Doc Scout">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Doc Scout" -->
+      <!-- PORT:right x=96 y=24 id=n2.right type=output component="Doc Scout" -->
+      <!-- PORT:top x=48 y=0 id=n2.top type=input component="Doc Scout" -->
+      <!-- PORT:bottom x=48 y=48 id=n2.bottom type=output component="Doc Scout" -->
+      <rect id="n2.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Doc Scout" />
+      <text id="n2.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Doc Scout</text>
+    </g>
+    <g id="n3" transform="translate(192,32)" data-bbox="192 32 160 48" data-label="Fact Extractor">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Fact Extractor" -->
+      <!-- PORT:right x=160 y=24 id=n3.right type=output component="Fact Extractor" -->
+      <!-- PORT:top x=80 y=0 id=n3.top type=input component="Fact Extractor" -->
+      <!-- PORT:bottom x=80 y=48 id=n3.bottom type=output component="Fact Extractor" -->
+      <rect id="n3.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Fact Extractor" />
+      <use id="n3.icon" href="#icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Fact Extractor</text>
+    </g>
+    <g id="n4" transform="translate(56,144)" data-bbox="56 144 144 48" data-label="Structure Writer">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Structure Writer" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Structure Writer" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Structure Writer" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Structure Writer" -->
+      <rect id="n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structure Writer" />
+      <text id="n4.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Structure Writer</text>
+    </g>
+    <g id="n5" transform="translate(240,144)" data-bbox="240 144 144 48" data-label="FigTree Scout">
+      <!-- PORT:left x=0 y=24 id=n5.left type=input component="FigTree Scout" -->
+      <!-- PORT:right x=144 y=24 id=n5.right type=output component="FigTree Scout" -->
+      <!-- PORT:top x=72 y=0 id=n5.top type=input component="FigTree Scout" -->
+      <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="FigTree Scout" -->
+      <rect id="n5.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="FigTree Scout" />
+      <use id="n5.icon" href="#icon-tree" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">FigTree Scout</text>
+    </g>
+    <path id="n1.arrow0" d="M152,56 H192" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M352,56 H360 V112 H32 V168 H56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+    <path id="n1.arrow2" d="M200,168 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left" />
+  </g>
+</svg>

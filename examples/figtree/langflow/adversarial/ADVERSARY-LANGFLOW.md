@@ -10,7 +10,7 @@ critic misses them on similar layouts.
 
 | unit | overall | dominant checks | cold-eye note |
 |------|---------|-----------------|---------------|
-| research-workflow | 9.09 | `compactness.blank_margin`, `flow.crossings` | Meta pipeline readable; two arrow crossings remain |
+| research-documentation-pipeline / research-verification-workflow | 10.0 | — | Split from monolithic `research-workflow` to remove crossings |
 | source--single-agent-tool-loop | 9.86 | `compactness.blank_margin` | Dense tool fan-in; fixed in layer 2 |
 | source--mcp-client-pattern | 9.71 | `compactness.blank_margin` | MCP chain clear after canvas tighten |
 | others | 9.71–9.86 | mostly blank margin | Auto `set_canvas` edits applied in layer 2 |

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="537" height="281" viewBox="0 0 537 281" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="498" height="242" viewBox="0 0 498 242" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title id="e1-title">Playground execution path</title>
-  <rect id="background" x="0" y="0" width="537" height="281" fill="#FFFFFF" data-role="background" />
+  <rect id="background" x="0" y="0" width="498" height="242" fill="#FFFFFF" data-role="background" />
   <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
@@ -9,7 +9,7 @@
   <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
   <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e8-path" /><path d="M3 13l9 5 9-5" id="e9-path" /><path d="M3 17l9 5 9-5" id="e10-path" /></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 720 320">
+  <g id="n1" data-bbox="0 0 720 320" transform="translate(-39,-39)">
     <!-- PORT:left x=112 y=88 id=n4.left type=input component="Agent" -->
     <!-- PORT:right x=176 y=88 id=n4.right type=output component="Agent" -->
     <!-- PORT:top x=144 y=64 id=n4.top type=input component="Agent" -->

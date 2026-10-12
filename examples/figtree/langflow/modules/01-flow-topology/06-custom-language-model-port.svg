@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="665" height="281" viewBox="0 0 665 281" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="626" height="242" viewBox="0 0 626 242" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title id="e1-title">Custom Language Model port</title>
-  <rect id="background" x="0" y="0" width="665" height="281" fill="#FFFFFF" data-role="background" />
+  <rect id="background" x="0" y="0" width="626" height="242" fill="#FFFFFF" data-role="background" />
   <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
@@ -8,7 +8,7 @@
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
   <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e5-path" /><path d="M3 13l9 5 9-5" id="e6-path" /><path d="M3 17l9 5 9-5" id="e7-path" /></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 848 320">
+  <g id="n1" data-bbox="0 0 848 320" transform="translate(-39,-39)">
     <!-- PORT:left x=104 y=88 id=n4.left type=input component="Custom Language Model" -->
     <!-- PORT:right x=312 y=88 id=n4.right type=output component="Custom Language Model" -->
     <!-- PORT:top x=208 y=64 id=n4.top type=input component="Custom Language Model" -->

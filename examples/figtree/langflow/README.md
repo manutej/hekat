@@ -8,11 +8,12 @@ This directory is the **documentation-first** reference run: figures are grounde
 
 | File | Description |
 |------|-------------|
-| [`index.html`](index.html) | Digest gallery (8 teaching figures + skipped list) |
+| [`index.html`](index.html) | Digest gallery (SOURCE sections + research meta figures) |
 | [`digest.json`](digest.json) | Measured scores per unit |
-| [`manifest.json`](manifest.json) | Digest plan (8 units, 2 skipped intro/bibliography) |
+| [`manifest.json`](manifest.json) | Digest plan (SOURCE H2 units; bibliography skipped) |
 | [`icons/sheet.svg`](icons/sheet.svg) | Langflow concept icon family |
-| [`research-workflow.refined.svg`](research-workflow.refined.svg) | Refine pass on meta research pipeline (9.09 → 9.23) |
+| [`research-documentation-pipeline.svg`](research-documentation-pipeline.svg) | Meta pipeline (split from monolithic workflow; **10.0**) |
+| [`research-verification-workflow.svg`](research-verification-workflow.svg) | Verification chain (**10.0**) |
 
 ## Regenerate
 
@@ -24,7 +25,8 @@ python3 -m figtree digest --all -o examples/figtree/langflow/ --rubric teaching 
 
 ## Module depth
 
-- **Module 01 — flow topology:** [`modules/01-flow-topology/index.html`](modules/01-flow-topology/index.html) (7 clear teaching diagrams with icons)
+- **Module 01 — flow topology:** [`modules/01-flow-topology/index.html`](modules/01-flow-topology/index.html) (7 diagrams, **10.0** each after compact trim)
+- **Module 02 — tool loop:** [`modules/02-single-agent-tool-loop/index.html`](modules/02-single-agent-tool-loop/index.html) (4 diagrams, **10.0**)
 - Hub: [`modules/index.html`](modules/index.html)
 
 ## Adversarial three-layer pass
@@ -34,9 +36,10 @@ See [`adversarial/ITERATION-LOG.md`](adversarial/ITERATION-LOG.md) and
 
 ```bash
 python3 examples/figtree/langflow/adversarial/run_three_layer_eval.py
+python3 examples/figtree/langflow/adversarial/run_module_adversarial.py examples/figtree/langflow/modules/01-flow-topology
 ```
 
-After the pass, two figures score **10.0** (single-agent tool loop, multi-tool coordination).
+Layer 2 applies `figtree refine` then **`compact_trim`** when blank margins remain (leading edges refine cannot auto-shrink).
 
 ## Quality notes
 
