@@ -96,16 +96,51 @@ def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any
     return score(out, source)
 
 
+def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None]:
+    args = [a for a in argv[1:] if a != "--"]
+    gold_dir: Path | None = None
+    filtered: List[str] = []
+    i = 0
+    while i < len(args):
+        if args[i] == "--gold" and i + 1 < len(args):
+            gold_dir = Path(args[i + 1])
+            if not gold_dir.is_absolute():
+                gold_dir = (ROOT / gold_dir).resolve()
+            i += 2
+            continue
+        filtered.append(args[i])
+        i += 1
+    if not filtered:
+        raise SystemExit("usage: run_module_adversarial.py MODULE_DIR [DIAGRAMS_DIR] [--gold GOLD_DIR]")
+    module_dir = Path(filtered[0])
+    if not module_dir.is_absolute():
+        module_dir = (ROOT / module_dir).resolve()
+    if len(filtered) > 1:
+        diagrams_dir = Path(filtered[1])
+        if not diagrams_dir.is_absolute():
+            diagrams_dir = (ROOT / diagrams_dir).resolve()
+    else:
+        diagrams_dir = (
+            module_dir.parent.parent.parent
+            / "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
+        )
+    return module_dir, diagrams_dir, gold_dir
+
+
+def compare_gold(prod: Path, gold: Path) -> Dict[str, Any]:
+    script = ROOT / "examples/course/agentic-ai-langflow/scripts/compare_gold.py"
+    cp = run([sys.executable, str(script), str(prod), str(gold)])
+    if cp.returncode not in (0, 1):
+        return {"error": cp.stderr or cp.stdout}
+    return json.loads(cp.stdout)
+
+
 def main() -> int:
-    if len(sys.argv) < 2:
-        print("usage: run_module_adversarial.py MODULE_DIR [DIAGRAMS_DIR]", file=sys.stderr)
+    try:
+        module_dir, diagrams_dir, gold_dir = parse_args(sys.argv)
+    except SystemExit as exc:
+        print(exc, file=sys.stderr)
         return 2
-    module_dir = (ROOT / sys.argv[1]).resolve()
-    diagrams_dir = (
-        (ROOT / sys.argv[2]).resolve()
-        if len(sys.argv) > 2
-        else module_dir.parent.parent.parent / "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
-    )
     # fix diagrams path when module_dir is under examples
     if not diagrams_dir.exists():
         mod_id = module_dir.name
@@ -151,10 +186,18 @@ def main() -> int:
     print("\n=== Layer 3: verify ===")
     for fig in figures:
         s = score(fig.svg, fig.source)
-        layer3.append({"stem": fig.stem, "overall": s["overall"], "issues": len(s.get("issues", []))})
-        print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues")
+        row: Dict[str, Any] = {"stem": fig.stem, "overall": s["overall"], "issues": len(s.get("issues", []))}
+        if gold_dir:
+            gpath = gold_dir / f"{fig.stem}.svg"
+            if gpath.exists():
+                row["gold_compare"] = compare_gold(fig.svg, gpath)
+        layer3.append(row)
+        extra = ""
+        if row.get("gold_compare") and "jaccard" in row["gold_compare"]:
+            extra = f"  gold_j={row['gold_compare']['jaccard']:.2f}"
+        print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues{extra}")
 
-    summary = {"layer1": layer1, "layer2": layer2, "layer3": layer3}
+    summary = {"layer1": layer1, "layer2": layer2, "layer3": layer3, "gold_dir": str(gold_dir) if gold_dir else None}
     (adv / "three-layer-summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     iteration = adv / "ITERATION-LOG.md"
     lines = [
@@ -169,9 +212,10 @@ def main() -> int:
         lines.append(f"| {r1['stem']} | {r1['overall']:.2f} | {r3['overall']:.2f} |")
     iteration.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    build = module_dir / "build_index.py"
-    if build.exists():
-        run([sys.executable, str(build)])
+    for script in ("build_index.py", "build_module_html.py"):
+        build = module_dir / script
+        if build.exists():
+            run([sys.executable, str(build)])
     return 0
 
 

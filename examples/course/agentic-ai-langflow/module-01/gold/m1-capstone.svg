@@ -1,0 +1,109 @@
+<svg role="img" aria-labelledby="m1-title m1-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 944 256" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m1-title">Module 1 capstone: Member Benefits FAQ</title><desc id="m1-desc">The member&#x27;s question enters at Chat Input. The Prompt Template holds the instructions that set the agent&#x27;s tone and limits (a &#x27;system prompt&#x27;). If you add a Knowledge Base, passages from plan documents are placed into the prompt first. The Chat Model writes the answer and Chat Output shows it.</desc>
+  <title hidden>Module 1 capstone: Member Benefits FAQ</title>
+  <rect id="m1-background" x="0" y="0" width="944" height="256" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m1-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m1-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="m1-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="m1-icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="m1-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m1-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m1-n1" data-bbox="0 0 944 256">
+    <!-- PORT:left x=72 y=96 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=216 y=96 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=144 y=72 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=144 y=120 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=64 y=168 id=n5.left type=input component="Knowledge Base" -->
+    <!-- PORT:right x=224 y=168 id=n5.right type=output component="Knowledge Base" -->
+    <!-- PORT:top x=144 y=144 id=n5.top type=input component="Knowledge Base" -->
+    <!-- PORT:bottom x=144 y=192 id=n5.bottom type=output component="Knowledge Base" -->
+    <!-- PORT:left x=288 y=136 id=n6.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=464 y=136 id=n6.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=376 y=112 id=n6.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=376 y=160 id=n6.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=568 y=128 id=n7.left type=input component="Chat Model" -->
+    <!-- PORT:right x=696 y=128 id=n7.right type=output component="Chat Model" -->
+    <!-- PORT:top x=632 y=104 id=n7.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=632 y=152 id=n7.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=736 y=128 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=880 y=128 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=808 y=104 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=808 y=152 id=n8.bottom type=output component="Chat Output" -->
+    <g id="m1-n2" transform="translate(32,32)" data-bbox="32 32 464 192" data-label="Chat Input, Knowledge Base, Prompt Template">
+      <!-- PORT:left x=40 y=64 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=184 y=64 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=112 y=40 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=112 y=88 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=136 id=n5.left type=input component="Knowledge Base" -->
+      <!-- PORT:right x=192 y=136 id=n5.right type=output component="Knowledge Base" -->
+      <!-- PORT:top x=112 y=112 id=n5.top type=input component="Knowledge Base" -->
+      <!-- PORT:bottom x=112 y=160 id=n5.bottom type=output component="Knowledge Base" -->
+      <!-- PORT:left x=256 y=104 id=n6.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=432 y=104 id=n6.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=344 y=80 id=n6.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=344 y=128 id=n6.bottom type=output component="Prompt Template" -->
+      <g id="m1-n4" transform="translate(40,40)" data-bbox="40 40 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Input" -->
+        <path id="m1-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="m1-n4.icon" href="#m1-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="m1-n5" transform="translate(32,112)" data-bbox="32 112 160 48" data-label="Knowledge Base">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Knowledge Base" -->
+        <!-- PORT:right x=160 y=24 id=n5.right type=output component="Knowledge Base" -->
+        <!-- PORT:top x=80 y=0 id=n5.top type=input component="Knowledge Base" -->
+        <!-- PORT:bottom x=80 y=48 id=n5.bottom type=output component="Knowledge Base" -->
+        <path id="m1-n5.block" d="M0,8 A80,8 0 0 1 160,8 V40 A80,8 0 0 1 0,40 Z M0,8 A80,8 0 0 0 160,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 160 48" data-component="Knowledge Base"/>
+        <use id="m1-n5.icon" href="#m1-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="132">Knowledge Base</text>
+      </g>
+      <g id="m1-n6" transform="translate(256,80)" data-bbox="256 80 176 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=176 y=24 id=n6.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=88 y=0 id=n6.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=88 y=48 id=n6.bottom type=output component="Prompt Template" -->
+        <path id="m1-n6.block" d="M0,0 H168 L176,8 V48 H0 Z M168,0 V8 H176" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 176 48" data-component="Prompt Template"/>
+        <use id="m1-n6.icon" href="#m1-icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="m1-n2.arrow0" d="M112,40 V32 H344 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n4.top" data-to="n6.top"/>
+      <path id="m1-n2.arrow1" d="M192,136 H232 V104 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="m1-n3" transform="translate(536,72)" data-bbox="536 72 376 112" data-label="Chat Model, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Chat Model" -->
+      <!-- PORT:right x=160 y=56 id=n7.right type=output component="Chat Model" -->
+      <!-- PORT:top x=96 y=32 id=n7.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=96 y=80 id=n7.bottom type=output component="Chat Model" -->
+      <!-- PORT:left x=200 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=344 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=272 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=272 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="m1-n7" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Chat Model">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chat Model" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Chat Model" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Chat Model" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Chat Model" -->
+        <rect id="m1-n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model"/>
+        <use id="m1-n7.icon" href="#m1-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+      </g>
+      <g id="m1-n8" transform="translate(200,32)" data-bbox="200 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="m1-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m1-n8.icon" href="#m1-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="m1-n3.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="m1-n1.arrow0" d="M464,136 H512 V128 H568" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+  </g>
+</svg>

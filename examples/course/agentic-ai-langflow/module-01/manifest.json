@@ -1,0 +1,67 @@
+{
+  "module": "m1",
+  "title": "Introduction to Agentic AI",
+  "source_html": "Agentic_AI_with_Langflow.html",
+  "figures": [
+    {
+      "id": "m1a",
+      "kind": "concept",
+      "h4": "Script or agent?",
+      "title": "A fixed script compared with an agent",
+      "desc": "Top: a fixed script runs the same three steps for every message and stops when a question does not fit. Bottom: an agent reads the question, decides between answering from plan documents, asking a clarifying question, or handing to a person, then acts.",
+      "figcaption": "A fixed script stops when a question does not fit its list. An agent reads the whole question and chooses what to do.",
+      "gold_svg": "module-01/gold/m1a.svg",
+      "reading_nearby": []
+    },
+    {
+      "id": "m1b",
+      "kind": "concept",
+      "h4": "The four parts, with real contents",
+      "title": "The four parts of your first agent, with what each one holds",
+      "desc": "Chat Input holds the member's question. Prompt Template holds the standing instructions and the question. The Chat Model writes the answer. Chat Output shows it. A Knowledge Base of plan documents can feed passages into the prompt.",
+      "figcaption": "What each component holds for one member question. Only the Prompt Template is written by you.",
+      "gold_svg": "module-01/gold/m1b.svg",
+      "reading_nearby": []
+    },
+    {
+      "id": "m1c",
+      "kind": "concept",
+      "h4": "Where the key lives",
+      "title": "Where the model key lives: on the class server, never in a browser",
+      "desc": "The student's browser talks only to the class portal. The portal holds the model provider key in a safe and calls Langflow; Langflow calls the model provider. The key never travels to the browser.",
+      "figcaption": "The browser never holds the provider key. The class portal does, and adds the student's session id.",
+      "gold_svg": "module-01/gold/m1c.svg",
+      "reading_nearby": []
+    },
+    {
+      "id": "m1d",
+      "kind": "concept",
+      "h4": "One question, four beats",
+      "title": "The journey of one question, in four beats",
+      "desc": "Beat 1: the student types a question in the portal. Beat 2: the portal sends it to Langflow with the student's session id. Beat 3: Langflow runs the published flow. Beat 4: the reply comes back to the chat window.",
+      "figcaption": "From the student's chat window through the portal and Langflow and back, in about two seconds.",
+      "gold_svg": "module-01/gold/m1d.svg",
+      "reading_nearby": []
+    },
+    {
+      "id": "m1e",
+      "kind": "concept",
+      "h4": "What a good answer looks like",
+      "title": "What a good answer looks like in this class",
+      "desc": "Three checks for every reply: it comes from the plan documents, it says when it does not know, and it keeps PPO and HMO facts straight across turns.",
+      "figcaption": "Grounded, honest about gaps, consistent across turns.",
+      "gold_svg": "module-01/gold/m1e.svg",
+      "reading_nearby": []
+    },
+    {
+      "id": "m1-capstone",
+      "kind": "capstone",
+      "h4": "The capstone, in one picture",
+      "title": "Module 1 capstone: Member Benefits FAQ",
+      "desc": "The member's question enters at Chat Input. The Prompt Template holds the instructions that set the agent's tone and limits (a 'system prompt'). If you add a Knowledge Base, passages from plan documents are placed into the prompt first. The Chat Model writes the answer and Chat Output shows it.",
+      "figcaption": "Module 1 capstone: Member Benefits FAQ. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.",
+      "gold_svg": "module-01/gold/m1-capstone.svg",
+      "reading_nearby": []
+    }
+  ]
+}

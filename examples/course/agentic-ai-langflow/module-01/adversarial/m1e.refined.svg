@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="418" height="242" viewBox="0 0 418 242" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Quality checks for replies</title>
+  <rect id="background" x="0" y="0" width="418" height="242" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1" id="e8-rect" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" id="e9-path" /></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6" id="e10-circle" /><path d="M15 15l5.5 5.5" id="e11-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 696 320" transform="translate(-239,-39)">
+    <!-- PORT:left x=72 y=88 id=n4.left type=input component="Grounded Check" -->
+    <!-- PORT:right x=264 y=88 id=n4.right type=output component="Grounded Check" -->
+    <!-- PORT:top x=168 y=64 id=n4.top type=input component="Grounded Check" -->
+    <!-- PORT:bottom x=168 y=112 id=n4.bottom type=output component="Grounded Check" -->
+    <!-- PORT:left x=64 y=160 id=n5.left type=input component="Honest Gaps Check" -->
+    <!-- PORT:right x=272 y=160 id=n5.right type=output component="Honest Gaps Check" -->
+    <!-- PORT:top x=168 y=136 id=n5.top type=input component="Honest Gaps Check" -->
+    <!-- PORT:bottom x=168 y=184 id=n5.bottom type=output component="Honest Gaps Check" -->
+    <!-- PORT:left x=64 y=232 id=n6.left type=input component="Consistent Check" -->
+    <!-- PORT:right x=272 y=232 id=n6.right type=output component="Consistent Check" -->
+    <!-- PORT:top x=168 y=208 id=n6.top type=input component="Consistent Check" -->
+    <!-- PORT:bottom x=168 y=256 id=n6.bottom type=output component="Consistent Check" -->
+    <!-- PORT:left x=408 y=88 id=n7.left type=input component="Plan Documents Only" -->
+    <!-- PORT:right x=600 y=88 id=n7.right type=output component="Plan Documents Only" -->
+    <!-- PORT:top x=504 y=64 id=n7.top type=input component="Plan Documents Only" -->
+    <!-- PORT:bottom x=504 y=112 id=n7.bottom type=output component="Plan Documents Only" -->
+    <!-- PORT:left x=432 y=160 id=n8.left type=input component="Say When Unknown" -->
+    <!-- PORT:right x=576 y=160 id=n8.right type=output component="Say When Unknown" -->
+    <!-- PORT:top x=504 y=136 id=n8.top type=input component="Say When Unknown" -->
+    <!-- PORT:bottom x=504 y=184 id=n8.bottom type=output component="Say When Unknown" -->
+    <!-- PORT:left x=376 y=232 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+    <!-- PORT:right x=632 y=232 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+    <!-- PORT:top x=504 y=208 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+    <!-- PORT:bottom x=504 y=256 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+    <g id="n3" transform="translate(344,32)" data-bbox="344 32 320 256" data-label="Plan Documents Only, Say When Unknown, Same Plan Facts Across Turns">
+      <!-- PORT:left x=64 y=56 id=n7.left type=input component="Plan Documents Only" -->
+      <!-- PORT:right x=256 y=56 id=n7.right type=output component="Plan Documents Only" -->
+      <!-- PORT:top x=160 y=32 id=n7.top type=input component="Plan Documents Only" -->
+      <!-- PORT:bottom x=160 y=80 id=n7.bottom type=output component="Plan Documents Only" -->
+      <!-- PORT:left x=88 y=128 id=n8.left type=input component="Say When Unknown" -->
+      <!-- PORT:right x=232 y=128 id=n8.right type=output component="Say When Unknown" -->
+      <!-- PORT:top x=160 y=104 id=n8.top type=input component="Say When Unknown" -->
+      <!-- PORT:bottom x=160 y=152 id=n8.bottom type=output component="Say When Unknown" -->
+      <!-- PORT:left x=32 y=200 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+      <!-- PORT:right x=288 y=200 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+      <!-- PORT:top x=160 y=176 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+      <!-- PORT:bottom x=160 y=224 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+      <g id="n7" transform="translate(64,32)" data-bbox="64 32 192 48" data-label="Plan Documents Only">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Plan Documents Only" -->
+        <!-- PORT:right x=192 y=24 id=n7.right type=output component="Plan Documents Only" -->
+        <!-- PORT:top x=96 y=0 id=n7.top type=input component="Plan Documents Only" -->
+        <!-- PORT:bottom x=96 y=48 id=n7.bottom type=output component="Plan Documents Only" -->
+        <rect id="n7.block" x="0" y="0" width="192" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Plan Documents Only" />
+        <use id="n7.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="172">Plan Documents Only</text>
+      </g>
+      <g id="n8" transform="translate(88,104)" data-bbox="88 104 144 48" data-label="Say When Unknown">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Say When Unknown" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Say When Unknown" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Say When Unknown" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Say When Unknown" -->
+        <rect id="n8.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Say When Unknown" />
+        <text id="n8.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Say When Unknown</text>
+      </g>
+      <g id="n9" transform="translate(32,176)" data-bbox="32 176 256 48" data-label="Same Plan Facts Across Turns">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+        <!-- PORT:right x=256 y=24 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+        <!-- PORT:top x=128 y=0 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+        <!-- PORT:bottom x=128 y=48 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+        <rect id="n9.block" x="0" y="0" width="256" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Same Plan Facts Across Turns" />
+        <use id="n9.icon" href="#icon-grid" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="236">Same Plan Facts Across Turns</text>
+      </g>
+    </g>
+    <path id="n1.arrow0" d="M264,88 H408" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M272,160 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n8.left" />
+    <path id="n1.arrow2" d="M272,232 H376" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n9.left" />
+  </g>
+</svg>

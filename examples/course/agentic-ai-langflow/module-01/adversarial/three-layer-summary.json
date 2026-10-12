@@ -1,0 +1,215 @@
+{
+  "layer1": [
+    {
+      "stem": "m1-capstone",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "m1a",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "m1b",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "m1c",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "m1d",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "m1e",
+      "overall": 10.0,
+      "issues": []
+    }
+  ],
+  "layer2": [
+    {
+      "stem": "m1-capstone",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "m1a",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "m1b",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "m1c",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "m1d",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "m1e",
+      "before": 10.0,
+      "after": 10.0
+    }
+  ],
+  "layer3": [
+    {
+      "stem": "m1-capstone",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Chat Input",
+          "Chat Model",
+          "Chat Output",
+          "Knowledge Base",
+          "Prompt Template"
+        ],
+        "gold": [
+          "Chat Input",
+          "Chat Model",
+          "Chat Output",
+          "Knowledge Base",
+          "Prompt Template"
+        ],
+        "jaccard": 1.0,
+        "only_in_production": [],
+        "only_in_gold": []
+      }
+    },
+    {
+      "stem": "m1a",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Answer From Plan Documents",
+          "Check Keyword List",
+          "Match Canned Answer",
+          "Member Message",
+          "Reads Question",
+          "Send Reply"
+        ],
+        "gold": [],
+        "jaccard": 0.0,
+        "only_in_production": [
+          "Answer From Plan Documents",
+          "Check Keyword List",
+          "Match Canned Answer",
+          "Member Message",
+          "Reads Question",
+          "Send Reply"
+        ],
+        "only_in_gold": []
+      }
+    },
+    {
+      "stem": "m1b",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Chat Input",
+          "Chat Model",
+          "Chat Output",
+          "Knowledge Base",
+          "Prompt Template"
+        ],
+        "gold": [],
+        "jaccard": 0.0,
+        "only_in_production": [
+          "Chat Input",
+          "Chat Model",
+          "Chat Output",
+          "Knowledge Base",
+          "Prompt Template"
+        ],
+        "only_in_gold": []
+      }
+    },
+    {
+      "stem": "m1c",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Class Portal",
+          "Langflow",
+          "Model Provider",
+          "Student Browser"
+        ],
+        "gold": [],
+        "jaccard": 0.0,
+        "only_in_production": [
+          "Class Portal",
+          "Langflow",
+          "Model Provider",
+          "Student Browser"
+        ],
+        "only_in_gold": []
+      }
+    },
+    {
+      "stem": "m1d",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Flow Executes",
+          "Langflow Run",
+          "Portal Receives",
+          "Reply Appears",
+          "Student Types"
+        ],
+        "gold": [],
+        "jaccard": 0.0,
+        "only_in_production": [
+          "Flow Executes",
+          "Langflow Run",
+          "Portal Receives",
+          "Reply Appears",
+          "Student Types"
+        ],
+        "only_in_gold": []
+      }
+    },
+    {
+      "stem": "m1e",
+      "overall": 10.0,
+      "issues": 0,
+      "gold_compare": {
+        "production": [
+          "Consistent Check",
+          "Grounded Check",
+          "Honest Gaps Check",
+          "Plan Documents Only",
+          "Same Plan Facts Across Turns",
+          "Say When Unknown"
+        ],
+        "gold": [],
+        "jaccard": 0.0,
+        "only_in_production": [
+          "Consistent Check",
+          "Grounded Check",
+          "Honest Gaps Check",
+          "Plan Documents Only",
+          "Same Plan Facts Across Turns",
+          "Say When Unknown"
+        ],
+        "only_in_gold": []
+      }
+    }
+  ],
+  "gold_dir": "/workspace/examples/course/agentic-ai-langflow/module-01/gold"
+}

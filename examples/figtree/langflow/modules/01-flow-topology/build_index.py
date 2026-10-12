@@ -16,6 +16,7 @@ TITLES = {
     "04-playground-path": "Playground execution",
     "05-simple-agent-template": "Simple Agent template",
     "06-custom-language-model-port": "Custom Language Model port",
+    "crosswalk-agent-vs-faq-chain": "Crosswalk — FAQ chain and Agent Component",
 }
 
 
@@ -29,6 +30,7 @@ def main() -> None:
         "06-custom-language-model-port",
         "04-playground-path",
         "05-simple-agent-template",
+        "crosswalk-agent-vs-faq-chain",
     ]
     for stem in order:
         svg_path = ROOT / f"{stem}.svg"
@@ -55,7 +57,8 @@ def main() -> None:
         "<h1>Module 01 — Langflow flow topology</h1>"
         "<p class='lead'>Deep-dive teaching figures (icons + shapes). "
         "<a href='../../index.html'>Back to Langflow gallery</a> · "
-        "<a href='../../../../docs/research/langflow-agentic-workflows/modules/01-flow-topology/SOURCE.md'>SOURCE</a></p>"
+        "<a href='../../../../docs/research/langflow-agentic-workflows/modules/01-flow-topology/SOURCE.md'>SOURCE</a> · "
+        "<a href='../../../../course/agentic-ai-langflow/module-01/index.html'>Course Module 1</a></p>"
         + "".join(cards)
         + "</body></html>"
     )

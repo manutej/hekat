@@ -1,0 +1,510 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Module 1 preview — Agentic AI with Langflow</title><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><p><a href='../../../figtree/langflow/modules/index.html'>FigTree modules</a></p><section class="module" id="m1" aria-labelledby="m1-h">
+<div class="module-head"><p class="eyebrow">Module 1 of 6</p><h2 id="m1-h">Introduction to Agentic AI</h2><p class="tag">Your first published agent</p><p>An agent is software that reads a request, decides what to do, and does it, rather than following one fixed script. You will build one that answers member questions about plan benefits, publish it, and chat with it from the class portal.</p></div>
+<div class="concepts"><h3>The ideas, one picture each</h3><figure class="concept"><h4>Script or agent?</h4><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="954" height="170" viewBox="0 0 954 170" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Script or agent</title>
+  <rect id="background" x="0" y="0" width="954" height="170" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 1032 248" transform="translate(-39,-39)">
+    <!-- PORT:left x=64 y=128 id=n4.left type=input component="Member Message" -->
+    <!-- PORT:right x=208 y=128 id=n4.right type=output component="Member Message" -->
+    <!-- PORT:top x=136 y=104 id=n4.top type=input component="Member Message" -->
+    <!-- PORT:bottom x=136 y=152 id=n4.bottom type=output component="Member Message" -->
+    <!-- PORT:left x=248 y=88 id=n5.left type=input component="Check Keyword List" -->
+    <!-- PORT:right x=472 y=88 id=n5.right type=output component="Check Keyword List" -->
+    <!-- PORT:top x=360 y=64 id=n5.top type=input component="Check Keyword List" -->
+    <!-- PORT:bottom x=360 y=112 id=n5.bottom type=output component="Check Keyword List" -->
+    <!-- PORT:left x=288 y=160 id=n6.left type=input component="Reads Question" -->
+    <!-- PORT:right x=432 y=160 id=n6.right type=output component="Reads Question" -->
+    <!-- PORT:top x=360 y=136 id=n6.top type=input component="Reads Question" -->
+    <!-- PORT:bottom x=360 y=184 id=n6.bottom type=output component="Reads Question" -->
+    <!-- PORT:left x=608 y=88 id=n7.left type=input component="Match Canned Answer" -->
+    <!-- PORT:right x=784 y=88 id=n7.right type=output component="Match Canned Answer" -->
+    <!-- PORT:top x=696 y=64 id=n7.top type=input component="Match Canned Answer" -->
+    <!-- PORT:bottom x=696 y=112 id=n7.bottom type=output component="Match Canned Answer" -->
+    <!-- PORT:left x=576 y=160 id=n8.left type=input component="Answer From Plan Documents" -->
+    <!-- PORT:right x=816 y=160 id=n8.right type=output component="Answer From Plan Documents" -->
+    <!-- PORT:top x=696 y=136 id=n8.top type=input component="Answer From Plan Documents" -->
+    <!-- PORT:bottom x=696 y=184 id=n8.bottom type=output component="Answer From Plan Documents" -->
+    <!-- PORT:left x=856 y=128 id=n9.left type=input component="Send Reply" -->
+    <!-- PORT:right x=968 y=128 id=n9.right type=output component="Send Reply" -->
+    <!-- PORT:top x=912 y=104 id=n9.top type=input component="Send Reply" -->
+    <!-- PORT:bottom x=912 y=152 id=n9.bottom type=output component="Send Reply" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 472 184" data-label="Member Message, Check Keyword List, Reads Question">
+      <!-- PORT:left x=32 y=96 id=n4.left type=input component="Member Message" -->
+      <!-- PORT:right x=176 y=96 id=n4.right type=output component="Member Message" -->
+      <!-- PORT:top x=104 y=72 id=n4.top type=input component="Member Message" -->
+      <!-- PORT:bottom x=104 y=120 id=n4.bottom type=output component="Member Message" -->
+      <!-- PORT:left x=216 y=56 id=n5.left type=input component="Check Keyword List" -->
+      <!-- PORT:right x=440 y=56 id=n5.right type=output component="Check Keyword List" -->
+      <!-- PORT:top x=328 y=32 id=n5.top type=input component="Check Keyword List" -->
+      <!-- PORT:bottom x=328 y=80 id=n5.bottom type=output component="Check Keyword List" -->
+      <!-- PORT:left x=256 y=128 id=n6.left type=input component="Reads Question" -->
+      <!-- PORT:right x=400 y=128 id=n6.right type=output component="Reads Question" -->
+      <!-- PORT:top x=328 y=104 id=n6.top type=input component="Reads Question" -->
+      <!-- PORT:bottom x=328 y=152 id=n6.bottom type=output component="Reads Question" -->
+      <g id="n4" transform="translate(32,72)" data-bbox="32 72 144 48" data-label="Member Message">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Member Message" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Member Message" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Member Message" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Member Message" -->
+        <rect id="n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Member Message" />
+        <text id="n4.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Member Message</text>
+      </g>
+      <g id="n6" transform="translate(256,104)" data-bbox="256 104 144 48" data-label="Reads Question">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Reads Question" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Reads Question" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Reads Question" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Reads Question" -->
+        <rect id="n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Reads Question" />
+        <text id="n6.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Reads Question</text>
+      </g>
+      <path id="n2.arrow0" d="M176,96 H192 V56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left" />
+      <path id="n2.arrow1" d="M176,96 H224 V128 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(544,32)" data-bbox="544 32 456 184" data-label="Match Canned Answer, Answer From Plan Documents, Send Reply">
+      <!-- PORT:left x=64 y=56 id=n7.left type=input component="Match Canned Answer" -->
+      <!-- PORT:right x=240 y=56 id=n7.right type=output component="Match Canned Answer" -->
+      <!-- PORT:top x=152 y=32 id=n7.top type=input component="Match Canned Answer" -->
+      <!-- PORT:bottom x=152 y=80 id=n7.bottom type=output component="Match Canned Answer" -->
+      <!-- PORT:left x=32 y=128 id=n8.left type=input component="Answer From Plan Documents" -->
+      <!-- PORT:right x=272 y=128 id=n8.right type=output component="Answer From Plan Documents" -->
+      <!-- PORT:top x=152 y=104 id=n8.top type=input component="Answer From Plan Documents" -->
+      <!-- PORT:bottom x=152 y=152 id=n8.bottom type=output component="Answer From Plan Documents" -->
+      <!-- PORT:left x=312 y=96 id=n9.left type=input component="Send Reply" -->
+      <!-- PORT:right x=424 y=96 id=n9.right type=output component="Send Reply" -->
+      <!-- PORT:top x=368 y=72 id=n9.top type=input component="Send Reply" -->
+      <!-- PORT:bottom x=368 y=120 id=n9.bottom type=output component="Send Reply" -->
+      <g id="n7" transform="translate(64,32)" data-bbox="64 32 176 48" data-label="Match Canned Answer">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Match Canned Answer" -->
+        <!-- PORT:right x=176 y=24 id=n7.right type=output component="Match Canned Answer" -->
+        <!-- PORT:top x=88 y=0 id=n7.top type=input component="Match Canned Answer" -->
+        <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Match Canned Answer" -->
+        <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Match Canned Answer" />
+        <text id="n7.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">Match Canned Answer</text>
+      </g>
+      <g id="n8" transform="translate(32,104)" data-bbox="32 104 240 48" data-label="Answer From Plan Documents">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Answer From Plan Documents" -->
+        <!-- PORT:right x=240 y=24 id=n8.right type=output component="Answer From Plan Documents" -->
+        <!-- PORT:top x=120 y=0 id=n8.top type=input component="Answer From Plan Documents" -->
+        <!-- PORT:bottom x=120 y=48 id=n8.bottom type=output component="Answer From Plan Documents" -->
+        <rect id="n8.block" x="0" y="0" width="240" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Answer From Plan Documents" />
+        <use id="n8.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="220">Answer From Plan Documents</text>
+      </g>
+      <g id="n9" transform="translate(312,72)" data-bbox="312 72 112 48" data-label="Send Reply">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Send Reply" -->
+        <!-- PORT:right x=112 y=24 id=n9.right type=output component="Send Reply" -->
+        <!-- PORT:top x=56 y=0 id=n9.top type=input component="Send Reply" -->
+        <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Send Reply" -->
+        <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Send Reply" />
+        <text id="n9.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Send Reply</text>
+      </g>
+      <path id="n3.arrow0" d="M240,56 H272 V96 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left" />
+    </g>
+    <path id="n1.arrow0" d="M472,88 H608" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M432,160 H576" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left" />
+  </g>
+</svg></div><figcaption>A fixed script stops when a question does not fit its list. An agent reads the whole question and chooses what to do.</figcaption></figure><figure class="concept"><h4>The four parts, with real contents</h4><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="690" height="146" viewBox="0 0 690 146" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Four parts with real contents</title>
+  <rect id="background" x="0" y="0" width="690" height="146" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e8-path" /><path d="M3 13l9 5 9-5" id="e9-path" /><path d="M3 17l9 5 9-5" id="e10-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 912 248" transform="translate(-39,-63)">
+    <!-- PORT:left x=64 y=88 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=208 y=88 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=136 y=64 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=136 y=112 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=64 y=160 id=n5.left type=input component="Knowledge Base" -->
+    <!-- PORT:right x=208 y=160 id=n5.right type=output component="Knowledge Base" -->
+    <!-- PORT:top x=136 y=136 id=n5.top type=input component="Knowledge Base" -->
+    <!-- PORT:bottom x=136 y=184 id=n5.bottom type=output component="Knowledge Base" -->
+    <!-- PORT:left x=272 y=128 id=n6.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=432 y=128 id=n6.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=352 y=104 id=n6.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=352 y=152 id=n6.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=536 y=128 id=n7.left type=input component="Chat Model" -->
+    <!-- PORT:right x=664 y=128 id=n7.right type=output component="Chat Model" -->
+    <!-- PORT:top x=600 y=104 id=n7.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=600 y=152 id=n7.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=704 y=128 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=848 y=128 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=776 y=104 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=776 y=152 id=n8.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 432 184" data-label="Chat Input, Knowledge Base, Prompt Template">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=56 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=32 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=128 id=n5.left type=input component="Knowledge Base" -->
+      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Knowledge Base" -->
+      <!-- PORT:top x=104 y=104 id=n5.top type=input component="Knowledge Base" -->
+      <!-- PORT:bottom x=104 y=152 id=n5.bottom type=output component="Knowledge Base" -->
+      <!-- PORT:left x=240 y=96 id=n6.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=400 y=96 id=n6.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=320 y=72 id=n6.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=320 y=120 id=n6.bottom type=output component="Prompt Template" -->
+      <g id="n5" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Knowledge Base">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Knowledge Base" -->
+        <!-- PORT:right x=144 y=24 id=n5.right type=output component="Knowledge Base" -->
+        <!-- PORT:top x=72 y=0 id=n5.top type=input component="Knowledge Base" -->
+        <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Knowledge Base" -->
+        <rect id="n5.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Knowledge Base" />
+        <text id="n5.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Knowledge Base</text>
+      </g>
+      <g id="n6" transform="translate(240,72)" data-bbox="240 72 160 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Prompt Template" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Prompt Template" />
+        <use id="n6.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="n2.arrow0" d="M176,56 H208 V96 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+      <path id="n2.arrow1" d="M176,128 H216 V96 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(504,72)" data-bbox="504 72 376 112" data-label="Chat Model, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Chat Model" -->
+      <!-- PORT:right x=160 y=56 id=n7.right type=output component="Chat Model" -->
+      <!-- PORT:top x=96 y=32 id=n7.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=96 y=80 id=n7.bottom type=output component="Chat Model" -->
+      <!-- PORT:left x=200 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=344 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=272 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=272 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Chat Model">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chat Model" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Chat Model" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Chat Model" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Chat Model" -->
+        <rect id="n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model" />
+        <use id="n7.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+      </g>
+      <path id="n3.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
+    </g>
+    <path id="n1.arrow0" d="M432,128 H536" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+  </g>
+</svg></div><figcaption>What each component holds for one member question. Only the Prompt Template is written by you.</figcaption></figure><figure class="concept"><h4>Where the key lives</h4><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="424" height="224" viewBox="0 0 424 224" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Where the API key lives</title>
+  <rect id="background" x="0" y="0" width="424" height="224" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e4-path" /><path d="M3 13l9 5 9-5" id="e5-path" /><path d="M3 17l9 5 9-5" id="e6-path" /></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" id="e7-circle" /><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" id="e8-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 424 224">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Student Browser" -->
+    <!-- PORT:right x=216 y=56 id=n2.right type=output component="Student Browser" -->
+    <!-- PORT:top x=136 y=32 id=n2.top type=input component="Student Browser" -->
+    <!-- PORT:bottom x=136 y=80 id=n2.bottom type=output component="Student Browser" -->
+    <!-- PORT:left x=256 y=56 id=n3.left type=input component="Class Portal" -->
+    <!-- PORT:right x=384 y=56 id=n3.right type=output component="Class Portal" -->
+    <!-- PORT:top x=320 y=32 id=n3.top type=input component="Class Portal" -->
+    <!-- PORT:bottom x=320 y=80 id=n3.bottom type=output component="Class Portal" -->
+    <!-- PORT:left x=56 y=168 id=n4.left type=input component="Langflow" -->
+    <!-- PORT:right x=152 y=168 id=n4.right type=output component="Langflow" -->
+    <!-- PORT:top x=104 y=144 id=n4.top type=input component="Langflow" -->
+    <!-- PORT:bottom x=104 y=192 id=n4.bottom type=output component="Langflow" -->
+    <!-- PORT:left x=192 y=168 id=n5.left type=input component="Model Provider" -->
+    <!-- PORT:right x=352 y=168 id=n5.right type=output component="Model Provider" -->
+    <!-- PORT:top x=272 y=144 id=n5.top type=input component="Model Provider" -->
+    <!-- PORT:bottom x=272 y=192 id=n5.bottom type=output component="Model Provider" -->
+    <g id="n3" transform="translate(256,32)" data-bbox="256 32 128 48" data-label="Class Portal">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Class Portal" -->
+      <!-- PORT:right x=128 y=24 id=n3.right type=output component="Class Portal" -->
+      <!-- PORT:top x=64 y=0 id=n3.top type=input component="Class Portal" -->
+      <!-- PORT:bottom x=64 y=48 id=n3.bottom type=output component="Class Portal" -->
+      <rect id="n3.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Class Portal" />
+      <text id="n3.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Class Portal</text>
+    </g>
+    <g id="n4" transform="translate(56,144)" data-bbox="56 144 96 48" data-label="Langflow">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Langflow" -->
+      <!-- PORT:right x=96 y=24 id=n4.right type=output component="Langflow" -->
+      <!-- PORT:top x=48 y=0 id=n4.top type=input component="Langflow" -->
+      <!-- PORT:bottom x=48 y=48 id=n4.bottom type=output component="Langflow" -->
+      <rect id="n4.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Langflow" />
+      <text id="n4.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Langflow</text>
+    </g>
+    <g id="n5" transform="translate(192,144)" data-bbox="192 144 160 48" data-label="Model Provider">
+      <!-- PORT:left x=0 y=24 id=n5.left type=input component="Model Provider" -->
+      <!-- PORT:right x=160 y=24 id=n5.right type=output component="Model Provider" -->
+      <!-- PORT:top x=80 y=0 id=n5.top type=input component="Model Provider" -->
+      <!-- PORT:bottom x=80 y=48 id=n5.bottom type=output component="Model Provider" -->
+      <rect id="n5.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Model Provider" />
+      <use id="n5.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Model Provider</text>
+    </g>
+    <path id="n1.arrow0" d="M216,56 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M384,56 H392 V112 H32 V168 H56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+    <path id="n1.arrow2" d="M152,168 H192" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left" />
+  </g>
+</svg></div><figcaption>The browser never holds the provider key. The class portal does, and adds the student&#x27;s session id.</figcaption></figure><figure class="concept"><h4>One question, four beats</h4><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="592" height="249" viewBox="0 0 592 249" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">One question four beats</title>
+  <rect id="background" x="0" y="0" width="592" height="249" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" id="e4-circle" /><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" id="e5-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 592 288">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Student Types" -->
+    <!-- PORT:right x=200 y=56 id=n2.right type=output component="Student Types" -->
+    <!-- PORT:top x=128 y=32 id=n2.top type=input component="Student Types" -->
+    <!-- PORT:bottom x=128 y=80 id=n2.bottom type=output component="Student Types" -->
+    <!-- PORT:left x=240 y=56 id=n3.left type=input component="Portal Receives" -->
+    <!-- PORT:right x=384 y=56 id=n3.right type=output component="Portal Receives" -->
+    <!-- PORT:top x=312 y=32 id=n3.top type=input component="Portal Receives" -->
+    <!-- PORT:bottom x=312 y=80 id=n3.bottom type=output component="Portal Receives" -->
+    <!-- PORT:left x=424 y=56 id=n4.left type=input component="Langflow Run" -->
+    <!-- PORT:right x=552 y=56 id=n4.right type=output component="Langflow Run" -->
+    <!-- PORT:top x=488 y=32 id=n4.top type=input component="Langflow Run" -->
+    <!-- PORT:bottom x=488 y=80 id=n4.bottom type=output component="Langflow Run" -->
+    <!-- PORT:left x=88 y=200 id=n6.left type=input component="Flow Executes" -->
+    <!-- PORT:right x=216 y=200 id=n6.right type=output component="Flow Executes" -->
+    <!-- PORT:top x=152 y=176 id=n6.top type=input component="Flow Executes" -->
+    <!-- PORT:bottom x=152 y=224 id=n6.bottom type=output component="Flow Executes" -->
+    <!-- PORT:left x=256 y=200 id=n7.left type=input component="Reply Appears" -->
+    <!-- PORT:right x=384 y=200 id=n7.right type=output component="Reply Appears" -->
+    <!-- PORT:top x=320 y=176 id=n7.top type=input component="Reply Appears" -->
+    <!-- PORT:bottom x=320 y=224 id=n7.bottom type=output component="Reply Appears" -->
+    <g id="n3" transform="translate(240,32)" data-bbox="240 32 144 48" data-label="Portal Receives">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Portal Receives" -->
+      <!-- PORT:right x=144 y=24 id=n3.right type=output component="Portal Receives" -->
+      <!-- PORT:top x=72 y=0 id=n3.top type=input component="Portal Receives" -->
+      <!-- PORT:bottom x=72 y=48 id=n3.bottom type=output component="Portal Receives" -->
+      <rect id="n3.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Portal Receives" />
+      <text id="n3.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Portal Receives</text>
+    </g>
+    <g id="n4" transform="translate(424,32)" data-bbox="424 32 128 48" data-label="Langflow Run">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Langflow Run" -->
+      <!-- PORT:right x=128 y=24 id=n4.right type=output component="Langflow Run" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="Langflow Run" -->
+      <!-- PORT:bottom x=64 y=48 id=n4.bottom type=output component="Langflow Run" -->
+      <rect id="n4.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Langflow Run" />
+      <text id="n4.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Langflow Run</text>
+    </g>
+    <g id="n5" transform="translate(56,144)" data-bbox="56 144 360 112" data-label="Flow Executes, Reply Appears">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Flow Executes" -->
+      <!-- PORT:right x=160 y=56 id=n6.right type=output component="Flow Executes" -->
+      <!-- PORT:top x=96 y=32 id=n6.top type=input component="Flow Executes" -->
+      <!-- PORT:bottom x=96 y=80 id=n6.bottom type=output component="Flow Executes" -->
+      <!-- PORT:left x=200 y=56 id=n7.left type=input component="Reply Appears" -->
+      <!-- PORT:right x=328 y=56 id=n7.right type=output component="Reply Appears" -->
+      <!-- PORT:top x=264 y=32 id=n7.top type=input component="Reply Appears" -->
+      <!-- PORT:bottom x=264 y=80 id=n7.bottom type=output component="Reply Appears" -->
+      <g id="n6" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Flow Executes">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Flow Executes" -->
+        <!-- PORT:right x=128 y=24 id=n6.right type=output component="Flow Executes" -->
+        <!-- PORT:top x=64 y=0 id=n6.top type=input component="Flow Executes" -->
+        <!-- PORT:bottom x=64 y=48 id=n6.bottom type=output component="Flow Executes" -->
+        <rect id="n6.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow Executes" />
+        <text id="n6.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Flow Executes</text>
+      </g>
+      <g id="n7" transform="translate(200,32)" data-bbox="200 32 128 48" data-label="Reply Appears">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Reply Appears" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Reply Appears" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Reply Appears" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Reply Appears" -->
+        <rect id="n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Reply Appears" />
+        <text id="n7.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Reply Appears</text>
+      </g>
+      <path id="n5.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+    </g>
+    <path id="n1.arrow0" d="M200,56 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M384,56 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+    <path id="n1.arrow2" d="M552,56 H560 V112 H32 V200 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+  </g>
+</svg></div><figcaption>From the student&#x27;s chat window through the portal and Langflow and back, in about two seconds.</figcaption></figure><figure class="concept"><h4>What a good answer looks like</h4><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="418" height="242" viewBox="0 0 418 242" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Quality checks for replies</title>
+  <rect id="background" x="0" y="0" width="418" height="242" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1" id="e8-rect" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" id="e9-path" /></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6" id="e10-circle" /><path d="M15 15l5.5 5.5" id="e11-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 696 320" transform="translate(-239,-39)">
+    <!-- PORT:left x=72 y=88 id=n4.left type=input component="Grounded Check" -->
+    <!-- PORT:right x=264 y=88 id=n4.right type=output component="Grounded Check" -->
+    <!-- PORT:top x=168 y=64 id=n4.top type=input component="Grounded Check" -->
+    <!-- PORT:bottom x=168 y=112 id=n4.bottom type=output component="Grounded Check" -->
+    <!-- PORT:left x=64 y=160 id=n5.left type=input component="Honest Gaps Check" -->
+    <!-- PORT:right x=272 y=160 id=n5.right type=output component="Honest Gaps Check" -->
+    <!-- PORT:top x=168 y=136 id=n5.top type=input component="Honest Gaps Check" -->
+    <!-- PORT:bottom x=168 y=184 id=n5.bottom type=output component="Honest Gaps Check" -->
+    <!-- PORT:left x=64 y=232 id=n6.left type=input component="Consistent Check" -->
+    <!-- PORT:right x=272 y=232 id=n6.right type=output component="Consistent Check" -->
+    <!-- PORT:top x=168 y=208 id=n6.top type=input component="Consistent Check" -->
+    <!-- PORT:bottom x=168 y=256 id=n6.bottom type=output component="Consistent Check" -->
+    <!-- PORT:left x=408 y=88 id=n7.left type=input component="Plan Documents Only" -->
+    <!-- PORT:right x=600 y=88 id=n7.right type=output component="Plan Documents Only" -->
+    <!-- PORT:top x=504 y=64 id=n7.top type=input component="Plan Documents Only" -->
+    <!-- PORT:bottom x=504 y=112 id=n7.bottom type=output component="Plan Documents Only" -->
+    <!-- PORT:left x=432 y=160 id=n8.left type=input component="Say When Unknown" -->
+    <!-- PORT:right x=576 y=160 id=n8.right type=output component="Say When Unknown" -->
+    <!-- PORT:top x=504 y=136 id=n8.top type=input component="Say When Unknown" -->
+    <!-- PORT:bottom x=504 y=184 id=n8.bottom type=output component="Say When Unknown" -->
+    <!-- PORT:left x=376 y=232 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+    <!-- PORT:right x=632 y=232 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+    <!-- PORT:top x=504 y=208 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+    <!-- PORT:bottom x=504 y=256 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+    <g id="n3" transform="translate(344,32)" data-bbox="344 32 320 256" data-label="Plan Documents Only, Say When Unknown, Same Plan Facts Across Turns">
+      <!-- PORT:left x=64 y=56 id=n7.left type=input component="Plan Documents Only" -->
+      <!-- PORT:right x=256 y=56 id=n7.right type=output component="Plan Documents Only" -->
+      <!-- PORT:top x=160 y=32 id=n7.top type=input component="Plan Documents Only" -->
+      <!-- PORT:bottom x=160 y=80 id=n7.bottom type=output component="Plan Documents Only" -->
+      <!-- PORT:left x=88 y=128 id=n8.left type=input component="Say When Unknown" -->
+      <!-- PORT:right x=232 y=128 id=n8.right type=output component="Say When Unknown" -->
+      <!-- PORT:top x=160 y=104 id=n8.top type=input component="Say When Unknown" -->
+      <!-- PORT:bottom x=160 y=152 id=n8.bottom type=output component="Say When Unknown" -->
+      <!-- PORT:left x=32 y=200 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+      <!-- PORT:right x=288 y=200 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+      <!-- PORT:top x=160 y=176 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+      <!-- PORT:bottom x=160 y=224 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+      <g id="n7" transform="translate(64,32)" data-bbox="64 32 192 48" data-label="Plan Documents Only">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Plan Documents Only" -->
+        <!-- PORT:right x=192 y=24 id=n7.right type=output component="Plan Documents Only" -->
+        <!-- PORT:top x=96 y=0 id=n7.top type=input component="Plan Documents Only" -->
+        <!-- PORT:bottom x=96 y=48 id=n7.bottom type=output component="Plan Documents Only" -->
+        <rect id="n7.block" x="0" y="0" width="192" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Plan Documents Only" />
+        <use id="n7.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="172">Plan Documents Only</text>
+      </g>
+      <g id="n8" transform="translate(88,104)" data-bbox="88 104 144 48" data-label="Say When Unknown">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Say When Unknown" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Say When Unknown" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Say When Unknown" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Say When Unknown" -->
+        <rect id="n8.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Say When Unknown" />
+        <text id="n8.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Say When Unknown</text>
+      </g>
+      <g id="n9" transform="translate(32,176)" data-bbox="32 176 256 48" data-label="Same Plan Facts Across Turns">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Same Plan Facts Across Turns" -->
+        <!-- PORT:right x=256 y=24 id=n9.right type=output component="Same Plan Facts Across Turns" -->
+        <!-- PORT:top x=128 y=0 id=n9.top type=input component="Same Plan Facts Across Turns" -->
+        <!-- PORT:bottom x=128 y=48 id=n9.bottom type=output component="Same Plan Facts Across Turns" -->
+        <rect id="n9.block" x="0" y="0" width="256" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Same Plan Facts Across Turns" />
+        <use id="n9.icon" href="#icon-grid" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="236">Same Plan Facts Across Turns</text>
+      </g>
+    </g>
+    <path id="n1.arrow0" d="M264,88 H408" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M272,160 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n8.left" />
+    <path id="n1.arrow2" d="M272,232 H376" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n9.left" />
+  </g>
+</svg></div><figcaption>Grounded, honest about gaps, consistent across turns.</figcaption></figure></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Tell an agent apart from a fixed automation, and name where each helps a health plan.</li><li>Stand up the lab and publish your first conversational agent.</li><li>Connect a model provider without ever putting a key in a browser.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>Members ask the same benefit questions every day. An agent that answers from approved plan language, and only from it, frees staff for the calls that need a person.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="690" height="146" viewBox="0 0 690 146" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Member Benefits FAQ capstone</title>
+  <rect id="background" x="0" y="0" width="690" height="146" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e8-path" /><path d="M3 13l9 5 9-5" id="e9-path" /><path d="M3 17l9 5 9-5" id="e10-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 912 248" transform="translate(-39,-63)">
+    <!-- PORT:left x=64 y=88 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=208 y=88 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=136 y=64 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=136 y=112 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=64 y=160 id=n5.left type=input component="Knowledge Base" -->
+    <!-- PORT:right x=208 y=160 id=n5.right type=output component="Knowledge Base" -->
+    <!-- PORT:top x=136 y=136 id=n5.top type=input component="Knowledge Base" -->
+    <!-- PORT:bottom x=136 y=184 id=n5.bottom type=output component="Knowledge Base" -->
+    <!-- PORT:left x=272 y=128 id=n6.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=432 y=128 id=n6.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=352 y=104 id=n6.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=352 y=152 id=n6.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=536 y=128 id=n7.left type=input component="Chat Model" -->
+    <!-- PORT:right x=664 y=128 id=n7.right type=output component="Chat Model" -->
+    <!-- PORT:top x=600 y=104 id=n7.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=600 y=152 id=n7.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=704 y=128 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=848 y=128 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=776 y=104 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=776 y=152 id=n8.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 432 184" data-label="Chat Input, Knowledge Base, Prompt Template">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=56 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=32 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=128 id=n5.left type=input component="Knowledge Base" -->
+      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Knowledge Base" -->
+      <!-- PORT:top x=104 y=104 id=n5.top type=input component="Knowledge Base" -->
+      <!-- PORT:bottom x=104 y=152 id=n5.bottom type=output component="Knowledge Base" -->
+      <!-- PORT:left x=240 y=96 id=n6.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=400 y=96 id=n6.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=320 y=72 id=n6.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=320 y=120 id=n6.bottom type=output component="Prompt Template" -->
+      <g id="n5" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Knowledge Base">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Knowledge Base" -->
+        <!-- PORT:right x=144 y=24 id=n5.right type=output component="Knowledge Base" -->
+        <!-- PORT:top x=72 y=0 id=n5.top type=input component="Knowledge Base" -->
+        <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Knowledge Base" -->
+        <rect id="n5.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Knowledge Base" />
+        <text id="n5.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Knowledge Base</text>
+      </g>
+      <g id="n6" transform="translate(240,72)" data-bbox="240 72 160 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Prompt Template" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Prompt Template" />
+        <use id="n6.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="n2.arrow0" d="M176,56 H208 V96 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+      <path id="n2.arrow1" d="M176,128 H216 V96 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(504,72)" data-bbox="504 72 376 112" data-label="Chat Model, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Chat Model" -->
+      <!-- PORT:right x=160 y=56 id=n7.right type=output component="Chat Model" -->
+      <!-- PORT:top x=96 y=32 id=n7.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=96 y=80 id=n7.bottom type=output component="Chat Model" -->
+      <!-- PORT:left x=200 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=344 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=272 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=272 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Chat Model">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chat Model" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Chat Model" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Chat Model" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Chat Model" -->
+        <rect id="n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model" />
+        <use id="n7.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+      </g>
+      <path id="n3.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
+    </g>
+    <path id="n1.arrow0" d="M432,128 H536" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+  </g>
+</svg></div><figcaption>Module 1 capstone: Member Benefits FAQ. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>The member&#x27;s question enters at Chat Input.</span></li><li><span>The Prompt Template holds the instructions that set the agent&#x27;s tone and limits (a &#x27;system prompt&#x27;).</span></li><li><span>If you add a Knowledge Base, passages from plan documents are placed into the prompt first.</span></li><li><span>The Chat Model writes the answer and Chat Output shows it.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add Chat Input and Chat Output.</span></li><li><span>Write the system prompt in a Prompt Template.</span></li><li><span>Connect an OpenRouter chat model; keep the API key on the server, never in a browser.</span></li><li><span>Optionally add a knowledge base of plan documents.</span></li><li><span>Publish, then test PPO versus HMO questions across several turns.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Member Benefits FAQ</h4><p>The capstone above: a FAQ agent that keeps PPO and HMO facts straight across several turns.</p><span class="id">m1-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Plan glossary bot</h4><p>Definitions only. A tighter system prompt that refuses medical or legal advice.</p><span class="id">m1-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Welcome intake</h4><p>The agent captures a member id into a variable and hands off politely.</p><span class="id">m1-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>After-hours auto-reply</h4><p>Tone and boundaries: when to answer, when to escalate to a person.</p><span class="id">m1-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>PPO versus HMO comparison</h4><p>The same facts returned as a structured comparison rather than prose.</p><span class="id">m1-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>System prompt</dt><dd>the standing instructions an agent follows before it reads any question</dd></div><div><dt>Publish</dt><dd>make the flow reachable from outside the editor, so the portal can call it</dd></div><div><dt>Knowledge base</dt><dd>documents the agent may look things up in</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Langflow is up (see SETUP-ONCE).</li><li>Build the capstone and export it as m1-l01-member-benefits-faq.json.</li><li>Capture the screenshots named langflow-* for the lab guide.</li><li>Run the light tests for the schema and the FAQ fixture.</li></ol></details>
+</section></body></html>

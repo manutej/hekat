@@ -266,6 +266,12 @@ the truncation as a defect.
 — sources in `docs/research/langflow-agentic-workflows/`, figures and gallery in
 `examples/figtree/langflow/` (see that directory's README).
 
+**Course visual artifacts:** the *Agentic AI with Langflow* companion uses the same FigTree loop
+with gold SVG references and HTML assembly — see
+[`examples/course/agentic-ai-langflow/README.md`](../examples/course/agentic-ai-langflow/README.md)
+and [`VISUAL-SPEC.md`](../examples/course/agentic-ai-langflow/VISUAL-SPEC.md). Module 1 adversarial
+pass: `run_module_adversarial.py …/module-01 …/diagrams --gold …/module-01/gold`.
+
 ## Known limitations
 
 * The rule-based Grounder only admits explicit structure (arrow chains, "X Agent" names,
