@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-source--langflow-flow-topology-compactness-blank_margin",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure source--langflow-flow-topology: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/source--langflow-flow-topology.svg"
+}

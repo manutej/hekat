@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-source--mcp-client-pattern-compactness-blank_margin",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure source--mcp-client-pattern: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/source--mcp-client-pattern.svg"
+}

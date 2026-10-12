@@ -22,6 +22,17 @@ python3 -m figtree digest --plan docs/research/langflow-agentic-workflows/ \
 python3 -m figtree digest --all -o examples/figtree/langflow/ --rubric teaching --no-render
 ```
 
+## Adversarial three-layer pass
+
+See [`adversarial/ITERATION-LOG.md`](adversarial/ITERATION-LOG.md) and
+[`adversarial/ADVERSARY-LANGFLOW.md`](adversarial/ADVERSARY-LANGFLOW.md). Re-run:
+
+```bash
+python3 examples/figtree/langflow/adversarial/run_three_layer_eval.py
+```
+
+After the pass, two figures score **10.0** (single-agent tool loop, multi-tool coordination).
+
 ## Quality notes
 
 - All units scored **≥ 8.0** on the `teaching` rubric (measured `figtree score`).

@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-research-workflow-compactness-blank_margin",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure research-workflow: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/research-workflow.svg"
+}

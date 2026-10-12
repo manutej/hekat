@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="384" viewBox="0 0 1320 384" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
-  <title>Research workflow — Langflow documentation to FigTree SOURCE</title>
-  <rect id="background" x="0" y="0" width="1320" height="384" fill="#FFFFFF" data-role="background"/>
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="313" viewBox="0 0 1320 313" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Research workflow — Langflow documentation to FigTree SOURCE</title>
+  <rect id="background" x="0" y="0" width="1320" height="313" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
     </marker>
   </defs>
   <g id="n1" data-bbox="0 0 1320 384">
@@ -86,7 +86,7 @@
           <!-- PORT:right x=96 y=24 id=n6.right type=output component="Doc Scout" -->
           <!-- PORT:top x=48 y=0 id=n6.top type=input component="Doc Scout" -->
           <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="Doc Scout" -->
-          <rect id="n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Doc Scout"/>
+          <rect id="n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Doc Scout" />
           <text id="n6.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Doc Scout</text>
         </g>
         <g id="n7" transform="translate(32,104)" data-bbox="32 104 176 48" data-label="Bibliography Checker">
@@ -94,7 +94,7 @@
           <!-- PORT:right x=176 y=24 id=n7.right type=output component="Bibliography Checker" -->
           <!-- PORT:top x=88 y=0 id=n7.top type=input component="Bibliography Checker" -->
           <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Bibliography Checker" -->
-          <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Bibliography Checker"/>
+          <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Bibliography Checker" />
           <text id="n7.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">Bibliography Checker</text>
         </g>
         <g id="n8" transform="translate(88,176)" data-bbox="88 176 64 48" data-label="Agent">
@@ -102,7 +102,7 @@
           <!-- PORT:right x=64 y=24 id=n8.right type=output component="Agent" -->
           <!-- PORT:top x=32 y=0 id=n8.top type=input component="Agent" -->
           <!-- PORT:bottom x=32 y=48 id=n8.bottom type=output component="Agent" -->
-          <rect id="n8.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+          <rect id="n8.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
           <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
         </g>
       </g>
@@ -120,7 +120,7 @@
           <!-- PORT:right x=112 y=24 id=n9.right type=output component="Chat Input" -->
           <!-- PORT:top x=56 y=0 id=n9.top type=input component="Chat Input" -->
           <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Chat Input" -->
-          <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input"/>
+          <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input" />
           <text id="n9.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Input</text>
         </g>
         <g id="n10" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Fact Extractor">
@@ -128,11 +128,11 @@
           <!-- PORT:right x=144 y=24 id=n10.right type=output component="Fact Extractor" -->
           <!-- PORT:top x=72 y=0 id=n10.top type=input component="Fact Extractor" -->
           <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Fact Extractor" -->
-          <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Fact Extractor"/>
+          <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Fact Extractor" />
           <text id="n10.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Fact Extractor</text>
         </g>
       </g>
-      <path id="n2.arrow0" d="M200,88 H272 V200 H344" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n10.left"/>
+      <path id="n2.arrow0" d="M200,88 H272 V200 H344" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n10.left" />
     </g>
     <g id="n3" transform="translate(624,32)" data-bbox="624 32 664 320" data-label="Grounder Preview, Agent Component style arrow chains, Structure Writer, Digest Planner, FigTree Scout">
       <!-- PORT:left x=136 y=88 id=n13.left type=input component="Grounder Preview" -->
@@ -173,7 +173,7 @@
           <!-- PORT:right x=144 y=24 id=n13.right type=output component="Grounder Preview" -->
           <!-- PORT:top x=72 y=0 id=n13.top type=input component="Grounder Preview" -->
           <!-- PORT:bottom x=72 y=48 id=n13.bottom type=output component="Grounder Preview" -->
-          <rect id="n13.block" x="0" y="0" width="144" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Grounder Preview"/>
+          <rect id="n13.block" x="0" y="0" width="144" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Grounder Preview" />
           <text id="n13.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Grounder Preview</text>
         </g>
         <g id="n14" transform="translate(32,104)" data-bbox="32 104 288 48" data-label="Agent Component style arrow chains">
@@ -181,7 +181,7 @@
           <!-- PORT:right x=288 y=24 id=n14.right type=output component="Agent Component style arrow chains" -->
           <!-- PORT:top x=144 y=0 id=n14.top type=input component="Agent Component style arrow chains" -->
           <!-- PORT:bottom x=144 y=48 id=n14.bottom type=output component="Agent Component style arrow chains" -->
-          <rect id="n14.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component style arrow chains"/>
+          <rect id="n14.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component style arrow chains" />
           <text id="n14.label" x="144" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="288">Agent Component style arrow chains</text>
         </g>
         <g id="n15" transform="translate(104,176)" data-bbox="104 176 144 48" data-label="Structure Writer">
@@ -189,7 +189,7 @@
           <!-- PORT:right x=144 y=24 id=n15.right type=output component="Structure Writer" -->
           <!-- PORT:top x=72 y=0 id=n15.top type=input component="Structure Writer" -->
           <!-- PORT:bottom x=72 y=48 id=n15.bottom type=output component="Structure Writer" -->
-          <rect id="n15.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structure Writer"/>
+          <rect id="n15.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structure Writer" />
           <text id="n15.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Structure Writer</text>
         </g>
       </g>
@@ -207,7 +207,7 @@
           <!-- PORT:right x=144 y=24 id=n16.right type=output component="Digest Planner" -->
           <!-- PORT:top x=72 y=0 id=n16.top type=input component="Digest Planner" -->
           <!-- PORT:bottom x=72 y=48 id=n16.bottom type=output component="Digest Planner" -->
-          <rect id="n16.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Digest Planner"/>
+          <rect id="n16.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Digest Planner" />
           <text id="n16.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Digest Planner</text>
         </g>
         <g id="n17" transform="translate(40,104)" data-bbox="40 104 128 48" data-label="FigTree Scout">
@@ -215,15 +215,15 @@
           <!-- PORT:right x=128 y=24 id=n17.right type=output component="FigTree Scout" -->
           <!-- PORT:top x=64 y=0 id=n17.top type=input component="FigTree Scout" -->
           <!-- PORT:bottom x=64 y=48 id=n17.bottom type=output component="FigTree Scout" -->
-          <rect id="n17.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="FigTree Scout"/>
+          <rect id="n17.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="FigTree Scout" />
           <text id="n17.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">FigTree Scout</text>
         </g>
       </g>
-      <path id="n3.arrow0" d="M280,232 H368 V200 H464" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n15.right" data-to="n17.left"/>
-      <path id="n3.arrow1" d="M280,88 H376 V128 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n16.left"/>
+      <path id="n3.arrow0" d="M280,232 H368 V200 H464" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n15.right" data-to="n17.left" />
+      <path id="n3.arrow1" d="M280,88 H376 V128 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n16.left" />
     </g>
-    <path id="n1.arrow0" d="M520,232 H640 V264 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n15.left"/>
-    <path id="n1.arrow1" d="M272,192 H520 V120 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n13.left"/>
-    <path id="n1.arrow2" d="M504,160 H608 V192 H688" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n14.left"/>
+    <path id="n1.arrow0" d="M520,232 H640 V264 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n15.left" />
+    <path id="n1.arrow1" d="M272,192 H520 V120 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n13.left" />
+    <path id="n1.arrow2" d="M504,160 H608 V192 H688" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n14.left" />
   </g>
 </svg>

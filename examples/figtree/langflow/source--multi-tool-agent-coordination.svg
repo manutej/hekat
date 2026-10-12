@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1096" height="416" viewBox="0 0 1096 416" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
-  <title>An Agent Component can use any Langflow component as a tool, including other Agent components and MCP servers.</title>
-  <rect id="background" x="0" y="0" width="1096" height="416" fill="#FFFFFF" data-role="background"/>
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1096" height="377" viewBox="0 0 1096 377" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">An Agent Component can use any Langflow component as a tool, including other Agent components and MCP servers.</title>
+  <rect id="background" x="0" y="0" width="1096" height="377" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
     </marker>
   </defs>
   <g id="n1" data-bbox="0 0 1096 416">
@@ -61,7 +61,7 @@
         <!-- PORT:right x=64 y=24 id=n4.right type=output component="Agent" -->
         <!-- PORT:top x=32 y=0 id=n4.top type=input component="Agent" -->
         <!-- PORT:bottom x=32 y=48 id=n4.bottom type=output component="Agent" -->
-        <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+        <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
         <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
       </g>
       <g id="n5" transform="translate(72,104)" data-bbox="72 104 160 48" data-label="Weather MCP Tools">
@@ -69,7 +69,7 @@
         <!-- PORT:right x=160 y=24 id=n5.right type=output component="Weather MCP Tools" -->
         <!-- PORT:top x=80 y=0 id=n5.top type=input component="Weather MCP Tools" -->
         <!-- PORT:bottom x=80 y=48 id=n5.bottom type=output component="Weather MCP Tools" -->
-        <rect id="n5.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Weather MCP Tools"/>
+        <rect id="n5.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Weather MCP Tools" />
         <text id="n5.label" x="80" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="160">Weather MCP Tools</text>
       </g>
       <g id="n6" transform="translate(56,176)" data-bbox="56 176 192 48" data-label="Geolocation MCP Tools">
@@ -77,7 +77,7 @@
         <!-- PORT:right x=192 y=24 id=n6.right type=output component="Geolocation MCP Tools" -->
         <!-- PORT:top x=96 y=0 id=n6.top type=input component="Geolocation MCP Tools" -->
         <!-- PORT:bottom x=96 y=48 id=n6.bottom type=output component="Geolocation MCP Tools" -->
-        <rect id="n6.block" x="0" y="0" width="192" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Geolocation MCP Tools"/>
+        <rect id="n6.block" x="0" y="0" width="192" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Geolocation MCP Tools" />
         <text id="n6.label" x="96" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="192">Geolocation MCP Tools</text>
       </g>
       <g id="n7" transform="translate(32,248)" data-bbox="32 248 240 48" data-label="Weather MCP Tools Component">
@@ -85,7 +85,7 @@
         <!-- PORT:right x=240 y=24 id=n7.right type=output component="Weather MCP Tools Component" -->
         <!-- PORT:top x=120 y=0 id=n7.top type=input component="Weather MCP Tools Component" -->
         <!-- PORT:bottom x=120 y=48 id=n7.bottom type=output component="Weather MCP Tools Component" -->
-        <rect id="n7.block" x="0" y="0" width="240" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Weather MCP Tools Component"/>
+        <rect id="n7.block" x="0" y="0" width="240" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Weather MCP Tools Component" />
         <text id="n7.label" x="120" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="240">Weather MCP Tools Component</text>
       </g>
     </g>
@@ -111,7 +111,7 @@
         <!-- PORT:right x=288 y=24 id=n8.right type=output component="IP Geolocation MCP Tools Component" -->
         <!-- PORT:top x=144 y=0 id=n8.top type=input component="IP Geolocation MCP Tools Component" -->
         <!-- PORT:bottom x=144 y=48 id=n8.bottom type=output component="IP Geolocation MCP Tools Component" -->
-        <rect id="n8.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="IP Geolocation MCP Tools Component"/>
+        <rect id="n8.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="IP Geolocation MCP Tools Component" />
         <text id="n8.label" x="144" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="288">IP Geolocation MCP Tools Component</text>
       </g>
       <g id="n9" transform="translate(120,104)" data-bbox="120 104 112 48" data-label="Chat Input">
@@ -119,7 +119,7 @@
         <!-- PORT:right x=112 y=24 id=n9.right type=output component="Chat Input" -->
         <!-- PORT:top x=56 y=0 id=n9.top type=input component="Chat Input" -->
         <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Chat Input" -->
-        <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input"/>
+        <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input" />
         <text id="n9.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Input</text>
       </g>
       <g id="n10" transform="translate(360,72)" data-bbox="360 72 144 48" data-label="Agent Component">
@@ -127,7 +127,7 @@
         <!-- PORT:right x=144 y=24 id=n10.right type=output component="Agent Component" -->
         <!-- PORT:top x=72 y=0 id=n10.top type=input component="Agent Component" -->
         <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Agent Component" -->
-        <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component"/>
+        <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
         <text id="n10.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
       </g>
       <g id="n11" transform="translate(544,72)" data-bbox="544 72 112 48" data-label="Chat Output">
@@ -135,13 +135,13 @@
         <!-- PORT:right x=112 y=24 id=n11.right type=output component="Chat Output" -->
         <!-- PORT:top x=56 y=0 id=n11.top type=input component="Chat Output" -->
         <!-- PORT:bottom x=56 y=48 id=n11.bottom type=output component="Chat Output" -->
-        <rect id="n11.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Output"/>
+        <rect id="n11.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Output" />
         <text id="n11.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Output</text>
       </g>
-      <path id="n3.arrow0" d="M320,56 H336 V96 H360" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n10.left"/>
-      <path id="n3.arrow1" d="M232,128 H304 V96 H360" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
-      <path id="n3.arrow2" d="M504,96 H544" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left"/>
+      <path id="n3.arrow0" d="M320,56 H336 V96 H360" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n10.left" />
+      <path id="n3.arrow1" d="M232,128 H304 V96 H360" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left" />
+      <path id="n3.arrow2" d="M504,96 H544" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left" />
     </g>
-    <path id="n1.arrow0" d="M304,328 H344 V32 V224 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n10.left"/>
+    <path id="n1.arrow0" d="M304,328 H344 V32 V224 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n10.left" />
   </g>
 </svg>

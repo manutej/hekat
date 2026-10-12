@@ -1,0 +1,58 @@
+[
+  {
+    "id": "research-workflow",
+    "before": 9.09,
+    "after": 9.23,
+    "output": "/workspace/examples/figtree/langflow/adversarial/research-workflow.layer2.svg",
+    "delta": 0.14000000000000057
+  },
+  {
+    "id": "source--agent-memory-and-session-scope",
+    "before": 9.71,
+    "after": 9.86,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--agent-memory-and-session-scope.layer2.svg",
+    "delta": 0.14999999999999858
+  },
+  {
+    "id": "source--api-and-programmatic-execution",
+    "before": 9.71,
+    "after": 9.86,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--api-and-programmatic-execution.layer2.svg",
+    "delta": 0.14999999999999858
+  },
+  {
+    "id": "source--langflow-flow-topology",
+    "before": 9.71,
+    "after": 9.86,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--langflow-flow-topology.layer2.svg",
+    "delta": 0.14999999999999858
+  },
+  {
+    "id": "source--mcp-client-pattern",
+    "before": 9.71,
+    "after": 9.86,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--mcp-client-pattern.layer2.svg",
+    "delta": 0.14999999999999858
+  },
+  {
+    "id": "source--mcp-server-pattern-flows-as-tools",
+    "before": 9.71,
+    "after": 9.86,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--mcp-server-pattern-flows-as-tools.layer2.svg",
+    "delta": 0.14999999999999858
+  },
+  {
+    "id": "source--multi-tool-agent-coordination",
+    "before": 9.86,
+    "after": 10.0,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--multi-tool-agent-coordination.layer2.svg",
+    "delta": 0.14000000000000057
+  },
+  {
+    "id": "source--single-agent-tool-loop",
+    "before": 9.86,
+    "after": 10.0,
+    "output": "/workspace/examples/figtree/langflow/adversarial/source--single-agent-tool-loop.layer2.svg",
+    "delta": 0.14000000000000057
+  }
+]

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="672" height="320" viewBox="0 0 672 320" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
-  <title>A Langflow **flow** is a canvas of **components** wired by ports. A minimal chat agent flow connects user I/O to the Agent component and the Language Model.</title>
-  <rect id="background" x="0" y="0" width="672" height="320" fill="#FFFFFF" data-role="background"/>
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="281" viewBox="0 0 672 281" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">A Langflow **flow** is a canvas of **components** wired by ports. A minimal chat agent flow connects user I/O to the Agent component and the Language Model.</title>
+  <rect id="background" x="0" y="0" width="672" height="281" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
     </marker>
   </defs>
   <g id="n1" data-bbox="0 0 672 320">
@@ -45,7 +45,7 @@
         <!-- PORT:right x=64 y=24 id=n4.right type=output component="Agent" -->
         <!-- PORT:top x=32 y=0 id=n4.top type=input component="Agent" -->
         <!-- PORT:bottom x=32 y=48 id=n4.bottom type=output component="Agent" -->
-        <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+        <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
         <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
       </g>
       <g id="n5" transform="translate(48,104)" data-bbox="48 104 112 48" data-label="Chat Input">
@@ -53,7 +53,7 @@
         <!-- PORT:right x=112 y=24 id=n5.right type=output component="Chat Input" -->
         <!-- PORT:top x=56 y=0 id=n5.top type=input component="Chat Input" -->
         <!-- PORT:bottom x=56 y=48 id=n5.bottom type=output component="Chat Input" -->
-        <rect id="n5.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input"/>
+        <rect id="n5.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input" />
         <text id="n5.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Input</text>
       </g>
       <g id="n6" transform="translate(32,176)" data-bbox="32 176 144 48" data-label="Language Model">
@@ -61,7 +61,7 @@
         <!-- PORT:right x=144 y=24 id=n6.right type=output component="Language Model" -->
         <!-- PORT:top x=72 y=0 id=n6.top type=input component="Language Model" -->
         <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Language Model" -->
-        <rect id="n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Language Model"/>
+        <rect id="n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Language Model" />
         <text id="n6.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Language Model</text>
       </g>
     </g>
@@ -79,7 +79,7 @@
         <!-- PORT:right x=144 y=24 id=n7.right type=output component="Agent Component" -->
         <!-- PORT:top x=72 y=0 id=n7.top type=input component="Agent Component" -->
         <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Agent Component" -->
-        <rect id="n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component"/>
+        <rect id="n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
         <text id="n7.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
       </g>
       <g id="n8" transform="translate(216,32)" data-bbox="216 32 112 48" data-label="Chat Output">
@@ -87,12 +87,12 @@
         <!-- PORT:right x=112 y=24 id=n8.right type=output component="Chat Output" -->
         <!-- PORT:top x=56 y=0 id=n8.top type=input component="Chat Output" -->
         <!-- PORT:bottom x=56 y=48 id=n8.bottom type=output component="Chat Output" -->
-        <rect id="n8.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Output"/>
+        <rect id="n8.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Output" />
         <text id="n8.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Output</text>
       </g>
-      <path id="n3.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+      <path id="n3.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
     </g>
-    <path id="n1.arrow0" d="M192,160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left"/>
-    <path id="n1.arrow1" d="M208,232 H256 V160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    <path id="n1.arrow0" d="M192,160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M208,232 H256 V160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
   </g>
 </svg>
