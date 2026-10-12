@@ -29,6 +29,7 @@ synced to Claude Design, and a typed contract that lets the design be swapped. B
 | Code | `figtree/`: `grounder.py`, `generator.py`, `worker.py`, `critic.py`, `quality.py` (measurable critic, 73 checks), `rubric_spec.py` (published specs), `edits.py`, `refine.py`, `judge.py`, `probes.py`, `digest.py`, `contract.py`, `agents/` (Claude backends on the session's OAuth) |
 | Evidence | `examples/figtree/` (sources, outputs, teaching, icons, animated, design, probes + `FOLD-REPORT.md`, eval, showcase) |
 | Showcase | https://claude.ai/artifact/631S4xEpbRH3oSWuh1sxcf (built by `examples/figtree/showcase/build_showcase.py`) |
+| Documentation-driven run | `examples/figtree/langflow/README.md` (corpus, specs, figures, icons, page), `SPEC-FORMAT.md`, `.claude/workflows/figtree-research.js`, `figtree-pipeline.js`; `docs/FAILURE-MODES.md` |
 | Design system | `design/figtree-ds/` (React, tsup), `.design-sync/` (config, previews, notes, conventions), project https://claude.ai/design/p/c8a71e84-1610-4de9-92c2-2d4debce8292 |
 | Swap the design | `design/contract/README.md`, `design/contract/figure-program.schema.json`, `figtree/contract.py`, `design/figtree-ds/src/contract.ts` |
 
@@ -82,7 +83,11 @@ State on handoff:
 - The `figtree-refine` workflow was run live once (4 agents, 100 s): 9.19 → 9.86 → 10.0; the
   result and trajectories are in `examples/figtree/design/workflow-refine/`. The other four
   workflows were dry-run only (`docs/workflows/README.md`, "Validation").
+- Tests: 217 pass. The Langflow run is the reference for a documentation corpus: research 4.3 min
+  on Sonnet/Haiku, ten figures without a critical issue after the routing fixes.
 - Open items, in priority order:
+  0. `docs/FAILURE-MODES.md` row 13: the icon reviewer scores most concept icons 3-6 after one
+     repair; the workflow now runs three defect-fed rounds, not yet exercised live.
   1. `icon.mirrored-magnifier` is the one probe only the judge catches (metaphor chirality).
   2. Motion checks are CSS-static; rendered-frame checks (token leaves its path, reveal order
      at a frame) are not implemented.

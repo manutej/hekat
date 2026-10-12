@@ -13,6 +13,7 @@ is the project-scale trajectory; `examples/figtree/animated/NOTES.md`, `icons/NO
 | 5 Design | X-crossings, nested wrapping, shared lanes, short first rows, paper look on teaching material | Presets (paper, teaching, slide), barycenter ordering, lane allocation, DP row balancing, preset-sized markers; judge 5.6 → 6.4 on the self-application figure |
 | 6 Fold + package | Findings were tables, loops were hand-run, knowledge was in chat | Fold worker (recall 0.99, precision 1.00, 197 tests); five workflow scripts + `figtree digest`; seven skills with references/assets; React design system synced to Claude Design; showcase v4 |
 | 7 Handoff | Design was welded to the pipeline; process lived in the transcript | `FigureProgram` contract (schema, Python, TypeScript, `ProgramView`); `figtree-process` skill; `figtree-handoff` workflow; `docs/HANDOFF.md`; live run of `figtree-refine` (9.19 → 10.0) |
+| 8 Documentation corpus | Agents must work from docs, not a paper, with smaller models; every small-model run drew arrows through blocks | Spec format + `figtree spec check` (verbatim evidence, grounder recovery); `figtree-research` (scout, researcher, mechanical checker, fixer, synthesizer) and `figtree-pipeline`; model tiers on every workflow; Langflow run (49 pages, 9 specs, 10 figures 8.9-10, 8 icons, page); worker halo obstacles, grid router and repair pass so an arrow never crosses a block; `docs/FAILURE-MODES.md` as the running log |
 
 What each round taught about the process itself:
 
@@ -21,3 +22,4 @@ What each round taught about the process itself:
 - A rubric is an artifact; its probes are its tests (round 4) and its fold is its refinement (6).
 - Packaging is not the last step but part of every round; what is not in a skill, a workflow or
   a document is lost at the next compaction (rounds 6, 7).
+- A defect every small model reproduces is a tool bug, not a prompt problem: fix it in the worker and log it where the agents read (round 8).
