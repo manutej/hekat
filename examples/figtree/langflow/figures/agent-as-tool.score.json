@@ -1,0 +1,33 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 10.0
+  },
+  "overall": 10.0,
+  "issues": [],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.62,
+    "aspect": 2.54,
+    "mean_detour": 1.14,
+    "crossings": 0,
+    "forward_ratio": 1.0,
+    "palette_size": 1
+  },
+  "unit": "agent-as-tool",
+  "title": "A manager agent delegating to other agents",
+  "source": "examples/figtree/langflow/specs/agent-as-tool.md",
+  "svg": "/home/user/hekat/examples/figtree/langflow/figures/agent-as-tool.svg",
+  "report": "/home/user/hekat/examples/figtree/langflow/figures/agent-as-tool.report.json",
+  "style": "teaching",
+  "components": 4,
+  "flows": 3,
+  "faithfulness_failures": []
+}

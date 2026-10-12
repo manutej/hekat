@@ -1,0 +1,5428 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    },
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n6": {
+        "id": "n6",
+        "parent_id": "n4",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 72,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n4",
+        "description": "Langflow Storage",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Langflow Storage"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n4",
+        "description": "External Application",
+        "canvas": {
+          "w": 224,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 224,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "External Application"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 176
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Chat Input, Langflow Storage, External Application",
+        "canvas": {
+          "w": 288,
+          "h": 256
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 72,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 232,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 256,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n4",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 72,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n4",
+            "description": "Langflow Storage",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Langflow Storage"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n4",
+            "description": "External Application",
+            "canvas": {
+              "w": 224,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 224,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 224,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "External Application"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 176
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 288,
+          "h": 256
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input",
+          "Langflow Storage",
+          "External Application"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n5",
+        "description": "Agent",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n10": {
+        "id": "n10",
+        "parent_id": "n5",
+        "description": "Workflow API",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Workflow API"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Agent, Workflow API",
+        "canvas": {
+          "w": 208,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 152,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n9",
+            "parent_id": "n5",
+            "description": "Agent",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n10",
+            "parent_id": "n5",
+            "description": "Workflow API",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Workflow API"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 208,
+          "h": 184
+        },
+        "residuals": [],
+        "components": [
+          "Agent",
+          "Workflow API"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 360,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Chat Input, Langflow Storage, External Application, Agent, Workflow API",
+        "canvas": {
+          "w": 600,
+          "h": 320
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 104,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 248,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 176,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 176,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 88,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 264,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 176,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 176,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 288,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 176,
+            "rel_y": 208,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 176,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 416,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 512,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 464,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 464,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 392,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 536,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 464,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 464,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Chat Input, Langflow Storage, External Application",
+            "canvas": {
+              "w": 288,
+              "h": 256
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 72,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 216,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 144,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 144,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 56,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 232,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 144,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 144,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 256,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 144,
+                "rel_y": 176,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 144,
+                "rel_y": 224,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n4",
+                "description": "Chat Input",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Input"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 72,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n4",
+                "description": "Langflow Storage",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Storage"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Langflow Storage"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 56,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n4",
+                "description": "External Application",
+                "canvas": {
+                  "w": 224,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 224,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 112,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 112,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External Application"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 224,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "External Application"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 176
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 288,
+              "h": 256
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input",
+              "Langflow Storage",
+              "External Application"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Agent, Workflow API",
+            "canvas": {
+              "w": 208,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 56,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 152,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n9",
+                "parent_id": "n5",
+                "description": "Agent",
+                "canvas": {
+                  "w": 96,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 96,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 48,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 48,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 96,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Agent"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 56,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n10",
+                "parent_id": "n5",
+                "description": "Workflow API",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n10.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Workflow API"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Workflow API"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 104
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 208,
+              "h": 184
+            },
+            "residuals": [],
+            "components": [
+              "Agent",
+              "Workflow API"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 360,
+              "y": 72
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 600,
+          "h": 320
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Chat Input",
+          "Langflow Storage",
+          "External Application",
+          "Agent",
+          "Workflow API"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n11": {
+        "id": "n11",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n12": {
+        "id": "n12",
+        "parent_id": "n3",
+        "description": "Tool",
+        "canvas": {
+          "w": 80,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Tool"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 64,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n13": {
+        "id": "n13",
+        "parent_id": "n3",
+        "description": "Flow",
+        "canvas": {
+          "w": 80,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 80,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 40,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 40,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Flow"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 64,
+          "y": 176
+        },
+        "svg_fragment": null
+      },
+      "n14": {
+        "id": "n14",
+        "parent_id": "n3",
+        "description": "MCP Server",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Chat Output, Tool, Flow, MCP Server",
+        "canvas": {
+          "w": 376,
+          "h": 256
+        },
+        "ports": [
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          },
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 344,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 280,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 280,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n11",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n12",
+            "parent_id": "n3",
+            "description": "Tool",
+            "canvas": {
+              "w": 80,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n12.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Tool"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 64,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n13",
+            "parent_id": "n3",
+            "description": "Flow",
+            "canvas": {
+              "w": 80,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n13.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.right",
+                "side": "right",
+                "rel_x": 80,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.top",
+                "side": "top",
+                "rel_x": 40,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.bottom",
+                "side": "bottom",
+                "rel_x": 40,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 80,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Flow"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 64,
+              "y": 176
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n14",
+            "parent_id": "n3",
+            "description": "MCP Server",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n14.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 376,
+          "h": 256
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output",
+          "Tool",
+          "Flow",
+          "MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 672,
+          "y": 64
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "How Langflow agent workflows coordinate",
+        "canvas": {
+          "w": 1080,
+          "h": 384
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 136,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 280,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 208,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 208,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 120,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 296,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 208,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 208,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Storage"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 96,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 320,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 208,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External Application"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 208,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External Application"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 448,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 544,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 496,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 496,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 424,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 568,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 496,
+            "rel_y": 208,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 496,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Workflow API"
+          },
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 704,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 848,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 776,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 776,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n12.left",
+            "side": "left",
+            "rel_x": 736,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.right",
+            "side": "right",
+            "rel_x": 816,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.top",
+            "side": "top",
+            "rel_x": 776,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool"
+          },
+          {
+            "id": "n12.bottom",
+            "side": "bottom",
+            "rel_x": 776,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool"
+          },
+          {
+            "id": "n13.left",
+            "side": "left",
+            "rel_x": 736,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.right",
+            "side": "right",
+            "rel_x": 816,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.top",
+            "side": "top",
+            "rel_x": 776,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow"
+          },
+          {
+            "id": "n13.bottom",
+            "side": "bottom",
+            "rel_x": 776,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow"
+          },
+          {
+            "id": "n14.left",
+            "side": "left",
+            "rel_x": 888,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.right",
+            "side": "right",
+            "rel_x": 1016,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.top",
+            "side": "top",
+            "rel_x": 952,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Server"
+          },
+          {
+            "id": "n14.bottom",
+            "side": "bottom",
+            "rel_x": 952,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Server"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Chat Input, Langflow Storage, External Application, Agent, Workflow API",
+            "canvas": {
+              "w": 600,
+              "h": 320
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 104,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 248,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 176,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 176,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 88,
+                "rel_y": 160,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 264,
+                "rel_y": 160,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 176,
+                "rel_y": 136,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 176,
+                "rel_y": 184,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Storage"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 64,
+                "rel_y": 232,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 288,
+                "rel_y": 232,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 176,
+                "rel_y": 208,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External Application"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 176,
+                "rel_y": 256,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External Application"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 416,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 512,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 464,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 464,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 392,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 536,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 464,
+                "rel_y": 176,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Workflow API"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 464,
+                "rel_y": 224,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Workflow API"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Chat Input, Langflow Storage, External Application",
+                "canvas": {
+                  "w": 288,
+                  "h": 256
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 72,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 216,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 144,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 144,
+                    "rel_y": 80,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 56,
+                    "rel_y": 128,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 232,
+                    "rel_y": 128,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 144,
+                    "rel_y": 104,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 144,
+                    "rel_y": 152,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Storage"
+                  },
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 32,
+                    "rel_y": 200,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 256,
+                    "rel_y": 200,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 144,
+                    "rel_y": 176,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External Application"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 144,
+                    "rel_y": 224,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External Application"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [
+                  {
+                    "id": "n6",
+                    "parent_id": "n4",
+                    "description": "Chat Input",
+                    "canvas": {
+                      "w": 144,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n6.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Chat Input"
+                      },
+                      {
+                        "id": "n6.right",
+                        "side": "right",
+                        "rel_x": 144,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Chat Input"
+                      },
+                      {
+                        "id": "n6.top",
+                        "side": "top",
+                        "rel_x": 72,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Chat Input"
+                      },
+                      {
+                        "id": "n6.bottom",
+                        "side": "bottom",
+                        "rel_x": 72,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Chat Input"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 144,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Chat Input"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 72,
+                      "y": 32
+                    },
+                    "svg_fragment": null
+                  },
+                  {
+                    "id": "n7",
+                    "parent_id": "n4",
+                    "description": "Langflow Storage",
+                    "canvas": {
+                      "w": 176,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n7.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Langflow Storage"
+                      },
+                      {
+                        "id": "n7.right",
+                        "side": "right",
+                        "rel_x": 176,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Langflow Storage"
+                      },
+                      {
+                        "id": "n7.top",
+                        "side": "top",
+                        "rel_x": 88,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Langflow Storage"
+                      },
+                      {
+                        "id": "n7.bottom",
+                        "side": "bottom",
+                        "rel_x": 88,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Langflow Storage"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 176,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Langflow Storage"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 56,
+                      "y": 104
+                    },
+                    "svg_fragment": null
+                  },
+                  {
+                    "id": "n8",
+                    "parent_id": "n4",
+                    "description": "External Application",
+                    "canvas": {
+                      "w": 224,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n8.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "External Application"
+                      },
+                      {
+                        "id": "n8.right",
+                        "side": "right",
+                        "rel_x": 224,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "External Application"
+                      },
+                      {
+                        "id": "n8.top",
+                        "side": "top",
+                        "rel_x": 112,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "External Application"
+                      },
+                      {
+                        "id": "n8.bottom",
+                        "side": "bottom",
+                        "rel_x": 112,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "External Application"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 224,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "External Application"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 32,
+                      "y": 176
+                    },
+                    "svg_fragment": null
+                  }
+                ],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 288,
+                  "h": 256
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Input",
+                  "Langflow Storage",
+                  "External Application"
+                ],
+                "layout": "vertical",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Agent, Workflow API",
+                "canvas": {
+                  "w": 208,
+                  "h": 184
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 56,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 152,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 104,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 104,
+                    "rel_y": 80,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n10.left",
+                    "side": "left",
+                    "rel_x": 32,
+                    "rel_y": 128,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 128,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.top",
+                    "side": "top",
+                    "rel_x": 104,
+                    "rel_y": 104,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Workflow API"
+                  },
+                  {
+                    "id": "n10.bottom",
+                    "side": "bottom",
+                    "rel_x": 104,
+                    "rel_y": 152,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Workflow API"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [
+                  {
+                    "id": "n9",
+                    "parent_id": "n5",
+                    "description": "Agent",
+                    "canvas": {
+                      "w": 96,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n9.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Agent"
+                      },
+                      {
+                        "id": "n9.right",
+                        "side": "right",
+                        "rel_x": 96,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Agent"
+                      },
+                      {
+                        "id": "n9.top",
+                        "side": "top",
+                        "rel_x": 48,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Agent"
+                      },
+                      {
+                        "id": "n9.bottom",
+                        "side": "bottom",
+                        "rel_x": 48,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Agent"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 96,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Agent"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 56,
+                      "y": 32
+                    },
+                    "svg_fragment": null
+                  },
+                  {
+                    "id": "n10",
+                    "parent_id": "n5",
+                    "description": "Workflow API",
+                    "canvas": {
+                      "w": 144,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n10.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Workflow API"
+                      },
+                      {
+                        "id": "n10.right",
+                        "side": "right",
+                        "rel_x": 144,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Workflow API"
+                      },
+                      {
+                        "id": "n10.top",
+                        "side": "top",
+                        "rel_x": 72,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Workflow API"
+                      },
+                      {
+                        "id": "n10.bottom",
+                        "side": "bottom",
+                        "rel_x": 72,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Workflow API"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 144,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Workflow API"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 32,
+                      "y": 104
+                    },
+                    "svg_fragment": null
+                  }
+                ],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 208,
+                  "h": 184
+                },
+                "residuals": [],
+                "components": [
+                  "Agent",
+                  "Workflow API"
+                ],
+                "layout": "vertical",
+                "offset": {
+                  "x": 360,
+                  "y": 72
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 600,
+              "h": 320
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "excessive empty space around content",
+                "code_anchor": "svg",
+                "fix_instruction": "shrink canvas to content + padding",
+                "round_introduced": 2
+              }
+            ],
+            "components": [
+              "Chat Input",
+              "Langflow Storage",
+              "External Application",
+              "Agent",
+              "Workflow API"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Chat Output, Tool, Flow, MCP Server",
+            "canvas": {
+              "w": 376,
+              "h": 256
+            },
+            "ports": [
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n12.left",
+                "side": "left",
+                "rel_x": 64,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool"
+              },
+              {
+                "id": "n12.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool"
+              },
+              {
+                "id": "n13.left",
+                "side": "left",
+                "rel_x": 64,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 176,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow"
+              },
+              {
+                "id": "n13.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 224,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow"
+              },
+              {
+                "id": "n14.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.right",
+                "side": "right",
+                "rel_x": 344,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.top",
+                "side": "top",
+                "rel_x": 280,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Server"
+              },
+              {
+                "id": "n14.bottom",
+                "side": "bottom",
+                "rel_x": 280,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Server"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n11",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n11.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n11.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n11.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n11.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n12",
+                "parent_id": "n3",
+                "description": "Tool",
+                "canvas": {
+                  "w": 80,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n12.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Tool"
+                  },
+                  {
+                    "id": "n12.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Tool"
+                  },
+                  {
+                    "id": "n12.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Tool"
+                  },
+                  {
+                    "id": "n12.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Tool"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Tool"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 64,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n13",
+                "parent_id": "n3",
+                "description": "Flow",
+                "canvas": {
+                  "w": 80,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n13.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n13.right",
+                    "side": "right",
+                    "rel_x": 80,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n13.top",
+                    "side": "top",
+                    "rel_x": 40,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Flow"
+                  },
+                  {
+                    "id": "n13.bottom",
+                    "side": "bottom",
+                    "rel_x": 40,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Flow"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 80,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Flow"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 64,
+                  "y": 176
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n14",
+                "parent_id": "n3",
+                "description": "MCP Server",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n14.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n14.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n14.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Server"
+                  },
+                  {
+                    "id": "n14.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Server"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "MCP Server"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 104
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 376,
+              "h": 256
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output",
+              "Tool",
+              "Flow",
+              "MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 672,
+              "y": 64
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 384
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Chat Input",
+          "Agent",
+          "Chat Output",
+          "Tool",
+          "MCP Server",
+          "Langflow Storage",
+          "Flow",
+          "External Application",
+          "Workflow API"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n9": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n10": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n11": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n12": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n13": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n14": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n4",
+        "n7"
+      ],
+      [
+        "n4",
+        "n8"
+      ],
+      [
+        "n5",
+        "n9"
+      ],
+      [
+        "n5",
+        "n10"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n3",
+        "n11"
+      ],
+      [
+        "n3",
+        "n12"
+      ],
+      [
+        "n3",
+        "n13"
+      ],
+      [
+        "n3",
+        "n14"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n4->n6": true,
+      "n4->n7": true,
+      "n4->n8": true,
+      "n5->n9": true,
+      "n5->n10": true,
+      "n2->n4": true,
+      "n2->n5": true,
+      "n3->n11": true,
+      "n3->n12": true,
+      "n3->n13": true,
+      "n3->n14": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n6.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Chat Input",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "How Langflow agent workflows coordinate",
+    "components": [
+      {
+        "name": "Chat Input",
+        "evidence_span": "Chat Input",
+        "kind": "terminal",
+        "icon": "user"
+      },
+      {
+        "name": "Agent",
+        "evidence_span": "Agent",
+        "kind": "block",
+        "icon": "gear"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "text"
+      },
+      {
+        "name": "Tool",
+        "evidence_span": "Tool",
+        "kind": "block",
+        "icon": "wrench"
+      },
+      {
+        "name": "MCP Server",
+        "evidence_span": "MCP Server",
+        "kind": "block",
+        "icon": "ports"
+      },
+      {
+        "name": "Langflow Storage",
+        "evidence_span": "Langflow Storage",
+        "kind": "store",
+        "icon": "database"
+      },
+      {
+        "name": "Flow",
+        "evidence_span": "Flow",
+        "kind": "block",
+        "icon": "layers"
+      },
+      {
+        "name": "External Application",
+        "evidence_span": "External Application",
+        "kind": "actor",
+        "icon": "document"
+      },
+      {
+        "name": "Workflow API",
+        "evidence_span": "Workflow API",
+        "kind": "block",
+        "icon": "render"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Chat Input",
+        "to": "Agent",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Agent \u2192 Chat Output"
+      },
+      {
+        "from": "Agent",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Agent \u2192 Chat Output"
+      },
+      {
+        "from": "Agent",
+        "to": "Tool",
+        "type": "control",
+        "evidence_span": "Agent \u2192 Tool"
+      },
+      {
+        "from": "Tool",
+        "to": "MCP Server",
+        "type": "control",
+        "evidence_span": "Tool \u2192 MCP Server"
+      },
+      {
+        "from": "Langflow Storage",
+        "to": "Agent",
+        "type": "data",
+        "evidence_span": "Langflow Storage \u2192 Agent"
+      },
+      {
+        "from": "Flow",
+        "to": "MCP Server",
+        "type": "data",
+        "evidence_span": "Flow \u2192 MCP Server"
+      },
+      {
+        "from": "External Application",
+        "to": "Workflow API",
+        "type": "control",
+        "evidence_span": "External Application \u2192 Workflow API"
+      },
+      {
+        "from": "Workflow API",
+        "to": "Flow",
+        "type": "control",
+        "evidence_span": "Workflow API \u2192 Flow"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n7 round 1: 1 defect(s)",
+    "n2 round 1: 1 defect(s)",
+    "n2 round 2: 1 defect(s)",
+    "n2: repair made no progress; recording residuals",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 14,
+  "unit": {
+    "id": "00-overview",
+    "source": "examples/figtree/langflow/specs/00-overview.md",
+    "title": "How Langflow agent workflows coordinate",
+    "span": [
+      1,
+      57
+    ],
+    "chars": 4838,
+    "est_components": 9,
+    "est_flows": 8
+  }
+}

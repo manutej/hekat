@@ -1,0 +1,131 @@
+{
+  "out_dir": "/home/user/hekat/examples/figtree/langflow/figures",
+  "rubric": "teaching",
+  "style": "teaching",
+  "inputs": [
+    "/home/user/hekat/examples/figtree/langflow/specs"
+  ],
+  "units": [
+    {
+      "id": "00-overview",
+      "source": "examples/figtree/langflow/specs/00-overview.md",
+      "title": "How Langflow agent workflows coordinate",
+      "span": [
+        1,
+        57
+      ],
+      "chars": 4838,
+      "est_components": 9,
+      "est_flows": 8
+    },
+    {
+      "id": "a2a-agents",
+      "source": "examples/figtree/langflow/specs/a2a-agents.md",
+      "title": "Agents talking to agents over A2A",
+      "span": [
+        1,
+        46
+      ],
+      "chars": 3862,
+      "est_components": 8,
+      "est_flows": 7
+    },
+    {
+      "id": "agent-as-tool",
+      "source": "examples/figtree/langflow/specs/agent-as-tool.md",
+      "title": "A manager agent delegating to other agents",
+      "span": [
+        1,
+        32
+      ],
+      "chars": 2243,
+      "est_components": 4,
+      "est_flows": 3
+    },
+    {
+      "id": "agent-with-tools",
+      "source": "examples/figtree/langflow/specs/agent-with-tools.md",
+      "title": "An agent calling tools",
+      "span": [
+        1,
+        40
+      ],
+      "chars": 2798,
+      "est_components": 6,
+      "est_flows": 5
+    },
+    {
+      "id": "human-in-the-loop",
+      "source": "examples/figtree/langflow/specs/human-in-the-loop.md",
+      "title": "Pausing a Flow for a Human",
+      "span": [
+        1,
+        39
+      ],
+      "chars": 2955,
+      "est_components": 5,
+      "est_flows": 5
+    },
+    {
+      "id": "loops-and-routing",
+      "source": "examples/figtree/langflow/specs/loops-and-routing.md",
+      "title": "Branching, looping and sub-flows inside a flow",
+      "span": [
+        1,
+        54
+      ],
+      "chars": 5253,
+      "est_components": 9,
+      "est_flows": 7
+    },
+    {
+      "id": "mcp-client",
+      "source": "examples/figtree/langflow/specs/mcp-client.md",
+      "title": "An agent using an MCP server's tools",
+      "span": [
+        1,
+        36
+      ],
+      "chars": 2707,
+      "est_components": 5,
+      "est_flows": 4
+    },
+    {
+      "id": "mcp-server",
+      "source": "examples/figtree/langflow/specs/mcp-server.md",
+      "title": "Flows exposed as tools to MCP clients",
+      "span": [
+        1,
+        41
+      ],
+      "chars": 3368,
+      "est_components": 6,
+      "est_flows": 5
+    },
+    {
+      "id": "memory-and-sessions",
+      "source": "examples/figtree/langflow/specs/memory-and-sessions.md",
+      "title": "Conversation memory across turns and sessions",
+      "span": [
+        1,
+        44
+      ],
+      "chars": 3625,
+      "est_components": 7,
+      "est_flows": 9
+    },
+    {
+      "id": "run-flow-api",
+      "source": "examples/figtree/langflow/specs/run-flow-api.md",
+      "title": "Running a Flow from an Application through the API",
+      "span": [
+        1,
+        46
+      ],
+      "chars": 3750,
+      "est_components": 7,
+      "est_flows": 8
+    }
+  ],
+  "skipped": []
+}

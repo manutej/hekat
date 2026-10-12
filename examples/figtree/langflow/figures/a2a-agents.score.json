@@ -1,0 +1,58 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 7.5
+  },
+  "overall": 9.64,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 936,
+        "height": 305
+      }
+    },
+    {
+      "check_id": "compactness.aspect",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "canvas aspect 2.72 outside the teaching material range 1.0-2.4 (banner or tower shape)",
+      "code_anchor": "svg",
+      "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+      "penalty": 1.5,
+      "auto_edit": null
+    }
+  ],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.629,
+    "aspect": 2.72,
+    "mean_detour": 1.04,
+    "crossings": 0,
+    "forward_ratio": 1.0,
+    "palette_size": 1
+  },
+  "unit": "a2a-agents",
+  "title": "Agents talking to agents over A2A",
+  "source": "examples/figtree/langflow/specs/a2a-agents.md",
+  "svg": "/home/user/hekat/examples/figtree/langflow/figures/a2a-agents.svg",
+  "report": "/home/user/hekat/examples/figtree/langflow/figures/a2a-agents.report.json",
+  "style": "teaching",
+  "components": 8,
+  "flows": 7,
+  "faithfulness_failures": []
+}

@@ -496,8 +496,8 @@ class QualityCritic:
         if len(blocks) > 6 and not groups and R.medium in DIAGRAM_MEDIA:
             add("topology_accuracy", "warning", f"{len(blocks)} blocks without any grouping", "svg", "group related blocks into labelled containers", 1.0, check="topology.ungrouped")
         for g in groups:
-            kids = [e for e in prog.elements if e.parent_id == g.id and e.tag in ("rect", "g", "text")]
-            if not any(k.tag in ("rect", "g") for k in kids):
+            kids = [e for e in prog.elements if e.parent_id == g.id and e.tag in ("rect", "g", "text", "path", "ellipse", "polygon", "use")]
+            if not any(k.tag in ("rect", "g", "path", "ellipse", "polygon") for k in kids):  # a leaf's shape may be a path (store, document, pill)
                 add("topology_accuracy", "warning", f"empty container {g.id}", g.id, "remove the empty container", 0.5, {"op": "delete", "id": g.id}, check="topology.empty_container")
         if R.medium in DIAGRAM_MEDIA:
             self._container_checks(prog, blocks, texts, add)

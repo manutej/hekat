@@ -149,7 +149,9 @@ def plan(inputs: Sequence[str], out_dir: str, rubric: str = "teaching", style: O
         stem = slug(os.path.splitext(os.path.basename(path))[0]) or "doc"
         sections = split_sections(lines)
         has_h2 = any(_HEADING.match(l) and _HEADING.match(l).group(1) == "##" for l in lines)
-        whole = len(text) <= small_file_chars or not has_h2
+        # a spec doc (SPEC-FORMAT.md: "## Components" + "## Flows") is one figure, whatever its length
+        is_spec = any(l.strip().lower() == "## components" for l in lines) and any(l.strip().lower() == "## flows" for l in lines)
+        whole = is_spec or len(text) <= small_file_chars or not has_h2
         candidates: List[Tuple[str, int, int, str]]  # title, start, end, id-base
         if whole:
             title = sections[0][0] if sections else stem
@@ -186,8 +188,8 @@ def _figtree(style: str, render: bool, max_aspect: float = 3.0):
 
     limits = Limits()
     ft = FigTree(limits=limits, render=render,
-                 generator=RuleBasedGenerator(max_depth=limits.max_depth),
-                 worker=Worker(spacing_iterations=limits.spacing_iterations, max_aspect=max_aspect))
+                 generator=RuleBasedGenerator(max_depth=limits.max_depth, icons=style != "paper", shapes=True),
+                 worker=Worker(spacing_iterations=limits.spacing_iterations, max_aspect=min(max_aspect, 2.4) if style != "paper" else max_aspect))
     if style != "paper":
         from figtree.styles import get_preset
 

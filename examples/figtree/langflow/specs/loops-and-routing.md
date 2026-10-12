@@ -3,21 +3,21 @@
 If-Else and Smart Router send a message down one branch, Loop repeats a chain of components for every item in a list, and Run Flow runs another flow as a step. Build them when one linear path is not enough.
 
 ## Components
-- **Item Loop** (kind: process, icon: loop): iterates over a list, sending one item at a time out of the Item port and the aggregated result out of the Done port.
+- **Loop** (kind: process, icon: loop): iterates over a list, sending one item at a time out of the Item port and the aggregated result out of the Done port.
 - **Type Convert** (kind: block, icon: gear): in the CSV example, turns each row into a Message.
 - **Structured Output** (kind: block, icon: layers): turns each Message into structured data and returns it to the Loop.
 - **Chroma DB** (kind: store, icon: database): receives the aggregated list from the Done port.
-- **Conditional Router** (kind: decision, icon: split): routes a message to True or False by comparing two strings.
+- **If-Else** (kind: decision, icon: split): routes a message to True or False by comparing two strings.
 - **Smart Router** (kind: decision, icon: tree): the LLM-powered variation of If-Else that routes by category.
 - **Language Model** (kind: block, icon: bolt): categorizes input for the Smart Router, or answers on the True branch of the If-Else.
 - **Run Flow** (kind: process, icon: merge): runs another Langflow flow as a subprocess of the current flow.
 - **Agent** (kind: actor, icon: wrench): can run a Run Flow component as a tool.
 
 ## Flows
-Item Loop → Type Convert → Structured Output (control): the Item port passes each row through the chain.
-Structured Output → Item Loop (control): the last component in the chain returns to the Looping port for the next item.
-Item Loop → Chroma DB (control): when no items are left, the Done port sends the aggregated result on.
-Conditional Router → Language Model (control): the True output port connects to the Language Model Input port.
+Loop → Type Convert → Structured Output (control): the Item port passes each row through the chain.
+Structured Output → Loop (control): the last component in the chain returns to the Looping port for the next item.
+Loop → Chroma DB (control): when no items are left, the Done port sends the aggregated result on.
+If-Else → Language Model (control): the True output port connects to the Language Model Input port.
 Smart Router → Language Model (control): the Smart Router uses the connected model to pick a route.
 Agent → Run Flow (control): the agent runs the subflow as a tool.
 
@@ -35,20 +35,20 @@ Agent → Run Flow (control): the agent runs the subflow as a tool.
 - The pages do not name the component that receives the Run Flow outputs.
 
 ```evidence
-Item Loop: "The **Loop** component iterates over a list of input by passing individual items to other components attached at the **Item** output port" (Components_loop.mdx)
+Loop: "The **Loop** component iterates over a list of input by passing individual items to other components attached at the **Item** output port" (Components_loop.mdx)
 Type Convert: "the **Item** port passes each row to a **Type Convert** component to convert the row into a `Message` object" (Components_loop.mdx)
 Structured Output: "passes the `Message` to a **Structured Output** component to be processed into structured data" (Components_loop.mdx)
 Chroma DB: "loads the aggregated list of structured data into a Chroma DB database through the **Chroma DB** component connected to the **Done** port" (Components_loop.mdx)
-Conditional Router: "The **If-Else** component is a conditional router that routes messages by comparing two strings." (Components_if-else.mdx)
+If-Else: "The **If-Else** component is a conditional router that routes messages by comparing two strings." (Components_if-else.mdx)
 Smart Router: "The **Smart Router** component is an LLM-powered variation of the [**If-Else** component](/if-else)." (Components_smart-router.mdx)
 Language Model: "the **Smart Router** uses a connected [**Language Model** component](/components-models) to categorize and route incoming messages." (Components_smart-router.mdx)
 Run Flow: "The **Run Flow** component runs another Langflow flow as a subprocess of the current flow." (Components_run-flow.mdx)
 Agent: "attach flows to [**Agent** components](/components-agents) as [tools for agents](/agents-tools) to run as needed" (Components_run-flow.mdx)
-Item Loop → Type Convert: "the **Item** port passes each row to a **Type Convert** component to convert the row into a `Message` object" (Components_loop.mdx)
+Loop → Type Convert: "the **Item** port passes each row to a **Type Convert** component to convert the row into a `Message` object" (Components_loop.mdx)
 Type Convert → Structured Output: "passes the `Message` to a **Structured Output** component to be processed into structured data" (Components_loop.mdx)
-Structured Output → Item Loop: "The final component in the **Item** loop connects back to the **Loop** component's **Looping** port to process the next item." (Components_loop.mdx)
-Item Loop → Chroma DB: "the **Loop** component passes the aggregated result of all looping to the component connected to the **Done** port." (Components_loop.mdx)
-Conditional Router → Language Model: "Connect the **If-Else** component's **True** output port to the **Language Model** component's **Input** port." (Components_if-else.mdx)
+Structured Output → Loop: "The final component in the **Item** loop connects back to the **Loop** component's **Looping** port to process the next item." (Components_loop.mdx)
+Loop → Chroma DB: "the **Loop** component passes the aggregated result of all looping to the component connected to the **Done** port." (Components_loop.mdx)
+If-Else → Language Model: "Connect the **If-Else** component's **True** output port to the **Language Model** component's **Input** port." (Components_if-else.mdx)
 Smart Router → Language Model: "the **Smart Router** uses a connected [**Language Model** component](/components-models) to categorize and route incoming messages." (Components_smart-router.mdx)
 Agent → Run Flow: "attach flows to [**Agent** components](/components-agents) as [tools for agents](/agents-tools) to run as needed" (Components_run-flow.mdx)
 ```

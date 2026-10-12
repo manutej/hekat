@@ -1,0 +1,1076 @@
+{
+  "residual_defects": [],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Tool Mode",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Mode"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Tool Mode"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 56
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Tool Actions",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Actions"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Tool Actions"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 128
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Agent",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 232,
+          "y": 96
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Agent Tool",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Tool"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Agent Tool"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 368,
+          "y": 96
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "A manager agent delegating to other agents",
+        "canvas": {
+          "w": 528,
+          "h": 208
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Mode"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tool Actions"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 232,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 328,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 280,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 280,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 368,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 496,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 432,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Tool"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 432,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Tool"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Tool Mode",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool Mode"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool Mode"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool Mode"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool Mode"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Tool Mode"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 56
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Tool Actions",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool Actions"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool Actions"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tool Actions"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tool Actions"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Tool Actions"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 128
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Agent",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 232,
+              "y": 96
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Agent Tool",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Tool"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Tool"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Tool"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Tool"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Agent Tool"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 368,
+              "y": 96
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 528,
+          "h": 208
+        },
+        "residuals": [],
+        "components": [
+          "Tool Mode",
+          "Agent Tool",
+          "Tool Actions",
+          "Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Tool Mode",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "A manager agent delegating to other agents",
+    "components": [
+      {
+        "name": "Tool Mode",
+        "evidence_span": "Tool Mode",
+        "kind": "process",
+        "icon": "wrench"
+      },
+      {
+        "name": "Agent Tool",
+        "evidence_span": "Agent Tool",
+        "kind": "block",
+        "icon": "gear"
+      },
+      {
+        "name": "Tool Actions",
+        "evidence_span": "Tool Actions",
+        "kind": "document",
+        "icon": "text"
+      },
+      {
+        "name": "Agent",
+        "evidence_span": "Agent",
+        "kind": "block",
+        "icon": "gear"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Tool Mode",
+        "to": "Agent Tool",
+        "type": "data",
+        "evidence_span": "Tool Mode \u2192 Agent Tool"
+      },
+      {
+        "from": "Tool Actions",
+        "to": "Agent",
+        "type": "data",
+        "evidence_span": "Tool Actions \u2192 Agent"
+      },
+      {
+        "from": "Agent",
+        "to": "Agent Tool",
+        "type": "control",
+        "evidence_span": "Agent \u2192 Agent Tool"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n3 round 1: 1 defect(s)"
+  ],
+  "node_count": 5,
+  "unit": {
+    "id": "agent-as-tool",
+    "source": "examples/figtree/langflow/specs/agent-as-tool.md",
+    "title": "A manager agent delegating to other agents",
+    "span": [
+      1,
+      32
+    ],
+    "chars": 2243,
+    "est_components": 4,
+    "est_flows": 3
+  }
+}

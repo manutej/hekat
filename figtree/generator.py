@@ -225,6 +225,10 @@ class RuleBasedGenerator:
         hint = (getattr(self, "hints", None) or {}).get(names[0], {})
         kind = kind_for(names[0], hint.get("kind", "")) if (self.shapes or hint.get("kind")) else "block"
         icon = (hint.get("icon") if hint.get("icon") in ICONS else None) or (icon_for(names[0]) if self.icons else None)
+        if kind == "actor":
+            # a person is drawn as a pill with the user glyph: the silhouette shape has no room for a
+            # label inside its bbox and collides with the icon
+            kind, icon = "terminal", (icon or "user")
         inset_l, inset_r = text_inset(kind)
         icon_w = 20 if icon else 0  # glyph at x=8..24, label from x=32: 20px more than a plain block
         # compact academic blocks (paper: ~60-100px wide, 20-30px tall); 8-grid forces 32 tall
