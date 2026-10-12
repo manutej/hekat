@@ -1,0 +1,14 @@
+{
+  "id": "icon.crossing-asterisk",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "icon.crossing_density"
+  ],
+  "expect_silent": [
+    "flow.crossings",
+    "flow.diagonal"
+  ],
+  "rationale": "Four 2px strokes crossing at one point with no gap: eight spokes meet in a centre blob about 4px across (a filled circle at 16px). flow.crossings only looks at data-flow/marker paths, so icon strokes are never tested. Check: count pairwise stroke intersections; flag more than two strokes through one ~2px cell, or any crossing of non-perpendicular strokes.",
+  "source": "adversary-icon"
+}

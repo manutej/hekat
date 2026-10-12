@@ -1,0 +1,12 @@
+{
+  "id": "data-figure.pie_paths",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "chart.pie"
+  ],
+  "expect_silent": [],
+  "rationale": "A pie chart built from four arc paths. AXIS_WORDS matches 'per' and 'count' in the subtitle and footnote, so coverage.axis_labels is silent, and nothing else measures the chart type. Proposed: three or more filled paths with an A command that start from the same M point form a pie; the data-viz canon asks for a sorted bar chart instead.",
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

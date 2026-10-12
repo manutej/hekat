@@ -1,0 +1,247 @@
+{
+  "rubric": "slide",
+  "initial": {
+    "rubric": "slide",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 3.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 2.0
+    },
+    "overall": 7.5,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "critical",
+        "visual_description": "content overflows the left edge by 52px",
+        "code_anchor": "svg",
+        "fix_instruction": "centre the content, then shorten or shrink what still overflows",
+        "penalty": 3.0,
+        "auto_edit": {
+          "op": "center_content"
+        }
+      },
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 150px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "centre the content on the canvas",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "center_content"
+        }
+      },
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 150px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "centre the content on the canvas",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "center_content"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "e2-text font size 12px below the presentation minimum 18px",
+        "code_anchor": "e2-text",
+        "fix_instruction": "raise font size to at least 18px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e2-text",
+          "attr": "font-size",
+          "value": "18"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e2-text has 10 words (limit 6)",
+        "code_anchor": "e2-text",
+        "fix_instruction": "shorten to a keyword label",
+        "penalty": 0.8,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e2-text contrast 3.1:1 below 4.5:1",
+        "code_anchor": "e2-text",
+        "fix_instruction": "use #333333 text on #D5D5D5",
+        "penalty": 1.2,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "e2-text",
+          "fill": "#333333"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "e2-text overflows its block s1",
+        "code_anchor": "e2-text",
+        "fix_instruction": "widen the block or shorten the label",
+        "penalty": 1.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "e3-text font size 12px below the presentation minimum 18px",
+        "code_anchor": "e3-text",
+        "fix_instruction": "raise font size to at least 18px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e3-text",
+          "attr": "font-size",
+          "value": "18"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "e4-text font size 12px below the presentation minimum 18px",
+        "code_anchor": "e4-text",
+        "fix_instruction": "raise font size to at least 18px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e4-text",
+          "attr": "font-size",
+          "value": "18"
+        }
+      }
+    ],
+    "tags": [
+      "compactness",
+      "text_quality"
+    ],
+    "metrics": {
+      "fill_ratio": 0.17,
+      "aspect": 1.78,
+      "mean_detour": 1.0,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 2
+    }
+  },
+  "final": {
+    "rubric": "slide",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 8.0
+    },
+    "overall": 9.67,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 150px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "enlarge the content to fill the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 150px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "enlarge the content to fill the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.146,
+      "aspect": 1.78,
+      "mean_detour": 1.0,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 2
+    }
+  },
+  "improvement": 2.17,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 7.5,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 3.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 2.0
+      },
+      "issues": 9,
+      "critical": 5,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 9.67,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.0
+      },
+      "issues": 2,
+      "critical": 0,
+      "edits_applied": 6,
+      "edits_failed": 0,
+      "diff_elements": 5,
+      "rendered": null,
+      "note": "set_text:e2-text; center_content:; set_attr:e2-text; recolor:e2-text; set_attr:e3-text; set_attr:e4-text"
+    }
+  ],
+  "requests_remaining": [
+    {
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "top margin is 150px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "enlarge the content to fill the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 150px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "enlarge the content to fill the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    }
+  ],
+  "stop_reason": "no edits left",
+  "ids_assigned": 8
+}

@@ -1,0 +1,15 @@
+{
+  "id": "icon.viewbox24-size16",
+  "rubric": "icon",
+  "kind": "clean",
+  "expect_fire": [],
+  "expect_silent": [
+    "medium.square",
+    "medium.icon_text",
+    "content.none",
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "The family magnifier declared at width/height 16 with viewBox 0 0 24 24, plus accessible <title> and <desc>. Must not fire: the canvas is the viewBox, <title>/<desc> are not <text>. Guards the 16px cold-eye copies the loop makes.",
+  "source": "adversary-icon"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "icon.detail-stroke-1-5",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "polish.stroke_widths"
+  ],
+  "expect_silent": [
+    "medium.icon_elements"
+  ],
+  "rationale": "A good frame-plus icon except that the plus is 1.5px. Should it fire? Yes: the family contract is one stroke width, and at 16px the 1.5px stroke is one device pixel next to a 1.33px frame, so the plus reads lighter and greyer. The critic fires polish.stroke_widths with an auto fix; recorded as a true positive.",
+  "source": "adversary-icon"
+}

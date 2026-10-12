@@ -1,0 +1,17 @@
+{
+  "id": "teaching.tspan_multiline",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.overflow",
+    "text.overlap",
+    "text.min_font",
+    "text.contrast",
+    "text.words_per_label",
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "Five blocks with correct two-line labels (tspans carrying x/y, the <text> also positioned), each line within its 96px block at 14px. All text checks must stay silent; the text bbox must come from the longest line, not the concatenated string.",
+  "source": "adversary-diagram"
+}

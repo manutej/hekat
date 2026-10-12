@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<style>
+:root {
+  --bg:#F6F4EE; --fg:#1F1F1F; --muted:#5E5A52; --card:#FFFFFF; --line:#D9D4C7; --accent:#B35C1E; --accent-soft:#FBE9DD;
+  --cap-dim:.55; --font:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif; --ui:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#17181A; --fg:#ECEAE4; --muted:#A8A49B; --card:#FFFFFF; --line:#34363B; --accent:#F0A36A; --accent-soft:#3A2A1D; }
+}
+:root[data-theme="dark"] { --bg:#17181A; --fg:#ECEAE4; --muted:#A8A49B; --card:#FFFFFF; --line:#34363B; --accent:#F0A36A; --accent-soft:#3A2A1D; }
+/* local() only: a <link> to a web font stalls headless virtual time; a machine without the font falls through */
+@font-face { font-family:"IBM Plex Sans"; src:local("IBM Plex Sans"), local("IBMPlexSans"), local("IBMPlexSans-Regular"); font-weight:400 }
+@font-face { font-family:"IBM Plex Sans"; src:local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"); font-weight:600 }
+* { box-sizing:border-box }
+html,body { margin:0 }
+body { background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.35; padding:12px 16px 18px; }
+.wrap { max-width:912px; margin:0 auto }
+header { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 8px }
+h1 { font-size:19px; margin:0; font-weight:600; letter-spacing:-.01em }
+h1 small { font-weight:400; color:var(--muted); font-size:14px; margin-left:8px }
+.legend { display:flex; gap:16px; font-family:var(--ui); font-size:12px; color:var(--muted); align-items:center; flex-wrap:wrap }
+.legend span { display:inline-flex; align-items:center; gap:6px }
+.legend svg { width:34px; height:12px; overflow:visible; color:var(--fg) }
+.figure { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:4px 8px; overflow-x:auto; position:relative }
+/* cap the width so the caption strip stays inside a 620 px viewport; keep a phone minimum and scroll inside the card */
+.figure svg { display:block; width:min(100%, {{FIGURE_MAX_WIDTH}}px); height:auto; min-width:600px; margin:0 auto; font-family:var(--font) }
+.idchip { position:absolute; right:12px; top:8px; font:12px/1.4 ui-monospace,Menlo,Consolas,monospace; color:#1F1F1F; background:#F5F5F5; border:1px solid #CFCFCF; border-radius:4px; padding:1px 7px; visibility:hidden }
+.idchip.on { visibility:visible }   /* visibility, not opacity: the reduced-motion fallback forces opacity:1 */
+#figure [data-role=block], #figure [data-role=container], #figure [data-flow] { cursor:help }
+#figure .hl { stroke:#B35C1E; stroke-width:2.6px }
+.controls { display:flex; align-items:center; gap:10px; margin:10px 0 8px; font-family:var(--ui); font-size:12px; color:var(--muted) }
+.controls button { font:inherit; color:var(--fg); background:transparent; border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer }
+.controls button:hover { border-color:var(--accent) }
+.scrub { flex:1; position:relative; height:22px; display:flex; align-items:center }
+.scrub input { width:100%; margin:0; accent-color:var(--accent); cursor:pointer }
+.scrub .ticks { position:absolute; left:8px; right:8px; top:0; height:4px; pointer-events:none }
+.scrub .ticks i { position:absolute; top:0; width:2px; height:4px; background:var(--accent); margin-left:-1px }
+.clock { min-width:68px; text-align:right; font-variant-numeric:tabular-nums }
+.captions { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat({{N_BEATS}},minmax(0,1fr)); gap:6px }
+.cap { min-width:0 }
+.cap-btn { all:unset; display:block; width:100%; height:100%; box-sizing:border-box; border-left:3px solid var(--line); padding:4px 7px 6px; cursor:pointer; opacity:var(--cap-dim); border-radius:0 4px 4px 0;
+  animation:cap-on .35s ease-out forwards, cap-off .35s ease-out forwards; animation-delay:var(--on),var(--off) }
+.cap[data-last] .cap-btn { animation:cap-on .35s ease-out forwards; animation-delay:var(--on) }
+.cap-btn:focus-visible { outline:2px solid var(--accent); outline-offset:2px }
+.cap-title { display:block; font-family:var(--ui); font-size:12px; font-weight:600; letter-spacing:-.01em; color:var(--accent); margin-bottom:3px }
+.cap-body { display:block; font-size:13px; color:var(--fg) }
+@keyframes cap-on { to { opacity:1; border-left-color:var(--accent); background:var(--accent-soft) } }
+@keyframes cap-off { to { opacity:.8; border-left-color:var(--line); background:transparent } }
+html.paused * { animation-play-state:paused !important }
+@media (max-width:760px) { .captions { grid-template-columns:1fr 1fr } .cap[data-last] { grid-column:1 / -1 } }
+@media (max-width:480px) { .captions { grid-template-columns:1fr } }
+@media (prefers-reduced-motion: reduce) {
+  :root:not(.motion) * { animation:none !important; opacity:1 !important; stroke-dashoffset:0 !important; translate:none !important }
+  :root:not(.motion) [data-role=pulse], :root:not(.motion) [data-role=anim-shaft] { display:none }
+  :root:not(.motion) .cap-btn { opacity:1 !important; border-left-color:var(--accent); background:var(--accent-soft) }
+  :root:not(.motion) .controls { display:none }
+  :root:not(.motion) .motion-note { display:block }
+}
+/* ?motion=reduce mirrors the media query so the fallback can be previewed and rendered */
+:root.reduce * { animation:none !important; opacity:1 !important; stroke-dashoffset:0 !important; translate:none !important }
+:root.reduce [data-role=pulse], :root.reduce [data-role=anim-shaft] { display:none }
+:root.reduce .cap-btn { opacity:1 !important; border-left-color:var(--accent); background:var(--accent-soft) }
+:root.reduce .controls { display:none }
+:root.reduce .motion-note { display:block }
+.motion-note { display:none; font-family:var(--ui); font-size:12px; color:var(--muted); margin:8px 0 }
+/* ---- figure animation: paste the re-timed stylesheet (assets/animation.template.css) ---- */
+{{ANIMATION_CSS}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>{{TITLE}}<small>{{SUBTITLE}}</small></h1>
+    <div class="legend" aria-label="Legend">
+      <span><svg viewBox="0 0 34 12"><path d="M1 6H27" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M26 2.5L33 6L26 9.5z" fill="currentColor"/></svg>data flow</span>
+      <span><svg viewBox="0 0 34 12"><path d="M1 6H27" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 2" fill="none"/><path d="M26 2.5L33 6L26 9.5z" fill="currentColor"/></svg>control / feedback</span>
+      <span><svg viewBox="0 0 34 12"><path d="M1 6H33" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2" fill="none"/><circle cx="17" cy="6" r="4.5" fill="currentColor" stroke="var(--bg)" stroke-width="1.4"/></svg>token = what moves</span>
+    </div>
+  </header>
+
+  <div class="figure">
+<!-- {{FIGURE_SVG}}: the animated SVG with id="figure" and role="img", its own <style> removed (the CSS lives above), tokens given cx/cy at their path start -->
+{{FIGURE_SVG}}
+    <div class="idchip" id="idchip" aria-live="polite"></div>
+  </div>
+  <p class="motion-note">Reduced motion is on: the figure is shown in its final state with every caption.</p>
+
+  <div class="controls">
+    <button type="button" id="play" aria-label="Pause">Pause</button>
+    <button type="button" id="replay">Replay</button>
+    <div class="scrub"><div class="ticks">
+      <!-- one tick per beat: left = start / TOTAL_MS * 100 -->
+      {{BEAT_TICKS}}
+    </div><input type="range" id="scrub" min="0" max="{{TOTAL_MS}}" step="50" value="0" aria-label="Timeline"></div>
+    <span class="clock" id="time">0.0 s</span>
+  </div>
+
+  <ol class="captions" id="captions">
+<!-- one <li> per beat; --on/--off are the beat's start and the next beat's start; the last gets data-last. 16-22 words per body. -->
+<li class="cap" data-beat="beat-1" data-start="0.0" style="--on:0.00s;--off:3.00s"><button type="button" class="cap-btn"><span class="cap-title">1 · {{BEAT_1_TITLE}}</span><span class="cap-body">{{BEAT_1_BODY}}</span></button></li>
+<li class="cap" data-beat="beat-2" data-start="3.0" style="--on:3.00s;--off:7.60s"><button type="button" class="cap-btn"><span class="cap-title">2 · {{BEAT_2_TITLE}}</span><span class="cap-body">{{BEAT_2_BODY}}</span></button></li>
+<li class="cap" data-beat="beat-3" data-start="7.6" style="--on:7.60s;--off:0.00s" data-last><button type="button" class="cap-btn"><span class="cap-title">3 · {{BEAT_3_TITLE}}</span><span class="cap-body">{{BEAT_3_BODY}}</span></button></li>
+{{MORE_CAPTIONS}}
+  </ol>
+</div>
+<script>
+(function () {
+  // TOTAL: end of the construction + one token cycle; LOOP: when tokens start; PERIOD: the token cycle (ms)
+  var root = document.documentElement, TOTAL = {{TOTAL_MS}}, LOOP = {{LOOP_MS}}, PERIOD = {{PERIOD_MS}};
+  var scrub = document.getElementById('scrub'), timeEl = document.getElementById('time');
+  var playBtn = document.getElementById('play');
+  var q = new URLSearchParams(location.search);
+  if (q.get('theme') === 'dark' || q.get('theme') === 'light') root.dataset.theme = q.get('theme');
+  if (q.get('motion') === 'reduce') root.classList.add('reduce');
+  var reduced = root.classList.contains('reduce') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* the page keeps its own clock (performance.now) so the scrubber never depends on reading
+     Animation.currentTime back, which headless renderers report as 0 under virtual time */
+  var base = 0, resumedAt = performance.now(), paused = false;
+  function now() { return paused ? base : base + (performance.now() - resumedAt); }
+  function anims() { return document.getAnimations ? document.getAnimations() : []; }
+  function seek(ms) { base = ms; resumedAt = performance.now(); anims().forEach(function (a) { a.currentTime = ms; }); tick(); }
+  function setPaused(p) {
+    if (p === paused) return;
+    if (p) base = now(); else resumedAt = performance.now();
+    paused = p; root.classList.toggle('paused', p);
+    playBtn.textContent = p ? 'Play' : 'Pause'; playBtn.setAttribute('aria-label', p ? 'Play' : 'Pause');
+  }
+  function fmt(ms) { return (ms / 1000).toFixed(1) + ' s'; }
+  playBtn.addEventListener('click', function () { setPaused(!paused); });
+  document.getElementById('replay').addEventListener('click', function () { seek(0); setPaused(false); });
+  scrub.addEventListener('input', function () { setPaused(true); seek(+scrub.value); });
+  document.querySelectorAll('.cap').forEach(function (li) {
+    li.querySelector('.cap-btn').addEventListener('click', function () { seek(+li.dataset.start * 1000); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === ' ') { e.preventDefault(); playBtn.click(); }
+    if (e.key.toLowerCase() === 'r') seek(0);
+  });
+  /* a timer, not requestAnimationFrame: a perpetual rAF loop starves headless virtual time */
+  function tick() {
+    if (reduced) return;
+    var t = now();
+    var shown = t <= TOTAL ? t : LOOP + ((t - LOOP) % PERIOD);
+    if (document.activeElement !== scrub) scrub.value = Math.round(shown);
+    timeEl.textContent = fmt(shown);
+  }
+  setInterval(tick, 100); tick();
+  /* editable output: hover reveals the element id */
+  var chip = document.getElementById('idchip'), fig = document.getElementById('figure'), last = null;
+  if (fig) {
+    fig.addEventListener('mouseover', function (e) {
+      var el = e.target.closest('[data-role=block],[data-role=container],[data-flow]');
+      if (last) last.classList.remove('hl');
+      if (el) { chip.textContent = '#' + el.id + (el.dataset.component ? '  ·  ' + el.dataset.component : ''); chip.classList.add('on'); el.classList.add('hl'); last = el; }
+      else { chip.classList.remove('on'); last = null; }
+    });
+    fig.addEventListener('mouseleave', function () { chip.classList.remove('on'); if (last) last.classList.remove('hl'); last = null; });
+  }
+})();
+</script>
+</body>
+</html>

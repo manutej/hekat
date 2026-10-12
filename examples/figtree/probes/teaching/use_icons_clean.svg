@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="176" viewBox="0 0 384 176" font-family="Times New Roman">
+  <rect id="background" x="0" y="0" width="384" height="176" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle id="icon-search.1" cx="10.5" cy="10.5" r="6"/><path id="icon-search.2" d="M15 15l5.5 5.5"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle id="icon-gear.1" cx="12" cy="12" r="3"/><path id="icon-gear.2" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path id="icon-loop.1" d="M20 12a8 8 0 1 1-2.3-5.7"/><path id="icon-loop.2" d="M20 4v5h-5"/></symbol>
+  </defs>
+  <rect id="a.block" x="24" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="a.icon" href="#icon-search" x="32" y="32" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="a.label" x="84" y="40" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Ground</text>
+  <rect id="b.block" x="144" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="b.icon" href="#icon-gear" x="152" y="32" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="b.label" x="204" y="40" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Build</text>
+  <rect id="c.block" x="264" y="24" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="c.icon" href="#icon-gear" x="272" y="32" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="c.label" x="324" y="40" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Render</text>
+  <rect id="d.block" x="24" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="d.icon" href="#icon-search" x="32" y="128" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="d.label" x="84" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Critique</text>
+  <rect id="e.block" x="144" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="e.icon" href="#icon-gear" x="152" y="128" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="e.label" x="204" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Edit</text>
+  <rect id="f.block" x="264" y="120" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <use id="f.icon" href="#icon-search" x="272" y="128" width="16" height="16" color="#333333" data-role="icon"/>
+  <text id="f.label" x="324" y="136" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label">Score</text>
+  <path id="f1" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f2" d="M240,40 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f3" d="M312,56 V88 H72 V120" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f4" d="M120,136 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f5" d="M240,136 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <use id="loop.icon" href="#icon-loop" x="184" y="64" width="16" height="16" color="#333333" data-role="icon"/>
+</svg>

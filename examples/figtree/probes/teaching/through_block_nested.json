@@ -1,0 +1,11 @@
+{
+  "id": "teaching.through_block_nested",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.through_block"
+  ],
+  "expect_silent": [],
+  "rationale": "Fetch -> Render is drawn straight through Cache, whose rect sits inside a translate(144,0) group; the through_block check must resolve the group offset to see the hit.",
+  "source": "adversary-diagram"
+}

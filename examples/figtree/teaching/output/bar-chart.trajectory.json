@@ -1,0 +1,290 @@
+{
+  "rubric": "data-figure",
+  "initial": {
+    "rubric": "data-figure",
+    "scores": {
+      "semantic_coverage": 3.5,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 1.0,
+      "visual_polish": 6.2,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 7.24,
+    "issues": [
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "e3-text contrast 2.8:1 below 4.5:1",
+        "code_anchor": "e3-text",
+        "fix_instruction": "use #333333 text on #FFFFFF",
+        "penalty": 1.2,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "e3-text",
+          "fill": "#333333"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e10-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e10-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e10-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e11-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e11-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e11-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e12-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e12-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e12-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e13-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e13-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e13-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e14-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e14-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e14-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "e15-text font size 8px below the chart minimum 10px",
+        "code_anchor": "e15-text",
+        "fix_instruction": "raise font size to at least 10px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e15-text",
+          "attr": "font-size",
+          "value": "10"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e11-text uses Helvetica; the figure's family is Arial",
+        "code_anchor": "e11-text",
+        "fix_instruction": "set font-family to Arial",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e11-text",
+          "attr": "font-family",
+          "value": "Arial"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "2 font families in one figure: Arial, Helvetica",
+        "code_anchor": "e3-text",
+        "fix_instruction": "use one font family (Arial)",
+        "penalty": 0.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e6-rect uses a gradient or pattern fill",
+        "code_anchor": "e6-rect",
+        "fix_instruction": "replace with a flat fill",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "e6-rect",
+          "fill": "#7BA3C9"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e7-rect uses a neon colour #FF00FF",
+        "code_anchor": "e7-rect",
+        "fix_instruction": "use a muted tone from the palette",
+        "penalty": 0.8,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "e7-rect",
+          "fill": "#7BA3C9"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "4 different stroke widths: [0.5, 1.0, 2.0, 3.0]",
+        "code_anchor": "svg",
+        "fix_instruction": "use one stroke width for lines and one for borders",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "dimension": "semantic_coverage",
+        "severity": "critical",
+        "visual_description": "axis label(s) with units are missing",
+        "code_anchor": "svg",
+        "fix_instruction": "add x and y axis labels with units (insert <text data-role=\"axis-label\">)",
+        "penalty": 2.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "semantic_coverage",
+        "severity": "warning",
+        "visual_description": "no title stating the finding",
+        "code_anchor": "svg",
+        "fix_instruction": "add a one-line title that states what the data shows",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "tags": [
+      "semantic_coverage",
+      "text_quality"
+    ],
+    "metrics": {
+      "fill_ratio": 0.71,
+      "aspect": 1.73,
+      "palette_size": 3
+    }
+  },
+  "final": {
+    "rubric": "data-figure",
+    "scores": {
+      "semantic_coverage": 10.0,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 9.0,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 9.86,
+    "issues": [
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "4 different stroke widths: [0.5, 1.0, 2.0, 3.0]",
+        "code_anchor": "svg",
+        "fix_instruction": "use one stroke width for lines and one for borders",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.842,
+      "aspect": 1.73,
+      "palette_size": 2
+    }
+  },
+  "improvement": 2.62,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 7.24,
+      "scores": {
+        "semantic_coverage": 3.5,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 1.0,
+        "visual_polish": 6.2,
+        "medium_fit": 10.0,
+        "compactness": 10.0
+      },
+      "issues": 14,
+      "critical": 2,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 9.86,
+      "scores": {
+        "semantic_coverage": 10.0,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 9.0,
+        "medium_fit": 10.0,
+        "compactness": 10.0
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 13,
+      "edits_failed": 0,
+      "diff_elements": 11,
+      "rendered": null,
+      "note": "insert:; insert:; set_text:e3-text; recolor:e3-text; set_attr:e10-text; set_attr:e11-text; set_attr:e12-text; set_attr:e13-text; set_attr:e14-text; set_attr:e15-text; set_attr:e11-text; recolor:e6-rec"
+    }
+  ],
+  "requests_remaining": [
+    {
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "visual_description": "4 different stroke widths: [0.5, 1.0, 2.0, 3.0]",
+      "code_anchor": "svg",
+      "fix_instruction": "use one stroke width for lines and one for borders",
+      "penalty": 1.0,
+      "auto_edit": null
+    }
+  ],
+  "stop_reason": "no edits left",
+  "ids_assigned": 15
+}

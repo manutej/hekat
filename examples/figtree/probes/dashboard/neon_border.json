@@ -1,0 +1,11 @@
+{
+  "id": "dashboard.neon_border",
+  "rubric": "dashboard",
+  "kind": "defect",
+  "expect_fire": [
+    "polish.neon"
+  ],
+  "expect_silent": [],
+  "rationale": "A 3 px neon-green #00FF66 border on the tile as a 'healthy' indicator. polish.neon is described as 'a neon fill or stroke' but the stroke branch only looks at path, line and polyline, so a rect or circle stroke in neon passes. Rule change: check stroke colour on every shape tag.",
+  "source": "adversary-chart"
+}

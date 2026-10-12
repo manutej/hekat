@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="Arial">
+  <rect id="background" width="640" height="360" fill="#FFFFFF"/>
+  <text id="title" x="320" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Most users read the weekly summary email</text>
+  <line id="axis-x" x1="312" y1="300" x2="592" y2="300" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="312" y1="50" x2="312" y2="300" stroke="#000000" stroke-width="1"/>
+  <text id="category-0" x="300" y="75" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">Finds the weekly summary email useful or very useful</text>
+  <rect id="bar-0" x="312" y="61" width="230" height="28" fill="#4C72B0"/>
+  <text id="value-0" x="548" y="75" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">82%</text>
+  <text id="category-1" x="300" y="125" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">Would recommend the product to a colleague or friend</text>
+  <rect id="bar-1" x="312" y="111" width="207" height="28" fill="#4C72B0"/>
+  <text id="value-1" x="525" y="125" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">74%</text>
+  <text id="category-2" x="300" y="175" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">Felt the onboarding tour was clear and well paced</text>
+  <rect id="bar-2" x="312" y="161" width="171" height="28" fill="#4C72B0"/>
+  <text id="value-2" x="489" y="175" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">61%</text>
+  <text id="category-3" x="300" y="225" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">Uses the mobile app at least once a week</text>
+  <rect id="bar-3" x="312" y="211" width="132" height="28" fill="#4C72B0"/>
+  <text id="value-3" x="450" y="225" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">47%</text>
+  <text id="category-4" x="300" y="275" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">Contacted support in the last 30 days</text>
+  <rect id="bar-4" x="312" y="261" width="50" height="28" fill="#4C72B0"/>
+  <text id="value-4" x="368" y="275" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">18%</text>
+  <text id="tick-x-0" x="312" y="316" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-x-50" x="452" y="316" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">50</text>
+  <text id="tick-x-100" x="592" y="316" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">100</text>
+  <text id="axis-x-label" x="452" y="338" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Share of respondents (%)</text>
+  <text id="footnote" x="16" y="346" font-size="10" text-anchor="start" dominant-baseline="middle" fill="#333333">Count of respondents: 1,204 (May 2026)</text>
+</svg>

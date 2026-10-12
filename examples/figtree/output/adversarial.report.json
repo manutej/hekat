@@ -1,0 +1,853 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "1 instruction-like line(s) stripped on ingest",
+      "code_anchor": "ingest",
+      "fix_instruction": "none; adversarial instructions are never drawn",
+      "round_introduced": 0
+    },
+    {
+      "severity": "warning",
+      "visual_description": "contradictory flow direction between Encoder and Decoder; both omitted",
+      "code_anchor": "content_plan.flows",
+      "fix_instruction": "clarify the direction in the source text",
+      "round_introduced": 0
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Encoder",
+        "canvas": {
+          "w": 96,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Encoder"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Encoder"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 24
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Decoder",
+        "canvas": {
+          "w": 96,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decoder"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Decoder"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 24,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Classifier",
+        "canvas": {
+          "w": 112,
+          "h": 32
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 112,
+            "rel_y": 16,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Classifier"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 32
+        },
+        "residuals": [],
+        "components": [
+          "Classifier"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 168,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Adversarial Grounding Case",
+        "canvas": {
+          "w": 304,
+          "h": 128
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 120,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Encoder"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Encoder"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 24,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 120,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Decoder"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Decoder"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 168,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 280,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 224,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Classifier"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 224,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Classifier"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F4A460",
+            "processing": "#7BA3C9",
+            "residual": "#FFF3CD",
+            "input": "#D5D5D5",
+            "container": "#F5F5F5",
+            "border": "#333333"
+          },
+          "font": "Times New Roman",
+          "font_size_label": "11-13pt",
+          "font_size_annot": "9-11pt",
+          "stroke_main": 1.2,
+          "stroke_border": 1.4,
+          "grid": 8,
+          "min_arrow": 20,
+          "padding": 24
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Encoder",
+            "canvas": {
+              "w": 96,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Encoder"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Encoder"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Encoder"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Encoder"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Encoder"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 24
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Decoder",
+            "canvas": {
+              "w": 96,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decoder"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decoder"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Decoder"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Decoder"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Decoder"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 24,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Classifier",
+            "canvas": {
+              "w": 112,
+              "h": 32
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Classifier"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 112,
+                "rel_y": 16,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Classifier"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Classifier"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Classifier"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F4A460",
+                "processing": "#7BA3C9",
+                "residual": "#FFF3CD",
+                "input": "#D5D5D5",
+                "container": "#F5F5F5",
+                "border": "#333333"
+              },
+              "font": "Times New Roman",
+              "font_size_label": "11-13pt",
+              "font_size_annot": "9-11pt",
+              "stroke_main": 1.2,
+              "stroke_border": 1.4,
+              "grid": 8,
+              "min_arrow": 20,
+              "padding": 24
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 32
+            },
+            "residuals": [],
+            "components": [
+              "Classifier"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 168,
+              "y": 48
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 304,
+          "h": 128
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "1 instruction-like line(s) stripped on ingest",
+            "code_anchor": "ingest",
+            "fix_instruction": "none; adversarial instructions are never drawn",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "contradictory flow direction between Encoder and Decoder; both omitted",
+            "code_anchor": "content_plan.flows",
+            "fix_instruction": "clarify the direction in the source text",
+            "round_introduced": 0
+          }
+        ],
+        "components": [
+          "Encoder",
+          "Decoder",
+          "Classifier"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "1 instruction-like line(s) stripped on ingest",
+            "code_anchor": "ingest",
+            "fix_instruction": "none; adversarial instructions are never drawn",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "contradictory flow direction between Encoder and Decoder; both omitted",
+            "code_anchor": "content_plan.flows",
+            "fix_instruction": "clarify the direction in the source text",
+            "round_introduced": 0
+          }
+        ],
+        "style_invariant": "((('attention', '#F4A460'), ('border', '#333333'), ('container', '#F5F5F5'), ('input', '#D5D5D5'), ('processing', '#7BA3C9'), ('residual', '#FFF3CD')), 'Times New Roman', '11-13pt', '9-11pt', 1.2, 1.4, 8, 20, 24)"
+      }
+    },
+    "edges": [
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ]
+    ],
+    "restriction": {
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Encoder",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Adversarial Grounding Case",
+    "components": [
+      {
+        "name": "Encoder",
+        "evidence_span": "The Encoder"
+      },
+      {
+        "name": "Decoder",
+        "evidence_span": "The Decoder"
+      },
+      {
+        "name": "Classifier",
+        "evidence_span": "Classifier"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Decoder",
+        "to": "Classifier",
+        "type": "data",
+        "evidence_span": "Decoder \u2192 Classifier"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F4A460",
+      "processing": "#7BA3C9",
+      "residual": "#FFF3CD",
+      "input": "#D5D5D5",
+      "container": "#F5F5F5",
+      "border": "#333333"
+    },
+    "font": "Times New Roman",
+    "font_size_label": "11-13pt",
+    "font_size_annot": "9-11pt",
+    "stroke_main": 1.2,
+    "stroke_border": 1.4,
+    "grid": 8,
+    "min_arrow": 20,
+    "padding": 24
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "spacing shift at n1: n1.arrow0 by 8",
+    "spacing shift at n1: n1.arrow0 by 8",
+    "spacing shift at n1: n1.arrow0 by 8"
+  ],
+  "node_count": 4
+}

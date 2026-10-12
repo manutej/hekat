@@ -1,0 +1,15 @@
+{
+  "id": "teaching.motion-backwards-pulse",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "motion.pulse_direction"
+  ],
+  "expect_silent": [
+    "compactness.overflow",
+    "flow.reading_order"
+  ],
+  "rationale": "Static figure scores 10; the ft-travel keyframes run offset-distance 100% -> 0%, so every token travels from the arrowhead back to the tail: data appears to flow Output -> Model -> Source against the arrows. Check: for each offset-path rule, resolve its keyframes (or animation-direction: reverse / alternate) and require offset-distance to be non-decreasing in time along the path direction of the matching flow's d.",
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

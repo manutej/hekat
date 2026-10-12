@@ -1,0 +1,13 @@
+{
+  "id": "teaching.invisible_coverage",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin",
+    "polish.invisible_elements"
+  ],
+  "expect_silent": [],
+  "rationale": "Two small blocks float in the middle of a 640x320 canvas; the visible content fills 7% of it. A white-on-white rect and an opacity=0 text stretch the content bbox to a neat 24px margin, so blank_margin is silent and the overall is 10. Invisible elements (opacity 0, fill none and stroke none, fill equal to the background, display none) must be excluded from the content bbox and reported.",
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

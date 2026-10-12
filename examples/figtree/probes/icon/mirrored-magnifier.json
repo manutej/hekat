@@ -1,0 +1,14 @@
+{
+  "id": "icon.mirrored-magnifier",
+  "rubric": "icon",
+  "kind": "gaming",
+  "expect_fire": [
+    "proposed.icon.metaphor_orientation"
+  ],
+  "expect_silent": [
+    "compactness.blank_margin",
+    "medium.icon_elements"
+  ],
+  "rationale": "A magnifier with the handle pointing up-left: every measurable rule passes (two strokes, one width, coverage ~55%, inside the margin) but the metaphor is mirrored against the family's search icon and reads as a balloon on a string. Judge-only today; a mechanical proxy is a chirality test against the library icon the brief names (render both, compare to the flipped library icon; flag if the flip matches better).",
+  "source": "adversary-icon"
+}

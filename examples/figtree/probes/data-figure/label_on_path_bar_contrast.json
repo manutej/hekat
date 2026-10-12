@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.label_on_path_bar_contrast",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "text.contrast"
+  ],
+  "expect_silent": [],
+  "rationale": "Bars drawn as <path> (the d3 / Vega export form) in navy #2F4E7D with dark grey #4A4A4A value labels inside them: 1.5:1 contrast. _background_for only considers rect, circle, ellipse and polygon hosts, so the labels are checked against the white canvas (7.5:1) and text.contrast stays silent. Rule change: include filled paths (and polylines with fill) as contrast hosts, as _host_fill already does for the gradient check.",
+  "source": "adversary-chart"
+}

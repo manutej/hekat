@@ -1,0 +1,56 @@
+{
+  "rubric": "teaching",
+  "overall": 5.62,
+  "scores": {
+    "semantic_coverage": 6,
+    "hallucination_control": 6,
+    "topology_accuracy": 5,
+    "flow_readability": 4,
+    "text_quality": 7,
+    "visual_polish": 6,
+    "medium_fit": 5,
+    "compactness": 6
+  },
+  "justifications": {
+    "semantic_coverage": "Shows Grounder, Generator, Decompose, recursive tree, Merge, Critic, Worker, re-validate, render, plus the loop back to Critic. Omits the 3-round bound and residual defects, and the recursion is not clear.",
+    "hallucination_control": "Components are source-named, but the Grounder and Generator \u2192 Decompose/tree links are invented. Generator is wrongly shown in parallel with Grounder. Icons are decorative.",
+    "topology_accuracy": "Grouping into four dashed boxes is arbitrary. Recursive tree is treated as a sibling of Decompose rather than a recursion. Grounder and Generator are put in one box with no sequence.",
+    "flow_readability": "Merged double lines from Grounder and Generator are ambiguous. Long connectors wrap around and cross at Critic. The loop back from render enters Critic from below, and the Decompose line merges at the same Critic entry.",
+    "text_quality": "Labels are correct and legible with consistent serif font. They are small for teaching and slightly off-centre next to the icons.",
+    "visual_polish": "Restrained blue and orange palette with consistent strokes. Routing lines look rough and overlap, and the dashed containers feel heavy.",
+    "medium_fit": "The labels are short, but they are small for teaching and the figure shows several ideas at once. The reading order is unclear for a teaching diagram.",
+    "compactness": "Canvas is mostly filled, but there are long wrap-around connectors and empty gaps between the boxes."
+  },
+  "tags": {
+    "semantic_coverage": [
+      "partial_coverage"
+    ],
+    "hallucination_control": [
+      "invented_flows"
+    ],
+    "topology_accuracy": [
+      "grouping_errors"
+    ],
+    "flow_readability": [
+      "ambiguous_arrows",
+      "crossings"
+    ],
+    "text_quality": [
+      "small_text"
+    ],
+    "visual_polish": [
+      "palette_ok",
+      "rough_routing"
+    ],
+    "medium_fit": [
+      "small_labels"
+    ],
+    "compactness": [
+      "long_connectors"
+    ]
+  },
+  "vetoes": [],
+  "comment": "Recognisable pipeline with source-named nodes, but the flow is confusing: Grounder and Generator merge ambiguously, long wrap-around arrows converge on Critic, and the grouping is arbitrary.",
+  "png": "/tmp/figtree-judge-k071rhip/judge.png",
+  "cost_usd": 0.039081500000000005
+}

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="832" height="328" viewBox="0 0 832 328" font-family="Times New Roman" data-figtree="1">
+  <title>FigTree-Style Recursive SVG Methodology Figure Generator</title>
+  <rect id="background" x="0" y="0" width="832" height="328" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5"/></symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 832 328">
+    <!-- PORT:left x=80 y=64 id=n6.left type=input component="Grounder" -->
+    <!-- PORT:right x=176 y=64 id=n6.right type=output component="Grounder" -->
+    <!-- PORT:top x=128 y=48 id=n6.top type=input component="Grounder" -->
+    <!-- PORT:bottom x=128 y=80 id=n6.bottom type=output component="Grounder" -->
+    <!-- PORT:left x=72 y=112 id=n7.left type=input component="Generator" -->
+    <!-- PORT:right x=184 y=112 id=n7.right type=output component="Generator" -->
+    <!-- PORT:top x=128 y=96 id=n7.top type=input component="Generator" -->
+    <!-- PORT:bottom x=128 y=128 id=n7.bottom type=output component="Generator" -->
+    <!-- PORT:left x=256 y=64 id=n8.left type=input component="Decompose children" -->
+    <!-- PORT:right x=416 y=64 id=n8.right type=output component="Decompose children" -->
+    <!-- PORT:top x=336 y=48 id=n8.top type=input component="Decompose children" -->
+    <!-- PORT:bottom x=336 y=80 id=n8.bottom type=output component="Decompose children" -->
+    <!-- PORT:left x=264 y=112 id=n9.left type=input component="recursive tree" -->
+    <!-- PORT:right x=408 y=112 id=n9.right type=output component="recursive tree" -->
+    <!-- PORT:top x=336 y=96 id=n9.top type=input component="recursive tree" -->
+    <!-- PORT:bottom x=336 y=128 id=n9.bottom type=output component="recursive tree" -->
+    <!-- PORT:left x=72 y=240 id=n10.left type=input component="Merge" -->
+    <!-- PORT:right x=152 y=240 id=n10.right type=output component="Merge" -->
+    <!-- PORT:top x=112 y=224 id=n10.top type=input component="Merge" -->
+    <!-- PORT:bottom x=112 y=256 id=n10.bottom type=output component="Merge" -->
+    <!-- PORT:left x=176 y=240 id=n11.left type=input component="Critic" -->
+    <!-- PORT:right x=272 y=240 id=n11.right type=output component="Critic" -->
+    <!-- PORT:top x=224 y=224 id=n11.top type=input component="Critic" -->
+    <!-- PORT:bottom x=224 y=256 id=n11.bottom type=output component="Critic" -->
+    <!-- PORT:left x=344 y=240 id=n12.left type=input component="Worker" -->
+    <!-- PORT:right x=440 y=240 id=n12.right type=output component="Worker" -->
+    <!-- PORT:top x=392 y=224 id=n12.top type=input component="Worker" -->
+    <!-- PORT:bottom x=392 y=256 id=n12.bottom type=output component="Worker" -->
+    <!-- PORT:left x=464 y=240 id=n13.left type=input component="re-validate invariants" -->
+    <!-- PORT:right x=656 y=240 id=n13.right type=output component="re-validate invariants" -->
+    <!-- PORT:top x=560 y=224 id=n13.top type=input component="re-validate invariants" -->
+    <!-- PORT:bottom x=560 y=256 id=n13.bottom type=output component="re-validate invariants" -->
+    <!-- PORT:left x=680 y=240 id=n14.left type=input component="render" -->
+    <!-- PORT:right x=776 y=240 id=n14.right type=output component="render" -->
+    <!-- PORT:top x=728 y=224 id=n14.top type=input component="render" -->
+    <!-- PORT:bottom x=728 y=256 id=n14.bottom type=output component="render" -->
+    <g id="n2" transform="translate(48,24)" data-bbox="48 24 160 128" data-label="Grounder, Generator">
+      <!-- PORT:left x=32 y=40 id=n6.left type=input component="Grounder" -->
+      <!-- PORT:right x=128 y=40 id=n6.right type=output component="Grounder" -->
+      <!-- PORT:top x=80 y=24 id=n6.top type=input component="Grounder" -->
+      <!-- PORT:bottom x=80 y=56 id=n6.bottom type=output component="Grounder" -->
+      <!-- PORT:left x=24 y=88 id=n7.left type=input component="Generator" -->
+      <!-- PORT:right x=136 y=88 id=n7.right type=output component="Generator" -->
+      <!-- PORT:top x=80 y=72 id=n7.top type=input component="Generator" -->
+      <!-- PORT:bottom x=80 y=104 id=n7.bottom type=output component="Generator" -->
+      <rect id="n2.container" x="0" y="0" width="160" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n6" transform="translate(32,24)" data-bbox="32 24 96 32" data-label="Grounder">
+        <!-- PORT:left x=0 y=16 id=n6.left type=input component="Grounder" -->
+        <!-- PORT:right x=96 y=16 id=n6.right type=output component="Grounder" -->
+        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Grounder" -->
+        <!-- PORT:bottom x=48 y=32 id=n6.bottom type=output component="Grounder" -->
+        <rect id="n6.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Grounder"/>
+        <use id="n6.icon" href="#icon-search" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n6.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Grounder</text>
+      </g>
+      <g id="n7" transform="translate(24,72)" data-bbox="24 72 112 32" data-label="Generator">
+        <!-- PORT:left x=0 y=16 id=n7.left type=input component="Generator" -->
+        <!-- PORT:right x=112 y=16 id=n7.right type=output component="Generator" -->
+        <!-- PORT:top x=56 y=0 id=n7.top type=input component="Generator" -->
+        <!-- PORT:bottom x=56 y=32 id=n7.bottom type=output component="Generator" -->
+        <rect id="n7.block" x="0" y="0" width="112" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Generator"/>
+        <use id="n7.icon" href="#icon-gear" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n7.label" x="72" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="88">Generator</text>
+      </g>
+    </g>
+    <g id="n3" transform="translate(232,24)" data-bbox="232 24 208 128" data-label="Decompose children, recursive tree">
+      <!-- PORT:left x=24 y=40 id=n8.left type=input component="Decompose children" -->
+      <!-- PORT:right x=184 y=40 id=n8.right type=output component="Decompose children" -->
+      <!-- PORT:top x=104 y=24 id=n8.top type=input component="Decompose children" -->
+      <!-- PORT:bottom x=104 y=56 id=n8.bottom type=output component="Decompose children" -->
+      <!-- PORT:left x=32 y=88 id=n9.left type=input component="recursive tree" -->
+      <!-- PORT:right x=176 y=88 id=n9.right type=output component="recursive tree" -->
+      <!-- PORT:top x=104 y=72 id=n9.top type=input component="recursive tree" -->
+      <!-- PORT:bottom x=104 y=104 id=n9.bottom type=output component="recursive tree" -->
+      <rect id="n3.container" x="0" y="0" width="208" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n8" transform="translate(24,24)" data-bbox="24 24 160 32" data-label="Decompose children">
+        <!-- PORT:left x=0 y=16 id=n8.left type=input component="Decompose children" -->
+        <!-- PORT:right x=160 y=16 id=n8.right type=output component="Decompose children" -->
+        <!-- PORT:top x=80 y=0 id=n8.top type=input component="Decompose children" -->
+        <!-- PORT:bottom x=80 y=32 id=n8.bottom type=output component="Decompose children" -->
+        <rect id="n8.block" x="0" y="0" width="160" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Decompose children"/>
+        <use id="n8.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n8.label" x="96" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="136">Decompose children</text>
+      </g>
+      <g id="n9" transform="translate(32,72)" data-bbox="32 72 144 32" data-label="recursive tree">
+        <!-- PORT:left x=0 y=16 id=n9.left type=input component="recursive tree" -->
+        <!-- PORT:right x=144 y=16 id=n9.right type=output component="recursive tree" -->
+        <!-- PORT:top x=72 y=0 id=n9.top type=input component="recursive tree" -->
+        <!-- PORT:bottom x=72 y=32 id=n9.bottom type=output component="recursive tree" -->
+        <rect id="n9.block" x="0" y="0" width="144" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="recursive tree"/>
+        <use id="n9.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n9.label" x="88" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="120">recursive tree</text>
+      </g>
+    </g>
+    <g id="n4" transform="translate(48,200)" data-bbox="48 200 248 80" data-label="Merge, Critic">
+      <!-- PORT:left x=24 y=40 id=n10.left type=input component="Merge" -->
+      <!-- PORT:right x=104 y=40 id=n10.right type=output component="Merge" -->
+      <!-- PORT:top x=64 y=24 id=n10.top type=input component="Merge" -->
+      <!-- PORT:bottom x=64 y=56 id=n10.bottom type=output component="Merge" -->
+      <!-- PORT:left x=128 y=40 id=n11.left type=input component="Critic" -->
+      <!-- PORT:right x=224 y=40 id=n11.right type=output component="Critic" -->
+      <!-- PORT:top x=176 y=24 id=n11.top type=input component="Critic" -->
+      <!-- PORT:bottom x=176 y=56 id=n11.bottom type=output component="Critic" -->
+      <rect id="n4.container" x="0" y="0" width="248" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n10" transform="translate(24,24)" data-bbox="24 24 80 32" data-label="Merge">
+        <!-- PORT:left x=0 y=16 id=n10.left type=input component="Merge" -->
+        <!-- PORT:right x=80 y=16 id=n10.right type=output component="Merge" -->
+        <!-- PORT:top x=40 y=0 id=n10.top type=input component="Merge" -->
+        <!-- PORT:bottom x=40 y=32 id=n10.bottom type=output component="Merge" -->
+        <rect id="n10.block" x="0" y="0" width="80" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Merge"/>
+        <use id="n10.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n10.label" x="56" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="56">Merge</text>
+      </g>
+      <g id="n11" transform="translate(128,24)" data-bbox="128 24 96 32" data-label="Critic">
+        <!-- PORT:left x=0 y=16 id=n11.left type=input component="Critic" -->
+        <!-- PORT:right x=96 y=16 id=n11.right type=output component="Critic" -->
+        <!-- PORT:top x=48 y=0 id=n11.top type=input component="Critic" -->
+        <!-- PORT:bottom x=48 y=32 id=n11.bottom type=output component="Critic" -->
+        <rect id="n11.block" x="0" y="0" width="96" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Critic"/>
+        <use id="n11.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n11.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Critic</text>
+      </g>
+      <path id="n4.arrow0" d="M104,40 H128" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n11.left"/>
+    </g>
+    <g id="n5" transform="translate(320,200)" data-bbox="320 200 480 80" data-label="Worker, re-validate invariants, render">
+      <!-- PORT:left x=24 y=40 id=n12.left type=input component="Worker" -->
+      <!-- PORT:right x=120 y=40 id=n12.right type=output component="Worker" -->
+      <!-- PORT:top x=72 y=24 id=n12.top type=input component="Worker" -->
+      <!-- PORT:bottom x=72 y=56 id=n12.bottom type=output component="Worker" -->
+      <!-- PORT:left x=144 y=40 id=n13.left type=input component="re-validate invariants" -->
+      <!-- PORT:right x=336 y=40 id=n13.right type=output component="re-validate invariants" -->
+      <!-- PORT:top x=240 y=24 id=n13.top type=input component="re-validate invariants" -->
+      <!-- PORT:bottom x=240 y=56 id=n13.bottom type=output component="re-validate invariants" -->
+      <!-- PORT:left x=360 y=40 id=n14.left type=input component="render" -->
+      <!-- PORT:right x=456 y=40 id=n14.right type=output component="render" -->
+      <!-- PORT:top x=408 y=24 id=n14.top type=input component="render" -->
+      <!-- PORT:bottom x=408 y=56 id=n14.bottom type=output component="render" -->
+      <rect id="n5.container" x="0" y="0" width="480" height="80" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n12" transform="translate(24,24)" data-bbox="24 24 96 32" data-label="Worker">
+        <!-- PORT:left x=0 y=16 id=n12.left type=input component="Worker" -->
+        <!-- PORT:right x=96 y=16 id=n12.right type=output component="Worker" -->
+        <!-- PORT:top x=48 y=0 id=n12.top type=input component="Worker" -->
+        <!-- PORT:bottom x=48 y=32 id=n12.bottom type=output component="Worker" -->
+        <rect id="n12.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Worker"/>
+        <use id="n12.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n12.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Worker</text>
+      </g>
+      <g id="n13" transform="translate(144,24)" data-bbox="144 24 192 32" data-label="re-validate invariants">
+        <!-- PORT:left x=0 y=16 id=n13.left type=input component="re-validate invariants" -->
+        <!-- PORT:right x=192 y=16 id=n13.right type=output component="re-validate invariants" -->
+        <!-- PORT:top x=96 y=0 id=n13.top type=input component="re-validate invariants" -->
+        <!-- PORT:bottom x=96 y=32 id=n13.bottom type=output component="re-validate invariants" -->
+        <rect id="n13.block" x="0" y="0" width="192" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="re-validate invariants"/>
+        <use id="n13.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n13.label" x="112" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="168">re-validate invariants</text>
+      </g>
+      <g id="n14" transform="translate(360,24)" data-bbox="360 24 96 32" data-label="render">
+        <!-- PORT:left x=0 y=16 id=n14.left type=input component="render" -->
+        <!-- PORT:right x=96 y=16 id=n14.right type=output component="render" -->
+        <!-- PORT:top x=48 y=0 id=n14.top type=input component="render" -->
+        <!-- PORT:bottom x=48 y=32 id=n14.bottom type=output component="render" -->
+        <rect id="n14.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="render"/>
+        <use id="n14.icon" href="#icon-image" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n14.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">render</text>
+      </g>
+      <path id="n5.arrow0" d="M120,40 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left"/>
+      <path id="n5.arrow1" d="M336,40 H360" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left"/>
+    </g>
+    <path id="n1.arrow0" d="M184,112 H216 V64 H256" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    <path id="n1.arrow1" d="M416,64 H448 V176 H24 V240 H72" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n10.left"/>
+    <path id="n1.arrow2" d="M776,240 H808 V304 H224 V256" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n14.right" data-to="n11.bottom"/>
+    <path id="n1.arrow3" d="M272,240 H344" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n12.left"/>
+    <path id="n1.arrow4" d="M176,64 H216 V112 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n9.left"/>
+    <path id="n1.arrow5" d="M408,112 H448 V176 H224 V224" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n11.top"/>
+  </g>
+</svg>

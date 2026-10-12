@@ -1,0 +1,11 @@
+{
+  "id": "slide.small_font_in_group",
+  "rubric": "slide",
+  "kind": "defect",
+  "expect_fire": [
+    "text.min_font"
+  ],
+  "expect_silent": [],
+  "rationale": "Two of three slide labels are 14px: one inherits font-size from a group, one sets it in a style attribute. Both are below the 18px slide minimum and must be reported through inheritance and style resolution.",
+  "source": "adversary-diagram"
+}

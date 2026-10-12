@@ -1,0 +1,16 @@
+{
+  "id": "icon.polyline-polygon",
+  "rubric": "icon",
+  "kind": "clean",
+  "expect_fire": [],
+  "expect_silent": [
+    "content.none",
+    "medium.icon_elements",
+    "flow.diagonal",
+    "polish.stroke_widths",
+    "compactness.overflow",
+    "polish.corner_radius"
+  ],
+  "rationale": "A trending-up icon drawn with <polyline> and <polygon>, the way the library 'render' icon is. Must stay silent: polygon/polyline bboxes are parsed from points and neither is a flow. (iconsmith's coverage rule reads 18x10 = 31% for the wide, flat shape and would call it 'vanishing', a known false positive of that rule for flat metaphors like minus or trending.)",
+  "source": "adversary-icon"
+}

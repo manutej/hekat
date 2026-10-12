@@ -1,0 +1,669 @@
+{
+  "name": "dashboard",
+  "medium": "dashboard tile",
+  "description": "Dashboard tile: one title, one key number (the largest text) or trend with a reference, uniform tiles, red/green only on a signed change, no decoration.",
+  "thresholds": {
+    "min_font": 12,
+    "min_contrast": 4.5,
+    "max_palette": 4,
+    "max_words_per_label": 6,
+    "aspect": [
+      0.8,
+      2.0
+    ],
+    "margin": 16,
+    "max_elements": null,
+    "allow_text": true,
+    "require_axis_labels": false,
+    "require_square": false,
+    "fixed_canvas": true,
+    "max_centred_margin_ratio": 0.34,
+    "flow_halo": 4.0,
+    "title_min_words": 5,
+    "bar_scale_tolerance": 0.05,
+    "tile_width_tolerance": 4,
+    "tile_gutter_tolerance": 2,
+    "must_read_at": 16,
+    "max_strokes": 12,
+    "icon_safe_margin": 2.0,
+    "min_coverage": 0.4,
+    "min_feature_px": 1.5,
+    "min_gap_px": 1.0,
+    "max_ink_offset": 3.0
+  },
+  "dimensions": {
+    "semantic_coverage": {
+      "question": "Does the figure cover the concepts that matter in the source?",
+      "anchors": {
+        "1-2": "wrong topic or generic; almost no source-specific content",
+        "3-4": "domain recognisable, most key components missing",
+        "5-6": "main idea present, important mechanisms omitted or distorted",
+        "7-8": "most concepts and relationships present, minor omissions",
+        "9-10": "complete, source-specific coverage of stages and relationships"
+      },
+      "judge": "Does the figure show the components and stages the source names, and the relationships between them?",
+      "weight": 1.0
+    },
+    "hallucination_control": {
+      "question": "Are all visible elements justified by the source?",
+      "anchors": {
+        "1-2": "mostly fabricated",
+        "3-4": "major unsupported components alter the method",
+        "5-6": "core idea recognisable, several invented details",
+        "7-8": "minor embellishments or one wrong label",
+        "9-10": "every important element is source-grounded"
+      },
+      "judge": "Is every visible element justified by the source? Flag invented modules, labels, branches or decoration.",
+      "weight": 1.0
+    },
+    "topology_accuracy": {
+      "question": "Does grouping, hierarchy and containment reflect the intended structure?",
+      "anchors": {
+        "1-2": "no coherent topology",
+        "3-4": "severe structural mismatch",
+        "5-6": "recognisable organisation with grouping errors",
+        "7-8": "mostly correct, minor grouping or proportion issues",
+        "9-10": "precise, publication-grade topology"
+      },
+      "judge": "Do grouping, hierarchy and containment match the structure of the method?",
+      "weight": 0.5
+    },
+    "flow_readability": {
+      "question": "Can a reader follow the flow: arrow direction, endpoints, crossings, reading order?",
+      "anchors": {
+        "1-2": "flow unreadable; arrows missing, chaotic or misleading",
+        "3-4": "major confusion from wrong arrows, crossings, overlaps, order",
+        "5-6": "flow inferable but routing or spacing slows reading",
+        "7-8": "clear flow with minor arrow or spacing imperfections",
+        "9-10": "very clear, economical flow, no ambiguity"
+      },
+      "judge": "Can a cold reader follow the flow: arrow direction, endpoints, crossings, reading order, spacing?",
+      "weight": 0.5
+    },
+    "text_quality": {
+      "question": "Label correctness, font consistency, legibility, placement, overflow.",
+      "anchors": {
+        "1-2": "illegible, garbled or mostly missing text",
+        "3-4": "severe text errors or glyph deformation",
+        "5-6": "readable with noticeable spelling, placement or blur defects",
+        "7-8": "mostly correct and clean, minor local defects",
+        "9-10": "accurate, sharp, well placed, typographically consistent"
+      },
+      "judge": "Are labels correct, legible at the intended size, well placed, consistent in font, not overflowing?",
+      "weight": 1.0
+    },
+    "visual_polish": {
+      "question": "Restrained palette, consistent strokes, balanced whitespace, contrast, no artifacts.",
+      "anchors": {
+        "1-2": "visually broken or unprofessional",
+        "3-4": "messy composition, harsh or inconsistent styling",
+        "5-6": "acceptable but visibly rough or unbalanced",
+        "7-8": "polished with minor imperfections",
+        "9-10": "highly polished and balanced"
+      },
+      "judge": "Is the palette restrained, strokes consistent, whitespace balanced, contrast adequate, no artifacts?",
+      "weight": 1.0
+    },
+    "medium_fit": {
+      "question": "Does the figure follow the conventions of its medium (paper, slide, dashboard, icon)?",
+      "anchors": {
+        "1-2": "unsuitable for the medium",
+        "3-4": "amateurish or wrong register for the medium",
+        "5-6": "borderline; substantial cleanup needed",
+        "7-8": "suitable with minor editing",
+        "9-10": "fully aligned with the medium's conventions"
+      },
+      "judge": "Does the figure follow the conventions of its medium (paper, teaching, slide, chart, tile, icon)?",
+      "weight": 1.0
+    },
+    "compactness": {
+      "question": "Economical use of the canvas: margins, spacing, connector length, density balance.",
+      "anchors": {
+        "1-2": "content occupies a small fraction of the canvas",
+        "3-4": "large blank margins or gaps; stretched connectors",
+        "5-6": "usable but uneven density or oversized spacing",
+        "7-8": "compact, mostly even, minor wasted space",
+        "9-10": "economical, evenly distributed, no wasted area"
+      },
+      "judge": "Is the canvas used economically: margins, spacing, connector length, density balance?",
+      "weight": 1.0
+    }
+  },
+  "checks": [
+    {
+      "id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "description": "a blank band wider than the medium's margin on any side",
+      "signal": "content bbox vs canvas",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "compactness.overflow",
+      "dimension": "compactness",
+      "severity": "critical",
+      "description": "content outside the canvas",
+      "signal": "content bbox vs canvas",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "compactness.aspect",
+      "dimension": "compactness",
+      "severity": "warning",
+      "description": "canvas aspect outside the medium's range (banner or tower)",
+      "signal": "width/height",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "compactness.detour",
+      "dimension": "compactness",
+      "severity": "warning",
+      "description": "a connector far longer than its displacement",
+      "signal": "path length / Manhattan distance",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.crossings",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "arrow crossings",
+      "signal": "orthogonal segment intersections",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.diagonal",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "diagonal routing without a semantic flag",
+      "signal": "segment orientation",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.through_block",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "an arrow passing through a block",
+      "signal": "segment vs block interiors",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.short_shaft",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "a marker-ended arrow with a shaft under 20px",
+      "signal": "final segment length",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.reading_order",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "most arrows run against reading order",
+      "signal": "share of right/down arrows",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.min_font",
+      "dimension": "text_quality",
+      "severity": "warning",
+      "description": "font below the medium's minimum",
+      "signal": "resolved font-size",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.words_per_label",
+      "dimension": "text_quality",
+      "severity": "warning",
+      "description": "a label longer than the medium allows",
+      "signal": "word count",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.contrast",
+      "dimension": "text_quality",
+      "severity": "critical",
+      "description": "text/background contrast below the threshold",
+      "signal": "WCAG ratio vs host fill",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.gradient_host",
+      "dimension": "text_quality",
+      "severity": "warning",
+      "description": "text over a gradient or pattern fill",
+      "signal": "host fill is url()",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.overflow",
+      "dimension": "text_quality",
+      "severity": "critical",
+      "description": "a label wider than its block",
+      "signal": "estimated text width vs host block",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.overlap",
+      "dimension": "text_quality",
+      "severity": "critical",
+      "description": "two labels overlapping",
+      "signal": "text bbox intersection",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.font_families",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "more font families than allowed",
+      "signal": "distinct font-family values",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.palette_size",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "more accent colours than allowed",
+      "signal": "distinct saturated fills",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.neon",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "a neon fill or stroke",
+      "signal": "saturation > 0.9 and max channel > 240",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.gradient_fill",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "a gradient or pattern fill",
+      "signal": "fill url()",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.filter",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "a filter effect",
+      "signal": "filter attribute",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.corner_radius",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "oversized corner radius",
+      "signal": "rx",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.stroke_widths",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "more stroke widths than allowed",
+      "signal": "distinct stroke-width values",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "medium.black_background",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "black background",
+      "signal": "full-canvas rect fill",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "coverage.plan_terms",
+      "dimension": "semantic_coverage",
+      "severity": "warning",
+      "description": "planned components not labelled",
+      "signal": "plan terms vs labels",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "hallucination.label_source",
+      "dimension": "hallucination_control",
+      "severity": "warning",
+      "description": "a label with no basis in the source",
+      "signal": "label words vs source text",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "topology.empty_container",
+      "dimension": "topology_accuracy",
+      "severity": "warning",
+      "description": "an empty container",
+      "signal": "container children",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "content.none",
+      "dimension": "semantic_coverage",
+      "severity": "critical",
+      "description": "nothing drawn",
+      "signal": "shape count",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "medium.no_canvas",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "no canvas size",
+      "signal": "width/height/viewBox",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.collinear_overlap",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "two arrows sharing a collinear shaft (two heads, ambiguous endpoints)",
+      "signal": "collinear segment overlap > 8px",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "flow.through_text",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "an arrow striking through a label",
+      "signal": "segment vs text bbox interior",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "text.sentence_label",
+      "dimension": "text_quality",
+      "severity": "critical",
+      "description": "a label that is a sentence (trailing full stop or sentence opener)",
+      "signal": "label text",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "polish.invisible_elements",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "elements that draw nothing but stretch the content box",
+      "signal": "opacity 0, display none, no fill and no stroke, background-coloured",
+      "mechanical": true,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "tile.hierarchy",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "the key number is not the largest text in its tile",
+      "signal": "font sizes of numeric vs other texts per tile",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.status_colour",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "red/green without a signed delta, threshold or status word",
+      "signal": "hue class of value text / stripe / border vs tile text",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.sparkline_reference",
+      "dimension": "medium_fit",
+      "severity": "warning",
+      "description": "a sparkline without baseline, end values or span caption",
+      "signal": "line / end labels / caption inside the tile",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "tile.grid_uniform",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "tiles in one row with different widths, gutters or styles",
+      "signal": "tile rects grouped by row",
+      "mechanical": false,
+      "media": [
+        "dashboard tile"
+      ]
+    },
+    {
+      "id": "motion.pulse_direction",
+      "dimension": "flow_readability",
+      "severity": "critical",
+      "description": "a token travelling from arrowhead to tail",
+      "signal": "offset-distance keyframes, animation-direction, path vs reversed flow",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.reveal_order",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "a target revealed before its source",
+      "signal": "reveal delays along data flows",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.control_tempo",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "description": "a control token faster or as dark as data tokens",
+      "signal": "travel duration and fill luminance per token",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.reduced_motion",
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "description": "no (or an incomplete) prefers-reduced-motion block",
+      "signal": "@media (prefers-reduced-motion: reduce) rules",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    },
+    {
+      "id": "motion.decorative",
+      "dimension": "visual_polish",
+      "severity": "warning",
+      "description": "motion that encodes nothing",
+      "signal": "paths that are no flow, infinite/alternate on non-tokens, animated properties beyond opacity/dashoffset",
+      "mechanical": false,
+      "media": [
+        "*"
+      ]
+    }
+  ],
+  "vetoes": {
+    "textual_overload": {
+      "description": "full sentences or more than 15 words in a box; literal copying of the source",
+      "checks": [
+        "text.words_per_label",
+        "text.sentence_label"
+      ]
+    },
+    "occlusion": {
+      "description": "overlapping elements or labels",
+      "checks": [
+        "text.overlap",
+        "flow.through_block",
+        "flow.through_text",
+        "flow.collinear_overlap"
+      ]
+    },
+    "chaotic_routing": {
+      "description": "crossings and detours that defeat reading order",
+      "checks": [
+        "flow.crossings",
+        "compactness.detour",
+        "flow.reading_order"
+      ]
+    },
+    "illegible_type": {
+      "description": "fonts below the medium's minimum or low contrast",
+      "checks": [
+        "text.min_font",
+        "text.contrast",
+        "text.outlined_glyphs"
+      ]
+    },
+    "black_background": {
+      "description": "dark page background",
+      "checks": [
+        "medium.black_background"
+      ]
+    },
+    "neon_or_gradient": {
+      "description": "jarring colour, gradients, filters",
+      "checks": [
+        "polish.neon",
+        "polish.gradient_fill",
+        "polish.filter"
+      ]
+    },
+    "hallucination": {
+      "description": "elements with no basis in the source",
+      "checks": [
+        "hallucination.label_source"
+      ]
+    },
+    "embedded_title_or_watermark": {
+      "description": "figure title or watermark inside the drawing (paper figures)",
+      "checks": [
+        "medium.embedded_title"
+      ]
+    },
+    "clip_art": {
+      "description": "decorative, cartoonish or photorealistic elements",
+      "checks": [
+        "polish.corner_radius",
+        "polish.decoration"
+      ]
+    },
+    "misleading_data": {
+      "description": "a chart that misstates the data: truncated bar axis, bars not to scale, dual axis, legend that names the wrong series",
+      "checks": [
+        "chart.bar_axis_zero",
+        "chart.bar_scale",
+        "chart.dual_axis",
+        "chart.legend_swatch_colour"
+      ]
+    },
+    "motion_misleads": {
+      "description": "animation that runs against the flow or is lost to reduced-motion users",
+      "checks": [
+        "motion.pulse_direction",
+        "motion.reduced_motion"
+      ]
+    }
+  },
+  "scoring": "10 per dimension; a critical defect caps the dimension at 5; each further defect subtracts its penalty; floor 1; dimensions without evidence are not assessed; overall = weighted mean of assessed dimensions"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "teaching.edge_hugging_arrow",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.through_block"
+  ],
+  "expect_silent": [],
+  "rationale": "Arrow f1 (Reader to Printer) is drawn along y=24, the top border of Parser, so the shaft is painted on Parser's edge and the head lands on Printer's corner; a cold reader sees one line touching three boxes. segment_hits_box tests the strict interior, so a connector grazing or overlapping a border never counts as passing through.",
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

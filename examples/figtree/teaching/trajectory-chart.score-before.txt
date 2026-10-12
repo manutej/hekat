@@ -1,0 +1,22 @@
+data-figure: overall 7.59
+  semantic_coverage       4.50
+  hallucination_control    n/a
+  topology_accuracy      10.00
+  flow_readability       10.00
+  text_quality            1.00
+  visual_polish           7.60
+  medium_fit             10.00
+  compactness            10.00
+  [warning] text_quality: tick-y-7 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [warning] text_quality: tick-y-8 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [warning] text_quality: tick-y-9 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [warning] text_quality: tick-y-10 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [warning] text_quality: tick-x-0 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [warning] text_quality: tick-x-1 font size 8px below the chart minimum 10px -> raise font size to at least 10px (auto)
+  [critical] text_quality: labels legend-data-figure and legend-teaching overlap -> move one label or shorten both (request)
+  [critical] text_quality: labels legend-teaching and legend-icon overlap -> move one label or shorten both (request)
+  [critical] text_quality: labels legend-icon and legend-slide overlap -> move one label or shorten both (request)
+  [warning] visual_polish: pt-icon-0 uses a neon colour #00FF66 -> use a muted tone from the palette (auto)
+  [warning] visual_polish: pt-icon-1 uses a neon colour #00FF66 -> use a muted tone from the palette (auto)
+  [warning] visual_polish: legend-swatch-icon uses a neon colour #00FF66 -> use a muted tone from the palette (auto)
+  [critical] semantic_coverage: axis label(s) with units are missing -> add x and y axis labels with units (insert <text data-role="axis-label">) (request)

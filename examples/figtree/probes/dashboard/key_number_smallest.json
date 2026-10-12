@@ -1,0 +1,12 @@
+{
+  "id": "dashboard.key_number_smallest",
+  "rubric": "dashboard",
+  "kind": "defect",
+  "expect_fire": [
+    "tile.hierarchy"
+  ],
+  "expect_silent": [],
+  "rationale": "The tile's key number is 12 px while the label is 36 px and the footnote 24 px: the hierarchy is inverted, yet every font clears the 12 px minimum and the tile scores 10. Proposed: inside a tile the numeric value must be the largest text (title < number > note).",
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

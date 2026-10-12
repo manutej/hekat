@@ -1,0 +1,12 @@
+{
+  "id": "methodology.embedded_title",
+  "rubric": "methodology",
+  "kind": "defect",
+  "expect_fire": [
+    "medium.embedded_title"
+  ],
+  "expect_silent": [],
+  "rationale": "The figure carries its own caption 'Figure 2: ...' inside the canvas, which paper venues forbid (the embedded_title_or_watermark veto) because the caption lives in the manuscript. The veto lists no check; a text starting with Figure/Fig./Table N, or a large grey rotated text, should fire it.",
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

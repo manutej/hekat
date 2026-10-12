@@ -1,0 +1,15 @@
+{
+  "id": "icon.twelve-stroke-noise",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "icon.min_gap"
+  ],
+  "expect_silent": [
+    "medium.icon_elements",
+    "polish.stroke_widths"
+  ],
+  "rationale": "Exactly 12 strokes (the limit), one width, 75% coverage: twelve 2px verticals 1.5px apart. At 16px the gaps are 0.33 device px and the icon is a grey slab. The element limit is a count, not a density; a check should measure the minimum centre-to-centre distance between parallel strokes minus the stroke width (gap) at must_read_at and require >= 1 device px.",
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

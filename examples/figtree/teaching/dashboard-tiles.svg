@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200">
+  <defs id="defs">
+    <linearGradient id="tile-grad" x1="0" y1="0" x2="1" y2="1"><stop id="tile-grad-stop-a" offset="0" stop-color="#5B8DEF"/><stop id="tile-grad-stop-b" offset="1" stop-color="#1C3F8F"/></linearGradient>
+  </defs>
+  <rect id="background" width="720" height="200" fill="#ffffff"/>
+  <rect id="tile-refined" x="16" y="16" width="190" height="168" rx="24" fill="#F7F7F7" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-refined-label" x="36" y="52" font-family="Arial" font-size="9" fill="#333333">Number of figures that were refined this week</text>
+  <text id="tile-refined-value" x="36" y="124" font-family="Georgia" font-size="44" fill="#BBBBBB">4</text>
+  <text id="tile-refined-note" x="36" y="160" font-family="Arial" font-size="9" fill="#888888">bar chart, slide, icon, generated figure</text>
+  <rect id="tile-gain" x="222" y="16" width="300" height="168" rx="24" fill="url(#tile-grad)"/>
+  <text id="tile-gain-label" x="242" y="52" font-family="Arial" font-size="9" fill="#333333">Mean score gain</text>
+  <text id="tile-gain-value" x="242" y="124" font-family="Georgia" font-size="44" fill="#333333">+1.58</text>
+  <text id="tile-gain-note" x="242" y="160" font-family="Arial" font-size="9" fill="#333333">average over the four bundled teaching examples in the repo</text>
+  <rect id="tile-requests" x="538" y="16" width="166" height="168" rx="24" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-requests-label" x="558" y="52" font-family="Arial" font-size="9" fill="#333333">Open requests</text>
+  <text id="tile-requests-value" x="558" y="124" font-family="Georgia" font-size="44" fill="#C0392B">5</text>
+  <text id="tile-requests-note" x="558" y="160" font-family="Arial" font-size="9" fill="#888888">need a content decision</text>
+</svg>

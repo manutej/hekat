@@ -1,0 +1,11 @@
+{
+  "id": "icon.stroke-clipped",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.overflow"
+  ],
+  "expect_silent": [],
+  "rationale": "A ring whose 2px stroke runs from -1.4 to 25.4: visibly clipped on all four sides. The content bbox ignores stroke width and int() truncates -0.4 to 0, so the bbox is exactly 0..24 and compactness.overflow stays silent (r=12.5 would have fired through the right edge only). Fix: grow every shape bbox by stroke-width/2 and use floor/ceil instead of int().",
+  "source": "adversary-icon"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "teaching.polyline_arrows",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.through_block"
+  ],
+  "expect_silent": [
+    "flow.reading_order"
+  ],
+  "rationale": "The same Fetch -> Render through Cache as through_block_nested, drawn with <polyline> (what draw.io and Inkscape emit). The loader recognises polylines as flows but never parses their points, so the through-block check sees an empty route and stays silent, while reading_order counts the empty routes as backward and fires on two left-to-right arrows.",
+  "source": "adversary-diagram"
+}

@@ -8,3 +8,13 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# FigTree run logs
+examples/figtree/**/*.log
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
+design/figtree-ds/node_modules/
+design/figtree-ds/dist/

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Dashboard tile template: one title, one key number, one trend</title>
+  <desc>Fixed canvas. Hierarchy by size: number (44 px) above title (13 px) above note (12 px). Green only because the delta is signed. The sparkline carries a dashed reference line, labelled end value and a span caption.</desc>
+  <rect id="background" x="0" y="0" width="320" height="200" fill="#FFFFFF" data-role="background"/>
+  <rect id="tile" x="8" y="8" width="304" height="184" rx="8" fill="#F7F7F7" stroke="#E0E0E0" stroke-width="1" data-role="tile"/>
+  <text id="tile-title" x="28" y="40" font-size="13" fill="#333333" data-role="title">Mean score gain</text>
+  <text id="tile-value" x="28" y="100" font-size="44" font-weight="bold" fill="#1B7F4B" data-role="value" data-delta="+1.58">+1.58</text>
+  <text id="tile-note" x="28" y="136" font-size="12" fill="#555555" data-role="note">points of 10, 4 trajectories</text>
+  <g id="sparkline" data-role="sparkline">
+    <line id="sparkline-reference" x1="28" y1="168" x2="212" y2="168" stroke="#B0B0B0" stroke-width="1" stroke-dasharray="3 3" data-role="reference" data-value="0"/>
+    <polyline id="sparkline-line" points="28,166 74,160 120,154 166,150 212,146" fill="none" stroke="#1B7F4B" stroke-width="2" data-role="mark" data-series="gain"/>
+    <circle id="sparkline-end" cx="212" cy="146" r="3" fill="#1B7F4B" data-role="mark"/>
+    <text id="sparkline-end-label" x="222" y="150" font-size="12" fill="#333333" data-role="value">+1.58</text>
+    <text id="sparkline-span" x="28" y="184" font-size="12" fill="#555555" data-role="caption">rounds 0 to 4</text>
+  </g>
+</svg>

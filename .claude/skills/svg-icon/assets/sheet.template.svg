@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120" font-family="Times New Roman">
+  <title>Icon contact sheet template</title>
+  <desc>Same form as figtree.iconsmith.sheet: 72 px cells in rows of 6 (here 3), white background, one symbol per icon in defs, the use at 48 px, name at 11 px and score at 9 px under each. Width = cols * 72 + 24; height = rows * 96 + 24.</desc>
+  <rect id="background" width="240" height="120" fill="#FFFFFF"/>
+  <defs>
+    <symbol id="icon-grounder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5V3h8l6 6v1"/><path d="M13 3v6h6"/><circle cx="14.5" cy="15.5" r="3.5"/><path d="M17 18l3.5 3.5"/></symbol>
+    <symbol id="icon-trajectory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="6" r="1.5"/><line x1="6.5" y1="16.5" x2="10.5" y2="13.5"/><line x1="13.5" y1="10.5" x2="17.5" y2="7.5"/></symbol>
+    <symbol id="icon-NAME" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M4 12h12"/><path d="M12 8l4 4-4 4"/></symbol>
+  </defs>
+  <g id="cell-grounder" transform="translate(24,24)" color="#333333">
+    <use href="#icon-grounder" x="12" y="0" width="48" height="48"/>
+    <text x="36" y="64" font-size="11" text-anchor="middle" fill="#333333" data-kind="label">grounder</text>
+    <text x="36" y="80" font-size="9" text-anchor="middle" fill="#666666" data-kind="annot">10.0</text>
+  </g>
+  <g id="cell-trajectory" transform="translate(96,24)" color="#333333">
+    <use href="#icon-trajectory" x="12" y="0" width="48" height="48"/>
+    <text x="36" y="64" font-size="11" text-anchor="middle" fill="#333333" data-kind="label">trajectory</text>
+    <text x="36" y="80" font-size="9" text-anchor="middle" fill="#666666" data-kind="annot">10.0</text>
+  </g>
+  <g id="cell-NAME" transform="translate(168,24)" color="#333333">
+    <use href="#icon-NAME" x="12" y="0" width="48" height="48"/>
+    <text x="36" y="64" font-size="11" text-anchor="middle" fill="#333333" data-kind="label">NAME</text>
+    <text x="36" y="80" font-size="9" text-anchor="middle" fill="#666666" data-kind="annot">0.0</text>
+  </g>
+</svg>

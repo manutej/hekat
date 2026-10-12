@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="176" viewBox="0 0 384 176" font-family="Times New Roman">
+  <rect id="background" x="0" y="0" width="384" height="176" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <rect id="a.block" x="24" y="24" width="96" height="48" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="a.label" x="72" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label"><tspan id="a.l1" x="72" y="40">Raw</tspan><tspan id="a.l2" x="72" y="57">input</tspan></text>
+  <rect id="b.block" x="144" y="24" width="96" height="48" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="b.label" x="192" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label"><tspan id="b.l1" x="192" y="40">Feature</tspan><tspan id="b.l2" x="192" y="57">extraction</tspan></text>
+  <rect id="c.block" x="264" y="24" width="96" height="48" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="c.label" x="312" y="48" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label"><tspan id="c.l1" x="312" y="40">Model</tspan><tspan id="c.l2" x="312" y="57">training</tspan></text>
+  <rect id="d.block" x="144" y="104" width="96" height="48" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="d.label" x="192" y="128" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label"><tspan id="d.l1" x="192" y="120">Batch</tspan><tspan id="d.l2" x="192" y="137">inference</tspan></text>
+  <rect id="e.block" x="264" y="104" width="96" height="48" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" rx="4" data-role="block"/>
+  <text id="e.label" x="312" y="128" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label"><tspan id="e.l1" x="312" y="120">Result</tspan><tspan id="e.l2" x="312" y="137">store</tspan></text>
+  <path id="f1" d="M120,48 H144" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f2" d="M240,48 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f3" d="M312,72 V104" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+  <path id="f4" d="M240,128 H264" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)"/>
+</svg>

@@ -1,0 +1,200 @@
+{
+  "rubric": "icon",
+  "initial": {
+    "rubric": "icon",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 8.5,
+      "medium_fit": 3.0,
+      "compactness": 10.0
+    },
+    "overall": 8.58,
+    "issues": [
+      {
+        "dimension": "medium_fit",
+        "severity": "critical",
+        "visual_description": "canvas aspect 1.33 is not square",
+        "code_anchor": "svg",
+        "fix_instruction": "use a square viewBox",
+        "penalty": 3,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 48,
+          "height": 48
+        }
+      },
+      {
+        "dimension": "medium_fit",
+        "severity": "critical",
+        "visual_description": "1 text element(s) in an icon",
+        "code_anchor": "e4-text",
+        "fix_instruction": "remove text; icons must read without words",
+        "penalty": 3,
+        "auto_edit": null
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e1-rect corner radius 12 looks clip-art like",
+        "code_anchor": "e1-rect",
+        "fix_instruction": "use rx <= 4",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e1-rect",
+          "attr": "rx",
+          "value": "4"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e2-rect stroke width 1 differs from the icon's 2",
+        "code_anchor": "e2-rect",
+        "fix_instruction": "set stroke-width to 2",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e2-rect",
+          "attr": "stroke-width",
+          "value": "2"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "e3-line stroke width 3 differs from the icon's 2",
+        "code_anchor": "e3-line",
+        "fix_instruction": "set stroke-width to 2",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "e3-line",
+          "attr": "stroke-width",
+          "value": "2"
+        }
+      }
+    ],
+    "tags": [
+      "medium_fit"
+    ],
+    "metrics": {
+      "fill_ratio": 0.648,
+      "aspect": 1.33,
+      "palette_size": 0
+    }
+  },
+  "final": {
+    "rubric": "icon",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 4.0,
+      "compactness": 9.0
+    },
+    "overall": 8.83,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 14px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "enlarge the content to fill the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "dimension": "medium_fit",
+        "severity": "critical",
+        "visual_description": "1 text element(s) in an icon",
+        "code_anchor": "e4-text",
+        "fix_instruction": "remove text; icons must read without words",
+        "penalty": 3,
+        "auto_edit": null
+      }
+    ],
+    "tags": [
+      "medium_fit"
+    ],
+    "metrics": {
+      "fill_ratio": 0.486,
+      "aspect": 1.0,
+      "palette_size": 0
+    }
+  },
+  "improvement": 0.25,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 8.58,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 8.5,
+        "medium_fit": 3.0,
+        "compactness": 10.0
+      },
+      "issues": 5,
+      "critical": 2,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 8.83,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 4.0,
+        "compactness": 9.0
+      },
+      "issues": 2,
+      "critical": 1,
+      "edits_applied": 4,
+      "edits_failed": 0,
+      "diff_elements": 3,
+      "rendered": null,
+      "note": "set_canvas:; set_attr:e1-rect; set_attr:e2-rect; set_attr:e3-line"
+    }
+  ],
+  "requests_remaining": [
+    {
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 14px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "enlarge the content to fill the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "dimension": "medium_fit",
+      "severity": "critical",
+      "visual_description": "1 text element(s) in an icon",
+      "code_anchor": "e4-text",
+      "fix_instruction": "remove text; icons must read without words",
+      "penalty": 3,
+      "auto_edit": null
+    }
+  ],
+  "stop_reason": "no edits left",
+  "ids_assigned": 4
+}

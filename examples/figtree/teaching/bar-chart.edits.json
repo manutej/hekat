@@ -1,0 +1,7 @@
+[
+  [
+    {"op": "insert", "parent_id": "", "svg": "<text x=\"270\" y=\"290\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"#333333\" data-role=\"axis-label\">Configuration</text>"},
+    {"op": "insert", "parent_id": "", "svg": "<text x=\"18\" y=\"150\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"#333333\" data-role=\"axis-label\" transform=\"rotate(-90 18 150)\">Accuracy (%)</text>"},
+    {"op": "set_text", "id": "e3-text", "text": "Variant B reaches the highest accuracy"}
+  ]
+]

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300" font-family="Arial">
+  <rect id="background" width="520" height="300" fill="#FFFFFF"/>
+  <text id="title" x="260" y="24" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="#333333" font-weight="bold">Revenue grows while churn falls</text>
+  <line id="axis-x" x1="70" y1="250" x2="440" y2="250" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y" x1="70" y1="250" x2="70" y2="50" stroke="#000000" stroke-width="1"/>
+  <line id="axis-y2" x1="440" y1="250" x2="440" y2="50" stroke="#000000" stroke-width="1"/>
+  <text id="tick-l-0" x="64" y="250" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-l-10" x="64" y="150" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">10</text>
+  <text id="tick-l-20" x="64" y="50" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#333333">20</text>
+  <text id="tick-r-0" x="446" y="250" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">0</text>
+  <text id="tick-r-5" x="446" y="150" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">5</text>
+  <text id="tick-r-10" x="446" y="50" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">10</text>
+  <text id="tick-x-Q1" x="116" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Q1</text>
+  <text id="tick-x-Q2" x="208" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Q2</text>
+  <text id="tick-x-Q3" x="300" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Q3</text>
+  <text id="tick-x-Q4" x="392" y="266" font-size="11" text-anchor="middle" dominant-baseline="middle" fill="#333333">Q4</text>
+  <polyline id="series-revenue" points="116,170 208,140 300,110 392,70" fill="none" stroke="#4C72B0" stroke-width="2"/>
+  <polyline id="series-churn" points="116,70 208,110 300,150 392,190" fill="none" stroke="#DD8452" stroke-width="2"/>
+  <rect id="legend-swatch-revenue" x="240" y="196" width="12" height="12" fill="#4C72B0"/>
+  <text id="legend-revenue" x="256" y="202" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Revenue</text>
+  <rect id="legend-swatch-churn" x="240" y="214" width="12" height="12" fill="#DD8452"/>
+  <text id="legend-churn" x="256" y="220" font-size="11" text-anchor="start" dominant-baseline="middle" fill="#333333">Churn</text>
+  <text id="axis-x-label" x="255" y="288" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label">Quarter</text>
+  <text id="axis-y-label" x="22" y="150" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 22 150)">Revenue ($M)</text>
+  <text id="axis-y2-label" x="492" y="150" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 492 150)">Churn (%)</text>
+</svg>

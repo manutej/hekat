@@ -1,0 +1,12 @@
+{
+  "id": "icon.pill-toggle",
+  "rubric": "icon",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "polish.corner_radius",
+    "medium.icon_elements"
+  ],
+  "rationale": "A toggle switch: a stadium track (rx = half the height) and a knob. polish.corner_radius fires because the icon rubric caps rx at 4 and the auto-fix would square the pill. Pills, capsules and stadiums are standard icon shapes (Lucide toggle-left uses rx=7); the cap should be relative (rx <= min(w,h)/2) and the clip-art veto should not apply to icons.",
+  "source": "adversary-icon"
+}

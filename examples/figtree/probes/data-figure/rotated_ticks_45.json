@@ -1,0 +1,13 @@
+{
+  "id": "data-figure.rotated_ticks_45",
+  "rubric": "data-figure",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.overlap",
+    "compactness.overflow",
+    "coverage.axis_labels"
+  ],
+  "rationale": "Long category names rotated -45 degrees at a 48 px pitch, the standard remedy for crowded x ticks; rendered they do not touch. The bbox code only rotates text for +-90 degrees, so each label keeps its full horizontal width (up to 99 px) and seven overlapping pairs are reported. Rule change: rotate the text bbox for any angle (or at least shrink its horizontal extent by cos(angle)).",
+  "source": "adversary-chart"
+}

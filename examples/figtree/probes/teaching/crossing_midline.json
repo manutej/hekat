@@ -1,0 +1,11 @@
+{
+  "id": "teaching.crossing_midline",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.crossings"
+  ],
+  "expect_silent": [],
+  "rationale": "Fetch -> Store drops through x=180; Parse -> Index climbs in two steps and its y=88 run crosses that vertical mid-segment: one proper X crossing, no shared endpoints.",
+  "source": "adversary-diagram"
+}

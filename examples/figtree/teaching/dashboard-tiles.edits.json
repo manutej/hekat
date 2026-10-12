@@ -1,0 +1,180 @@
+[
+  [
+    {
+      "op": "set_text",
+      "id": "tile-refined-label",
+      "text": "Figures refined"
+    },
+    {
+      "op": "set_text",
+      "id": "tile-refined-note",
+      "text": "bar, slide, icon, spec"
+    },
+    {
+      "op": "set_text",
+      "id": "tile-gain-label",
+      "text": "Mean score gain"
+    },
+    {
+      "op": "set_text",
+      "id": "tile-gain-note",
+      "text": "points of 10, 4 trajectories"
+    },
+    {
+      "op": "set_text",
+      "id": "tile-requests-note",
+      "text": "need a content decision"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-refined",
+      "attr": "width",
+      "value": "218"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-gain",
+      "attr": "x",
+      "value": "251"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-gain",
+      "attr": "width",
+      "value": "218"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-requests",
+      "attr": "x",
+      "value": "486"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-requests",
+      "attr": "width",
+      "value": "218"
+    },
+    {
+      "op": "translate",
+      "id": "tile-gain-label",
+      "dx": 29,
+      "dy": 0
+    },
+    {
+      "op": "translate",
+      "id": "tile-gain-value",
+      "dx": 29,
+      "dy": 0
+    },
+    {
+      "op": "translate",
+      "id": "tile-gain-note",
+      "dx": 29,
+      "dy": 0
+    },
+    {
+      "op": "translate",
+      "id": "tile-requests-label",
+      "dx": -52,
+      "dy": 0
+    },
+    {
+      "op": "translate",
+      "id": "tile-requests-value",
+      "dx": -52,
+      "dy": 0
+    },
+    {
+      "op": "translate",
+      "id": "tile-requests-note",
+      "dx": -52,
+      "dy": 0
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-refined-value",
+      "attr": "font-weight",
+      "value": "bold"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-gain-value",
+      "attr": "font-weight",
+      "value": "bold"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-requests-value",
+      "attr": "font-weight",
+      "value": "bold"
+    }
+  ],
+  [
+    {
+      "op": "recolor",
+      "id": "tile-gain",
+      "fill": "#F7F7F7",
+      "stroke": "#E0E0E0"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-gain",
+      "attr": "stroke-width",
+      "value": "1"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-refined",
+      "fill": "#F7F7F7"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-requests",
+      "fill": "#F7F7F7"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-gain-value",
+      "fill": "#1B7F4B"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-requests-value",
+      "fill": "#B5452A"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-refined-note",
+      "fill": "#555555"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-gain-note",
+      "fill": "#555555"
+    },
+    {
+      "op": "recolor",
+      "id": "tile-requests-note",
+      "fill": "#555555"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-refined-label",
+      "attr": "font-size",
+      "value": "13"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-gain-label",
+      "attr": "font-size",
+      "value": "13"
+    },
+    {
+      "op": "set_attr",
+      "id": "tile-requests-label",
+      "attr": "font-size",
+      "value": "13"
+    }
+  ]
+]

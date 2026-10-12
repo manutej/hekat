@@ -1,0 +1,14 @@
+{
+  "id": "icon.marker-arrowhead",
+  "rubric": "icon",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "flow.diagonal",
+    "flow.short_shaft",
+    "flow.reading_order",
+    "flow.crossings"
+  ],
+  "rationale": "An 'external link' icon whose arrowhead is a <marker>. marker-end makes the stroke a flow, so the diagram checks run on an icon: flow.diagonal and flow.short_shaft fire (score 9.83). Flow checks should be skipped for the icon medium (the rubric already lists them under media '*').",
+  "source": "adversary-icon"
+}

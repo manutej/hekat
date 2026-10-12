@@ -1,0 +1,41 @@
+{
+  "name": "@hekat/figtree-ds",
+  "version": "0.1.0",
+  "description": "FigTree design system: tokens, icon family and figure components for editable SVG teaching figures, methodology diagrams and slides",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./src/tokens.css"
+  },
+  "files": [
+    "dist",
+    "src/tokens.css"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "gen:icons": "python3 scripts/gen_icons.py"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@types/react": "19.3.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tsup": "8.5.1",
+    "typescript": "^5.6.0"
+  }
+}

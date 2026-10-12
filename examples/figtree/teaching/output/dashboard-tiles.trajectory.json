@@ -1,0 +1,411 @@
+{
+  "rubric": "dashboard",
+  "initial": {
+    "rubric": "dashboard",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 1.0,
+      "visual_polish": 5.5,
+      "medium_fit": 10.0,
+      "compactness": 8.5
+    },
+    "overall": 7.5,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "canvas aspect 3.60 outside the dashboard tile range 0.8-2.0 (banner or tower shape)",
+        "code_anchor": "svg",
+        "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+        "penalty": 1.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-refined-label font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-refined-label",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-refined-label",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-refined-label has 8 words (limit 6)",
+        "code_anchor": "tile-refined-label",
+        "fix_instruction": "shorten to a keyword label",
+        "penalty": 0.8,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "tile-refined-label overflows its block tile-refined",
+        "code_anchor": "tile-refined-label",
+        "fix_instruction": "widen the block or shorten the label",
+        "penalty": 1.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "tile-refined-value contrast 1.8:1 below 4.5:1",
+        "code_anchor": "tile-refined-value",
+        "fix_instruction": "use #333333 text on #F7F7F7",
+        "penalty": 1.2,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "tile-refined-value",
+          "fill": "#333333"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-refined-note font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-refined-note",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-refined-note",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-refined-note contrast 3.3:1 below 4.5:1",
+        "code_anchor": "tile-refined-note",
+        "fix_instruction": "use #333333 text on #F7F7F7",
+        "penalty": 1.2,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "tile-refined-note",
+          "fill": "#333333"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "critical",
+        "visual_description": "tile-refined-note overflows its block tile-refined",
+        "code_anchor": "tile-refined-note",
+        "fix_instruction": "widen the block or shorten the label",
+        "penalty": 1.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-gain-label font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-gain-label",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-gain-label",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-gain-note font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-gain-note",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-gain-note",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-gain-note has 10 words (limit 6)",
+        "code_anchor": "tile-gain-note",
+        "fix_instruction": "shorten to a keyword label",
+        "penalty": 0.8,
+        "auto_edit": null
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-requests-label font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-requests-label",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-requests-label",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-requests-note font size 9px below the dashboard tile minimum 12px",
+        "code_anchor": "tile-requests-note",
+        "fix_instruction": "raise font size to at least 12px",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-requests-note",
+          "attr": "font-size",
+          "value": "12"
+        }
+      },
+      {
+        "dimension": "text_quality",
+        "severity": "warning",
+        "visual_description": "tile-requests-note contrast 3.5:1 below 4.5:1",
+        "code_anchor": "tile-requests-note",
+        "fix_instruction": "use #333333 text on #FFFFFF",
+        "penalty": 1.2,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "tile-requests-note",
+          "fill": "#333333"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-refined-value uses Georgia; the figure's family is Arial",
+        "code_anchor": "tile-refined-value",
+        "fix_instruction": "set font-family to Arial",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-refined-value",
+          "attr": "font-family",
+          "value": "Arial"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-gain-value uses Georgia; the figure's family is Arial",
+        "code_anchor": "tile-gain-value",
+        "fix_instruction": "set font-family to Arial",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-gain-value",
+          "attr": "font-family",
+          "value": "Arial"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-requests-value uses Georgia; the figure's family is Arial",
+        "code_anchor": "tile-requests-value",
+        "fix_instruction": "set font-family to Arial",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-requests-value",
+          "attr": "font-family",
+          "value": "Arial"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "2 font families in one figure: Arial, Georgia",
+        "code_anchor": "tile-refined-label",
+        "fix_instruction": "use one font family (Arial)",
+        "penalty": 0.5,
+        "auto_edit": null
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-refined corner radius 24 looks clip-art like",
+        "code_anchor": "tile-refined",
+        "fix_instruction": "use rx <= 8",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-refined",
+          "attr": "rx",
+          "value": "8"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-gain uses a gradient or pattern fill",
+        "code_anchor": "tile-gain",
+        "fix_instruction": "replace with a flat fill",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "recolor",
+          "id": "tile-gain",
+          "fill": "#7BA3C9"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-gain corner radius 24 looks clip-art like",
+        "code_anchor": "tile-gain",
+        "fix_instruction": "use rx <= 8",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-gain",
+          "attr": "rx",
+          "value": "8"
+        }
+      },
+      {
+        "dimension": "visual_polish",
+        "severity": "warning",
+        "visual_description": "tile-requests corner radius 24 looks clip-art like",
+        "code_anchor": "tile-requests",
+        "fix_instruction": "use rx <= 8",
+        "penalty": 0.5,
+        "auto_edit": {
+          "op": "set_attr",
+          "id": "tile-requests",
+          "attr": "rx",
+          "value": "8"
+        }
+      }
+    ],
+    "tags": [
+      "text_quality"
+    ],
+    "metrics": {
+      "fill_ratio": 0.803,
+      "aspect": 3.6,
+      "palette_size": 0
+    }
+  },
+  "final": {
+    "rubric": "dashboard",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": null,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 8.5
+    },
+    "overall": 9.75,
+    "issues": [
+      {
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "canvas aspect 3.60 outside the dashboard tile range 0.8-2.0 (banner or tower shape)",
+        "code_anchor": "svg",
+        "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+        "penalty": 1.5,
+        "auto_edit": null
+      }
+    ],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.803,
+      "aspect": 3.6,
+      "palette_size": 0
+    }
+  },
+  "improvement": 2.25,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 7.5,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 1.0,
+        "visual_polish": 5.5,
+        "medium_fit": 10.0,
+        "compactness": 8.5
+      },
+      "issues": 22,
+      "critical": 3,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    },
+    {
+      "round": 1,
+      "overall": 9.75,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.5
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 35,
+      "edits_failed": 0,
+      "diff_elements": 12,
+      "rendered": null,
+      "note": "set_text:tile-refined-label; set_text:tile-refined-note; set_text:tile-gain-label; set_text:tile-gain-note; set_text:tile-requests-note; set_attr:tile-refined; set_attr:tile-gain; set_attr:tile-gain; "
+    },
+    {
+      "round": 2,
+      "overall": 9.75,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": null,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 8.5
+      },
+      "issues": 1,
+      "critical": 0,
+      "edits_applied": 12,
+      "edits_failed": 0,
+      "diff_elements": 10,
+      "rendered": null,
+      "note": "recolor:tile-gain; set_attr:tile-gain; recolor:tile-refined; recolor:tile-requests; recolor:tile-gain-value; recolor:tile-requests-value; recolor:tile-refined-note; recolor:tile-gain-note; recolor:til"
+    }
+  ],
+  "requests_remaining": [
+    {
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "canvas aspect 3.60 outside the dashboard tile range 0.8-2.0 (banner or tower shape)",
+      "code_anchor": "svg",
+      "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
+      "penalty": 1.5,
+      "auto_edit": null
+    }
+  ],
+  "stop_reason": "no edits left",
+  "ids_assigned": 0
+}

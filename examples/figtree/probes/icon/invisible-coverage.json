@@ -1,0 +1,15 @@
+{
+  "id": "icon.invisible-coverage",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "icon.invisible_shape"
+  ],
+  "expect_silent": [
+    "compactness.blank_margin",
+    "content.none"
+  ],
+  "rationale": "A 3px glyph in the middle of an invisible rect (fill none, stroke none). The rect gives the content bbox 56% coverage and no blank margin, so both the compactness checks and the iconsmith coverage rule pass; the visible icon is a 4px dot at 16px. Check: exclude shapes with no fill and no stroke (or opacity 0 / visibility hidden / display none) from the content bbox.",
+  "source": "adversary-icon",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

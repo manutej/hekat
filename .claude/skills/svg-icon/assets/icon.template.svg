@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="NAME">
+  <title>NAME: one-line concept</title>
+  <desc>Family form: 24 grid, stroke 2, round caps and joins, no fill, no text, no markers, no transforms, all ink inside 2..22, at most 12 strokes. The example is a document with a magnifier (the grounder icon). In a figure, emit the inner elements inside a symbol with stroke="currentColor".</desc>
+  <path id="page" d="M9 21H5V3h8l6 6v1"/>
+  <path id="page-fold" d="M13 3v6h6"/>
+  <circle id="lens" cx="14.5" cy="15.5" r="3.5"/>
+  <path id="lens-handle" d="M17 18l3.5 3.5"/>
+</svg>

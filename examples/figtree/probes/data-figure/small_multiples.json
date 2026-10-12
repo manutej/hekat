@@ -1,0 +1,19 @@
+{
+  "id": "data-figure.small_multiples",
+  "rubric": "data-figure",
+  "kind": "clean",
+  "expect_fire": [],
+  "expect_silent": [
+    "coverage.title",
+    "coverage.axis_labels",
+    "text.overlap",
+    "text.overflow",
+    "polish.palette_size",
+    "polish.stroke_widths",
+    "compactness.blank_margin",
+    "text.min_font",
+    "text.words_per_label"
+  ],
+  "rationale": "A correct 2x2 small-multiples panel: one finding title, shared axis labels with units, one-word panel titles inside each panel, 10 px tick labels at the medium minimum. Panel titles are shorter than three words and must not trip coverage.title; panel rects are blocks whose hosted text must not be reported as overflow.",
+  "source": "adversary-chart"
+}

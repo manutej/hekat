@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="Arial">
+  <rect id="background" width="640" height="360" fill="#FFFFFF"/>
+  <rect id="tile-users" x="16" y="16" width="150" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-users-label" x="32" y="56" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Active users</text>
+  <text id="tile-users-value" x="32" y="150" font-size="32" text-anchor="start" dominant-baseline="middle" fill="#333333" font-weight="bold">12,480</text>
+  <text id="tile-users-note" x="32" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+  <rect id="tile-revenue" x="178" y="16" width="280" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-revenue-label" x="194" y="56" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Revenue</text>
+  <text id="tile-revenue-value" x="194" y="150" font-size="32" text-anchor="start" dominant-baseline="middle" fill="#333333" font-weight="bold">$84.2K</text>
+  <text id="tile-revenue-note" x="194" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+  <rect id="tile-churn" x="478" y="16" width="146" height="328" fill="#F7F7F7" rx="8" stroke="#E0E0E0" stroke-width="1"/>
+  <text id="tile-churn-label" x="494" y="56" font-size="14" text-anchor="start" dominant-baseline="middle" fill="#333333">Churn</text>
+  <text id="tile-churn-value" x="494" y="150" font-size="32" text-anchor="start" dominant-baseline="middle" fill="#333333" font-weight="bold">2.1%</text>
+  <text id="tile-churn-note" x="494" y="300" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#555555">last 7 days</text>
+</svg>

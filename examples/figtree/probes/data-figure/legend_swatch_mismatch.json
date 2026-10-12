@@ -1,0 +1,12 @@
+{
+  "id": "data-figure.legend_swatch_mismatch",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "chart.legend_swatch_colour"
+  ],
+  "expect_silent": [],
+  "rationale": "The lines are blue and orange, the legend swatches green and purple: the legend cannot be matched to any series. Four accent colours, all muted, so the critic scores 10. Proposed: every legend swatch fill must equal the stroke or fill of some series mark.",
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

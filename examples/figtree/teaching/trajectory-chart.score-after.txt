@@ -1,0 +1,9 @@
+data-figure: overall 10.0
+  semantic_coverage      10.00
+  hallucination_control    n/a
+  topology_accuracy      10.00
+  flow_readability       10.00
+  text_quality           10.00
+  visual_polish          10.00
+  medium_fit             10.00
+  compactness            10.00

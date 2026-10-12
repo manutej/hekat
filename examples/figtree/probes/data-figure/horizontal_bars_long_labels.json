@@ -1,0 +1,16 @@
+{
+  "id": "data-figure.horizontal_bars_long_labels",
+  "rubric": "data-figure",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "text.words_per_label",
+    "compactness.overflow",
+    "text.overlap",
+    "coverage.axis_labels",
+    "coverage.title",
+    "text.overflow"
+  ],
+  "rationale": "A correct horizontal bar chart of survey items. Survey wording is the category name and legitimately runs to nine words; text.words_per_label (limit 8) treats it like a box label. Rule change: exempt category/tick labels (text end-anchored on the y axis, or data-role=tick) from the word limit, or raise the limit for charts.",
+  "source": "adversary-chart"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "teaching.duplicate_labels",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "text.duplicate_labels"
+  ],
+  "expect_silent": [],
+  "rationale": "Two blocks are labelled 'Filter' and two 'Merge'; a reader cannot tell whether the rows share components drawn twice or hold different ones. Nothing compares label strings across blocks.",
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

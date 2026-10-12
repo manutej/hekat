@@ -1,0 +1,12 @@
+{
+  "id": "teaching.misleading_grouping",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "topology.container_label_mismatch"
+  ],
+  "expect_silent": [],
+  "rationale": "The dashed container is titled 'Training' but holds Deploy and Monitor, while Train sits outside it; the grouping contradicts the labels. Topology checks only count containers and their children, never what the container claims to contain.",
+  "source": "adversary-diagram",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

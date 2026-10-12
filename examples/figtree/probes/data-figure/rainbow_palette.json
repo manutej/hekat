@@ -1,0 +1,12 @@
+{
+  "id": "data-figure.rainbow_palette",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "chart.rainbow_categorical"
+  ],
+  "expect_silent": [],
+  "rationale": "One series, six bars, six hues: colour encodes nothing. Exactly six saturated fills, so polish.palette_size (limit 6) is silent. Proposed: when every bar in a single-series chart has a different hue and there is no legend, flag 'colour without meaning'.",
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

@@ -548,3 +548,39 @@ For questions or contributions to the Hekat DSL project, see the LUXOR project d
 **Hekat**: Precision in measurement, precision in orchestration.
 
 *Ancient wisdom meets modern agent coordination.*
+
+## FigTree Figure Generator
+
+`figtree/` turns a paper, skill.md or methodology document into an editable SVG methodology
+figure using the FigTree recursive construction (Grounder → recursive Generator tree → Worker
+Merge → dual-space Critic loop, with sheaf-stored residuals and an editability proof).
+
+```bash
+python -m figtree generate examples/figtree/figtree-spec.md -o figure.svg --report report.json
+python -m figtree refine examples/figtree/teaching/bar-chart.svg --rubric data-figure -o out.svg --trajectory t.json
+python -m pytest tests/test_figtree.py tests/test_figtree_refine.py
+```
+
+`figtree refine` runs the paper's iterative-editing loop on any SVG (teaching diagrams, data
+figures, slides, dashboard tiles, icons) against a rubric, fixing mechanical defects and
+returning anchored edit requests for everything that needs a decision.
+`figtree animate` adds reveal / draw / pulse motion tied to meaning, `figtree icon` designs
+custom icons through the same loop, and `--backend claude` runs the model agents on the Claude
+Code session's own login. The showcase page is built by
+`examples/figtree/showcase/build_showcase.py`.
+See `docs/FIGTREE.md` for the architecture, constraints, rubrics, test protocol and backends,
+and `docs/META-PROMPT-SVG-ARTIFACTS.md` for the category-level procedure.
+
+The loop is packaged three more ways:
+
+- **Workflows** (`.claude/workflows/figtree-*.js`, `docs/workflows/README.md`): refine,
+  adversary, judge-panel, icon-family and digest scripts for the Claude Code `Workflow` tool.
+  Each subagent gets one command and one file and returns a JSON verdict of at most 2 KB, so a
+  whole body of work can be fanned out without any agent holding the markup.
+  `python -m figtree digest --plan DIR` turns a directory of documents into figure units.
+- **Skills** (`.claude/skills/figtree` and `svg-diagram`, `svg-data-figure`, `svg-icon`,
+  `svg-animation`, `svg-eval`, `svg-showcase`): the method per medium with references (rubric
+  check tables, layout rules, gotchas the critic cannot see) and assets (templates, briefs).
+- **Design system** (`design/figtree-ds`): a React package with the preset tokens, the icon
+  family generated from `figtree/icons.py`, and Figure/Container/Block/Flow/Icon/Caption
+  components; synced to the Claude Design project "FigTree Design System" via `.design-sync/`.

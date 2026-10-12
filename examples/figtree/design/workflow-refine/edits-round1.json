@@ -1,0 +1,8 @@
+[[
+  {"op":"set_attr","id":"n1.arrow2","attr":"d","value":"M832,128 H872 V248 H160 V312"},
+  {"op":"set_attr","id":"n1.arrow2","attr":"data-to","value":"n10.top"},
+  {"op":"set_attr","id":"n1.arrow4","attr":"d","value":"M400,160 H448 V232 H32 V336 H112"},
+  {"op":"set_attr","id":"n1.arrow4","attr":"data-to","value":"n10.left"},
+  {"op":"translate","id":"n1","dx":0,"dy":-32},
+  {"op":"set_canvas","width":904,"height":384}
+]]

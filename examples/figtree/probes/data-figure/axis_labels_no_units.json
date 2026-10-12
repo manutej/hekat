@@ -1,0 +1,12 @@
+{
+  "id": "data-figure.axis_labels_no_units",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "chart.axis_units"
+  ],
+  "expect_silent": [],
+  "rationale": "Axis labels 'Time' and 'Loss' carry no units (seconds? epochs? steps?), yet the check 'missing axis labels with units' is satisfied because the words match AXIS_WORDS. Proposed: an axis label must contain a parenthesised unit, a % sign, or an explicit 'unitless' marker.",
+  "source": "adversary-chart",
+  "folded": "implemented as a measurable check; kind changed from gaming to defect"
+}

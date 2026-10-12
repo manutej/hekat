@@ -1,0 +1,11 @@
+{
+  "id": "data-figure.tick_labels_overlap",
+  "rubric": "data-figure",
+  "kind": "defect",
+  "expect_fire": [
+    "text.overlap"
+  ],
+  "expect_silent": [],
+  "rationale": "Twelve four-digit year labels at 10 px on an 18 px pitch: adjacent labels collide (Arial digits are 5.6 px wide at 10 px, so each label is 22 px). The estimate (0.5 em per glyph = 20 px) also exceeds the pitch, so text.overlap must fire. Note the estimate under-reads digit-heavy labels by about 11 %, so a 21-22 px pitch would collide on screen yet pass.",
+  "source": "adversary-chart"
+}

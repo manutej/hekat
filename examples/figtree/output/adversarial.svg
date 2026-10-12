@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="304" height="128" viewBox="0 0 304 128" font-family="Times New Roman" data-figtree="1">
+  <title>Adversarial Grounding Case</title>
+  <rect id="background" x="0" y="0" width="304" height="128" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 304 128">
+    <!-- PORT:left x=24 y=40 id=n2.left type=input component="Encoder" -->
+    <!-- PORT:right x=120 y=40 id=n2.right type=output component="Encoder" -->
+    <!-- PORT:top x=72 y=24 id=n2.top type=input component="Encoder" -->
+    <!-- PORT:bottom x=72 y=56 id=n2.bottom type=output component="Encoder" -->
+    <!-- PORT:left x=24 y=88 id=n3.left type=input component="Decoder" -->
+    <!-- PORT:right x=120 y=88 id=n3.right type=output component="Decoder" -->
+    <!-- PORT:top x=72 y=72 id=n3.top type=input component="Decoder" -->
+    <!-- PORT:bottom x=72 y=104 id=n3.bottom type=output component="Decoder" -->
+    <!-- PORT:left x=168 y=64 id=n4.left type=input component="Classifier" -->
+    <!-- PORT:right x=280 y=64 id=n4.right type=output component="Classifier" -->
+    <!-- PORT:top x=224 y=48 id=n4.top type=input component="Classifier" -->
+    <!-- PORT:bottom x=224 y=80 id=n4.bottom type=output component="Classifier" -->
+    <g id="n2" transform="translate(24,24)" data-bbox="24 24 96 32" data-label="Encoder">
+      <!-- PORT:left x=0 y=16 id=n2.left type=input component="Encoder" -->
+      <!-- PORT:right x=96 y=16 id=n2.right type=output component="Encoder" -->
+      <!-- PORT:top x=48 y=0 id=n2.top type=input component="Encoder" -->
+      <!-- PORT:bottom x=48 y=32 id=n2.bottom type=output component="Encoder" -->
+      <rect id="n2.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Encoder"/>
+      <use id="n2.icon" href="#icon-layers" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+      <text id="n2.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Encoder</text>
+    </g>
+    <g id="n3" transform="translate(24,72)" data-bbox="24 72 96 32" data-label="Decoder">
+      <!-- PORT:left x=0 y=16 id=n3.left type=input component="Decoder" -->
+      <!-- PORT:right x=96 y=16 id=n3.right type=output component="Decoder" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Decoder" -->
+      <!-- PORT:bottom x=48 y=32 id=n3.bottom type=output component="Decoder" -->
+      <rect id="n3.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Decoder"/>
+      <use id="n3.icon" href="#icon-layers" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+      <text id="n3.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Decoder</text>
+    </g>
+    <g id="n4" transform="translate(168,48)" data-bbox="168 48 112 32" data-label="Classifier">
+      <!-- PORT:left x=0 y=16 id=n4.left type=input component="Classifier" -->
+      <!-- PORT:right x=112 y=16 id=n4.right type=output component="Classifier" -->
+      <!-- PORT:top x=56 y=0 id=n4.top type=input component="Classifier" -->
+      <!-- PORT:bottom x=56 y=32 id=n4.bottom type=output component="Classifier" -->
+      <rect id="n4.block" x="0" y="0" width="112" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Classifier"/>
+      <use id="n4.icon" href="#icon-check" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+      <text id="n4.label" x="72" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="88">Classifier</text>
+    </g>
+    <path id="n1.arrow0" d="M120,88 H144 V64 H168" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+  </g>
+</svg>

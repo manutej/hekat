@@ -1,0 +1,300 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="792" height="592" viewBox="0 0 792 592" font-family="Times New Roman" data-figtree="1">
+  <title>A FigTree-style system recursively decomposes a source document into a layout tree of agents (Grounder, Generator, Critic, Worker) orchestrated by build and critic loops, producing an editable SVG with residual defects.</title>
+  <rect id="background" x="0" y="0" width="792" height="592" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="5" markerHeight="3.5" refX="5" refY="1.75" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L5,1.75 L0,3.5 z" fill="#333333"/>
+    </marker>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5"/></symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 792 592">
+    <!-- PORT:left x=136 y=88 id=n8.left type=input component="SourceText" -->
+    <!-- PORT:right x=248 y=88 id=n8.right type=output component="SourceText" -->
+    <!-- PORT:top x=192 y=72 id=n8.top type=input component="SourceText" -->
+    <!-- PORT:bottom x=192 y=104 id=n8.bottom type=output component="SourceText" -->
+    <!-- PORT:left x=120 y=136 id=n9.left type=input component="Generator Agent" -->
+    <!-- PORT:right x=264 y=136 id=n9.right type=output component="Generator Agent" -->
+    <!-- PORT:top x=192 y=120 id=n9.top type=input component="Generator Agent" -->
+    <!-- PORT:bottom x=192 y=152 id=n9.bottom type=output component="Generator Agent" -->
+    <!-- PORT:left x=128 y=184 id=n10.left type=input component="Critic Agent" -->
+    <!-- PORT:right x=256 y=184 id=n10.right type=output component="Critic Agent" -->
+    <!-- PORT:top x=192 y=168 id=n10.top type=input component="Critic Agent" -->
+    <!-- PORT:bottom x=192 y=200 id=n10.bottom type=output component="Critic Agent" -->
+    <!-- PORT:left x=96 y=280 id=n11.left type=input component="LayoutTree (SheafGraph)" -->
+    <!-- PORT:right x=288 y=280 id=n11.right type=output component="LayoutTree (SheafGraph)" -->
+    <!-- PORT:top x=192 y=264 id=n11.top type=input component="LayoutTree (SheafGraph)" -->
+    <!-- PORT:bottom x=192 y=296 id=n11.bottom type=output component="LayoutTree (SheafGraph)" -->
+    <!-- PORT:left x=152 y=328 id=n12.left type=input component="FinalSVG" -->
+    <!-- PORT:right x=232 y=328 id=n12.right type=output component="FinalSVG" -->
+    <!-- PORT:top x=192 y=312 id=n12.top type=input component="FinalSVG" -->
+    <!-- PORT:bottom x=192 y=344 id=n12.bottom type=output component="FinalSVG" -->
+    <!-- PORT:left x=424 y=136 id=n13.left type=input component="Grounder Agent" -->
+    <!-- PORT:right x=568 y=136 id=n13.right type=output component="Grounder Agent" -->
+    <!-- PORT:top x=496 y=120 id=n13.top type=input component="Grounder Agent" -->
+    <!-- PORT:bottom x=496 y=152 id=n13.bottom type=output component="Grounder Agent" -->
+    <!-- PORT:left x=464 y=184 id=n14.left type=input component="Draw" -->
+    <!-- PORT:right x=528 y=184 id=n14.right type=output component="Draw" -->
+    <!-- PORT:top x=496 y=168 id=n14.top type=input component="Draw" -->
+    <!-- PORT:bottom x=496 y=200 id=n14.bottom type=output component="Draw" -->
+    <!-- PORT:left x=384 y=232 id=n15.left type=input component="Decompose into 2–4 children" -->
+    <!-- PORT:right x=608 y=232 id=n15.right type=output component="Decompose into 2–4 children" -->
+    <!-- PORT:top x=496 y=216 id=n15.top type=input component="Decompose into 2–4 children" -->
+    <!-- PORT:bottom x=496 y=248 id=n15.bottom type=output component="Decompose into 2–4 children" -->
+    <!-- PORT:left x=432 y=280 id=n16.left type=input component="Worker repair" -->
+    <!-- PORT:right x=560 y=280 id=n16.right type=output component="Worker repair" -->
+    <!-- PORT:top x=496 y=264 id=n16.top type=input component="Worker repair" -->
+    <!-- PORT:bottom x=496 y=296 id=n16.bottom type=output component="Worker repair" -->
+    <!-- PORT:left x=80 y=480 id=n17.left type=input component="Worker Agent (Merge)" -->
+    <!-- PORT:right x=256 y=480 id=n17.right type=output component="Worker Agent (Merge)" -->
+    <!-- PORT:top x=168 y=464 id=n17.top type=input component="Worker Agent (Merge)" -->
+    <!-- PORT:bottom x=168 y=496 id=n17.bottom type=output component="Worker Agent (Merge)" -->
+    <!-- PORT:left x=72 y=528 id=n18.left type=input component="Re-validate invariants" -->
+    <!-- PORT:right x=264 y=528 id=n18.right type=output component="Re-validate invariants" -->
+    <!-- PORT:top x=168 y=512 id=n18.top type=input component="Re-validate invariants" -->
+    <!-- PORT:bottom x=168 y=544 id=n18.bottom type=output component="Re-validate invariants" -->
+    <!-- PORT:left x=400 y=480 id=n19.left type=input component="Render" -->
+    <!-- PORT:right x=496 y=480 id=n19.right type=output component="Render" -->
+    <!-- PORT:top x=448 y=464 id=n19.top type=input component="Render" -->
+    <!-- PORT:bottom x=448 y=496 id=n19.bottom type=output component="Render" -->
+    <!-- PORT:left x=336 y=528 id=n20.left type=input component="Rollback to last valid fragment" -->
+    <!-- PORT:right x=560 y=528 id=n20.right type=output component="Rollback to last valid fragment" -->
+    <!-- PORT:top x=448 y=512 id=n20.top type=input component="Rollback to last valid fragment" -->
+    <!-- PORT:bottom x=448 y=544 id=n20.bottom type=output component="Rollback to last valid fragment" -->
+    <!-- PORT:left x=608 y=504 id=n21.left type=input component="ResidualDefects" -->
+    <!-- PORT:right x=736 y=504 id=n21.right type=output component="ResidualDefects" -->
+    <!-- PORT:top x=672 y=488 id=n21.top type=input component="ResidualDefects" -->
+    <!-- PORT:bottom x=672 y=520 id=n21.bottom type=output component="ResidualDefects" -->
+    <g id="n2" transform="translate(48,24)" data-bbox="48 24 288 368" data-label="SourceText, Generator Agent, Critic Agent, LayoutTree (SheafGraph), FinalSVG">
+      <!-- PORT:left x=88 y=64 id=n8.left type=input component="SourceText" -->
+      <!-- PORT:right x=200 y=64 id=n8.right type=output component="SourceText" -->
+      <!-- PORT:top x=144 y=48 id=n8.top type=input component="SourceText" -->
+      <!-- PORT:bottom x=144 y=80 id=n8.bottom type=output component="SourceText" -->
+      <!-- PORT:left x=72 y=112 id=n9.left type=input component="Generator Agent" -->
+      <!-- PORT:right x=216 y=112 id=n9.right type=output component="Generator Agent" -->
+      <!-- PORT:top x=144 y=96 id=n9.top type=input component="Generator Agent" -->
+      <!-- PORT:bottom x=144 y=128 id=n9.bottom type=output component="Generator Agent" -->
+      <!-- PORT:left x=80 y=160 id=n10.left type=input component="Critic Agent" -->
+      <!-- PORT:right x=208 y=160 id=n10.right type=output component="Critic Agent" -->
+      <!-- PORT:top x=144 y=144 id=n10.top type=input component="Critic Agent" -->
+      <!-- PORT:bottom x=144 y=176 id=n10.bottom type=output component="Critic Agent" -->
+      <!-- PORT:left x=48 y=256 id=n11.left type=input component="LayoutTree (SheafGraph)" -->
+      <!-- PORT:right x=240 y=256 id=n11.right type=output component="LayoutTree (SheafGraph)" -->
+      <!-- PORT:top x=144 y=240 id=n11.top type=input component="LayoutTree (SheafGraph)" -->
+      <!-- PORT:bottom x=144 y=272 id=n11.bottom type=output component="LayoutTree (SheafGraph)" -->
+      <!-- PORT:left x=104 y=304 id=n12.left type=input component="FinalSVG" -->
+      <!-- PORT:right x=184 y=304 id=n12.right type=output component="FinalSVG" -->
+      <!-- PORT:top x=144 y=288 id=n12.top type=input component="FinalSVG" -->
+      <!-- PORT:bottom x=144 y=320 id=n12.bottom type=output component="FinalSVG" -->
+      <rect id="n2.container" x="0" y="0" width="288" height="368" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n6" transform="translate(48,24)" data-bbox="48 24 192 176" data-label="SourceText, Generator Agent, Critic Agent">
+        <!-- PORT:left x=40 y=40 id=n8.left type=input component="SourceText" -->
+        <!-- PORT:right x=152 y=40 id=n8.right type=output component="SourceText" -->
+        <!-- PORT:top x=96 y=24 id=n8.top type=input component="SourceText" -->
+        <!-- PORT:bottom x=96 y=56 id=n8.bottom type=output component="SourceText" -->
+        <!-- PORT:left x=24 y=88 id=n9.left type=input component="Generator Agent" -->
+        <!-- PORT:right x=168 y=88 id=n9.right type=output component="Generator Agent" -->
+        <!-- PORT:top x=96 y=72 id=n9.top type=input component="Generator Agent" -->
+        <!-- PORT:bottom x=96 y=104 id=n9.bottom type=output component="Generator Agent" -->
+        <!-- PORT:left x=32 y=136 id=n10.left type=input component="Critic Agent" -->
+        <!-- PORT:right x=160 y=136 id=n10.right type=output component="Critic Agent" -->
+        <!-- PORT:top x=96 y=120 id=n10.top type=input component="Critic Agent" -->
+        <!-- PORT:bottom x=96 y=152 id=n10.bottom type=output component="Critic Agent" -->
+        <rect id="n6.container" x="0" y="0" width="192" height="176" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+        <g id="n8" transform="translate(40,24)" data-bbox="40 24 112 32" data-label="SourceText">
+          <!-- PORT:left x=0 y=16 id=n8.left type=input component="SourceText" -->
+          <!-- PORT:right x=112 y=16 id=n8.right type=output component="SourceText" -->
+          <!-- PORT:top x=56 y=0 id=n8.top type=input component="SourceText" -->
+          <!-- PORT:bottom x=56 y=32 id=n8.bottom type=output component="SourceText" -->
+          <rect id="n8.block" x="0" y="0" width="112" height="32" fill="#D5D5D5" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="SourceText"/>
+          <use id="n8.icon" href="#icon-document" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+          <text id="n8.label" x="72" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="88">SourceText</text>
+        </g>
+        <g id="n9" transform="translate(24,72)" data-bbox="24 72 144 32" data-label="Generator Agent">
+          <!-- PORT:left x=0 y=16 id=n9.left type=input component="Generator Agent" -->
+          <!-- PORT:right x=144 y=16 id=n9.right type=output component="Generator Agent" -->
+          <!-- PORT:top x=72 y=0 id=n9.top type=input component="Generator Agent" -->
+          <!-- PORT:bottom x=72 y=32 id=n9.bottom type=output component="Generator Agent" -->
+          <rect id="n9.block" x="0" y="0" width="144" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Generator Agent"/>
+          <use id="n9.icon" href="#icon-gear" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+          <text id="n9.label" x="88" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="120">Generator Agent</text>
+        </g>
+        <g id="n10" transform="translate(32,120)" data-bbox="32 120 128 32" data-label="Critic Agent">
+          <!-- PORT:left x=0 y=16 id=n10.left type=input component="Critic Agent" -->
+          <!-- PORT:right x=128 y=16 id=n10.right type=output component="Critic Agent" -->
+          <!-- PORT:top x=64 y=0 id=n10.top type=input component="Critic Agent" -->
+          <!-- PORT:bottom x=64 y=32 id=n10.bottom type=output component="Critic Agent" -->
+          <rect id="n10.block" x="0" y="0" width="128" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Critic Agent"/>
+          <use id="n10.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+          <text id="n10.label" x="80" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="104">Critic Agent</text>
+        </g>
+      </g>
+      <g id="n7" transform="translate(24,216)" data-bbox="24 216 240 128" data-label="LayoutTree (SheafGraph), FinalSVG">
+        <!-- PORT:left x=24 y=40 id=n11.left type=input component="LayoutTree (SheafGraph)" -->
+        <!-- PORT:right x=216 y=40 id=n11.right type=output component="LayoutTree (SheafGraph)" -->
+        <!-- PORT:top x=120 y=24 id=n11.top type=input component="LayoutTree (SheafGraph)" -->
+        <!-- PORT:bottom x=120 y=56 id=n11.bottom type=output component="LayoutTree (SheafGraph)" -->
+        <!-- PORT:left x=80 y=88 id=n12.left type=input component="FinalSVG" -->
+        <!-- PORT:right x=160 y=88 id=n12.right type=output component="FinalSVG" -->
+        <!-- PORT:top x=120 y=72 id=n12.top type=input component="FinalSVG" -->
+        <!-- PORT:bottom x=120 y=104 id=n12.bottom type=output component="FinalSVG" -->
+        <rect id="n7.container" x="0" y="0" width="240" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+        <g id="n11" transform="translate(24,24)" data-bbox="24 24 192 32" data-label="LayoutTree (SheafGraph)">
+          <!-- PORT:left x=0 y=16 id=n11.left type=input component="LayoutTree (SheafGraph)" -->
+          <!-- PORT:right x=192 y=16 id=n11.right type=output component="LayoutTree (SheafGraph)" -->
+          <!-- PORT:top x=96 y=0 id=n11.top type=input component="LayoutTree (SheafGraph)" -->
+          <!-- PORT:bottom x=96 y=32 id=n11.bottom type=output component="LayoutTree (SheafGraph)" -->
+          <rect id="n11.block" x="0" y="0" width="192" height="32" fill="#FFF3CD" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="LayoutTree (SheafGraph)"/>
+          <use id="n11.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+          <text id="n11.label" x="112" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="168">LayoutTree (SheafGraph)</text>
+        </g>
+        <g id="n12" transform="translate(80,72)" data-bbox="80 72 80 32" data-label="FinalSVG">
+          <!-- PORT:left x=0 y=16 id=n12.left type=input component="FinalSVG" -->
+          <!-- PORT:right x=80 y=16 id=n12.right type=output component="FinalSVG" -->
+          <!-- PORT:top x=40 y=0 id=n12.top type=input component="FinalSVG" -->
+          <!-- PORT:bottom x=40 y=32 id=n12.bottom type=output component="FinalSVG" -->
+          <rect id="n12.block" x="0" y="0" width="80" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="FinalSVG"/>
+          <text id="n12.label" x="40" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="80">FinalSVG</text>
+        </g>
+      </g>
+    </g>
+    <g id="n3" transform="translate(360,96)" data-bbox="360 96 272 224" data-label="Grounder Agent, Draw, Decompose into 2–4 children, Worker repair">
+      <!-- PORT:left x=64 y=40 id=n13.left type=input component="Grounder Agent" -->
+      <!-- PORT:right x=208 y=40 id=n13.right type=output component="Grounder Agent" -->
+      <!-- PORT:top x=136 y=24 id=n13.top type=input component="Grounder Agent" -->
+      <!-- PORT:bottom x=136 y=56 id=n13.bottom type=output component="Grounder Agent" -->
+      <!-- PORT:left x=104 y=88 id=n14.left type=input component="Draw" -->
+      <!-- PORT:right x=168 y=88 id=n14.right type=output component="Draw" -->
+      <!-- PORT:top x=136 y=72 id=n14.top type=input component="Draw" -->
+      <!-- PORT:bottom x=136 y=104 id=n14.bottom type=output component="Draw" -->
+      <!-- PORT:left x=24 y=136 id=n15.left type=input component="Decompose into 2–4 children" -->
+      <!-- PORT:right x=248 y=136 id=n15.right type=output component="Decompose into 2–4 children" -->
+      <!-- PORT:top x=136 y=120 id=n15.top type=input component="Decompose into 2–4 children" -->
+      <!-- PORT:bottom x=136 y=152 id=n15.bottom type=output component="Decompose into 2–4 children" -->
+      <!-- PORT:left x=72 y=184 id=n16.left type=input component="Worker repair" -->
+      <!-- PORT:right x=200 y=184 id=n16.right type=output component="Worker repair" -->
+      <!-- PORT:top x=136 y=168 id=n16.top type=input component="Worker repair" -->
+      <!-- PORT:bottom x=136 y=200 id=n16.bottom type=output component="Worker repair" -->
+      <rect id="n3.container" x="0" y="0" width="272" height="224" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n13" transform="translate(64,24)" data-bbox="64 24 144 32" data-label="Grounder Agent">
+        <!-- PORT:left x=0 y=16 id=n13.left type=input component="Grounder Agent" -->
+        <!-- PORT:right x=144 y=16 id=n13.right type=output component="Grounder Agent" -->
+        <!-- PORT:top x=72 y=0 id=n13.top type=input component="Grounder Agent" -->
+        <!-- PORT:bottom x=72 y=32 id=n13.bottom type=output component="Grounder Agent" -->
+        <rect id="n13.block" x="0" y="0" width="144" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Grounder Agent"/>
+        <use id="n13.icon" href="#icon-search" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n13.label" x="88" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="120">Grounder Agent</text>
+      </g>
+      <g id="n14" transform="translate(104,72)" data-bbox="104 72 64 32" data-label="Draw">
+        <!-- PORT:left x=0 y=16 id=n14.left type=input component="Draw" -->
+        <!-- PORT:right x=64 y=16 id=n14.right type=output component="Draw" -->
+        <!-- PORT:top x=32 y=0 id=n14.top type=input component="Draw" -->
+        <!-- PORT:bottom x=32 y=32 id=n14.bottom type=output component="Draw" -->
+        <rect id="n14.block" x="0" y="0" width="64" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Draw"/>
+        <text id="n14.label" x="32" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="64">Draw</text>
+      </g>
+      <g id="n15" transform="translate(24,120)" data-bbox="24 120 224 32" data-label="Decompose into 2–4 children">
+        <!-- PORT:left x=0 y=16 id=n15.left type=input component="Decompose into 2–4 children" -->
+        <!-- PORT:right x=224 y=16 id=n15.right type=output component="Decompose into 2–4 children" -->
+        <!-- PORT:top x=112 y=0 id=n15.top type=input component="Decompose into 2–4 children" -->
+        <!-- PORT:bottom x=112 y=32 id=n15.bottom type=output component="Decompose into 2–4 children" -->
+        <rect id="n15.block" x="0" y="0" width="224" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Decompose into 2–4 children"/>
+        <use id="n15.icon" href="#icon-tree" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n15.label" x="128" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="200">Decompose into 2–4 children</text>
+      </g>
+      <g id="n16" transform="translate(72,168)" data-bbox="72 168 128 32" data-label="Worker repair">
+        <!-- PORT:left x=0 y=16 id=n16.left type=input component="Worker repair" -->
+        <!-- PORT:right x=128 y=16 id=n16.right type=output component="Worker repair" -->
+        <!-- PORT:top x=64 y=0 id=n16.top type=input component="Worker repair" -->
+        <!-- PORT:bottom x=64 y=32 id=n16.bottom type=output component="Worker repair" -->
+        <rect id="n16.block" x="0" y="0" width="128" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Worker repair"/>
+        <use id="n16.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n16.label" x="80" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="104">Worker repair</text>
+      </g>
+    </g>
+    <g id="n4" transform="translate(48,440)" data-bbox="48 440 240 128" data-label="Worker Agent (Merge), Re-validate invariants">
+      <!-- PORT:left x=32 y=40 id=n17.left type=input component="Worker Agent (Merge)" -->
+      <!-- PORT:right x=208 y=40 id=n17.right type=output component="Worker Agent (Merge)" -->
+      <!-- PORT:top x=120 y=24 id=n17.top type=input component="Worker Agent (Merge)" -->
+      <!-- PORT:bottom x=120 y=56 id=n17.bottom type=output component="Worker Agent (Merge)" -->
+      <!-- PORT:left x=24 y=88 id=n18.left type=input component="Re-validate invariants" -->
+      <!-- PORT:right x=216 y=88 id=n18.right type=output component="Re-validate invariants" -->
+      <!-- PORT:top x=120 y=72 id=n18.top type=input component="Re-validate invariants" -->
+      <!-- PORT:bottom x=120 y=104 id=n18.bottom type=output component="Re-validate invariants" -->
+      <rect id="n4.container" x="0" y="0" width="240" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n17" transform="translate(32,24)" data-bbox="32 24 176 32" data-label="Worker Agent (Merge)">
+        <!-- PORT:left x=0 y=16 id=n17.left type=input component="Worker Agent (Merge)" -->
+        <!-- PORT:right x=176 y=16 id=n17.right type=output component="Worker Agent (Merge)" -->
+        <!-- PORT:top x=88 y=0 id=n17.top type=input component="Worker Agent (Merge)" -->
+        <!-- PORT:bottom x=88 y=32 id=n17.bottom type=output component="Worker Agent (Merge)" -->
+        <rect id="n17.block" x="0" y="0" width="176" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Worker Agent (Merge)"/>
+        <use id="n17.icon" href="#icon-wrench" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n17.label" x="104" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="152">Worker Agent (Merge)</text>
+      </g>
+      <g id="n18" transform="translate(24,72)" data-bbox="24 72 192 32" data-label="Re-validate invariants">
+        <!-- PORT:left x=0 y=16 id=n18.left type=input component="Re-validate invariants" -->
+        <!-- PORT:right x=192 y=16 id=n18.right type=output component="Re-validate invariants" -->
+        <!-- PORT:top x=96 y=0 id=n18.top type=input component="Re-validate invariants" -->
+        <!-- PORT:bottom x=96 y=32 id=n18.bottom type=output component="Re-validate invariants" -->
+        <rect id="n18.block" x="0" y="0" width="192" height="32" fill="#F4A460" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Re-validate invariants"/>
+        <use id="n18.icon" href="#icon-eye" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n18.label" x="112" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="168">Re-validate invariants</text>
+      </g>
+    </g>
+    <g id="n5" transform="translate(312,440)" data-bbox="312 440 448 128" data-label="Render, Rollback to last valid fragment, ResidualDefects">
+      <!-- PORT:left x=88 y=40 id=n19.left type=input component="Render" -->
+      <!-- PORT:right x=184 y=40 id=n19.right type=output component="Render" -->
+      <!-- PORT:top x=136 y=24 id=n19.top type=input component="Render" -->
+      <!-- PORT:bottom x=136 y=56 id=n19.bottom type=output component="Render" -->
+      <!-- PORT:left x=24 y=88 id=n20.left type=input component="Rollback to last valid fragment" -->
+      <!-- PORT:right x=248 y=88 id=n20.right type=output component="Rollback to last valid fragment" -->
+      <!-- PORT:top x=136 y=72 id=n20.top type=input component="Rollback to last valid fragment" -->
+      <!-- PORT:bottom x=136 y=104 id=n20.bottom type=output component="Rollback to last valid fragment" -->
+      <!-- PORT:left x=296 y=64 id=n21.left type=input component="ResidualDefects" -->
+      <!-- PORT:right x=424 y=64 id=n21.right type=output component="ResidualDefects" -->
+      <!-- PORT:top x=360 y=48 id=n21.top type=input component="ResidualDefects" -->
+      <!-- PORT:bottom x=360 y=80 id=n21.bottom type=output component="ResidualDefects" -->
+      <rect id="n5.container" x="0" y="0" width="448" height="128" fill="#F5F5F5" stroke="#333333" stroke-width="1.4" data-role="container" rx="4" stroke-dasharray="4 2"/>
+      <g id="n19" transform="translate(88,24)" data-bbox="88 24 96 32" data-label="Render">
+        <!-- PORT:left x=0 y=16 id=n19.left type=input component="Render" -->
+        <!-- PORT:right x=96 y=16 id=n19.right type=output component="Render" -->
+        <!-- PORT:top x=48 y=0 id=n19.top type=input component="Render" -->
+        <!-- PORT:bottom x=48 y=32 id=n19.bottom type=output component="Render" -->
+        <rect id="n19.block" x="0" y="0" width="96" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Render"/>
+        <use id="n19.icon" href="#icon-image" x="8" y="8" width="16" height="16" color="#333333" data-role="icon"/>
+        <text id="n19.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="72">Render</text>
+      </g>
+      <g id="n20" transform="translate(24,72)" data-bbox="24 72 224 32" data-label="Rollback to last valid fragment">
+        <!-- PORT:left x=0 y=16 id=n20.left type=input component="Rollback to last valid fragment" -->
+        <!-- PORT:right x=224 y=16 id=n20.right type=output component="Rollback to last valid fragment" -->
+        <!-- PORT:top x=112 y=0 id=n20.top type=input component="Rollback to last valid fragment" -->
+        <!-- PORT:bottom x=112 y=32 id=n20.bottom type=output component="Rollback to last valid fragment" -->
+        <rect id="n20.block" x="0" y="0" width="224" height="32" fill="#7BA3C9" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="Rollback to last valid fragment"/>
+        <text id="n20.label" x="112" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="224">Rollback to last valid fragment</text>
+      </g>
+      <g id="n21" transform="translate(296,48)" data-bbox="296 48 128 32" data-label="ResidualDefects">
+        <!-- PORT:left x=0 y=16 id=n21.left type=input component="ResidualDefects" -->
+        <!-- PORT:right x=128 y=16 id=n21.right type=output component="ResidualDefects" -->
+        <!-- PORT:top x=64 y=0 id=n21.top type=input component="ResidualDefects" -->
+        <!-- PORT:bottom x=64 y=32 id=n21.bottom type=output component="ResidualDefects" -->
+        <rect id="n21.block" x="0" y="0" width="128" height="32" fill="#FFF3CD" stroke="#333333" stroke-width="1.2" data-role="block" rx="4" data-component="ResidualDefects"/>
+        <text id="n21.label" x="64" y="16" font-family="Times New Roman" font-size="12" text-anchor="middle" dominant-baseline="middle" fill="#333333" data-kind="label" data-max-width="128">ResidualDefects</text>
+      </g>
+      <path id="n5.arrow0" d="M248,88 H272 V64 H296" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n20.right" data-to="n21.left"/>
+    </g>
+    <path id="n1.arrow0" d="M248,88 H336 V136 H424" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n13.left"/>
+    <path id="n1.arrow1" d="M264,136 H360 V184 H464" fill="none" stroke="#333333" stroke-width="1.2" data-flow="conditional" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n14.left"/>
+    <path id="n1.arrow2" d="M264,136 H328 V232 H384" fill="none" stroke="#333333" stroke-width="1.2" data-flow="conditional" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n15.left"/>
+    <path id="n1.arrow3" d="M608,232 H640 V416 H24 V480 H80" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n15.right" data-to="n17.left"/>
+    <path id="n1.arrow4" d="M496,480 H768 V416 H24 V184 H128" fill="none" stroke="#333333" stroke-width="1.2" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n19.right" data-to="n10.left"/>
+    <path id="n1.arrow5" d="M256,184 H344 V280 H432" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n16.left"/>
+    <path id="n1.arrow6" d="M560,280 H640 V416 H24 V528 H72" fill="none" stroke="#333333" stroke-width="1.2" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n16.right" data-to="n18.left"/>
+    <path id="n1.arrow7" d="M264,528 H328 V480 H400" fill="none" stroke="#333333" stroke-width="1.2" data-flow="conditional" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n18.right" data-to="n19.left"/>
+    <path id="n1.arrow8" d="M264,528 H336" fill="none" stroke="#333333" stroke-width="1.2" data-flow="conditional" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n18.right" data-to="n20.left"/>
+  </g>
+</svg>

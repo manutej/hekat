@@ -1,0 +1,12 @@
+{
+  "id": "teaching.animated-tokens-at-origin",
+  "rubric": "teaching",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "compactness.overflow",
+    "compactness.blank_margin"
+  ],
+  "rationale": "python -m figtree animate output, untouched. The pulse tokens are <circle r=3> with no cx/cy (they are positioned by offset-path at runtime), so the static critic sees three circles at (-3,-3) and reports two critical overflows: a 10.0 figure scores 8.83 after animation. Fix: give tokens their path-start cx/cy with transform-box:fill-box;transform-origin:center (what the other probes here do), or exclude data-role=pulse from the content bbox.",
+  "source": "adversary-icon"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "icon.thirteen-elements",
+  "rubric": "icon",
+  "kind": "defect",
+  "expect_fire": [
+    "medium.icon_elements"
+  ],
+  "expect_silent": [
+    "polish.stroke_widths",
+    "medium.icon_text"
+  ],
+  "rationale": "A calendar with nine zero-length dots: 13 elements, one over the icon limit. medium.icon_elements fires (true positive, covering a check that had no probe). Note the dots are the legitimate Lucide 'h.01' idiom; a subpath/stroke counter must not confuse them with sub-pixel detail (they render as 2px round dots). Bonus at 16px: the dot rows are 3px apart (1px gap), so the columns fuse into vertical bars; another min_gap case the critic cannot see.",
+  "source": "adversary-icon"
+}

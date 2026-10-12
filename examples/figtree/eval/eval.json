@@ -1,0 +1,1878 @@
+{
+  "summary": {
+    "rubric": "all",
+    "probes": 110,
+    "expected_fires": 90,
+    "caught": 89,
+    "missed": 1,
+    "false_positives": 0,
+    "recall": 0.989,
+    "precision": 1.0,
+    "failing_probes": []
+  },
+  "per_check": {
+    "compactness.blank_margin": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 18
+    },
+    "compactness.overflow": {
+      "tp": 3,
+      "fn": 0,
+      "fp": 0,
+      "tn": 18
+    },
+    "compactness.aspect": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5
+    },
+    "compactness.detour": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "flow.crossings": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5
+    },
+    "flow.diagonal": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 6
+    },
+    "flow.through_block": {
+      "tp": 5,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "flow.short_shaft": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "flow.reading_order": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 6
+    },
+    "flow.no_connectors": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "text.min_font": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0,
+      "tn": 8
+    },
+    "text.words_per_label": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 8
+    },
+    "text.contrast": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5
+    },
+    "text.gradient_host": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "text.overflow": {
+      "tp": 3,
+      "fn": 0,
+      "fp": 0,
+      "tn": 8
+    },
+    "text.overlap": {
+      "tp": 3,
+      "fn": 0,
+      "fp": 0,
+      "tn": 10
+    },
+    "polish.font_families": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "polish.palette_size": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 6
+    },
+    "polish.neon": {
+      "tp": 3,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "polish.gradient_fill": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "polish.filter": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "polish.corner_radius": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5
+    },
+    "polish.stroke_widths": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 10
+    },
+    "medium.black_background": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "medium.icon_text": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 4
+    },
+    "medium.icon_elements": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 11
+    },
+    "medium.square": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "coverage.axis_labels": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 7
+    },
+    "coverage.title": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5
+    },
+    "coverage.plan_terms": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "hallucination.label_source": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "topology.ungrouped": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 3
+    },
+    "topology.empty_container": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "content.none": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 7
+    },
+    "medium.no_canvas": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "flow.collinear_overlap": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 2
+    },
+    "flow.through_text": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "flow.semantic_direction": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "text.sentence_label": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "text.duplicate_labels": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "text.outlined_glyphs": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "medium.embedded_title": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "polish.invisible_elements": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "polish.decoration": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "topology.container_label_mismatch": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "layout.legend_in_drawing": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.axis_units": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.bar_axis_zero": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.bar_scale": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.dual_axis": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.pie": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.rainbow_categorical": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.legend_swatch_colour": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.pseudo_3d": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "chart.gridline_weight": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "tile.hierarchy": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "tile.status_colour": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "tile.sparkline_reference": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "tile.grid_uniform": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.safe_margin": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.coverage": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.subpath_count": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.solid_fill": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.invisible_shape": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.min_feature_size": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.min_gap": {
+      "tp": 2,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.crossing_density": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "icon.ink_distribution": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "motion.pulse_direction": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "motion.reveal_order": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "motion.control_tempo": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "motion.reduced_motion": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "motion.decorative": {
+      "tp": 1,
+      "fn": 0,
+      "fp": 0,
+      "tn": 1
+    },
+    "proposed.icon.metaphor_orientation": {
+      "tp": 0,
+      "fn": 1,
+      "fp": 0,
+      "tn": 0
+    }
+  },
+  "probes": [
+    {
+      "id": "clean.diagram",
+      "rubric": "teaching",
+      "kind": "clean",
+      "source": "seed",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.min_font",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.67,
+      "fired": [
+        "text.min_font"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.contrast",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.67,
+      "fired": [
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.gradient",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.17,
+      "fired": [
+        "polish.gradient_fill",
+        "text.gradient_host"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.neon_fill",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.0,
+      "fired": [
+        "polish.neon",
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.neon_stroke",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.37,
+      "fired": [
+        "polish.neon"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.overflow_label",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 7.67,
+      "fired": [
+        "compactness.overflow",
+        "text.overflow",
+        "text.sentence_label"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.overlap",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.67,
+      "fired": [
+        "text.overlap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.two_fonts",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.83,
+      "fired": [
+        "polish.font_families"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.through_block",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.67,
+      "fired": [
+        "flow.through_block",
+        "flow.through_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.crossing",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.38,
+      "fired": [
+        "flow.crossings"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.collinear",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.67,
+      "fired": [
+        "flow.collinear_overlap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.diagonal",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.92,
+      "fired": [
+        "flow.diagonal"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.short_shaft",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.75,
+      "fired": [
+        "compactness.blank_margin",
+        "flow.short_shaft"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.reading_order",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.33,
+      "fired": [
+        "flow.reading_order"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.blank_margin",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.67,
+      "fired": [
+        "compactness.blank_margin"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.overflow_canvas",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.83,
+      "fired": [
+        "compactness.blank_margin",
+        "compactness.overflow"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.black_bg",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.0,
+      "fired": [
+        "medium.black_background",
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.corner_radius",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.42,
+      "fired": [
+        "polish.corner_radius"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.long_label",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.53,
+      "fired": [
+        "text.overflow",
+        "text.words_per_label"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.palette",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.97,
+      "fired": [
+        "flow.no_connectors",
+        "polish.palette_size",
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.no_connectors",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.83,
+      "fired": [
+        "flow.no_connectors"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "clean.chart",
+      "rubric": "data-figure",
+      "kind": "clean",
+      "source": "seed",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.no_axis_labels",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.92,
+      "fired": [
+        "compactness.blank_margin",
+        "coverage.axis_labels"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.title_not_finding",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.83,
+      "fired": [
+        "coverage.title"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "clean.icon",
+      "rubric": "icon",
+      "kind": "clean",
+      "source": "seed",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.icon_text",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.5,
+      "fired": [
+        "medium.icon_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.icon_not_square",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.5,
+      "fired": [
+        "medium.square"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.icon_strokes",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 9.88,
+      "fired": [
+        "polish.stroke_widths"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "clean.slide",
+      "rubric": "slide",
+      "kind": "clean",
+      "source": "seed",
+      "overall": 9.67,
+      "fired": [
+        "compactness.blank_margin"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "defect.slide_small_font",
+      "rubric": "slide",
+      "kind": "defect",
+      "source": "seed",
+      "overall": 8.33,
+      "fired": [
+        "compactness.blank_margin",
+        "text.min_font"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.clean_tile_grid",
+      "rubric": "dashboard",
+      "kind": "clean",
+      "source": "adversary-chart",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.grey_delta_contrast",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.4,
+      "fired": [
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.key_number_smallest",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.0,
+      "fired": [
+        "tile.hierarchy"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.label_seven_words",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.24,
+      "fired": [
+        "text.words_per_label"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.neon_border",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.24,
+      "fired": [
+        "polish.neon"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.sparkline_no_baseline",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.8,
+      "fired": [
+        "tile.sparkline_reference"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.status_colour_decoration",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.0,
+      "fired": [
+        "tile.status_colour"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "dashboard.uneven_tiles",
+      "rubric": "dashboard",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.8,
+      "fired": [
+        "tile.grid_uniform"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.axis_labels_no_units",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.17,
+      "fired": [
+        "chart.axis_units"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.bars_not_to_scale",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.5,
+      "fired": [
+        "chart.bar_scale"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.dual_axis",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.58,
+      "fired": [
+        "chart.dual_axis"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.heavy_gridlines",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.17,
+      "fired": [
+        "chart.gridline_weight"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.horizontal_bars_long_labels",
+      "rubric": "data-figure",
+      "kind": "false_positive",
+      "source": "adversary-chart",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.label_on_path_bar_contrast",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.67,
+      "fired": [
+        "text.contrast"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.legend_swatch_mismatch",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.67,
+      "fired": [
+        "chart.legend_swatch_colour"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.pie_paths",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.17,
+      "fired": [
+        "chart.pie"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.pseudo_3d_bars",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.17,
+      "fired": [
+        "chart.pseudo_3d"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.rainbow_palette",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.83,
+      "fired": [
+        "chart.rainbow_categorical"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.rotated_ticks_45",
+      "rubric": "data-figure",
+      "kind": "false_positive",
+      "source": "adversary-chart",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.rotated_ylabel_export",
+      "rubric": "data-figure",
+      "kind": "false_positive",
+      "source": "adversary-chart",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.seven_series_palette",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.83,
+      "fired": [
+        "polish.palette_size"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.small_multiples",
+      "rubric": "data-figure",
+      "kind": "clean",
+      "source": "adversary-chart",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.three_word_title",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 9.83,
+      "fired": [
+        "coverage.title"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.tick_labels_overlap",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.67,
+      "fired": [
+        "text.overlap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.truncated_axis",
+      "rubric": "data-figure",
+      "kind": "defect",
+      "source": "adversary-chart",
+      "overall": 8.58,
+      "fired": [
+        "chart.bar_axis_zero"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "data-figure.units_in_parens_unrotated",
+      "rubric": "data-figure",
+      "kind": "false_positive",
+      "source": "adversary-chart",
+      "overall": 9.17,
+      "fired": [
+        "chart.axis_units"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.corner-mass",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.25,
+      "fired": [
+        "icon.ink_distribution",
+        "icon.min_feature_size",
+        "icon.min_gap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.crossing-asterisk",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.75,
+      "fired": [
+        "icon.crossing_density"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.detail-stroke-1-5",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.88,
+      "fired": [
+        "polish.stroke_widths"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.invisible-coverage",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 8.38,
+      "fired": [
+        "icon.coverage",
+        "icon.invisible_shape"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.marker-arrowhead",
+      "rubric": "icon",
+      "kind": "false_positive",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.merge-at-16px",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.75,
+      "fired": [
+        "icon.min_gap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.mirrored-magnifier",
+      "rubric": "icon",
+      "kind": "gaming",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [
+        "proposed.icon.metaphor_orientation"
+      ],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.pill-toggle",
+      "rubric": "icon",
+      "kind": "false_positive",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.polyline-polygon",
+      "rubric": "icon",
+      "kind": "clean",
+      "source": "adversary-icon",
+      "overall": 9.75,
+      "fired": [
+        "icon.ink_distribution"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.relative-path-commands",
+      "rubric": "icon",
+      "kind": "false_positive",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.rotated-into-margin",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 7.75,
+      "fired": [
+        "compactness.overflow",
+        "icon.safe_margin"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.scaled-group",
+      "rubric": "icon",
+      "kind": "false_positive",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.solid-currentcolor",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.8,
+      "fired": [
+        "icon.solid_fill"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.stroke-clipped",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 7.75,
+      "fired": [
+        "compactness.overflow",
+        "icon.safe_margin"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.stub-detail",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.75,
+      "fired": [
+        "icon.min_feature_size"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.subpath-packing",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.5,
+      "fired": [
+        "icon.min_gap",
+        "icon.subpath_count"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.thirteen-elements",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.62,
+      "fired": [
+        "icon.subpath_count",
+        "medium.icon_elements"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.twelve-stroke-noise",
+      "rubric": "icon",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.75,
+      "fired": [
+        "icon.min_gap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "icon.viewbox24-size16",
+      "rubric": "icon",
+      "kind": "clean",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "methodology.embedded_title",
+      "rubric": "methodology",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.17,
+      "fired": [
+        "medium.embedded_title"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "slide.breathing_room",
+      "rubric": "slide",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "slide.small_font_in_group",
+      "rubric": "slide",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.83,
+      "fired": [
+        "compactness.blank_margin",
+        "text.min_font"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.animated-tokens-at-origin",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-icon",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.arrow_exits_through_source",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.semantic_direction",
+        "flow.through_block",
+        "flow.through_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.arrow_through_text",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.through_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.backwards_semantics",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.17,
+      "fired": [
+        "flow.semantic_direction"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.collinear_arrows",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.collinear_overlap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.crossing_midline",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.38,
+      "fired": [
+        "flow.crossings"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.decorative_clipart",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "polish.decoration"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.duplicate_labels",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.67,
+      "fired": [
+        "text.duplicate_labels"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.edge_hugging_arrow",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.through_block"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.inherited_style_defects",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.5,
+      "fired": [
+        "text.contrast",
+        "text.overlap"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.invisible_coverage",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.0,
+      "fired": [
+        "compactness.blank_margin",
+        "polish.invisible_elements"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.legend_inside_drawing",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.83,
+      "fired": [
+        "layout.legend_in_drawing"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.misleading_grouping",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.17,
+      "fired": [
+        "topology.container_label_mismatch"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.motion-backwards-pulse",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 8.67,
+      "fired": [
+        "motion.pulse_direction"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.motion-control-faster",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.83,
+      "fired": [
+        "motion.control_tempo"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.motion-decorative-pulse",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.5,
+      "fired": [
+        "motion.decorative",
+        "motion.reveal_order"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.motion-no-reduced-motion",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.17,
+      "fired": [
+        "motion.reduced_motion"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.motion-reveal-reversed",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-icon",
+      "overall": 9.83,
+      "fired": [
+        "motion.reveal_order"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.narrow_glyph_fit",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.narrow_tower",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.overflow_inherited_font",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.17,
+      "fired": [
+        "text.overflow"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.polyline_arrows",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.through_block",
+        "flow.through_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.prose_transcription",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "text.sentence_label"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.semantic_diagonal",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.text_as_paths",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "text.min_font",
+        "text.outlined_glyphs"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.through_block_nested",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 8.67,
+      "fired": [
+        "flow.through_block",
+        "flow.through_text"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.tspan_multiline",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.tspan_no_text_y",
+      "rubric": "teaching",
+      "kind": "false_positive",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.up_arrows_jog_right",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.33,
+      "fired": [
+        "flow.reading_order"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.use_icons_clean",
+      "rubric": "teaching",
+      "kind": "clean",
+      "source": "adversary-diagram",
+      "overall": 10.0,
+      "fired": [],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    },
+    {
+      "id": "teaching.wide_glyph_overflow",
+      "rubric": "teaching",
+      "kind": "defect",
+      "source": "adversary-diagram",
+      "overall": 9.17,
+      "fired": [
+        "text.overflow"
+      ],
+      "missed": [],
+      "false_positive": [],
+      "passed": true
+    }
+  ]
+}

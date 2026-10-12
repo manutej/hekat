@@ -1,0 +1,14 @@
+{
+  "id": "data-figure.rotated_ylabel_export",
+  "rubric": "data-figure",
+  "kind": "false_positive",
+  "expect_fire": [],
+  "expect_silent": [
+    "compactness.overflow",
+    "compactness.blank_margin",
+    "coverage.axis_labels",
+    "text.overlap"
+  ],
+  "rationale": "A correct y axis label written the way d3/matplotlib export it: transform=\"rotate(-90)\" with x=-150 y=22 (the coordinates are in the rotated frame). The bbox code only handles rotate(a cx cy) and treats x=-150 as a canvas coordinate, reporting a 157 px overflow of the left edge. Rule change: when rotate() has no centre, map (x, y) through the rotation before building the bbox.",
+  "source": "adversary-chart"
+}

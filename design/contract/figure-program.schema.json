@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/manutej/hekat/design/contract/figure-program.schema.json",
+  "title": "FigureProgram",
+  "description": "The generative-UI contract between the FigTree pipeline (ground, construct, critique, edit) and any design that renders it. A program is design-free: positions, kinds, tones, icons and flow types; a design adapter turns it into SVG, React, or anything else. Every element id is stable so critic issues and edit scripts can address it after rendering.",
+  "type": "object",
+  "required": [
+    "version",
+    "canvas",
+    "nodes",
+    "flows"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "description": "Path or name of the grounded source document"
+    },
+    "canvas": {
+      "type": "object",
+      "required": [
+        "width",
+        "height"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 8
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 8
+        },
+        "preset": {
+          "type": "string",
+          "description": "Design preset hint (paper, teaching, slide); a design may ignore it"
+        },
+        "grid": {
+          "type": "integer",
+          "default": 8
+        }
+      }
+    },
+    "containers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "bbox"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string"
+          },
+          "bbox": {
+            "$ref": "#/$defs/bbox"
+          },
+          "parent": {
+            "$ref": "#/$defs/id"
+          },
+          "depth": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "boxed": {
+            "type": "boolean",
+            "default": true,
+            "description": "False for a layout group the worker did not draw a box around; a design may still show it"
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "bbox"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "label": {
+            "type": "string"
+          },
+          "bbox": {
+            "$ref": "#/$defs/bbox"
+          },
+          "kind": {
+            "enum": [
+              "block",
+              "store",
+              "document",
+              "decision",
+              "terminal",
+              "actor",
+              "process"
+            ],
+            "default": "block"
+          },
+          "tone": {
+            "enum": [
+              "attention",
+              "processing",
+              "residual",
+              "input"
+            ],
+            "default": "processing"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Icon family name (see ICON_NAMES); a design may substitute"
+          },
+          "note": {
+            "type": "string"
+          },
+          "parent": {
+            "$ref": "#/$defs/id"
+          },
+          "evidence_span": {
+            "type": "string",
+            "description": "Verbatim span of the source this node is grounded in"
+          }
+        }
+      }
+    },
+    "flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "from",
+          "to",
+          "points"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "from": {
+            "$ref": "#/$defs/id"
+          },
+          "to": {
+            "$ref": "#/$defs/id"
+          },
+          "type": {
+            "enum": [
+              "data",
+              "control",
+              "conditional",
+              "feedback"
+            ],
+            "default": "data"
+          },
+          "points": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "#/$defs/point"
+            },
+            "description": "Right-angle polyline in canvas coordinates; the last segment is the arrow shaft (>= min_arrow)"
+          },
+          "label": {
+            "type": "string"
+          },
+          "head": {
+            "type": "boolean",
+            "default": true
+          },
+          "evidence_span": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ports": {
+      "type": "array",
+      "description": "Optional: the ports the worker routed through, for designs that re-route",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "side",
+          "x",
+          "y"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "side": {
+            "enum": [
+              "left",
+              "right",
+              "top",
+              "bottom"
+            ]
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "type": {
+            "enum": [
+              "input",
+              "output"
+            ]
+          },
+          "component": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "caption": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lead": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "residuals": {
+      "type": "array",
+      "description": "Residual defects the critic left for a human; a design may surface them",
+      "items": {
+        "type": "object",
+        "required": [
+          "severity",
+          "description"
+        ],
+        "properties": {
+          "severity": {
+            "enum": [
+              "critical",
+              "warning",
+              "info"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "anchor": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "description": "Free-form provenance (generator, scores, trajectory path)"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$"
+    },
+    "bbox": {
+      "type": "object",
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "w": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "h": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "point": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}
