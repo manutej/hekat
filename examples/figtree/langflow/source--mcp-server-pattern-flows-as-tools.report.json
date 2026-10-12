@@ -1,0 +1,2597 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "no renderer available; structural review only",
+      "code_anchor": "no-vision",
+      "fix_instruction": "install cairosvg or rsvg-convert for image review",
+      "round_introduced": 1
+    },
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "MCP Tools",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "MCP Tools"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Langflow Project",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Langflow Project"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Project MCP Server",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Project MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "MCP Tools, Langflow Project, Project MCP Server",
+        "canvas": {
+          "w": 408,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 152,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 376,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 296,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 296,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "MCP Tools",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "MCP Tools"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Langflow Project",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Langflow Project"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Project MCP Server",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Project MCP Server"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Project MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 72
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 408,
+          "h": 184
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "MCP Tools",
+          "Langflow Project",
+          "Project MCP Server"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n3",
+        "description": "External MCP Client",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "External MCP Client"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "MCP Tools Component",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "MCP Tools Component"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "External MCP Client, MCP Tools Component",
+        "canvas": {
+          "w": 240,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n7",
+            "parent_id": "n3",
+            "description": "External MCP Client",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External MCP Client"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "External MCP Client"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "MCP Tools Component",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools Component"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "MCP Tools Component"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 104
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 240,
+          "h": 184
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "External MCP Client",
+          "MCP Tools Component"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 480,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Each Langflow project runs an MCP server that exposes project flows as MCP tools. External MCP clients call those tools over HTTP/SSE",
+        "canvas": {
+          "w": 752,
+          "h": 248
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 88,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 184,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Langflow Project"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 248,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 408,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 328,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 328,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Project MCP Server"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 512,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 688,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 600,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 600,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "External MCP Client"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 512,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 688,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 600,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "MCP Tools Component"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 600,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "MCP Tools Component"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "MCP Tools, Langflow Project, Project MCP Server",
+            "canvas": {
+              "w": 408,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 56,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 152,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Langflow Project"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 376,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 296,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Project MCP Server"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 296,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Project MCP Server"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "MCP Tools",
+                "canvas": {
+                  "w": 96,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Tools"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 96,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Tools"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 48,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Tools"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 48,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Tools"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 96,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "MCP Tools"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 56,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Langflow Project",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Langflow Project"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Langflow Project"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Langflow Project"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Project MCP Server",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Project MCP Server"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Project MCP Server"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Project MCP Server"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Project MCP Server"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Project MCP Server"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 72
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 408,
+              "h": 184
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "MCP Tools",
+              "Langflow Project",
+              "Project MCP Server"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "External MCP Client, MCP Tools Component",
+            "canvas": {
+              "w": 240,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 208,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "External MCP Client"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 208,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 120,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "MCP Tools Component"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 120,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "MCP Tools Component"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n7",
+                "parent_id": "n3",
+                "description": "External MCP Client",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External MCP Client"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External MCP Client"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "External MCP Client"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "External MCP Client"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "External MCP Client"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "MCP Tools Component",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Tools Component"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Tools Component"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "MCP Tools Component"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "MCP Tools Component"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "MCP Tools Component"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 104
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 240,
+              "h": 184
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "External MCP Client",
+              "MCP Tools Component"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 480,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 752,
+          "h": 248
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "MCP Tools",
+          "Langflow Project",
+          "Project MCP Server",
+          "External MCP Client",
+          "MCP Tools Component"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n3->n7": true,
+      "n3->n8": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "MCP Tools",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Each Langflow project runs an MCP server that exposes project flows as MCP tools. External MCP clients call those tools over HTTP/SSE.",
+    "components": [
+      {
+        "name": "MCP Tools",
+        "evidence_span": "MCP Tools Component"
+      },
+      {
+        "name": "Langflow Project",
+        "evidence_span": "Langflow Project"
+      },
+      {
+        "name": "Project MCP Server",
+        "evidence_span": "Project MCP Server"
+      },
+      {
+        "name": "External MCP Client",
+        "evidence_span": "External MCP Client"
+      },
+      {
+        "name": "MCP Tools Component",
+        "evidence_span": "MCP Tools Component"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Langflow Project",
+        "to": "Project MCP Server",
+        "type": "data",
+        "evidence_span": "Langflow Project -> Project MCP Server"
+      },
+      {
+        "from": "Project MCP Server",
+        "to": "External MCP Client",
+        "type": "data",
+        "evidence_span": "Project MCP Server -> External MCP Client"
+      },
+      {
+        "from": "Project MCP Server",
+        "to": "MCP Tools Component",
+        "type": "data",
+        "evidence_span": "Project MCP Server -> MCP Tools Component"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": []
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 8,
+  "unit": {
+    "id": "source--mcp-server-pattern-flows-as-tools",
+    "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+    "title": "MCP server pattern (flows as tools)",
+    "span": [
+      69,
+      83
+    ],
+    "chars": 531,
+    "est_components": 5,
+    "est_flows": 3
+  }
+}

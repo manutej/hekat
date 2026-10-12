@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="752" height="209" viewBox="0 0 752 209" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Each Langflow project runs an MCP server that exposes project flows as MCP tools. External MCP clients call those tools over HTTP/SSE.</title>
+  <rect id="background" x="0" y="0" width="752" height="209" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  </defs>
+  <g id="n1" data-bbox="0 0 752 248">
+    <!-- PORT:left x=88 y=88 id=n4.left type=input component="MCP Tools" -->
+    <!-- PORT:right x=184 y=88 id=n4.right type=output component="MCP Tools" -->
+    <!-- PORT:top x=136 y=64 id=n4.top type=input component="MCP Tools" -->
+    <!-- PORT:bottom x=136 y=112 id=n4.bottom type=output component="MCP Tools" -->
+    <!-- PORT:left x=64 y=160 id=n5.left type=input component="Langflow Project" -->
+    <!-- PORT:right x=208 y=160 id=n5.right type=output component="Langflow Project" -->
+    <!-- PORT:top x=136 y=136 id=n5.top type=input component="Langflow Project" -->
+    <!-- PORT:bottom x=136 y=184 id=n5.bottom type=output component="Langflow Project" -->
+    <!-- PORT:left x=248 y=128 id=n6.left type=input component="Project MCP Server" -->
+    <!-- PORT:right x=408 y=128 id=n6.right type=output component="Project MCP Server" -->
+    <!-- PORT:top x=328 y=104 id=n6.top type=input component="Project MCP Server" -->
+    <!-- PORT:bottom x=328 y=152 id=n6.bottom type=output component="Project MCP Server" -->
+    <!-- PORT:left x=512 y=88 id=n7.left type=input component="External MCP Client" -->
+    <!-- PORT:right x=688 y=88 id=n7.right type=output component="External MCP Client" -->
+    <!-- PORT:top x=600 y=64 id=n7.top type=input component="External MCP Client" -->
+    <!-- PORT:bottom x=600 y=112 id=n7.bottom type=output component="External MCP Client" -->
+    <!-- PORT:left x=512 y=160 id=n8.left type=input component="MCP Tools Component" -->
+    <!-- PORT:right x=688 y=160 id=n8.right type=output component="MCP Tools Component" -->
+    <!-- PORT:top x=600 y=136 id=n8.top type=input component="MCP Tools Component" -->
+    <!-- PORT:bottom x=600 y=184 id=n8.bottom type=output component="MCP Tools Component" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 408 184" data-label="MCP Tools, Langflow Project, Project MCP Server">
+      <!-- PORT:left x=56 y=56 id=n4.left type=input component="MCP Tools" -->
+      <!-- PORT:right x=152 y=56 id=n4.right type=output component="MCP Tools" -->
+      <!-- PORT:top x=104 y=32 id=n4.top type=input component="MCP Tools" -->
+      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="MCP Tools" -->
+      <!-- PORT:left x=32 y=128 id=n5.left type=input component="Langflow Project" -->
+      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Langflow Project" -->
+      <!-- PORT:top x=104 y=104 id=n5.top type=input component="Langflow Project" -->
+      <!-- PORT:bottom x=104 y=152 id=n5.bottom type=output component="Langflow Project" -->
+      <!-- PORT:left x=216 y=96 id=n6.left type=input component="Project MCP Server" -->
+      <!-- PORT:right x=376 y=96 id=n6.right type=output component="Project MCP Server" -->
+      <!-- PORT:top x=296 y=72 id=n6.top type=input component="Project MCP Server" -->
+      <!-- PORT:bottom x=296 y=120 id=n6.bottom type=output component="Project MCP Server" -->
+      <g id="n4" transform="translate(56,32)" data-bbox="56 32 96 48" data-label="MCP Tools">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="MCP Tools" -->
+        <!-- PORT:right x=96 y=24 id=n4.right type=output component="MCP Tools" -->
+        <!-- PORT:top x=48 y=0 id=n4.top type=input component="MCP Tools" -->
+        <!-- PORT:bottom x=48 y=48 id=n4.bottom type=output component="MCP Tools" -->
+        <rect id="n4.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Tools" />
+        <text id="n4.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">MCP Tools</text>
+      </g>
+      <g id="n5" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Langflow Project">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Langflow Project" -->
+        <!-- PORT:right x=144 y=24 id=n5.right type=output component="Langflow Project" -->
+        <!-- PORT:top x=72 y=0 id=n5.top type=input component="Langflow Project" -->
+        <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Langflow Project" -->
+        <rect id="n5.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Langflow Project" />
+        <text id="n5.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Langflow Project</text>
+      </g>
+      <g id="n6" transform="translate(216,72)" data-bbox="216 72 160 48" data-label="Project MCP Server">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Project MCP Server" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Project MCP Server" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Project MCP Server" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Project MCP Server" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Project MCP Server" />
+        <text id="n6.label" x="80" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="160">Project MCP Server</text>
+      </g>
+      <path id="n2.arrow0" d="M176,128 H192 V96 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(480,32)" data-bbox="480 32 240 184" data-label="External MCP Client, MCP Tools Component">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="External MCP Client" -->
+      <!-- PORT:right x=208 y=56 id=n7.right type=output component="External MCP Client" -->
+      <!-- PORT:top x=120 y=32 id=n7.top type=input component="External MCP Client" -->
+      <!-- PORT:bottom x=120 y=80 id=n7.bottom type=output component="External MCP Client" -->
+      <!-- PORT:left x=32 y=128 id=n8.left type=input component="MCP Tools Component" -->
+      <!-- PORT:right x=208 y=128 id=n8.right type=output component="MCP Tools Component" -->
+      <!-- PORT:top x=120 y=104 id=n8.top type=input component="MCP Tools Component" -->
+      <!-- PORT:bottom x=120 y=152 id=n8.bottom type=output component="MCP Tools Component" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 176 48" data-label="External MCP Client">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="External MCP Client" -->
+        <!-- PORT:right x=176 y=24 id=n7.right type=output component="External MCP Client" -->
+        <!-- PORT:top x=88 y=0 id=n7.top type=input component="External MCP Client" -->
+        <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="External MCP Client" -->
+        <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="External MCP Client" />
+        <text id="n7.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">External MCP Client</text>
+      </g>
+      <g id="n8" transform="translate(32,104)" data-bbox="32 104 176 48" data-label="MCP Tools Component">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="MCP Tools Component" -->
+        <!-- PORT:right x=176 y=24 id=n8.right type=output component="MCP Tools Component" -->
+        <!-- PORT:top x=88 y=0 id=n8.top type=input component="MCP Tools Component" -->
+        <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="MCP Tools Component" -->
+        <rect id="n8.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Tools Component" />
+        <text id="n8.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">MCP Tools Component</text>
+      </g>
+    </g>
+    <path id="n1.arrow0" d="M408,128 H464 V88 H512" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M408,128 H472 V160 H512" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left" />
+  </g>
+</svg>

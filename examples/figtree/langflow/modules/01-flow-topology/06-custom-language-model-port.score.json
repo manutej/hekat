@@ -1,0 +1,24 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 10.0
+  },
+  "overall": 10.0,
+  "issues": [],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.74,
+    "aspect": 2.59,
+    "mean_detour": 1.0,
+    "crossings": 0,
+    "forward_ratio": 1.0,
+    "palette_size": 1
+  }
+}

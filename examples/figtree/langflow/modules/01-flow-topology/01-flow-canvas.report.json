@@ -1,0 +1,933 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "no renderer available; structural review only",
+      "code_anchor": "no-vision",
+      "fix_instruction": "install cairosvg or rsvg-convert for image review",
+      "round_introduced": 1
+    },
+    {
+      "severity": "warning",
+      "visual_description": "self-loop on Port omitted",
+      "code_anchor": "content_plan.flows",
+      "fix_instruction": "none",
+      "round_introduced": 0
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Flow Canvas",
+        "canvas": {
+          "w": 112,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 112,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 56,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 56,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow Canvas"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Flow Canvas"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Component",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Component"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Component"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Component"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Component"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Component"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 184,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Port",
+        "canvas": {
+          "w": 64,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Port"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Port"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Port"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Port"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Port"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 320,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Flow canvas and components",
+        "canvas": {
+          "w": 416,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Flow Canvas"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 184,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Component"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 280,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Component"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 232,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Component"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 232,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Component"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 320,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Port"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 384,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Port"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 352,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Port"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 352,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Port"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Flow Canvas",
+            "canvas": {
+              "w": 112,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow Canvas"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 112,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow Canvas"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 56,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Flow Canvas"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 56,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Flow Canvas"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Flow Canvas"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Component",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Component"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Component"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Component"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Component"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Component"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 184,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Port",
+            "canvas": {
+              "w": 64,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Port"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Port"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Port"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Port"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Port"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 320,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 416,
+          "h": 112
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "self-loop on Port omitted",
+            "code_anchor": "content_plan.flows",
+            "fix_instruction": "none",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Flow Canvas",
+          "Component",
+          "Port"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "self-loop on Port omitted",
+            "code_anchor": "content_plan.flows",
+            "fix_instruction": "none",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ]
+    ],
+    "restriction": {
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Flow Canvas",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Flow canvas and components",
+    "components": [
+      {
+        "name": "Flow Canvas",
+        "evidence_span": "Flow Canvas"
+      },
+      {
+        "name": "Component",
+        "evidence_span": "Component"
+      },
+      {
+        "name": "Port",
+        "evidence_span": "Port"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Flow Canvas",
+        "to": "Component",
+        "type": "data",
+        "evidence_span": "Flow Canvas -> Component"
+      },
+      {
+        "from": "Component",
+        "to": "Port",
+        "type": "data",
+        "evidence_span": "Component -> Port"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": []
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [],
+  "node_count": 4
+}

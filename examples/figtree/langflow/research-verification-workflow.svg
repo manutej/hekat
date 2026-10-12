@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="658" height="98" viewBox="0 0 658 98" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Verification workflow</title>
+  <rect id="background" x="0" y="0" width="658" height="98" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6" id="e5-circle" /><path d="M15 15l5.5 5.5" id="e6-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 672 112" transform="translate(-7,-7)">
+    <!-- PORT:left x=32 y=56 id=n2.left type=input component="Bibliography Checker" -->
+    <!-- PORT:right x=240 y=56 id=n2.right type=output component="Bibliography Checker" -->
+    <!-- PORT:top x=136 y=32 id=n2.top type=input component="Bibliography Checker" -->
+    <!-- PORT:bottom x=136 y=80 id=n2.bottom type=output component="Bibliography Checker" -->
+    <!-- PORT:left x=280 y=56 id=n3.left type=input component="Grounder Preview" -->
+    <!-- PORT:right x=456 y=56 id=n3.right type=output component="Grounder Preview" -->
+    <!-- PORT:top x=368 y=32 id=n3.top type=input component="Grounder Preview" -->
+    <!-- PORT:bottom x=368 y=80 id=n3.bottom type=output component="Grounder Preview" -->
+    <!-- PORT:left x=496 y=56 id=n4.left type=input component="Digest Planner" -->
+    <!-- PORT:right x=640 y=56 id=n4.right type=output component="Digest Planner" -->
+    <!-- PORT:top x=568 y=32 id=n4.top type=input component="Digest Planner" -->
+    <!-- PORT:bottom x=568 y=80 id=n4.bottom type=output component="Digest Planner" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 208 48" data-label="Bibliography Checker">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Bibliography Checker" -->
+      <!-- PORT:right x=208 y=24 id=n2.right type=output component="Bibliography Checker" -->
+      <!-- PORT:top x=104 y=0 id=n2.top type=input component="Bibliography Checker" -->
+      <!-- PORT:bottom x=104 y=48 id=n2.bottom type=output component="Bibliography Checker" -->
+      <rect id="n2.block" x="0" y="0" width="208" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Bibliography Checker" />
+      <use id="n2.icon" href="#icon-check" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n2.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">Bibliography Checker</text>
+    </g>
+    <g id="n3" transform="translate(280,32)" data-bbox="280 32 176 48" data-label="Grounder Preview">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Grounder Preview" -->
+      <!-- PORT:right x=176 y=24 id=n3.right type=output component="Grounder Preview" -->
+      <!-- PORT:top x=88 y=0 id=n3.top type=input component="Grounder Preview" -->
+      <!-- PORT:bottom x=88 y=48 id=n3.bottom type=output component="Grounder Preview" -->
+      <rect id="n3.block" x="0" y="0" width="176" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Grounder Preview" />
+      <use id="n3.icon" href="#icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+      <text id="n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Grounder Preview</text>
+    </g>
+    <g id="n4" transform="translate(496,32)" data-bbox="496 32 144 48" data-label="Digest Planner">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Digest Planner" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Digest Planner" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Digest Planner" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Digest Planner" -->
+      <rect id="n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Digest Planner" />
+      <text id="n4.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Digest Planner</text>
+    </g>
+    <path id="n1.arrow0" d="M240,56 H280" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M456,56 H496" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+  </g>
+</svg>

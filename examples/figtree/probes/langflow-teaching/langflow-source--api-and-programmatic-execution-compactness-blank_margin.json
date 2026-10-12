@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-source--api-and-programmatic-execution-compactness-blank_margin",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure source--api-and-programmatic-execution: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/source--api-and-programmatic-execution.svg"
+}

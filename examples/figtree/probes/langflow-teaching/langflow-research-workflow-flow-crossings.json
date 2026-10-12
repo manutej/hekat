@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-research-workflow-flow-crossings",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "flow.crossings"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure research-workflow: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/research-workflow.svg"
+}

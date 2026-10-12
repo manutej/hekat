@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="498" height="242" viewBox="0 0 498 242" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Playground execution path</title>
+  <rect id="background" x="0" y="0" width="498" height="242" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="e8-path" /><path d="M3 13l9 5 9-5" id="e9-path" /><path d="M3 17l9 5 9-5" id="e10-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 720 320" transform="translate(-39,-39)">
+    <!-- PORT:left x=112 y=88 id=n4.left type=input component="Agent" -->
+    <!-- PORT:right x=176 y=88 id=n4.right type=output component="Agent" -->
+    <!-- PORT:top x=144 y=64 id=n4.top type=input component="Agent" -->
+    <!-- PORT:bottom x=144 y=112 id=n4.bottom type=output component="Agent" -->
+    <!-- PORT:left x=72 y=160 id=n5.left type=input component="Chat Input" -->
+    <!-- PORT:right x=216 y=160 id=n5.right type=output component="Chat Input" -->
+    <!-- PORT:top x=144 y=136 id=n5.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=144 y=184 id=n5.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=64 y=232 id=n6.left type=input component="Language Model" -->
+    <!-- PORT:right x=224 y=232 id=n6.right type=output component="Language Model" -->
+    <!-- PORT:top x=144 y=208 id=n6.top type=input component="Language Model" -->
+    <!-- PORT:bottom x=144 y=256 id=n6.bottom type=output component="Language Model" -->
+    <!-- PORT:left x=328 y=160 id=n7.left type=input component="Agent Component" -->
+    <!-- PORT:right x=472 y=160 id=n7.right type=output component="Agent Component" -->
+    <!-- PORT:top x=400 y=136 id=n7.top type=input component="Agent Component" -->
+    <!-- PORT:bottom x=400 y=184 id=n7.bottom type=output component="Agent Component" -->
+    <!-- PORT:left x=512 y=160 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=656 y=160 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=584 y=136 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=584 y=184 id=n8.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 224 256" data-label="Agent, Chat Input, Language Model">
+      <!-- PORT:left x=80 y=56 id=n4.left type=input component="Agent" -->
+      <!-- PORT:right x=144 y=56 id=n4.right type=output component="Agent" -->
+      <!-- PORT:top x=112 y=32 id=n4.top type=input component="Agent" -->
+      <!-- PORT:bottom x=112 y=80 id=n4.bottom type=output component="Agent" -->
+      <!-- PORT:left x=40 y=128 id=n5.left type=input component="Chat Input" -->
+      <!-- PORT:right x=184 y=128 id=n5.right type=output component="Chat Input" -->
+      <!-- PORT:top x=112 y=104 id=n5.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=112 y=152 id=n5.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=200 id=n6.left type=input component="Language Model" -->
+      <!-- PORT:right x=192 y=200 id=n6.right type=output component="Language Model" -->
+      <!-- PORT:top x=112 y=176 id=n6.top type=input component="Language Model" -->
+      <!-- PORT:bottom x=112 y=224 id=n6.bottom type=output component="Language Model" -->
+      <g id="n4" transform="translate(80,32)" data-bbox="80 32 64 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Agent" -->
+        <!-- PORT:right x=64 y=24 id=n4.right type=output component="Agent" -->
+        <!-- PORT:top x=32 y=0 id=n4.top type=input component="Agent" -->
+        <!-- PORT:bottom x=32 y=48 id=n4.bottom type=output component="Agent" -->
+        <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+        <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+      </g>
+      <g id="n6" transform="translate(32,176)" data-bbox="32 176 160 48" data-label="Language Model">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Language Model" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Language Model" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Language Model" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Language Model" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Language Model" />
+        <use id="n6.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Language Model</text>
+      </g>
+    </g>
+    <g id="n3" transform="translate(296,104)" data-bbox="296 104 392 112" data-label="Agent Component, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Agent Component" -->
+      <!-- PORT:right x=176 y=56 id=n7.right type=output component="Agent Component" -->
+      <!-- PORT:top x=104 y=32 id=n7.top type=input component="Agent Component" -->
+      <!-- PORT:bottom x=104 y=80 id=n7.bottom type=output component="Agent Component" -->
+      <!-- PORT:left x=216 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=360 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=288 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=288 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Agent Component">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent Component" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Agent Component" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Agent Component" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Agent Component" -->
+        <rect id="n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
+        <text id="n7.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
+      </g>
+      <path id="n3.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left" />
+    </g>
+    <path id="n1.arrow0" d="M216,160 H328" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M224,232 H272 V160 H328" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+  </g>
+</svg>

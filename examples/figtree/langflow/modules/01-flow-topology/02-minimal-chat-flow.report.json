@@ -1,0 +1,3449 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "no renderer available; structural review only",
+      "code_anchor": "no-vision",
+      "fix_instruction": "install cairosvg or rsvg-convert for image review",
+      "round_introduced": 1
+    },
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Agent",
+        "canvas": {
+          "w": 64,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 64,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 32,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 32,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 72,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Agent",
+        "canvas": {
+          "w": 96,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 96,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 48,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 48,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Add Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 56,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Connect Agent",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Connect Agent"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 176
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n2",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 248
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Agent, Add Agent, Connect Agent, Chat Input",
+        "canvas": {
+          "w": 208,
+          "h": 328
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 72,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 136,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 56,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 152,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 168,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 296,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Agent",
+            "canvas": {
+              "w": 64,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 64,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 32,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 32,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 72,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Agent",
+            "canvas": {
+              "w": 96,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 96,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 48,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 48,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Add Agent"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Add Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 56,
+              "y": 104
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Connect Agent",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Connect Agent"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Connect Agent"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 176
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n2",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 248
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 208,
+          "h": 328
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Agent",
+          "Add Agent",
+          "Connect Agent",
+          "Chat Input"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 32,
+          "y": 56
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Language Model",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Language Model"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n3",
+        "description": "Agent Component",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Agent Component"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 232,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n10": {
+        "id": "n10",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 416,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Language Model, Agent Component, Chat Output",
+        "canvas": {
+          "w": 592,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 232,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 376,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 304,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 304,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 416,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 560,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 488,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 488,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Language Model",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Language Model"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Language Model"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n3",
+            "description": "Agent Component",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Component"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Agent Component"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 232,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n10",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 416,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 592,
+          "h": 112
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "components": [
+          "Language Model",
+          "Agent Component",
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 280,
+          "y": 168
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Minimal chat agent flow",
+        "canvas": {
+          "w": 904,
+          "h": 416
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 104,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 168,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 88,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 184,
+            "rel_y": 184,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 208,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Add Agent"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 72,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 200,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 280,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Connect Agent"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 328,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 328,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 304,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 352,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 312,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 472,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 392,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Language Model"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 392,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Language Model"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 512,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 656,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 584,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 584,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Component"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 696,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 840,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 768,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 768,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Agent, Add Agent, Connect Agent, Chat Input",
+            "canvas": {
+              "w": 208,
+              "h": 328
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 72,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 136,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 56,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 152,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Add Agent"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 168,
+                "rel_y": 200,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 176,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 224,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Connect Agent"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 272,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 272,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 248,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 296,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Agent",
+                "canvas": {
+                  "w": 64,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 64,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 32,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 32,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Agent"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 72,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Agent",
+                "canvas": {
+                  "w": 96,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Add Agent"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 96,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Add Agent"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 48,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Add Agent"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 48,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Add Agent"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 96,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Add Agent"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 56,
+                  "y": 104
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Connect Agent",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Connect Agent"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Connect Agent"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Connect Agent"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Connect Agent"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Connect Agent"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 176
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n2",
+                "description": "Chat Input",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Chat Input"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 248
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 208,
+              "h": 328
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Agent",
+              "Add Agent",
+              "Connect Agent",
+              "Chat Input"
+            ],
+            "layout": "vertical",
+            "offset": {
+              "x": 32,
+              "y": 56
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Language Model, Agent Component, Chat Output",
+            "canvas": {
+              "w": 592,
+              "h": 112
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Language Model"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Language Model"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 232,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 376,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 304,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 304,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Component"
+              },
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 416,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 560,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 488,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 488,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Language Model",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Language Model"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Language Model"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Language Model"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Language Model"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Language Model"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n3",
+                "description": "Agent Component",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent Component"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent Component"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Agent Component"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Agent Component"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Agent Component"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 232,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n10",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n10.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [
+                  {
+                    "severity": "warning",
+                    "visual_description": "no renderer available; structural review only",
+                    "code_anchor": "no-vision",
+                    "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                    "round_introduced": 1
+                  }
+                ],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 416,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 592,
+              "h": 112
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "no renderer available; structural review only",
+                "code_anchor": "no-vision",
+                "fix_instruction": "install cairosvg or rsvg-convert for image review",
+                "round_introduced": 1
+              }
+            ],
+            "components": [
+              "Language Model",
+              "Agent Component",
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 280,
+              "y": 168
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 904,
+          "h": 416
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Agent",
+          "Add Agent",
+          "Connect Agent",
+          "Chat Input",
+          "Agent Component",
+          "Chat Output",
+          "Language Model"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n9": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n10": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "no renderer available; structural review only",
+            "code_anchor": "no-vision",
+            "fix_instruction": "install cairosvg or rsvg-convert for image review",
+            "round_introduced": 1
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n3",
+        "n9"
+      ],
+      [
+        "n3",
+        "n10"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n2->n7": true,
+      "n3->n8": true,
+      "n3->n9": true,
+      "n3->n10": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Agent",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Minimal chat agent flow",
+    "components": [
+      {
+        "name": "Agent",
+        "evidence_span": "Agent Component"
+      },
+      {
+        "name": "Add Agent",
+        "evidence_span": "Add Agent Component"
+      },
+      {
+        "name": "Connect Agent",
+        "evidence_span": "Connect Agent Component"
+      },
+      {
+        "name": "Chat Input",
+        "evidence_span": "Chat Input"
+      },
+      {
+        "name": "Agent Component",
+        "evidence_span": "Agent Component"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output"
+      },
+      {
+        "name": "Language Model",
+        "evidence_span": "Language Model"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Chat Input",
+        "to": "Agent Component",
+        "type": "data",
+        "evidence_span": "Chat Input -> Agent Component"
+      },
+      {
+        "from": "Agent Component",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Agent Component -> Chat Output"
+      },
+      {
+        "from": "Language Model",
+        "to": "Agent Component",
+        "type": "data",
+        "evidence_span": "Language Model -> Agent Component"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": []
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 10
+}

@@ -1,0 +1,113 @@
+{
+  "layer1": [
+    {
+      "stem": "01-flow-canvas",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "02-minimal-chat-flow",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "03-model-providers",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "04-playground-path",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "05-simple-agent-template",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "06-custom-language-model-port",
+      "overall": 10.0,
+      "issues": []
+    },
+    {
+      "stem": "overview",
+      "overall": 10.0,
+      "issues": []
+    }
+  ],
+  "layer2": [
+    {
+      "stem": "01-flow-canvas",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "02-minimal-chat-flow",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "03-model-providers",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "04-playground-path",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "05-simple-agent-template",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "06-custom-language-model-port",
+      "before": 10.0,
+      "after": 10.0
+    },
+    {
+      "stem": "overview",
+      "before": 10.0,
+      "after": 10.0
+    }
+  ],
+  "layer3": [
+    {
+      "stem": "01-flow-canvas",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "02-minimal-chat-flow",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "03-model-providers",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "04-playground-path",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "05-simple-agent-template",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "06-custom-language-model-port",
+      "overall": 10.0,
+      "issues": 0
+    },
+    {
+      "stem": "overview",
+      "overall": 10.0,
+      "issues": 0
+    }
+  ]
+}

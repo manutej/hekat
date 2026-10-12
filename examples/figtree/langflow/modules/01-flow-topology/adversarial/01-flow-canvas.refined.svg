@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="416" height="112" viewBox="0 0 416 112" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Flow canvas and components</title>
+  <rect id="background" x="0" y="0" width="416" height="112" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  </defs>
+  <g id="n1" data-bbox="0 0 416 112">
+    <!-- PORT:left x=32 y=56 id=n2.left type=input component="Flow Canvas" -->
+    <!-- PORT:right x=144 y=56 id=n2.right type=output component="Flow Canvas" -->
+    <!-- PORT:top x=88 y=32 id=n2.top type=input component="Flow Canvas" -->
+    <!-- PORT:bottom x=88 y=80 id=n2.bottom type=output component="Flow Canvas" -->
+    <!-- PORT:left x=184 y=56 id=n3.left type=input component="Component" -->
+    <!-- PORT:right x=280 y=56 id=n3.right type=output component="Component" -->
+    <!-- PORT:top x=232 y=32 id=n3.top type=input component="Component" -->
+    <!-- PORT:bottom x=232 y=80 id=n3.bottom type=output component="Component" -->
+    <!-- PORT:left x=320 y=56 id=n4.left type=input component="Port" -->
+    <!-- PORT:right x=384 y=56 id=n4.right type=output component="Port" -->
+    <!-- PORT:top x=352 y=32 id=n4.top type=input component="Port" -->
+    <!-- PORT:bottom x=352 y=80 id=n4.bottom type=output component="Port" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 112 48" data-label="Flow Canvas">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Flow Canvas" -->
+      <!-- PORT:right x=112 y=24 id=n2.right type=output component="Flow Canvas" -->
+      <!-- PORT:top x=56 y=0 id=n2.top type=input component="Flow Canvas" -->
+      <!-- PORT:bottom x=56 y=48 id=n2.bottom type=output component="Flow Canvas" -->
+      <rect id="n2.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow Canvas" />
+      <text id="n2.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Flow Canvas</text>
+    </g>
+    <g id="n3" transform="translate(184,32)" data-bbox="184 32 96 48" data-label="Component">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Component" -->
+      <!-- PORT:right x=96 y=24 id=n3.right type=output component="Component" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Component" -->
+      <!-- PORT:bottom x=48 y=48 id=n3.bottom type=output component="Component" -->
+      <rect id="n3.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Component" />
+      <text id="n3.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Component</text>
+    </g>
+    <g id="n4" transform="translate(320,32)" data-bbox="320 32 64 48" data-label="Port">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Port" -->
+      <!-- PORT:right x=64 y=24 id=n4.right type=output component="Port" -->
+      <!-- PORT:top x=32 y=0 id=n4.top type=input component="Port" -->
+      <!-- PORT:bottom x=32 y=48 id=n4.bottom type=output component="Port" -->
+      <rect id="n4.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Port" />
+      <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Port</text>
+    </g>
+    <path id="n1.arrow0" d="M144,56 H184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M280,56 H320" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+  </g>
+</svg>

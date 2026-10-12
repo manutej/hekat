@@ -1,0 +1,112 @@
+{
+  "manifest": "/workspace/examples/figtree/langflow/manifest.json",
+  "index": "/workspace/examples/figtree/langflow/index.html",
+  "units": [
+    {
+      "id": "research-workflow",
+      "title": "Research workflow \u2014 Langflow documentation to FigTree SOURCE",
+      "source": "docs/research/langflow-agentic-workflows/RESEARCH-WORKFLOW.md",
+      "svg": "/workspace/examples/figtree/langflow/research-workflow.svg",
+      "overall": 9.23,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--langflow-flow-topology",
+      "title": "Langflow flow topology",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--langflow-flow-topology.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--single-agent-tool-loop",
+      "title": "Single-agent tool loop",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--single-agent-tool-loop.svg",
+      "overall": 10.0,
+      "issues": 0,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--agent-memory-and-session-scope",
+      "title": "Agent memory and session scope",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--agent-memory-and-session-scope.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--mcp-client-pattern",
+      "title": "MCP client pattern",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--mcp-client-pattern.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--mcp-server-pattern-flows-as-tools",
+      "title": "MCP server pattern (flows as tools)",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--mcp-server-pattern-flows-as-tools.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--multi-tool-agent-coordination",
+      "title": "Multi-tool agent coordination",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--multi-tool-agent-coordination.svg",
+      "overall": 10.0,
+      "issues": 0,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "source--api-and-programmatic-execution",
+      "title": "API and programmatic execution",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "svg": "/workspace/examples/figtree/langflow/source--api-and-programmatic-execution.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    }
+  ],
+  "failed": [],
+  "skipped": [
+    {
+      "source": "docs/research/langflow-agentic-workflows/BIBLIOGRAPHY.md",
+      "title": "Langflow agentic workflows \u2014 bibliography",
+      "span": [
+        1,
+        13
+      ],
+      "chars": 859,
+      "est_components": 0,
+      "reason": "only 0 grounded component(s), need 3"
+    },
+    {
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Agentic workflows in Langflow",
+      "span": [
+        1,
+        4
+      ],
+      "chars": 110,
+      "est_components": 0,
+      "reason": "only 0 grounded component(s), need 3"
+    }
+  ],
+  "adversarial": "three-layer-complete"
+}

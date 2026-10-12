@@ -1,0 +1,256 @@
+[
+  {
+    "id": "research-workflow",
+    "svg": "/workspace/examples/figtree/langflow/research-workflow.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/RESEARCH-WORKFLOW.md",
+    "overall": 9.09,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 95px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 95px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 1320,
+          "height": 313
+        }
+      },
+      {
+        "check_id": "flow.crossings",
+        "dimension": "flow_readability",
+        "severity": "warning",
+        "visual_description": "2 arrow crossing(s)",
+        "code_anchor": "n2.arrow0",
+        "fix_instruction": "re-order or re-route to remove crossings",
+        "penalty": 1.4,
+        "auto_edit": null
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--agent-memory-and-session-scope",
+    "svg": "/workspace/examples/figtree/langflow/source--agent-memory-and-session-scope.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 552,
+          "height": 281
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--api-and-programmatic-execution",
+    "svg": "/workspace/examples/figtree/langflow/source--api-and-programmatic-execution.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 888,
+          "height": 209
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--langflow-flow-topology",
+    "svg": "/workspace/examples/figtree/langflow/source--langflow-flow-topology.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 672,
+          "height": 281
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--mcp-client-pattern",
+    "svg": "/workspace/examples/figtree/langflow/source--mcp-client-pattern.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 95px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 95px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 984,
+          "height": 521
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--mcp-server-pattern-flows-as-tools",
+    "svg": "/workspace/examples/figtree/langflow/source--mcp-server-pattern-flows-as-tools.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.71,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "top margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "move the content towards the edge and shrink the canvas",
+        "penalty": 1.0,
+        "auto_edit": null
+      },
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 752,
+          "height": 209
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--multi-tool-agent-coordination",
+    "svg": "/workspace/examples/figtree/langflow/source--multi-tool-agent-coordination.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.86,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 63px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 1096,
+          "height": 377
+        }
+      }
+    ],
+    "requests": []
+  },
+  {
+    "id": "source--single-agent-tool-loop",
+    "svg": "/workspace/examples/figtree/langflow/source--single-agent-tool-loop.svg",
+    "source": "/workspace/docs/research/langflow-agentic-workflows/SOURCE.md",
+    "overall": 9.86,
+    "issues": [
+      {
+        "check_id": "compactness.blank_margin",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "bottom margin is 95px of blank canvas",
+        "code_anchor": "svg",
+        "fix_instruction": "shrink the canvas to content + margin",
+        "penalty": 1.0,
+        "auto_edit": {
+          "op": "set_canvas",
+          "width": 1048,
+          "height": 545
+        }
+      }
+    ],
+    "requests": []
+  }
+]

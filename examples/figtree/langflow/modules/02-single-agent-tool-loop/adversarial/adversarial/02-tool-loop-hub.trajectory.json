@@ -1,0 +1,78 @@
+{
+  "rubric": "teaching",
+  "initial": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 10.0,
+    "issues": [],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.738,
+      "aspect": 1.7,
+      "mean_detour": 1.14,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 1
+    }
+  },
+  "final": {
+    "rubric": "teaching",
+    "scores": {
+      "semantic_coverage": null,
+      "hallucination_control": 10.0,
+      "topology_accuracy": 10.0,
+      "flow_readability": 10.0,
+      "text_quality": 10.0,
+      "visual_polish": 10.0,
+      "medium_fit": 10.0,
+      "compactness": 10.0
+    },
+    "overall": 10.0,
+    "issues": [],
+    "tags": [],
+    "metrics": {
+      "fill_ratio": 0.738,
+      "aspect": 1.7,
+      "mean_detour": 1.14,
+      "crossings": 0,
+      "forward_ratio": 1.0,
+      "palette_size": 1
+    }
+  },
+  "improvement": 0.0,
+  "trajectory": [
+    {
+      "round": 0,
+      "overall": 10.0,
+      "scores": {
+        "semantic_coverage": null,
+        "hallucination_control": 10.0,
+        "topology_accuracy": 10.0,
+        "flow_readability": 10.0,
+        "text_quality": 10.0,
+        "visual_polish": 10.0,
+        "medium_fit": 10.0,
+        "compactness": 10.0
+      },
+      "issues": 0,
+      "critical": 0,
+      "edits_applied": 0,
+      "edits_failed": 0,
+      "diff_elements": 0,
+      "rendered": null,
+      "note": "baseline"
+    }
+  ],
+  "requests_remaining": [],
+  "stop_reason": "no edits left",
+  "ids_assigned": 0
+}

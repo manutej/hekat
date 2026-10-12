@@ -1,0 +1,103 @@
+[
+  {
+    "name": "langflow-flow",
+    "concept": "visual flow canvas",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<path d=\"M4 12h12\" id=\"e1-path\" /><path d=\"M12 8l4 4-4 4\" id=\"e2-path\" /><circle cx=\"12\" cy=\"12\" r=\"3\" id=\"e3-circle\" /><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"1\" id=\"e4-rect\" />"
+  },
+  {
+    "name": "agent-component",
+    "concept": "LLM agent with tool calling",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"1\" id=\"e1-rect\" /><path d=\"M4 12h12\" id=\"e2-path\" /><path d=\"M12 8l4 4-4 4\" id=\"e3-path\" />"
+  },
+  {
+    "name": "mcp-tools",
+    "concept": "MCP server connection",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"1\" id=\"e1-rect\" />"
+  },
+  {
+    "name": "tool-mode",
+    "concept": "component as agent tool",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"1\" id=\"e1-rect\" />"
+  },
+  {
+    "name": "chat-memory",
+    "concept": "session-scoped chat history",
+    "score": 10.0,
+    "accepted": true,
+    "issues": [],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 10.0,
+        "issues": 0
+      }
+    ],
+    "inner": "<rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"1\" id=\"e1-rect\" /><path d=\"M4 12h12\" id=\"e2-path\" /><path d=\"M12 8l4 4-4 4\" id=\"e3-path\" />"
+  },
+  {
+    "name": "project-mcp-server",
+    "concept": "flows exposed as MCP tools",
+    "score": 9.62,
+    "accepted": true,
+    "issues": [
+      {
+        "check_id": "icon.coverage",
+        "dimension": "compactness",
+        "severity": "warning",
+        "visual_description": "icon covers 24% of the grid; it will vanish at 16px",
+        "code_anchor": "svg",
+        "fix_instruction": "enlarge the metaphor to fill ~70% of the grid",
+        "penalty": 1.5,
+        "auto_edit": null
+      }
+    ],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 9.62,
+        "issues": 1
+      }
+    ],
+    "inner": "<path d=\"M4 12h12\" id=\"e1-path\" /><path d=\"M12 8l4 4-4 4\" id=\"e2-path\" />"
+  }
+]

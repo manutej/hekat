@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Langflow agentic workflows — FigTree showcase</title>
+  <style>
+    body { font-family: "IBM Plex Sans", system-ui, sans-serif; max-width: 1100px; margin: 32px auto; padding: 0 16px; color: #2B3A4A; }
+    h1 { font-size: 1.5rem; }
+    .lead { color: #555; max-width: 72ch; }
+    .grid { display: grid; gap: 24px; }
+    .card { border: 1px solid #D5D5D5; border-radius: 6px; padding: 16px; }
+    .card svg { max-width: 100%; height: auto; display: block; }
+    .meta { font-size: 0.85rem; color: #666; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <h1>Langflow agentic workflows</h1>
+  <p class="lead">Documentation-first FigTree run. Sources:
+    <a href="../../../docs/research/langflow-agentic-workflows/SOURCE.md">SOURCE.md</a>,
+    <a href="../../../docs/research/langflow-agentic-workflows/BIBLIOGRAPHY.md">bibliography</a>.
+    Full gallery: <a href="index.html">index.html</a>.
+  </p>
+  <section class="grid">
+    <div class="card">
+      <h2>Flow topology</h2>
+      <p class="meta">Chat Input → Agent → Chat Output</p>
+      <!-- inlined at build time via sed in README regenerate; see index.html for all units -->
+      <p><a href="source--langflow-flow-topology.svg">source--langflow-flow-topology.svg</a></p>
+    </div>
+    <div class="card">
+      <h2>Single-agent tool loop</h2>
+      <p class="meta">Score 9.86 (teaching)</p>
+      <p><a href="source--single-agent-tool-loop.svg">source--single-agent-tool-loop.svg</a></p>
+    </div>
+    <div class="card">
+      <h2>Icon family</h2>
+      <p class="meta">Six Langflow concepts (flow, agent, MCP, tool mode, memory, project MCP server)</p>
+      <p><a href="icons/sheet.svg">icons/sheet.svg</a></p>
+    </div>
+    <div class="card">
+      <h2>Research pipeline (refined)</h2>
+      <p class="meta">Doc scout → fact extractor → structure writer → FigTree scout</p>
+      <p><a href="research-workflow.refined.svg">research-workflow.refined.svg</a></p>
+    </div>
+  </section>
+</body>
+</html>

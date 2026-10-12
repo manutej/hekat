@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="984" height="521" viewBox="0 0 984 521" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Langflow integrates MCP as both MCP server and MCP client. The MCP Tools Component connects an MCP server so the Agent Component can call remote tools.</title>
+  <rect id="background" x="0" y="0" width="984" height="521" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  </defs>
+  <g id="n1" data-bbox="0 0 984 592">
+    <!-- PORT:left x=136 y=120 id=n6.left type=input component="MCP Tools" -->
+    <!-- PORT:right x=232 y=120 id=n6.right type=output component="MCP Tools" -->
+    <!-- PORT:top x=184 y=96 id=n6.top type=input component="MCP Tools" -->
+    <!-- PORT:bottom x=184 y=144 id=n6.bottom type=output component="MCP Tools" -->
+    <!-- PORT:left x=152 y=192 id=n7.left type=input component="Agent" -->
+    <!-- PORT:right x=216 y=192 id=n7.right type=output component="Agent" -->
+    <!-- PORT:top x=184 y=168 id=n7.top type=input component="Agent" -->
+    <!-- PORT:bottom x=184 y=216 id=n7.bottom type=output component="Agent" -->
+    <!-- PORT:left x=104 y=264 id=n8.left type=input component="Connect MCP Tools" -->
+    <!-- PORT:right x=264 y=264 id=n8.right type=output component="Connect MCP Tools" -->
+    <!-- PORT:top x=184 y=240 id=n8.top type=input component="Connect MCP Tools" -->
+    <!-- PORT:bottom x=184 y=288 id=n8.bottom type=output component="Connect MCP Tools" -->
+    <!-- PORT:left x=120 y=400 id=n9.left type=input component="One MCP Tools" -->
+    <!-- PORT:right x=248 y=400 id=n9.right type=output component="One MCP Tools" -->
+    <!-- PORT:top x=184 y=376 id=n9.top type=input component="One MCP Tools" -->
+    <!-- PORT:bottom x=184 y=424 id=n9.bottom type=output component="One MCP Tools" -->
+    <!-- PORT:left x=96 y=472 id=n10.left type=input component="MCP Server Registry" -->
+    <!-- PORT:right x=272 y=472 id=n10.right type=output component="MCP Server Registry" -->
+    <!-- PORT:top x=184 y=448 id=n10.top type=input component="MCP Server Registry" -->
+    <!-- PORT:bottom x=184 y=496 id=n10.bottom type=output component="MCP Server Registry" -->
+    <!-- PORT:left x=440 y=264 id=n11.left type=input component="Chat Input" -->
+    <!-- PORT:right x=552 y=264 id=n11.right type=output component="Chat Input" -->
+    <!-- PORT:top x=496 y=240 id=n11.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=496 y=288 id=n11.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=408 y=336 id=n12.left type=input component="MCP Tools Component" -->
+    <!-- PORT:right x=584 y=336 id=n12.right type=output component="MCP Tools Component" -->
+    <!-- PORT:top x=496 y=312 id=n12.top type=input component="MCP Tools Component" -->
+    <!-- PORT:bottom x=496 y=360 id=n12.bottom type=output component="MCP Tools Component" -->
+    <!-- PORT:left x=624 y=304 id=n13.left type=input component="Agent Component" -->
+    <!-- PORT:right x=768 y=304 id=n13.right type=output component="Agent Component" -->
+    <!-- PORT:top x=696 y=280 id=n13.top type=input component="Agent Component" -->
+    <!-- PORT:bottom x=696 y=328 id=n13.bottom type=output component="Agent Component" -->
+    <!-- PORT:left x=808 y=304 id=n14.left type=input component="Chat Output" -->
+    <!-- PORT:right x=920 y=304 id=n14.right type=output component="Chat Output" -->
+    <!-- PORT:top x=864 y=280 id=n14.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=864 y=328 id=n14.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 304 528" data-label="MCP Tools, Agent, Connect MCP Tools, One MCP Tools, MCP Server Registry">
+      <!-- PORT:left x=104 y=88 id=n6.left type=input component="MCP Tools" -->
+      <!-- PORT:right x=200 y=88 id=n6.right type=output component="MCP Tools" -->
+      <!-- PORT:top x=152 y=64 id=n6.top type=input component="MCP Tools" -->
+      <!-- PORT:bottom x=152 y=112 id=n6.bottom type=output component="MCP Tools" -->
+      <!-- PORT:left x=120 y=160 id=n7.left type=input component="Agent" -->
+      <!-- PORT:right x=184 y=160 id=n7.right type=output component="Agent" -->
+      <!-- PORT:top x=152 y=136 id=n7.top type=input component="Agent" -->
+      <!-- PORT:bottom x=152 y=184 id=n7.bottom type=output component="Agent" -->
+      <!-- PORT:left x=72 y=232 id=n8.left type=input component="Connect MCP Tools" -->
+      <!-- PORT:right x=232 y=232 id=n8.right type=output component="Connect MCP Tools" -->
+      <!-- PORT:top x=152 y=208 id=n8.top type=input component="Connect MCP Tools" -->
+      <!-- PORT:bottom x=152 y=256 id=n8.bottom type=output component="Connect MCP Tools" -->
+      <!-- PORT:left x=88 y=368 id=n9.left type=input component="One MCP Tools" -->
+      <!-- PORT:right x=216 y=368 id=n9.right type=output component="One MCP Tools" -->
+      <!-- PORT:top x=152 y=344 id=n9.top type=input component="One MCP Tools" -->
+      <!-- PORT:bottom x=152 y=392 id=n9.bottom type=output component="One MCP Tools" -->
+      <!-- PORT:left x=64 y=440 id=n10.left type=input component="MCP Server Registry" -->
+      <!-- PORT:right x=240 y=440 id=n10.right type=output component="MCP Server Registry" -->
+      <!-- PORT:top x=152 y=416 id=n10.top type=input component="MCP Server Registry" -->
+      <!-- PORT:bottom x=152 y=464 id=n10.bottom type=output component="MCP Server Registry" -->
+      <g id="n4" transform="translate(40,32)" data-bbox="40 32 224 256" data-label="MCP Tools, Agent, Connect MCP Tools">
+        <!-- PORT:left x=64 y=56 id=n6.left type=input component="MCP Tools" -->
+        <!-- PORT:right x=160 y=56 id=n6.right type=output component="MCP Tools" -->
+        <!-- PORT:top x=112 y=32 id=n6.top type=input component="MCP Tools" -->
+        <!-- PORT:bottom x=112 y=80 id=n6.bottom type=output component="MCP Tools" -->
+        <!-- PORT:left x=80 y=128 id=n7.left type=input component="Agent" -->
+        <!-- PORT:right x=144 y=128 id=n7.right type=output component="Agent" -->
+        <!-- PORT:top x=112 y=104 id=n7.top type=input component="Agent" -->
+        <!-- PORT:bottom x=112 y=152 id=n7.bottom type=output component="Agent" -->
+        <!-- PORT:left x=32 y=200 id=n8.left type=input component="Connect MCP Tools" -->
+        <!-- PORT:right x=192 y=200 id=n8.right type=output component="Connect MCP Tools" -->
+        <!-- PORT:top x=112 y=176 id=n8.top type=input component="Connect MCP Tools" -->
+        <!-- PORT:bottom x=112 y=224 id=n8.bottom type=output component="Connect MCP Tools" -->
+        <g id="n6" transform="translate(64,32)" data-bbox="64 32 96 48" data-label="MCP Tools">
+          <!-- PORT:left x=0 y=24 id=n6.left type=input component="MCP Tools" -->
+          <!-- PORT:right x=96 y=24 id=n6.right type=output component="MCP Tools" -->
+          <!-- PORT:top x=48 y=0 id=n6.top type=input component="MCP Tools" -->
+          <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="MCP Tools" -->
+          <rect id="n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Tools" />
+          <text id="n6.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">MCP Tools</text>
+        </g>
+        <g id="n7" transform="translate(80,104)" data-bbox="80 104 64 48" data-label="Agent">
+          <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent" -->
+          <!-- PORT:right x=64 y=24 id=n7.right type=output component="Agent" -->
+          <!-- PORT:top x=32 y=0 id=n7.top type=input component="Agent" -->
+          <!-- PORT:bottom x=32 y=48 id=n7.bottom type=output component="Agent" -->
+          <rect id="n7.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+          <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+        </g>
+        <g id="n8" transform="translate(32,176)" data-bbox="32 176 160 48" data-label="Connect MCP Tools">
+          <!-- PORT:left x=0 y=24 id=n8.left type=input component="Connect MCP Tools" -->
+          <!-- PORT:right x=160 y=24 id=n8.right type=output component="Connect MCP Tools" -->
+          <!-- PORT:top x=80 y=0 id=n8.top type=input component="Connect MCP Tools" -->
+          <!-- PORT:bottom x=80 y=48 id=n8.bottom type=output component="Connect MCP Tools" -->
+          <rect id="n8.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Connect MCP Tools" />
+          <text id="n8.label" x="80" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="160">Connect MCP Tools</text>
+        </g>
+      </g>
+      <g id="n5" transform="translate(32,312)" data-bbox="32 312 240 184" data-label="One MCP Tools, MCP Server Registry">
+        <!-- PORT:left x=56 y=56 id=n9.left type=input component="One MCP Tools" -->
+        <!-- PORT:right x=184 y=56 id=n9.right type=output component="One MCP Tools" -->
+        <!-- PORT:top x=120 y=32 id=n9.top type=input component="One MCP Tools" -->
+        <!-- PORT:bottom x=120 y=80 id=n9.bottom type=output component="One MCP Tools" -->
+        <!-- PORT:left x=32 y=128 id=n10.left type=input component="MCP Server Registry" -->
+        <!-- PORT:right x=208 y=128 id=n10.right type=output component="MCP Server Registry" -->
+        <!-- PORT:top x=120 y=104 id=n10.top type=input component="MCP Server Registry" -->
+        <!-- PORT:bottom x=120 y=152 id=n10.bottom type=output component="MCP Server Registry" -->
+        <g id="n9" transform="translate(56,32)" data-bbox="56 32 128 48" data-label="One MCP Tools">
+          <!-- PORT:left x=0 y=24 id=n9.left type=input component="One MCP Tools" -->
+          <!-- PORT:right x=128 y=24 id=n9.right type=output component="One MCP Tools" -->
+          <!-- PORT:top x=64 y=0 id=n9.top type=input component="One MCP Tools" -->
+          <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="One MCP Tools" -->
+          <rect id="n9.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="One MCP Tools" />
+          <text id="n9.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">One MCP Tools</text>
+        </g>
+        <g id="n10" transform="translate(32,104)" data-bbox="32 104 176 48" data-label="MCP Server Registry">
+          <!-- PORT:left x=0 y=24 id=n10.left type=input component="MCP Server Registry" -->
+          <!-- PORT:right x=176 y=24 id=n10.right type=output component="MCP Server Registry" -->
+          <!-- PORT:top x=88 y=0 id=n10.top type=input component="MCP Server Registry" -->
+          <!-- PORT:bottom x=88 y=48 id=n10.bottom type=output component="MCP Server Registry" -->
+          <rect id="n10.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Server Registry" />
+          <text id="n10.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">MCP Server Registry</text>
+        </g>
+      </g>
+    </g>
+    <g id="n3" transform="translate(376,208)" data-bbox="376 208 576 184" data-label="Chat Input, MCP Tools Component, Agent Component, Chat Output">
+      <!-- PORT:left x=64 y=56 id=n11.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=56 id=n11.right type=output component="Chat Input" -->
+      <!-- PORT:top x=120 y=32 id=n11.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=120 y=80 id=n11.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=128 id=n12.left type=input component="MCP Tools Component" -->
+      <!-- PORT:right x=208 y=128 id=n12.right type=output component="MCP Tools Component" -->
+      <!-- PORT:top x=120 y=104 id=n12.top type=input component="MCP Tools Component" -->
+      <!-- PORT:bottom x=120 y=152 id=n12.bottom type=output component="MCP Tools Component" -->
+      <!-- PORT:left x=248 y=96 id=n13.left type=input component="Agent Component" -->
+      <!-- PORT:right x=392 y=96 id=n13.right type=output component="Agent Component" -->
+      <!-- PORT:top x=320 y=72 id=n13.top type=input component="Agent Component" -->
+      <!-- PORT:bottom x=320 y=120 id=n13.bottom type=output component="Agent Component" -->
+      <!-- PORT:left x=432 y=96 id=n14.left type=input component="Chat Output" -->
+      <!-- PORT:right x=544 y=96 id=n14.right type=output component="Chat Output" -->
+      <!-- PORT:top x=488 y=72 id=n14.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=488 y=120 id=n14.bottom type=output component="Chat Output" -->
+      <g id="n11" transform="translate(64,32)" data-bbox="64 32 112 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Chat Input" -->
+        <!-- PORT:right x=112 y=24 id=n11.right type=output component="Chat Input" -->
+        <!-- PORT:top x=56 y=0 id=n11.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=56 y=48 id=n11.bottom type=output component="Chat Input" -->
+        <rect id="n11.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input" />
+        <text id="n11.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Input</text>
+      </g>
+      <g id="n12" transform="translate(32,104)" data-bbox="32 104 176 48" data-label="MCP Tools Component">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="MCP Tools Component" -->
+        <!-- PORT:right x=176 y=24 id=n12.right type=output component="MCP Tools Component" -->
+        <!-- PORT:top x=88 y=0 id=n12.top type=input component="MCP Tools Component" -->
+        <!-- PORT:bottom x=88 y=48 id=n12.bottom type=output component="MCP Tools Component" -->
+        <rect id="n12.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Tools Component" />
+        <text id="n12.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">MCP Tools Component</text>
+      </g>
+      <g id="n13" transform="translate(248,72)" data-bbox="248 72 144 48" data-label="Agent Component">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="Agent Component" -->
+        <!-- PORT:right x=144 y=24 id=n13.right type=output component="Agent Component" -->
+        <!-- PORT:top x=72 y=0 id=n13.top type=input component="Agent Component" -->
+        <!-- PORT:bottom x=72 y=48 id=n13.bottom type=output component="Agent Component" -->
+        <rect id="n13.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component" />
+        <text id="n13.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Agent Component</text>
+      </g>
+      <g id="n14" transform="translate(432,72)" data-bbox="432 72 112 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n14.left type=input component="Chat Output" -->
+        <!-- PORT:right x=112 y=24 id=n14.right type=output component="Chat Output" -->
+        <!-- PORT:top x=56 y=0 id=n14.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=56 y=48 id=n14.bottom type=output component="Chat Output" -->
+        <rect id="n14.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Output" />
+        <text id="n14.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Output</text>
+      </g>
+      <path id="n3.arrow0" d="M208,128 H224 V96 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n13.left" />
+      <path id="n3.arrow1" d="M176,56 H216 V96 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n11.right" data-to="n13.left" />
+      <path id="n3.arrow2" d="M392,96 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left" />
+    </g>
+    <path id="n1.arrow0" d="M272,472 H336 V336 H408" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n12.left" />
+  </g>
+</svg>

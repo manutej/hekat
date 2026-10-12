@@ -1,0 +1,12 @@
+{
+  "id": "langflow-teaching.langflow-source--agent-memory-and-session-scope-compactness-blank_margin",
+  "rubric": "teaching",
+  "kind": "defect",
+  "expect_fire": [
+    "compactness.blank_margin"
+  ],
+  "expect_silent": [],
+  "rationale": "Production figure source--agent-memory-and-session-scope: ",
+  "source": "adversary-langflow-layer1",
+  "production_svg": "/workspace/examples/figtree/langflow/source--agent-memory-and-session-scope.svg"
+}

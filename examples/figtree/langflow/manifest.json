@@ -1,0 +1,130 @@
+{
+  "out_dir": "/workspace/examples/figtree/langflow",
+  "rubric": "teaching",
+  "style": "teaching",
+  "inputs": [
+    "/workspace/docs/research/langflow-agentic-workflows"
+  ],
+  "units": [
+    {
+      "id": "research-workflow",
+      "source": "docs/research/langflow-agentic-workflows/RESEARCH-WORKFLOW.md",
+      "title": "Research workflow \u2014 Langflow documentation to FigTree SOURCE",
+      "span": [
+        1,
+        38
+      ],
+      "chars": 1583,
+      "est_components": 10,
+      "est_flows": 6
+    },
+    {
+      "id": "source--langflow-flow-topology",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Langflow flow topology",
+      "span": [
+        5,
+        16
+      ],
+      "chars": 439,
+      "est_components": 5,
+      "est_flows": 3
+    },
+    {
+      "id": "source--single-agent-tool-loop",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Single-agent tool loop",
+      "span": [
+        17,
+        36
+      ],
+      "chars": 749,
+      "est_components": 10,
+      "est_flows": 5
+    },
+    {
+      "id": "source--agent-memory-and-session-scope",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Agent memory and session scope",
+      "span": [
+        37,
+        48
+      ],
+      "chars": 327,
+      "est_components": 5,
+      "est_flows": 1
+    },
+    {
+      "id": "source--mcp-client-pattern",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "MCP client pattern",
+      "span": [
+        49,
+        68
+      ],
+      "chars": 650,
+      "est_components": 9,
+      "est_flows": 4
+    },
+    {
+      "id": "source--mcp-server-pattern-flows-as-tools",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "MCP server pattern (flows as tools)",
+      "span": [
+        69,
+        83
+      ],
+      "chars": 531,
+      "est_components": 5,
+      "est_flows": 3
+    },
+    {
+      "id": "source--multi-tool-agent-coordination",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Multi-tool agent coordination",
+      "span": [
+        84,
+        96
+      ],
+      "chars": 469,
+      "est_components": 8,
+      "est_flows": 4
+    },
+    {
+      "id": "source--api-and-programmatic-execution",
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "API and programmatic execution",
+      "span": [
+        97,
+        105
+      ],
+      "chars": 297,
+      "est_components": 5,
+      "est_flows": 3
+    }
+  ],
+  "skipped": [
+    {
+      "source": "docs/research/langflow-agentic-workflows/BIBLIOGRAPHY.md",
+      "title": "Langflow agentic workflows \u2014 bibliography",
+      "span": [
+        1,
+        13
+      ],
+      "chars": 859,
+      "est_components": 0,
+      "reason": "only 0 grounded component(s), need 3"
+    },
+    {
+      "source": "docs/research/langflow-agentic-workflows/SOURCE.md",
+      "title": "Agentic workflows in Langflow",
+      "span": [
+        1,
+        4
+      ],
+      "chars": 110,
+      "est_components": 0,
+      "reason": "only 0 grounded component(s), need 3"
+    }
+  ]
+}
