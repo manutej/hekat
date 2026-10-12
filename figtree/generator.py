@@ -15,7 +15,7 @@ from figtree.geometry import ceil_to_grid
 from figtree.ingest import to_noun_phrase
 from figtree.schemas import Flow, GlobalStyle, Node, Port, ResidualDefect
 from figtree.elements import kind_for, shape_path, text_inset
-from figtree.icons import icon_for
+from figtree.icons import ICONS, icon_for
 from figtree.svgmodel import Fragment, PathEl, RectEl, ShapeEl, TextEl, UseEl
 
 MAX_DEPTH = 8
@@ -190,8 +190,9 @@ class RuleBasedGenerator:
         from figtree.styles import PRESETS
 
         pr = PRESETS.get(getattr(style, "preset", "paper")) or PRESETS["paper"]
-        kind = kind_for(names[0]) if self.shapes else "block"
-        icon = icon_for(names[0]) if self.icons else None
+        hint = (getattr(self, "hints", None) or {}).get(names[0], {})
+        kind = kind_for(names[0], hint.get("kind", "")) if (self.shapes or hint.get("kind")) else "block"
+        icon = (hint.get("icon") if hint.get("icon") in ICONS else None) or (icon_for(names[0]) if self.icons else None)
         inset_l, inset_r = text_inset(kind)
         icon_w = 20 if icon else 0  # glyph at x=8..24, label from x=32: 20px more than a plain block
         # compact academic blocks (paper: ~60-100px wide, 20-30px tall); 8-grid forces 32 tall

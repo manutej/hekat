@@ -40,6 +40,8 @@ _NEGATION = re.compile(
 )
 _WORKFLOW_HEADING = re.compile(r"^#{1,6}\s.*\b(?:workflow|process|pipeline|procedure|steps?|algorithm|method(?:ology)?|stages?|phases?)\b", re.IGNORECASE)
 _NUMBERED_STEP = re.compile(r"^\s*(\d+)[.)]\s+\**([A-Z][^.:*\n]{1,40}?)\**\s*(?::|$|\s[-–—]\s)")
+_FLOW_TYPE_SUFFIX = re.compile(r"^\s*\((data|control|conditional|feedback|parallel)\)", re.IGNORECASE)
+_COMPONENT_HINT = re.compile(r"^\s*[-*]\s+\*\*([^*\n]{1,60})\*\*\s*\(((?:kind|icon)\s*:\s*[a-z][a-z0-9-]*(?:\s*,\s*(?:kind|icon)\s*:\s*[a-z][a-z0-9-]*)?)\)", re.MULTILINE)
 _LOOP_WORD = re.compile(r"\b(?:repeat|loop|iterate|again|feedback|re-?run|until)\b", re.IGNORECASE)
 _SUFFIX_ALIAS = {"agent", "loop", "step", "stage", "phase", "module", "repair", "pass", "system"}
 
@@ -161,7 +163,23 @@ class RuleBasedGrounder:
         for line in text.splitlines():
             expr = self._arrow_expression(line)
             if expr:
+                before = len(raw_flows)
                 self._parse_chain(expr, line, add_component, raw_flows)
+                # explicit flow type after the chain: "A -> B (control): ..." (spec format)
+                m_type = _FLOW_TYPE_SUFFIX.search(line[line.find(expr) + len(expr):] if expr in line else "")
+                if m_type:
+                    t = m_type.group(1).lower()
+                    raw_flows[before:] = [(a, b, t if ft == "data" else ft, e) for (a, b, ft, e) in raw_flows[before:]]
+        # explicit component hints: "- **Name** (kind: store, icon: database): role" (spec format)
+        for m in _COMPONENT_HINT.finditer(text):
+            name = add_component(m.group(1), m.group(0).strip())
+            key = slug(name)
+            attrs = dict(re.findall(r"(kind|icon)\s*:\s*([a-z][a-z0-9-]*)", m.group(2)))
+            if key in components:
+                if attrs.get("kind"):
+                    components[key].kind = attrs["kind"]
+                if attrs.get("icon"):
+                    components[key].icon = attrs["icon"]
 
         # 3b. numbered steps under a workflow/process heading: explicit ordering -> sequential flows
         section_is_workflow = False

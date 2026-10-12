@@ -8,6 +8,13 @@ export const meta = {
   ],
 }
 
+// Model tiers (optional): args.model for every agent, args.cheap_model for the mechanical stages
+// (effort 'low'). Omit both to inherit the session model. Small models work because every prompt
+// is a spec card: one command, one file, one JSON shape.
+const MODEL = args.model || undefined
+const CHEAP = args.cheap_model || MODEL
+const run = (prompt, opts = {}) => agent(prompt, { ...((opts.effort === 'low' && CHEAP) ? { model: CHEAP } : MODEL ? { model: MODEL } : {}), ...opts })
+
 // args: {svgs: [path | {svg, source?}], rubric}
 const rubric = args.rubric || 'teaching'
 const items = (args.svgs || []).map((s) => (typeof s === 'string' ? { svg: s, source: args.source || '' } : { svg: s.svg, source: s.source || args.source || '' }))
@@ -54,7 +61,7 @@ phase('Judge')
 const panels = await pipeline(
   items,
   (item, _orig, index) =>
-    parallel(LENSES.map((lens) => () => agent(judgePrompt(item, lens, index), { phase: 'Judge', label: `${lens.id} #${index}`, schema: JUDGE_SCHEMA }))).then((rs) =>
+    parallel(LENSES.map((lens) => () => run(judgePrompt(item, lens, index), { phase: 'Judge', label: `${lens.id} #${index}`, schema: JUDGE_SCHEMA }))).then((rs) =>
       rs.map((r, k) => (r ? { lens: LENSES[k].id, ...r } : null)).filter(Boolean),
     ),
   (judgements, item) => {

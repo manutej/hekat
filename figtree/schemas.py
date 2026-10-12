@@ -117,13 +117,21 @@ class GlobalStyle:
 class Component:
     name: str
     evidence_span: str
+    kind: str = ""  # explicit element kind from the source ("(kind: store)"), else chosen by name
+    icon: str = ""  # explicit icon name from the source ("(icon: database)"), else chosen by name
 
     def to_dict(self) -> Dict[str, str]:
-        return {"name": self.name, "evidence_span": self.evidence_span}
+        d = {"name": self.name, "evidence_span": self.evidence_span}
+        if self.kind:
+            d["kind"] = self.kind
+        if self.icon:
+            d["icon"] = self.icon
+        return d
 
     @classmethod
     def from_dict(cls, d: Dict[str, Any]) -> "Component":
-        return cls(name=str(d["name"]).strip(), evidence_span=str(d.get("evidence_span", "")))
+        return cls(name=str(d["name"]).strip(), evidence_span=str(d.get("evidence_span", "")),
+                   kind=str(d.get("kind", "") or ""), icon=str(d.get("icon", "") or ""))
 
 
 @dataclass

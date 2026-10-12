@@ -11,6 +11,13 @@ export const meta = {
   ],
 }
 
+// Model tiers (optional): args.model for every agent, args.cheap_model for the mechanical stages
+// (effort 'low'). Omit both to inherit the session model. Small models work because every prompt
+// is a spec card: one command, one file, one JSON shape.
+const MODEL = args.model || undefined
+const CHEAP = args.cheap_model || MODEL
+const run = (prompt, opts = {}) => agent(prompt, { ...((opts.effort === 'low' && CHEAP) ? { model: CHEAP } : MODEL ? { model: MODEL } : {}), ...opts })
+
 // args: {rubric, n_probes?, out_dir}
 const rubric = args.rubric
 const nProbes = Math.max(1, Math.min(args.n_probes || 4, 12))
@@ -118,14 +125,14 @@ Return only JSON: {refuted: boolean, reason: one sentence}. Do not paste file co
 
 // 1. baseline
 phase('Baseline')
-const before = await agent(evalPrompt('BEFORE', `${outDir}/eval-before.json`), { label: 'eval before', schema: EVAL_SCHEMA, effort: 'low' })
+const before = await run(evalPrompt('BEFORE', `${outDir}/eval-before.json`), { label: 'eval before', schema: EVAL_SCHEMA, effort: 'low' })
 log(`baseline: ${before ? `${before.probes} probes, recall ${before.recall}, precision ${before.precision}` : 'eval failed'}`)
 
 // 2+3. attack, then verify each probe by 3 refuters (no barrier between attack and verify)
 const REFUTER_LENSES = ['rendered-reality', 'spec-consistency', 'behaviour-match']
 const vetted = await pipeline(
   Array.from({ length: nProbes }, (_, i) => i),
-  (i) => agent(attackPrompt(i), { phase: 'Attack', label: `adversary ${i} (${LENSES[i % LENSES.length]})`, schema: PROBES_SCHEMA }),
+  (i) => run(attackPrompt(i), { phase: 'Attack', label: `adversary ${i} (${LENSES[i % LENSES.length]})`, schema: PROBES_SCHEMA }),
   async (result, i) => {
     const probes = (result && result.probes) || []
     if (!probes.length) {
@@ -134,7 +141,7 @@ const vetted = await pipeline(
     }
     return Promise.all(
       probes.map((p) =>
-        parallel(REFUTER_LENSES.map((lens) => () => agent(refutePrompt(p, lens), { phase: 'Verify', label: `refute ${p.id} (${lens})`, schema: VERDICT_SCHEMA, effort: 'low' })))
+        parallel(REFUTER_LENSES.map((lens) => () => run(refutePrompt(p, lens), { phase: 'Verify', label: `refute ${p.id} (${lens})`, schema: VERDICT_SCHEMA, effort: 'low' })))
           .then((votes) => {
             const valid = votes.filter(Boolean)
             const refutations = valid.filter((v) => v.refuted)
@@ -159,7 +166,7 @@ if (dropped.length) {
     const slug = d.probe.id.replace(`${rubric}.`, '')
     return [`${probeDir}/${slug}.svg`, `${probeDir}/${slug}.json`]
   })
-  const res = await agent(
+  const res = await run(
     `Delete exactly these files (they are refuted adversarial probes) with one command:  rm -f ${files.join(' ')}\nThen run  ls ${probeDir}  and return only JSON {deleted: [paths that no longer exist]}. Do not paste file contents into your answer.`,
     { label: `delete ${dropped.length} probe(s)`, schema: DELETE_SCHEMA, effort: 'low' },
   )
@@ -168,7 +175,7 @@ if (dropped.length) {
 
 // 5. eval after
 phase('Eval')
-const after = await agent(evalPrompt('AFTER', `${outDir}/eval-after.json`), { label: 'eval after', schema: EVAL_SCHEMA, effort: 'low' })
+const after = await run(evalPrompt('AFTER', `${outDir}/eval-after.json`), { label: 'eval after', schema: EVAL_SCHEMA, effort: 'low' })
 log(`after: ${after ? `${after.probes} probes, recall ${after.recall}, precision ${after.precision}` : 'eval failed'}`)
 
 return {

@@ -10,6 +10,13 @@ export const meta = {
   ],
 }
 
+// Model tiers (optional): args.model for every agent, args.cheap_model for the mechanical stages
+// (effort 'low'). Omit both to inherit the session model. Small models work because every prompt
+// is a spec card: one command, one file, one JSON shape.
+const MODEL = args.model || undefined
+const CHEAP = args.cheap_model || MODEL
+const run = (prompt, opts = {}) => agent(prompt, { ...((opts.effort === 'low' && CHEAP) ? { model: CHEAP } : MODEL ? { model: MODEL } : {}), ...opts })
+
 // args: {briefs: [{name, concept, metaphor?}], out_dir}
 const briefs = (args.briefs || []).filter((b) => b && b.name && b.concept)
 const outDir = args.out_dir
@@ -80,16 +87,16 @@ Return only JSON: {svg: "${svgPath}", score: <overall>, backend: "repair", strok
 
 const results = await pipeline(
   briefs,
-  (b) => agent(drawPrompt(b), { phase: 'Draw', label: `draw ${b.name}`, schema: DRAW_SCHEMA }),
+  (b) => run(drawPrompt(b), { phase: 'Draw', label: `draw ${b.name}`, schema: DRAW_SCHEMA }),
   (drawn, b) => {
     if (!drawn) throw new Error(`draw failed for ${b.name}`)
-    return agent(reviewPrompt(b, drawn.svg, 1), { phase: 'Review', label: `review ${b.name}`, schema: REVIEW_SCHEMA, effort: 'low' }).then((review) => ({ drawn, review }))
+    return run(reviewPrompt(b, drawn.svg, 1), { phase: 'Review', label: `review ${b.name}`, schema: REVIEW_SCHEMA, effort: 'low' }).then((review) => ({ drawn, review }))
   },
   async ({ drawn, review }, b) => {
     if (!review) return { name: b.name, svg: drawn.svg, backend: drawn.backend, score: drawn.score, defects: [], repaired: false, status: 'unreviewed' }
     if (review.score >= ACCEPT) return { name: b.name, svg: drawn.svg, backend: drawn.backend, score: review.score, defects: review.defects, repaired: false, status: 'accepted' }
-    const fixed = await agent(repairPrompt(b, drawn.svg, review), { phase: 'Repair', label: `repair ${b.name}`, schema: DRAW_SCHEMA })
-    const second = fixed ? await agent(reviewPrompt(b, fixed.svg, 2), { phase: 'Review', label: `re-review ${b.name}`, schema: REVIEW_SCHEMA, effort: 'low' }) : null
+    const fixed = await run(repairPrompt(b, drawn.svg, review), { phase: 'Repair', label: `repair ${b.name}`, schema: DRAW_SCHEMA })
+    const second = fixed ? await run(reviewPrompt(b, fixed.svg, 2), { phase: 'Review', label: `re-review ${b.name}`, schema: REVIEW_SCHEMA, effort: 'low' }) : null
     const score = second ? second.score : review.score
     return {
       name: b.name,
@@ -112,7 +119,7 @@ phase('Sheet')
 const accepted = icons.filter((i) => i.status === 'accepted')
 let sheet = null
 if (icons.length) {
-  sheet = await agent(
+  sheet = await run(
     `Build the contact sheet of the finished icons without redrawing them. Run exactly:
   python3 -c "
 import json,os

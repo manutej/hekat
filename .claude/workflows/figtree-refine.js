@@ -8,6 +8,13 @@ export const meta = {
   ],
 }
 
+// Model tiers (optional): args.model for every agent, args.cheap_model for the mechanical stages
+// (effort 'low'). Omit both to inherit the session model. Small models work because every prompt
+// is a spec card: one command, one file, one JSON shape.
+const MODEL = args.model || undefined
+const CHEAP = args.cheap_model || MODEL
+const run = (prompt, opts = {}) => agent(prompt, { ...((opts.effort === 'low' && CHEAP) ? { model: CHEAP } : MODEL ? { model: MODEL } : {}), ...opts })
+
 // args: {svg, rubric, source?, rounds?, out_dir}
 const svg = args.svg
 const rubric = args.rubric || 'teaching'
@@ -93,12 +100,12 @@ for (let round = 1; round <= rounds; round++) {
   const outFile = `${outDir}/round${round}.svg`
   const [repair] = await pipeline(
     [current],
-    (file) => agent(scorePrompt(file, round), { phase: 'Score', label: `score r${round}`, schema: SCORE_SCHEMA, effort: 'low' }),
+    (file) => run(scorePrompt(file, round), { phase: 'Score', label: `score r${round}`, schema: SCORE_SCHEMA, effort: 'low' }),
     (score, file) => {
       if (!score) throw new Error('scorer returned nothing')
       history.push({ round, stage: 'score', overall: score.overall, issues: score.issues.length, requests: score.requests.length })
       if (score.requests.length === 0 && score.issues.length === 0) return { skip: true, score }
-      return agent(repairPrompt(file, outFile, round, score), { phase: 'Repair', label: `repair r${round}`, schema: REPAIR_SCHEMA, effort: 'low' })
+      return run(repairPrompt(file, outFile, round, score), { phase: 'Repair', label: `repair r${round}`, schema: REPAIR_SCHEMA, effort: 'low' })
         .then((r) => (r ? { ...r, score } : null))
     },
   )

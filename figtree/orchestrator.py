@@ -104,6 +104,8 @@ class FigTree:
     def run(self, source_text: str, edit: Optional[Dict[str, Any]] = None) -> FigTreeResult:
         self._source = source_text
         grounded = self._ground_with_retry(source_text)
+        # explicit kind/icon hints from the source (spec format) reach the generator's leaf drawing
+        self.generator.hints = {c.name: {'kind': c.kind, 'icon': c.icon} for c in grounded.content_plan.components if c.kind or c.icon}
         plan, style = grounded.content_plan, grounded.global_style
         if self.style_override is not None:
             style = self.style_override

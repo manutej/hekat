@@ -11,6 +11,13 @@ export const meta = {
   ],
 }
 
+// Model tiers (optional): args.model for every agent, args.cheap_model for the mechanical stages
+// (effort 'low'). Omit both to inherit the session model. Small models work because every prompt
+// is a spec card: one command, one file, one JSON shape.
+const MODEL = args.model || undefined
+const CHEAP = args.cheap_model || MODEL
+const run = (prompt, opts = {}) => agent(prompt, { ...((opts.effort === 'low' && CHEAP) ? { model: CHEAP } : MODEL ? { model: MODEL } : {}), ...opts })
+
 // args: {inputs: [paths] | {dir}, rubric, out_dir, max_units?, style?}
 const inputs = Array.isArray(args.inputs) ? args.inputs : args.inputs && args.inputs.dir ? [args.inputs.dir] : []
 const rubric = args.rubric || 'teaching'
@@ -84,7 +91,7 @@ const CRITIC_SCHEMA = {
 
 // 1. scout: one agent plans the units
 phase('Plan')
-const scout = await agent(
+const scout = await run(
   `You are the SCOUT. Run exactly this command from the repo root:
 
   python3 -m figtree digest --plan ${inputs.join(' ')} -o ${outDir} --rubric ${rubric}${styleFlag}
@@ -104,7 +111,7 @@ log(`${units.length} unit(s) planned, ${scout.skipped} section(s) skipped by the
 const done = await pipeline(
   units,
   (u) =>
-    agent(
+    run(
       `You are the GENERATOR for unit "${u.id}" (${u.title}). Run exactly:
 
   python3 -m figtree digest --unit ${u.id} -o ${outDir} --rubric ${rubric}${styleFlag}
@@ -114,7 +121,7 @@ It prints one JSON line {id, title, source, svg, overall, issues, critical, stat
     ),
   (gen, u) => {
     if (!gen) throw new Error(`generation failed for ${u.id}`)
-    return agent(
+    return run(
       `You are the SCORER for unit "${u.id}". Read only ${outDir}/${u.id}.score.json (small JSON written by the generator). Return only JSON: {overall: <overall>, critical: <count of issues with severity "critical">, requests: [for each issue whose auto_edit is null: "<code_anchor>: <fix_instruction>" trimmed to 160 chars, at most 8]}. Do not paste file contents into your answer.`,
       { phase: 'Score', label: `score ${u.id}`, schema: SCORE_SCHEMA, effort: 'low' },
     ).then((score) => ({ gen, score }))
@@ -124,7 +131,7 @@ It prints one JSON line {id, title, source, svg, overall, issues, critical, stat
     const row = { id: u.id, title: u.title, source: u.source, svg: gen.svg, overall, critical: score ? score.critical : null, status: overall >= REFINE_BELOW ? 'ok' : 'low' }
     if (overall >= REFINE_BELOW) return row
     const source = u.source
-    const refined = await agent(
+    const refined = await run(
       `You are the REPAIRER for unit "${u.id}" (scored ${overall} on the ${rubric} rubric). Input SVG: ${gen.svg}. Content requests: ${score && score.requests.length ? score.requests.map((r, i) => `(${i + 1}) ${r}`).join(' ') : '(none)'}.
 If there are content requests, decide each and write an edit script ${outDir}/${u.id}.edits.json: a JSON list containing ONE inner list of ops (figtree.edits ops set_attr/set_text/translate/recolor/delete/insert/scale_font/set_canvas/center_content, each addressing an existing id; find ids with  grep -o 'id="[^"]*"' ${gen.svg} | head -60). Then run exactly (append --edits ${outDir}/${u.id}.edits.json only if you wrote it):
 
@@ -144,7 +151,7 @@ for (const f of failed) log(`unit ${f}: a stage failed; not in the result`)
 
 // 5. completeness critic
 phase('Critique')
-const critic = await agent(
+const critic = await run(
   `You are the COMPLETENESS CRITIC. Read only ${outDir}/manifest.json (small JSON). Its "skipped" list names the sections the planner did not turn into figures and why; its "units" list is what was generated${maxUnits ? `; the orchestrator additionally dropped every unit after the first ${maxUnits}` : ''}${failed.length ? `; these units failed in generation: ${failed.join(', ')}` : ''}.
 For every skipped entry judge from its title and reason (do not open the source documents unless a title is ambiguous, and then read at most 40 lines) whether a figure would still have been worth making. Return only JSON: {skipped: [{source, title, reason, worth_a_figure: boolean}], not_covered: [one line per gap a reader of the gallery would notice, including max_units drops and failures], summary: one sentence}. Do not paste file contents into your answer.`,
   { label: 'completeness critic', schema: CRITIC_SCHEMA, effort: 'low' },
