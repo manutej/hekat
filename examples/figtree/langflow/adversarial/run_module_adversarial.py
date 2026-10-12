@@ -61,7 +61,7 @@ def run(cmd: List[str]) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
 
 
-def score(svg: Path, source: Path) -> Dict[str, Any]:
+def score(svg: Path, source: Path, rubric: str = "teaching") -> Dict[str, Any]:
     cp = run(
         [
             sys.executable,
@@ -70,7 +70,7 @@ def score(svg: Path, source: Path) -> Dict[str, Any]:
             "score",
             str(svg),
             "--rubric",
-            "teaching",
+            rubric,
             "--source",
             str(source),
             "--json",
@@ -81,7 +81,7 @@ def score(svg: Path, source: Path) -> Dict[str, Any]:
     return json.loads(cp.stdout)
 
 
-def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any]:
+def refine(svg: Path, source: Path, out: Path, rounds: int = 3, rubric: str = "teaching") -> Dict[str, Any]:
     traj = out.parent / "adversarial" / f"{svg.stem}.trajectory.json"
     traj.parent.mkdir(parents=True, exist_ok=True)
     cp = run(
@@ -92,7 +92,7 @@ def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any
             "refine",
             str(svg),
             "--rubric",
-            "teaching",
+            rubric,
             "-o",
             str(out),
             "--trajectory",
@@ -106,12 +106,13 @@ def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any
     )
     if cp.returncode != 0:
         raise RuntimeError(cp.stderr or cp.stdout)
-    return score(out, source)
+    return score(out, source, rubric)
 
 
-def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None]:
+def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None, str]:
     args = [a for a in argv[1:] if a != "--"]
     gold_dir: Path | None = None
+    rubric = "teaching"
     filtered: List[str] = []
     i = 0
     while i < len(args):
@@ -119,6 +120,10 @@ def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None]:
             gold_dir = Path(args[i + 1])
             if not gold_dir.is_absolute():
                 gold_dir = (ROOT / gold_dir).resolve()
+            i += 2
+            continue
+        if args[i] == "--rubric" and i + 1 < len(args):
+            rubric = args[i + 1]
             i += 2
             continue
         filtered.append(args[i])
@@ -137,7 +142,7 @@ def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None]:
             module_dir.parent.parent.parent
             / "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
         )
-    return module_dir, diagrams_dir, gold_dir
+    return module_dir, diagrams_dir, gold_dir, rubric
 
 
 def compare_gold(prod: Path, gold: Path) -> Dict[str, Any]:
@@ -150,7 +155,7 @@ def compare_gold(prod: Path, gold: Path) -> Dict[str, Any]:
 
 def main() -> int:
     try:
-        module_dir, diagrams_dir, gold_dir = parse_args(sys.argv)
+        module_dir, diagrams_dir, gold_dir, rubric = parse_args(sys.argv)
     except SystemExit as exc:
         print(exc, file=sys.stderr)
         return 2
@@ -169,7 +174,7 @@ def main() -> int:
     layer1: List[Dict[str, Any]] = []
     print("=== Layer 1: attack (score with source) ===")
     for fig in figures:
-        s = score(fig.svg, fig.source)
+        s = score(fig.svg, fig.source, rubric)
         row = {"stem": fig.stem, "overall": s["overall"], "issues": s.get("issues", [])}
         layer1.append(row)
         print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues")
@@ -182,18 +187,18 @@ def main() -> int:
         exp = expected_components(fig.source)
         baseline = fig.svg.read_text(encoding="utf-8")
         try:
-            after_s = refine(fig.svg, fig.source, tmp, rounds=3)
+            after_s = refine(fig.svg, fig.source, tmp, rounds=3, rubric=rubric)
             svg_text = tmp.read_text(encoding="utf-8")
             if exp and not exp.issubset(components_in_svg(svg_text)):
                 svg_text = baseline
                 tmp.write_text(svg_text, encoding="utf-8")
-                after_s = score(tmp, fig.source)
+                after_s = score(tmp, fig.source, rubric)
             if any(i.get("check_id") == "compactness.blank_margin" for i in after_s.get("issues", [])):
                 candidate = trim_teaching_canvas(svg_text)
                 if not exp or exp.issubset(components_in_svg(candidate)):
                     svg_text = candidate
                 tmp.write_text(svg_text, encoding="utf-8")
-                after_s = score(tmp, fig.source)
+                after_s = score(tmp, fig.source, rubric)
             after = after_s["overall"]
             fig.svg.write_text(svg_text, encoding="utf-8")
             (module_dir / f"{fig.stem}.score.json").write_text(json.dumps(after_s, indent=2), encoding="utf-8")
@@ -206,7 +211,7 @@ def main() -> int:
     layer3: List[Dict[str, Any]] = []
     print("\n=== Layer 3: verify ===")
     for fig in figures:
-        s = score(fig.svg, fig.source)
+        s = score(fig.svg, fig.source, rubric)
         row: Dict[str, Any] = {"stem": fig.stem, "overall": s["overall"], "issues": len(s.get("issues", []))}
         if gold_dir:
             gpath = gold_dir / f"{fig.stem}.svg"
@@ -218,7 +223,13 @@ def main() -> int:
             extra = f"  gold_j={row['gold_compare']['jaccard']:.2f}"
         print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues{extra}")
 
-    summary = {"layer1": layer1, "layer2": layer2, "layer3": layer3, "gold_dir": str(gold_dir) if gold_dir else None}
+    summary = {
+        "layer1": layer1,
+        "layer2": layer2,
+        "layer3": layer3,
+        "gold_dir": str(gold_dir) if gold_dir else None,
+        "rubric": rubric,
+    }
     (adv / "three-layer-summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     iteration = adv / "ITERATION-LOG.md"
     lines = [

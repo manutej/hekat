@@ -29,9 +29,21 @@ Each figure must include:
 
 ## Acceptance gates
 
-1. **Measured:** `figtree score --rubric teaching --source <diagram.md>` → overall **≥ 9.86**, target **10.0**.
-2. **Adversarial:** `run_module_adversarial.py` layer 3 → **0 issues** per figure.
-3. **Structural gold:** `compare_gold.py` → `data-component` set from PORT comments matches gold SVG (Jaccard **1.0** for capstone and hub figures; narrative panels may omit strict match for `m1a`/`m1e` if brief is checklist-only — see manifest `kind`).
+**Learner-facing (Pursuit tier):**
+
+1. **Topology:** `figure_ascii_audit.py` on lab SVGs (components + canvas).
+2. **Narrative:** `run_course_narrative_gate.py` → each Pursuit reference **≥ 8.0** on `course-narrative` rubric.
+3. **Preview:** `build_module_html.py --tier pursuit`.
+
+**Lab / generator (optional regression):**
+
+1. **Measured:** `figtree score --rubric teaching --source <diagram.md>` → overall **≥ 9.86** on `module-01/m*.svg`.
+2. **Adversarial:** `run_module_adversarial.py --rubric teaching` layer 3.
+3. **Richness gap:** lab SVGs are **expected to fail** `pursuit_gate` vs Pursuit until narrative refine catches up.
+
+Strategy: [COURSE-NARRATIVE-STRATEGY.md](../../../docs/course/agentic-ai-langflow/COURSE-NARRATIVE-STRATEGY.md).
+
+Orchestrator: `python3 examples/course/agentic-ai-langflow/module-01/build_course_narrative.py`.
 
 ## Adversarial loop
 

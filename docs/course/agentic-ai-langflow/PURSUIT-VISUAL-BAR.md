@@ -57,3 +57,12 @@ Lab regeneration (compact SVGs) is unchanged:
 ```bash
 python3 examples/course/agentic-ai-langflow/module-01/build_figures.py
 ```
+
+## Strategy and orchestration
+
+End-to-end course pipeline: [COURSE-NARRATIVE-STRATEGY.md](./COURSE-NARRATIVE-STRATEGY.md).
+
+```bash
+python3 examples/course/agentic-ai-langflow/module-01/build_course_narrative.py
+python3 examples/course/agentic-ai-langflow/scripts/run_course_narrative_gate.py
+```

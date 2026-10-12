@@ -16,6 +16,11 @@ PURSUIT = ROOT / "examples/figtree/langflow/pursuit/module-01/figures"
 PURSUIT_MANIFEST = ROOT / "examples/figtree/langflow/pursuit/module-01/manifest.json"
 
 # course_id -> pursuit filename
+def sanitize_svg(text: str) -> str:
+    """Fix HTML-isms that break XML parsers (e.g. boolean ``hidden`` on title)."""
+    return text.replace("<title hidden>", '<title id="figtree-hidden-title">')
+
+
 FROM_GOLD = {
     "m1a": "02-script-or-agent.svg",
     "m1b": "03-four-parts-real-contents.svg",
@@ -58,12 +63,13 @@ def main() -> int:
             print(f"skip missing gold {src}", file=sys.stderr)
             continue
         dst = PURSUIT / name
-        shutil.copy2(src, dst)
+        dst.write_text(sanitize_svg(src.read_text(encoding="utf-8")), encoding="utf-8")
         print(f"copied {src.name} -> figures/{name}")
 
     html = HTML.read_text(encoding="utf-8")
     journey = extract_svg_after(html, 'class="hero-figure"')
     if journey:
+        journey = sanitize_svg(journey)
         (PURSUIT / "01-six-module-journey.svg").write_text(
             journey if journey.endswith("\n") else journey + "\n",
             encoding="utf-8",

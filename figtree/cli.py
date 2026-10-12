@@ -286,7 +286,12 @@ def main(argv: Optional[list] = None) -> int:
     ap.add_argument("--max-nodes", type=int, default=32)
     ap.add_argument("--max-depth", type=int, default=8)
     ap.add_argument("--max-aspect", type=float, default=3.0, help="fold wide layouts into rows above this width/height ratio")
-    ap.add_argument("--style", choices=["paper", "teaching", "slide"], default="paper", help="design preset")
+    ap.add_argument(
+        "--style",
+        choices=["paper", "teaching", "slide", "course-narrative"],
+        default="paper",
+        help="design preset",
+    )
     ap.add_argument("--no-containers", action="store_true", help="do not box untitled stage groups")
     ap.add_argument("--icons", action="store_true", help="place a library icon inside each block")
     ap.add_argument("--shapes", action="store_true", help="draw stores, documents, decisions, terminals and actors with their silhouettes")

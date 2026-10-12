@@ -44,7 +44,7 @@ class Check:
         return {"id": self.id, "dimension": self.dimension, "severity": self.severity, "description": self.description, "signal": self.signal, "mechanical": self.mechanical, "media": list(self.media)}
 
 
-DIAGRAM_MEDIA = ["paper", "teaching material", "presentation"]
+DIAGRAM_MEDIA = ["paper", "teaching material", "presentation", "course narrative"]
 
 CHECKS: List[Check] = [
     Check("compactness.blank_margin", "compactness", "warning", "a blank band wider than the medium's margin on any side", "content bbox vs canvas", True, pattern=r"margin is \d+px of blank canvas"),
@@ -80,6 +80,11 @@ CHECKS: List[Check] = [
     Check("hallucination.label_source", "hallucination_control", "warning", "a label with no basis in the source", "label words vs source text", False, pattern=r"has no basis in the source"),
     Check("topology.ungrouped", "topology_accuracy", "warning", "many blocks without grouping", "block count vs containers", False, ["paper", "teaching material", "presentation"], pattern=r"blocks without any grouping"),
     Check("topology.empty_container", "topology_accuracy", "warning", "an empty container", "container children", True, pattern=r"empty container"),
+    Check("narrative.canvas_height", "medium_fit", "warning", "canvas shorter than course narrative minimum", "viewBox height vs rubric", False, ["course narrative"], pattern=r"canvas height .* below course-narrative minimum"),
+    Check("narrative.annot_density", "semantic_coverage", "warning", "too few annotation lines for a course figure", "data-kind=annot count", False, ["course narrative"], pattern=r"only \d+ annotation line"),
+    Check("narrative.panel_support", "semantic_coverage", "warning", "large panels without supporting annotation text", "panel blocks vs annot", False, ["course narrative"], pattern=r"large panels but fewer than 2 annotation"),
+    Check("narrative.section_title", "medium_fit", "warning", "multi-panel layout without a section title", "title text or font-weight", False, ["course narrative"], pattern=r"no section title"),
+    Check("narrative.example_panels", "visual_polish", "warning", "multi-column layout without example panels or annotations", "nested white rects vs annot", False, ["course narrative"], pattern=r"without nested example panels"),
     Check("content.none", "semantic_coverage", "critical", "nothing drawn", "shape count", False, pattern=r"no drawable content"),
     Check("medium.no_canvas", "medium_fit", "critical", "no canvas size", "width/height/viewBox", False, pattern=r"canvas has no width"),
     # --- folded in from the adversary reports (diagram) ---

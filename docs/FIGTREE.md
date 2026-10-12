@@ -130,7 +130,7 @@ python -m figtree refine figure.svg --rubric slide --edits edits.json           
 | Module | Role |
 |---|---|
 | `figtree/program.py` | makes any SVG an addressable program: stable ids for every element, inherited typography and colour resolved, absolute bounding boxes (rotated text included) |
-| `figtree/rubrics.py` | profiles `methodology`, `teaching`, `slide`, `data-figure`, `dashboard`, `icon`: the paper's eight diagnostic dimensions with medium-specific thresholds (minimum font, contrast, palette size, words per label, aspect, margins, stroke widths, fixed canvas) |
+| `figtree/rubrics.py` | profiles `methodology`, `teaching`, `course-narrative`, `slide`, `data-figure`, `dashboard`, `icon`: the paper's eight diagnostic dimensions with medium-specific thresholds (minimum font, contrast, palette size, words per label, aspect, margins, stroke widths, fixed canvas) |
 | `figtree/quality.py` | `QualityCritic`: measurable signals per dimension, 1-10 scores with the paper's anchors (a critical defect caps a dimension at 5), every issue anchored to an element id with a fix instruction and, when mechanical, an `auto_edit` |
 | `figtree/edits.py` | edit scripts: `set_attr`, `set_text`, `translate`, `recolor`, `delete`, `insert`, `scale_font`, `set_canvas`, `center_content`; applied in place, failures reported, never regenerated |
 | `figtree/refine.py` | `Refiner`: the loop, the score trajectory, and the list of requests that still need a content decision |

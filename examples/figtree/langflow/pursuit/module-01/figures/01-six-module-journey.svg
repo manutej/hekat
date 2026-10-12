@@ -1,5 +1,5 @@
 <svg role="img" aria-labelledby="j-title j-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 288" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="j-title">The six-module journey</title><desc id="j-desc">Build and publish a member-benefits FAQ agent. Give it memory so it remembers the plan type across turns. Connect read-only tools for claim and prior-authorisation status. Build an intake flow that asks for what is missing. Put a specialist&#x27;s approval in front of the appeal submission. Audit prompts, logs, tools and exports.</desc>
-  <title hidden>The six-module journey</title>
+  <title id="figtree-hidden-title">The six-module journey</title>
   <rect id="j-background" x="0" y="0" width="728" height="288" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="j-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">

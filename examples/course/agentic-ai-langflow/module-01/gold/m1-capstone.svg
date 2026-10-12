@@ -1,5 +1,5 @@
 <svg role="img" aria-labelledby="m1-title m1-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 944 256" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m1-title">Module 1 capstone: Member Benefits FAQ</title><desc id="m1-desc">The member&#x27;s question enters at Chat Input. The Prompt Template holds the instructions that set the agent&#x27;s tone and limits (a &#x27;system prompt&#x27;). If you add a Knowledge Base, passages from plan documents are placed into the prompt first. The Chat Model writes the answer and Chat Output shows it.</desc>
-  <title hidden>Module 1 capstone: Member Benefits FAQ</title>
+  <title id="figtree-hidden-title">Module 1 capstone: Member Benefits FAQ</title>
   <rect id="m1-background" x="0" y="0" width="944" height="256" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="m1-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">

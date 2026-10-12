@@ -373,7 +373,7 @@ def parse_css(css: str) -> Dict[str, object]:
 # the critic
 # ---------------------------------------------------------------------------
 
-DIAGRAM_MEDIA = ("paper", "teaching material", "presentation")
+DIAGRAM_MEDIA = ("paper", "teaching material", "presentation", "course narrative")
 
 
 class QualityCritic:
@@ -493,7 +493,8 @@ class QualityCritic:
 
         # ---------------- topology ----------------
         groups = [e for e in prog.elements if e.tag == "g" and e.el.get("data-bbox")]
-        if len(blocks) > 6 and not groups and R.medium in DIAGRAM_MEDIA:
+        ungrouped_cap = 16 if R.medium == "course narrative" else 6
+        if len(blocks) > ungrouped_cap and not groups and R.medium in DIAGRAM_MEDIA:
             add("topology_accuracy", "warning", f"{len(blocks)} blocks without any grouping", "svg", "group related blocks into labelled containers", 1.0, check="topology.ungrouped")
         for g in groups:
             kids = [e for e in prog.elements if e.parent_id == g.id and e.tag in ("rect", "g", "text", "path")]
@@ -508,6 +509,8 @@ class QualityCritic:
         if R.medium in DIAGRAM_MEDIA:
             self._container_checks(prog, blocks, texts, add)
             self._legend_checks(prog, shapes, texts, blocks, add)
+        if R.medium == "course narrative":
+            self._narrative_checks(prog, R, blocks, texts, add, metrics)
 
         # ---------------- semantic coverage / hallucination ----------------
         if plan_terms:
@@ -521,6 +524,14 @@ class QualityCritic:
         if source_text:
             src = source_text.lower()
             for t in texts:
+                kind = t.el.get("data-kind") or ""
+                if R.medium == "course narrative" and kind in ("annot", "title"):
+                    continue
+                if R.medium == "course narrative":
+                    host = self._host_block(t, blocks)
+                    hf = (host.el.get("fill") or "").upper() if host else ""
+                    if hf in ("#FFFFFF", "#FFF", "WHITE"):
+                        continue
                 words = [w for w in re.findall(r"[A-Za-z][A-Za-z-]{3,}", t.text)]
                 if words and not any(w.lower() in src for w in words):
                     add("hallucination_control", "warning", f"label {t.id} ({t.text[:30]!r}) has no basis in the source", t.id, "remove or rename to a term from the source", 1.0, check="hallucination.label_source")
@@ -670,8 +681,23 @@ class QualityCritic:
                 add("text_quality", "warning", f"{t.id} has {words} words (limit {R.max_words_per_label})", t.id, "shorten to a keyword label", 0.8, check="text.words_per_label")
             if R.medium != "icon" and EMBEDDED_TITLE.match(t.text) and R.medium in DIAGRAM_MEDIA:
                 add("medium_fit", "critical", f"{t.id} embeds a figure title or caption ({t.text[:30]!r}) inside the drawing", t.id, "move the caption out of the figure; the document carries it", 2.0, check="medium.embedded_title")
-            elif R.medium != "icon" and words >= 3 and (re.search(r"[.!?]$", t.text) or SENTENCE_START.match(t.text)):
-                add("text_quality", "critical", f"{t.id} is a sentence, not a label ({t.text[:30]!r})", t.id, "replace prose with a 1-4 word keyword label", 1.5, check="text.sentence_label")
+            elif (
+                R.medium != "icon"
+                and (t.el.get("data-kind") or "") not in ("annot", "title")
+                and not (R.medium == "course narrative" and (t.el.get("font-weight") or "") in ("600", "700", "bold"))
+                and words >= 3
+                and (re.search(r"[.!?]$", t.text) or SENTENCE_START.match(t.text))
+            ):
+                sev = "warning" if R.medium == "course narrative" else "critical"
+                add(
+                    "text_quality",
+                    sev,
+                    f"{t.id} is a sentence, not a label ({t.text[:30]!r})",
+                    t.id,
+                    "replace prose with a 1-4 word keyword label",
+                    1.5 if sev == "critical" else 0.4,
+                    check="text.sentence_label",
+                )
             # contrast against the shape behind the text
             col = parse_color(t.fill) or (0, 0, 0)
             bg = self._background_for(prog, t)
@@ -680,10 +706,23 @@ class QualityCritic:
                 add("text_quality", "warning", f"{t.id} sits on a gradient/pattern fill; contrast cannot be guaranteed", t.id, "give the host a flat fill", 1.0, check="text.gradient_host")
             elif bg is not None:
                 cr = contrast_ratio(col, bg)
-                if cr < R.min_contrast:
+                kind = t.el.get("data-kind") or ""
+                min_c = R.min_contrast
+                if R.medium == "course narrative" and kind == "annot":
+                    min_c = 3.2
+                if cr < min_c:
                     fix_col = "#333333" if contrast_ratio((0x33, 0x33, 0x33), bg) >= contrast_ratio((255, 255, 255), bg) else "#FFFFFF"
-                    add("text_quality", "critical" if cr < 3 else "warning", f"{t.id} contrast {cr:.1f}:1 below {R.min_contrast}:1", t.id,
-                        f"use {fix_col} text on {hex_color(bg)}", 1.2, {"op": "recolor", "id": t.id, "fill": fix_col}, check="text.contrast")
+                    sev = "critical" if cr < 3 and kind != "annot" else "warning"
+                    add(
+                        "text_quality",
+                        sev,
+                        f"{t.id} contrast {cr:.1f}:1 below {min_c}:1",
+                        t.id,
+                        f"use {fix_col} text on {hex_color(bg)}",
+                        1.2 if sev == "critical" else 0.5,
+                        {"op": "recolor", "id": t.id, "fill": fix_col},
+                        check="text.contrast",
+                    )
             # overflow of the enclosing block
             host = self._host_block(t, blocks)
             if host is not None and t.bbox is not None and t.corners is None and (t.bbox.x < host.bbox.x - 2 or t.bbox.x2 > host.bbox.x2 + 2):
@@ -821,6 +860,86 @@ class QualityCritic:
             if out_hit and not child_hit:
                 add("topology_accuracy", "critical", f"container {c.id} is titled {title[:24]!r} but the matching block {out_hit[0].id} sits outside it", c.id,
                     "move the block into its container or retitle the container (judge request)", 2.0, check="topology.container_label_mismatch")
+
+    def _narrative_checks(
+        self,
+        prog: Program,
+        R: Rubric,
+        blocks: List[ElementInfo],
+        texts: List[ElementInfo],
+        add,
+        metrics: dict,
+    ) -> None:
+        svg_h = prog.height
+        metrics["canvas_height"] = svg_h
+        if R.min_canvas_height and svg_h < R.min_canvas_height:
+            add(
+                "medium_fit",
+                "warning",
+                f"canvas height {svg_h}px below course-narrative minimum {R.min_canvas_height}px",
+                "svg",
+                "use a taller canvas with stacked panels and annotation text",
+                1.0,
+                check="narrative.canvas_height",
+            )
+        annot = [t for t in texts if t.el.get("data-kind") == "annot"]
+        metrics["annot_nodes"] = len(annot)
+        if R.min_annot_nodes and len(annot) < R.min_annot_nodes:
+            add(
+                "semantic_coverage",
+                "warning",
+                f"only {len(annot)} annotation line(s); course figures usually carry grounded example copy",
+                "svg",
+                "add data-kind=annot text inside panels, grounded in the source brief",
+                1.0,
+                check="narrative.annot_density",
+            )
+        panel_blocks = [
+            b
+            for b in blocks
+            if b.role == "block" and b.bbox and b.bbox.h >= 72 and b.bbox.w >= 120
+        ]
+        metrics["panel_blocks"] = len(panel_blocks)
+        if len(panel_blocks) >= 3 and len(annot) < 2:
+            add(
+                "semantic_coverage",
+                "warning",
+                f"{len(panel_blocks)} large panels but fewer than 2 annotation lines",
+                "svg",
+                "add short grounded example text in each major panel",
+                1.2,
+                check="narrative.panel_support",
+            )
+        titles = [t for t in texts if t.el.get("data-kind") == "title" or "600" in (t.el.get("font-weight") or "")]
+        if len(blocks) >= 4 and not titles and svg_h >= 220:
+            add(
+                "medium_fit",
+                "warning",
+                "no section title (data-kind=title or font-weight 600) above a multi-panel layout",
+                texts[0].id if texts else "svg",
+                "add a short section title naming what the figure shows",
+                0.8,
+                check="narrative.section_title",
+            )
+        nested_example = sum(
+            1
+            for b in blocks
+            if b.tag == "rect"
+            and (b.el.get("fill") or "").upper() in ("#FFFFFF", "#FFF", "WHITE")
+            and b.bbox
+            and b.bbox.h >= 40
+        )
+        metrics["nested_example_panels"] = nested_example
+        if len(panel_blocks) >= 4 and nested_example < 1 and len(annot) < 4:
+            add(
+                "visual_polish",
+                "warning",
+                "multi-column layout without nested example panels or annotations",
+                "svg",
+                "add inner example rects or annot lines like the Pursuit reference figures",
+                1.0,
+                check="narrative.example_panels",
+            )
 
     def _legend_checks(self, prog: Program, shapes: List[ElementInfo], texts: List[ElementInfo], blocks: List[ElementInfo], add) -> None:
         legends = []
