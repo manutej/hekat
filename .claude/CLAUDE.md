@@ -21,11 +21,17 @@
 
 This repository contains everything needed for remote agent development:
 
-### Skills Available (4)
+### Skills Available (10)
 - `functional-programming` - Pure functions, immutability, composition patterns
 - `fp-ts` - Type-safe functional programming with monadic error handling
 - `typescript-fp` - Advanced TypeScript patterns and generic pipelines
-- `figtree` - Editable SVG methodology figures from documents (`python -m figtree`, see `docs/FIGTREE.md`)
+- `figtree` - Hub for the SVG-artifact family: the ground/construct/render/critique/edit/score loop, the medium router, the `python -m figtree` CLI, subagent context rules (see `docs/FIGTREE.md`, `docs/META-PROMPT-SVG-ARTIFACTS.md`)
+- `svg-diagram` - Methodology figures, teaching diagrams, slides: house style, layout rules, rubrics, edit scripts, eye-check gotchas
+- `svg-data-figure` - Charts and dashboard tiles: chart canon, data-figure/dashboard rubrics, chart gotchas, templates
+- `svg-icon` - Custom icon families: 24-grid family rules, icon rubric, cold-eye test, briefs, sheet
+- `svg-animation` - Explainers and motion grammar: reveal/draw/pulse, one clock, reduced motion, virtual-time frame capture, player template
+- `svg-eval` - Evaluating the evaluators: probes, recall/precision, judge calibration, when a gaming probe becomes a rule
+- `svg-showcase` - Assembling figures into an Artifact page or design-system handoff: namespacing, explainer as supporting file, builder script
 
 ### Agents Available (5 specialized)
 - `hekat-agent` - Primary L1-L7 orchestration
@@ -215,7 +221,7 @@ Advanced type-level programming with generics and functors
 ## Resources
 
 - **Specifications**: `.specify/` directory (4 comprehensive documents)
-- **Skills**: `.claude/skills/` (3 skills available)
+- **Skills**: `.claude/skills/` (10 skills; `figtree/references/README.md` indexes the SVG family)
 - **Agents**: `.claude/agents/` (5 specialized agents)
 - **Constitutional Framework**: `.specify/constitution.md`
 - **DSL Reference**: `.specify/hekat-dsl-spec.md`

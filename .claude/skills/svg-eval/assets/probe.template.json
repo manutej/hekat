@@ -1,0 +1,9 @@
+{
+  "id": "RUBRIC.slug_for_what_the_reader_sees",
+  "rubric": "teaching",
+  "kind": "gaming",
+  "expect_fire": ["proposed.area.name_or_existing_check_id"],
+  "expect_silent": ["compactness.blank_margin"],
+  "rationale": "What a cold reader sees in the rendered SVG; which function/branch of figtree/quality.py is blind and why; the proposed signal (computable from ids and attributes) or 'judge question'.",
+  "source": "adversary-YOURNAME"
+}

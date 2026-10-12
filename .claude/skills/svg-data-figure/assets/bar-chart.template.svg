@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Bar chart template: sorted, zero-based bars with direct labels</title>
+  <desc>Replace the values and recompute y = 248 - value * 2 (plot height 200 px for y_max 100). Keep ids and data-role attributes: the critic reads axis-label; tick, mark, value, legend and title are conventions for people, judges and proposed checks.</desc>
+  <rect id="background" x="0" y="0" width="480" height="300" fill="#FFFFFF" data-role="background"/>
+  <text id="title" x="256" y="24" font-size="14" font-weight="bold" text-anchor="middle" fill="#1C2630" data-role="title">Variant B reaches the highest accuracy</text>
+  <g id="gridlines" stroke="#E4E6EA" stroke-width="1">
+    <line id="grid-25" x1="56" y1="198" x2="456" y2="198" data-role="gridline"/>
+    <line id="grid-50" x1="56" y1="148" x2="456" y2="148" data-role="gridline"/>
+    <line id="grid-75" x1="56" y1="98" x2="456" y2="98" data-role="gridline"/>
+    <line id="grid-100" x1="56" y1="48" x2="456" y2="48" data-role="gridline"/>
+  </g>
+  <line id="axis-y" x1="56" y1="48" x2="56" y2="248" stroke="#333333" stroke-width="1" data-role="axis"/>
+  <line id="axis-x" x1="56" y1="248" x2="456" y2="248" stroke="#333333" stroke-width="1" data-role="axis"/>
+  <g id="ticks-y" font-size="11" fill="#333333" text-anchor="end">
+    <text id="tick-y-0" x="48" y="252" data-role="tick">0</text>
+    <text id="tick-y-25" x="48" y="202" data-role="tick">25</text>
+    <text id="tick-y-50" x="48" y="152" data-role="tick">50</text>
+    <text id="tick-y-75" x="48" y="102" data-role="tick">75</text>
+    <text id="tick-y-100" x="48" y="52" data-role="tick">100</text>
+  </g>
+  <g id="bars" data-role="series" data-series="accuracy">
+    <rect id="bar-variant-b" x="84" y="64" width="64" height="184" fill="#DD8452" data-role="mark" data-value="92"/>
+    <rect id="bar-variant-a" x="184" y="94" width="64" height="154" fill="#4C72B0" data-role="mark" data-value="77"/>
+    <rect id="bar-baseline" x="284" y="120" width="64" height="128" fill="#4C72B0" data-role="mark" data-value="64"/>
+    <rect id="bar-ablation" x="384" y="178" width="64" height="70" fill="#4C72B0" data-role="mark" data-value="35"/>
+  </g>
+  <g id="values" font-size="11" fill="#333333" text-anchor="middle">
+    <text id="value-variant-b" x="116" y="58" data-role="value">92</text>
+    <text id="value-variant-a" x="216" y="88" data-role="value">77</text>
+    <text id="value-baseline" x="316" y="114" data-role="value">64</text>
+    <text id="value-ablation" x="416" y="172" data-role="value">35</text>
+  </g>
+  <g id="ticks-x" font-size="11" fill="#333333" text-anchor="middle">
+    <text id="tick-x-variant-b" x="116" y="264" data-role="tick">Variant B</text>
+    <text id="tick-x-variant-a" x="216" y="264" data-role="tick">Variant A</text>
+    <text id="tick-x-baseline" x="316" y="264" data-role="tick">Baseline</text>
+    <text id="tick-x-ablation" x="416" y="264" data-role="tick">Ablation</text>
+  </g>
+  <text id="axis-x-label" x="256" y="286" font-size="12" text-anchor="middle" fill="#333333" data-role="axis-label">Configuration</text>
+  <text id="axis-y-label" x="18" y="148" font-size="12" text-anchor="middle" fill="#333333" data-role="axis-label" transform="rotate(-90 18 148)">Accuracy (%)</text>
+  <g id="legend" data-role="legend">
+    <rect id="legend-swatch-best" x="376" y="40" width="10" height="10" fill="#DD8452" data-role="legend-swatch" data-series="best"/>
+    <text id="legend-best" x="392" y="49" font-size="11" fill="#333333" data-role="legend-label">best variant</text>
+  </g>
+</svg>

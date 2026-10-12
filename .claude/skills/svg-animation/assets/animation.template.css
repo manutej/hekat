@@ -1,0 +1,36 @@
+/* FigTree animation stylesheet template: the shape `python -m figtree animate --css` emits,
+   re-timed by beat as the explainer does. Replace the ids, lengths (L), delays and the cycle
+   period (P). Keep: opacity-only reveals, shaft copies for draw-on, one clock, reduced motion. */
+
+/* reveal = construction order (opacity only: a CSS transform would replace the group's SVG translate) */
+@keyframes ft-reveal { from { opacity: 0 } to { opacity: 1 } }
+#BLOCK_GROUP_1 { opacity: 0; animation: ft-reveal .6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 0.40s }
+#BLOCK_GROUP_2 { opacity: 0; animation: ft-reveal .6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 3.10s }
+#BLOCK_GROUP_3 { opacity: 0; animation: ft-reveal .6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: 4.40s }
+
+/* draw = a connector exists once both endpoints do: the marker-less shaft copy draws, then the real arrow appears */
+@keyframes ft-draw { to { stroke-dashoffset: 0 } }
+@keyframes ft-appear { to { opacity: 1 } }
+#ft-shaft-0 { stroke-dasharray: 40; stroke-dashoffset: 40; animation: ft-draw 0.4s cubic-bezier(.4,0,.2,1) forwards; animation-delay: 3.60s }
+#ARROW_ID_0 { opacity: 0; animation: ft-appear .05s linear forwards; animation-delay: 3.95s }   /* = shaft delay + draw duration; escape dots: #n1\.arrow0 */
+#ft-shaft-1 { stroke-dasharray: 136; stroke-dashoffset: 136; animation: ft-draw 0.6s cubic-bezier(.4,0,.2,1) forwards; animation-delay: 4.90s }
+#ARROW_ID_1 { opacity: 0; animation: ft-appear .05s linear forwards; animation-delay: 5.45s }
+
+/* pulse = what moves where: one cycle period P for every token; each token holds at 0% and 100% */
+[data-role=pulse] { r: 4.5px; stroke: #FFFFFF; stroke-width: 1.6px; opacity: 0; offset-rotate: 0deg;
+  transform-box: fill-box; transform-origin: center;
+  animation-duration: 8.00s, 8.00s; animation-timing-function: linear, step-end;
+  animation-iteration-count: infinite, infinite; animation-delay: 6.00s, 6.00s }
+@keyframes ft-pulse-0-move { 0%, 0.000% { offset-distance: 0% } 12.5%, 100% { offset-distance: 100% } }
+@keyframes ft-pulse-0-show { 0% { opacity: 0 } 0.000% { opacity: 1 } 12.5%, 100% { opacity: 0 } }
+#ft-pulse-0 { offset-path: path('M144,48 H184'); fill: #1F1F1F; animation-name: ft-pulse-0-move, ft-pulse-0-show }
+/* control / feedback edge: half speed, lighter fill, never larger */
+@keyframes ft-pulse-2-move { 0%, 25% { offset-distance: 0% } 62.5%, 100% { offset-distance: 100% } }
+@keyframes ft-pulse-2-show { 0% { opacity: 0 } 25% { opacity: 1 } 62.5%, 100% { opacity: 0 } }
+#ft-pulse-2 { offset-path: path('M376,64 V128 H240 V64'); fill: #9A9A9A; animation-name: ft-pulse-2-move, ft-pulse-2-show }
+
+/* reduced motion = the final state: every animated id reset, shafts and tokens hidden */
+@media (prefers-reduced-motion: reduce) {
+  [id^=ft-pulse], [id^=ft-shaft], [data-role=pulse], [data-role=anim-shaft] { display: none }
+  * { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; translate: none !important }
+}

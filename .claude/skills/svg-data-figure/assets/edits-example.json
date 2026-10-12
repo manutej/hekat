@@ -1,0 +1,25 @@
+[
+  [
+    {"op": "set_text", "id": "title", "text": "One refinement round lifts all four scores"},
+    {"op": "set_attr", "id": "title", "attr": "font-size", "value": "14"},
+    {"op": "insert", "parent_id": "", "svg": "<text id=\"axis-x-label\" x=\"235\" y=\"302\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"#333333\" data-role=\"axis-label\">Refinement round (0 = baseline)</text>"},
+    {"op": "insert", "parent_id": "", "svg": "<text id=\"axis-y-label\" x=\"22\" y=\"155\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"#333333\" data-role=\"axis-label\" transform=\"rotate(-90 22 155)\">Overall score (1-10 scale)</text>"},
+    {"op": "translate", "id": "legend-swatch-teaching", "dx": 0, "dy": 8},
+    {"op": "translate", "id": "legend-teaching", "dx": 0, "dy": 8},
+    {"op": "translate", "id": "legend-swatch-icon", "dx": 0, "dy": 16},
+    {"op": "translate", "id": "legend-icon", "dx": 0, "dy": 16},
+    {"op": "translate", "id": "legend-swatch-slide", "dx": 0, "dy": 24},
+    {"op": "translate", "id": "legend-slide", "dx": 0, "dy": 24}
+  ],
+  [
+    {"op": "recolor", "id": "series-icon", "stroke": "#55A868"},
+    {"op": "recolor", "id": "pt-icon-0", "fill": "#55A868"},
+    {"op": "recolor", "id": "pt-icon-1", "fill": "#55A868"},
+    {"op": "recolor", "id": "legend-swatch-icon", "fill": "#55A868"},
+    {"op": "set_attr", "id": "tick-y-7", "attr": "font-size", "value": "11"},
+    {"op": "set_attr", "id": "tick-x-0", "attr": "font-size", "value": "11"},
+    {"op": "set_attr", "id": "legend-icon", "attr": "font-size", "value": "11"},
+    {"op": "translate", "id": "legend-swatch-icon", "dx": -14, "dy": 0},
+    {"op": "translate", "id": "legend-icon", "dx": -14, "dy": 0}
+  ]
+]

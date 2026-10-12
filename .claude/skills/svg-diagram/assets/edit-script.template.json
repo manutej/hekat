@@ -1,0 +1,15 @@
+[
+  [
+    {"op": "set_text", "id": "ELEMENT_ID", "text": "New label"},
+    {"op": "set_attr", "id": "ELEMENT_ID", "attr": "font-size", "value": "14"},
+    {"op": "translate", "id": "GROUP_OR_ELEMENT_ID", "dx": 8, "dy": 0},
+    {"op": "recolor", "id": "SHAPE_ID", "fill": "#C9DCF0", "stroke": "#2B3A4A"},
+    {"op": "delete", "id": "ELEMENT_ID_TO_REMOVE"},
+    {"op": "insert", "parent_id": "", "svg": "<text id=\"new-note\" x=\"24\" y=\"24\" font-size=\"14\" fill=\"#333333\" data-kind=\"annot\">Inserted under the root (parent_id empty) or under GROUP_ID</text>"}
+  ],
+  [
+    {"op": "scale_font", "min": 14},
+    {"op": "set_canvas", "width": 960, "height": 540},
+    {"op": "center_content"}
+  ]
+]

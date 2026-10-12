@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<style>
+/* Paper-review register: figures sit on white sheets whatever the theme; text follows the theme. */
+:root{--bg:#F6F5F1;--fg:#1F2328;--muted:#5C6470;--rule:#D9D6CE;--accent:#2F5F8F;--accent-ink:#FFFFFF;--sheet:#FFFFFF;--sheet-edge:#E2DFD7;--good:#1B7F4B;--warn:#B5452A;
+ --display:Georgia,"Times New Roman",serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181C;--fg:#E8E6E0;--muted:#A6ADB8;--rule:#2C323A;--accent:#8AB4E0;--accent-ink:#0F1A26;--sheet:#FFFFFF;--sheet-edge:#2C323A;--good:#5FCB8E;--warn:#F08B6A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181C;--fg:#E8E6E0;--muted:#A6ADB8;--rule:#2C323A;--accent:#8AB4E0;--accent-ink:#0F1A26;--sheet:#FFFFFF;--sheet-edge:#2C323A;--good:#5FCB8E;--warn:#F08B6A;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding-block:32px 64px;padding-inline:clamp(16px,4vw,48px);max-width:1120px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05}
+h2{font-size:1.7rem;margin-block:56px 12px;padding-top:24px;border-top:1px solid var(--rule)}
+h3{font-size:1.2rem;margin-block:28px 8px}
+p{max-width:68ch;margin-block:8px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.lede{font-size:1.1rem;max-width:70ch}
+.stats{display:flex;flex-wrap:wrap;gap:16px 40px;margin:24px 0 8px;padding:0}
+.stats div{display:flex;flex-direction:column}
+.stats dt{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stats dd{margin:0;font-family:var(--display);font-size:2rem;font-variant-numeric:tabular-nums}
+.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:24px 0 8px;font-size:.92rem}
+.toc a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.toc a:hover,.toc a:focus-visible{border-bottom-color:var(--accent);outline:none}
+code{font-family:var(--mono);font-size:.88em}
+.fig{margin:16px 0 24px}
+.sheet{background:var(--sheet);border:1px solid var(--sheet-edge);border-radius:4px;padding:12px;overflow-x:auto}
+.sheet svg{display:block;max-width:100%;height:auto}
+figcaption{font-size:.88rem;color:var(--muted);margin-top:8px;max-width:72ch}
+.cards{display:grid;gap:28px}
+.card{border:1px solid var(--rule);border-radius:6px;padding:16px;min-width:0}
+.card-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.card-head h3{margin:0;flex:1 1 auto}
+.chip{font-family:var(--mono);font-size:.74rem;border:1px solid var(--rule);border-radius:999px;padding:2px 10px;color:var(--muted)}
+.spark{width:160px;height:56px;flex:0 0 auto}
+.spark .grid{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 3}
+.spark .line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.spark .pt{fill:var(--accent)}
+.spark .end{fill:var(--accent);stroke:var(--bg);stroke-width:2}
+.spark .val{font-family:var(--mono);font-size:11px;fill:var(--fg)}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:12px}
+.pair .fig{margin:0}
+.card-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;margin-top:12px}
+@media (max-width:720px){.card-body{grid-template-columns:1fr}}
+.traj{border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums;width:100%}
+.traj th,.traj td{text-align:right;padding:4px 8px;border-bottom:1px solid var(--rule)}
+.traj th:first-child,.traj td:first-child{text-align:left}
+.notes p{margin-block:4px}.notes ul{margin:4px 0 0;padding-left:18px;font-size:.9rem;color:var(--muted)}
+.learned{padding-left:20px}.learned li{margin-bottom:8px;max-width:78ch}
+details{margin:12px 0}summary{cursor:pointer;color:var(--accent)}
+.notes-pre{white-space:pre-wrap;font-size:.8rem;background:var(--sheet);color:#1F2328;border:1px solid var(--sheet-edge);padding:12px;border-radius:4px;max-height:360px;overflow:auto}
+button{font:inherit;background:var(--accent);color:var(--accent-ink);border:0;border-radius:4px;padding:8px 16px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.explainer-link{margin-left:12px;color:var(--accent)}
+footer{margin-top:40px;font-size:.86rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">{{EYEBROW}}</p>
+  <h1>{{TITLE}}</h1>
+  <p class="lede">{{LEDE}}</p>
+  <dl class="stats">
+    <!-- every number from a JSON the loop wrote -->
+    <div><dt>artifacts refined</dt><dd>{{N_TRAJECTORIES}}</dd></div>
+    <div><dt>mean score gain</dt><dd>{{MEAN_GAIN}}</dd></div>
+    <div><dt>icons designed</dt><dd>{{N_ICONS}}</dd></div>
+    <div><dt>probes</dt><dd>{{N_PROBES}}</dd></div>
+  </dl>
+</header>
+<nav class="toc"><a href="#figures">1 · Figures</a><a href="#refine">2 · Refinement</a><a href="#icons">3 · Icons</a><a href="#motion">4 · Motion</a><a href="#evaluation">5 · Evaluation</a><a href="#learned">What the loop caught</a></nav>
+
+<section id="figures">
+  <h2>1 · Figures from text</h2>
+  <p>{{FIGURES_INTRO}}</p>
+  <!-- inline(path, "fig1-", label, caption): namespaced ids, role="img", width/height stripped -->
+  <figure class="fig"><div class="sheet">{{FIGURE_1_SVG}}</div><figcaption>{{FIGURE_1_CAPTION}}</figcaption></figure>
+</section>
+
+<section id="refine">
+  <h2>2 · Refinement</h2>
+  <p>Each artifact starts defective. Mechanical defects are fixed by the critic's own edit scripts; everything that changes meaning comes back as a request a person answered with a short edit script.</p>
+  <div class="cards">
+    <article class="card" id="{{CARD_1_ID}}">
+      <header class="card-head"><h3>{{CARD_1_TITLE}}</h3><span class="chip">{{CARD_1_RUBRIC}}</span>
+        <!-- sparkline(trajectory, prefix) -->
+        {{CARD_1_SPARKLINE}}
+      </header>
+      <div class="pair">
+        <figure class="fig"><div class="sheet">{{CARD_1_BEFORE_SVG}}</div><figcaption>Before: {{CARD_1_BEFORE_ISSUES}} issues, score {{CARD_1_BEFORE_SCORE}}</figcaption></figure>
+        <figure class="fig"><div class="sheet">{{CARD_1_AFTER_SVG}}</div><figcaption>After: {{CARD_1_AFTER_ISSUES}} issues, score {{CARD_1_AFTER_SCORE}}</figcaption></figure>
+      </div>
+      <div class="card-body">
+        <table class="traj"><thead><tr><th>round</th><th>score</th><th>issues</th><th>critical</th><th>edits</th><th>diff</th></tr></thead><tbody>{{CARD_1_TRAJECTORY_ROWS}}</tbody></table>
+        <div class="notes"><p><strong>Decided by a person</strong> {{CARD_1_DECIDED}}</p><p><strong>Still open</strong></p><ul>{{CARD_1_OPEN_REQUESTS}}</ul></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="icons">
+  <h2>3 · Icons</h2>
+  <figure class="fig"><div class="sheet">{{ICON_SHEET_SVG}}</div><figcaption>Name and final score under each icon.</figcaption></figure>
+  <table class="traj"><thead><tr><th>icon</th><th>score</th><th>rounds</th><th>accepted</th></tr></thead><tbody>{{ICON_ROWS}}</tbody></table>
+</section>
+
+<section id="motion">
+  <h2>4 · Motion</h2>
+  <p>Blocks appear in construction order; connectors draw before their arrowheads appear; a token travels every data flow, slower and dimmer on control edges. Readers who prefer reduced motion see the final state.</p>
+  <p><button id="replay" type="button">Replay</button> <a class="explainer-link" href="explainer/index.html">Open the full explainer with scrubber and captions</a></p>
+  <!-- the animated SVG with its <style> moved out, both namespaced by "anim-" -->
+  <figure class="fig"><style>{{ANIM_CSS_NAMESPACED}}</style><div class="sheet">{{ANIM_SVG_NAMESPACED}}</div><figcaption>Press Replay to watch the figure build itself again.</figcaption></figure>
+  <script>
+  (function(){var b=document.getElementById('replay');if(!b)return;b.addEventListener('click',function(){var f=b.parentNode.nextElementSibling;var s=f.querySelector('.sheet');var h=s.innerHTML;s.innerHTML='';void s.offsetWidth;s.innerHTML=h;});})();
+  </script>
+</section>
+
+<section id="evaluation">
+  <h2>5 · Evaluating the evaluators</h2>
+  <dl class="stats"><div><dt>probes</dt><dd>{{N_PROBES}}</dd></div><div><dt>recall</dt><dd>{{RECALL}}</dd></div><div><dt>precision</dt><dd>{{PRECISION}}</dd></div></dl>
+  <h3>What still fools the measurable critic</h3>
+  <ul class="learned">{{GAMING_LIST}}</ul>
+  <h3>Image judge versus measured rubric</h3>
+  <table class="traj"><thead><tr><th>figure</th><th>rubric</th><th>measured</th><th>judged</th><th>gap</th></tr></thead><tbody>{{CALIBRATION_ROWS}}</tbody></table>
+</section>
+
+<section id="learned">
+  <h2>What the loop caught, and what the eye caught</h2>
+  <ul class="learned">{{LEARNED_ITEMS}}</ul>
+  <footer><p>{{FOOTER}}</p></footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="448" height="192" viewBox="0 0 448 192" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Figure skeleton: house style for a FigTree teaching diagram</title>
+  <desc>Three blocks on the 8 px grid, two data flows and one dashed control flow, four PORT comments per block, every element addressable by id. Replace labels, keep the attributes.</desc>
+  <rect id="background" x="0" y="0" width="448" height="192" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path id="figtree-arrow-head" d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+    <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 448 192">
+    <!-- PORT:left x=32 y=48 id=n2.left type=input component="Source" -->
+    <!-- PORT:right x=144 y=48 id=n2.right type=output component="Source" -->
+    <!-- PORT:top x=88 y=32 id=n2.top type=input component="Source" -->
+    <!-- PORT:bottom x=88 y=64 id=n2.bottom type=output component="Source" -->
+    <!-- PORT:left x=184 y=48 id=n3.left type=input component="Model" -->
+    <!-- PORT:right x=296 y=48 id=n3.right type=output component="Model" -->
+    <!-- PORT:top x=240 y=32 id=n3.top type=input component="Model" -->
+    <!-- PORT:bottom x=240 y=64 id=n3.bottom type=output component="Model" -->
+    <!-- PORT:left x=336 y=48 id=n4.left type=input component="Critic" -->
+    <!-- PORT:right x=416 y=48 id=n4.right type=output component="Critic" -->
+    <!-- PORT:top x=376 y=32 id=n4.top type=input component="Critic" -->
+    <!-- PORT:bottom x=376 y=64 id=n4.bottom type=output component="Critic" -->
+    <g id="n2" data-component="Source" data-label="Source">
+      <rect id="n2.block" x="32" y="32" width="112" height="32" rx="6" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1" data-role="block" data-kind="input"/>
+      <use id="n2.icon" href="#icon-document" x="40" y="40" width="16" height="16" color="#2B3A4A"/>
+      <text id="n2.label" x="104" y="48" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="80">Source</text>
+    </g>
+    <g id="n3" data-component="Model" data-label="Model">
+      <rect id="n3.block" x="184" y="32" width="112" height="32" rx="6" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1" data-role="block" data-kind="processing"/>
+      <use id="n3.icon" href="#icon-gear" x="192" y="40" width="16" height="16" color="#2B3A4A"/>
+      <text id="n3.label" x="256" y="48" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="80">Model</text>
+    </g>
+    <g id="n4" data-component="Critic" data-label="Critic">
+      <rect id="n4.block" x="336" y="32" width="80" height="32" rx="6" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1" data-role="block" data-kind="attention"/>
+      <use id="n4.icon" href="#icon-eye" x="344" y="40" width="16" height="16" color="#2B3A4A"/>
+      <text id="n4.label" x="392" y="48" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="48">Critic</text>
+    </g>
+    <path id="n1.arrow0" d="M144,48 H184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" data-from="n2" data-to="n3" marker-end="url(#figtree-arrow)"/>
+    <path id="n1.arrow1" d="M296,48 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" data-from="n3" data-to="n4" marker-end="url(#figtree-arrow)"/>
+    <path id="n1.arrow2" d="M376,64 V128 H240 V64" fill="none" stroke="#2B3A4A" stroke-width="1.4" stroke-dasharray="4 2" data-flow="control" data-from="n4" data-to="n3" marker-end="url(#figtree-arrow)"/>
+    <text id="n1.annot0" x="308" y="156" font-size="14" text-anchor="middle" fill="#5B6B7C" data-kind="annot">feedback (control)</text>
+  </g>
+</svg>
