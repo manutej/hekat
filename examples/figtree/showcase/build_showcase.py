@@ -256,6 +256,40 @@ def build() -> str:
                 parts.append(f"<details><summary>{html.escape(name)}</summary><pre class=\"notes-pre\">{html.escape(read(ap))}</pre></details>")
         parts.append("</section>")
 
+    # ---- fold report, workflows, skills, design system
+    fold = os.path.join(EX, "probes", "FOLD-REPORT.md")
+    fold_html = f"<details><summary>FOLD-REPORT.md: how the findings became checks</summary><pre class=\"notes-pre\">{html.escape(read(fold))}</pre></details>" if os.path.exists(fold) else ""
+    wf_dir = os.path.join(ROOT, ".claude", "workflows")
+    wf_rows = ""
+    if os.path.isdir(wf_dir):
+        for fn in sorted(os.listdir(wf_dir)):
+            if not fn.endswith(".js"):
+                continue
+            txt = read(os.path.join(wf_dir, fn))
+            def _field(key):
+                mm = re.search(key + r"""\s*(['"])((?:\\.|(?!\1).)*)\1""", txt)
+                return mm.group(2).replace("\\'", "'").replace('\\"', '"') if mm else ""
+            wf_rows += f"<tr><td><code>{html.escape(fn[:-3])}</code></td><td>{html.escape(_field('description:'))}</td><td>{html.escape(_field('whenToUse:'))}</td></tr>"
+    sk_dir = os.path.join(ROOT, ".claude", "skills")
+    sk_items = ""
+    for name in ("figtree", "svg-diagram", "svg-data-figure", "svg-icon", "svg-animation", "svg-eval", "svg-showcase"):
+        sp = os.path.join(sk_dir, name, "SKILL.md")
+        if os.path.exists(sp):
+            n_ref = len(os.listdir(os.path.join(sk_dir, name, "references"))) if os.path.isdir(os.path.join(sk_dir, name, "references")) else 0
+            n_as = len(os.listdir(os.path.join(sk_dir, name, "assets"))) if os.path.isdir(os.path.join(sk_dir, name, "assets")) else 0
+            sk_items += f"<li><code>{name}</code>: {n_ref} references, {n_as} assets</li>"
+    ds_png = os.path.join(ROOT, "ds-bundle", "_screenshots", "review", "general__Figure.png")
+    parts.append(f'''<section id="system"><h2>8 · Folded back: checks, workflows, skills and a design system</h2>
+<p>The adversary tables did not stay tables. Every proposed check with a probe became a real check (recall 0.43 to 0.99, precision 0.68 to 1.00 on 110 probes), the by-hand subagent loops became workflow scripts whose agents hand back verdicts of at most 2 KB and never the SVG, the method became a family of skills with references and assets, and the figure style became a React design system synced to Claude Design.</p>
+{fold_html}
+<h3>Workflows (<code>.claude/workflows/</code>)</h3>
+<table class="traj"><thead><tr><th>workflow</th><th>what it does</th><th>when to use</th></tr></thead><tbody>{wf_rows}</tbody></table>
+<p>The contract that keeps contexts small: one command and one file in, a JSON verdict out; artifacts stay on disk; the orchestrator sees scores, anchored issues and requests, never markup. <code>figtree digest</code> plans a body of documents into units so the same loop fans out over a whole corpus.</p>
+<h3>Skill family (<code>.claude/skills/</code>)</h3><ul class="learned">{sk_items}</ul>
+<h3>Design system (<code>design/figtree-ds</code>)</h3>
+<p>Tokens for the paper, teaching and slide presets, the 31-icon family generated from the Python library, and six components (Figure, Container, Block, Flow, Icon, Caption) whose output is the same addressable program the critic reads. Synced to the Claude Design project <a href="https://claude.ai/design/p/c8a71e84-1610-4de9-92c2-2d4debce8292">FigTree Design System</a> with 18 authored, render-checked preview cells.</p>
+</section>''')
+
     # ---- learned
     parts.append('''<section id="learned"><h2>What the loop caught, and what the eye caught</h2>
 <ul class="learned">

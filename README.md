@@ -570,3 +570,17 @@ Code session's own login. The showcase page is built by
 `examples/figtree/showcase/build_showcase.py`.
 See `docs/FIGTREE.md` for the architecture, constraints, rubrics, test protocol and backends,
 and `docs/META-PROMPT-SVG-ARTIFACTS.md` for the category-level procedure.
+
+The loop is packaged three more ways:
+
+- **Workflows** (`.claude/workflows/figtree-*.js`, `docs/workflows/README.md`): refine,
+  adversary, judge-panel, icon-family and digest scripts for the Claude Code `Workflow` tool.
+  Each subagent gets one command and one file and returns a JSON verdict of at most 2 KB, so a
+  whole body of work can be fanned out without any agent holding the markup.
+  `python -m figtree digest --plan DIR` turns a directory of documents into figure units.
+- **Skills** (`.claude/skills/figtree` and `svg-diagram`, `svg-data-figure`, `svg-icon`,
+  `svg-animation`, `svg-eval`, `svg-showcase`): the method per medium with references (rubric
+  check tables, layout rules, gotchas the critic cannot see) and assets (templates, briefs).
+- **Design system** (`design/figtree-ds`): a React package with the preset tokens, the icon
+  family generated from `figtree/icons.py`, and Figure/Container/Block/Flow/Icon/Caption
+  components; synced to the Claude Design project "FigTree Design System" via `.design-sync/`.
