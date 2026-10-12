@@ -496,8 +496,14 @@ class QualityCritic:
         if len(blocks) > 6 and not groups and R.medium in DIAGRAM_MEDIA:
             add("topology_accuracy", "warning", f"{len(blocks)} blocks without any grouping", "svg", "group related blocks into labelled containers", 1.0, check="topology.ungrouped")
         for g in groups:
-            kids = [e for e in prog.elements if e.parent_id == g.id and e.tag in ("rect", "g", "text")]
-            if not any(k.tag in ("rect", "g") for k in kids):
+            kids = [e for e in prog.elements if e.parent_id == g.id and e.tag in ("rect", "g", "text", "path")]
+
+            def _container_has_block(k) -> bool:
+                if k.tag in ("rect", "g"):
+                    return True
+                return k.tag == "path" and k.el.get("data-role") == "block"
+
+            if not any(_container_has_block(k) for k in kids):
                 add("topology_accuracy", "warning", f"empty container {g.id}", g.id, "remove the empty container", 0.5, {"op": "delete", "id": g.id}, check="topology.empty_container")
         if R.medium in DIAGRAM_MEDIA:
             self._container_checks(prog, blocks, texts, add)

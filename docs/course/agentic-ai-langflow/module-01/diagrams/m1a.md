@@ -10,9 +10,7 @@ Match Canned Answer -> Send Reply
 
 Agent row:
 
-Member Message Agent -> Reads Question
+Member Question -> Reads Question
 Reads Question -> Answer From Plan Documents
 
-The agent row uses different entry label Member Message Agent to separate the two stories on one canvas.
-
-When documents do not fit, the agent may ask a clarifying question or hand to a person instead of sending a canned reply.
+When documents do not fit, the agent may ask a clarifying question or hand to a person.

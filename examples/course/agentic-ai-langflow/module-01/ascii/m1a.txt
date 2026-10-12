@@ -1,0 +1,10 @@
+# A fixed script compared with an agent
+
+Primary chain(s):
+  [Member Message]  ->  [Check Keyword List]  ->  [Match Canned Answer]  ->  [Send Reply]
+
+Side feeds:
+  [Member Question] --> [Reads Question]
+  [Reads Question] --> [Answer From Plan Documents]
+
+Components expected: Member Message, Check Keyword List, Match Canned Answer, Send Reply, Member Question, Reads Question, Answer From Plan Documents

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "m1a",
+    "expected_count": 7,
+    "present_count": 7,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 954,
+      "canvas_h": 170,
+      "bbox": [
+        24,
+        24,
+        930,
+        146
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  },
+  {
+    "id": "m1b",
+    "expected_count": 5,
+    "present_count": 5,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 834,
+      "canvas_h": 170,
+      "bbox": [
+        24,
+        24,
+        810,
+        146
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  },
+  {
+    "id": "m1c",
+    "expected_count": 4,
+    "present_count": 4,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 410,
+      "canvas_h": 210,
+      "bbox": [
+        24,
+        24,
+        386,
+        186
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  },
+  {
+    "id": "m1d",
+    "expected_count": 5,
+    "present_count": 5,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 578,
+      "canvas_h": 242,
+      "bbox": [
+        24,
+        24,
+        554,
+        218
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  },
+  {
+    "id": "m1e",
+    "expected_count": 6,
+    "present_count": 6,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 618,
+      "canvas_h": 242,
+      "bbox": [
+        24,
+        24,
+        594,
+        218
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  },
+  {
+    "id": "m1-capstone",
+    "expected_count": 5,
+    "present_count": 5,
+    "missing": [],
+    "extra": [],
+    "canvas": {
+      "canvas_w": 834,
+      "canvas_h": 170,
+      "bbox": [
+        24,
+        24,
+        810,
+        146
+      ],
+      "clipped": false,
+      "margin_ok": true
+    }
+  }
+]

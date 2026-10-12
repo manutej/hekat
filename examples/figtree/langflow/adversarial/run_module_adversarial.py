@@ -18,7 +18,8 @@ from typing import Any, Dict, List
 _SCRIPT_DIR = Path(__file__).resolve().parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
-from compact_trim import trim_teaching_canvas  # noqa: E402
+from compact_trim import components_in_svg, trim_teaching_canvas  # noqa: E402
+import re
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -28,6 +29,18 @@ class Figure:
     stem: str
     svg: Path
     source: Path
+
+
+def expected_components(source: Path) -> set[str]:
+    found: set[str] = set()
+    for line in source.read_text(encoding="utf-8").splitlines():
+        if "->" not in line:
+            continue
+        for part in re.split(r"\s*->\s*", line.strip()):
+            name = part.strip()
+            if name:
+                found.add(name)
+    return found
 
 
 def discover(module_dir: Path, diagrams_dir: Path) -> List[Figure]:
@@ -166,11 +179,19 @@ def main() -> int:
     for fig in figures:
         before = next(r for r in layer1 if r["stem"] == fig.stem)["overall"]
         tmp = adv / f"{fig.stem}.refined.svg"
+        exp = expected_components(fig.source)
+        baseline = fig.svg.read_text(encoding="utf-8")
         try:
             after_s = refine(fig.svg, fig.source, tmp, rounds=3)
             svg_text = tmp.read_text(encoding="utf-8")
+            if exp and not exp.issubset(components_in_svg(svg_text)):
+                svg_text = baseline
+                tmp.write_text(svg_text, encoding="utf-8")
+                after_s = score(tmp, fig.source)
             if any(i.get("check_id") == "compactness.blank_margin" for i in after_s.get("issues", [])):
-                svg_text = trim_teaching_canvas(svg_text)
+                candidate = trim_teaching_canvas(svg_text)
+                if not exp or exp.issubset(components_in_svg(candidate)):
+                    svg_text = candidate
                 tmp.write_text(svg_text, encoding="utf-8")
                 after_s = score(tmp, fig.source)
             after = after_s["overall"]
