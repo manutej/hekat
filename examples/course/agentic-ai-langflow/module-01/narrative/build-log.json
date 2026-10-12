@@ -1,0 +1,104 @@
+[
+  {
+    "id": "m1a",
+    "pilot": false,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/m1a.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 8.92,
+    "reference_metrics": {
+      "viewBox_height": 470,
+      "text_elements": 27,
+      "annot_nodes": 10,
+      "block_nodes": 11,
+      "data_components": 0,
+      "bytes": 9846
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1a.svg"
+  },
+  {
+    "id": "m1b",
+    "pilot": true,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/narrative/m1b.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 10.0,
+    "reference_metrics": {
+      "viewBox_height": 470,
+      "text_elements": 36,
+      "annot_nodes": 30,
+      "block_nodes": 9,
+      "data_components": 0,
+      "bytes": 9729
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1b.svg"
+  },
+  {
+    "id": "m1c",
+    "pilot": false,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/m1c.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 8.72,
+    "reference_metrics": {
+      "viewBox_height": 310,
+      "text_elements": 17,
+      "annot_nodes": 9,
+      "block_nodes": 7,
+      "data_components": 0,
+      "bytes": 6828
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1c.svg"
+  },
+  {
+    "id": "m1d",
+    "pilot": false,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/m1d.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 10.0,
+    "reference_metrics": {
+      "viewBox_height": 330,
+      "text_elements": 21,
+      "annot_nodes": 12,
+      "block_nodes": 4,
+      "data_components": 0,
+      "bytes": 6696
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1d.svg"
+  },
+  {
+    "id": "m1e",
+    "pilot": false,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/m1e.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 9.85,
+    "reference_metrics": {
+      "viewBox_height": 250,
+      "text_elements": 12,
+      "annot_nodes": 8,
+      "block_nodes": 3,
+      "data_components": 0,
+      "bytes": 4183
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1e.svg"
+  },
+  {
+    "id": "m1-capstone",
+    "pilot": true,
+    "source_brief": "docs/course/agentic-ai-langflow/module-01/diagrams/narrative/m1-capstone.md",
+    "winner": "pursuit",
+    "pursuit_gate_ok": true,
+    "overall": 9.75,
+    "reference_metrics": {
+      "viewBox_height": 256,
+      "text_elements": 5,
+      "annot_nodes": 0,
+      "block_nodes": 5,
+      "data_components": 5,
+      "bytes": 11990
+    },
+    "output": "examples/course/agentic-ai-langflow/module-01/narrative/m1-capstone.svg"
+  }
+]

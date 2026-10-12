@@ -102,12 +102,14 @@ def _score_main(argv: list) -> int:
     ap.add_argument("svg")
     ap.add_argument("--rubric", choices=sorted(RUBRICS), default="teaching")
     ap.add_argument("--source")
+    ap.add_argument("--reference", help="Pursuit or gold SVG to compare richness (course-narrative)")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
     with open(args.svg, encoding="utf-8") as fh:
         svg = fh.read()
     source = open(args.source, encoding="utf-8").read() if args.source else None
-    report = QualityCritic(args.rubric).review(svg, source)
+    reference = open(args.reference, encoding="utf-8").read() if args.reference else None
+    report = QualityCritic(args.rubric).review(svg, source, reference_svg=reference)
     if args.json:
         print(json.dumps(report.to_dict(), indent=2))
         return 0
@@ -286,7 +288,12 @@ def main(argv: Optional[list] = None) -> int:
     ap.add_argument("--max-nodes", type=int, default=32)
     ap.add_argument("--max-depth", type=int, default=8)
     ap.add_argument("--max-aspect", type=float, default=3.0, help="fold wide layouts into rows above this width/height ratio")
-    ap.add_argument("--style", choices=["paper", "teaching", "slide"], default="paper", help="design preset")
+    ap.add_argument(
+        "--style",
+        choices=["paper", "teaching", "slide", "course-narrative"],
+        default="paper",
+        help="design preset",
+    )
     ap.add_argument("--no-containers", action="store_true", help="do not box untitled stage groups")
     ap.add_argument("--icons", action="store_true", help="place a library icon inside each block")
     ap.add_argument("--shapes", action="store_true", help="draw stores, documents, decisions, terminals and actors with their silhouettes")

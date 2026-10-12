@@ -71,7 +71,9 @@ class TestEdits:
 
 class TestRubricsAndCritic:
     def test_profiles_cover_the_media(self):
-        assert {"methodology", "teaching", "slide", "data-figure", "dashboard", "icon"} <= set(RUBRICS)
+        assert {"methodology", "teaching", "course-narrative", "slide", "data-figure", "dashboard", "icon"} <= set(
+            RUBRICS
+        )
         assert set(get_rubric("teaching").to_dict()["dimensions"]) == set(DIMENSIONS)
         with pytest.raises(KeyError):
             get_rubric("poster")

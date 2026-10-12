@@ -1,0 +1,49 @@
+{
+  "labs": [
+    {
+      "id": "m1-l01",
+      "chip": "core",
+      "title": "Member Benefits FAQ",
+      "description": "The capstone above: a FAQ agent that keeps PPO and HMO facts straight across several turns."
+    },
+    {
+      "id": "m1-l02",
+      "chip": "core",
+      "title": "Plan glossary bot",
+      "description": "Definitions only. A tighter system prompt that refuses medical or legal advice."
+    },
+    {
+      "id": "m1-l03",
+      "chip": "stretch",
+      "title": "Welcome intake",
+      "description": "The agent captures a member id into a variable and hands off politely."
+    },
+    {
+      "id": "m1-l04",
+      "chip": "stretch",
+      "title": "After-hours auto-reply",
+      "description": "Tone and boundaries: when to answer, when to escalate to a person."
+    },
+    {
+      "id": "m1-l05",
+      "chip": "instructor",
+      "title": "PPO versus HMO comparison",
+      "description": "The same facts returned as a structured comparison rather than prose."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "System prompt",
+      "definition": "the standing instructions an agent follows before it reads any question"
+    },
+    {
+      "term": "Publish",
+      "definition": "make the flow reachable from outside the editor, so the portal can call it"
+    },
+    {
+      "term": "Knowledge base",
+      "definition": "documents the agent may look things up in"
+    }
+  ],
+  "module_intro": "An agent is software that reads a request, decides what to do, and does it, rather than following one fixed script. You will build one that answers member questions about plan benefits, publish it, and chat with it from the class portal."
+}

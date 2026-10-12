@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="954" height="170" viewBox="0 0 954 170" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">Script or agent</title>
+  <rect id="background" x="0" y="0" width="954" height="170" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5" id="e4-path" /></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="e5-path" /><path d="M14 3v5h5" id="e6-path" /><path d="M9 13h7M9 17h7" id="e7-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 1032 248" transform="translate(-39,-39)">
+    <!-- PORT:left x=64 y=128 id=n4.left type=input component="Member Message" -->
+    <!-- PORT:right x=208 y=128 id=n4.right type=output component="Member Message" -->
+    <!-- PORT:top x=136 y=104 id=n4.top type=input component="Member Message" -->
+    <!-- PORT:bottom x=136 y=152 id=n4.bottom type=output component="Member Message" -->
+    <!-- PORT:left x=248 y=88 id=n5.left type=input component="Check Keyword List" -->
+    <!-- PORT:right x=472 y=88 id=n5.right type=output component="Check Keyword List" -->
+    <!-- PORT:top x=360 y=64 id=n5.top type=input component="Check Keyword List" -->
+    <!-- PORT:bottom x=360 y=112 id=n5.bottom type=output component="Check Keyword List" -->
+    <!-- PORT:left x=288 y=160 id=n6.left type=input component="Reads Question" -->
+    <!-- PORT:right x=432 y=160 id=n6.right type=output component="Reads Question" -->
+    <!-- PORT:top x=360 y=136 id=n6.top type=input component="Reads Question" -->
+    <!-- PORT:bottom x=360 y=184 id=n6.bottom type=output component="Reads Question" -->
+    <!-- PORT:left x=608 y=88 id=n7.left type=input component="Match Canned Answer" -->
+    <!-- PORT:right x=784 y=88 id=n7.right type=output component="Match Canned Answer" -->
+    <!-- PORT:top x=696 y=64 id=n7.top type=input component="Match Canned Answer" -->
+    <!-- PORT:bottom x=696 y=112 id=n7.bottom type=output component="Match Canned Answer" -->
+    <!-- PORT:left x=576 y=160 id=n8.left type=input component="Answer From Plan Documents" -->
+    <!-- PORT:right x=816 y=160 id=n8.right type=output component="Answer From Plan Documents" -->
+    <!-- PORT:top x=696 y=136 id=n8.top type=input component="Answer From Plan Documents" -->
+    <!-- PORT:bottom x=696 y=184 id=n8.bottom type=output component="Answer From Plan Documents" -->
+    <!-- PORT:left x=856 y=128 id=n9.left type=input component="Send Reply" -->
+    <!-- PORT:right x=968 y=128 id=n9.right type=output component="Send Reply" -->
+    <!-- PORT:top x=912 y=104 id=n9.top type=input component="Send Reply" -->
+    <!-- PORT:bottom x=912 y=152 id=n9.bottom type=output component="Send Reply" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 472 184" data-label="Member Message, Check Keyword List, Reads Question">
+      <!-- PORT:left x=32 y=96 id=n4.left type=input component="Member Message" -->
+      <!-- PORT:right x=176 y=96 id=n4.right type=output component="Member Message" -->
+      <!-- PORT:top x=104 y=72 id=n4.top type=input component="Member Message" -->
+      <!-- PORT:bottom x=104 y=120 id=n4.bottom type=output component="Member Message" -->
+      <!-- PORT:left x=216 y=56 id=n5.left type=input component="Check Keyword List" -->
+      <!-- PORT:right x=440 y=56 id=n5.right type=output component="Check Keyword List" -->
+      <!-- PORT:top x=328 y=32 id=n5.top type=input component="Check Keyword List" -->
+      <!-- PORT:bottom x=328 y=80 id=n5.bottom type=output component="Check Keyword List" -->
+      <!-- PORT:left x=256 y=128 id=n6.left type=input component="Reads Question" -->
+      <!-- PORT:right x=400 y=128 id=n6.right type=output component="Reads Question" -->
+      <!-- PORT:top x=328 y=104 id=n6.top type=input component="Reads Question" -->
+      <!-- PORT:bottom x=328 y=152 id=n6.bottom type=output component="Reads Question" -->
+      <g id="n4" transform="translate(32,72)" data-bbox="32 72 144 48" data-label="Member Message">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Member Message" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Member Message" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Member Message" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Member Message" -->
+        <rect id="n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Member Message" />
+        <text id="n4.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Member Message</text>
+      </g>
+      <g id="n6" transform="translate(256,104)" data-bbox="256 104 144 48" data-label="Reads Question">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Reads Question" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Reads Question" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Reads Question" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Reads Question" -->
+        <rect id="n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Reads Question" />
+        <text id="n6.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Reads Question</text>
+      </g>
+      <path id="n2.arrow0" d="M176,96 H192 V56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left" />
+      <path id="n2.arrow1" d="M176,96 H224 V128 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+    </g>
+    <g id="n3" transform="translate(544,32)" data-bbox="544 32 456 184" data-label="Match Canned Answer, Answer From Plan Documents, Send Reply">
+      <!-- PORT:left x=64 y=56 id=n7.left type=input component="Match Canned Answer" -->
+      <!-- PORT:right x=240 y=56 id=n7.right type=output component="Match Canned Answer" -->
+      <!-- PORT:top x=152 y=32 id=n7.top type=input component="Match Canned Answer" -->
+      <!-- PORT:bottom x=152 y=80 id=n7.bottom type=output component="Match Canned Answer" -->
+      <!-- PORT:left x=32 y=128 id=n8.left type=input component="Answer From Plan Documents" -->
+      <!-- PORT:right x=272 y=128 id=n8.right type=output component="Answer From Plan Documents" -->
+      <!-- PORT:top x=152 y=104 id=n8.top type=input component="Answer From Plan Documents" -->
+      <!-- PORT:bottom x=152 y=152 id=n8.bottom type=output component="Answer From Plan Documents" -->
+      <!-- PORT:left x=312 y=96 id=n9.left type=input component="Send Reply" -->
+      <!-- PORT:right x=424 y=96 id=n9.right type=output component="Send Reply" -->
+      <!-- PORT:top x=368 y=72 id=n9.top type=input component="Send Reply" -->
+      <!-- PORT:bottom x=368 y=120 id=n9.bottom type=output component="Send Reply" -->
+      <g id="n7" transform="translate(64,32)" data-bbox="64 32 176 48" data-label="Match Canned Answer">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Match Canned Answer" -->
+        <!-- PORT:right x=176 y=24 id=n7.right type=output component="Match Canned Answer" -->
+        <!-- PORT:top x=88 y=0 id=n7.top type=input component="Match Canned Answer" -->
+        <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Match Canned Answer" -->
+        <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Match Canned Answer" />
+        <text id="n7.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">Match Canned Answer</text>
+      </g>
+      <g id="n8" transform="translate(32,104)" data-bbox="32 104 240 48" data-label="Answer From Plan Documents">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Answer From Plan Documents" -->
+        <!-- PORT:right x=240 y=24 id=n8.right type=output component="Answer From Plan Documents" -->
+        <!-- PORT:top x=120 y=0 id=n8.top type=input component="Answer From Plan Documents" -->
+        <!-- PORT:bottom x=120 y=48 id=n8.bottom type=output component="Answer From Plan Documents" -->
+        <rect id="n8.block" x="0" y="0" width="240" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Answer From Plan Documents" />
+        <use id="n8.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="220">Answer From Plan Documents</text>
+      </g>
+      <g id="n9" transform="translate(312,72)" data-bbox="312 72 112 48" data-label="Send Reply">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Send Reply" -->
+        <!-- PORT:right x=112 y=24 id=n9.right type=output component="Send Reply" -->
+        <!-- PORT:top x=56 y=0 id=n9.top type=input component="Send Reply" -->
+        <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Send Reply" -->
+        <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Send Reply" />
+        <text id="n9.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Send Reply</text>
+      </g>
+      <path id="n3.arrow0" d="M240,56 H272 V96 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left" />
+    </g>
+    <path id="n1.arrow0" d="M472,88 H608" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left" />
+    <path id="n1.arrow1" d="M432,160 H576" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left" />
+  </g>
+</svg>

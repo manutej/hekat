@@ -12,6 +12,9 @@ Deep teaching figures for how a Langflow **flow** is wired before tools and MCP.
 | [`diagrams/06-custom-language-model-port.md`](diagrams/06-custom-language-model-port.md) | Custom LM component port |
 | [`diagrams/04-playground-path.md`](diagrams/04-playground-path.md) | Playground run path |
 | [`diagrams/05-simple-agent-template.md`](diagrams/05-simple-agent-template.md) | Simple Agent template |
+| [`diagrams/crosswalk-agent-vs-faq-chain.md`](diagrams/crosswalk-agent-vs-faq-chain.md) | Course FAQ capstone ↔ Agent Component hub |
+
+Course companion figures: [`examples/course/agentic-ai-langflow/module-01/`](../../../../examples/course/agentic-ai-langflow/module-01/).
 
 Aggregated narrative: [`SOURCE.md`](SOURCE.md).
 

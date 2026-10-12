@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="592" height="249" viewBox="0 0 592 249" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="e1-title">One question four beats</title>
+  <rect id="background" x="0" y="0" width="592" height="249" fill="#FFFFFF" data-role="background" />
+  <defs id="e2-defs">
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="e3-path" />
+    </marker>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" id="e4-circle" /><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" id="e5-path" /></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 592 288">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Student Types" -->
+    <!-- PORT:right x=200 y=56 id=n2.right type=output component="Student Types" -->
+    <!-- PORT:top x=128 y=32 id=n2.top type=input component="Student Types" -->
+    <!-- PORT:bottom x=128 y=80 id=n2.bottom type=output component="Student Types" -->
+    <!-- PORT:left x=240 y=56 id=n3.left type=input component="Portal Receives" -->
+    <!-- PORT:right x=384 y=56 id=n3.right type=output component="Portal Receives" -->
+    <!-- PORT:top x=312 y=32 id=n3.top type=input component="Portal Receives" -->
+    <!-- PORT:bottom x=312 y=80 id=n3.bottom type=output component="Portal Receives" -->
+    <!-- PORT:left x=424 y=56 id=n4.left type=input component="Langflow Run" -->
+    <!-- PORT:right x=552 y=56 id=n4.right type=output component="Langflow Run" -->
+    <!-- PORT:top x=488 y=32 id=n4.top type=input component="Langflow Run" -->
+    <!-- PORT:bottom x=488 y=80 id=n4.bottom type=output component="Langflow Run" -->
+    <!-- PORT:left x=88 y=200 id=n6.left type=input component="Flow Executes" -->
+    <!-- PORT:right x=216 y=200 id=n6.right type=output component="Flow Executes" -->
+    <!-- PORT:top x=152 y=176 id=n6.top type=input component="Flow Executes" -->
+    <!-- PORT:bottom x=152 y=224 id=n6.bottom type=output component="Flow Executes" -->
+    <!-- PORT:left x=256 y=200 id=n7.left type=input component="Reply Appears" -->
+    <!-- PORT:right x=384 y=200 id=n7.right type=output component="Reply Appears" -->
+    <!-- PORT:top x=320 y=176 id=n7.top type=input component="Reply Appears" -->
+    <!-- PORT:bottom x=320 y=224 id=n7.bottom type=output component="Reply Appears" -->
+    <g id="n3" transform="translate(240,32)" data-bbox="240 32 144 48" data-label="Portal Receives">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Portal Receives" -->
+      <!-- PORT:right x=144 y=24 id=n3.right type=output component="Portal Receives" -->
+      <!-- PORT:top x=72 y=0 id=n3.top type=input component="Portal Receives" -->
+      <!-- PORT:bottom x=72 y=48 id=n3.bottom type=output component="Portal Receives" -->
+      <rect id="n3.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Portal Receives" />
+      <text id="n3.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Portal Receives</text>
+    </g>
+    <g id="n4" transform="translate(424,32)" data-bbox="424 32 128 48" data-label="Langflow Run">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Langflow Run" -->
+      <!-- PORT:right x=128 y=24 id=n4.right type=output component="Langflow Run" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="Langflow Run" -->
+      <!-- PORT:bottom x=64 y=48 id=n4.bottom type=output component="Langflow Run" -->
+      <rect id="n4.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Langflow Run" />
+      <text id="n4.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Langflow Run</text>
+    </g>
+    <g id="n5" transform="translate(56,144)" data-bbox="56 144 360 112" data-label="Flow Executes, Reply Appears">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Flow Executes" -->
+      <!-- PORT:right x=160 y=56 id=n6.right type=output component="Flow Executes" -->
+      <!-- PORT:top x=96 y=32 id=n6.top type=input component="Flow Executes" -->
+      <!-- PORT:bottom x=96 y=80 id=n6.bottom type=output component="Flow Executes" -->
+      <!-- PORT:left x=200 y=56 id=n7.left type=input component="Reply Appears" -->
+      <!-- PORT:right x=328 y=56 id=n7.right type=output component="Reply Appears" -->
+      <!-- PORT:top x=264 y=32 id=n7.top type=input component="Reply Appears" -->
+      <!-- PORT:bottom x=264 y=80 id=n7.bottom type=output component="Reply Appears" -->
+      <g id="n6" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Flow Executes">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Flow Executes" -->
+        <!-- PORT:right x=128 y=24 id=n6.right type=output component="Flow Executes" -->
+        <!-- PORT:top x=64 y=0 id=n6.top type=input component="Flow Executes" -->
+        <!-- PORT:bottom x=64 y=48 id=n6.bottom type=output component="Flow Executes" -->
+        <rect id="n6.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow Executes" />
+        <text id="n6.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Flow Executes</text>
+      </g>
+      <g id="n7" transform="translate(200,32)" data-bbox="200 32 128 48" data-label="Reply Appears">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Reply Appears" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Reply Appears" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Reply Appears" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Reply Appears" -->
+        <rect id="n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Reply Appears" />
+        <text id="n7.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">Reply Appears</text>
+      </g>
+      <path id="n5.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left" />
+    </g>
+    <path id="n1.arrow0" d="M200,56 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left" />
+    <path id="n1.arrow1" d="M384,56 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left" />
+    <path id="n1.arrow2" d="M552,56 H560 V112 H32 V200 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left" />
+  </g>
+</svg>

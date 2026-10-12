@@ -1,0 +1,9 @@
+# Module 1 capstone: Member Benefits FAQ
+
+Primary chain(s):
+  [Chat Input]  ->  [Prompt Template]  ->  [Chat Model]  ->  [Chat Output]
+
+Side feeds:
+  [Knowledge Base] --> [Prompt Template]
+
+Components expected: Chat Input, Prompt Template, Chat Model, Chat Output, Knowledge Base

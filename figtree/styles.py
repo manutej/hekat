@@ -59,6 +59,16 @@ PRESETS: Dict[str, Preset] = {
         container_fill="#F8F9FB", container_stroke="#D5DBE4", container_dash="", container_rx=12, block_rx=8,
         marker_w=10, marker_h=7, gap_h=56, gap_v=32, row_gap=80, icon_color="#2B3A4A", label_color="#1C2630", title_color="#5B6B7C",
     ),
+    "course-narrative": Preset(
+        style=GlobalStyle(
+            palette={"attention": "#F3C9A4", "processing": "#C9DCF0", "residual": "#F6EFD2", "input": "#E6E8EC", "container": "#F8F9FB", "border": "#2B3A4A"},
+            font="IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+            font_size_label="15-16pt", font_size_annot="11.5-13pt",
+            stroke_main=1.4, stroke_border=1.0, grid=8, min_arrow=24, padding=32, preset="course-narrative",
+        ),
+        container_fill="#F8F9FB", container_stroke="#D5DBE4", container_dash="", container_rx=8, block_rx=8,
+        marker_w=8, marker_h=6, gap_h=48, gap_v=32, row_gap=72, icon_color="#2B3A4A", label_color="#1C2630", title_color="#5B6B7C",
+    ),
 }
 
 

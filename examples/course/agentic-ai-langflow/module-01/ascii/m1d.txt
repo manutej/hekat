@@ -1,0 +1,11 @@
+# The journey of one question, in four beats
+
+Primary chain(s):
+  [Student Types]  ->  [Portal Receives]
+
+Side feeds:
+  [Portal Receives] --> [Langflow Run]
+  [Langflow Run] --> [Flow Executes]
+  [Flow Executes] --> [Reply Appears]
+
+Components expected: Student Types, Portal Receives, Langflow Run, Flow Executes, Reply Appears

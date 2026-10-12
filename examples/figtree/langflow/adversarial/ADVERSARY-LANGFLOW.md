@@ -17,7 +17,7 @@ critic misses them on similar layouts.
 
 No new **gaming** holes were found on Langflow figures (scores were not falsely inflated to 10.0
 with visible defects). Remaining gaps are **compactness** (mechanical) and **crossings** on the
-research meta-diagram (needs layout decision).
+research meta-diagram (resolved by splitting into two linear chains + `compact_trim` after refine).
 
 ## Layer 2–3 (repair + verify)
 

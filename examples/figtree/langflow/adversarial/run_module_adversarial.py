@@ -18,7 +18,8 @@ from typing import Any, Dict, List
 _SCRIPT_DIR = Path(__file__).resolve().parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
-from compact_trim import trim_teaching_canvas  # noqa: E402
+from compact_trim import components_in_svg, trim_teaching_canvas  # noqa: E402
+import re
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -28,6 +29,18 @@ class Figure:
     stem: str
     svg: Path
     source: Path
+
+
+def expected_components(source: Path) -> set[str]:
+    found: set[str] = set()
+    for line in source.read_text(encoding="utf-8").splitlines():
+        if "->" not in line:
+            continue
+        for part in re.split(r"\s*->\s*", line.strip()):
+            name = part.strip()
+            if name:
+                found.add(name)
+    return found
 
 
 def discover(module_dir: Path, diagrams_dir: Path) -> List[Figure]:
@@ -48,7 +61,7 @@ def run(cmd: List[str]) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
 
 
-def score(svg: Path, source: Path) -> Dict[str, Any]:
+def score(svg: Path, source: Path, rubric: str = "teaching") -> Dict[str, Any]:
     cp = run(
         [
             sys.executable,
@@ -57,7 +70,7 @@ def score(svg: Path, source: Path) -> Dict[str, Any]:
             "score",
             str(svg),
             "--rubric",
-            "teaching",
+            rubric,
             "--source",
             str(source),
             "--json",
@@ -68,7 +81,7 @@ def score(svg: Path, source: Path) -> Dict[str, Any]:
     return json.loads(cp.stdout)
 
 
-def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any]:
+def refine(svg: Path, source: Path, out: Path, rounds: int = 3, rubric: str = "teaching") -> Dict[str, Any]:
     traj = out.parent / "adversarial" / f"{svg.stem}.trajectory.json"
     traj.parent.mkdir(parents=True, exist_ok=True)
     cp = run(
@@ -79,7 +92,7 @@ def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any
             "refine",
             str(svg),
             "--rubric",
-            "teaching",
+            rubric,
             "-o",
             str(out),
             "--trajectory",
@@ -93,19 +106,59 @@ def refine(svg: Path, source: Path, out: Path, rounds: int = 3) -> Dict[str, Any
     )
     if cp.returncode != 0:
         raise RuntimeError(cp.stderr or cp.stdout)
-    return score(out, source)
+    return score(out, source, rubric)
+
+
+def parse_args(argv: List[str]) -> tuple[Path, Path, Path | None, str]:
+    args = [a for a in argv[1:] if a != "--"]
+    gold_dir: Path | None = None
+    rubric = "teaching"
+    filtered: List[str] = []
+    i = 0
+    while i < len(args):
+        if args[i] == "--gold" and i + 1 < len(args):
+            gold_dir = Path(args[i + 1])
+            if not gold_dir.is_absolute():
+                gold_dir = (ROOT / gold_dir).resolve()
+            i += 2
+            continue
+        if args[i] == "--rubric" and i + 1 < len(args):
+            rubric = args[i + 1]
+            i += 2
+            continue
+        filtered.append(args[i])
+        i += 1
+    if not filtered:
+        raise SystemExit("usage: run_module_adversarial.py MODULE_DIR [DIAGRAMS_DIR] [--gold GOLD_DIR]")
+    module_dir = Path(filtered[0])
+    if not module_dir.is_absolute():
+        module_dir = (ROOT / module_dir).resolve()
+    if len(filtered) > 1:
+        diagrams_dir = Path(filtered[1])
+        if not diagrams_dir.is_absolute():
+            diagrams_dir = (ROOT / diagrams_dir).resolve()
+    else:
+        diagrams_dir = (
+            module_dir.parent.parent.parent
+            / "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
+        )
+    return module_dir, diagrams_dir, gold_dir, rubric
+
+
+def compare_gold(prod: Path, gold: Path) -> Dict[str, Any]:
+    script = ROOT / "examples/course/agentic-ai-langflow/scripts/compare_gold.py"
+    cp = run([sys.executable, str(script), str(prod), str(gold)])
+    if cp.returncode not in (0, 1):
+        return {"error": cp.stderr or cp.stdout}
+    return json.loads(cp.stdout)
 
 
 def main() -> int:
-    if len(sys.argv) < 2:
-        print("usage: run_module_adversarial.py MODULE_DIR [DIAGRAMS_DIR]", file=sys.stderr)
+    try:
+        module_dir, diagrams_dir, gold_dir, rubric = parse_args(sys.argv)
+    except SystemExit as exc:
+        print(exc, file=sys.stderr)
         return 2
-    module_dir = (ROOT / sys.argv[1]).resolve()
-    diagrams_dir = (
-        (ROOT / sys.argv[2]).resolve()
-        if len(sys.argv) > 2
-        else module_dir.parent.parent.parent / "docs/research/langflow-agentic-workflows/modules/01-flow-topology/diagrams"
-    )
     # fix diagrams path when module_dir is under examples
     if not diagrams_dir.exists():
         mod_id = module_dir.name
@@ -121,7 +174,7 @@ def main() -> int:
     layer1: List[Dict[str, Any]] = []
     print("=== Layer 1: attack (score with source) ===")
     for fig in figures:
-        s = score(fig.svg, fig.source)
+        s = score(fig.svg, fig.source, rubric)
         row = {"stem": fig.stem, "overall": s["overall"], "issues": s.get("issues", [])}
         layer1.append(row)
         print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues")
@@ -131,13 +184,21 @@ def main() -> int:
     for fig in figures:
         before = next(r for r in layer1 if r["stem"] == fig.stem)["overall"]
         tmp = adv / f"{fig.stem}.refined.svg"
+        exp = expected_components(fig.source)
+        baseline = fig.svg.read_text(encoding="utf-8")
         try:
-            after_s = refine(fig.svg, fig.source, tmp, rounds=3)
+            after_s = refine(fig.svg, fig.source, tmp, rounds=3, rubric=rubric)
             svg_text = tmp.read_text(encoding="utf-8")
-            if any(i.get("check_id") == "compactness.blank_margin" for i in after_s.get("issues", [])):
-                svg_text = trim_teaching_canvas(svg_text)
+            if exp and not exp.issubset(components_in_svg(svg_text)):
+                svg_text = baseline
                 tmp.write_text(svg_text, encoding="utf-8")
-                after_s = score(tmp, fig.source)
+                after_s = score(tmp, fig.source, rubric)
+            if any(i.get("check_id") == "compactness.blank_margin" for i in after_s.get("issues", [])):
+                candidate = trim_teaching_canvas(svg_text)
+                if not exp or exp.issubset(components_in_svg(candidate)):
+                    svg_text = candidate
+                tmp.write_text(svg_text, encoding="utf-8")
+                after_s = score(tmp, fig.source, rubric)
             after = after_s["overall"]
             fig.svg.write_text(svg_text, encoding="utf-8")
             (module_dir / f"{fig.stem}.score.json").write_text(json.dumps(after_s, indent=2), encoding="utf-8")
@@ -150,11 +211,25 @@ def main() -> int:
     layer3: List[Dict[str, Any]] = []
     print("\n=== Layer 3: verify ===")
     for fig in figures:
-        s = score(fig.svg, fig.source)
-        layer3.append({"stem": fig.stem, "overall": s["overall"], "issues": len(s.get("issues", []))})
-        print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues")
+        s = score(fig.svg, fig.source, rubric)
+        row: Dict[str, Any] = {"stem": fig.stem, "overall": s["overall"], "issues": len(s.get("issues", []))}
+        if gold_dir:
+            gpath = gold_dir / f"{fig.stem}.svg"
+            if gpath.exists():
+                row["gold_compare"] = compare_gold(fig.svg, gpath)
+        layer3.append(row)
+        extra = ""
+        if row.get("gold_compare") and "jaccard" in row["gold_compare"]:
+            extra = f"  gold_j={row['gold_compare']['jaccard']:.2f}"
+        print(f"  {fig.stem:40s} {s['overall']:5.2f}  {len(s.get('issues', []))} issues{extra}")
 
-    summary = {"layer1": layer1, "layer2": layer2, "layer3": layer3}
+    summary = {
+        "layer1": layer1,
+        "layer2": layer2,
+        "layer3": layer3,
+        "gold_dir": str(gold_dir) if gold_dir else None,
+        "rubric": rubric,
+    }
     (adv / "three-layer-summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     iteration = adv / "ITERATION-LOG.md"
     lines = [
@@ -169,9 +244,10 @@ def main() -> int:
         lines.append(f"| {r1['stem']} | {r1['overall']:.2f} | {r3['overall']:.2f} |")
     iteration.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    build = module_dir / "build_index.py"
-    if build.exists():
-        run([sys.executable, str(build)])
+    for script in ("build_index.py", "build_module_html.py"):
+        build = module_dir / script
+        if build.exists():
+            run([sys.executable, str(build)])
     return 0
 
 

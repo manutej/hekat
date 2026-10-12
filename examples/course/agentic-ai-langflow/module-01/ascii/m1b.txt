@@ -1,0 +1,9 @@
+# The four parts of your first agent, with what each one holds
+
+Primary chain(s):
+  [Chat Input]  ->  [Prompt Template]  ->  [Chat Model]  ->  [Chat Output]
+
+Side feeds:
+  [Knowledge Base] --> [Prompt Template]
+
+Components expected: Chat Input, Prompt Template, Chat Model, Chat Output, Knowledge Base

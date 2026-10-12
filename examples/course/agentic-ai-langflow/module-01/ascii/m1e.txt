@@ -1,0 +1,6 @@
+# What a good answer looks like in this class
+
+Primary chain(s):
+  [Grounded Check]  ->  [Plan Documents Only]  ->  [Honest Gaps Check]  ->  [Say When Unknown]  ->  [Consistent Check]  ->  [Same Plan Facts Across Turns]
+
+Components expected: Grounded Check, Plan Documents Only, Honest Gaps Check, Say When Unknown, Consistent Check, Same Plan Facts Across Turns

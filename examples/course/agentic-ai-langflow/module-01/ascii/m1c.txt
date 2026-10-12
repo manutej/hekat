@@ -1,0 +1,6 @@
+# Where the model key lives: on the class server, never in a browser
+
+Primary chain(s):
+  [Student Browser]  ->  [Class Portal]  ->  [Langflow]  ->  [Model Provider]
+
+Components expected: Student Browser, Class Portal, Langflow, Model Provider

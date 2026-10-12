@@ -1,0 +1,102 @@
+[
+  {
+    "course_id": "m1a",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 8.92,
+    "lab_pursuit_gate": false,
+    "lab_narrative_score": 9.85,
+    "lab_gate_reasons": [
+      "viewBox height ratio 0.36 < 0.55 (170 vs ref 470)",
+      "text element ratio 0.26 < 0.45 (7 vs ref 27)",
+      "annotation ratio 0.00 < 0.45 (0 vs ref 10)"
+    ],
+    "lab_ratios": {
+      "height": 0.3617021276595745,
+      "text": 0.25925925925925924,
+      "annot": 0.0,
+      "blocks": 0.6363636363636364
+    }
+  },
+  {
+    "course_id": "m1b",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 10.0,
+    "lab_pursuit_gate": false,
+    "lab_narrative_score": 9.85,
+    "lab_gate_reasons": [
+      "viewBox height ratio 0.36 < 0.55 (170 vs ref 470)",
+      "text element ratio 0.14 < 0.45 (5 vs ref 36)",
+      "annotation ratio 0.00 < 0.45 (0 vs ref 30)"
+    ],
+    "lab_ratios": {
+      "height": 0.3617021276595745,
+      "text": 0.1388888888888889,
+      "annot": 0.0,
+      "blocks": 0.5555555555555556
+    }
+  },
+  {
+    "course_id": "m1c",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 8.72,
+    "lab_pursuit_gate": false,
+    "lab_narrative_score": 10.0,
+    "lab_gate_reasons": [
+      "text element ratio 0.24 < 0.45 (4 vs ref 17)",
+      "annotation ratio 0.00 < 0.45 (0 vs ref 9)"
+    ],
+    "lab_ratios": {
+      "height": 0.6774193548387096,
+      "text": 0.23529411764705882,
+      "annot": 0.0,
+      "blocks": 0.5714285714285714
+    }
+  },
+  {
+    "course_id": "m1d",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 10.0,
+    "lab_pursuit_gate": false,
+    "lab_narrative_score": 9.88,
+    "lab_gate_reasons": [
+      "text element ratio 0.24 < 0.45 (5 vs ref 21)",
+      "annotation ratio 0.00 < 0.45 (0 vs ref 12)"
+    ],
+    "lab_ratios": {
+      "height": 0.7333333333333333,
+      "text": 0.23809523809523808,
+      "annot": 0.0,
+      "blocks": 1.25
+    }
+  },
+  {
+    "course_id": "m1e",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 9.85,
+    "lab_pursuit_gate": false,
+    "lab_narrative_score": 9.88,
+    "lab_gate_reasons": [
+      "annotation ratio 0.00 < 0.45 (0 vs ref 8)"
+    ],
+    "lab_ratios": {
+      "height": 0.968,
+      "text": 0.5,
+      "annot": 0.0,
+      "blocks": 2.0
+    }
+  },
+  {
+    "course_id": "m1-capstone",
+    "pursuit_self_gate": true,
+    "pursuit_narrative_score": 9.75,
+    "lab_pursuit_gate": true,
+    "lab_narrative_score": 9.85,
+    "lab_gate_reasons": [],
+    "lab_ratios": {
+      "height": 0.6640625,
+      "text": 1.0,
+      "annot": null,
+      "blocks": 1.0
+    }
+  }
+]

@@ -65,6 +65,8 @@ class Rubric:
     min_feature_px: float = 1.5  # icons: smallest stroke extent in device px at must_read_at
     min_gap_px: float = 1.0  # icons: smallest clear gap between parallel strokes in device px at must_read_at
     max_ink_offset: float = 3.0  # icons: grid units the ink centroid may sit off the centre of the content box
+    min_annot_nodes: int = 0  # course narrative: minimum data-kind=annot (0 = do not enforce)
+    min_canvas_height: int = 0  # course narrative: warn below this viewBox height
     weights: Dict[str, float] = field(default_factory=lambda: {k: 1.0 for k in DIMENSIONS})
     notes: List[str] = field(default_factory=list)
 
@@ -121,6 +123,26 @@ RUBRICS: Dict[str, Rubric] = {
         min_font=14, min_contrast=4.5, max_palette=5, max_words_per_label=8, aspect=(1.0, 2.4), margin=24,
         max_margin_ratio=0.12, max_stroke_widths=2, max_font_families=1,
         notes=["prefer left-to-right or top-to-bottom reading order", "at most ~12 labelled elements"],
+    ),
+    "course-narrative": Rubric(
+        name="course-narrative",
+        medium="course narrative",
+        description="Course companion figure: multi-panel layouts, grounded annotations and example copy, icons, strong reading order.",
+        min_font=11, min_contrast=4.5, max_palette=6, max_words_per_label=32, aspect=(0.7, 5.5), margin=24,
+        max_margin_ratio=0.18, max_stroke_widths=4, max_font_families=1, max_corner_radius=12,
+        min_canvas_height=180,
+        weights={
+            **{k: 1.0 for k in DIMENSIONS},
+            "semantic_coverage": 1.4,
+            "text_quality": 1.2,
+            "visual_polish": 1.1,
+            "compactness": 0.45,
+        },
+        notes=[
+            "use nested panels with data-kind=annot for example text",
+            "section titles above panels (font-weight 600 or data-kind=title)",
+            "Pursuit SVGs are the reference bar; compare with pursuit_gate.py",
+        ],
     ),
     "slide": Rubric(
         name="slide",
