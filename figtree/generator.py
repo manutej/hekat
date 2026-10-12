@@ -45,6 +45,31 @@ def is_atomic(node: Node, max_depth: int = MAX_DEPTH) -> bool:
 
 
 
+def _connected_components(components: Sequence[str], flows: Sequence[Flow]) -> List[List[str]]:
+    """Connected components of the undirected flow graph, largest first, each in reading order."""
+    order = {c: i for i, c in enumerate(components)}
+    adj: Dict[str, set] = {c: set() for c in components}
+    for f in flows:
+        if f.src in adj and f.dst in adj:
+            adj[f.src].add(f.dst)
+            adj[f.dst].add(f.src)
+    seen: set = set()
+    out: List[List[str]] = []
+    for c in components:
+        if c in seen:
+            continue
+        stack, cc = [c], []
+        while stack:
+            x = stack.pop()
+            if x in seen:
+                continue
+            seen.add(x)
+            cc.append(x)
+            stack.extend(sorted(adj[x] - seen, key=lambda n: order[n]))
+        out.append(sorted(cc, key=lambda n: order[n]))
+    return sorted(out, key=lambda cc: (-len(cc), order[cc[0]]))
+
+
 def _satellites(components: Sequence[str], flows: Sequence[Flow]) -> List[Tuple[str, List[str]]]:
     """``[(source, [targets...])]``: targets reached only from ``source`` by control flows, with no
     outgoing flows, at least two per source (an agent's tools, a router's branches)."""
@@ -171,6 +196,18 @@ class RuleBasedGenerator:
         # satellites: two or more sinks that one node reaches by control flows and nothing else
         # reaches (an agent's tools, a router's branches) become one child of their own, so they
         # sit beside the main chain instead of being chunked into the chain's last layer
+        # disconnected mechanisms (a spec that documents several independent chains) are drawn as
+        # separate sub-figures: one child per connected component of the flow graph
+        ccs = _connected_components(comps, node.flows)
+        # (only when every component is small enough to be laid out as one row at depth 1,
+        # where the worker does not fold rows; a large chain keeps the layer chunking below)
+        if 2 <= len(ccs) <= 4 and len(comps) > 4 and node.depth == 0 and max(len(cc) for cc in ccs) <= 6:
+            groups = [list(cc) for cc in ccs]
+            return [
+                Node(id=next_id(), parent_id=node.id, description=to_noun_phrase(", ".join(g)), depth=node.depth + 1,
+                     style=node.style, components=list(g), flows=[f for f in node.flows if f.src in set(g) and f.dst in set(g)])
+                for g in groups
+            ]
         sats = _satellites(comps, node.flows)
         sat_targets = {t for _, ts in sats for t in ts}
         core = [c for c in comps if c not in sat_targets]
