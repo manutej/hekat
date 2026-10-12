@@ -664,7 +664,8 @@ class QualityCritic:
                 add("text_quality", "warning", f"{t.id} has {words} words (limit {R.max_words_per_label})", t.id, "shorten to a keyword label", 0.8, check="text.words_per_label")
             if R.medium != "icon" and EMBEDDED_TITLE.match(t.text) and R.medium in DIAGRAM_MEDIA:
                 add("medium_fit", "critical", f"{t.id} embeds a figure title or caption ({t.text[:30]!r}) inside the drawing", t.id, "move the caption out of the figure; the document carries it", 2.0, check="medium.embedded_title")
-            elif R.medium != "icon" and words >= 3 and (re.search(r"[.!?]$", t.text) or SENTENCE_START.match(t.text)):
+            elif R.medium != "icon" and words >= 3 and (re.search(r"[.!?]$", t.text) or SENTENCE_START.match(t.text)) and (t.el.get("data-kind") or "label") == "label":
+                # annotations (data-kind="annot": example quotes, explanatory lines) may be sentences; labels may not
                 add("text_quality", "critical", f"{t.id} is a sentence, not a label ({t.text[:30]!r})", t.id, "replace prose with a 1-4 word keyword label", 1.5, check="text.sentence_label")
             # contrast against the shape behind the text
             col = parse_color(t.fill) or (0, 0, 0)

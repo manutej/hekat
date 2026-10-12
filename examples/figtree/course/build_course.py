@@ -17,9 +17,12 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 from figtree.page import namespace_svg  # noqa: E402
 from figtree.specs import parse_spec  # noqa: E402
+sys.path.insert(0, HERE if "HERE" in globals() else os.path.dirname(os.path.abspath(__file__)))
+from visuals import MODULE_VISUALS  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIG = os.path.join(HERE, "figures")
+VIS = os.path.join(HERE, "visuals")
 SPECS = os.path.join(HERE, "specs")
 
 MODULES = [
@@ -142,6 +145,21 @@ def figure(fig_id, prefix, title, desc_lines):
     return svg
 
 
+
+def concept_block(mod_id, prefix):
+    items = MODULE_VISUALS.get(mod_id, [])
+    if not items:
+        return ""
+    cards = []
+    for i, (vid, _, title, caption) in enumerate(items):
+        path = os.path.join(VIS, vid + ".svg")
+        if not os.path.exists(path):
+            continue
+        svg = namespace_svg(read(path), f"{prefix}v{i}-")
+        cards.append(f'<figure class="concept"><h4>{html.escape(title)}</h4><div class="sheet">{svg}</div><figcaption>{html.escape(caption)}</figcaption></figure>')
+    return '<div class="concepts"><h3>The ideas, one picture each</h3>' + "".join(cards) + "</div>"
+
+
 def build(out):
     digest = json.load(open(os.path.join(FIG, "digest.json"), encoding="utf-8")) if os.path.exists(os.path.join(FIG, "digest.json")) else {"units": []}
     scores = {u["id"]: u.get("overall") for u in digest.get("units", [])}
@@ -186,6 +204,7 @@ figcaption{font-size:.95rem;color:var(--ink-2);max-width:72ch}
 .reading{display:grid;gap:6px;margin:0;padding:0;list-style:none;counter-reset:step}
 .reading li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;max-width:66ch}
 .reading li::before{counter-increment:step;content:counter(step);font-family:var(--mono);font-size:.8rem;color:var(--plan-ink);background:var(--plan);border-radius:999px;width:24px;height:24px;display:grid;place-items:center;margin-top:3px}
+.concepts{display:grid;gap:28px}.concept h4{font-family:var(--display);font-size:1.1rem;margin-bottom:8px}
 .labs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
 .lab{display:grid;gap:6px;padding:14px 16px;border:1px solid var(--rule);border-radius:10px;background:var(--soft)}
 .lab .id{font-family:var(--mono);font-size:.74rem;color:var(--ink-2)}
@@ -225,8 +244,10 @@ footer{max-width:1120px;margin:64px auto 0;padding-top:16px;border-top:1px solid
         labs = "".join(
             f'<article class="lab"><span class="chip {tier}" title="{html.escape(TIER[tier][1])}">{TIER[tier][0]}</span><h4>{html.escape(name)}</h4><p>{html.escape(desc)}</p><span class="id">{lab_id}</span></article>'
             for lab_id, tier, name, desc in m["labs"])
+        concepts = concept_block(m["id"], prefix)
         parts.append(f'''<section class="module" id="{m["id"]}" aria-labelledby="{m["id"]}-h">
 <div class="module-head"><p class="eyebrow">Module {m["n"]} of 6</p><h2 id="{m["id"]}-h">{html.escape(m["name"])}</h2><p class="tag">{html.escape(m["tag"])}</p><p>{html.escape(m["lede"])}</p></div>
+{concepts}
 <div class="two"><div><h3>What you will be able to do</h3><ul class="plain">{"".join(f"<li>{html.escape(o)}</li>" for o in m["outcomes"])}</ul></div>
 <div class="why"><h3>Why it matters in a health plan</h3><p>{html.escape(m["why"])}</p></div></div>
 <figure><h3>The capstone, in one picture</h3><div class="sheet">{figure(m["fig"], prefix, spec["title"], m["reading"])}</div><figcaption>{html.escape(spec["title"])}. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
