@@ -2,6 +2,8 @@
 
 Figures for **Agentic AI with Langflow** use FigTree addressable SVG programs embedded in `.sheet` wrappers on the course page.
 
+**Quality bar:** Pursuit course figures (`examples/figtree/langflow/pursuit/module-01/figures/`). See [PURSUIT-VISUAL-BAR.md](../../../docs/course/agentic-ai-langflow/PURSUIT-VISUAL-BAR.md). Lab SVGs from `build_figures.py` are topology/score harnesses—not the learner-facing target.
+
 ## Typography and shell
 
 - In-figure font: **IBM Plex Sans** (matches `data-figtree` output).

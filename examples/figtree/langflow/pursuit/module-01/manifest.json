@@ -1,0 +1,49 @@
+{
+  "module": "m1",
+  "title": "Pursuit Module 1 visual bar",
+  "description": "Canonical course figures (rich panels, inline examples). FigTree adversarial work targets this tier, not compact topology-only SVGs.",
+  "figures": [
+    {
+      "file": "01-six-module-journey.svg",
+      "scope": "course-hero",
+      "title": "The six-module journey",
+      "course_id": null
+    },
+    {
+      "file": "02-script-or-agent.svg",
+      "scope": "module-01",
+      "course_id": "m1a",
+      "h4": "Script or agent?"
+    },
+    {
+      "file": "03-four-parts-real-contents.svg",
+      "scope": "module-01",
+      "course_id": "m1b",
+      "h4": "The four parts, with real contents"
+    },
+    {
+      "file": "04-where-the-key-lives.svg",
+      "scope": "module-01",
+      "course_id": "m1c",
+      "h4": "Where the key lives"
+    },
+    {
+      "file": "05-one-question-four-beats.svg",
+      "scope": "module-01",
+      "course_id": "m1d",
+      "h4": "One question, four beats"
+    },
+    {
+      "file": "06-what-a-good-answer-looks-like.svg",
+      "scope": "module-01",
+      "course_id": "m1e",
+      "h4": "What a good answer looks like"
+    },
+    {
+      "file": "07-capstone-member-benefits-faq.svg",
+      "scope": "module-01",
+      "course_id": "m1-capstone",
+      "h4": "The capstone, in one picture"
+    }
+  ]
+}
