@@ -197,7 +197,7 @@ class PathEl:
             f'stroke="{self.stroke}" stroke-width="{_num(self.stroke_width)}" '
             f'data-flow="{self.flow_type}"'
         )
-        if self.flow_type in ("control", "conditional"):
+        if self.flow_type in ("control", "conditional", "feedback"):
             attrs += f' stroke-dasharray="{DASH}"'
         if self.marker:
             attrs += f' marker-end="url(#{MARKER_ID})"'

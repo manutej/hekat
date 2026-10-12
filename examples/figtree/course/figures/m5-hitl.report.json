@@ -1,0 +1,1818 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "spec mode: 1 prose mention(s) not drawn: Run it",
+      "code_anchor": "content_plan.components",
+      "fix_instruction": "declare it under Components to draw it",
+      "round_introduced": 0
+    },
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Draft Packet",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Draft Packet"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Draft Packet"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 232,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Human Input",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Human Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 416,
+          "y": 48
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n5",
+        "description": "Submit Appeal",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Submit Appeal"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n5",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Submit Appeal, Chat Output",
+        "canvas": {
+          "w": 392,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 288,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 288,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n5",
+            "description": "Submit Appeal",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Submit Appeal"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Submit Appeal"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n5",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 392,
+          "h": 112
+        },
+        "residuals": [],
+        "components": [
+          "Submit Appeal",
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 48,
+          "y": 160
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Module 5 capstone: A specialist approves the appeal",
+        "canvas": {
+          "w": 624,
+          "h": 304
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 48,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 120,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 120,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 232,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 376,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 304,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 304,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Draft Packet"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 416,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 576,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 496,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Human Input"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 496,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Human Input"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 80,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 152,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 152,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Submit Appeal"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 264,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 408,
+            "rel_y": 216,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 336,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 336,
+            "rel_y": 240,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Draft Packet",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Draft Packet"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Draft Packet"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Draft Packet"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Draft Packet"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Draft Packet"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 232,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Human Input",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Human Input"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Human Input"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Human Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 416,
+              "y": 48
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Submit Appeal, Chat Output",
+            "canvas": {
+              "w": 392,
+              "h": 112
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Submit Appeal"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 360,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 288,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 288,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n5",
+                "description": "Submit Appeal",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Submit Appeal"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Submit Appeal"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Submit Appeal"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Submit Appeal"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Submit Appeal"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n5",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 392,
+              "h": 112
+            },
+            "residuals": [],
+            "components": [
+              "Submit Appeal",
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 48,
+              "y": 160
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 624,
+          "h": 304
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "spec mode: 1 prose mention(s) not drawn: Run it",
+            "code_anchor": "content_plan.components",
+            "fix_instruction": "declare it under Components to draw it",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Chat Input",
+          "Draft Packet",
+          "Human Input",
+          "Submit Appeal",
+          "Chat Output"
+        ],
+        "layout": "rows",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "spec mode: 1 prose mention(s) not drawn: Run it",
+            "code_anchor": "content_plan.components",
+            "fix_instruction": "declare it under Components to draw it",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n5->n6": true,
+      "n5->n7": true,
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Chat Input",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Module 5 capstone: A specialist approves the appeal",
+    "components": [
+      {
+        "name": "Chat Input",
+        "evidence_span": "Chat Input",
+        "kind": "terminal",
+        "icon": "user"
+      },
+      {
+        "name": "Draft Packet",
+        "evidence_span": "Draft Packet",
+        "kind": "block",
+        "icon": "bolt"
+      },
+      {
+        "name": "Human Input",
+        "evidence_span": "Human Input",
+        "kind": "decision",
+        "icon": "check"
+      },
+      {
+        "name": "Submit Appeal",
+        "evidence_span": "Submit Appeal",
+        "kind": "block",
+        "icon": "render"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "text"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Chat Input",
+        "to": "Draft Packet",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Draft Packet \u2192 Human Input"
+      },
+      {
+        "from": "Draft Packet",
+        "to": "Human Input",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Draft Packet \u2192 Human Input"
+      },
+      {
+        "from": "Human Input",
+        "to": "Submit Appeal",
+        "type": "control",
+        "evidence_span": "Human Input \u2192 Submit Appeal"
+      },
+      {
+        "from": "Human Input",
+        "to": "Draft Packet",
+        "type": "feedback",
+        "evidence_span": "Human Input \u2192 Draft Packet"
+      },
+      {
+        "from": "Submit Appeal",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Submit Appeal \u2192 Chat Output"
+      },
+      {
+        "from": "Human Input",
+        "to": "Chat Output",
+        "type": "control",
+        "evidence_span": "Human Input \u2192 Chat Output"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 7,
+  "unit": {
+    "id": "m5-hitl",
+    "source": "examples/figtree/course/specs/m5-hitl.md",
+    "title": "Module 5 capstone: A specialist approves the appeal",
+    "span": [
+      1,
+      32
+    ],
+    "chars": 1583,
+    "est_components": 5,
+    "est_flows": 6
+  }
+}

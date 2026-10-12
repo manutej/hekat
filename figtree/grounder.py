@@ -158,6 +158,8 @@ class RuleBasedGrounder:
                     if a not in inputs:
                         inputs.append(a)
 
+        # declared component names (spec format) protect names containing delimiters ("Tools and MCP")
+        self._declared = sorted({m.group(1).strip() for m in _COMPONENT_HINT.finditer(text)}, key=len, reverse=True)
         # 3. arrow expressions -> components + flows
         raw_flows: List[Tuple[str, str, str, str]] = []
         for line in text.splitlines():
@@ -269,8 +271,7 @@ class RuleBasedGrounder:
         return GrounderOutput(plan, GlobalStyle(), residuals, stripped)
 
     # -- helpers -------------------------------------------------------------
-    @staticmethod
-    def _arrow_expression(line: str) -> Optional[str]:
+    def _arrow_expression(self, line: str) -> Optional[str]:
         """Return the verbatim ``A → B → C`` expression contained in ``line`` (or None).
 
         The first segment is the trailing noun phrase before the first arrow (after the last
@@ -300,6 +301,14 @@ class RuleBasedGrounder:
             head_seg = " ".join(run) if run else " ".join(words[-2:])
         m = _TAIL_DELIMS.search(tail)
         tail_seg = tail[: m.start()].strip() if m else tail.strip()
+        for name in getattr(self, "_declared", ()):  # a declared name wins over the delimiter rule
+            if tail.lstrip().startswith(name):
+                tail_seg = name
+                break
+        for name in getattr(self, "_declared", ()):
+            if head.rstrip().endswith(name):
+                head_seg = name
+                break
         if len(tail_seg.split()) > 5:
             tail_seg = " ".join(tail_seg.split()[:3])
         if re.search(r"(?<![-\w])(?:if|or|else|when|unless|otherwise)(?![-\w])", head_seg):  # lowercase prose only: "If-Else" is a name

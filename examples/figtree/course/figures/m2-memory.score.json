@@ -1,0 +1,48 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 9.0
+  },
+  "overall": 9.86,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 592,
+        "height": 249
+      }
+    }
+  ],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.603,
+    "aspect": 2.06,
+    "mean_detour": 1.0,
+    "crossings": 0,
+    "forward_ratio": 0.6,
+    "palette_size": 1
+  },
+  "unit": "m2-memory",
+  "title": "Module 2 capstone: Remember the plan type",
+  "source": "examples/figtree/course/specs/m2-memory.md",
+  "svg": "/home/user/hekat/examples/figtree/course/figures/m2-memory.svg",
+  "report": "/home/user/hekat/examples/figtree/course/figures/m2-memory.report.json",
+  "style": "teaching",
+  "components": 5,
+  "flows": 5,
+  "faithfulness_failures": []
+}

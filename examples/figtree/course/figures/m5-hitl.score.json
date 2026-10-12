@@ -1,0 +1,71 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 7.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 7.0,
+    "compactness": 9.0
+  },
+  "overall": 9.0,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 624,
+        "height": 265
+      }
+    },
+    {
+      "check_id": "flow.reading_order",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "visual_description": "most arrows run right-to-left or bottom-to-top",
+      "code_anchor": "n5.arrow0",
+      "fix_instruction": "re-order blocks so the main flow reads left-to-right / top-to-bottom",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "check_id": "flow.semantic_direction",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "visual_description": "block n4.block ('Human Input') reads as a source but only receives data",
+      "code_anchor": "n4.block",
+      "fix_instruction": "check the arrow direction against the method (judge request)",
+      "penalty": 2.0,
+      "auto_edit": null
+    }
+  ],
+  "tags": [
+    "veto:chaotic_routing"
+  ],
+  "metrics": {
+    "fill_ratio": 0.622,
+    "aspect": 2.05,
+    "mean_detour": 1.09,
+    "crossings": 0,
+    "forward_ratio": 0.5,
+    "palette_size": 1,
+    "vetoes": 1
+  },
+  "unit": "m5-hitl",
+  "title": "Module 5 capstone: A specialist approves the appeal",
+  "source": "examples/figtree/course/specs/m5-hitl.md",
+  "svg": "/home/user/hekat/examples/figtree/course/figures/m5-hitl.svg",
+  "report": "/home/user/hekat/examples/figtree/course/figures/m5-hitl.report.json",
+  "style": "teaching",
+  "components": 5,
+  "flows": 6,
+  "faithfulness_failures": []
+}

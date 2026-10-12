@@ -1,0 +1,58 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 10.0,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 10.0,
+    "compactness": 8.0
+  },
+  "overall": 9.71,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "top margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "move the content towards the edge and shrink the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 944,
+        "height": 217
+      }
+    }
+  ],
+  "tags": [],
+  "metrics": {
+    "fill_ratio": 0.44,
+    "aspect": 3.69,
+    "mean_detour": 1.01,
+    "crossings": 0,
+    "forward_ratio": 1.0,
+    "palette_size": 1
+  },
+  "unit": "m1-faq",
+  "title": "Module 1 capstone: Member Benefits FAQ",
+  "source": "examples/figtree/course/specs/m1-faq.md",
+  "svg": "/home/user/hekat/examples/figtree/course/figures/m1-faq.svg",
+  "report": "/home/user/hekat/examples/figtree/course/figures/m1-faq.report.json",
+  "style": "teaching",
+  "components": 5,
+  "flows": 4,
+  "faithfulness_failures": []
+}

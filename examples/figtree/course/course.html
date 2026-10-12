@@ -1,0 +1,893 @@
+<title>Agentic AI with Langflow</title>
+<meta name="description" content="A course companion for a no-code class on agentic AI: six modules, each with a plain-language figure, its labs and what it means for a health plan.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a quiet rail of six modules on the left, one reading column on the right; figures on white sheets. */
+:root{
+  --paper:#F6F8FA; --ink:#1B2733; --ink-2:#4A5A6A; --rule:#D8DFE6; --sheet:#FFFFFF; --sheet-edge:#DCE3EA;
+  --plan:#2B6CB0; --plan-ink:#FFFFFF; --gate:#2F8F6B; --decide:#B9791F; --soft:#E9EFF5;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#111820;--ink:#E7EDF3;--ink-2:#A9B6C3;--rule:#2A3542;--sheet:#FFFFFF;--sheet-edge:#2A3542;--plan:#7FB3E6;--plan-ink:#0D1B2A;--gate:#6CC29B;--decide:#E0A849;--soft:#1A2430;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#111820;--ink:#E7EDF3;--ink-2:#A9B6C3;--rule:#2A3542;--sheet:#FFFFFF;--sheet-edge:#2A3542;--plan:#7FB3E6;--plan-ink:#0D1B2A;--gate:#6CC29B;--decide:#E0A849;--soft:#1A2430;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-block:0 64px;padding-inline:clamp(16px,4vw,48px)}
+a{color:var(--plan)}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--decide);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--plan);color:var(--plan-ink);padding:8px 12px;border-radius:6px}.skip:focus{left:16px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3vw,2.3rem)}h3{font-size:1.25rem}h4{font-size:1.05rem}
+p{max-width:66ch;margin:0}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+header.hero{padding-block:48px 24px;display:grid;gap:18px;max-width:1120px;margin-inline:auto}
+.hero .lede{font-size:1.2rem;max-width:62ch}
+.hero-figure{margin:12px 0 0}
+.sheet{background:var(--sheet);border:1px solid var(--sheet-edge);border-radius:10px;padding:clamp(10px,2vw,20px);overflow-x:auto}
+.sheet svg{display:block;max-width:100%;height:auto;margin-inline:auto}
+.shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;max-width:1120px;margin-inline:auto}
+nav.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);align-self:start;display:grid;gap:4px;padding-top:8px}
+nav.rail a{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:baseline;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink)}
+nav.rail a:hover{background:var(--soft)}nav.rail a .n{font-family:var(--mono);font-size:.8rem;color:var(--ink-2)}
+nav.rail a small{display:block;color:var(--ink-2);font-size:.82rem;line-height:1.3}
+main{min-width:0;display:grid;gap:72px}
+section.module{display:grid;gap:22px;padding-top:24px;border-top:1px solid var(--rule)}
+.module-head{display:grid;gap:8px}.module-head .tag{font-size:1.05rem;color:var(--plan);font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 32px;align-items:start}
+ul.plain{margin:0;padding-left:1.2em;max-width:62ch}ul.plain li{margin:4px 0}
+figure{margin:0;display:grid;gap:10px}
+figcaption{font-size:.95rem;color:var(--ink-2);max-width:72ch}
+.reading{display:grid;gap:6px;margin:0;padding:0;list-style:none;counter-reset:step}
+.reading li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;max-width:66ch}
+.reading li::before{counter-increment:step;content:counter(step);font-family:var(--mono);font-size:.8rem;color:var(--plan-ink);background:var(--plan);border-radius:999px;width:24px;height:24px;display:grid;place-items:center;margin-top:3px}
+.labs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.lab{display:grid;gap:6px;padding:14px 16px;border:1px solid var(--rule);border-radius:10px;background:var(--soft)}
+.lab .id{font-family:var(--mono);font-size:.74rem;color:var(--ink-2)}
+.chip{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid currentColor;justify-self:start}
+.chip.core{color:var(--plan)}.chip.stretch{color:var(--gate)}.chip.instructor{color:var(--decide)}
+.why{border-left:4px solid var(--gate);padding:4px 0 4px 16px;max-width:66ch}
+.words{display:grid;gap:8px;margin:0}
+.words div{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:12px;max-width:70ch}.words dt{font-weight:600}.words dd{margin:0;color:var(--ink-2)}
+details{border:1px solid var(--rule);border-radius:10px;padding:10px 16px}summary{cursor:pointer;font-weight:600}
+details ol{margin:8px 0 4px;padding-left:1.3em}
+.legend{display:flex;flex-wrap:wrap;gap:12px 22px;font-size:.92rem;color:var(--ink-2);align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:8px}.legend i{display:inline-block;width:34px;height:0;border-top:2px solid var(--ink)}.legend i.dash{border-top-style:dashed}
+.legend b{display:inline-block;width:22px;height:14px;border:1.5px solid var(--ink);border-radius:4px;background:#C9DCF0}.legend b.pill{border-radius:999px;background:#E6E8EC}.legend b.dec{transform:rotate(45deg) scale(.75);border-radius:2px;background:#F3C9A4}.legend b.store{border-radius:40%/60%;background:#F6EFD2}
+.glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 28px}
+footer{max-width:1120px;margin:64px auto 0;padding-top:16px;border-top:1px solid var(--rule);font-size:.92rem;color:var(--ink-2)}
+@media (max-width:860px){.shell{grid-template-columns:1fr}nav.rail{position:static;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<a class="skip" href="#main">Skip to the modules</a>
+<header class="hero"><p class="eyebrow">Course companion · six modules · 30 labs</p><h1>Agentic AI with Langflow</h1><p class="lede">A no-code class for people who work in health plans. You build six agents without writing code: a benefits FAQ, one that remembers the member, one that looks up claims, an intake that asks back, a drafting agent a specialist must approve, and an audit of everything the agents kept.</p><figure class="hero-figure"><div class="sheet"><svg role="img" aria-labelledby="j-title j-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 288" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="j-title">The six-module journey</title><desc id="j-desc">Build and publish a member-benefits FAQ agent. Give it memory so it remembers the plan type across turns. Connect read-only tools for claim and prior-authorisation status. Build an intake flow that asks for what is missing. Put a specialist&#x27;s approval in front of the appeal submission. Audit prompts, logs, tools and exports.</desc>
+  <title hidden>The six-module journey</title>
+  <rect id="j-background" x="0" y="0" width="728" height="288" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="j-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="j-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="j-icon-decompose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="4.5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19.5" cy="19" r="2"/><line x1="12" y1="7" x2="12" y2="17"/><path d="M4.5 17v-4a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v4"/></symbol>
+  <symbol id="j-icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="j-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="j-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="j-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="j-n1" data-bbox="0 0 728 288">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Introduction" -->
+    <!-- PORT:right x=216 y=56 id=n2.right type=output component="Introduction" -->
+    <!-- PORT:top x=136 y=32 id=n2.top type=input component="Introduction" -->
+    <!-- PORT:bottom x=136 y=80 id=n2.bottom type=output component="Introduction" -->
+    <!-- PORT:left x=256 y=56 id=n3.left type=input component="Components" -->
+    <!-- PORT:right x=384 y=56 id=n3.right type=output component="Components" -->
+    <!-- PORT:top x=320 y=32 id=n3.top type=input component="Components" -->
+    <!-- PORT:bottom x=320 y=80 id=n3.bottom type=output component="Components" -->
+    <!-- PORT:left x=424 y=56 id=n4.left type=input component="Tools and MCP" -->
+    <!-- PORT:right x=568 y=56 id=n4.right type=output component="Tools and MCP" -->
+    <!-- PORT:top x=496 y=32 id=n4.top type=input component="Tools and MCP" -->
+    <!-- PORT:bottom x=496 y=80 id=n4.bottom type=output component="Tools and MCP" -->
+    <!-- PORT:left x=88 y=200 id=n6.left type=input component="Applications" -->
+    <!-- PORT:right x=232 y=200 id=n6.right type=output component="Applications" -->
+    <!-- PORT:top x=160 y=176 id=n6.top type=input component="Applications" -->
+    <!-- PORT:bottom x=160 y=224 id=n6.bottom type=output component="Applications" -->
+    <!-- PORT:left x=272 y=200 id=n7.left type=input component="Collaboration" -->
+    <!-- PORT:right x=416 y=200 id=n7.right type=output component="Collaboration" -->
+    <!-- PORT:top x=344 y=176 id=n7.top type=input component="Collaboration" -->
+    <!-- PORT:bottom x=344 y=224 id=n7.bottom type=output component="Collaboration" -->
+    <!-- PORT:left x=456 y=200 id=n8.left type=input component="Ethics and Security" -->
+    <!-- PORT:right x=664 y=200 id=n8.right type=output component="Ethics and Security" -->
+    <!-- PORT:top x=560 y=176 id=n8.top type=input component="Ethics and Security" -->
+    <!-- PORT:bottom x=560 y=224 id=n8.bottom type=output component="Ethics and Security" -->
+    <g id="j-n2" transform="translate(56,32)" data-bbox="56 32 160 48" data-label="Introduction">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Introduction" -->
+      <!-- PORT:right x=160 y=24 id=n2.right type=output component="Introduction" -->
+      <!-- PORT:top x=80 y=0 id=n2.top type=input component="Introduction" -->
+      <!-- PORT:bottom x=80 y=48 id=n2.bottom type=output component="Introduction" -->
+      <path id="j-n2.block" d="M24,0 H136 A24,24 0 0 1 136,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 160 48" data-component="Introduction"/>
+      <use id="j-n2.icon" href="#j-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="j-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Introduction</text>
+    </g>
+    <g id="j-n3" transform="translate(256,32)" data-bbox="256 32 128 48" data-label="Components">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Components" -->
+      <!-- PORT:right x=128 y=24 id=n3.right type=output component="Components" -->
+      <!-- PORT:top x=64 y=0 id=n3.top type=input component="Components" -->
+      <!-- PORT:bottom x=64 y=48 id=n3.bottom type=output component="Components" -->
+      <rect id="j-n3.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Components"/>
+      <use id="j-n3.icon" href="#j-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="j-n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Components</text>
+    </g>
+    <g id="j-n4" transform="translate(424,32)" data-bbox="424 32 144 48" data-label="Tools and MCP">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Tools and MCP" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Tools and MCP" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Tools and MCP" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Tools and MCP" -->
+      <rect id="j-n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Tools and MCP"/>
+      <use id="j-n4.icon" href="#j-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="j-n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Tools and MCP</text>
+    </g>
+    <g id="j-n5" transform="translate(56,144)" data-bbox="56 144 640 112" data-label="Applications, Collaboration, Ethics and Security">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Applications" -->
+      <!-- PORT:right x=176 y=56 id=n6.right type=output component="Applications" -->
+      <!-- PORT:top x=104 y=32 id=n6.top type=input component="Applications" -->
+      <!-- PORT:bottom x=104 y=80 id=n6.bottom type=output component="Applications" -->
+      <!-- PORT:left x=216 y=56 id=n7.left type=input component="Collaboration" -->
+      <!-- PORT:right x=360 y=56 id=n7.right type=output component="Collaboration" -->
+      <!-- PORT:top x=288 y=32 id=n7.top type=input component="Collaboration" -->
+      <!-- PORT:bottom x=288 y=80 id=n7.bottom type=output component="Collaboration" -->
+      <!-- PORT:left x=400 y=56 id=n8.left type=input component="Ethics and Security" -->
+      <!-- PORT:right x=608 y=56 id=n8.right type=output component="Ethics and Security" -->
+      <!-- PORT:top x=504 y=32 id=n8.top type=input component="Ethics and Security" -->
+      <!-- PORT:bottom x=504 y=80 id=n8.bottom type=output component="Ethics and Security" -->
+      <g id="j-n6" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Applications">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Applications" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Applications" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Applications" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Applications" -->
+        <rect id="j-n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Applications"/>
+        <use id="j-n6.icon" href="#j-icon-decompose" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="j-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Applications</text>
+      </g>
+      <g id="j-n7" transform="translate(216,32)" data-bbox="216 32 144 48" data-label="Collaboration">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Collaboration" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Collaboration" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Collaboration" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Collaboration" -->
+        <rect id="j-n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Collaboration"/>
+        <use id="j-n7.icon" href="#j-icon-check" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="j-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Collaboration</text>
+      </g>
+      <g id="j-n8" transform="translate(400,32)" data-bbox="400 32 208 48" data-label="Ethics and Security">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Ethics and Security" -->
+        <!-- PORT:right x=208 y=24 id=n8.right type=output component="Ethics and Security" -->
+        <!-- PORT:top x=104 y=0 id=n8.top type=input component="Ethics and Security" -->
+        <!-- PORT:bottom x=104 y=48 id=n8.bottom type=output component="Ethics and Security" -->
+        <path id="j-n8.block" d="M24,0 H184 A24,24 0 0 1 184,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 208 48" data-component="Ethics and Security"/>
+        <use id="j-n8.icon" href="#j-icon-eye" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="j-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="172">Ethics and Security</text>
+      </g>
+      <path id="j-n5.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#j-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+      <path id="j-n5.arrow1" d="M360,56 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#j-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="j-n1.arrow0" d="M216,56 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#j-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="j-n1.arrow1" d="M384,56 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#j-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="j-n1.arrow2" d="M568,56 H576 V112 H32 V200 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#j-figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+  </g>
+</svg></figure><div class="legend"><span><b class="pill"></b> start or end of a conversation</span><span><b></b> a step the agent runs</span><span><b class="dec"></b> a decision</span><span><b class="store"></b> something stored</span><span><i></i> data moves</span><span><i class="dash"></i> a call or a decision branch</span></div><p class="muted">How to read every figure on this page: arrows point the way a message travels, left to right; dotted arrows are calls the agent decides to make or a branch of a decision; a dotted arrow pointing backwards is a loop.</p></header>
+<div class="shell"><nav class="rail" aria-label="Modules"><a href="#m1"><span class="n">1</span><span>Introduction to Agentic AI<small>Your first published agent</small></a><a href="#m2"><span class="n">2</span><span>Components of an Agentic AI<small>Memory, variables and prior cases</small></a><a href="#m3"><span class="n">3</span><span>Tool Use and MCP Servers<small>Looking things up, read only</small></a><a href="#m4"><span class="n">4</span><span>Building Agentic AI Applications<small>Intake that asks for what is missing</small></a><a href="#m5"><span class="n">5</span><span>Designing Collaborative Agents<small>A person approves before anything leaves</small></a><a href="#m6"><span class="n">6</span><span>Ethics and Security<small>Audit what the agent keeps and may do</small></a><a href="#glossary"><span class="n">·</span><span>Words you will hear</span></a></nav><main id="main">
+<section class="module" id="m1" aria-labelledby="m1-h">
+<div class="module-head"><p class="eyebrow">Module 1 of 6</p><h2 id="m1-h">Introduction to Agentic AI</h2><p class="tag">Your first published agent</p><p>An agent is software that reads a request, decides what to do, and does it, rather than following one fixed script. You will build one that answers member questions about plan benefits, publish it, and chat with it from the class portal.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Tell an agent apart from a fixed automation, and name where each helps a health plan.</li><li>Stand up the lab and publish your first conversational agent.</li><li>Connect a model provider without ever putting a key in a browser.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>Members ask the same benefit questions every day. An agent that answers from approved plan language, and only from it, frees staff for the calls that need a person.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m1-title m1-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 944 256" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m1-title">Module 1 capstone: Member Benefits FAQ</title><desc id="m1-desc">The member&#x27;s question enters at Chat Input. The Prompt Template holds the instructions that set the agent&#x27;s tone and limits (a &#x27;system prompt&#x27;). If you add a Knowledge Base, passages from plan documents are placed into the prompt first. The Chat Model writes the answer and Chat Output shows it.</desc>
+  <title hidden>Module 1 capstone: Member Benefits FAQ</title>
+  <rect id="m1-background" x="0" y="0" width="944" height="256" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m1-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m1-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="m1-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="m1-icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="m1-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m1-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m1-n1" data-bbox="0 0 944 256">
+    <!-- PORT:left x=72 y=96 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=216 y=96 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=144 y=72 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=144 y=120 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=64 y=168 id=n5.left type=input component="Knowledge Base" -->
+    <!-- PORT:right x=224 y=168 id=n5.right type=output component="Knowledge Base" -->
+    <!-- PORT:top x=144 y=144 id=n5.top type=input component="Knowledge Base" -->
+    <!-- PORT:bottom x=144 y=192 id=n5.bottom type=output component="Knowledge Base" -->
+    <!-- PORT:left x=288 y=136 id=n6.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=464 y=136 id=n6.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=376 y=112 id=n6.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=376 y=160 id=n6.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=568 y=128 id=n7.left type=input component="Chat Model" -->
+    <!-- PORT:right x=696 y=128 id=n7.right type=output component="Chat Model" -->
+    <!-- PORT:top x=632 y=104 id=n7.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=632 y=152 id=n7.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=736 y=128 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=880 y=128 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=808 y=104 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=808 y=152 id=n8.bottom type=output component="Chat Output" -->
+    <g id="m1-n2" transform="translate(32,32)" data-bbox="32 32 464 192" data-label="Chat Input, Knowledge Base, Prompt Template">
+      <!-- PORT:left x=40 y=64 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=184 y=64 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=112 y=40 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=112 y=88 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=32 y=136 id=n5.left type=input component="Knowledge Base" -->
+      <!-- PORT:right x=192 y=136 id=n5.right type=output component="Knowledge Base" -->
+      <!-- PORT:top x=112 y=112 id=n5.top type=input component="Knowledge Base" -->
+      <!-- PORT:bottom x=112 y=160 id=n5.bottom type=output component="Knowledge Base" -->
+      <!-- PORT:left x=256 y=104 id=n6.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=432 y=104 id=n6.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=344 y=80 id=n6.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=344 y=128 id=n6.bottom type=output component="Prompt Template" -->
+      <g id="m1-n4" transform="translate(40,40)" data-bbox="40 40 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Input" -->
+        <path id="m1-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="m1-n4.icon" href="#m1-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="m1-n5" transform="translate(32,112)" data-bbox="32 112 160 48" data-label="Knowledge Base">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Knowledge Base" -->
+        <!-- PORT:right x=160 y=24 id=n5.right type=output component="Knowledge Base" -->
+        <!-- PORT:top x=80 y=0 id=n5.top type=input component="Knowledge Base" -->
+        <!-- PORT:bottom x=80 y=48 id=n5.bottom type=output component="Knowledge Base" -->
+        <path id="m1-n5.block" d="M0,8 A80,8 0 0 1 160,8 V40 A80,8 0 0 1 0,40 Z M0,8 A80,8 0 0 0 160,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 160 48" data-component="Knowledge Base"/>
+        <use id="m1-n5.icon" href="#m1-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="132">Knowledge Base</text>
+      </g>
+      <g id="m1-n6" transform="translate(256,80)" data-bbox="256 80 176 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=176 y=24 id=n6.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=88 y=0 id=n6.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=88 y=48 id=n6.bottom type=output component="Prompt Template" -->
+        <path id="m1-n6.block" d="M0,0 H168 L176,8 V48 H0 Z M168,0 V8 H176" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 176 48" data-component="Prompt Template"/>
+        <use id="m1-n6.icon" href="#m1-icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="m1-n2.arrow0" d="M112,40 V32 H344 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n4.top" data-to="n6.top"/>
+      <path id="m1-n2.arrow1" d="M192,136 H232 V104 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="m1-n3" transform="translate(536,72)" data-bbox="536 72 376 112" data-label="Chat Model, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Chat Model" -->
+      <!-- PORT:right x=160 y=56 id=n7.right type=output component="Chat Model" -->
+      <!-- PORT:top x=96 y=32 id=n7.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=96 y=80 id=n7.bottom type=output component="Chat Model" -->
+      <!-- PORT:left x=200 y=56 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=344 y=56 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=272 y=32 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=272 y=80 id=n8.bottom type=output component="Chat Output" -->
+      <g id="m1-n7" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Chat Model">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chat Model" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Chat Model" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Chat Model" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Chat Model" -->
+        <rect id="m1-n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model"/>
+        <use id="m1-n7.icon" href="#m1-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+      </g>
+      <g id="m1-n8" transform="translate(200,32)" data-bbox="200 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="m1-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m1-n8.icon" href="#m1-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m1-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="m1-n3.arrow0" d="M160,56 H200" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="m1-n1.arrow0" d="M464,136 H512 V128 H568" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m1-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+  </g>
+</svg></div><figcaption>Module 1 capstone: Member Benefits FAQ. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>The member&#x27;s question enters at Chat Input.</span></li><li><span>The Prompt Template holds the instructions that set the agent&#x27;s tone and limits (a &#x27;system prompt&#x27;).</span></li><li><span>If you add a Knowledge Base, passages from plan documents are placed into the prompt first.</span></li><li><span>The Chat Model writes the answer and Chat Output shows it.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add Chat Input and Chat Output.</span></li><li><span>Write the system prompt in a Prompt Template.</span></li><li><span>Connect an OpenRouter chat model; keep the API key on the server, never in a browser.</span></li><li><span>Optionally add a knowledge base of plan documents.</span></li><li><span>Publish, then test PPO versus HMO questions across several turns.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Member Benefits FAQ</h4><p>The capstone above: a FAQ agent that keeps PPO and HMO facts straight across several turns.</p><span class="id">m1-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Plan glossary bot</h4><p>Definitions only. A tighter system prompt that refuses medical or legal advice.</p><span class="id">m1-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Welcome intake</h4><p>The agent captures a member id into a variable and hands off politely.</p><span class="id">m1-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>After-hours auto-reply</h4><p>Tone and boundaries: when to answer, when to escalate to a person.</p><span class="id">m1-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>PPO versus HMO comparison</h4><p>The same facts returned as a structured comparison rather than prose.</p><span class="id">m1-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>System prompt</dt><dd>the standing instructions an agent follows before it reads any question</dd></div><div><dt>Publish</dt><dd>make the flow reachable from outside the editor, so the portal can call it</dd></div><div><dt>Knowledge base</dt><dd>documents the agent may look things up in</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Langflow is up (see SETUP-ONCE).</li><li>Build the capstone and export it as m1-l01-member-benefits-faq.json.</li><li>Capture the screenshots named langflow-* for the lab guide.</li><li>Run the light tests for the schema and the FAQ fixture.</li></ol></details>
+</section>
+<section class="module" id="m2" aria-labelledby="m2-h">
+<div class="module-head"><p class="eyebrow">Module 2 of 6</p><h2 id="m2-h">Components of an Agentic AI</h2><p class="tag">Memory, variables and prior cases</p><p>A conversation is more than one question. This module gives the agent memory: the member says &#x27;I have an HDHP&#x27; once, and a deductible question two turns later is answered for an HDHP without asking again.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Add memory to a model and control how much of the conversation it keeps.</li><li>Keep each student&#x27;s conversation separate with a session id.</li><li>Use a knowledge base as memory of prior cases, and map a turn onto Observe, Orient, Decide, Act.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>A member should never have to repeat their plan type. Memory scoped to a session gives continuity without mixing people&#x27;s data.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m2-title m2-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 288" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m2-title">Module 2 capstone: Remember the plan type</title><desc id="m2-desc">Each turn arrives at Chat Input and goes through the Prompt Template to the Chat Model. Message History holds the stored turns for this session, the last ten by default, and the model sees them. Every reply is stored too (the dotted arrow back), so the next turn can use it. A new session id starts a fresh history; that is how students never see each other&#x27;s chats.</desc>
+  <title hidden>Module 2 capstone: Remember the plan type</title>
+  <rect id="m2-background" x="0" y="0" width="592" height="288" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m2-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m2-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="m2-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="m2-icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="m2-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m2-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m2-n1" data-bbox="0 0 592 288">
+    <!-- PORT:left x=32 y=56 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=176 y=56 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=104 y=32 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=104 y=80 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=216 y=56 id=n3.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=392 y=56 id=n3.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=304 y=32 id=n3.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=304 y=80 id=n3.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=432 y=56 id=n4.left type=input component="Chat Model" -->
+    <!-- PORT:right x=560 y=56 id=n4.right type=output component="Chat Model" -->
+    <!-- PORT:top x=496 y=32 id=n4.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=496 y=80 id=n4.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=64 y=200 id=n6.left type=input component="Chat Output" -->
+    <!-- PORT:right x=208 y=200 id=n6.right type=output component="Chat Output" -->
+    <!-- PORT:top x=136 y=176 id=n6.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=136 y=224 id=n6.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=248 y=200 id=n7.left type=input component="Message History" -->
+    <!-- PORT:right x=424 y=200 id=n7.right type=output component="Message History" -->
+    <!-- PORT:top x=336 y=176 id=n7.top type=input component="Message History" -->
+    <!-- PORT:bottom x=336 y=224 id=n7.bottom type=output component="Message History" -->
+    <g id="m2-n2" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="m2-n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="m2-n2.icon" href="#m2-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m2-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="m2-n3" transform="translate(216,32)" data-bbox="216 32 176 48" data-label="Prompt Template">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=176 y=24 id=n3.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=88 y=0 id=n3.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=88 y=48 id=n3.bottom type=output component="Prompt Template" -->
+      <path id="m2-n3.block" d="M0,0 H168 L176,8 V48 H0 Z M168,0 V8 H176" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 176 48" data-component="Prompt Template"/>
+      <use id="m2-n3.icon" href="#m2-icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m2-n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+    </g>
+    <g id="m2-n4" transform="translate(432,32)" data-bbox="432 32 128 48" data-label="Chat Model">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Model" -->
+      <!-- PORT:right x=128 y=24 id=n4.right type=output component="Chat Model" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=64 y=48 id=n4.bottom type=output component="Chat Model" -->
+      <rect id="m2-n4.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model"/>
+      <use id="m2-n4.icon" href="#m2-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m2-n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+    </g>
+    <g id="m2-n5" transform="translate(32,144)" data-bbox="32 144 424 112" data-label="Chat Output, Message History">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Chat Output" -->
+      <!-- PORT:right x=176 y=56 id=n6.right type=output component="Chat Output" -->
+      <!-- PORT:top x=104 y=32 id=n6.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=104 y=80 id=n6.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=216 y=56 id=n7.left type=input component="Message History" -->
+      <!-- PORT:right x=392 y=56 id=n7.right type=output component="Message History" -->
+      <!-- PORT:top x=304 y=32 id=n7.top type=input component="Message History" -->
+      <!-- PORT:bottom x=304 y=80 id=n7.bottom type=output component="Message History" -->
+      <g id="m2-n6" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Output" -->
+        <path id="m2-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m2-n6.icon" href="#m2-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m2-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <g id="m2-n7" transform="translate(216,32)" data-bbox="216 32 176 48" data-label="Message History">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Message History" -->
+        <!-- PORT:right x=176 y=24 id=n7.right type=output component="Message History" -->
+        <!-- PORT:top x=88 y=0 id=n7.top type=input component="Message History" -->
+        <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Message History" -->
+        <path id="m2-n7.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Message History"/>
+        <use id="m2-n7.icon" href="#m2-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m2-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Message History</text>
+      </g>
+      <path id="m2-n5.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="feedback" stroke-dasharray="4 2" marker-end="url(#m2-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    </g>
+    <path id="m2-n1.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m2-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="m2-n1.arrow1" d="M392,56 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m2-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="m2-n1.arrow2" d="M496,80 V88 H136 V176" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m2-figtree-arrow)" data-from="n4.bottom" data-to="n6.top"/>
+    <path id="m2-n1.arrow3" d="M424,200 H464 V112 H496 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m2-figtree-arrow)" data-from="n7.right" data-to="n4.bottom"/>
+  </g>
+</svg></div><figcaption>Module 2 capstone: Remember the plan type. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>Each turn arrives at Chat Input and goes through the Prompt Template to the Chat Model.</span></li><li><span>Message History holds the stored turns for this session, the last ten by default, and the model sees them.</span></li><li><span>Every reply is stored too (the dotted arrow back), so the next turn can use it.</span></li><li><span>A new session id starts a fresh history; that is how students never see each other&#x27;s chats.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add a Message History component next to the Chat Model.</span></li><li><span>Keep a window of ten turns.</span></li><li><span>Give every student their own session id, so conversations never mix.</span></li><li><span>Ask &quot;I have an HDHP&quot;, then &quot;What is my deductible?&quot; and watch it remember.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Remember the plan type</h4><p>The capstone: HDHP in turn 1, deductible answered for an HDHP in turn 2.</p><span class="id">m2-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Memory window and reset</h4><p>Watch the window truncate old turns, then start over with a new session id.</p><span class="id">m2-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>A prior case as memory</h4><p>Retrieve an earlier denial case from a knowledge base: memory of events, not just turns.</p><span class="id">m2-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Deductible tier as a variable</h4><p>Pull a value out of the conversation and feed it into later prompts.</p><span class="id">m2-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>OODA on one turn</h4><p>A worksheet: which parts of the flow observe, orient, decide and act.</p><span class="id">m2-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>Session id</dt><dd>the label that keeps one person&#x27;s conversation together and apart from everyone else&#x27;s</dd></div><div><dt>Memory window</dt><dd>how many past turns the model is shown</dd></div><div><dt>OODA</dt><dd>Observe, Orient, Decide, Act: a way to read what an agent does on each turn</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Finish the Module 1 publish pattern first.</li><li>Export the capstone as m2-l01-plan-type-memory.json.</li><li>Demo two students with different session ids.</li><li>Run lab-view --extract on the capstone.</li></ol></details>
+</section>
+<section class="module" id="m3" aria-labelledby="m3-h">
+<div class="module-head"><p class="eyebrow">Module 3 of 6</p><h2 id="m3-h">Tool Use and MCP Servers</h2><p class="tag">Looking things up, read only</p><p>Now the agent can act in the world, carefully. It gets two tools that read claim and prior-authorisation status from a practice service. The agent chooses the tool from the question itself; nothing is ever paid or changed.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Tell observation tools (read) from action tools (write), and why the class ships only the first.</li><li>Give an agent HTTP tools and watch it pick the right one from plain language.</li><li>Understand MCP as the standard way to offer tools, and when you would use it instead of a direct request.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>Reading status is the safest useful act an agent can take. Read-only tools with clear descriptions are how a health plan starts, before any tool that changes a record.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m3-title m3-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1112 280" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m3-title">Module 3 capstone: Claims status, read only</title><desc id="m3-desc">Chat Input brings the question to the Agent. The Agent decides: a claim question calls Claims Lookup, a PA question calls Prior Auth Lookup (dotted arrows are calls). Both tools read from the Mock Claims API, a practice service with fixture members. The Agent writes the reply, quoting the status it read, at Chat Output.</desc>
+  <title hidden>Module 3 capstone: Claims status, read only</title>
+  <rect id="m3-background" x="0" y="0" width="1112" height="280" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m3-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m3-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="m3-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="m3-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="m3-icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="m3-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m3-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m3-n1" data-bbox="0 0 1112 280">
+    <!-- PORT:left x=64 y=152 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=208 y=152 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=136 y=128 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=136 y=176 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=248 y=152 id=n5.left type=input component="Agent" -->
+    <!-- PORT:right x=344 y=152 id=n5.right type=output component="Agent" -->
+    <!-- PORT:top x=296 y=128 id=n5.top type=input component="Agent" -->
+    <!-- PORT:bottom x=296 y=176 id=n5.bottom type=output component="Agent" -->
+    <!-- PORT:left x=384 y=152 id=n6.left type=input component="Chat Output" -->
+    <!-- PORT:right x=528 y=152 id=n6.right type=output component="Chat Output" -->
+    <!-- PORT:top x=456 y=128 id=n6.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=456 y=176 id=n6.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=648 y=120 id=n7.left type=input component="Claims Lookup" -->
+    <!-- PORT:right x=792 y=120 id=n7.right type=output component="Claims Lookup" -->
+    <!-- PORT:top x=720 y=96 id=n7.top type=input component="Claims Lookup" -->
+    <!-- PORT:bottom x=720 y=144 id=n7.bottom type=output component="Claims Lookup" -->
+    <!-- PORT:left x=632 y=192 id=n8.left type=input component="Prior Auth Lookup" -->
+    <!-- PORT:right x=808 y=192 id=n8.right type=output component="Prior Auth Lookup" -->
+    <!-- PORT:top x=720 y=168 id=n8.top type=input component="Prior Auth Lookup" -->
+    <!-- PORT:bottom x=720 y=216 id=n8.bottom type=output component="Prior Auth Lookup" -->
+    <!-- PORT:left x=872 y=160 id=n9.left type=input component="Mock Claims API" -->
+    <!-- PORT:right x=1048 y=160 id=n9.right type=output component="Mock Claims API" -->
+    <!-- PORT:top x=960 y=136 id=n9.top type=input component="Mock Claims API" -->
+    <!-- PORT:bottom x=960 y=184 id=n9.bottom type=output component="Mock Claims API" -->
+    <g id="m3-n2" transform="translate(32,96)" data-bbox="32 96 528 112" data-label="Chat Input, Agent, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=56 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=32 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=216 y=56 id=n5.left type=input component="Agent" -->
+      <!-- PORT:right x=312 y=56 id=n5.right type=output component="Agent" -->
+      <!-- PORT:top x=264 y=32 id=n5.top type=input component="Agent" -->
+      <!-- PORT:bottom x=264 y=80 id=n5.bottom type=output component="Agent" -->
+      <!-- PORT:left x=352 y=56 id=n6.left type=input component="Chat Output" -->
+      <!-- PORT:right x=496 y=56 id=n6.right type=output component="Chat Output" -->
+      <!-- PORT:top x=424 y=32 id=n6.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=424 y=80 id=n6.bottom type=output component="Chat Output" -->
+      <g id="m3-n4" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Input" -->
+        <path id="m3-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="m3-n4.icon" href="#m3-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="m3-n5" transform="translate(216,32)" data-bbox="216 32 96 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Agent" -->
+        <!-- PORT:right x=96 y=24 id=n5.right type=output component="Agent" -->
+        <!-- PORT:top x=48 y=0 id=n5.top type=input component="Agent" -->
+        <!-- PORT:bottom x=48 y=48 id=n5.bottom type=output component="Agent" -->
+        <rect id="m3-n5.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+        <use id="m3-n5.icon" href="#m3-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+      </g>
+      <g id="m3-n6" transform="translate(352,32)" data-bbox="352 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Output" -->
+        <path id="m3-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m3-n6.icon" href="#m3-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="m3-n2.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m3-figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+      <path id="m3-n2.arrow1" d="M312,56 H352" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m3-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="m3-n3" transform="translate(600,56)" data-bbox="600 56 480 192" data-label="Claims Lookup, Prior Auth Lookup, Mock Claims API">
+      <!-- PORT:left x=48 y=64 id=n7.left type=input component="Claims Lookup" -->
+      <!-- PORT:right x=192 y=64 id=n7.right type=output component="Claims Lookup" -->
+      <!-- PORT:top x=120 y=40 id=n7.top type=input component="Claims Lookup" -->
+      <!-- PORT:bottom x=120 y=88 id=n7.bottom type=output component="Claims Lookup" -->
+      <!-- PORT:left x=32 y=136 id=n8.left type=input component="Prior Auth Lookup" -->
+      <!-- PORT:right x=208 y=136 id=n8.right type=output component="Prior Auth Lookup" -->
+      <!-- PORT:top x=120 y=112 id=n8.top type=input component="Prior Auth Lookup" -->
+      <!-- PORT:bottom x=120 y=160 id=n8.bottom type=output component="Prior Auth Lookup" -->
+      <!-- PORT:left x=272 y=104 id=n9.left type=input component="Mock Claims API" -->
+      <!-- PORT:right x=448 y=104 id=n9.right type=output component="Mock Claims API" -->
+      <!-- PORT:top x=360 y=80 id=n9.top type=input component="Mock Claims API" -->
+      <!-- PORT:bottom x=360 y=128 id=n9.bottom type=output component="Mock Claims API" -->
+      <g id="m3-n7" transform="translate(48,40)" data-bbox="48 40 144 48" data-label="Claims Lookup">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Claims Lookup" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Claims Lookup" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Claims Lookup" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Claims Lookup" -->
+        <rect id="m3-n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Claims Lookup"/>
+        <use id="m3-n7.icon" href="#m3-icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Claims Lookup</text>
+      </g>
+      <g id="m3-n8" transform="translate(32,112)" data-bbox="32 112 176 48" data-label="Prior Auth Lookup">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Prior Auth Lookup" -->
+        <!-- PORT:right x=176 y=24 id=n8.right type=output component="Prior Auth Lookup" -->
+        <!-- PORT:top x=88 y=0 id=n8.top type=input component="Prior Auth Lookup" -->
+        <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="Prior Auth Lookup" -->
+        <rect id="m3-n8.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Prior Auth Lookup"/>
+        <use id="m3-n8.icon" href="#m3-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Prior Auth Lookup</text>
+      </g>
+      <g id="m3-n9" transform="translate(272,80)" data-bbox="272 80 176 48" data-label="Mock Claims API">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Mock Claims API" -->
+        <!-- PORT:right x=176 y=24 id=n9.right type=output component="Mock Claims API" -->
+        <!-- PORT:top x=88 y=0 id=n9.top type=input component="Mock Claims API" -->
+        <!-- PORT:bottom x=88 y=48 id=n9.bottom type=output component="Mock Claims API" -->
+        <path id="m3-n9.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Mock Claims API"/>
+        <use id="m3-n9.icon" href="#m3-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m3-n9.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Mock Claims API</text>
+      </g>
+      <path id="m3-n3.arrow0" d="M120,40 V32 H360 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m3-figtree-arrow)" data-from="n7.top" data-to="n9.top"/>
+      <path id="m3-n3.arrow1" d="M208,136 H248 V104 H272" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m3-figtree-arrow)" data-from="n8.right" data-to="n9.left"/>
+    </g>
+    <path id="m3-n1.arrow0" d="M296,128 V32 H720 V96" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m3-figtree-arrow)" data-from="n5.top" data-to="n7.top"/>
+    <path id="m3-n1.arrow1" d="M296,176 V192 H632" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m3-figtree-arrow)" data-from="n5.bottom" data-to="n8.left"/>
+  </g>
+</svg></div><figcaption>Module 3 capstone: Claims status, read only. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>Chat Input brings the question to the Agent.</span></li><li><span>The Agent decides: a claim question calls Claims Lookup, a PA question calls Prior Auth Lookup (dotted arrows are calls).</span></li><li><span>Both tools read from the Mock Claims API, a practice service with fixture members.</span></li><li><span>The Agent writes the reply, quoting the status it read, at Chat Output.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add an Agent and connect Chat Input and Chat Output.</span></li><li><span>Add two API Request components pointed at the mock service.</span></li><li><span>Turn on Tool Mode on each and connect their Toolset port to the Agent&#x27;s Tools port.</span></li><li><span>Describe each tool as read-only in its description.</span></li><li><span>Ask about member M1001 and prior-auth PA-9001.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Claims status tool</h4><p>The capstone with member M1001.</p><span class="id">m3-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Prior-auth lookup</h4><p>A second tool; the agent must tell a PA question from a claim question.</p><span class="id">m3-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Tool or knowledge?</h4><p>When to call the live service and when a document answer is enough.</p><span class="id">m3-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>A graceful unknown member</h4><p>The service says &#x27;not found&#x27;; the agent says so kindly instead of failing.</p><span class="id">m3-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>MCP and HTTP, side by side</h4><p>The same lookup offered through an MCP server: a concept lab.</p><span class="id">m3-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>Tool</dt><dd>a component the agent may call, such as a request to a service</dd></div><div><dt>Tool Mode</dt><dd>the switch that makes a component callable by an agent</dd></div><div><dt>MCP</dt><dd>a standard way for tools to be listed and called, so any agent can use them</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Check the mock service is healthy on port 3860.</li><li>Import the OpenAPI file into the tool definitions.</li><li>Export the capstone and run the mock_claims tests.</li><li>Keep the tool descriptions read-only in wording.</li></ol></details>
+</section>
+<section class="module" id="m4" aria-labelledby="m4-h">
+<div class="module-head"><p class="eyebrow">Module 4 of 6</p><h2 id="m4-h">Building Agentic AI Applications</h2><p class="tag">Intake that asks for what is missing</p><p>Real requests arrive incomplete. This module builds an intake flow that pulls the required fields out of a message, asks a clarifying question when something is missing, and submits only when everything is there.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Build a resilient intake: extract, validate, clarify, submit.</li><li>Route questions by intent (billing or clinical) on one canvas.</li><li>Validate formats such as a provider NPI, and fall back gracefully when extraction is weak.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>An intake that silently fails costs a phone call later. One that asks for the missing field finishes the job in the same conversation.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m4-title m4-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 696 368" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m4-title">Module 4 capstone: Prior-authorisation intake that asks back</title><desc id="m4-desc">The message goes to Structured Output, which fills three required fields. Fields Missing is a decision: it checks whether every field is present. Missing something? Clarify asks for just that. Complete? Submit Intake posts the request. Either way the member gets a reply at Chat Output: a question or a confirmation.</desc>
+  <title hidden>Module 4 capstone: Prior-authorisation intake that asks back</title>
+  <rect id="m4-background" x="0" y="0" width="696" height="368" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m4-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m4-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="m4-icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+  <symbol id="m4-icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/></symbol>
+  <symbol id="m4-icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l6-6h4M10 12l6 6h4"/><path d="M17 3l3 3-3 3M17 15l3 3-3 3"/></symbol>
+  <symbol id="m4-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m4-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m4-n1" data-bbox="0 0 696 368">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=200 y=56 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=128 y=32 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=128 y=80 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=240 y=56 id=n3.left type=input component="Structured Output" -->
+    <!-- PORT:right x=416 y=56 id=n3.right type=output component="Structured Output" -->
+    <!-- PORT:top x=328 y=32 id=n3.top type=input component="Structured Output" -->
+    <!-- PORT:bottom x=328 y=80 id=n3.bottom type=output component="Structured Output" -->
+    <!-- PORT:left x=456 y=56 id=n4.left type=input component="Fields Missing" -->
+    <!-- PORT:right x=648 y=56 id=n4.right type=output component="Fields Missing" -->
+    <!-- PORT:top x=552 y=32 id=n4.top type=input component="Fields Missing" -->
+    <!-- PORT:bottom x=552 y=80 id=n4.bottom type=output component="Fields Missing" -->
+    <!-- PORT:left x=112 y=208 id=n6.left type=input component="Clarify" -->
+    <!-- PORT:right x=208 y=208 id=n6.right type=output component="Clarify" -->
+    <!-- PORT:top x=160 y=184 id=n6.top type=input component="Clarify" -->
+    <!-- PORT:bottom x=160 y=232 id=n6.bottom type=output component="Clarify" -->
+    <!-- PORT:left x=88 y=280 id=n7.left type=input component="Submit Intake" -->
+    <!-- PORT:right x=232 y=280 id=n7.right type=output component="Submit Intake" -->
+    <!-- PORT:top x=160 y=256 id=n7.top type=input component="Submit Intake" -->
+    <!-- PORT:bottom x=160 y=304 id=n7.bottom type=output component="Submit Intake" -->
+    <!-- PORT:left x=296 y=248 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=440 y=248 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=368 y=224 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=368 y=272 id=n8.bottom type=output component="Chat Output" -->
+    <g id="m4-n2" transform="translate(56,32)" data-bbox="56 32 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="m4-n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="m4-n2.icon" href="#m4-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m4-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="m4-n3" transform="translate(240,32)" data-bbox="240 32 176 48" data-label="Structured Output">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Structured Output" -->
+      <!-- PORT:right x=176 y=24 id=n3.right type=output component="Structured Output" -->
+      <!-- PORT:top x=88 y=0 id=n3.top type=input component="Structured Output" -->
+      <!-- PORT:bottom x=88 y=48 id=n3.bottom type=output component="Structured Output" -->
+      <rect id="m4-n3.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structured Output"/>
+      <use id="m4-n3.icon" href="#m4-icon-grid" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m4-n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Structured Output</text>
+    </g>
+    <g id="m4-n4" transform="translate(456,32)" data-bbox="456 32 192 48" data-label="Fields Missing">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Fields Missing" -->
+      <!-- PORT:right x=192 y=24 id=n4.right type=output component="Fields Missing" -->
+      <!-- PORT:top x=96 y=0 id=n4.top type=input component="Fields Missing" -->
+      <!-- PORT:bottom x=96 y=48 id=n4.bottom type=output component="Fields Missing" -->
+      <path id="m4-n4.block" d="M96,0 L192,24 L96,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 192 48" data-component="Fields Missing"/>
+      <use id="m4-n4.icon" href="#m4-icon-split" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m4-n4.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Fields Missing</text>
+    </g>
+    <g id="m4-n5" transform="translate(56,144)" data-bbox="56 144 416 192" data-label="Clarify, Submit Intake, Chat Output">
+      <!-- PORT:left x=56 y=64 id=n6.left type=input component="Clarify" -->
+      <!-- PORT:right x=152 y=64 id=n6.right type=output component="Clarify" -->
+      <!-- PORT:top x=104 y=40 id=n6.top type=input component="Clarify" -->
+      <!-- PORT:bottom x=104 y=88 id=n6.bottom type=output component="Clarify" -->
+      <!-- PORT:left x=32 y=136 id=n7.left type=input component="Submit Intake" -->
+      <!-- PORT:right x=176 y=136 id=n7.right type=output component="Submit Intake" -->
+      <!-- PORT:top x=104 y=112 id=n7.top type=input component="Submit Intake" -->
+      <!-- PORT:bottom x=104 y=160 id=n7.bottom type=output component="Submit Intake" -->
+      <!-- PORT:left x=240 y=104 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=384 y=104 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=312 y=80 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=312 y=128 id=n8.bottom type=output component="Chat Output" -->
+      <g id="m4-n6" transform="translate(56,40)" data-bbox="56 40 96 48" data-label="Clarify">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Clarify" -->
+        <!-- PORT:right x=96 y=24 id=n6.right type=output component="Clarify" -->
+        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Clarify" -->
+        <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="Clarify" -->
+        <rect id="m4-n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Clarify"/>
+        <use id="m4-n6.icon" href="#m4-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m4-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Clarify</text>
+      </g>
+      <g id="m4-n7" transform="translate(32,112)" data-bbox="32 112 144 48" data-label="Submit Intake">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Submit Intake" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Submit Intake" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Submit Intake" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Submit Intake" -->
+        <rect id="m4-n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Submit Intake"/>
+        <use id="m4-n7.icon" href="#m4-icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m4-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Submit Intake</text>
+      </g>
+      <g id="m4-n8" transform="translate(240,80)" data-bbox="240 80 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="m4-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m4-n8.icon" href="#m4-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m4-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="m4-n5.arrow0" d="M104,40 V32 H312 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m4-figtree-arrow)" data-from="n6.top" data-to="n8.top"/>
+      <path id="m4-n5.arrow1" d="M176,136 H216 V104 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m4-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="m4-n1.arrow0" d="M200,56 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m4-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="m4-n1.arrow1" d="M416,56 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m4-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="m4-n1.arrow2" d="M552,80 V152 H160 V184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m4-figtree-arrow)" data-from="n4.bottom" data-to="n6.top"/>
+    <path id="m4-n1.arrow3" d="M648,56 H664 V120 H32 V280 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m4-figtree-arrow)" data-from="n4.right" data-to="n7.left"/>
+  </g>
+</svg></div><figcaption>Module 4 capstone: Prior-authorisation intake that asks back. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>The message goes to Structured Output, which fills three required fields.</span></li><li><span>Fields Missing is a decision: it checks whether every field is present.</span></li><li><span>Missing something? Clarify asks for just that. Complete? Submit Intake posts the request.</span></li><li><span>Either way the member gets a reply at Chat Output: a question or a confirmation.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add Structured Output with the three required fields.</span></li><li><span>Add a conditional router on &quot;any field missing&quot;.</span></li><li><span>On the missing branch, a chat model asks the clarifying question.</span></li><li><span>On the complete branch, an API Request submits to the mock service.</span></li><li><span>Test with the incomplete fixture and watch the clarify branch fire.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Incomplete prior-auth intake</h4><p>The capstone; the incomplete fixture must trigger the clarify branch.</p><span class="id">m4-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Billing or clinical?</h4><p>Classify the question, then take the matching branch.</p><span class="id">m4-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>NPI format check</h4><p>Ten digits or ask again.</p><span class="id">m4-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Low-confidence fallback</h4><p>When extraction is unsure, ask rather than guess.</p><span class="id">m4-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>A reusable intake block</h4><p>Group the extract and validate steps and save them for other flows.</p><span class="id">m4-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>Structured Output</dt><dd>a component that turns free text into named fields</dd></div><div><dt>Branch</dt><dd>a point where the flow takes one path or another</dd></div><div><dt>Fixture</dt><dd>a saved example request used to test a flow</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Walk the capstone with the incomplete fixture in the Playground.</li><li>Export m4-l01-incomplete-prior-auth.json.</li><li>Run the prior_auth_incomplete test.</li><li>Show the repair loop through the portal with one session id.</li></ol></details>
+</section>
+<section class="module" id="m5" aria-labelledby="m5-h">
+<div class="module-head"><p class="eyebrow">Module 5 of 6</p><h2 id="m5-h">Designing Collaborative Agents</h2><p class="tag">A person approves before anything leaves</p><p>Some steps must wait for a human. The capstone drafts a denial appeal, pauses for a specialist, and submits only an approved draft. A rejected draft goes back for another pass, and the member sees a pending notice meanwhile.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Put a human decision in front of any external action.</li><li>Review and annotate what the agent did, from the message log.</li><li>Escalate when the tone turns angry, and show a waiting state while approval is pending.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>An appeal that reaches a payer is a real action with real consequences. The gate keeps people responsible for it while the agent does the drafting.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m5-title m5-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 304" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m5-title">Module 5 capstone: A specialist approves the appeal</title><desc id="m5-desc">The case comes in at Chat Input and Draft Packet writes the appeal summary. Human Input is the gate: the flow pauses until a specialist chooses Approve or Reject. Approve goes to Submit Appeal; Reject (the dotted arrow back) returns to drafting. While the gate waits, Chat Output tells the member that review is pending.</desc>
+  <title hidden>Module 5 capstone: A specialist approves the appeal</title>
+  <rect id="m5-background" x="0" y="0" width="624" height="304" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m5-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m5-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="m5-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="m5-icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/></symbol>
+  <symbol id="m5-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="m5-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m5-n1" data-bbox="0 0 624 304">
+    <!-- PORT:left x=48 y=72 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=192 y=72 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=120 y=48 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=120 y=96 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=232 y=72 id=n3.left type=input component="Draft Packet" -->
+    <!-- PORT:right x=376 y=72 id=n3.right type=output component="Draft Packet" -->
+    <!-- PORT:top x=304 y=48 id=n3.top type=input component="Draft Packet" -->
+    <!-- PORT:bottom x=304 y=96 id=n3.bottom type=output component="Draft Packet" -->
+    <!-- PORT:left x=416 y=72 id=n4.left type=input component="Human Input" -->
+    <!-- PORT:right x=576 y=72 id=n4.right type=output component="Human Input" -->
+    <!-- PORT:top x=496 y=48 id=n4.top type=input component="Human Input" -->
+    <!-- PORT:bottom x=496 y=96 id=n4.bottom type=output component="Human Input" -->
+    <!-- PORT:left x=80 y=216 id=n6.left type=input component="Submit Appeal" -->
+    <!-- PORT:right x=224 y=216 id=n6.right type=output component="Submit Appeal" -->
+    <!-- PORT:top x=152 y=192 id=n6.top type=input component="Submit Appeal" -->
+    <!-- PORT:bottom x=152 y=240 id=n6.bottom type=output component="Submit Appeal" -->
+    <!-- PORT:left x=264 y=216 id=n7.left type=input component="Chat Output" -->
+    <!-- PORT:right x=408 y=216 id=n7.right type=output component="Chat Output" -->
+    <!-- PORT:top x=336 y=192 id=n7.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=336 y=240 id=n7.bottom type=output component="Chat Output" -->
+    <g id="m5-n2" transform="translate(48,48)" data-bbox="48 48 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="m5-n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="m5-n2.icon" href="#m5-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m5-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="m5-n3" transform="translate(232,48)" data-bbox="232 48 144 48" data-label="Draft Packet">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Draft Packet" -->
+      <!-- PORT:right x=144 y=24 id=n3.right type=output component="Draft Packet" -->
+      <!-- PORT:top x=72 y=0 id=n3.top type=input component="Draft Packet" -->
+      <!-- PORT:bottom x=72 y=48 id=n3.bottom type=output component="Draft Packet" -->
+      <rect id="m5-n3.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Draft Packet"/>
+      <use id="m5-n3.icon" href="#m5-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m5-n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Draft Packet</text>
+    </g>
+    <g id="m5-n4" transform="translate(416,48)" data-bbox="416 48 160 48" data-label="Human Input">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Human Input" -->
+      <!-- PORT:right x=160 y=24 id=n4.right type=output component="Human Input" -->
+      <!-- PORT:top x=80 y=0 id=n4.top type=input component="Human Input" -->
+      <!-- PORT:bottom x=80 y=48 id=n4.bottom type=output component="Human Input" -->
+      <path id="m5-n4.block" d="M80,0 L160,24 L80,48 L0,24 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 160 48" data-component="Human Input"/>
+      <use id="m5-n4.icon" href="#m5-icon-check" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="m5-n4.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Human Input</text>
+    </g>
+    <g id="m5-n5" transform="translate(48,160)" data-bbox="48 160 392 112" data-label="Submit Appeal, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Submit Appeal" -->
+      <!-- PORT:right x=176 y=56 id=n6.right type=output component="Submit Appeal" -->
+      <!-- PORT:top x=104 y=32 id=n6.top type=input component="Submit Appeal" -->
+      <!-- PORT:bottom x=104 y=80 id=n6.bottom type=output component="Submit Appeal" -->
+      <!-- PORT:left x=216 y=56 id=n7.left type=input component="Chat Output" -->
+      <!-- PORT:right x=360 y=56 id=n7.right type=output component="Chat Output" -->
+      <!-- PORT:top x=288 y=32 id=n7.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=288 y=80 id=n7.bottom type=output component="Chat Output" -->
+      <g id="m5-n6" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Submit Appeal">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Submit Appeal" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Submit Appeal" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Submit Appeal" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Submit Appeal" -->
+        <rect id="m5-n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Submit Appeal"/>
+        <use id="m5-n6.icon" href="#m5-icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m5-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Submit Appeal</text>
+      </g>
+      <g id="m5-n7" transform="translate(216,32)" data-bbox="216 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Chat Output" -->
+        <path id="m5-n7.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="m5-n7.icon" href="#m5-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m5-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="m5-n5.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m5-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    </g>
+    <path id="m5-n1.arrow0" d="M192,72 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m5-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="m5-n1.arrow1" d="M376,72 H416" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m5-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="m5-n1.arrow2" d="M496,48 V32 H32 V216 H80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m5-figtree-arrow)" data-from="n4.top" data-to="n6.left"/>
+    <path id="m5-n1.arrow3" d="M576,72 H584 V120 H304 V96" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="feedback" stroke-dasharray="4 2" marker-end="url(#m5-figtree-arrow)" data-from="n4.right" data-to="n3.bottom"/>
+    <path id="m5-n1.arrow4" d="M576,72 H592 V216 H408" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#m5-figtree-arrow)" data-from="n4.right" data-to="n7.right"/>
+  </g>
+</svg></div><figcaption>Module 5 capstone: A specialist approves the appeal. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>The case comes in at Chat Input and Draft Packet writes the appeal summary.</span></li><li><span>Human Input is the gate: the flow pauses until a specialist chooses Approve or Reject.</span></li><li><span>Approve goes to Submit Appeal; Reject (the dotted arrow back) returns to drafting.</span></li><li><span>While the gate waits, Chat Output tells the member that review is pending.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Add a chat model that drafts the appeal packet.</span></li><li><span>Add a Human Input component with Approve and Reject actions.</span></li><li><span>Wire only the Approve branch to the submission request.</span></li><li><span>Wire Reject back to the drafting model.</span></li><li><span>Run it: the flow pauses at the gate and resumes without re-running finished steps.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Denial appeal with an approval gate</h4><p>The capstone; the flow resumes without re-running finished steps.</p><span class="id">m5-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Specialist annotation</h4><p>A worksheet from the message log: what was said, what should be noted.</p><span class="id">m5-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Escalate on angry sentiment</h4><p>Detect the tone, then route to an escalation message.</p><span class="id">m5-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>The approval queue</h4><p>An instructor approves from Langflow while a student waits in the portal.</p><span class="id">m5-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>Pending message for students</h4><p>What the portal shows while a flow is paused.</p><span class="id">m5-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>Human in the loop</dt><dd>a pause where a person decides before the flow continues</dd></div><div><dt>Checkpoint</dt><dd>the saved state the flow resumes from after the decision</dd></div><div><dt>Escalation</dt><dd>handing a conversation to a person on purpose</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Run the capstone; pause at Human Input; try both branches.</li><li>Export m5-l01-denial-appeal-hitl.json.</li><li>Do the annotation worksheet from the message log or export.</li><li>Run the denial_appeal_fixture test.</li></ol></details>
+</section>
+<section class="module" id="m6" aria-labelledby="m6-h">
+<div class="module-head"><p class="eyebrow">Module 6 of 6</p><h2 id="m6-h">Ethics and Security</h2><p class="tag">Audit what the agent keeps and may do</p><p>No canvas in this module. Students take a flow that already ran, export what it stored, and work through an audit: protected health information in prompts and logs, how much a tool is allowed to do, who may edit flows, and what leaves in an export.</p></div>
+<div class="two"><div><h3>What you will be able to do</h3><ul class="plain"><li>Find PHI where it hides: prompts, retrieved chunks, conversation logs.</li><li>Judge tool scope: read-only against write, and the risk of too much agency.</li><li>Set roles, retention and export hygiene for a lab that holds member data.</li></ul></div>
+<div class="why"><h3>Why it matters in a health plan</h3><p>Every earlier module stored something about a member. This one makes sure the class can say what, where, for how long, and who can see it.</p></div></div>
+<figure><h3>The capstone, in one picture</h3><div class="sheet"><svg role="img" aria-labelledby="m6-title m6-desc" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 272" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1"><title id="m6-title">Module 6 capstone: The audit pack</title><desc id="m6-desc">An Instructor Flow from an earlier module runs once more. Its Message Export, pulled through the Monitor API, is the raw material. Students work the Audit Rubric from that export. Findings: flagged fields, over-broad tools, retention gaps, keys in an export.</desc>
+  <title hidden>Module 6 capstone: The audit pack</title>
+  <rect id="m6-background" x="0" y="0" width="920" height="272" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="m6-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="m6-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="m6-icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="m6-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="m6-icon-residual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 20,16 4,16"/><line x1="12" y1="8" x2="12" y2="10.5"/><line x1="12" y1="13.5" x2="12" y2="13.5"/><line x1="12" y1="16" x2="12" y2="21"/></symbol>
+  <symbol id="m6-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="m6-n1" data-bbox="0 0 920 272">
+    <!-- PORT:left x=64 y=112 id=n4.left type=input component="Instructor Flow" -->
+    <!-- PORT:right x=224 y=112 id=n4.right type=output component="Instructor Flow" -->
+    <!-- PORT:top x=144 y=88 id=n4.top type=input component="Instructor Flow" -->
+    <!-- PORT:bottom x=144 y=136 id=n4.bottom type=output component="Instructor Flow" -->
+    <!-- PORT:left x=80 y=184 id=n5.left type=input component="Students" -->
+    <!-- PORT:right x=208 y=184 id=n5.right type=output component="Students" -->
+    <!-- PORT:top x=144 y=160 id=n5.top type=input component="Students" -->
+    <!-- PORT:bottom x=144 y=208 id=n5.bottom type=output component="Students" -->
+    <!-- PORT:left x=264 y=152 id=n6.left type=input component="Message Export" -->
+    <!-- PORT:right x=424 y=152 id=n6.right type=output component="Message Export" -->
+    <!-- PORT:top x=344 y=128 id=n6.top type=input component="Message Export" -->
+    <!-- PORT:bottom x=344 y=176 id=n6.bottom type=output component="Message Export" -->
+    <!-- PORT:left x=528 y=152 id=n7.left type=input component="Audit Rubric" -->
+    <!-- PORT:right x=688 y=152 id=n7.right type=output component="Audit Rubric" -->
+    <!-- PORT:top x=608 y=128 id=n7.top type=input component="Audit Rubric" -->
+    <!-- PORT:bottom x=608 y=176 id=n7.bottom type=output component="Audit Rubric" -->
+    <!-- PORT:left x=728 y=152 id=n8.left type=input component="Findings" -->
+    <!-- PORT:right x=856 y=152 id=n8.right type=output component="Findings" -->
+    <!-- PORT:top x=792 y=128 id=n8.top type=input component="Findings" -->
+    <!-- PORT:bottom x=792 y=176 id=n8.bottom type=output component="Findings" -->
+    <g id="m6-n2" transform="translate(32,56)" data-bbox="32 56 424 184" data-label="Instructor Flow, Students, Message Export">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Instructor Flow" -->
+      <!-- PORT:right x=192 y=56 id=n4.right type=output component="Instructor Flow" -->
+      <!-- PORT:top x=112 y=32 id=n4.top type=input component="Instructor Flow" -->
+      <!-- PORT:bottom x=112 y=80 id=n4.bottom type=output component="Instructor Flow" -->
+      <!-- PORT:left x=48 y=128 id=n5.left type=input component="Students" -->
+      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Students" -->
+      <!-- PORT:top x=112 y=104 id=n5.top type=input component="Students" -->
+      <!-- PORT:bottom x=112 y=152 id=n5.bottom type=output component="Students" -->
+      <!-- PORT:left x=232 y=96 id=n6.left type=input component="Message Export" -->
+      <!-- PORT:right x=392 y=96 id=n6.right type=output component="Message Export" -->
+      <!-- PORT:top x=312 y=72 id=n6.top type=input component="Message Export" -->
+      <!-- PORT:bottom x=312 y=120 id=n6.bottom type=output component="Message Export" -->
+      <g id="m6-n4" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Instructor Flow">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Instructor Flow" -->
+        <!-- PORT:right x=160 y=24 id=n4.right type=output component="Instructor Flow" -->
+        <!-- PORT:top x=80 y=0 id=n4.top type=input component="Instructor Flow" -->
+        <!-- PORT:bottom x=80 y=48 id=n4.bottom type=output component="Instructor Flow" -->
+        <rect id="m6-n4.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Instructor Flow"/>
+        <use id="m6-n4.icon" href="#m6-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m6-n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Instructor Flow</text>
+      </g>
+      <g id="m6-n5" transform="translate(48,104)" data-bbox="48 104 128 48" data-label="Students">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Students" -->
+        <!-- PORT:right x=128 y=24 id=n5.right type=output component="Students" -->
+        <!-- PORT:top x=64 y=0 id=n5.top type=input component="Students" -->
+        <!-- PORT:bottom x=64 y=48 id=n5.bottom type=output component="Students" -->
+        <path id="m6-n5.block" d="M24,0 H104 A24,24 0 0 1 104,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 128 48" data-component="Students"/>
+        <use id="m6-n5.icon" href="#m6-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m6-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Students</text>
+      </g>
+      <g id="m6-n6" transform="translate(232,72)" data-bbox="232 72 160 48" data-label="Message Export">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Message Export" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Message Export" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Message Export" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Message Export" -->
+        <path id="m6-n6.block" d="M0,8 A80,8 0 0 1 160,8 V40 A80,8 0 0 1 0,40 Z M0,8 A80,8 0 0 0 160,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 160 48" data-component="Message Export"/>
+        <use id="m6-n6.icon" href="#m6-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m6-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="132">Message Export</text>
+      </g>
+      <path id="m6-n2.arrow0" d="M192,56 H208 V96 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m6-figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+    </g>
+    <g id="m6-n3" transform="translate(496,96)" data-bbox="496 96 392 112" data-label="Audit Rubric, Findings">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Audit Rubric" -->
+      <!-- PORT:right x=192 y=56 id=n7.right type=output component="Audit Rubric" -->
+      <!-- PORT:top x=112 y=32 id=n7.top type=input component="Audit Rubric" -->
+      <!-- PORT:bottom x=112 y=80 id=n7.bottom type=output component="Audit Rubric" -->
+      <!-- PORT:left x=232 y=56 id=n8.left type=input component="Findings" -->
+      <!-- PORT:right x=360 y=56 id=n8.right type=output component="Findings" -->
+      <!-- PORT:top x=296 y=32 id=n8.top type=input component="Findings" -->
+      <!-- PORT:bottom x=296 y=80 id=n8.bottom type=output component="Findings" -->
+      <g id="m6-n7" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Audit Rubric">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Audit Rubric" -->
+        <!-- PORT:right x=160 y=24 id=n7.right type=output component="Audit Rubric" -->
+        <!-- PORT:top x=80 y=0 id=n7.top type=input component="Audit Rubric" -->
+        <!-- PORT:bottom x=80 y=48 id=n7.bottom type=output component="Audit Rubric" -->
+        <path id="m6-n7.block" d="M0,0 H152 L160,8 V48 H0 Z M152,0 V8 H160" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 160 48" data-component="Audit Rubric"/>
+        <use id="m6-n7.icon" href="#m6-icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m6-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Audit Rubric</text>
+      </g>
+      <g id="m6-n8" transform="translate(232,32)" data-bbox="232 32 128 48" data-label="Findings">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Findings" -->
+        <!-- PORT:right x=128 y=24 id=n8.right type=output component="Findings" -->
+        <!-- PORT:top x=64 y=0 id=n8.top type=input component="Findings" -->
+        <!-- PORT:bottom x=64 y=48 id=n8.bottom type=output component="Findings" -->
+        <path id="m6-n8.block" d="M24,0 H104 A24,24 0 0 1 104,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 128 48" data-component="Findings"/>
+        <use id="m6-n8.icon" href="#m6-icon-residual" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="m6-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Findings</text>
+      </g>
+      <path id="m6-n3.arrow0" d="M192,56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m6-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="m6-n1.arrow0" d="M424,152 H528" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m6-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    <path id="m6-n1.arrow1" d="M208,184 H464 V32 H608 V128" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#m6-figtree-arrow)" data-from="n5.right" data-to="n7.top"/>
+  </g>
+</svg></div><figcaption>Module 6 capstone: The audit pack. Built in Langflow from the components named in the boxes; the numbered reading below says what each arrow means.</figcaption></figure>
+<div><h3>Reading the figure</h3><ol class="reading"><li><span>An Instructor Flow from an earlier module runs once more.</span></li><li><span>Its Message Export, pulled through the Monitor API, is the raw material.</span></li><li><span>Students work the Audit Rubric from that export.</span></li><li><span>Findings: flagged fields, over-broad tools, retention gaps, keys in an export.</span></li></ol></div>
+<div><h3>How you build it</h3><ol class="reading"><li><span>Run one earlier flow and export its session messages.</span></li><li><span>Hand out the audit rubric.</span></li><li><span>Flag every field that holds PHI and every tool that could write.</span></li><li><span>Try red-team prompts against a flow with a write tool, and record the mitigations.</span></li><li><span>Scan a flow export for keys before it goes into git.</span></li></ol></div>
+<div><h3>The five labs</h3><div class="labs"><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>PHI in prompts and logs</h4><p>What Langflow stores, and which fields hold member data.</p><span class="id">m6-l01</span></article><article class="lab"><span class="chip core" title="Everyone builds this">Core</span><h4>Tool scope audit</h4><p>Classify every tool as read or write; compare with Module 3.</p><span class="id">m6-l02</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Red-team prompts</h4><p>Attack a flow that has a write tool, document what broke and the fix.</p><span class="id">m6-l03</span></article><article class="lab"><span class="chip stretch" title="If there is time">Stretch</span><h4>Retention policy</h4><p>Decide how long logs live, and delete a session&#x27;s messages on request.</p><span class="id">m6-l04</span></article><article class="lab"><span class="chip instructor" title="Demonstrated, not built">Instructor</span><h4>Secrets in exports</h4><p>Scan a flow export for keys before it reaches version control.</p><span class="id">m6-l05</span></article></div></div>
+<div><h3>Words you will hear in this module</h3><dl class="words"><div><dt>PHI</dt><dd>protected health information: anything that identifies a member&#x27;s health details</dd></div><div><dt>Excessive agency</dt><dd>an agent allowed to do more than its task needs</dd></div><div><dt>Retention</dt><dd>how long stored messages are kept before deletion</dd></div></dl></div>
+<details><summary>Instructor checklist</summary><ol><li>Run one earlier flow and export its session messages.</li><li>Hand out the rubric from audit-rubric.json.</li><li>Demo a red-team prompt against an agent with a write tool.</li><li>Run the audit_rubric_fixture test.</li></ol></details>
+</section>
+<section class="module" id="glossary" aria-labelledby="glossary-h"><div class="module-head"><p class="eyebrow">Reference</p><h2 id="glossary-h">Words you will hear</h2><p>Every term on this page, in the order you will meet them in the class, explained without jargon.</p></div><dl class="glossary words"><div><dt>Branch</dt><dd>a point where the flow takes one path or another</dd></div><div><dt>Checkpoint</dt><dd>the saved state the flow resumes from after the decision</dd></div><div><dt>Escalation</dt><dd>handing a conversation to a person on purpose</dd></div><div><dt>Excessive agency</dt><dd>an agent allowed to do more than its task needs</dd></div><div><dt>Fixture</dt><dd>a saved example request used to test a flow</dd></div><div><dt>Human in the loop</dt><dd>a pause where a person decides before the flow continues</dd></div><div><dt>Knowledge base</dt><dd>documents the agent may look things up in</dd></div><div><dt>MCP</dt><dd>a standard way for tools to be listed and called, so any agent can use them</dd></div><div><dt>Memory window</dt><dd>how many past turns the model is shown</dd></div><div><dt>OODA</dt><dd>Observe, Orient, Decide, Act: a way to read what an agent does on each turn</dd></div><div><dt>PHI</dt><dd>protected health information: anything that identifies a member&#x27;s health details</dd></div><div><dt>Publish</dt><dd>make the flow reachable from outside the editor, so the portal can call it</dd></div><div><dt>Retention</dt><dd>how long stored messages are kept before deletion</dd></div><div><dt>Session id</dt><dd>the label that keeps one person&#x27;s conversation together and apart from everyone else&#x27;s</dd></div><div><dt>Structured Output</dt><dd>a component that turns free text into named fields</dd></div><div><dt>System prompt</dt><dd>the standing instructions an agent follows before it reads any question</dd></div><div><dt>Tool</dt><dd>a component the agent may call, such as a request to a service</dd></div><div><dt>Tool Mode</dt><dd>the switch that makes a component callable by an agent</dd></div></dl></section>
+</main></div><footer><p>Figures were generated from written specifications of each capstone and checked for readability (every box has room for its label; no arrow crosses a box). Component names match the Langflow editor so what you see here is what you will see on the canvas. Lab ids match the class catalog.</p></footer>

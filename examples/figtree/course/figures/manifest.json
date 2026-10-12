@@ -1,0 +1,95 @@
+{
+  "out_dir": "/home/user/hekat/examples/figtree/course/figures",
+  "rubric": "teaching",
+  "style": "teaching",
+  "inputs": [
+    "/home/user/hekat/examples/figtree/course/specs"
+  ],
+  "units": [
+    {
+      "id": "00-journey",
+      "source": "examples/figtree/course/specs/00-journey.md",
+      "title": "The six-module journey",
+      "span": [
+        1,
+        31
+      ],
+      "chars": 1484,
+      "est_components": 6,
+      "est_flows": 4
+    },
+    {
+      "id": "m1-faq",
+      "source": "examples/figtree/course/specs/m1-faq.md",
+      "title": "Module 1 capstone: Member Benefits FAQ",
+      "span": [
+        1,
+        29
+      ],
+      "chars": 1368,
+      "est_components": 5,
+      "est_flows": 4
+    },
+    {
+      "id": "m2-memory",
+      "source": "examples/figtree/course/specs/m2-memory.md",
+      "title": "Module 2 capstone: Remember the plan type",
+      "span": [
+        1,
+        29
+      ],
+      "chars": 1400,
+      "est_components": 5,
+      "est_flows": 5
+    },
+    {
+      "id": "m3-tools",
+      "source": "examples/figtree/course/specs/m3-tools.md",
+      "title": "Module 3 capstone: Claims status, read only",
+      "span": [
+        1,
+        34
+      ],
+      "chars": 1773,
+      "est_components": 6,
+      "est_flows": 6
+    },
+    {
+      "id": "m4-intake",
+      "source": "examples/figtree/course/specs/m4-intake.md",
+      "title": "Module 4 capstone: Prior-authorisation intake that asks back",
+      "span": [
+        1,
+        34
+      ],
+      "chars": 1672,
+      "est_components": 6,
+      "est_flows": 6
+    },
+    {
+      "id": "m5-hitl",
+      "source": "examples/figtree/course/specs/m5-hitl.md",
+      "title": "Module 5 capstone: A specialist approves the appeal",
+      "span": [
+        1,
+        32
+      ],
+      "chars": 1583,
+      "est_components": 5,
+      "est_flows": 6
+    },
+    {
+      "id": "m6-audit",
+      "source": "examples/figtree/course/specs/m6-audit.md",
+      "title": "Module 6 capstone: The audit pack",
+      "span": [
+        1,
+        29
+      ],
+      "chars": 1468,
+      "est_components": 5,
+      "est_flows": 4
+    }
+  ],
+  "skipped": []
+}

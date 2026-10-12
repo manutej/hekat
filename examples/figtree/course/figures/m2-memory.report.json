@@ -1,0 +1,1793 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Prompt Template",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Prompt Template"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n4": {
+        "id": "n4",
+        "parent_id": "n1",
+        "description": "Chat Model",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Model"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 432,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n5",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n5",
+        "description": "Message History",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Message History"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n1",
+        "description": "Chat Output, Message History",
+        "canvas": {
+          "w": 424,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 392,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 304,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 304,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n6",
+            "parent_id": "n5",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n5",
+            "description": "Message History",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Message History"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Message History"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 424,
+          "h": 112
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output",
+          "Message History"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 144
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Module 2 capstone: Remember the plan type",
+        "canvas": {
+          "w": 592,
+          "h": 288
+        },
+        "ports": [
+          {
+            "id": "n2.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n2.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 392,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 304,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 304,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 432,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 560,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 496,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 496,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 136,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 136,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 248,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 424,
+            "rel_y": 200,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 336,
+            "rel_y": 176,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Message History"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 336,
+            "rel_y": 224,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Message History"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n2.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n2.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Prompt Template",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Prompt Template"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n4",
+            "parent_id": "n1",
+            "description": "Chat Model",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Model"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 432,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n1",
+            "description": "Chat Output, Message History",
+            "canvas": {
+              "w": 424,
+              "h": 112
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 392,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 304,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Message History"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 304,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Message History"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n6",
+                "parent_id": "n5",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n5",
+                "description": "Message History",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Message History"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Message History"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Message History"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Message History"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Message History"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 424,
+              "h": 112
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output",
+              "Message History"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 144
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 592,
+          "h": 288
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Chat Input",
+          "Prompt Template",
+          "Chat Model",
+          "Chat Output",
+          "Message History"
+        ],
+        "layout": "rows",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ]
+    ],
+    "restriction": {
+      "n5->n6": true,
+      "n5->n7": true,
+      "n1->n2": true,
+      "n1->n3": true,
+      "n1->n4": true,
+      "n1->n5": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n2.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Chat Input",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Module 2 capstone: Remember the plan type",
+    "components": [
+      {
+        "name": "Chat Input",
+        "evidence_span": "Chat Input",
+        "kind": "terminal",
+        "icon": "user"
+      },
+      {
+        "name": "Prompt Template",
+        "evidence_span": "Prompt Template",
+        "kind": "document",
+        "icon": "edit-script"
+      },
+      {
+        "name": "Chat Model",
+        "evidence_span": "Chat Model",
+        "kind": "block",
+        "icon": "bolt"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "text"
+      },
+      {
+        "name": "Message History",
+        "evidence_span": "Message History",
+        "kind": "store",
+        "icon": "database"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Chat Input",
+        "to": "Prompt Template",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Prompt Template",
+        "to": "Chat Model",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Chat Model",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Message History",
+        "to": "Chat Model",
+        "type": "data",
+        "evidence_span": "Message History \u2192 Chat Model"
+      },
+      {
+        "from": "Chat Output",
+        "to": "Message History",
+        "type": "feedback",
+        "evidence_span": "Chat Output \u2192 Message History"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n3 round 1: 1 defect(s)",
+    "n7 round 1: 1 defect(s)",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 7,
+  "unit": {
+    "id": "m2-memory",
+    "source": "examples/figtree/course/specs/m2-memory.md",
+    "title": "Module 2 capstone: Remember the plan type",
+    "span": [
+      1,
+      29
+    ],
+    "chars": 1400,
+    "est_components": 5,
+    "est_flows": 5
+  }
+}

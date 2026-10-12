@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="696" height="368" viewBox="0 0 696 368" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Module 4 capstone: Prior-authorisation intake that asks back</title>
+  <rect id="background" x="0" y="0" width="696" height="368" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+  <symbol id="icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/></symbol>
+  <symbol id="icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l6-6h4M10 12l6 6h4"/><path d="M17 3l3 3-3 3M17 15l3 3-3 3"/></symbol>
+  <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 696 368">
+    <!-- PORT:left x=56 y=56 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=200 y=56 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=128 y=32 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=128 y=80 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=240 y=56 id=n3.left type=input component="Structured Output" -->
+    <!-- PORT:right x=416 y=56 id=n3.right type=output component="Structured Output" -->
+    <!-- PORT:top x=328 y=32 id=n3.top type=input component="Structured Output" -->
+    <!-- PORT:bottom x=328 y=80 id=n3.bottom type=output component="Structured Output" -->
+    <!-- PORT:left x=456 y=56 id=n4.left type=input component="Fields Missing" -->
+    <!-- PORT:right x=648 y=56 id=n4.right type=output component="Fields Missing" -->
+    <!-- PORT:top x=552 y=32 id=n4.top type=input component="Fields Missing" -->
+    <!-- PORT:bottom x=552 y=80 id=n4.bottom type=output component="Fields Missing" -->
+    <!-- PORT:left x=112 y=208 id=n6.left type=input component="Clarify" -->
+    <!-- PORT:right x=208 y=208 id=n6.right type=output component="Clarify" -->
+    <!-- PORT:top x=160 y=184 id=n6.top type=input component="Clarify" -->
+    <!-- PORT:bottom x=160 y=232 id=n6.bottom type=output component="Clarify" -->
+    <!-- PORT:left x=88 y=280 id=n7.left type=input component="Submit Intake" -->
+    <!-- PORT:right x=232 y=280 id=n7.right type=output component="Submit Intake" -->
+    <!-- PORT:top x=160 y=256 id=n7.top type=input component="Submit Intake" -->
+    <!-- PORT:bottom x=160 y=304 id=n7.bottom type=output component="Submit Intake" -->
+    <!-- PORT:left x=296 y=248 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=440 y=248 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=368 y=224 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=368 y=272 id=n8.bottom type=output component="Chat Output" -->
+    <g id="n2" transform="translate(56,32)" data-bbox="56 32 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="n2.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="n3" transform="translate(240,32)" data-bbox="240 32 176 48" data-label="Structured Output">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Structured Output" -->
+      <!-- PORT:right x=176 y=24 id=n3.right type=output component="Structured Output" -->
+      <!-- PORT:top x=88 y=0 id=n3.top type=input component="Structured Output" -->
+      <!-- PORT:bottom x=88 y=48 id=n3.bottom type=output component="Structured Output" -->
+      <rect id="n3.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structured Output"/>
+      <use id="n3.icon" href="#icon-grid" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Structured Output</text>
+    </g>
+    <g id="n4" transform="translate(456,32)" data-bbox="456 32 192 48" data-label="Fields Missing">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Fields Missing" -->
+      <!-- PORT:right x=192 y=24 id=n4.right type=output component="Fields Missing" -->
+      <!-- PORT:top x=96 y=0 id=n4.top type=input component="Fields Missing" -->
+      <!-- PORT:bottom x=96 y=48 id=n4.bottom type=output component="Fields Missing" -->
+      <path id="n4.block" d="M96,0 L192,24 L96,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 192 48" data-component="Fields Missing"/>
+      <use id="n4.icon" href="#icon-split" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n4.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Fields Missing</text>
+    </g>
+    <g id="n5" transform="translate(56,144)" data-bbox="56 144 416 192" data-label="Clarify, Submit Intake, Chat Output">
+      <!-- PORT:left x=56 y=64 id=n6.left type=input component="Clarify" -->
+      <!-- PORT:right x=152 y=64 id=n6.right type=output component="Clarify" -->
+      <!-- PORT:top x=104 y=40 id=n6.top type=input component="Clarify" -->
+      <!-- PORT:bottom x=104 y=88 id=n6.bottom type=output component="Clarify" -->
+      <!-- PORT:left x=32 y=136 id=n7.left type=input component="Submit Intake" -->
+      <!-- PORT:right x=176 y=136 id=n7.right type=output component="Submit Intake" -->
+      <!-- PORT:top x=104 y=112 id=n7.top type=input component="Submit Intake" -->
+      <!-- PORT:bottom x=104 y=160 id=n7.bottom type=output component="Submit Intake" -->
+      <!-- PORT:left x=240 y=104 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=384 y=104 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=312 y=80 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=312 y=128 id=n8.bottom type=output component="Chat Output" -->
+      <g id="n6" transform="translate(56,40)" data-bbox="56 40 96 48" data-label="Clarify">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Clarify" -->
+        <!-- PORT:right x=96 y=24 id=n6.right type=output component="Clarify" -->
+        <!-- PORT:top x=48 y=0 id=n6.top type=input component="Clarify" -->
+        <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="Clarify" -->
+        <rect id="n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Clarify"/>
+        <use id="n6.icon" href="#icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Clarify</text>
+      </g>
+      <g id="n7" transform="translate(32,112)" data-bbox="32 112 144 48" data-label="Submit Intake">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Submit Intake" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Submit Intake" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Submit Intake" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Submit Intake" -->
+        <rect id="n7.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Submit Intake"/>
+        <use id="n7.icon" href="#icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Submit Intake</text>
+      </g>
+      <g id="n8" transform="translate(240,80)" data-bbox="240 80 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="n8.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="n5.arrow0" d="M104,40 V32 H312 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.top" data-to="n8.top"/>
+      <path id="n5.arrow1" d="M176,136 H216 V104 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="n1.arrow0" d="M200,56 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="n1.arrow1" d="M416,56 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M552,80 V152 H160 V184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.bottom" data-to="n6.top"/>
+    <path id="n1.arrow3" d="M648,56 H664 V120 H32 V280 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.left"/>
+  </g>
+</svg>

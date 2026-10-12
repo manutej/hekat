@@ -11,7 +11,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-FLOW_TYPES = ("data", "control", "conditional", "parallel")
+FLOW_TYPES = ("data", "control", "conditional", "parallel", "feedback")
 PORT_SIDES = ("top", "bottom", "left", "right")
 SEVERITIES = ("critical", "warning")
 

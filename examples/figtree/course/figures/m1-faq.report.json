@@ -1,0 +1,2405 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 40,
+          "y": 40
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Knowledge Base",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Knowledge Base"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 112
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Prompt Template",
+        "canvas": {
+          "w": 176,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 88,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 88,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Prompt Template"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 256,
+          "y": 80
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Chat Input, Knowledge Base, Prompt Template",
+        "canvas": {
+          "w": 464,
+          "h": 192
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 40,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 184,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 40,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 256,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 432,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 344,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 344,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 40,
+              "y": 40
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Knowledge Base",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Knowledge Base"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Knowledge Base"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 112
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Prompt Template",
+            "canvas": {
+              "w": 176,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 88,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 88,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 176,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Prompt Template"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 256,
+              "y": 80
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 464,
+          "h": 192
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input",
+          "Knowledge Base",
+          "Prompt Template"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n3",
+        "description": "Chat Model",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Model"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 200,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Chat Model, Chat Output",
+        "canvas": {
+          "w": 376,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 96,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 96,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 200,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 344,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 272,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 272,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n7",
+            "parent_id": "n3",
+            "description": "Chat Model",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Model"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 200,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 376,
+          "h": 112
+        },
+        "residuals": [],
+        "components": [
+          "Chat Model",
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 536,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "Module 1 capstone: Member Benefits FAQ",
+        "canvas": {
+          "w": 944,
+          "h": 256
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 72,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 216,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 168,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 192,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Knowledge Base"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 288,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 464,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 376,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 376,
+            "rel_y": 160,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Prompt Template"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 568,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 696,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 632,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 632,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Model"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 736,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 880,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 808,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 808,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Chat Input, Knowledge Base, Prompt Template",
+            "canvas": {
+              "w": 464,
+              "h": 192
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 40,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 184,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 40,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 136,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 136,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 160,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Knowledge Base"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 256,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 432,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 344,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Prompt Template"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 344,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Prompt Template"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Chat Input",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Input"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 40,
+                  "y": 40
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Knowledge Base",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Knowledge Base"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Knowledge Base"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Knowledge Base"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Knowledge Base"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Knowledge Base"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 112
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Prompt Template",
+                "canvas": {
+                  "w": 176,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Prompt Template"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Prompt Template"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 88,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Prompt Template"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 88,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Prompt Template"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 176,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Prompt Template"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 256,
+                  "y": 80
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 464,
+              "h": 192
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input",
+              "Knowledge Base",
+              "Prompt Template"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Chat Model, Chat Output",
+            "canvas": {
+              "w": 376,
+              "h": 112
+            },
+            "ports": [
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 96,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n7.bottom",
+                "side": "bottom",
+                "rel_x": 96,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Model"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 200,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 344,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 272,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 272,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n7",
+                "parent_id": "n3",
+                "description": "Chat Model",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n7.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Model"
+                  },
+                  {
+                    "id": "n7.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Model"
+                  },
+                  {
+                    "id": "n7.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Model"
+                  },
+                  {
+                    "id": "n7.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Model"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Model"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 200,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 376,
+              "h": 112
+            },
+            "residuals": [],
+            "components": [
+              "Chat Model",
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 536,
+              "y": 72
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 944,
+          "h": 256
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Chat Input",
+          "Prompt Template",
+          "Chat Model",
+          "Chat Output",
+          "Knowledge Base"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n3->n7": true,
+      "n3->n8": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Chat Input",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "Module 1 capstone: Member Benefits FAQ",
+    "components": [
+      {
+        "name": "Chat Input",
+        "evidence_span": "Chat Input",
+        "kind": "terminal",
+        "icon": "user"
+      },
+      {
+        "name": "Prompt Template",
+        "evidence_span": "Prompt Template",
+        "kind": "document",
+        "icon": "edit-script"
+      },
+      {
+        "name": "Chat Model",
+        "evidence_span": "Chat Model",
+        "kind": "block",
+        "icon": "bolt"
+      },
+      {
+        "name": "Chat Output",
+        "evidence_span": "Chat Output",
+        "kind": "terminal",
+        "icon": "text"
+      },
+      {
+        "name": "Knowledge Base",
+        "evidence_span": "Knowledge Base",
+        "kind": "store",
+        "icon": "database"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Chat Input",
+        "to": "Prompt Template",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Prompt Template",
+        "to": "Chat Model",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Chat Model",
+        "to": "Chat Output",
+        "type": "data",
+        "evidence_span": "Chat Input \u2192 Prompt Template \u2192 Chat Model \u2192 Chat Output"
+      },
+      {
+        "from": "Knowledge Base",
+        "to": "Prompt Template",
+        "type": "data",
+        "evidence_span": "Knowledge Base \u2192 Prompt Template"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n5 round 1: 1 defect(s)",
+    "n6 round 1: 1 defect(s)",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals",
+    "spacing shift at n2: n2.arrow1 by 8",
+    "spacing shift at n2: n2.arrow1 by 8",
+    "spacing shift at n2: n2.arrow1 by 8"
+  ],
+  "node_count": 8,
+  "unit": {
+    "id": "m1-faq",
+    "source": "examples/figtree/course/specs/m1-faq.md",
+    "title": "Module 1 capstone: Member Benefits FAQ",
+    "span": [
+      1,
+      29
+    ],
+    "chars": 1368,
+    "est_components": 5,
+    "est_flows": 4
+  }
+}

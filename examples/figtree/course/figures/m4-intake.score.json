@@ -1,0 +1,61 @@
+{
+  "rubric": "teaching",
+  "scores": {
+    "semantic_coverage": null,
+    "hallucination_control": 10.0,
+    "topology_accuracy": 10.0,
+    "flow_readability": 9.3,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 7.0,
+    "compactness": 9.0
+  },
+  "overall": 9.33,
+  "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 696,
+        "height": 329
+      }
+    },
+    {
+      "check_id": "flow.crossings",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "visual_description": "1 arrow crossing(s)",
+      "code_anchor": "n5.arrow0",
+      "fix_instruction": "re-order or re-route to remove crossings",
+      "penalty": 0.7,
+      "auto_edit": null
+    }
+  ],
+  "tags": [
+    "veto:chaotic_routing"
+  ],
+  "metrics": {
+    "fill_ratio": 0.678,
+    "aspect": 1.89,
+    "mean_detour": 1.04,
+    "crossings": 1,
+    "forward_ratio": 0.67,
+    "palette_size": 1,
+    "vetoes": 1
+  },
+  "unit": "m4-intake",
+  "title": "Module 4 capstone: Prior-authorisation intake that asks back",
+  "source": "examples/figtree/course/specs/m4-intake.md",
+  "svg": "/home/user/hekat/examples/figtree/course/figures/m4-intake.svg",
+  "report": "/home/user/hekat/examples/figtree/course/figures/m4-intake.report.json",
+  "style": "teaching",
+  "components": 6,
+  "flows": 6,
+  "faithfulness_failures": []
+}

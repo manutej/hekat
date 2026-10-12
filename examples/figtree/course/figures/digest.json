@@ -1,0 +1,78 @@
+{
+  "manifest": "/home/user/hekat/examples/figtree/course/figures/manifest.json",
+  "index": "/home/user/hekat/examples/figtree/course/figures/index.html",
+  "units": [
+    {
+      "id": "00-journey",
+      "title": "The six-module journey",
+      "source": "examples/figtree/course/specs/00-journey.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/00-journey.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m1-faq",
+      "title": "Module 1 capstone: Member Benefits FAQ",
+      "source": "examples/figtree/course/specs/m1-faq.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m1-faq.svg",
+      "overall": 9.71,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m2-memory",
+      "title": "Module 2 capstone: Remember the plan type",
+      "source": "examples/figtree/course/specs/m2-memory.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m2-memory.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m3-tools",
+      "title": "Module 3 capstone: Claims status, read only",
+      "source": "examples/figtree/course/specs/m3-tools.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m3-tools.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m4-intake",
+      "title": "Module 4 capstone: Prior-authorisation intake that asks back",
+      "source": "examples/figtree/course/specs/m4-intake.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m4-intake.svg",
+      "overall": 9.33,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m5-hitl",
+      "title": "Module 5 capstone: A specialist approves the appeal",
+      "source": "examples/figtree/course/specs/m5-hitl.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m5-hitl.svg",
+      "overall": 9.0,
+      "issues": 3,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "m6-audit",
+      "title": "Module 6 capstone: The audit pack",
+      "source": "examples/figtree/course/specs/m6-audit.md",
+      "svg": "/home/user/hekat/examples/figtree/course/figures/m6-audit.svg",
+      "overall": 9.33,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    }
+  ],
+  "failed": [],
+  "skipped": []
+}

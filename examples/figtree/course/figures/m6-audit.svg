@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="272" viewBox="0 0 920 272" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Module 6 capstone: The audit pack</title>
+  <rect id="background" x="0" y="0" width="920" height="272" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="icon-residual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 20,16 4,16"/><line x1="12" y1="8" x2="12" y2="10.5"/><line x1="12" y1="13.5" x2="12" y2="13.5"/><line x1="12" y1="16" x2="12" y2="21"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 920 272">
+    <!-- PORT:left x=64 y=112 id=n4.left type=input component="Instructor Flow" -->
+    <!-- PORT:right x=224 y=112 id=n4.right type=output component="Instructor Flow" -->
+    <!-- PORT:top x=144 y=88 id=n4.top type=input component="Instructor Flow" -->
+    <!-- PORT:bottom x=144 y=136 id=n4.bottom type=output component="Instructor Flow" -->
+    <!-- PORT:left x=80 y=184 id=n5.left type=input component="Students" -->
+    <!-- PORT:right x=208 y=184 id=n5.right type=output component="Students" -->
+    <!-- PORT:top x=144 y=160 id=n5.top type=input component="Students" -->
+    <!-- PORT:bottom x=144 y=208 id=n5.bottom type=output component="Students" -->
+    <!-- PORT:left x=264 y=152 id=n6.left type=input component="Message Export" -->
+    <!-- PORT:right x=424 y=152 id=n6.right type=output component="Message Export" -->
+    <!-- PORT:top x=344 y=128 id=n6.top type=input component="Message Export" -->
+    <!-- PORT:bottom x=344 y=176 id=n6.bottom type=output component="Message Export" -->
+    <!-- PORT:left x=528 y=152 id=n7.left type=input component="Audit Rubric" -->
+    <!-- PORT:right x=688 y=152 id=n7.right type=output component="Audit Rubric" -->
+    <!-- PORT:top x=608 y=128 id=n7.top type=input component="Audit Rubric" -->
+    <!-- PORT:bottom x=608 y=176 id=n7.bottom type=output component="Audit Rubric" -->
+    <!-- PORT:left x=728 y=152 id=n8.left type=input component="Findings" -->
+    <!-- PORT:right x=856 y=152 id=n8.right type=output component="Findings" -->
+    <!-- PORT:top x=792 y=128 id=n8.top type=input component="Findings" -->
+    <!-- PORT:bottom x=792 y=176 id=n8.bottom type=output component="Findings" -->
+    <g id="n2" transform="translate(32,56)" data-bbox="32 56 424 184" data-label="Instructor Flow, Students, Message Export">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Instructor Flow" -->
+      <!-- PORT:right x=192 y=56 id=n4.right type=output component="Instructor Flow" -->
+      <!-- PORT:top x=112 y=32 id=n4.top type=input component="Instructor Flow" -->
+      <!-- PORT:bottom x=112 y=80 id=n4.bottom type=output component="Instructor Flow" -->
+      <!-- PORT:left x=48 y=128 id=n5.left type=input component="Students" -->
+      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Students" -->
+      <!-- PORT:top x=112 y=104 id=n5.top type=input component="Students" -->
+      <!-- PORT:bottom x=112 y=152 id=n5.bottom type=output component="Students" -->
+      <!-- PORT:left x=232 y=96 id=n6.left type=input component="Message Export" -->
+      <!-- PORT:right x=392 y=96 id=n6.right type=output component="Message Export" -->
+      <!-- PORT:top x=312 y=72 id=n6.top type=input component="Message Export" -->
+      <!-- PORT:bottom x=312 y=120 id=n6.bottom type=output component="Message Export" -->
+      <g id="n4" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Instructor Flow">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Instructor Flow" -->
+        <!-- PORT:right x=160 y=24 id=n4.right type=output component="Instructor Flow" -->
+        <!-- PORT:top x=80 y=0 id=n4.top type=input component="Instructor Flow" -->
+        <!-- PORT:bottom x=80 y=48 id=n4.bottom type=output component="Instructor Flow" -->
+        <rect id="n4.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Instructor Flow"/>
+        <use id="n4.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Instructor Flow</text>
+      </g>
+      <g id="n5" transform="translate(48,104)" data-bbox="48 104 128 48" data-label="Students">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Students" -->
+        <!-- PORT:right x=128 y=24 id=n5.right type=output component="Students" -->
+        <!-- PORT:top x=64 y=0 id=n5.top type=input component="Students" -->
+        <!-- PORT:bottom x=64 y=48 id=n5.bottom type=output component="Students" -->
+        <path id="n5.block" d="M24,0 H104 A24,24 0 0 1 104,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 128 48" data-component="Students"/>
+        <use id="n5.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Students</text>
+      </g>
+      <g id="n6" transform="translate(232,72)" data-bbox="232 72 160 48" data-label="Message Export">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Message Export" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Message Export" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Message Export" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Message Export" -->
+        <path id="n6.block" d="M0,8 A80,8 0 0 1 160,8 V40 A80,8 0 0 1 0,40 Z M0,8 A80,8 0 0 0 160,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 160 48" data-component="Message Export"/>
+        <use id="n6.icon" href="#icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="132">Message Export</text>
+      </g>
+      <path id="n2.arrow0" d="M192,56 H208 V96 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+    </g>
+    <g id="n3" transform="translate(496,96)" data-bbox="496 96 392 112" data-label="Audit Rubric, Findings">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="Audit Rubric" -->
+      <!-- PORT:right x=192 y=56 id=n7.right type=output component="Audit Rubric" -->
+      <!-- PORT:top x=112 y=32 id=n7.top type=input component="Audit Rubric" -->
+      <!-- PORT:bottom x=112 y=80 id=n7.bottom type=output component="Audit Rubric" -->
+      <!-- PORT:left x=232 y=56 id=n8.left type=input component="Findings" -->
+      <!-- PORT:right x=360 y=56 id=n8.right type=output component="Findings" -->
+      <!-- PORT:top x=296 y=32 id=n8.top type=input component="Findings" -->
+      <!-- PORT:bottom x=296 y=80 id=n8.bottom type=output component="Findings" -->
+      <g id="n7" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Audit Rubric">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Audit Rubric" -->
+        <!-- PORT:right x=160 y=24 id=n7.right type=output component="Audit Rubric" -->
+        <!-- PORT:top x=80 y=0 id=n7.top type=input component="Audit Rubric" -->
+        <!-- PORT:bottom x=80 y=48 id=n7.bottom type=output component="Audit Rubric" -->
+        <path id="n7.block" d="M0,0 H152 L160,8 V48 H0 Z M152,0 V8 H160" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 160 48" data-component="Audit Rubric"/>
+        <use id="n7.icon" href="#icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Audit Rubric</text>
+      </g>
+      <g id="n8" transform="translate(232,32)" data-bbox="232 32 128 48" data-label="Findings">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Findings" -->
+        <!-- PORT:right x=128 y=24 id=n8.right type=output component="Findings" -->
+        <!-- PORT:top x=64 y=0 id=n8.top type=input component="Findings" -->
+        <!-- PORT:bottom x=64 y=48 id=n8.bottom type=output component="Findings" -->
+        <path id="n8.block" d="M24,0 H104 A24,24 0 0 1 104,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 128 48" data-component="Findings"/>
+        <use id="n8.icon" href="#icon-residual" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Findings</text>
+      </g>
+      <path id="n3.arrow0" d="M192,56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="n1.arrow0" d="M424,152 H528" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    <path id="n1.arrow1" d="M208,184 H464 V32 H608 V128" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.top"/>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="592" height="288" viewBox="0 0 592 288" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Module 2 capstone: Remember the plan type</title>
+  <rect id="background" x="0" y="0" width="592" height="288" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="n1" data-bbox="0 0 592 288">
+    <!-- PORT:left x=32 y=56 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=176 y=56 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=104 y=32 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=104 y=80 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=216 y=56 id=n3.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=392 y=56 id=n3.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=304 y=32 id=n3.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=304 y=80 id=n3.bottom type=output component="Prompt Template" -->
+    <!-- PORT:left x=432 y=56 id=n4.left type=input component="Chat Model" -->
+    <!-- PORT:right x=560 y=56 id=n4.right type=output component="Chat Model" -->
+    <!-- PORT:top x=496 y=32 id=n4.top type=input component="Chat Model" -->
+    <!-- PORT:bottom x=496 y=80 id=n4.bottom type=output component="Chat Model" -->
+    <!-- PORT:left x=64 y=200 id=n6.left type=input component="Chat Output" -->
+    <!-- PORT:right x=208 y=200 id=n6.right type=output component="Chat Output" -->
+    <!-- PORT:top x=136 y=176 id=n6.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=136 y=224 id=n6.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=248 y=200 id=n7.left type=input component="Message History" -->
+    <!-- PORT:right x=424 y=200 id=n7.right type=output component="Message History" -->
+    <!-- PORT:top x=336 y=176 id=n7.top type=input component="Message History" -->
+    <!-- PORT:bottom x=336 y=224 id=n7.bottom type=output component="Message History" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="n2.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="n3" transform="translate(216,32)" data-bbox="216 32 176 48" data-label="Prompt Template">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=176 y=24 id=n3.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=88 y=0 id=n3.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=88 y=48 id=n3.bottom type=output component="Prompt Template" -->
+      <path id="n3.block" d="M0,0 H168 L176,8 V48 H0 Z M168,0 V8 H176" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 176 48" data-component="Prompt Template"/>
+      <use id="n3.icon" href="#icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+    </g>
+    <g id="n4" transform="translate(432,32)" data-bbox="432 32 128 48" data-label="Chat Model">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Model" -->
+      <!-- PORT:right x=128 y=24 id=n4.right type=output component="Chat Model" -->
+      <!-- PORT:top x=64 y=0 id=n4.top type=input component="Chat Model" -->
+      <!-- PORT:bottom x=64 y=48 id=n4.bottom type=output component="Chat Model" -->
+      <rect id="n4.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Model"/>
+      <use id="n4.icon" href="#icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Model</text>
+    </g>
+    <g id="n5" transform="translate(32,144)" data-bbox="32 144 424 112" data-label="Chat Output, Message History">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Chat Output" -->
+      <!-- PORT:right x=176 y=56 id=n6.right type=output component="Chat Output" -->
+      <!-- PORT:top x=104 y=32 id=n6.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=104 y=80 id=n6.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=216 y=56 id=n7.left type=input component="Message History" -->
+      <!-- PORT:right x=392 y=56 id=n7.right type=output component="Message History" -->
+      <!-- PORT:top x=304 y=32 id=n7.top type=input component="Message History" -->
+      <!-- PORT:bottom x=304 y=80 id=n7.bottom type=output component="Message History" -->
+      <g id="n6" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Output" -->
+        <path id="n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="n6.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <g id="n7" transform="translate(216,32)" data-bbox="216 32 176 48" data-label="Message History">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Message History" -->
+        <!-- PORT:right x=176 y=24 id=n7.right type=output component="Message History" -->
+        <!-- PORT:top x=88 y=0 id=n7.top type=input component="Message History" -->
+        <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Message History" -->
+        <path id="n7.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Message History"/>
+        <use id="n7.icon" href="#icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Message History</text>
+      </g>
+      <path id="n5.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="feedback" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+    </g>
+    <path id="n1.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="n1.arrow1" d="M392,56 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M496,80 V88 H136 V176" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.bottom" data-to="n6.top"/>
+    <path id="n1.arrow3" d="M424,200 H464 V112 H496 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n4.bottom"/>
+  </g>
+</svg>

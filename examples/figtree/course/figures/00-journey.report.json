@@ -1,0 +1,3157 @@
+{
+  "residual_defects": [
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    },
+    {
+      "severity": "warning",
+      "visual_description": "spec mode: 1 prose mention(s) not drawn: Ethics",
+      "code_anchor": "content_plan.components",
+      "fix_instruction": "declare it under Components to draw it",
+      "round_introduced": 0
+    },
+    {
+      "severity": "warning",
+      "visual_description": "excessive empty space around content",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink canvas to content + padding",
+      "round_introduced": 2
+    }
+  ],
+  "layout_tree": {
+    "stalks": {
+      "n4": {
+        "id": "n4",
+        "parent_id": "n2",
+        "description": "Introduction",
+        "canvas": {
+          "w": 160,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 160,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 80,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 80,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Introduction"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 64
+        },
+        "svg_fragment": null
+      },
+      "n5": {
+        "id": "n5",
+        "parent_id": "n2",
+        "description": "Components",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Components"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 232,
+          "y": 64
+        },
+        "svg_fragment": null
+      },
+      "n6": {
+        "id": "n6",
+        "parent_id": "n2",
+        "description": "Tools and MCP",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Tools and MCP"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 400,
+          "y": 64
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n7",
+        "description": "Applications",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Applications"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n7",
+        "description": "Collaboration",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          }
+        ],
+        "depth": 3,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Collaboration"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n2",
+        "description": "Applications, Collaboration",
+        "canvas": {
+          "w": 392,
+          "h": 112
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 288,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 288,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n8",
+            "parent_id": "n7",
+            "description": "Applications",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Applications"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n7",
+            "description": "Collaboration",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              }
+            ],
+            "depth": 3,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Collaboration"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 392,
+          "h": 112
+        },
+        "residuals": [],
+        "components": [
+          "Applications",
+          "Collaboration"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 584,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n2": {
+        "id": "n2",
+        "parent_id": "n1",
+        "description": "Introduction, Components, Tools and MCP, Applications, Collaboration",
+        "canvas": {
+          "w": 1008,
+          "h": 176
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 192,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 112,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 112,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 232,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 360,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 296,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 296,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 400,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 544,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 472,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 472,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 616,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 760,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 688,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 688,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 800,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 944,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 872,
+            "rel_y": 64,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 872,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n4",
+            "parent_id": "n2",
+            "description": "Introduction",
+            "canvas": {
+              "w": 160,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 160,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 80,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 80,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Introduction"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 160,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Introduction"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 64
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n5",
+            "parent_id": "n2",
+            "description": "Components",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Components"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Components"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Components"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Components"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Components"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 232,
+              "y": 64
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n6",
+            "parent_id": "n2",
+            "description": "Tools and MCP",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tools and MCP"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Tools and MCP"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 400,
+              "y": 64
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n7",
+            "parent_id": "n2",
+            "description": "Applications, Collaboration",
+            "canvas": {
+              "w": 392,
+              "h": 112
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 360,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 288,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 288,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n8",
+                "parent_id": "n7",
+                "description": "Applications",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Applications"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Applications"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n7",
+                "description": "Collaboration",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Collaboration"
+                  }
+                ],
+                "depth": 3,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Collaboration"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 392,
+              "h": 112
+            },
+            "residuals": [],
+            "components": [
+              "Applications",
+              "Collaboration"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 584,
+              "y": 32
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 1008,
+          "h": 176
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Introduction",
+          "Components",
+          "Tools and MCP",
+          "Applications",
+          "Collaboration"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Ethics and Security",
+        "canvas": {
+          "w": 208,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 208,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Ethics and Security"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 208,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Ethics and Security"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 432,
+          "y": 232
+        },
+        "svg_fragment": null
+      },
+      "n1": {
+        "id": "n1",
+        "parent_id": null,
+        "description": "The six-module journey",
+        "canvas": {
+          "w": 1072,
+          "h": 312
+        },
+        "ports": [
+          {
+            "id": "n4.left",
+            "side": "left",
+            "rel_x": 64,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.right",
+            "side": "right",
+            "rel_x": 224,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.top",
+            "side": "top",
+            "rel_x": 144,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Introduction"
+          },
+          {
+            "id": "n4.bottom",
+            "side": "bottom",
+            "rel_x": 144,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Introduction"
+          },
+          {
+            "id": "n5.left",
+            "side": "left",
+            "rel_x": 264,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.right",
+            "side": "right",
+            "rel_x": 392,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          },
+          {
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 328,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Components"
+          },
+          {
+            "id": "n5.bottom",
+            "side": "bottom",
+            "rel_x": 328,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Components"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 432,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 576,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 504,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 504,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Tools and MCP"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 648,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 792,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 720,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Applications"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 720,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Applications"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 832,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 976,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 904,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 904,
+            "rel_y": 144,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Collaboration"
+          },
+          {
+            "id": "n3.left",
+            "side": "left",
+            "rel_x": 432,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.right",
+            "side": "right",
+            "rel_x": 640,
+            "rel_y": 256,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.top",
+            "side": "top",
+            "rel_x": 536,
+            "rel_y": 232,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Ethics and Security"
+          },
+          {
+            "id": "n3.bottom",
+            "side": "bottom",
+            "rel_x": 536,
+            "rel_y": 280,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Ethics and Security"
+          }
+        ],
+        "depth": 0,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n2",
+            "parent_id": "n1",
+            "description": "Introduction, Components, Tools and MCP, Applications, Collaboration",
+            "canvas": {
+              "w": 1008,
+              "h": 176
+            },
+            "ports": [
+              {
+                "id": "n4.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.right",
+                "side": "right",
+                "rel_x": 192,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.top",
+                "side": "top",
+                "rel_x": 112,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Introduction"
+              },
+              {
+                "id": "n4.bottom",
+                "side": "bottom",
+                "rel_x": 112,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Introduction"
+              },
+              {
+                "id": "n5.left",
+                "side": "left",
+                "rel_x": 232,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Components"
+              },
+              {
+                "id": "n5.right",
+                "side": "right",
+                "rel_x": 360,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Components"
+              },
+              {
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 296,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Components"
+              },
+              {
+                "id": "n5.bottom",
+                "side": "bottom",
+                "rel_x": 296,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Components"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 400,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 544,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 472,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 472,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Tools and MCP"
+              },
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 616,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 760,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 688,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Applications"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 688,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Applications"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 800,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 944,
+                "rel_y": 88,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 872,
+                "rel_y": 64,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Collaboration"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 872,
+                "rel_y": 112,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Collaboration"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n4",
+                "parent_id": "n2",
+                "description": "Introduction",
+                "canvas": {
+                  "w": 160,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n4.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Introduction"
+                  },
+                  {
+                    "id": "n4.right",
+                    "side": "right",
+                    "rel_x": 160,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Introduction"
+                  },
+                  {
+                    "id": "n4.top",
+                    "side": "top",
+                    "rel_x": 80,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Introduction"
+                  },
+                  {
+                    "id": "n4.bottom",
+                    "side": "bottom",
+                    "rel_x": 80,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Introduction"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 160,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Introduction"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 64
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n5",
+                "parent_id": "n2",
+                "description": "Components",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n5.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Components"
+                  },
+                  {
+                    "id": "n5.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Components"
+                  },
+                  {
+                    "id": "n5.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Components"
+                  },
+                  {
+                    "id": "n5.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Components"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Components"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 232,
+                  "y": 64
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n6",
+                "parent_id": "n2",
+                "description": "Tools and MCP",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n6.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Tools and MCP"
+                  },
+                  {
+                    "id": "n6.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Tools and MCP"
+                  },
+                  {
+                    "id": "n6.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Tools and MCP"
+                  },
+                  {
+                    "id": "n6.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Tools and MCP"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Tools and MCP"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 400,
+                  "y": 64
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n7",
+                "parent_id": "n2",
+                "description": "Applications, Collaboration",
+                "canvas": {
+                  "w": 392,
+                  "h": 112
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 32,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 176,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 104,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 104,
+                    "rel_y": 80,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Applications"
+                  },
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 216,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 360,
+                    "rel_y": 56,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 288,
+                    "rel_y": 32,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Collaboration"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 288,
+                    "rel_y": 80,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Collaboration"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [
+                  {
+                    "id": "n8",
+                    "parent_id": "n7",
+                    "description": "Applications",
+                    "canvas": {
+                      "w": 144,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n8.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Applications"
+                      },
+                      {
+                        "id": "n8.right",
+                        "side": "right",
+                        "rel_x": 144,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Applications"
+                      },
+                      {
+                        "id": "n8.top",
+                        "side": "top",
+                        "rel_x": 72,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Applications"
+                      },
+                      {
+                        "id": "n8.bottom",
+                        "side": "bottom",
+                        "rel_x": 72,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Applications"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 144,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Applications"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 32,
+                      "y": 32
+                    },
+                    "svg_fragment": null
+                  },
+                  {
+                    "id": "n9",
+                    "parent_id": "n7",
+                    "description": "Collaboration",
+                    "canvas": {
+                      "w": 144,
+                      "h": 48
+                    },
+                    "ports": [
+                      {
+                        "id": "n9.left",
+                        "side": "left",
+                        "rel_x": 0,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Collaboration"
+                      },
+                      {
+                        "id": "n9.right",
+                        "side": "right",
+                        "rel_x": 144,
+                        "rel_y": 24,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Collaboration"
+                      },
+                      {
+                        "id": "n9.top",
+                        "side": "top",
+                        "rel_x": 72,
+                        "rel_y": 0,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "input",
+                        "component": "Collaboration"
+                      },
+                      {
+                        "id": "n9.bottom",
+                        "side": "bottom",
+                        "rel_x": 72,
+                        "rel_y": 48,
+                        "abs_x": 0,
+                        "abs_y": 0,
+                        "type": "output",
+                        "component": "Collaboration"
+                      }
+                    ],
+                    "depth": 3,
+                    "style": {
+                      "palette": {
+                        "attention": "#F3C9A4",
+                        "processing": "#C9DCF0",
+                        "residual": "#F6EFD2",
+                        "input": "#E6E8EC",
+                        "container": "#F8F9FB",
+                        "border": "#2B3A4A"
+                      },
+                      "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                      "font_size_label": "14-16pt",
+                      "font_size_annot": "11-13pt",
+                      "stroke_main": 1.4,
+                      "stroke_border": 1.0,
+                      "grid": 8,
+                      "min_arrow": 24,
+                      "padding": 32,
+                      "preset": "teaching"
+                    },
+                    "children": [],
+                    "bbox": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 144,
+                      "h": 48
+                    },
+                    "residuals": [],
+                    "components": [
+                      "Collaboration"
+                    ],
+                    "layout": "horizontal",
+                    "offset": {
+                      "x": 216,
+                      "y": 32
+                    },
+                    "svg_fragment": null
+                  }
+                ],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 392,
+                  "h": 112
+                },
+                "residuals": [],
+                "components": [
+                  "Applications",
+                  "Collaboration"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 584,
+                  "y": 32
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 1008,
+              "h": 176
+            },
+            "residuals": [
+              {
+                "severity": "warning",
+                "visual_description": "excessive empty space around content",
+                "code_anchor": "svg",
+                "fix_instruction": "shrink canvas to content + padding",
+                "round_introduced": 2
+              }
+            ],
+            "components": [
+              "Introduction",
+              "Components",
+              "Tools and MCP",
+              "Applications",
+              "Collaboration"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Ethics and Security",
+            "canvas": {
+              "w": 208,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n3.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Ethics and Security"
+              },
+              {
+                "id": "n3.right",
+                "side": "right",
+                "rel_x": 208,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Ethics and Security"
+              },
+              {
+                "id": "n3.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Ethics and Security"
+              },
+              {
+                "id": "n3.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Ethics and Security"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 208,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Ethics and Security"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 432,
+              "y": 232
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 1072,
+          "h": 312
+        },
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "spec mode: 1 prose mention(s) not drawn: Ethics",
+            "code_anchor": "content_plan.components",
+            "fix_instruction": "declare it under Components to draw it",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "components": [
+          "Introduction",
+          "Components",
+          "Tools and MCP",
+          "Applications",
+          "Collaboration",
+          "Ethics and Security"
+        ],
+        "layout": "vertical",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "svg_fragment": null
+      }
+    },
+    "sections": {
+      "n4": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n5": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n6": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n8": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n9": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n7": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n2": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n3": {
+        "residuals": [],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      },
+      "n1": {
+        "residuals": [
+          {
+            "severity": "warning",
+            "visual_description": "spec mode: 1 prose mention(s) not drawn: Ethics",
+            "code_anchor": "content_plan.components",
+            "fix_instruction": "declare it under Components to draw it",
+            "round_introduced": 0
+          },
+          {
+            "severity": "warning",
+            "visual_description": "excessive empty space around content",
+            "code_anchor": "svg",
+            "fix_instruction": "shrink canvas to content + padding",
+            "round_introduced": 2
+          }
+        ],
+        "style_invariant": "((('attention', '#F3C9A4'), ('border', '#2B3A4A'), ('container', '#F8F9FB'), ('input', '#E6E8EC'), ('processing', '#C9DCF0'), ('residual', '#F6EFD2')), 'IBM Plex Sans, Helvetica Neue, Arial, sans-serif', '14-16pt', '11-13pt', 1.4, 1.0, 8, 24, 32)"
+      }
+    },
+    "edges": [
+      [
+        "n7",
+        "n8"
+      ],
+      [
+        "n7",
+        "n9"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ]
+    ],
+    "restriction": {
+      "n7->n8": true,
+      "n7->n9": true,
+      "n2->n4": true,
+      "n2->n5": true,
+      "n2->n6": true,
+      "n2->n7": true,
+      "n1->n2": true,
+      "n1->n3": true
+    },
+    "conserved": true
+  },
+  "editability_proof": {
+    "passed": true,
+    "diff_element_count": 1,
+    "changed": [
+      "#n4.block"
+    ],
+    "edit": {
+      "op": "recolor",
+      "component": "Introduction",
+      "fill": "#F4A460"
+    },
+    "ports_valid": true,
+    "bboxes_valid": true,
+    "requires_remerge": false,
+    "note": ""
+  },
+  "content_plan": {
+    "claim": "The six-module journey",
+    "components": [
+      {
+        "name": "Introduction",
+        "evidence_span": "Introduction",
+        "kind": "terminal",
+        "icon": "user"
+      },
+      {
+        "name": "Components",
+        "evidence_span": "Components",
+        "kind": "block",
+        "icon": "layers"
+      },
+      {
+        "name": "Tools and MCP",
+        "evidence_span": "Tools and MCP",
+        "kind": "block",
+        "icon": "wrench"
+      },
+      {
+        "name": "Applications",
+        "evidence_span": "Applications",
+        "kind": "block",
+        "icon": "decompose"
+      },
+      {
+        "name": "Collaboration",
+        "evidence_span": "Collaboration",
+        "kind": "block",
+        "icon": "check"
+      },
+      {
+        "name": "Ethics and Security",
+        "evidence_span": "- **Ethics and Security** (kind: terminal, icon: eye)",
+        "kind": "terminal",
+        "icon": "eye"
+      }
+    ],
+    "flows": [
+      {
+        "from": "Introduction",
+        "to": "Components",
+        "type": "data",
+        "evidence_span": "Introduction \u2192 Components \u2192 Tools and MCP \u2192 Applications \u2192 Collaboration \u2192 Ethics"
+      },
+      {
+        "from": "Components",
+        "to": "Tools and MCP",
+        "type": "data",
+        "evidence_span": "Introduction \u2192 Components \u2192 Tools and MCP \u2192 Applications \u2192 Collaboration \u2192 Ethics"
+      },
+      {
+        "from": "Tools and MCP",
+        "to": "Applications",
+        "type": "data",
+        "evidence_span": "Introduction \u2192 Components \u2192 Tools and MCP \u2192 Applications \u2192 Collaboration \u2192 Ethics"
+      },
+      {
+        "from": "Applications",
+        "to": "Collaboration",
+        "type": "data",
+        "evidence_span": "Introduction \u2192 Components \u2192 Tools and MCP \u2192 Applications \u2192 Collaboration \u2192 Ethics"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "notation": [
+      "\u2192"
+    ]
+  },
+  "global_style": {
+    "palette": {
+      "attention": "#F3C9A4",
+      "processing": "#C9DCF0",
+      "residual": "#F6EFD2",
+      "input": "#E6E8EC",
+      "container": "#F8F9FB",
+      "border": "#2B3A4A"
+    },
+    "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+    "font_size_label": "14-16pt",
+    "font_size_annot": "11-13pt",
+    "stroke_main": 1.4,
+    "stroke_border": 1.0,
+    "grid": 8,
+    "min_arrow": 24,
+    "padding": 32,
+    "preset": "teaching"
+  },
+  "faithfulness_failures": [],
+  "events": [
+    "n2 round 1: 1 defect(s)",
+    "n2 round 2: 1 defect(s)",
+    "n2: repair made no progress; recording residuals",
+    "n1 round 1: 1 defect(s)",
+    "n1 round 2: 1 defect(s)",
+    "n1: repair made no progress; recording residuals"
+  ],
+  "node_count": 9,
+  "unit": {
+    "id": "00-journey",
+    "source": "examples/figtree/course/specs/00-journey.md",
+    "title": "The six-module journey",
+    "span": [
+      1,
+      31
+    ],
+    "chars": 1484,
+    "est_components": 6,
+    "est_flows": 4
+  }
+}

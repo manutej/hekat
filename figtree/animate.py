@@ -87,7 +87,7 @@ def animate_svg(svg_text: str, modes: Tuple[str, ...] = ("reveal", "draw", "puls
         css.append("@keyframes ft-travel{from{offset-distance:0%}to{offset-distance:100%}}")
         start = blocks_done + len(flows) * 0.15 + tl.draw
         for i, f in enumerate(flows):
-            is_control = f.el.get("data-flow") in ("control", "conditional")
+            is_control = f.el.get("data-flow") in ("control", "conditional", "feedback")
             dur = tl.pulse * (1.6 if is_control else 1.0)
             pid = f"ft-pulse-{i}"
             fill = "#333333" if not is_control else "#999999"
