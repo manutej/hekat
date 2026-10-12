@@ -115,3 +115,18 @@ the edit script it wrote.
 - `assets/figure-skeleton.svg`: house-style starting file with ids, ports and data-role attributes.
 - `assets/edit-script.template.json`: every op, one round per list.
 - `assets/worker-brief.md`: fill-in brief for a scoring/repair subagent.
+
+## Never accept an arrow through a block or a label
+
+This was the one defect every small-model run reproduced (`docs/FAILURE-MODES.md`, rows 1-3).
+The worker now routes around every block with a 4 px halo and re-routes anything that still
+collides, so a figure that shows it is a bug to report, not a figure to ship. Before you hand
+a figure back:
+
+1. `python -m figtree score FIG.svg --rubric <medium> --json` must list no `flow.through_block`,
+   `flow.through_text` or `flow.collinear_overlap` issue. If it does, regenerate (the generator
+   and worker changed) or run `figtree refine`; never edit the arrow by hand in the SVG.
+2. Look at the PNG once: a shaft grazing a container title, an arrow label on another shaft,
+   or two heads on one line are the cases the checks can still miss.
+3. In a workflow, these three check ids are blocking: the refine and digest scripts repair on
+   any critical, and a spec card's DON'T names them.

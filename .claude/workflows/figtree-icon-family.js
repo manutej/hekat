@@ -1,11 +1,11 @@
 export const meta = {
   name: 'figtree-icon-family',
-  description: 'Draw an icon per brief with figtree icon, review each at 16/24/48 px with a cold eye, repair once when below 9.5, build the contact sheet',
+  description: 'Draw an icon per brief with figtree icon, review each at 16/24/48 px with a cold eye, repair up to three times from the reviewer's defects while below 9.5, build the contact sheet',
   whenToUse: 'A family of custom 24-grid stroke icons must be designed and must survive small sizes; each brief is a name, a concept and an optional metaphor',
   phases: [
     { title: 'Draw', detail: 'figtree icon --backend claude per brief (hand-drawn fallback when the backend fails)' },
     { title: 'Review', detail: 'render at 16/24/48 px, cold-eye score and defects' },
-    { title: 'Repair', detail: 'one repair round when score < 9.5' },
+    { title: 'Repair', detail: 'up to three repair rounds fed with the reviewer defects while score < 9.5' },
     { title: 'Sheet', detail: 'contact sheet of the accepted icons' },
   ],
 }
@@ -22,6 +22,7 @@ const briefs = (args.briefs || []).filter((b) => b && b.name && b.concept)
 const outDir = args.out_dir
 if (!briefs.length || !outDir) throw new Error('figtree-icon-family needs args {briefs: [{name, concept, metaphor?}], out_dir}')
 const ACCEPT = 9.5
+const ROUNDS = Math.max(1, Math.min(args.rounds || 3, 4))  // cold-eye repair rounds per icon
 
 const DRAW_SCHEMA = {
   type: 'object',
@@ -94,19 +95,31 @@ const results = await pipeline(
   },
   async ({ drawn, review }, b) => {
     if (!review) return { name: b.name, svg: drawn.svg, backend: drawn.backend, score: drawn.score, defects: [], repaired: false, status: 'unreviewed' }
-    if (review.score >= ACCEPT) return { name: b.name, svg: drawn.svg, backend: drawn.backend, score: review.score, defects: review.defects, repaired: false, status: 'accepted' }
-    const fixed = await run(repairPrompt(b, drawn.svg, review), { phase: 'Repair', label: `repair ${b.name}`, schema: DRAW_SCHEMA })
-    const second = fixed ? await run(reviewPrompt(b, fixed.svg, 2), { phase: 'Review', label: `re-review ${b.name}`, schema: REVIEW_SCHEMA, effort: 'low' }) : null
-    const score = second ? second.score : review.score
+    // up to ROUNDS repair rounds, each fed the latest cold-eye defects; stop at ACCEPT
+    let current = { svg: drawn.svg, backend: drawn.backend }
+    let verdict = review
+    let rounds = 0
+    const history = [review.score]
+    while (verdict.score < ACCEPT && rounds < ROUNDS) {
+      rounds += 1
+      const fixed = await run(repairPrompt(b, current.svg, verdict), { phase: 'Repair', label: `repair ${b.name} r${rounds}`, schema: DRAW_SCHEMA })
+      if (!fixed) break
+      current = { svg: fixed.svg, backend: 'repair' }
+      const again = await run(reviewPrompt(b, fixed.svg, rounds + 1), { phase: 'Review', label: `re-review ${b.name} r${rounds}`, schema: REVIEW_SCHEMA, effort: 'low' })
+      if (!again) break
+      verdict = again
+      history.push(again.score)
+    }
     return {
       name: b.name,
-      svg: drawn.svg,
-      backend: drawn.backend,
-      score,
-      score_before_repair: review.score,
-      defects: second ? second.defects : review.defects,
-      repaired: Boolean(fixed),
-      status: score >= ACCEPT ? 'accepted' : 'needs work',
+      svg: current.svg,
+      backend: current.backend,
+      score: verdict.score,
+      score_history: history,
+      defects: verdict.defects,
+      repaired: rounds > 0,
+      rounds,
+      status: verdict.score >= ACCEPT ? 'accepted' : 'needs work',
     }
   },
 )

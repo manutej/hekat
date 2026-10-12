@@ -4,13 +4,13 @@
     "semantic_coverage": null,
     "hallucination_control": 10.0,
     "topology_accuracy": 10.0,
-    "flow_readability": 3.6,
+    "flow_readability": 10.0,
     "text_quality": 10.0,
     "visual_polish": 10.0,
-    "medium_fit": 6.0,
+    "medium_fit": 10.0,
     "compactness": 9.0
   },
-  "overall": 8.37,
+  "overall": 9.86,
   "issues": [
     {
       "check_id": "compactness.blank_margin",
@@ -22,64 +22,19 @@
       "penalty": 1.0,
       "auto_edit": {
         "op": "set_canvas",
-        "width": 640,
+        "width": 624,
         "height": 321
       }
-    },
-    {
-      "check_id": "flow.crossings",
-      "dimension": "flow_readability",
-      "severity": "warning",
-      "visual_description": "2 arrow crossing(s)",
-      "code_anchor": "n5.arrow0",
-      "fix_instruction": "re-order or re-route to remove crossings",
-      "penalty": 1.4,
-      "auto_edit": null
-    },
-    {
-      "check_id": "flow.collinear_overlap",
-      "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "arrows n1.arrow1 and n1.arrow3 share a collinear shaft for 120px (two heads, ambiguous endpoints)",
-      "code_anchor": "n1.arrow1",
-      "fix_instruction": "offset one arrow by a grid step or merge them into one connector",
-      "penalty": 1.5,
-      "auto_edit": null
-    },
-    {
-      "check_id": "flow.through_block",
-      "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "n1.arrow3 passes through a block (n3.block)",
-      "code_anchor": "n1.arrow3",
-      "fix_instruction": "re-route around the block (keep a clear halo of 4px)",
-      "penalty": 1.5,
-      "auto_edit": null
-    },
-    {
-      "check_id": "flow.through_text",
-      "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "n1.arrow3 strikes through label(s) n3.label",
-      "code_anchor": "n1.arrow3",
-      "fix_instruction": "move the label beside the shaft or re-route the arrow",
-      "penalty": 1.5,
-      "auto_edit": null
     }
   ],
-  "tags": [
-    "flow_readability",
-    "veto:occlusion",
-    "veto:chaotic_routing"
-  ],
+  "tags": [],
   "metrics": {
-    "fill_ratio": 0.667,
-    "aspect": 1.78,
-    "mean_detour": 1.08,
-    "crossings": 2,
+    "fill_ratio": 0.665,
+    "aspect": 1.73,
+    "mean_detour": 1.07,
+    "crossings": 0,
     "forward_ratio": 0.75,
-    "palette_size": 1,
-    "vetoes": 2
+    "palette_size": 1
   },
   "unit": "run-flow-api",
   "title": "Running a Flow from an Application through the API",

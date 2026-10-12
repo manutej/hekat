@@ -4,68 +4,70 @@
     "semantic_coverage": null,
     "hallucination_control": 10.0,
     "topology_accuracy": 10.0,
-    "flow_readability": 5.0,
-    "text_quality": 9.0,
-    "visual_polish": 9.5,
-    "medium_fit": 6.0,
-    "compactness": 10.0
+    "flow_readability": 7.3,
+    "text_quality": 10.0,
+    "visual_polish": 10.0,
+    "medium_fit": 7.0,
+    "compactness": 8.0
   },
-  "overall": 8.5,
+  "overall": 8.9,
   "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "top margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "move the content towards the edge and shrink the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "shrink the canvas to content + margin",
+      "penalty": 1.0,
+      "auto_edit": {
+        "op": "set_canvas",
+        "width": 744,
+        "height": 217
+      }
+    },
+    {
+      "check_id": "flow.crossings",
+      "dimension": "flow_readability",
+      "severity": "warning",
+      "visual_description": "1 arrow crossing(s)",
+      "code_anchor": "n2.arrow0",
+      "fix_instruction": "re-order or re-route to remove crossings",
+      "penalty": 0.7,
+      "auto_edit": null
+    },
     {
       "check_id": "flow.semantic_direction",
       "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "block n6.block ('Human Input:') reads as a source but only receives data",
+      "severity": "warning",
+      "visual_description": "block n6.block ('Human Input') reads as a source but only receives data",
       "code_anchor": "n6.block",
       "fix_instruction": "check the arrow direction against the method (judge request)",
       "penalty": 2.0,
       "auto_edit": null
-    },
-    {
-      "check_id": "text.min_font",
-      "dimension": "text_quality",
-      "severity": "warning",
-      "visual_description": "n2.title font size 12px below the teaching material minimum 14px",
-      "code_anchor": "n2.title",
-      "fix_instruction": "raise font size to at least 14px",
-      "penalty": 1.0,
-      "auto_edit": {
-        "op": "set_attr",
-        "id": "n2.title",
-        "attr": "font-size",
-        "value": "14"
-      }
-    },
-    {
-      "check_id": "polish.corner_radius",
-      "dimension": "visual_polish",
-      "severity": "warning",
-      "visual_description": "n2.container corner radius 10 looks clip-art like",
-      "code_anchor": "n2.container",
-      "fix_instruction": "use rx <= 8",
-      "penalty": 0.5,
-      "auto_edit": {
-        "op": "set_attr",
-        "id": "n2.container",
-        "attr": "rx",
-        "value": "8"
-      }
     }
   ],
   "tags": [
-    "flow_readability",
-    "veto:illegible_type",
-    "veto:clip_art"
+    "veto:chaotic_routing"
   ],
   "metrics": {
-    "fill_ratio": 0.671,
-    "aspect": 2.88,
-    "mean_detour": 1.0,
-    "crossings": 0,
+    "fill_ratio": 0.438,
+    "aspect": 2.91,
+    "mean_detour": 1.06,
+    "crossings": 1,
     "forward_ratio": 1.0,
     "palette_size": 1,
-    "vetoes": 2
+    "vetoes": 1
   },
   "unit": "human-in-the-loop",
   "title": "Pausing a Flow for a Human",

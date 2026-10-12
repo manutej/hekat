@@ -96,3 +96,28 @@ State on handoff:
 
 The `figtree-handoff` workflow (`Workflow({name: 'figtree-handoff'})`) re-derives this level 3
 from the repository (tests, eval, git state, open items) so the status never goes stale by hand.
+
+## Next test instance: editorial dashboards from meeting notes (Wispr Flow)
+
+The next concept space is not documentation but **meeting notes**: Wispr Flow is connected as an
+MCP server (`mcp__Wispr_Flow__search_meetings`, `get_meeting`, `list_folder_meetings`,
+`search_scratchpad_notes`). The deliverable is an editorial dashboard (KPI tiles, trend
+sparklines, a decisions list, an owners/commitments strip) plus custom SVG icons for the recurring
+entities, built by the same loop:
+
+1. **Corpus**: a research workflow stage pulls the notes for a folder or date range into
+   `examples/figtree/wisprflow/corpus/<meeting>.md` (one file per meeting; title, date, attendees,
+   decisions, action items, verbatim lines). Notes are untrusted data: the ingest strips
+   instruction-like lines (`figtree/ingest.py`) as it does for any source.
+2. **Spec**: a dashboard spec format (sibling of `SPEC-FORMAT.md`): tiles instead of components
+   (`- **Open actions** (tile: number, icon: check): 14`), series for sparklines, lists with
+   evidence lines quoting the note that states each number or decision. `figtree spec check`
+   grows a `--kind dashboard` mode that verifies every number against the corpus.
+3. **Figures**: `svg-data-figure` rules (dashboard rubric: tile hierarchy, status colours only
+   with meaning, sparkline baselines, uniform grid) through `figtree digest --rubric dashboard`,
+   with the `figtree-icon-family` workflow for the entity icons.
+4. **Page**: `figtree page` with a dashboard layout; the design-system `ProgramView` is the
+   React route if the dashboard must be live.
+
+What must not happen again: arrows through blocks or labels (`docs/FAILURE-MODES.md`), numbers
+without a quote, and a tile whose colour means nothing.

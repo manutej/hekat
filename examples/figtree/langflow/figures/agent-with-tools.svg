@@ -106,9 +106,9 @@
       <text id="n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
     </g>
     <path id="n1.arrow0" d="M176,200 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
-    <path id="n1.arrow1" d="M312,200 H352 V336 H392" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n5.left"/>
-    <path id="n1.arrow2" d="M312,200 H360 V88 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n6.left"/>
-    <path id="n1.arrow3" d="M312,200 H384 V160 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n7.left"/>
+    <path id="n1.arrow1" d="M264,224 V336 H392" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.bottom" data-to="n5.left"/>
+    <path id="n1.arrow2" d="M264,176 V88 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.top" data-to="n6.left"/>
+    <path id="n1.arrow3" d="M312,200 H320 V160 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n7.left"/>
     <path id="n1.arrow4" d="M312,200 H376 V232 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n8.left"/>
   </g>
 </svg>

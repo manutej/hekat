@@ -705,7 +705,7 @@
         "layout": "vertical",
         "offset": {
           "x": 32,
-          "y": 64
+          "y": 32
         },
         "svg_fragment": null
       },
@@ -1404,7 +1404,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 312,
-          "y": 104
+          "y": 72
         },
         "svg_fragment": null
       },
@@ -1414,14 +1414,14 @@
         "description": "Flows exposed as tools to MCP clients",
         "canvas": {
           "w": 736,
-          "h": 352
+          "h": 320
         },
         "ports": [
           {
             "id": "n4.left",
             "side": "left",
             "rel_x": 64,
-            "rel_y": 120,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1431,7 +1431,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 240,
-            "rel_y": 120,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1441,7 +1441,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 152,
-            "rel_y": 96,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1451,7 +1451,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 152,
-            "rel_y": 144,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1461,7 +1461,7 @@
             "id": "n5.left",
             "side": "left",
             "rel_x": 112,
-            "rel_y": 192,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1471,7 +1471,7 @@
             "id": "n5.right",
             "side": "right",
             "rel_x": 192,
-            "rel_y": 192,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1481,7 +1481,7 @@
             "id": "n5.top",
             "side": "top",
             "rel_x": 152,
-            "rel_y": 168,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1491,7 +1491,7 @@
             "id": "n5.bottom",
             "side": "bottom",
             "rel_x": 152,
-            "rel_y": 216,
+            "rel_y": 184,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1501,7 +1501,7 @@
             "id": "n6.left",
             "side": "left",
             "rel_x": 80,
-            "rel_y": 264,
+            "rel_y": 232,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1511,7 +1511,7 @@
             "id": "n6.right",
             "side": "right",
             "rel_x": 224,
-            "rel_y": 264,
+            "rel_y": 232,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1521,7 +1521,7 @@
             "id": "n6.top",
             "side": "top",
             "rel_x": 152,
-            "rel_y": 240,
+            "rel_y": 208,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1531,7 +1531,7 @@
             "id": "n6.bottom",
             "side": "bottom",
             "rel_x": 152,
-            "rel_y": 288,
+            "rel_y": 256,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1541,7 +1541,7 @@
             "id": "n7.left",
             "side": "left",
             "rel_x": 344,
-            "rel_y": 160,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1551,7 +1551,7 @@
             "id": "n7.right",
             "side": "right",
             "rel_x": 504,
-            "rel_y": 160,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1561,7 +1561,7 @@
             "id": "n7.top",
             "side": "top",
             "rel_x": 424,
-            "rel_y": 136,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1571,7 +1571,7 @@
             "id": "n7.bottom",
             "side": "bottom",
             "rel_x": 424,
-            "rel_y": 184,
+            "rel_y": 152,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1581,7 +1581,7 @@
             "id": "n8.left",
             "side": "left",
             "rel_x": 352,
-            "rel_y": 232,
+            "rel_y": 200,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1591,7 +1591,7 @@
             "id": "n8.right",
             "side": "right",
             "rel_x": 496,
-            "rel_y": 232,
+            "rel_y": 200,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1601,7 +1601,7 @@
             "id": "n8.top",
             "side": "top",
             "rel_x": 424,
-            "rel_y": 208,
+            "rel_y": 176,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1611,7 +1611,7 @@
             "id": "n8.bottom",
             "side": "bottom",
             "rel_x": 424,
-            "rel_y": 256,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1621,7 +1621,7 @@
             "id": "n9.left",
             "side": "left",
             "rel_x": 544,
-            "rel_y": 200,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1631,7 +1631,7 @@
             "id": "n9.right",
             "side": "right",
             "rel_x": 672,
-            "rel_y": 200,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1641,7 +1641,7 @@
             "id": "n9.top",
             "side": "top",
             "rel_x": 608,
-            "rel_y": 176,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1651,7 +1651,7 @@
             "id": "n9.bottom",
             "side": "bottom",
             "rel_x": 608,
-            "rel_y": 224,
+            "rel_y": 192,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -2110,7 +2110,7 @@
             "layout": "vertical",
             "offset": {
               "x": 32,
-              "y": 64
+              "y": 32
             },
             "svg_fragment": null
           },
@@ -2545,7 +2545,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 312,
-              "y": 104
+              "y": 72
             },
             "svg_fragment": null
           }
@@ -2554,7 +2554,7 @@
           "x": 0,
           "y": 0,
           "w": 736,
-          "h": 352
+          "h": 320
         },
         "residuals": [
           {

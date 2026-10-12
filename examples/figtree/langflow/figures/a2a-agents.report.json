@@ -94,16 +94,16 @@
         "layout": "horizontal",
         "offset": {
           "x": 32,
-          "y": 32
+          "y": 56
         },
         "svg_fragment": null
       },
       "n5": {
         "id": "n5",
         "parent_id": "n2",
-        "description": "Chat Input",
+        "description": "JSON-RPC Endpoint",
         "canvas": {
-          "w": 144,
+          "w": 176,
           "h": 48
         },
         "ports": [
@@ -115,98 +115,10 @@
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n5.right",
-            "side": "right",
-            "rel_x": 144,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n5.top",
-            "side": "top",
-            "rel_x": 72,
-            "rel_y": 0,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n5.bottom",
-            "side": "bottom",
-            "rel_x": 72,
-            "rel_y": 48,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Input"
-          }
-        ],
-        "depth": 2,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 144,
-          "h": 48
-        },
-        "residuals": [],
-        "components": [
-          "Chat Input"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 32,
-          "y": 104
-        },
-        "svg_fragment": null
-      },
-      "n6": {
-        "id": "n6",
-        "parent_id": "n2",
-        "description": "JSON-RPC Endpoint",
-        "canvas": {
-          "w": 176,
-          "h": 48
-        },
-        "ports": [
-          {
-            "id": "n6.left",
-            "side": "left",
-            "rel_x": 0,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
             "component": "JSON-RPC Endpoint"
           },
           {
-            "id": "n6.right",
+            "id": "n5.right",
             "side": "right",
             "rel_x": 176,
             "rel_y": 24,
@@ -216,7 +128,7 @@
             "component": "JSON-RPC Endpoint"
           },
           {
-            "id": "n6.top",
+            "id": "n5.top",
             "side": "top",
             "rel_x": 88,
             "rel_y": 0,
@@ -226,7 +138,7 @@
             "component": "JSON-RPC Endpoint"
           },
           {
-            "id": "n6.bottom",
+            "id": "n5.bottom",
             "side": "bottom",
             "rel_x": 88,
             "rel_y": 48,
@@ -270,58 +182,58 @@
         "layout": "horizontal",
         "offset": {
           "x": 216,
-          "y": 32
+          "y": 56
         },
         "svg_fragment": null
       },
-      "n7": {
-        "id": "n7",
+      "n6": {
+        "id": "n6",
         "parent_id": "n2",
-        "description": "A2A Caller",
+        "description": "Published Flow",
         "canvas": {
-          "w": 128,
+          "w": 160,
           "h": 48
         },
         "ports": [
           {
-            "id": "n7.left",
+            "id": "n6.left",
             "side": "left",
             "rel_x": 0,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "A2A Caller"
+            "component": "Published Flow"
           },
           {
-            "id": "n7.right",
+            "id": "n6.right",
             "side": "right",
-            "rel_x": 128,
+            "rel_x": 160,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "A2A Caller"
+            "component": "Published Flow"
           },
           {
-            "id": "n7.top",
+            "id": "n6.top",
             "side": "top",
-            "rel_x": 64,
+            "rel_x": 80,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "A2A Caller"
+            "component": "Published Flow"
           },
           {
-            "id": "n7.bottom",
+            "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 64,
+            "rel_x": 80,
             "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "A2A Caller"
+            "component": "Published Flow"
           }
         ],
         "depth": 2,
@@ -348,34 +260,122 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 128,
+          "w": 160,
           "h": 48
         },
         "residuals": [],
         "components": [
-          "A2A Caller"
+          "Published Flow"
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 240,
-          "y": 104
+          "x": 432,
+          "y": 56
+        },
+        "svg_fragment": null
+      },
+      "n7": {
+        "id": "n7",
+        "parent_id": "n2",
+        "description": "Agent Card",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Card"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Agent Card"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 632,
+          "y": 56
         },
         "svg_fragment": null
       },
       "n2": {
         "id": "n2",
         "parent_id": "n1",
-        "description": "A2A Client, Chat Input, JSON-RPC Endpoint, A2A Caller",
+        "description": "Published Flow, Agent Card, A2A Client, JSON-RPC Endpoint",
         "canvas": {
-          "w": 424,
-          "h": 184
+          "w": 808,
+          "h": 136
         },
         "ports": [
           {
             "id": "n4.left",
             "side": "left",
             "rel_x": 32,
-            "rel_y": 56,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -385,7 +385,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 176,
-            "rel_y": 56,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -395,7 +395,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 104,
-            "rel_y": 32,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -405,7 +405,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 104,
-            "rel_y": 80,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -414,77 +414,17 @@
           {
             "id": "n5.left",
             "side": "left",
-            "rel_x": 32,
-            "rel_y": 128,
+            "rel_x": 216,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Input"
+            "component": "JSON-RPC Endpoint"
           },
           {
             "id": "n5.right",
             "side": "right",
-            "rel_x": 176,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n5.top",
-            "side": "top",
-            "rel_x": 104,
-            "rel_y": 104,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n5.bottom",
-            "side": "bottom",
-            "rel_x": 104,
-            "rel_y": 152,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Input"
-          },
-          {
-            "id": "n6.left",
-            "side": "left",
-            "rel_x": 216,
-            "rel_y": 56,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "JSON-RPC Endpoint"
-          },
-          {
-            "id": "n6.right",
-            "side": "right",
             "rel_x": 392,
-            "rel_y": 56,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "JSON-RPC Endpoint"
-          },
-          {
-            "id": "n6.top",
-            "side": "top",
-            "rel_x": 304,
-            "rel_y": 32,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "JSON-RPC Endpoint"
-          },
-          {
-            "id": "n6.bottom",
-            "side": "bottom",
-            "rel_x": 304,
             "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
@@ -492,44 +432,104 @@
             "component": "JSON-RPC Endpoint"
           },
           {
-            "id": "n7.left",
-            "side": "left",
-            "rel_x": 240,
-            "rel_y": 128,
+            "id": "n5.top",
+            "side": "top",
+            "rel_x": 304,
+            "rel_y": 56,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "A2A Caller"
+            "component": "JSON-RPC Endpoint"
           },
           {
-            "id": "n7.right",
-            "side": "right",
-            "rel_x": 368,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "A2A Caller"
-          },
-          {
-            "id": "n7.top",
-            "side": "top",
+            "id": "n5.bottom",
+            "side": "bottom",
             "rel_x": 304,
             "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
+            "type": "output",
+            "component": "JSON-RPC Endpoint"
+          },
+          {
+            "id": "n6.left",
+            "side": "left",
+            "rel_x": 432,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
             "type": "input",
-            "component": "A2A Caller"
+            "component": "Published Flow"
+          },
+          {
+            "id": "n6.right",
+            "side": "right",
+            "rel_x": 592,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Published Flow"
+          },
+          {
+            "id": "n6.top",
+            "side": "top",
+            "rel_x": 512,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Published Flow"
+          },
+          {
+            "id": "n6.bottom",
+            "side": "bottom",
+            "rel_x": 512,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Published Flow"
+          },
+          {
+            "id": "n7.left",
+            "side": "left",
+            "rel_x": 632,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 776,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 704,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Card"
           },
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 304,
-            "rel_y": 152,
+            "rel_x": 704,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "A2A Caller"
+            "component": "Agent Card"
           }
         ],
         "depth": 1,
@@ -637,16 +637,16 @@
             "layout": "horizontal",
             "offset": {
               "x": 32,
-              "y": 32
+              "y": 56
             },
             "svg_fragment": null
           },
           {
             "id": "n5",
             "parent_id": "n2",
-            "description": "Chat Input",
+            "description": "JSON-RPC Endpoint",
             "canvas": {
-              "w": 144,
+              "w": 176,
               "h": 48
             },
             "ports": [
@@ -658,98 +658,10 @@
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n5.right",
-                "side": "right",
-                "rel_x": 144,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n5.top",
-                "side": "top",
-                "rel_x": 72,
-                "rel_y": 0,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n5.bottom",
-                "side": "bottom",
-                "rel_x": 72,
-                "rel_y": 48,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Input"
-              }
-            ],
-            "depth": 2,
-            "style": {
-              "palette": {
-                "attention": "#F3C9A4",
-                "processing": "#C9DCF0",
-                "residual": "#F6EFD2",
-                "input": "#E6E8EC",
-                "container": "#F8F9FB",
-                "border": "#2B3A4A"
-              },
-              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-              "font_size_label": "14-16pt",
-              "font_size_annot": "11-13pt",
-              "stroke_main": 1.4,
-              "stroke_border": 1.0,
-              "grid": 8,
-              "min_arrow": 24,
-              "padding": 32,
-              "preset": "teaching"
-            },
-            "children": [],
-            "bbox": {
-              "x": 0,
-              "y": 0,
-              "w": 144,
-              "h": 48
-            },
-            "residuals": [],
-            "components": [
-              "Chat Input"
-            ],
-            "layout": "horizontal",
-            "offset": {
-              "x": 32,
-              "y": 104
-            },
-            "svg_fragment": null
-          },
-          {
-            "id": "n6",
-            "parent_id": "n2",
-            "description": "JSON-RPC Endpoint",
-            "canvas": {
-              "w": 176,
-              "h": 48
-            },
-            "ports": [
-              {
-                "id": "n6.left",
-                "side": "left",
-                "rel_x": 0,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
                 "component": "JSON-RPC Endpoint"
               },
               {
-                "id": "n6.right",
+                "id": "n5.right",
                 "side": "right",
                 "rel_x": 176,
                 "rel_y": 24,
@@ -759,7 +671,7 @@
                 "component": "JSON-RPC Endpoint"
               },
               {
-                "id": "n6.top",
+                "id": "n5.top",
                 "side": "top",
                 "rel_x": 88,
                 "rel_y": 0,
@@ -769,7 +681,7 @@
                 "component": "JSON-RPC Endpoint"
               },
               {
-                "id": "n6.bottom",
+                "id": "n5.bottom",
                 "side": "bottom",
                 "rel_x": 88,
                 "rel_y": 48,
@@ -813,665 +725,13 @@
             "layout": "horizontal",
             "offset": {
               "x": 216,
-              "y": 32
+              "y": 56
             },
             "svg_fragment": null
           },
           {
-            "id": "n7",
+            "id": "n6",
             "parent_id": "n2",
-            "description": "A2A Caller",
-            "canvas": {
-              "w": 128,
-              "h": 48
-            },
-            "ports": [
-              {
-                "id": "n7.left",
-                "side": "left",
-                "rel_x": 0,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "A2A Caller"
-              },
-              {
-                "id": "n7.right",
-                "side": "right",
-                "rel_x": 128,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "A2A Caller"
-              },
-              {
-                "id": "n7.top",
-                "side": "top",
-                "rel_x": 64,
-                "rel_y": 0,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "A2A Caller"
-              },
-              {
-                "id": "n7.bottom",
-                "side": "bottom",
-                "rel_x": 64,
-                "rel_y": 48,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "A2A Caller"
-              }
-            ],
-            "depth": 2,
-            "style": {
-              "palette": {
-                "attention": "#F3C9A4",
-                "processing": "#C9DCF0",
-                "residual": "#F6EFD2",
-                "input": "#E6E8EC",
-                "container": "#F8F9FB",
-                "border": "#2B3A4A"
-              },
-              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-              "font_size_label": "14-16pt",
-              "font_size_annot": "11-13pt",
-              "stroke_main": 1.4,
-              "stroke_border": 1.0,
-              "grid": 8,
-              "min_arrow": 24,
-              "padding": 32,
-              "preset": "teaching"
-            },
-            "children": [],
-            "bbox": {
-              "x": 0,
-              "y": 0,
-              "w": 128,
-              "h": 48
-            },
-            "residuals": [],
-            "components": [
-              "A2A Caller"
-            ],
-            "layout": "horizontal",
-            "offset": {
-              "x": 240,
-              "y": 104
-            },
-            "svg_fragment": null
-          }
-        ],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 424,
-          "h": 184
-        },
-        "residuals": [],
-        "components": [
-          "A2A Client",
-          "Chat Input",
-          "JSON-RPC Endpoint",
-          "A2A Caller"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 32,
-          "y": 96
-        },
-        "svg_fragment": null
-      },
-      "n8": {
-        "id": "n8",
-        "parent_id": "n3",
-        "description": "Published Flow",
-        "canvas": {
-          "w": 160,
-          "h": 48
-        },
-        "ports": [
-          {
-            "id": "n8.left",
-            "side": "left",
-            "rel_x": 0,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.right",
-            "side": "right",
-            "rel_x": 160,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.top",
-            "side": "top",
-            "rel_x": 80,
-            "rel_y": 0,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.bottom",
-            "side": "bottom",
-            "rel_x": 80,
-            "rel_y": 48,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Published Flow"
-          }
-        ],
-        "depth": 2,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 160,
-          "h": 48
-        },
-        "residuals": [],
-        "components": [
-          "Published Flow"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 32,
-          "y": 32
-        },
-        "svg_fragment": null
-      },
-      "n9": {
-        "id": "n9",
-        "parent_id": "n3",
-        "description": "Chat Output",
-        "canvas": {
-          "w": 144,
-          "h": 48
-        },
-        "ports": [
-          {
-            "id": "n9.left",
-            "side": "left",
-            "rel_x": 0,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.right",
-            "side": "right",
-            "rel_x": 144,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.top",
-            "side": "top",
-            "rel_x": 72,
-            "rel_y": 0,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.bottom",
-            "side": "bottom",
-            "rel_x": 72,
-            "rel_y": 48,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Output"
-          }
-        ],
-        "depth": 2,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 144,
-          "h": 48
-        },
-        "residuals": [],
-        "components": [
-          "Chat Output"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 40,
-          "y": 104
-        },
-        "svg_fragment": null
-      },
-      "n10": {
-        "id": "n10",
-        "parent_id": "n3",
-        "description": "Remote A2A",
-        "canvas": {
-          "w": 144,
-          "h": 48
-        },
-        "ports": [
-          {
-            "id": "n10.left",
-            "side": "left",
-            "rel_x": 0,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.right",
-            "side": "right",
-            "rel_x": 144,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.top",
-            "side": "top",
-            "rel_x": 72,
-            "rel_y": 0,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.bottom",
-            "side": "bottom",
-            "rel_x": 72,
-            "rel_y": 48,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Remote A2A"
-          }
-        ],
-        "depth": 2,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 144,
-          "h": 48
-        },
-        "residuals": [],
-        "components": [
-          "Remote A2A"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 40,
-          "y": 176
-        },
-        "svg_fragment": null
-      },
-      "n11": {
-        "id": "n11",
-        "parent_id": "n3",
-        "description": "Agent Card",
-        "canvas": {
-          "w": 144,
-          "h": 48
-        },
-        "ports": [
-          {
-            "id": "n11.left",
-            "side": "left",
-            "rel_x": 0,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.right",
-            "side": "right",
-            "rel_x": 144,
-            "rel_y": 24,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.top",
-            "side": "top",
-            "rel_x": 72,
-            "rel_y": 0,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.bottom",
-            "side": "bottom",
-            "rel_x": 72,
-            "rel_y": 48,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Agent Card"
-          }
-        ],
-        "depth": 2,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [],
-        "bbox": {
-          "x": 0,
-          "y": 0,
-          "w": 144,
-          "h": 48
-        },
-        "residuals": [],
-        "components": [
-          "Agent Card"
-        ],
-        "layout": "horizontal",
-        "offset": {
-          "x": 232,
-          "y": 104
-        },
-        "svg_fragment": null
-      },
-      "n3": {
-        "id": "n3",
-        "parent_id": "n1",
-        "description": "Published Flow, Chat Output, Remote A2A, Agent Card",
-        "canvas": {
-          "w": 408,
-          "h": 256
-        },
-        "ports": [
-          {
-            "id": "n8.left",
-            "side": "left",
-            "rel_x": 32,
-            "rel_y": 56,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.right",
-            "side": "right",
-            "rel_x": 192,
-            "rel_y": 56,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.top",
-            "side": "top",
-            "rel_x": 112,
-            "rel_y": 32,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.bottom",
-            "side": "bottom",
-            "rel_x": 112,
-            "rel_y": 80,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n9.left",
-            "side": "left",
-            "rel_x": 40,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.right",
-            "side": "right",
-            "rel_x": 184,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.top",
-            "side": "top",
-            "rel_x": 112,
-            "rel_y": 104,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n9.bottom",
-            "side": "bottom",
-            "rel_x": 112,
-            "rel_y": 152,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Chat Output"
-          },
-          {
-            "id": "n10.left",
-            "side": "left",
-            "rel_x": 40,
-            "rel_y": 200,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.right",
-            "side": "right",
-            "rel_x": 184,
-            "rel_y": 200,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.top",
-            "side": "top",
-            "rel_x": 112,
-            "rel_y": 176,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.bottom",
-            "side": "bottom",
-            "rel_x": 112,
-            "rel_y": 224,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n11.left",
-            "side": "left",
-            "rel_x": 232,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.right",
-            "side": "right",
-            "rel_x": 376,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.top",
-            "side": "top",
-            "rel_x": 304,
-            "rel_y": 104,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.bottom",
-            "side": "bottom",
-            "rel_x": 304,
-            "rel_y": 152,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Agent Card"
-          }
-        ],
-        "depth": 1,
-        "style": {
-          "palette": {
-            "attention": "#F3C9A4",
-            "processing": "#C9DCF0",
-            "residual": "#F6EFD2",
-            "input": "#E6E8EC",
-            "container": "#F8F9FB",
-            "border": "#2B3A4A"
-          },
-          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-          "font_size_label": "14-16pt",
-          "font_size_annot": "11-13pt",
-          "stroke_main": 1.4,
-          "stroke_border": 1.0,
-          "grid": 8,
-          "min_arrow": 24,
-          "padding": 32,
-          "preset": "teaching"
-        },
-        "children": [
-          {
-            "id": "n8",
-            "parent_id": "n3",
             "description": "Published Flow",
             "canvas": {
               "w": 160,
@@ -1479,7 +739,7 @@
             },
             "ports": [
               {
-                "id": "n8.left",
+                "id": "n6.left",
                 "side": "left",
                 "rel_x": 0,
                 "rel_y": 24,
@@ -1489,7 +749,7 @@
                 "component": "Published Flow"
               },
               {
-                "id": "n8.right",
+                "id": "n6.right",
                 "side": "right",
                 "rel_x": 160,
                 "rel_y": 24,
@@ -1499,7 +759,7 @@
                 "component": "Published Flow"
               },
               {
-                "id": "n8.top",
+                "id": "n6.top",
                 "side": "top",
                 "rel_x": 80,
                 "rel_y": 0,
@@ -1509,7 +769,7 @@
                 "component": "Published Flow"
               },
               {
-                "id": "n8.bottom",
+                "id": "n6.bottom",
                 "side": "bottom",
                 "rel_x": 80,
                 "rel_y": 48,
@@ -1552,190 +812,14 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 32,
-              "y": 32
+              "x": 432,
+              "y": 56
             },
             "svg_fragment": null
           },
           {
-            "id": "n9",
-            "parent_id": "n3",
-            "description": "Chat Output",
-            "canvas": {
-              "w": 144,
-              "h": 48
-            },
-            "ports": [
-              {
-                "id": "n9.left",
-                "side": "left",
-                "rel_x": 0,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.right",
-                "side": "right",
-                "rel_x": 144,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.top",
-                "side": "top",
-                "rel_x": 72,
-                "rel_y": 0,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.bottom",
-                "side": "bottom",
-                "rel_x": 72,
-                "rel_y": 48,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Output"
-              }
-            ],
-            "depth": 2,
-            "style": {
-              "palette": {
-                "attention": "#F3C9A4",
-                "processing": "#C9DCF0",
-                "residual": "#F6EFD2",
-                "input": "#E6E8EC",
-                "container": "#F8F9FB",
-                "border": "#2B3A4A"
-              },
-              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-              "font_size_label": "14-16pt",
-              "font_size_annot": "11-13pt",
-              "stroke_main": 1.4,
-              "stroke_border": 1.0,
-              "grid": 8,
-              "min_arrow": 24,
-              "padding": 32,
-              "preset": "teaching"
-            },
-            "children": [],
-            "bbox": {
-              "x": 0,
-              "y": 0,
-              "w": 144,
-              "h": 48
-            },
-            "residuals": [],
-            "components": [
-              "Chat Output"
-            ],
-            "layout": "horizontal",
-            "offset": {
-              "x": 40,
-              "y": 104
-            },
-            "svg_fragment": null
-          },
-          {
-            "id": "n10",
-            "parent_id": "n3",
-            "description": "Remote A2A",
-            "canvas": {
-              "w": 144,
-              "h": 48
-            },
-            "ports": [
-              {
-                "id": "n10.left",
-                "side": "left",
-                "rel_x": 0,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.right",
-                "side": "right",
-                "rel_x": 144,
-                "rel_y": 24,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.top",
-                "side": "top",
-                "rel_x": 72,
-                "rel_y": 0,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.bottom",
-                "side": "bottom",
-                "rel_x": 72,
-                "rel_y": 48,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Remote A2A"
-              }
-            ],
-            "depth": 2,
-            "style": {
-              "palette": {
-                "attention": "#F3C9A4",
-                "processing": "#C9DCF0",
-                "residual": "#F6EFD2",
-                "input": "#E6E8EC",
-                "container": "#F8F9FB",
-                "border": "#2B3A4A"
-              },
-              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-              "font_size_label": "14-16pt",
-              "font_size_annot": "11-13pt",
-              "stroke_main": 1.4,
-              "stroke_border": 1.0,
-              "grid": 8,
-              "min_arrow": 24,
-              "padding": 32,
-              "preset": "teaching"
-            },
-            "children": [],
-            "bbox": {
-              "x": 0,
-              "y": 0,
-              "w": 144,
-              "h": 48
-            },
-            "residuals": [],
-            "components": [
-              "Remote A2A"
-            ],
-            "layout": "horizontal",
-            "offset": {
-              "x": 40,
-              "y": 176
-            },
-            "svg_fragment": null
-          },
-          {
-            "id": "n11",
-            "parent_id": "n3",
+            "id": "n7",
+            "parent_id": "n2",
             "description": "Agent Card",
             "canvas": {
               "w": 144,
@@ -1743,7 +827,7 @@
             },
             "ports": [
               {
-                "id": "n11.left",
+                "id": "n7.left",
                 "side": "left",
                 "rel_x": 0,
                 "rel_y": 24,
@@ -1753,7 +837,7 @@
                 "component": "Agent Card"
               },
               {
-                "id": "n11.right",
+                "id": "n7.right",
                 "side": "right",
                 "rel_x": 144,
                 "rel_y": 24,
@@ -1763,7 +847,7 @@
                 "component": "Agent Card"
               },
               {
-                "id": "n11.top",
+                "id": "n7.top",
                 "side": "top",
                 "rel_x": 72,
                 "rel_y": 0,
@@ -1773,7 +857,7 @@
                 "component": "Agent Card"
               },
               {
-                "id": "n11.bottom",
+                "id": "n7.bottom",
                 "side": "bottom",
                 "rel_x": 72,
                 "rel_y": 48,
@@ -1816,7 +900,923 @@
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 232,
+              "x": 632,
+              "y": 56
+            },
+            "svg_fragment": null
+          }
+        ],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 808,
+          "h": 136
+        },
+        "residuals": [],
+        "components": [
+          "Published Flow",
+          "Agent Card",
+          "A2A Client",
+          "JSON-RPC Endpoint"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n8": {
+        "id": "n8",
+        "parent_id": "n3",
+        "description": "Chat Input",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Input"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 32,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n9": {
+        "id": "n9",
+        "parent_id": "n3",
+        "description": "A2A Caller",
+        "canvas": {
+          "w": 128,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 128,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 64,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 64,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "A2A Caller"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "A2A Caller"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 216,
+          "y": 72
+        },
+        "svg_fragment": null
+      },
+      "n10": {
+        "id": "n10",
+        "parent_id": "n3",
+        "description": "Chat Output",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Chat Output"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 400,
+          "y": 32
+        },
+        "svg_fragment": null
+      },
+      "n11": {
+        "id": "n11",
+        "parent_id": "n3",
+        "description": "Remote A2A",
+        "canvas": {
+          "w": 144,
+          "h": 48
+        },
+        "ports": [
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 0,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 144,
+            "rel_y": 24,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 72,
+            "rel_y": 0,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 72,
+            "rel_y": 48,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Remote A2A"
+          }
+        ],
+        "depth": 2,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [],
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 48
+        },
+        "residuals": [],
+        "components": [
+          "Remote A2A"
+        ],
+        "layout": "horizontal",
+        "offset": {
+          "x": 400,
+          "y": 104
+        },
+        "svg_fragment": null
+      },
+      "n3": {
+        "id": "n3",
+        "parent_id": "n1",
+        "description": "Chat Input, A2A Caller, Chat Output, Remote A2A",
+        "canvas": {
+          "w": 576,
+          "h": 184
+        },
+        "ports": [
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 32,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 176,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 104,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 104,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 216,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.right",
+            "side": "right",
+            "rel_x": 344,
+            "rel_y": 96,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.top",
+            "side": "top",
+            "rel_x": 280,
+            "rel_y": 72,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n9.bottom",
+            "side": "bottom",
+            "rel_x": 280,
+            "rel_y": 120,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 400,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 544,
+            "rel_y": 56,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.top",
+            "side": "top",
+            "rel_x": 472,
+            "rel_y": 32,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.bottom",
+            "side": "bottom",
+            "rel_x": 472,
+            "rel_y": 80,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 400,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 544,
+            "rel_y": 128,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.top",
+            "side": "top",
+            "rel_x": 472,
+            "rel_y": 104,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.bottom",
+            "side": "bottom",
+            "rel_x": 472,
+            "rel_y": 152,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Remote A2A"
+          }
+        ],
+        "depth": 1,
+        "style": {
+          "palette": {
+            "attention": "#F3C9A4",
+            "processing": "#C9DCF0",
+            "residual": "#F6EFD2",
+            "input": "#E6E8EC",
+            "container": "#F8F9FB",
+            "border": "#2B3A4A"
+          },
+          "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+          "font_size_label": "14-16pt",
+          "font_size_annot": "11-13pt",
+          "stroke_main": 1.4,
+          "stroke_border": 1.0,
+          "grid": 8,
+          "min_arrow": 24,
+          "padding": 32,
+          "preset": "teaching"
+        },
+        "children": [
+          {
+            "id": "n8",
+            "parent_id": "n3",
+            "description": "Chat Input",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Input"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n9",
+            "parent_id": "n3",
+            "description": "A2A Caller",
+            "canvas": {
+              "w": 128,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 128,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 64,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 64,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "A2A Caller"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "A2A Caller"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 216,
+              "y": 72
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n10",
+            "parent_id": "n3",
+            "description": "Chat Output",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Chat Output"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 400,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n11",
+            "parent_id": "n3",
+            "description": "Remote A2A",
+            "canvas": {
+              "w": 144,
+              "h": 48
+            },
+            "ports": [
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 0,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 144,
+                "rel_y": 24,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 72,
+                "rel_y": 0,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 72,
+                "rel_y": 48,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Remote A2A"
+              }
+            ],
+            "depth": 2,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 144,
+              "h": 48
+            },
+            "residuals": [],
+            "components": [
+              "Remote A2A"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 400,
               "y": 104
             },
             "svg_fragment": null
@@ -1825,20 +1825,20 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 408,
-          "h": 256
+          "w": 576,
+          "h": 184
         },
         "residuals": [],
         "components": [
-          "Published Flow",
+          "Chat Input",
+          "A2A Caller",
           "Chat Output",
-          "Remote A2A",
-          "Agent Card"
+          "Remote A2A"
         ],
         "layout": "horizontal",
         "offset": {
-          "x": 496,
-          "y": 56
+          "x": 152,
+          "y": 192
         },
         "svg_fragment": null
       },
@@ -1847,15 +1847,15 @@
         "parent_id": null,
         "description": "Agents talking to agents over A2A",
         "canvas": {
-          "w": 936,
-          "h": 344
+          "w": 872,
+          "h": 408
         },
         "ports": [
           {
             "id": "n4.left",
             "side": "left",
             "rel_x": 64,
-            "rel_y": 152,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1865,7 +1865,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 208,
-            "rel_y": 152,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1875,7 +1875,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 136,
-            "rel_y": 128,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1885,7 +1885,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 136,
-            "rel_y": 176,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1894,147 +1894,67 @@
           {
             "id": "n5.left",
             "side": "left",
-            "rel_x": 64,
-            "rel_y": 224,
+            "rel_x": 248,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Input"
+            "component": "JSON-RPC Endpoint"
           },
           {
             "id": "n5.right",
             "side": "right",
-            "rel_x": 208,
-            "rel_y": 224,
+            "rel_x": 424,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Chat Input"
+            "component": "JSON-RPC Endpoint"
           },
           {
             "id": "n5.top",
             "side": "top",
-            "rel_x": 136,
-            "rel_y": 200,
+            "rel_x": 336,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Input"
+            "component": "JSON-RPC Endpoint"
           },
           {
             "id": "n5.bottom",
             "side": "bottom",
-            "rel_x": 136,
-            "rel_y": 248,
+            "rel_x": 336,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Chat Input"
+            "component": "JSON-RPC Endpoint"
           },
           {
             "id": "n6.left",
             "side": "left",
-            "rel_x": 248,
-            "rel_y": 152,
+            "rel_x": 464,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "JSON-RPC Endpoint"
+            "component": "Published Flow"
           },
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 424,
-            "rel_y": 152,
+            "rel_x": 624,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "JSON-RPC Endpoint"
+            "component": "Published Flow"
           },
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 336,
-            "rel_y": 128,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "JSON-RPC Endpoint"
-          },
-          {
-            "id": "n6.bottom",
-            "side": "bottom",
-            "rel_x": 336,
-            "rel_y": 176,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "JSON-RPC Endpoint"
-          },
-          {
-            "id": "n7.left",
-            "side": "left",
-            "rel_x": 272,
-            "rel_y": 224,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "A2A Caller"
-          },
-          {
-            "id": "n7.right",
-            "side": "right",
-            "rel_x": 400,
-            "rel_y": 224,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "A2A Caller"
-          },
-          {
-            "id": "n7.top",
-            "side": "top",
-            "rel_x": 336,
-            "rel_y": 200,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "A2A Caller"
-          },
-          {
-            "id": "n7.bottom",
-            "side": "bottom",
-            "rel_x": 336,
-            "rel_y": 248,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "A2A Caller"
-          },
-          {
-            "id": "n8.left",
-            "side": "left",
-            "rel_x": 528,
-            "rel_y": 112,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.right",
-            "side": "right",
-            "rel_x": 688,
-            "rel_y": 112,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Published Flow"
-          },
-          {
-            "id": "n8.top",
-            "side": "top",
-            "rel_x": 608,
+            "rel_x": 544,
             "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
@@ -2042,9 +1962,9 @@
             "component": "Published Flow"
           },
           {
-            "id": "n8.bottom",
+            "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 608,
+            "rel_x": 544,
             "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
@@ -2052,124 +1972,204 @@
             "component": "Published Flow"
           },
           {
-            "id": "n9.left",
+            "id": "n7.left",
             "side": "left",
-            "rel_x": 536,
-            "rel_y": 184,
+            "rel_x": 664,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Output"
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.right",
+            "side": "right",
+            "rel_x": 808,
+            "rel_y": 112,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.top",
+            "side": "top",
+            "rel_x": 736,
+            "rel_y": 88,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n7.bottom",
+            "side": "bottom",
+            "rel_x": 736,
+            "rel_y": 136,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Agent Card"
+          },
+          {
+            "id": "n8.left",
+            "side": "left",
+            "rel_x": 184,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.right",
+            "side": "right",
+            "rel_x": 328,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.top",
+            "side": "top",
+            "rel_x": 256,
+            "rel_y": 264,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n8.bottom",
+            "side": "bottom",
+            "rel_x": 256,
+            "rel_y": 312,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Input"
+          },
+          {
+            "id": "n9.left",
+            "side": "left",
+            "rel_x": 368,
+            "rel_y": 288,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "A2A Caller"
           },
           {
             "id": "n9.right",
             "side": "right",
-            "rel_x": 680,
-            "rel_y": 184,
+            "rel_x": 496,
+            "rel_y": 288,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Chat Output"
+            "component": "A2A Caller"
           },
           {
             "id": "n9.top",
             "side": "top",
-            "rel_x": 608,
-            "rel_y": 160,
+            "rel_x": 432,
+            "rel_y": 264,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Chat Output"
+            "component": "A2A Caller"
           },
           {
             "id": "n9.bottom",
             "side": "bottom",
-            "rel_x": 608,
-            "rel_y": 208,
+            "rel_x": 432,
+            "rel_y": 312,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "A2A Caller"
+          },
+          {
+            "id": "n10.left",
+            "side": "left",
+            "rel_x": 552,
+            "rel_y": 248,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n10.right",
+            "side": "right",
+            "rel_x": 696,
+            "rel_y": 248,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
             "component": "Chat Output"
           },
           {
-            "id": "n10.left",
-            "side": "left",
-            "rel_x": 536,
-            "rel_y": 256,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Remote A2A"
-          },
-          {
-            "id": "n10.right",
-            "side": "right",
-            "rel_x": 680,
-            "rel_y": 256,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Remote A2A"
-          },
-          {
             "id": "n10.top",
             "side": "top",
-            "rel_x": 608,
-            "rel_y": 232,
+            "rel_x": 624,
+            "rel_y": 224,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Remote A2A"
+            "component": "Chat Output"
           },
           {
             "id": "n10.bottom",
             "side": "bottom",
-            "rel_x": 608,
-            "rel_y": 280,
+            "rel_x": 624,
+            "rel_y": 272,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "output",
+            "component": "Chat Output"
+          },
+          {
+            "id": "n11.left",
+            "side": "left",
+            "rel_x": 552,
+            "rel_y": 320,
+            "abs_x": 0,
+            "abs_y": 0,
+            "type": "input",
+            "component": "Remote A2A"
+          },
+          {
+            "id": "n11.right",
+            "side": "right",
+            "rel_x": 696,
+            "rel_y": 320,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
             "component": "Remote A2A"
           },
           {
-            "id": "n11.left",
-            "side": "left",
-            "rel_x": 728,
-            "rel_y": 184,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "input",
-            "component": "Agent Card"
-          },
-          {
-            "id": "n11.right",
-            "side": "right",
-            "rel_x": 872,
-            "rel_y": 184,
-            "abs_x": 0,
-            "abs_y": 0,
-            "type": "output",
-            "component": "Agent Card"
-          },
-          {
             "id": "n11.top",
             "side": "top",
-            "rel_x": 800,
-            "rel_y": 160,
+            "rel_x": 624,
+            "rel_y": 296,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Agent Card"
+            "component": "Remote A2A"
           },
           {
             "id": "n11.bottom",
             "side": "bottom",
-            "rel_x": 800,
-            "rel_y": 208,
+            "rel_x": 624,
+            "rel_y": 344,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Agent Card"
+            "component": "Remote A2A"
           }
         ],
         "depth": 0,
@@ -2196,17 +2196,17 @@
           {
             "id": "n2",
             "parent_id": "n1",
-            "description": "A2A Client, Chat Input, JSON-RPC Endpoint, A2A Caller",
+            "description": "Published Flow, Agent Card, A2A Client, JSON-RPC Endpoint",
             "canvas": {
-              "w": 424,
-              "h": 184
+              "w": 808,
+              "h": 136
             },
             "ports": [
               {
                 "id": "n4.left",
                 "side": "left",
                 "rel_x": 32,
-                "rel_y": 56,
+                "rel_y": 80,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2216,7 +2216,7 @@
                 "id": "n4.right",
                 "side": "right",
                 "rel_x": 176,
-                "rel_y": 56,
+                "rel_y": 80,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2226,7 +2226,7 @@
                 "id": "n4.top",
                 "side": "top",
                 "rel_x": 104,
-                "rel_y": 32,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -2236,7 +2236,7 @@
                 "id": "n4.bottom",
                 "side": "bottom",
                 "rel_x": 104,
-                "rel_y": 80,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -2245,77 +2245,17 @@
               {
                 "id": "n5.left",
                 "side": "left",
-                "rel_x": 32,
-                "rel_y": 128,
+                "rel_x": 216,
+                "rel_y": 80,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Chat Input"
+                "component": "JSON-RPC Endpoint"
               },
               {
                 "id": "n5.right",
                 "side": "right",
-                "rel_x": 176,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n5.top",
-                "side": "top",
-                "rel_x": 104,
-                "rel_y": 104,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n5.bottom",
-                "side": "bottom",
-                "rel_x": 104,
-                "rel_y": 152,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Input"
-              },
-              {
-                "id": "n6.left",
-                "side": "left",
-                "rel_x": 216,
-                "rel_y": 56,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "JSON-RPC Endpoint"
-              },
-              {
-                "id": "n6.right",
-                "side": "right",
                 "rel_x": 392,
-                "rel_y": 56,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "JSON-RPC Endpoint"
-              },
-              {
-                "id": "n6.top",
-                "side": "top",
-                "rel_x": 304,
-                "rel_y": 32,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "JSON-RPC Endpoint"
-              },
-              {
-                "id": "n6.bottom",
-                "side": "bottom",
-                "rel_x": 304,
                 "rel_y": 80,
                 "abs_x": 0,
                 "abs_y": 0,
@@ -2323,44 +2263,104 @@
                 "component": "JSON-RPC Endpoint"
               },
               {
-                "id": "n7.left",
-                "side": "left",
-                "rel_x": 240,
-                "rel_y": 128,
+                "id": "n5.top",
+                "side": "top",
+                "rel_x": 304,
+                "rel_y": 56,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "A2A Caller"
+                "component": "JSON-RPC Endpoint"
               },
               {
-                "id": "n7.right",
-                "side": "right",
-                "rel_x": 368,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "A2A Caller"
-              },
-              {
-                "id": "n7.top",
-                "side": "top",
+                "id": "n5.bottom",
+                "side": "bottom",
                 "rel_x": 304,
                 "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
+                "type": "output",
+                "component": "JSON-RPC Endpoint"
+              },
+              {
+                "id": "n6.left",
+                "side": "left",
+                "rel_x": 432,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
                 "type": "input",
-                "component": "A2A Caller"
+                "component": "Published Flow"
+              },
+              {
+                "id": "n6.right",
+                "side": "right",
+                "rel_x": 592,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Published Flow"
+              },
+              {
+                "id": "n6.top",
+                "side": "top",
+                "rel_x": 512,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Published Flow"
+              },
+              {
+                "id": "n6.bottom",
+                "side": "bottom",
+                "rel_x": 512,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Published Flow"
+              },
+              {
+                "id": "n7.left",
+                "side": "left",
+                "rel_x": 632,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Card"
+              },
+              {
+                "id": "n7.right",
+                "side": "right",
+                "rel_x": 776,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Agent Card"
+              },
+              {
+                "id": "n7.top",
+                "side": "top",
+                "rel_x": 704,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Agent Card"
               },
               {
                 "id": "n7.bottom",
                 "side": "bottom",
-                "rel_x": 304,
-                "rel_y": 152,
+                "rel_x": 704,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
-                "component": "A2A Caller"
+                "component": "Agent Card"
               }
             ],
             "depth": 1,
@@ -2468,16 +2468,16 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 32,
-                  "y": 32
+                  "y": 56
                 },
                 "svg_fragment": null
               },
               {
                 "id": "n5",
                 "parent_id": "n2",
-                "description": "Chat Input",
+                "description": "JSON-RPC Endpoint",
                 "canvas": {
-                  "w": 144,
+                  "w": 176,
                   "h": 48
                 },
                 "ports": [
@@ -2489,98 +2489,10 @@
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "input",
-                    "component": "Chat Input"
-                  },
-                  {
-                    "id": "n5.right",
-                    "side": "right",
-                    "rel_x": 144,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Chat Input"
-                  },
-                  {
-                    "id": "n5.top",
-                    "side": "top",
-                    "rel_x": 72,
-                    "rel_y": 0,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "Chat Input"
-                  },
-                  {
-                    "id": "n5.bottom",
-                    "side": "bottom",
-                    "rel_x": 72,
-                    "rel_y": 48,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Chat Input"
-                  }
-                ],
-                "depth": 2,
-                "style": {
-                  "palette": {
-                    "attention": "#F3C9A4",
-                    "processing": "#C9DCF0",
-                    "residual": "#F6EFD2",
-                    "input": "#E6E8EC",
-                    "container": "#F8F9FB",
-                    "border": "#2B3A4A"
-                  },
-                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-                  "font_size_label": "14-16pt",
-                  "font_size_annot": "11-13pt",
-                  "stroke_main": 1.4,
-                  "stroke_border": 1.0,
-                  "grid": 8,
-                  "min_arrow": 24,
-                  "padding": 32,
-                  "preset": "teaching"
-                },
-                "children": [],
-                "bbox": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 144,
-                  "h": 48
-                },
-                "residuals": [],
-                "components": [
-                  "Chat Input"
-                ],
-                "layout": "horizontal",
-                "offset": {
-                  "x": 32,
-                  "y": 104
-                },
-                "svg_fragment": null
-              },
-              {
-                "id": "n6",
-                "parent_id": "n2",
-                "description": "JSON-RPC Endpoint",
-                "canvas": {
-                  "w": 176,
-                  "h": 48
-                },
-                "ports": [
-                  {
-                    "id": "n6.left",
-                    "side": "left",
-                    "rel_x": 0,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
                     "component": "JSON-RPC Endpoint"
                   },
                   {
-                    "id": "n6.right",
+                    "id": "n5.right",
                     "side": "right",
                     "rel_x": 176,
                     "rel_y": 24,
@@ -2590,7 +2502,7 @@
                     "component": "JSON-RPC Endpoint"
                   },
                   {
-                    "id": "n6.top",
+                    "id": "n5.top",
                     "side": "top",
                     "rel_x": 88,
                     "rel_y": 0,
@@ -2600,7 +2512,7 @@
                     "component": "JSON-RPC Endpoint"
                   },
                   {
-                    "id": "n6.bottom",
+                    "id": "n5.bottom",
                     "side": "bottom",
                     "rel_x": 88,
                     "rel_y": 48,
@@ -2644,313 +2556,13 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 216,
-                  "y": 32
+                  "y": 56
                 },
                 "svg_fragment": null
               },
               {
-                "id": "n7",
+                "id": "n6",
                 "parent_id": "n2",
-                "description": "A2A Caller",
-                "canvas": {
-                  "w": 128,
-                  "h": 48
-                },
-                "ports": [
-                  {
-                    "id": "n7.left",
-                    "side": "left",
-                    "rel_x": 0,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "A2A Caller"
-                  },
-                  {
-                    "id": "n7.right",
-                    "side": "right",
-                    "rel_x": 128,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "A2A Caller"
-                  },
-                  {
-                    "id": "n7.top",
-                    "side": "top",
-                    "rel_x": 64,
-                    "rel_y": 0,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "A2A Caller"
-                  },
-                  {
-                    "id": "n7.bottom",
-                    "side": "bottom",
-                    "rel_x": 64,
-                    "rel_y": 48,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "A2A Caller"
-                  }
-                ],
-                "depth": 2,
-                "style": {
-                  "palette": {
-                    "attention": "#F3C9A4",
-                    "processing": "#C9DCF0",
-                    "residual": "#F6EFD2",
-                    "input": "#E6E8EC",
-                    "container": "#F8F9FB",
-                    "border": "#2B3A4A"
-                  },
-                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-                  "font_size_label": "14-16pt",
-                  "font_size_annot": "11-13pt",
-                  "stroke_main": 1.4,
-                  "stroke_border": 1.0,
-                  "grid": 8,
-                  "min_arrow": 24,
-                  "padding": 32,
-                  "preset": "teaching"
-                },
-                "children": [],
-                "bbox": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 128,
-                  "h": 48
-                },
-                "residuals": [],
-                "components": [
-                  "A2A Caller"
-                ],
-                "layout": "horizontal",
-                "offset": {
-                  "x": 240,
-                  "y": 104
-                },
-                "svg_fragment": null
-              }
-            ],
-            "bbox": {
-              "x": 0,
-              "y": 0,
-              "w": 424,
-              "h": 184
-            },
-            "residuals": [],
-            "components": [
-              "A2A Client",
-              "Chat Input",
-              "JSON-RPC Endpoint",
-              "A2A Caller"
-            ],
-            "layout": "horizontal",
-            "offset": {
-              "x": 32,
-              "y": 96
-            },
-            "svg_fragment": null
-          },
-          {
-            "id": "n3",
-            "parent_id": "n1",
-            "description": "Published Flow, Chat Output, Remote A2A, Agent Card",
-            "canvas": {
-              "w": 408,
-              "h": 256
-            },
-            "ports": [
-              {
-                "id": "n8.left",
-                "side": "left",
-                "rel_x": 32,
-                "rel_y": 56,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Published Flow"
-              },
-              {
-                "id": "n8.right",
-                "side": "right",
-                "rel_x": 192,
-                "rel_y": 56,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Published Flow"
-              },
-              {
-                "id": "n8.top",
-                "side": "top",
-                "rel_x": 112,
-                "rel_y": 32,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Published Flow"
-              },
-              {
-                "id": "n8.bottom",
-                "side": "bottom",
-                "rel_x": 112,
-                "rel_y": 80,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Published Flow"
-              },
-              {
-                "id": "n9.left",
-                "side": "left",
-                "rel_x": 40,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.right",
-                "side": "right",
-                "rel_x": 184,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.top",
-                "side": "top",
-                "rel_x": 112,
-                "rel_y": 104,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n9.bottom",
-                "side": "bottom",
-                "rel_x": 112,
-                "rel_y": 152,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Chat Output"
-              },
-              {
-                "id": "n10.left",
-                "side": "left",
-                "rel_x": 40,
-                "rel_y": 200,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.right",
-                "side": "right",
-                "rel_x": 184,
-                "rel_y": 200,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.top",
-                "side": "top",
-                "rel_x": 112,
-                "rel_y": 176,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n10.bottom",
-                "side": "bottom",
-                "rel_x": 112,
-                "rel_y": 224,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Remote A2A"
-              },
-              {
-                "id": "n11.left",
-                "side": "left",
-                "rel_x": 232,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Agent Card"
-              },
-              {
-                "id": "n11.right",
-                "side": "right",
-                "rel_x": 376,
-                "rel_y": 128,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Agent Card"
-              },
-              {
-                "id": "n11.top",
-                "side": "top",
-                "rel_x": 304,
-                "rel_y": 104,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "input",
-                "component": "Agent Card"
-              },
-              {
-                "id": "n11.bottom",
-                "side": "bottom",
-                "rel_x": 304,
-                "rel_y": 152,
-                "abs_x": 0,
-                "abs_y": 0,
-                "type": "output",
-                "component": "Agent Card"
-              }
-            ],
-            "depth": 1,
-            "style": {
-              "palette": {
-                "attention": "#F3C9A4",
-                "processing": "#C9DCF0",
-                "residual": "#F6EFD2",
-                "input": "#E6E8EC",
-                "container": "#F8F9FB",
-                "border": "#2B3A4A"
-              },
-              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-              "font_size_label": "14-16pt",
-              "font_size_annot": "11-13pt",
-              "stroke_main": 1.4,
-              "stroke_border": 1.0,
-              "grid": 8,
-              "min_arrow": 24,
-              "padding": 32,
-              "preset": "teaching"
-            },
-            "children": [
-              {
-                "id": "n8",
-                "parent_id": "n3",
                 "description": "Published Flow",
                 "canvas": {
                   "w": 160,
@@ -2958,7 +2570,7 @@
                 },
                 "ports": [
                   {
-                    "id": "n8.left",
+                    "id": "n6.left",
                     "side": "left",
                     "rel_x": 0,
                     "rel_y": 24,
@@ -2968,7 +2580,7 @@
                     "component": "Published Flow"
                   },
                   {
-                    "id": "n8.right",
+                    "id": "n6.right",
                     "side": "right",
                     "rel_x": 160,
                     "rel_y": 24,
@@ -2978,7 +2590,7 @@
                     "component": "Published Flow"
                   },
                   {
-                    "id": "n8.top",
+                    "id": "n6.top",
                     "side": "top",
                     "rel_x": 80,
                     "rel_y": 0,
@@ -2988,7 +2600,7 @@
                     "component": "Published Flow"
                   },
                   {
-                    "id": "n8.bottom",
+                    "id": "n6.bottom",
                     "side": "bottom",
                     "rel_x": 80,
                     "rel_y": 48,
@@ -3031,190 +2643,14 @@
                 ],
                 "layout": "horizontal",
                 "offset": {
-                  "x": 32,
-                  "y": 32
+                  "x": 432,
+                  "y": 56
                 },
                 "svg_fragment": null
               },
               {
-                "id": "n9",
-                "parent_id": "n3",
-                "description": "Chat Output",
-                "canvas": {
-                  "w": 144,
-                  "h": 48
-                },
-                "ports": [
-                  {
-                    "id": "n9.left",
-                    "side": "left",
-                    "rel_x": 0,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "Chat Output"
-                  },
-                  {
-                    "id": "n9.right",
-                    "side": "right",
-                    "rel_x": 144,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Chat Output"
-                  },
-                  {
-                    "id": "n9.top",
-                    "side": "top",
-                    "rel_x": 72,
-                    "rel_y": 0,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "Chat Output"
-                  },
-                  {
-                    "id": "n9.bottom",
-                    "side": "bottom",
-                    "rel_x": 72,
-                    "rel_y": 48,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Chat Output"
-                  }
-                ],
-                "depth": 2,
-                "style": {
-                  "palette": {
-                    "attention": "#F3C9A4",
-                    "processing": "#C9DCF0",
-                    "residual": "#F6EFD2",
-                    "input": "#E6E8EC",
-                    "container": "#F8F9FB",
-                    "border": "#2B3A4A"
-                  },
-                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-                  "font_size_label": "14-16pt",
-                  "font_size_annot": "11-13pt",
-                  "stroke_main": 1.4,
-                  "stroke_border": 1.0,
-                  "grid": 8,
-                  "min_arrow": 24,
-                  "padding": 32,
-                  "preset": "teaching"
-                },
-                "children": [],
-                "bbox": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 144,
-                  "h": 48
-                },
-                "residuals": [],
-                "components": [
-                  "Chat Output"
-                ],
-                "layout": "horizontal",
-                "offset": {
-                  "x": 40,
-                  "y": 104
-                },
-                "svg_fragment": null
-              },
-              {
-                "id": "n10",
-                "parent_id": "n3",
-                "description": "Remote A2A",
-                "canvas": {
-                  "w": 144,
-                  "h": 48
-                },
-                "ports": [
-                  {
-                    "id": "n10.left",
-                    "side": "left",
-                    "rel_x": 0,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "Remote A2A"
-                  },
-                  {
-                    "id": "n10.right",
-                    "side": "right",
-                    "rel_x": 144,
-                    "rel_y": 24,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Remote A2A"
-                  },
-                  {
-                    "id": "n10.top",
-                    "side": "top",
-                    "rel_x": 72,
-                    "rel_y": 0,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "input",
-                    "component": "Remote A2A"
-                  },
-                  {
-                    "id": "n10.bottom",
-                    "side": "bottom",
-                    "rel_x": 72,
-                    "rel_y": 48,
-                    "abs_x": 0,
-                    "abs_y": 0,
-                    "type": "output",
-                    "component": "Remote A2A"
-                  }
-                ],
-                "depth": 2,
-                "style": {
-                  "palette": {
-                    "attention": "#F3C9A4",
-                    "processing": "#C9DCF0",
-                    "residual": "#F6EFD2",
-                    "input": "#E6E8EC",
-                    "container": "#F8F9FB",
-                    "border": "#2B3A4A"
-                  },
-                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
-                  "font_size_label": "14-16pt",
-                  "font_size_annot": "11-13pt",
-                  "stroke_main": 1.4,
-                  "stroke_border": 1.0,
-                  "grid": 8,
-                  "min_arrow": 24,
-                  "padding": 32,
-                  "preset": "teaching"
-                },
-                "children": [],
-                "bbox": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 144,
-                  "h": 48
-                },
-                "residuals": [],
-                "components": [
-                  "Remote A2A"
-                ],
-                "layout": "horizontal",
-                "offset": {
-                  "x": 40,
-                  "y": 176
-                },
-                "svg_fragment": null
-              },
-              {
-                "id": "n11",
-                "parent_id": "n3",
+                "id": "n7",
+                "parent_id": "n2",
                 "description": "Agent Card",
                 "canvas": {
                   "w": 144,
@@ -3222,7 +2658,7 @@
                 },
                 "ports": [
                   {
-                    "id": "n11.left",
+                    "id": "n7.left",
                     "side": "left",
                     "rel_x": 0,
                     "rel_y": 24,
@@ -3232,7 +2668,7 @@
                     "component": "Agent Card"
                   },
                   {
-                    "id": "n11.right",
+                    "id": "n7.right",
                     "side": "right",
                     "rel_x": 144,
                     "rel_y": 24,
@@ -3242,7 +2678,7 @@
                     "component": "Agent Card"
                   },
                   {
-                    "id": "n11.top",
+                    "id": "n7.top",
                     "side": "top",
                     "rel_x": 72,
                     "rel_y": 0,
@@ -3252,7 +2688,7 @@
                     "component": "Agent Card"
                   },
                   {
-                    "id": "n11.bottom",
+                    "id": "n7.bottom",
                     "side": "bottom",
                     "rel_x": 72,
                     "rel_y": 48,
@@ -3295,7 +2731,571 @@
                 ],
                 "layout": "horizontal",
                 "offset": {
-                  "x": 232,
+                  "x": 632,
+                  "y": 56
+                },
+                "svg_fragment": null
+              }
+            ],
+            "bbox": {
+              "x": 0,
+              "y": 0,
+              "w": 808,
+              "h": 136
+            },
+            "residuals": [],
+            "components": [
+              "Published Flow",
+              "Agent Card",
+              "A2A Client",
+              "JSON-RPC Endpoint"
+            ],
+            "layout": "horizontal",
+            "offset": {
+              "x": 32,
+              "y": 32
+            },
+            "svg_fragment": null
+          },
+          {
+            "id": "n3",
+            "parent_id": "n1",
+            "description": "Chat Input, A2A Caller, Chat Output, Remote A2A",
+            "canvas": {
+              "w": 576,
+              "h": 184
+            },
+            "ports": [
+              {
+                "id": "n8.left",
+                "side": "left",
+                "rel_x": 32,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.right",
+                "side": "right",
+                "rel_x": 176,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.top",
+                "side": "top",
+                "rel_x": 104,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n8.bottom",
+                "side": "bottom",
+                "rel_x": 104,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Input"
+              },
+              {
+                "id": "n9.left",
+                "side": "left",
+                "rel_x": 216,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.right",
+                "side": "right",
+                "rel_x": 344,
+                "rel_y": 96,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.top",
+                "side": "top",
+                "rel_x": 280,
+                "rel_y": 72,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n9.bottom",
+                "side": "bottom",
+                "rel_x": 280,
+                "rel_y": 120,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "A2A Caller"
+              },
+              {
+                "id": "n10.left",
+                "side": "left",
+                "rel_x": 400,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.right",
+                "side": "right",
+                "rel_x": 544,
+                "rel_y": 56,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.top",
+                "side": "top",
+                "rel_x": 472,
+                "rel_y": 32,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n10.bottom",
+                "side": "bottom",
+                "rel_x": 472,
+                "rel_y": 80,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Chat Output"
+              },
+              {
+                "id": "n11.left",
+                "side": "left",
+                "rel_x": 400,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.right",
+                "side": "right",
+                "rel_x": 544,
+                "rel_y": 128,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.top",
+                "side": "top",
+                "rel_x": 472,
+                "rel_y": 104,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "input",
+                "component": "Remote A2A"
+              },
+              {
+                "id": "n11.bottom",
+                "side": "bottom",
+                "rel_x": 472,
+                "rel_y": 152,
+                "abs_x": 0,
+                "abs_y": 0,
+                "type": "output",
+                "component": "Remote A2A"
+              }
+            ],
+            "depth": 1,
+            "style": {
+              "palette": {
+                "attention": "#F3C9A4",
+                "processing": "#C9DCF0",
+                "residual": "#F6EFD2",
+                "input": "#E6E8EC",
+                "container": "#F8F9FB",
+                "border": "#2B3A4A"
+              },
+              "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+              "font_size_label": "14-16pt",
+              "font_size_annot": "11-13pt",
+              "stroke_main": 1.4,
+              "stroke_border": 1.0,
+              "grid": 8,
+              "min_arrow": 24,
+              "padding": 32,
+              "preset": "teaching"
+            },
+            "children": [
+              {
+                "id": "n8",
+                "parent_id": "n3",
+                "description": "Chat Input",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n8.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n8.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n8.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Input"
+                  },
+                  {
+                    "id": "n8.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Input"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Input"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 32,
+                  "y": 72
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n9",
+                "parent_id": "n3",
+                "description": "A2A Caller",
+                "canvas": {
+                  "w": 128,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n9.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "A2A Caller"
+                  },
+                  {
+                    "id": "n9.right",
+                    "side": "right",
+                    "rel_x": 128,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "A2A Caller"
+                  },
+                  {
+                    "id": "n9.top",
+                    "side": "top",
+                    "rel_x": 64,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "A2A Caller"
+                  },
+                  {
+                    "id": "n9.bottom",
+                    "side": "bottom",
+                    "rel_x": 64,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "A2A Caller"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 128,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "A2A Caller"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 216,
+                  "y": 72
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n10",
+                "parent_id": "n3",
+                "description": "Chat Output",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n10.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Chat Output"
+                  },
+                  {
+                    "id": "n10.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Chat Output"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Chat Output"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 400,
+                  "y": 32
+                },
+                "svg_fragment": null
+              },
+              {
+                "id": "n11",
+                "parent_id": "n3",
+                "description": "Remote A2A",
+                "canvas": {
+                  "w": 144,
+                  "h": 48
+                },
+                "ports": [
+                  {
+                    "id": "n11.left",
+                    "side": "left",
+                    "rel_x": 0,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Remote A2A"
+                  },
+                  {
+                    "id": "n11.right",
+                    "side": "right",
+                    "rel_x": 144,
+                    "rel_y": 24,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Remote A2A"
+                  },
+                  {
+                    "id": "n11.top",
+                    "side": "top",
+                    "rel_x": 72,
+                    "rel_y": 0,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "input",
+                    "component": "Remote A2A"
+                  },
+                  {
+                    "id": "n11.bottom",
+                    "side": "bottom",
+                    "rel_x": 72,
+                    "rel_y": 48,
+                    "abs_x": 0,
+                    "abs_y": 0,
+                    "type": "output",
+                    "component": "Remote A2A"
+                  }
+                ],
+                "depth": 2,
+                "style": {
+                  "palette": {
+                    "attention": "#F3C9A4",
+                    "processing": "#C9DCF0",
+                    "residual": "#F6EFD2",
+                    "input": "#E6E8EC",
+                    "container": "#F8F9FB",
+                    "border": "#2B3A4A"
+                  },
+                  "font": "IBM Plex Sans, Helvetica Neue, Arial, sans-serif",
+                  "font_size_label": "14-16pt",
+                  "font_size_annot": "11-13pt",
+                  "stroke_main": 1.4,
+                  "stroke_border": 1.0,
+                  "grid": 8,
+                  "min_arrow": 24,
+                  "padding": 32,
+                  "preset": "teaching"
+                },
+                "children": [],
+                "bbox": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 144,
+                  "h": 48
+                },
+                "residuals": [],
+                "components": [
+                  "Remote A2A"
+                ],
+                "layout": "horizontal",
+                "offset": {
+                  "x": 400,
                   "y": 104
                 },
                 "svg_fragment": null
@@ -3304,20 +3304,20 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 408,
-              "h": 256
+              "w": 576,
+              "h": 184
             },
             "residuals": [],
             "components": [
-              "Published Flow",
+              "Chat Input",
+              "A2A Caller",
               "Chat Output",
-              "Remote A2A",
-              "Agent Card"
+              "Remote A2A"
             ],
             "layout": "horizontal",
             "offset": {
-              "x": 496,
-              "y": 56
+              "x": 152,
+              "y": 192
             },
             "svg_fragment": null
           }
@@ -3325,8 +3325,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 936,
-          "h": 344
+          "w": 872,
+          "h": 408
         },
         "residuals": [
           {
@@ -3347,7 +3347,7 @@
           "Chat Output",
           "Remote A2A"
         ],
-        "layout": "horizontal",
+        "layout": "vertical",
         "offset": {
           "x": 0,
           "y": 0
@@ -3469,7 +3469,7 @@
     "passed": true,
     "diff_element_count": 1,
     "changed": [
-      "#n8.block"
+      "#n6.block"
     ],
     "edit": {
       "op": "recolor",
@@ -3604,10 +3604,11 @@
   },
   "faithfulness_failures": [],
   "events": [
-    "n11 round 1: 1 defect(s)",
+    "n7 round 1: 1 defect(s)",
     "n1 round 1: 1 defect(s)",
     "n1 round 2: 1 defect(s)",
-    "n1: repair made no progress; recording residuals"
+    "n1: repair made no progress; recording residuals",
+    "spacing shift at n3: n3.arrow2 by 16"
   ],
   "node_count": 11,
   "unit": {

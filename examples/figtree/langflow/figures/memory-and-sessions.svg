@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="672" height="496" viewBox="0 0 672 496" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="624" height="496" viewBox="0 0 624 496" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title>Conversation memory across turns and sessions</title>
-  <rect id="background" x="0" y="0" width="672" height="496" fill="#FFFFFF" data-role="background"/>
+  <rect id="background" x="0" y="0" width="624" height="496" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
@@ -13,36 +13,36 @@
   <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
   <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 672 496">
-    <!-- PORT:left x=104 y=88 id=n6.left type=input component="Chat Input" -->
-    <!-- PORT:right x=248 y=88 id=n6.right type=output component="Chat Input" -->
-    <!-- PORT:top x=176 y=64 id=n6.top type=input component="Chat Input" -->
-    <!-- PORT:bottom x=176 y=112 id=n6.bottom type=output component="Chat Input" -->
-    <!-- PORT:left x=104 y=160 id=n7.left type=input component="Session ID" -->
-    <!-- PORT:right x=248 y=160 id=n7.right type=output component="Session ID" -->
-    <!-- PORT:top x=176 y=136 id=n7.top type=input component="Session ID" -->
-    <!-- PORT:bottom x=176 y=184 id=n7.bottom type=output component="Session ID" -->
-    <!-- PORT:left x=88 y=232 id=n8.left type=input component="Langflow Storage" -->
-    <!-- PORT:right x=264 y=232 id=n8.right type=output component="Langflow Storage" -->
-    <!-- PORT:top x=176 y=208 id=n8.top type=input component="Langflow Storage" -->
-    <!-- PORT:bottom x=176 y=256 id=n8.bottom type=output component="Langflow Storage" -->
-    <!-- PORT:left x=336 y=160 id=n3.left type=input component="Agent" -->
-    <!-- PORT:right x=432 y=160 id=n3.right type=output component="Agent" -->
-    <!-- PORT:top x=384 y=136 id=n3.top type=input component="Agent" -->
-    <!-- PORT:bottom x=384 y=184 id=n3.bottom type=output component="Agent" -->
-    <!-- PORT:left x=472 y=160 id=n4.left type=input component="Chat Output" -->
-    <!-- PORT:right x=616 y=160 id=n4.right type=output component="Chat Output" -->
-    <!-- PORT:top x=544 y=136 id=n4.top type=input component="Chat Output" -->
-    <!-- PORT:bottom x=544 y=184 id=n4.bottom type=output component="Chat Output" -->
-    <!-- PORT:left x=88 y=408 id=n9.left type=input component="Message History" -->
-    <!-- PORT:right x=248 y=408 id=n9.right type=output component="Message History" -->
-    <!-- PORT:top x=168 y=384 id=n9.top type=input component="Message History" -->
-    <!-- PORT:bottom x=168 y=432 id=n9.bottom type=output component="Message History" -->
-    <!-- PORT:left x=288 y=408 id=n10.left type=input component="Prompt Template" -->
-    <!-- PORT:right x=448 y=408 id=n10.right type=output component="Prompt Template" -->
-    <!-- PORT:top x=368 y=384 id=n10.top type=input component="Prompt Template" -->
-    <!-- PORT:bottom x=368 y=432 id=n10.bottom type=output component="Prompt Template" -->
-    <g id="n2" transform="translate(56,32)" data-bbox="56 32 240 256" data-label="Chat Input, Session ID, Langflow Storage">
+  <g id="n1" data-bbox="0 0 624 496">
+    <!-- PORT:left x=80 y=88 id=n6.left type=input component="Chat Input" -->
+    <!-- PORT:right x=224 y=88 id=n6.right type=output component="Chat Input" -->
+    <!-- PORT:top x=152 y=64 id=n6.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=152 y=112 id=n6.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=80 y=160 id=n7.left type=input component="Session ID" -->
+    <!-- PORT:right x=224 y=160 id=n7.right type=output component="Session ID" -->
+    <!-- PORT:top x=152 y=136 id=n7.top type=input component="Session ID" -->
+    <!-- PORT:bottom x=152 y=184 id=n7.bottom type=output component="Session ID" -->
+    <!-- PORT:left x=64 y=232 id=n8.left type=input component="Langflow Storage" -->
+    <!-- PORT:right x=240 y=232 id=n8.right type=output component="Langflow Storage" -->
+    <!-- PORT:top x=152 y=208 id=n8.top type=input component="Langflow Storage" -->
+    <!-- PORT:bottom x=152 y=256 id=n8.bottom type=output component="Langflow Storage" -->
+    <!-- PORT:left x=312 y=160 id=n3.left type=input component="Agent" -->
+    <!-- PORT:right x=408 y=160 id=n3.right type=output component="Agent" -->
+    <!-- PORT:top x=360 y=136 id=n3.top type=input component="Agent" -->
+    <!-- PORT:bottom x=360 y=184 id=n3.bottom type=output component="Agent" -->
+    <!-- PORT:left x=448 y=160 id=n4.left type=input component="Chat Output" -->
+    <!-- PORT:right x=592 y=160 id=n4.right type=output component="Chat Output" -->
+    <!-- PORT:top x=520 y=136 id=n4.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=520 y=184 id=n4.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=64 y=408 id=n9.left type=input component="Message History" -->
+    <!-- PORT:right x=224 y=408 id=n9.right type=output component="Message History" -->
+    <!-- PORT:top x=144 y=384 id=n9.top type=input component="Message History" -->
+    <!-- PORT:bottom x=144 y=432 id=n9.bottom type=output component="Message History" -->
+    <!-- PORT:left x=264 y=408 id=n10.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=424 y=408 id=n10.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=344 y=384 id=n10.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=344 y=432 id=n10.bottom type=output component="Prompt Template" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 240 256" data-label="Chat Input, Session ID, Langflow Storage">
       <!-- PORT:left x=48 y=56 id=n6.left type=input component="Chat Input" -->
       <!-- PORT:right x=192 y=56 id=n6.right type=output component="Chat Input" -->
       <!-- PORT:top x=120 y=32 id=n6.top type=input component="Chat Input" -->
@@ -83,7 +83,7 @@
         <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Langflow Storage</text>
       </g>
     </g>
-    <g id="n3" transform="translate(336,136)" data-bbox="336 136 96 48" data-label="Agent">
+    <g id="n3" transform="translate(312,136)" data-bbox="312 136 96 48" data-label="Agent">
       <!-- PORT:left x=0 y=24 id=n3.left type=input component="Agent" -->
       <!-- PORT:right x=96 y=24 id=n3.right type=output component="Agent" -->
       <!-- PORT:top x=48 y=0 id=n3.top type=input component="Agent" -->
@@ -92,7 +92,7 @@
       <use id="n3.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
     </g>
-    <g id="n4" transform="translate(472,136)" data-bbox="472 136 144 48" data-label="Chat Output">
+    <g id="n4" transform="translate(448,136)" data-bbox="448 136 144 48" data-label="Chat Output">
       <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Output" -->
       <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Output" -->
       <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Output" -->
@@ -101,7 +101,7 @@
       <use id="n4.icon" href="#icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
     </g>
-    <g id="n5" transform="translate(56,352)" data-bbox="56 352 424 112" data-label="Message History, Prompt Template">
+    <g id="n5" transform="translate(32,352)" data-bbox="32 352 424 112" data-label="Message History, Prompt Template">
       <!-- PORT:left x=32 y=56 id=n9.left type=input component="Message History" -->
       <!-- PORT:right x=192 y=56 id=n9.right type=output component="Message History" -->
       <!-- PORT:top x=112 y=32 id=n9.top type=input component="Message History" -->
@@ -130,13 +130,13 @@
       </g>
       <path id="n5.arrow0" d="M192,56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
     </g>
-    <path id="n1.arrow0" d="M248,88 H296 V160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n3.left"/>
-    <path id="n1.arrow1" d="M432,160 H472" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
-    <path id="n1.arrow2" d="M248,160 H304 V320 H32 V408 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
-    <path id="n1.arrow3" d="M248,160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n3.left"/>
-    <path id="n1.arrow4" d="M264,232 H312 V328 H168 V384" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.top"/>
-    <path id="n1.arrow5" d="M264,232 H304 V160 H336" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n3.left"/>
-    <path id="n1.arrow6" d="M448,408 H488 V320 H384 V136" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n3.top"/>
-    <path id="n1.arrow7" d="M616,160 H640 V336 H32 V408 H88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n9.left"/>
+    <path id="n1.arrow0" d="M224,88 H360 V136" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n3.top"/>
+    <path id="n1.arrow1" d="M408,160 H448" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M80,160 H32 V408 H64" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.left" data-to="n9.left"/>
+    <path id="n1.arrow3" d="M224,160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n3.left"/>
+    <path id="n1.arrow4" d="M152,256 V352 H144 V384" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.bottom" data-to="n9.top"/>
+    <path id="n1.arrow5" d="M240,232 H280 V160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n3.left"/>
+    <path id="n1.arrow6" d="M424,408 H464 V320 H360 V184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n3.bottom"/>
+    <path id="n1.arrow7" d="M520,184 V464 H144 V432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.bottom" data-to="n9.bottom"/>
   </g>
 </svg>

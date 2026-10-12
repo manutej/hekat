@@ -12,7 +12,9 @@ COMMAND   the exact shell command(s) to run, in a code block, from the repo root
 OUTPUT    the JSON shape to return, with an example filled in; string caps ("≤ 160 chars"), list caps ("≤ 8")
 DONE WHEN the acceptance test the agent can check itself ("ok is true", "every quote found", "overall ≥ 8")
 DON'T     the three or four failure modes seen in practice ("do not paste file contents", "do not open the SVG",
-          "do not invent a component the page does not name", "do not reword a quote")
+          "do not invent a component the page does not name", "do not reword a quote", "do not accept a
+          figure with flow.through_block, flow.through_text or flow.collinear_overlap"); the log of
+          failure modes to draw from is docs/FAILURE-MODES.md
 ```
 
 Rules that make the card work at low capability:

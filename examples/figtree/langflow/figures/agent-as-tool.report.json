@@ -86,7 +86,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 48,
-          "y": 56
+          "y": 40
         },
         "svg_fragment": null
       },
@@ -174,7 +174,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 32,
-          "y": 128
+          "y": 112
         },
         "svg_fragment": null
       },
@@ -262,7 +262,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 232,
-          "y": 96
+          "y": 80
         },
         "svg_fragment": null
       },
@@ -350,7 +350,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 368,
-          "y": 96
+          "y": 80
         },
         "svg_fragment": null
       },
@@ -360,14 +360,14 @@
         "description": "A manager agent delegating to other agents",
         "canvas": {
           "w": 528,
-          "h": 208
+          "h": 192
         },
         "ports": [
           {
             "id": "n2.left",
             "side": "left",
             "rel_x": 48,
-            "rel_y": 80,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -377,7 +377,7 @@
             "id": "n2.right",
             "side": "right",
             "rel_x": 176,
-            "rel_y": 80,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -387,7 +387,7 @@
             "id": "n2.top",
             "side": "top",
             "rel_x": 112,
-            "rel_y": 56,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -397,7 +397,7 @@
             "id": "n2.bottom",
             "side": "bottom",
             "rel_x": 112,
-            "rel_y": 104,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -407,7 +407,7 @@
             "id": "n3.left",
             "side": "left",
             "rel_x": 32,
-            "rel_y": 152,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -417,7 +417,7 @@
             "id": "n3.right",
             "side": "right",
             "rel_x": 192,
-            "rel_y": 152,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -427,7 +427,7 @@
             "id": "n3.top",
             "side": "top",
             "rel_x": 112,
-            "rel_y": 128,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -437,7 +437,7 @@
             "id": "n3.bottom",
             "side": "bottom",
             "rel_x": 112,
-            "rel_y": 176,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -447,7 +447,7 @@
             "id": "n4.left",
             "side": "left",
             "rel_x": 232,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -457,7 +457,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 328,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -467,7 +467,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 280,
-            "rel_y": 96,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -477,7 +477,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 280,
-            "rel_y": 144,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -487,7 +487,7 @@
             "id": "n5.left",
             "side": "left",
             "rel_x": 368,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -497,7 +497,7 @@
             "id": "n5.right",
             "side": "right",
             "rel_x": 496,
-            "rel_y": 120,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -507,7 +507,7 @@
             "id": "n5.top",
             "side": "top",
             "rel_x": 432,
-            "rel_y": 96,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -517,7 +517,7 @@
             "id": "n5.bottom",
             "side": "bottom",
             "rel_x": 432,
-            "rel_y": 144,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -629,7 +629,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 48,
-              "y": 56
+              "y": 40
             },
             "svg_fragment": null
           },
@@ -717,7 +717,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 32,
-              "y": 128
+              "y": 112
             },
             "svg_fragment": null
           },
@@ -805,7 +805,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 232,
-              "y": 96
+              "y": 80
             },
             "svg_fragment": null
           },
@@ -893,7 +893,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 368,
-              "y": 96
+              "y": 80
             },
             "svg_fragment": null
           }
@@ -902,7 +902,7 @@
           "x": 0,
           "y": 0,
           "w": 528,
-          "h": 208
+          "h": 192
         },
         "residuals": [],
         "components": [

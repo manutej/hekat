@@ -1,0 +1,28 @@
+[
+  {
+    "name": "language-model",
+    "concept": "the LLM that generates, categorizes or routes text",
+    "score": 9.75,
+    "accepted": true,
+    "issues": [
+      {
+        "check_id": "icon.min_feature_size",
+        "dimension": "medium_fit",
+        "severity": "warning",
+        "visual_description": "1 stroke(s) shorter than 1.5 device px at 16px (e10-line): sub-pixel detail smudges",
+        "code_anchor": "e10-line",
+        "fix_instruction": "drop the detail or enlarge it to at least 2 grid units",
+        "penalty": 1.0,
+        "auto_edit": null
+      }
+    ],
+    "trajectory": [
+      {
+        "round": 0,
+        "score": 9.75,
+        "issues": 1
+      }
+    ],
+    "inner": "<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"2\" id=\"e1-rect\" /><line x1=\"10\" y1=\"3\" x2=\"10\" y2=\"6\" id=\"e2-line\" /><line x1=\"14\" y1=\"3\" x2=\"14\" y2=\"6\" id=\"e3-line\" /><line x1=\"10\" y1=\"18\" x2=\"10\" y2=\"21\" id=\"e4-line\" /><line x1=\"14\" y1=\"18\" x2=\"14\" y2=\"21\" id=\"e5-line\" /><line x1=\"3\" y1=\"10\" x2=\"6\" y2=\"10\" id=\"e6-line\" /><line x1=\"3\" y1=\"14\" x2=\"6\" y2=\"14\" id=\"e7-line\" /><line x1=\"18\" y1=\"10\" x2=\"21\" y2=\"10\" id=\"e8-line\" /><line x1=\"18\" y1=\"14\" x2=\"21\" y2=\"14\" id=\"e9-line\" /><line x1=\"11\" y1=\"12\" x2=\"13\" y2=\"12\" id=\"e10-line\" />"
+  }
+]

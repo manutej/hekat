@@ -245,11 +245,17 @@ class RuleBasedGrounder:
         claim = self._claim(text)
         # spec mode: a document that declares its components ("- **Name** (kind: ..)" bullets, three
         # or more) is drawn from that list alone; prose mentions elsewhere are not components
-        declared = {slug(m.group(1)) for m in _COMPONENT_HINT.finditer(text)}
+        declared_names = {slug(m.group(1)): m.group(1).strip() for m in _COMPONENT_HINT.finditer(text)}
+        declared = set(declared_names)
         if len(declared) >= 3:
             dropped = [c.name for c in final_components if slug(c.name) not in declared]
             final_components = [c for c in final_components if slug(c.name) in declared]
+            # names are spelled exactly as declared ("Human Input:" from a Flows line -> "Human Input")
+            for c in final_components:
+                c.name = declared_names[slug(c.name)]
             flows = [f for f in flows if slug(f.src) in declared and slug(f.dst) in declared]
+            for f in flows:
+                f.src, f.dst = declared_names[slug(f.src)], declared_names[slug(f.dst)]
             if dropped:
                 residuals.append(ResidualDefect("info", f"spec mode: {len(dropped)} prose mention(s) not drawn: {', '.join(dropped[:6])}", "content_plan.components", "declare it under Components to draw it"))
         plan = ContentPlan(

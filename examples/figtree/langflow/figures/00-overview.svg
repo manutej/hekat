@@ -142,7 +142,7 @@
           <text id="n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Workflow API</text>
         </g>
       </g>
-      <path id="n2.arrow0" d="M248,88 H336 V128 H416" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n9.left"/>
+      <path id="n2.arrow0" d="M176,64 V56 H464 V104" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.top" data-to="n9.top"/>
       <path id="n2.arrow1" d="M264,160 H344 V128 H416" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
       <path id="n2.arrow2" d="M288,232 H352 V200 H392" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n10.left"/>
     </g>
@@ -199,10 +199,10 @@
         <use id="n14.icon" href="#icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
         <text id="n14.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">MCP Server</text>
       </g>
-      <path id="n3.arrow0" d="M144,128 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n12.right" data-to="n14.left"/>
+      <path id="n3.arrow0" d="M104,104 V88 H272 V72 H280 V104" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n12.top" data-to="n14.top"/>
       <path id="n3.arrow1" d="M144,200 H176 V128 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n14.left"/>
     </g>
-    <path id="n1.arrow0" d="M544,160 H624 V120 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n11.left"/>
+    <path id="n1.arrow0" d="M544,160 H552 V120 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n11.left"/>
     <path id="n1.arrow1" d="M544,160 H648 V192 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n12.left"/>
     <path id="n1.arrow2" d="M568,232 H672 V264 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n13.left"/>
   </g>

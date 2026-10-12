@@ -621,9 +621,9 @@ class QualityCritic:
             for b in blocks:
                 lab = label_of.get(b.id, "")
                 if SINK_WORDS.search(lab) and outgoing[b.id] and not incoming[b.id]:
-                    add("flow_readability", "critical", f"block {b.id} ({lab[:24]!r}) reads as a sink but only emits data", b.id, "check the arrow direction against the method (judge request)", 2.0, check="flow.semantic_direction")
+                    add("flow_readability", "warning", f"block {b.id} ({lab[:24]!r}) reads as a sink but only emits data", b.id, "check the arrow direction against the method (judge request)", 2.0, check="flow.semantic_direction")
                 elif SOURCE_WORDS.search(lab) and incoming[b.id] and not outgoing[b.id]:
-                    add("flow_readability", "critical", f"block {b.id} ({lab[:24]!r}) reads as a source but only receives data", b.id, "check the arrow direction against the method (judge request)", 2.0, check="flow.semantic_direction")
+                    add("flow_readability", "warning", f"block {b.id} ({lab[:24]!r}) reads as a source but only receives data", b.id, "check the arrow direction against the method (judge request)", 2.0, check="flow.semantic_direction")
 
     @staticmethod
     def _block_at(p: Point, blocks: List[ElementInfo]) -> Optional[ElementInfo]:

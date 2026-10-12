@@ -94,7 +94,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 48,
-          "y": 48
+          "y": 40
         },
         "svg_fragment": null
       },
@@ -182,7 +182,7 @@
         "layout": "horizontal",
         "offset": {
           "x": 32,
-          "y": 120
+          "y": 112
         },
         "svg_fragment": null
       },
@@ -191,7 +191,7 @@
         "parent_id": "n2",
         "description": "Human Input",
         "canvas": {
-          "w": 176,
+          "w": 160,
           "h": 48
         },
         "ports": [
@@ -203,37 +203,37 @@
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 176,
+            "rel_x": 160,
             "rel_y": 24,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 88,
+            "rel_x": 80,
             "rel_y": 0,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 88,
+            "rel_x": 80,
             "rel_y": 48,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           }
         ],
         "depth": 2,
@@ -260,17 +260,17 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 176,
+          "w": 160,
           "h": 48
         },
         "residuals": [],
         "components": [
-          "Human Input:"
+          "Human Input"
         ],
         "layout": "horizontal",
         "offset": {
           "x": 240,
-          "y": 88
+          "y": 80
         },
         "svg_fragment": null
       },
@@ -279,15 +279,15 @@
         "parent_id": "n1",
         "description": "Agent, Playground, Human Input",
         "canvas": {
-          "w": 448,
-          "h": 200
+          "w": 432,
+          "h": 192
         },
         "ports": [
           {
             "id": "n4.left",
             "side": "left",
             "rel_x": 48,
-            "rel_y": 72,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -297,7 +297,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 160,
-            "rel_y": 72,
+            "rel_y": 64,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -307,7 +307,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 104,
-            "rel_y": 48,
+            "rel_y": 40,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -317,7 +317,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 104,
-            "rel_y": 96,
+            "rel_y": 88,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -327,7 +327,7 @@
             "id": "n5.left",
             "side": "left",
             "rel_x": 32,
-            "rel_y": 144,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -337,7 +337,7 @@
             "id": "n5.right",
             "side": "right",
             "rel_x": 176,
-            "rel_y": 144,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -347,7 +347,7 @@
             "id": "n5.top",
             "side": "top",
             "rel_x": 104,
-            "rel_y": 120,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -357,7 +357,7 @@
             "id": "n5.bottom",
             "side": "bottom",
             "rel_x": 104,
-            "rel_y": 168,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -367,41 +367,41 @@
             "id": "n6.left",
             "side": "left",
             "rel_x": 240,
-            "rel_y": 112,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 416,
-            "rel_y": 112,
+            "rel_x": 400,
+            "rel_y": 104,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 328,
-            "rel_y": 88,
+            "rel_x": 320,
+            "rel_y": 80,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 328,
-            "rel_y": 136,
+            "rel_x": 320,
+            "rel_y": 128,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           }
         ],
         "depth": 1,
@@ -509,7 +509,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 48,
-              "y": 48
+              "y": 40
             },
             "svg_fragment": null
           },
@@ -597,7 +597,7 @@
             "layout": "horizontal",
             "offset": {
               "x": 32,
-              "y": 120
+              "y": 112
             },
             "svg_fragment": null
           },
@@ -606,7 +606,7 @@
             "parent_id": "n2",
             "description": "Human Input",
             "canvas": {
-              "w": 176,
+              "w": 160,
               "h": 48
             },
             "ports": [
@@ -618,37 +618,37 @@
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 176,
+                "rel_x": 160,
                 "rel_y": 24,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 88,
+                "rel_x": 80,
                 "rel_y": 0,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 88,
+                "rel_x": 80,
                 "rel_y": 48,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
-                "component": "Human Input:"
+                "component": "Human Input"
               }
             ],
             "depth": 2,
@@ -675,17 +675,17 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 176,
+              "w": 160,
               "h": 48
             },
             "residuals": [],
             "components": [
-              "Human Input:"
+              "Human Input"
             ],
             "layout": "horizontal",
             "offset": {
               "x": 240,
-              "y": 88
+              "y": 80
             },
             "svg_fragment": null
           }
@@ -693,14 +693,14 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 448,
-          "h": 200
+          "w": 432,
+          "h": 192
         },
         "residuals": [],
         "components": [
           "Agent",
           "Playground",
-          "Human Input:"
+          "Human Input"
         ],
         "layout": "horizontal",
         "offset": {
@@ -1186,7 +1186,7 @@
         ],
         "layout": "vertical",
         "offset": {
-          "x": 520,
+          "x": 504,
           "y": 40
         },
         "svg_fragment": null
@@ -1196,15 +1196,15 @@
         "parent_id": null,
         "description": "Pausing a Flow for a Human",
         "canvas": {
-          "w": 760,
-          "h": 264
+          "w": 744,
+          "h": 256
         },
         "ports": [
           {
             "id": "n4.left",
             "side": "left",
             "rel_x": 80,
-            "rel_y": 104,
+            "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1214,7 +1214,7 @@
             "id": "n4.right",
             "side": "right",
             "rel_x": 192,
-            "rel_y": 104,
+            "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1224,7 +1224,7 @@
             "id": "n4.top",
             "side": "top",
             "rel_x": 136,
-            "rel_y": 80,
+            "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1234,7 +1234,7 @@
             "id": "n4.bottom",
             "side": "bottom",
             "rel_x": 136,
-            "rel_y": 128,
+            "rel_y": 120,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1244,7 +1244,7 @@
             "id": "n5.left",
             "side": "left",
             "rel_x": 64,
-            "rel_y": 176,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1254,7 +1254,7 @@
             "id": "n5.right",
             "side": "right",
             "rel_x": 208,
-            "rel_y": 176,
+            "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1264,7 +1264,7 @@
             "id": "n5.top",
             "side": "top",
             "rel_x": 136,
-            "rel_y": 152,
+            "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
@@ -1274,7 +1274,7 @@
             "id": "n5.bottom",
             "side": "bottom",
             "rel_x": 136,
-            "rel_y": 200,
+            "rel_y": 192,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
@@ -1284,46 +1284,46 @@
             "id": "n6.left",
             "side": "left",
             "rel_x": 272,
-            "rel_y": 144,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.right",
             "side": "right",
-            "rel_x": 448,
-            "rel_y": 144,
+            "rel_x": 432,
+            "rel_y": 136,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.top",
             "side": "top",
-            "rel_x": 360,
-            "rel_y": 120,
+            "rel_x": 352,
+            "rel_y": 112,
             "abs_x": 0,
             "abs_y": 0,
             "type": "input",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n6.bottom",
             "side": "bottom",
-            "rel_x": 360,
-            "rel_y": 168,
+            "rel_x": 352,
+            "rel_y": 160,
             "abs_x": 0,
             "abs_y": 0,
             "type": "output",
-            "component": "Human Input:"
+            "component": "Human Input"
           },
           {
             "id": "n7.left",
             "side": "left",
-            "rel_x": 560,
+            "rel_x": 544,
             "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
@@ -1333,7 +1333,7 @@
           {
             "id": "n7.right",
             "side": "right",
-            "rel_x": 688,
+            "rel_x": 672,
             "rel_y": 96,
             "abs_x": 0,
             "abs_y": 0,
@@ -1343,7 +1343,7 @@
           {
             "id": "n7.top",
             "side": "top",
-            "rel_x": 624,
+            "rel_x": 608,
             "rel_y": 72,
             "abs_x": 0,
             "abs_y": 0,
@@ -1353,7 +1353,7 @@
           {
             "id": "n7.bottom",
             "side": "bottom",
-            "rel_x": 624,
+            "rel_x": 608,
             "rel_y": 120,
             "abs_x": 0,
             "abs_y": 0,
@@ -1363,7 +1363,7 @@
           {
             "id": "n8.left",
             "side": "left",
-            "rel_x": 552,
+            "rel_x": 536,
             "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
@@ -1373,7 +1373,7 @@
           {
             "id": "n8.right",
             "side": "right",
-            "rel_x": 696,
+            "rel_x": 680,
             "rel_y": 168,
             "abs_x": 0,
             "abs_y": 0,
@@ -1383,7 +1383,7 @@
           {
             "id": "n8.top",
             "side": "top",
-            "rel_x": 624,
+            "rel_x": 608,
             "rel_y": 144,
             "abs_x": 0,
             "abs_y": 0,
@@ -1393,7 +1393,7 @@
           {
             "id": "n8.bottom",
             "side": "bottom",
-            "rel_x": 624,
+            "rel_x": 608,
             "rel_y": 192,
             "abs_x": 0,
             "abs_y": 0,
@@ -1427,15 +1427,15 @@
             "parent_id": "n1",
             "description": "Agent, Playground, Human Input",
             "canvas": {
-              "w": 448,
-              "h": 200
+              "w": 432,
+              "h": 192
             },
             "ports": [
               {
                 "id": "n4.left",
                 "side": "left",
                 "rel_x": 48,
-                "rel_y": 72,
+                "rel_y": 64,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1445,7 +1445,7 @@
                 "id": "n4.right",
                 "side": "right",
                 "rel_x": 160,
-                "rel_y": 72,
+                "rel_y": 64,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1455,7 +1455,7 @@
                 "id": "n4.top",
                 "side": "top",
                 "rel_x": 104,
-                "rel_y": 48,
+                "rel_y": 40,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1465,7 +1465,7 @@
                 "id": "n4.bottom",
                 "side": "bottom",
                 "rel_x": 104,
-                "rel_y": 96,
+                "rel_y": 88,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1475,7 +1475,7 @@
                 "id": "n5.left",
                 "side": "left",
                 "rel_x": 32,
-                "rel_y": 144,
+                "rel_y": 136,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1485,7 +1485,7 @@
                 "id": "n5.right",
                 "side": "right",
                 "rel_x": 176,
-                "rel_y": 144,
+                "rel_y": 136,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1495,7 +1495,7 @@
                 "id": "n5.top",
                 "side": "top",
                 "rel_x": 104,
-                "rel_y": 120,
+                "rel_y": 112,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
@@ -1505,7 +1505,7 @@
                 "id": "n5.bottom",
                 "side": "bottom",
                 "rel_x": 104,
-                "rel_y": 168,
+                "rel_y": 160,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
@@ -1515,41 +1515,41 @@
                 "id": "n6.left",
                 "side": "left",
                 "rel_x": 240,
-                "rel_y": 112,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.right",
                 "side": "right",
-                "rel_x": 416,
-                "rel_y": 112,
+                "rel_x": 400,
+                "rel_y": 104,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.top",
                 "side": "top",
-                "rel_x": 328,
-                "rel_y": 88,
+                "rel_x": 320,
+                "rel_y": 80,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "input",
-                "component": "Human Input:"
+                "component": "Human Input"
               },
               {
                 "id": "n6.bottom",
                 "side": "bottom",
-                "rel_x": 328,
-                "rel_y": 136,
+                "rel_x": 320,
+                "rel_y": 128,
                 "abs_x": 0,
                 "abs_y": 0,
                 "type": "output",
-                "component": "Human Input:"
+                "component": "Human Input"
               }
             ],
             "depth": 1,
@@ -1657,7 +1657,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 48,
-                  "y": 48
+                  "y": 40
                 },
                 "svg_fragment": null
               },
@@ -1745,7 +1745,7 @@
                 "layout": "horizontal",
                 "offset": {
                   "x": 32,
-                  "y": 120
+                  "y": 112
                 },
                 "svg_fragment": null
               },
@@ -1754,7 +1754,7 @@
                 "parent_id": "n2",
                 "description": "Human Input",
                 "canvas": {
-                  "w": 176,
+                  "w": 160,
                   "h": 48
                 },
                 "ports": [
@@ -1766,37 +1766,37 @@
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "input",
-                    "component": "Human Input:"
+                    "component": "Human Input"
                   },
                   {
                     "id": "n6.right",
                     "side": "right",
-                    "rel_x": 176,
+                    "rel_x": 160,
                     "rel_y": 24,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "output",
-                    "component": "Human Input:"
+                    "component": "Human Input"
                   },
                   {
                     "id": "n6.top",
                     "side": "top",
-                    "rel_x": 88,
+                    "rel_x": 80,
                     "rel_y": 0,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "input",
-                    "component": "Human Input:"
+                    "component": "Human Input"
                   },
                   {
                     "id": "n6.bottom",
                     "side": "bottom",
-                    "rel_x": 88,
+                    "rel_x": 80,
                     "rel_y": 48,
                     "abs_x": 0,
                     "abs_y": 0,
                     "type": "output",
-                    "component": "Human Input:"
+                    "component": "Human Input"
                   }
                 ],
                 "depth": 2,
@@ -1823,17 +1823,17 @@
                 "bbox": {
                   "x": 0,
                   "y": 0,
-                  "w": 176,
+                  "w": 160,
                   "h": 48
                 },
                 "residuals": [],
                 "components": [
-                  "Human Input:"
+                  "Human Input"
                 ],
                 "layout": "horizontal",
                 "offset": {
                   "x": 240,
-                  "y": 88
+                  "y": 80
                 },
                 "svg_fragment": null
               }
@@ -1841,14 +1841,14 @@
             "bbox": {
               "x": 0,
               "y": 0,
-              "w": 448,
-              "h": 200
+              "w": 432,
+              "h": 192
             },
             "residuals": [],
             "components": [
               "Agent",
               "Playground",
-              "Human Input:"
+              "Human Input"
             ],
             "layout": "horizontal",
             "offset": {
@@ -2158,7 +2158,7 @@
             ],
             "layout": "vertical",
             "offset": {
-              "x": 520,
+              "x": 504,
               "y": 40
             },
             "svg_fragment": null
@@ -2167,8 +2167,8 @@
         "bbox": {
           "x": 0,
           "y": 0,
-          "w": 760,
-          "h": 264
+          "w": 744,
+          "h": 256
         },
         "residuals": [
           {
@@ -2181,7 +2181,7 @@
         ],
         "components": [
           "Agent",
-          "Human Input:",
+          "Human Input",
           "Git Commit",
           "Chat Output",
           "Playground"
@@ -2303,7 +2303,7 @@
         "icon": "gear"
       },
       {
-        "name": "Human Input:",
+        "name": "Human Input",
         "evidence_span": "Human Input:",
         "kind": "decision",
         "icon": "split"
@@ -2330,18 +2330,18 @@
     "flows": [
       {
         "from": "Agent",
-        "to": "Human Input:",
+        "to": "Human Input",
         "type": "data",
         "evidence_span": "Agent \u2192 Human Input:"
       },
       {
-        "from": "Human Input:",
+        "from": "Human Input",
         "to": "Git Commit",
         "type": "control",
         "evidence_span": "Human Input \u2192 Git Commit"
       },
       {
-        "from": "Human Input:",
+        "from": "Human Input",
         "to": "Chat Output",
         "type": "control",
         "evidence_span": "Human Input \u2192 Chat Output"
@@ -2354,7 +2354,7 @@
       },
       {
         "from": "Playground",
-        "to": "Human Input:",
+        "to": "Human Input",
         "type": "control",
         "evidence_span": "Playground \u2192 Human Input"
       }

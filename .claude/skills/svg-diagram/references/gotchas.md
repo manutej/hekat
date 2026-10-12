@@ -14,6 +14,8 @@ written for, not on every variant, and the semantic rows are lexicon proxies: ke
 Severity is the adversary's: veto = disqualifying, critical = a reader is misled or cannot
 read, warning = polish.
 
+Prevention status for every row that became a worker rule is in `docs/FAILURE-MODES.md`.
+
 ## Check this by eye: arrows
 
 | Look for | Why the critic is silent | Probe | Severity | Status at HEAD |

@@ -1,0 +1,108 @@
+{
+  "manifest": "/home/user/hekat/examples/figtree/langflow/figures/manifest.json",
+  "index": "/home/user/hekat/examples/figtree/langflow/figures/index.html",
+  "units": [
+    {
+      "id": "00-overview",
+      "title": "How Langflow agent workflows coordinate",
+      "source": "examples/figtree/langflow/specs/00-overview.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/00-overview.svg",
+      "overall": 9.71,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "a2a-agents",
+      "title": "Agents talking to agents over A2A",
+      "source": "examples/figtree/langflow/specs/a2a-agents.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/a2a-agents.svg",
+      "overall": 9.71,
+      "issues": 2,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "agent-as-tool",
+      "title": "A manager agent delegating to other agents",
+      "source": "examples/figtree/langflow/specs/agent-as-tool.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/agent-as-tool.svg",
+      "overall": 10.0,
+      "issues": 0,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "agent-with-tools",
+      "title": "An agent calling tools",
+      "source": "examples/figtree/langflow/specs/agent-with-tools.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/agent-with-tools.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "human-in-the-loop",
+      "title": "Pausing a Flow for a Human",
+      "source": "examples/figtree/langflow/specs/human-in-the-loop.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/human-in-the-loop.svg",
+      "overall": 8.9,
+      "issues": 4,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "loops-and-routing",
+      "title": "Branching, looping and sub-flows inside a flow",
+      "source": "examples/figtree/langflow/specs/loops-and-routing.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/loops-and-routing.svg",
+      "overall": 10.0,
+      "issues": 0,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "mcp-client",
+      "title": "An agent using an MCP server's tools",
+      "source": "examples/figtree/langflow/specs/mcp-client.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/mcp-client.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "mcp-server",
+      "title": "Flows exposed as tools to MCP clients",
+      "source": "examples/figtree/langflow/specs/mcp-server.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/mcp-server.svg",
+      "overall": 9.19,
+      "issues": 3,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "memory-and-sessions",
+      "title": "Conversation memory across turns and sessions",
+      "source": "examples/figtree/langflow/specs/memory-and-sessions.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/memory-and-sessions.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    },
+    {
+      "id": "run-flow-api",
+      "title": "Running a Flow from an Application through the API",
+      "source": "examples/figtree/langflow/specs/run-flow-api.md",
+      "svg": "/home/user/hekat/examples/figtree/langflow/figures/run-flow-api.svg",
+      "overall": 9.86,
+      "issues": 1,
+      "critical": 0,
+      "status": "ok"
+    }
+  ],
+  "failed": [],
+  "skipped": []
+}

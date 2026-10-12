@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="528" height="208" viewBox="0 0 528 208" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="528" height="192" viewBox="0 0 528 192" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title>A manager agent delegating to other agents</title>
-  <rect id="background" x="0" y="0" width="528" height="208" fill="#FFFFFF" data-role="background"/>
+  <rect id="background" x="0" y="0" width="528" height="192" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
@@ -9,24 +9,24 @@
   <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
   <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 528 208">
-    <!-- PORT:left x=48 y=80 id=n2.left type=input component="Tool Mode" -->
-    <!-- PORT:right x=176 y=80 id=n2.right type=output component="Tool Mode" -->
-    <!-- PORT:top x=112 y=56 id=n2.top type=input component="Tool Mode" -->
-    <!-- PORT:bottom x=112 y=104 id=n2.bottom type=output component="Tool Mode" -->
-    <!-- PORT:left x=32 y=152 id=n3.left type=input component="Tool Actions" -->
-    <!-- PORT:right x=192 y=152 id=n3.right type=output component="Tool Actions" -->
-    <!-- PORT:top x=112 y=128 id=n3.top type=input component="Tool Actions" -->
-    <!-- PORT:bottom x=112 y=176 id=n3.bottom type=output component="Tool Actions" -->
-    <!-- PORT:left x=232 y=120 id=n4.left type=input component="Agent" -->
-    <!-- PORT:right x=328 y=120 id=n4.right type=output component="Agent" -->
-    <!-- PORT:top x=280 y=96 id=n4.top type=input component="Agent" -->
-    <!-- PORT:bottom x=280 y=144 id=n4.bottom type=output component="Agent" -->
-    <!-- PORT:left x=368 y=120 id=n5.left type=input component="Agent Tool" -->
-    <!-- PORT:right x=496 y=120 id=n5.right type=output component="Agent Tool" -->
-    <!-- PORT:top x=432 y=96 id=n5.top type=input component="Agent Tool" -->
-    <!-- PORT:bottom x=432 y=144 id=n5.bottom type=output component="Agent Tool" -->
-    <g id="n2" transform="translate(48,56)" data-bbox="48 56 128 48" data-label="Tool Mode">
+  <g id="n1" data-bbox="0 0 528 192">
+    <!-- PORT:left x=48 y=64 id=n2.left type=input component="Tool Mode" -->
+    <!-- PORT:right x=176 y=64 id=n2.right type=output component="Tool Mode" -->
+    <!-- PORT:top x=112 y=40 id=n2.top type=input component="Tool Mode" -->
+    <!-- PORT:bottom x=112 y=88 id=n2.bottom type=output component="Tool Mode" -->
+    <!-- PORT:left x=32 y=136 id=n3.left type=input component="Tool Actions" -->
+    <!-- PORT:right x=192 y=136 id=n3.right type=output component="Tool Actions" -->
+    <!-- PORT:top x=112 y=112 id=n3.top type=input component="Tool Actions" -->
+    <!-- PORT:bottom x=112 y=160 id=n3.bottom type=output component="Tool Actions" -->
+    <!-- PORT:left x=232 y=104 id=n4.left type=input component="Agent" -->
+    <!-- PORT:right x=328 y=104 id=n4.right type=output component="Agent" -->
+    <!-- PORT:top x=280 y=80 id=n4.top type=input component="Agent" -->
+    <!-- PORT:bottom x=280 y=128 id=n4.bottom type=output component="Agent" -->
+    <!-- PORT:left x=368 y=104 id=n5.left type=input component="Agent Tool" -->
+    <!-- PORT:right x=496 y=104 id=n5.right type=output component="Agent Tool" -->
+    <!-- PORT:top x=432 y=80 id=n5.top type=input component="Agent Tool" -->
+    <!-- PORT:bottom x=432 y=128 id=n5.bottom type=output component="Agent Tool" -->
+    <g id="n2" transform="translate(48,40)" data-bbox="48 40 128 48" data-label="Tool Mode">
       <!-- PORT:left x=0 y=24 id=n2.left type=input component="Tool Mode" -->
       <!-- PORT:right x=128 y=24 id=n2.right type=output component="Tool Mode" -->
       <!-- PORT:top x=64 y=0 id=n2.top type=input component="Tool Mode" -->
@@ -35,7 +35,7 @@
       <use id="n2.icon" href="#icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Tool Mode</text>
     </g>
-    <g id="n3" transform="translate(32,128)" data-bbox="32 128 160 48" data-label="Tool Actions">
+    <g id="n3" transform="translate(32,112)" data-bbox="32 112 160 48" data-label="Tool Actions">
       <!-- PORT:left x=0 y=24 id=n3.left type=input component="Tool Actions" -->
       <!-- PORT:right x=160 y=24 id=n3.right type=output component="Tool Actions" -->
       <!-- PORT:top x=80 y=0 id=n3.top type=input component="Tool Actions" -->
@@ -44,7 +44,7 @@
       <use id="n3.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Tool Actions</text>
     </g>
-    <g id="n4" transform="translate(232,96)" data-bbox="232 96 96 48" data-label="Agent">
+    <g id="n4" transform="translate(232,80)" data-bbox="232 80 96 48" data-label="Agent">
       <!-- PORT:left x=0 y=24 id=n4.left type=input component="Agent" -->
       <!-- PORT:right x=96 y=24 id=n4.right type=output component="Agent" -->
       <!-- PORT:top x=48 y=0 id=n4.top type=input component="Agent" -->
@@ -53,7 +53,7 @@
       <use id="n4.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
     </g>
-    <g id="n5" transform="translate(368,96)" data-bbox="368 96 128 48" data-label="Agent Tool">
+    <g id="n5" transform="translate(368,80)" data-bbox="368 80 128 48" data-label="Agent Tool">
       <!-- PORT:left x=0 y=24 id=n5.left type=input component="Agent Tool" -->
       <!-- PORT:right x=128 y=24 id=n5.right type=output component="Agent Tool" -->
       <!-- PORT:top x=64 y=0 id=n5.top type=input component="Agent Tool" -->
@@ -62,8 +62,8 @@
       <use id="n5.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
       <text id="n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Agent Tool</text>
     </g>
-    <path id="n1.arrow0" d="M176,80 H184 V32 H336 V120 H368" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.right" data-to="n5.left"/>
-    <path id="n1.arrow1" d="M192,152 H208 V120 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
-    <path id="n1.arrow2" d="M328,120 H368" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+    <path id="n1.arrow0" d="M112,40 V32 H432 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n2.top" data-to="n5.top"/>
+    <path id="n1.arrow1" d="M192,136 H208 V104 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="n1.arrow2" d="M328,104 H368" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
   </g>
 </svg>

@@ -1,0 +1,1500 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Agentic workflows in Langflow</title><meta name="description" content="Nine workflows from the Langflow documentation, each drawn from a spec whose every component and flow quotes the docs verbatim: an agent calling tools, agents as tools, MCP client and server, memory and sessions, the Workflow API, routing and loops, human in the loop, and A2A."><style>
+:root{--bg:#F6F5F1;--fg:#1F2328;--muted:#5C6470;--rule:#D9D6CE;--accent:#2F5F8F;--sheet:#FFFFFF;--sheet-edge:#E2DFD7;--good:#1B7F5A;--warn:#B5651D;
+--display:Georgia,"Times New Roman",serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181C;--fg:#E8E6E0;--muted:#A6ADB8;--rule:#2C323A;--accent:#8AB4E0;--sheet-edge:#2C323A}}
+:root[data-theme="dark"]{--bg:#15181C;--fg:#E8E6E0;--muted:#A6ADB8;--rule:#2C323A;--accent:#8AB4E0;--sheet-edge:#2C323A}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding:32px clamp(16px,4vw,56px) 64px}
+main{max-width:1040px;margin:0 auto}h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05}h2{font-size:1.6rem;margin:56px 0 12px;padding-top:24px;border-top:1px solid var(--rule)}h3{font-size:1.15rem;margin:24px 0 8px}
+p{max-width:70ch;margin:8px 0}.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.lede{font-size:1.1rem}.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:20px 0;font-size:.92rem}.toc a{color:var(--accent);text-decoration:none}
+.sheet{background:var(--sheet);border:1px solid var(--sheet-edge);border-radius:8px;padding:16px;margin:12px 0}.sheet svg{max-width:100%}
+.fig{margin:12px 0 24px}.cap{font-size:.92rem;color:var(--muted);margin:8px 0 0}.cap b{color:var(--fg)}
+.score{display:inline-block;font-family:var(--mono);font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--rule);margin-left:8px}
+.score.good{color:var(--good);border-color:var(--good)}.score.warn{color:var(--warn);border-color:var(--warn)}
+.steps{max-width:70ch;padding-left:1.4em}.steps li{margin:4px 0}.gaps{font-size:.92rem;color:var(--muted);max-width:70ch}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:12px}.icons .sheet{text-align:center;padding:10px}
+.icons svg{width:40px;height:40px;color:var(--fg)}.icons .name{font-family:var(--mono);font-size:.74rem;color:var(--muted);display:block;margin-top:6px}
+.stats{display:flex;flex-wrap:wrap;gap:16px 40px;margin:20px 0 0;padding:0}.stats div{display:flex;flex-direction:column}.stats dt{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stats dd{margin:0;font-family:var(--display);font-size:1.9rem;font-variant-numeric:tabular-nums}
+details{margin:8px 0}summary{cursor:pointer;color:var(--accent)}pre{font-family:var(--mono);font-size:.8rem;white-space:pre-wrap;background:var(--sheet);color:#1F2328;padding:12px;border-radius:6px;border:1px solid var(--sheet-edge)}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-size:.88rem;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){svg *{animation:none!important}}
+</style></head><body><main>
+<p class="eyebrow">Concept space</p><h1>Agentic workflows in Langflow</h1>
+<p class="lede">Nine workflows from the Langflow documentation, each drawn from a spec whose every component and flow quotes the docs verbatim: an agent calling tools, agents as tools, MCP client and server, memory and sessions, the Workflow API, routing and loops, human in the loop, and A2A.</p>
+<dl class="stats"><div><dt>workflows</dt><dd>9</dd></div><div><dt>figures</dt><dd>10</dd></div><div><dt>mean score</dt><dd>9.70</dd></div><div><dt>components</dt><dd>66</dd></div></dl>
+<nav class="toc"><a href="#00-overview">How Langflow agent workflows coordinate</a><a href="#a2a-agents">Agents talking to agents over A2A</a><a href="#agent-as-tool">A manager agent delegating to other agents</a><a href="#agent-with-tools">An agent calling tools</a><a href="#human-in-the-loop">Pausing a Flow for a Human</a><a href="#loops-and-routing">Branching, looping and sub-flows inside a flow</a><a href="#mcp-client">An agent using an MCP server&#x27;s tools</a><a href="#mcp-server">Flows exposed as tools to MCP clients</a><a href="#memory-and-sessions">Conversation memory across turns and sessions</a><a href="#run-flow-api">Running a Flow from an Application through the API</a> <a href="#icons">Icons</a></nav>
+<section id="00-overview"><h2>How the workflows coordinate</h2><p>A chat message reaches an Agent, which calls tools, reads stored messages and answers, while flows are also served to outside programs through the Workflow API and an MCP server. Read it first to see which actors the nine workflow specs share.</p>
+<figure class="fig"><div class="sheet"><style>@keyframes ft-reveal{from{opacity:0}to{opacity:1}}
+#n6{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.00s forwards}
+#n7{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.70s forwards}
+#n8{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.10s forwards}
+#n9{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.05s forwards}
+#n10{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.45s forwards}
+#n11{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 0.35s forwards}
+#n12{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.40s forwards}
+#n13{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 2.80s forwards}
+#n14{opacity:0;animation:ft-reveal .6s cubic-bezier(.2,.7,.2,1) 1.75s forwards}
+@keyframes ft-draw{to{stroke-dashoffset:0}}
+@keyframes ft-appear{to{opacity:1}}
+#ft-shaft-0{stroke-dasharray:344;stroke-dashoffset:344;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.15s forwards}
+#n2\.arrow0{opacity:0;animation:ft-appear .01s linear 3.75s forwards}
+#ft-shaft-1{stroke-dasharray:184;stroke-dashoffset:184;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.30s forwards}
+#n2\.arrow1{opacity:0;animation:ft-appear .01s linear 3.90s forwards}
+#ft-shaft-2{stroke-dasharray:136;stroke-dashoffset:136;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.45s forwards}
+#n2\.arrow2{opacity:0;animation:ft-appear .01s linear 4.05s forwards}
+#ft-shaft-3{stroke-dasharray:240;stroke-dashoffset:240;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.60s forwards}
+#n3\.arrow0{opacity:0;animation:ft-appear .01s linear 4.20s forwards}
+#ft-shaft-4{stroke-dasharray:144;stroke-dashoffset:144;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.75s forwards}
+#n3\.arrow1{opacity:0;animation:ft-appear .01s linear 4.35s forwards}
+#ft-shaft-5{stroke-dasharray:200;stroke-dashoffset:200;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 3.90s forwards}
+#n1\.arrow0{opacity:0;animation:ft-appear .01s linear 4.50s forwards}
+#ft-shaft-6{stroke-dasharray:224;stroke-dashoffset:224;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.05s forwards}
+#n1\.arrow1{opacity:0;animation:ft-appear .01s linear 4.65s forwards}
+#ft-shaft-7{stroke-dasharray:200;stroke-dashoffset:200;animation:ft-draw 0.6s cubic-bezier(.4,0,.2,1) 4.20s forwards}
+#n1\.arrow2{opacity:0;animation:ft-appear .01s linear 4.80s forwards}
+@keyframes ft-travel{from{offset-distance:0%}to{offset-distance:100%}}
+#ft-pulse-0{offset-path:path('M208,96 V88 H496 V136');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 4.95s infinite, ft-show .1s linear 4.95s forwards}
+#ft-pulse-1{offset-path:path('M296,192 H376 V160 H448');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 5.35s infinite, ft-show .1s linear 5.35s forwards}
+#ft-pulse-2{offset-path:path('M320,264 H384 V232 H424');offset-rotate:0deg;opacity:0;animation:ft-travel 3.8s linear 5.75s infinite, ft-show .1s linear 5.75s forwards}
+#ft-pulse-3{offset-path:path('M776,168 V152 H944 V136 H952 V168');offset-rotate:0deg;opacity:0;animation:ft-travel 3.8s linear 6.15s infinite, ft-show .1s linear 6.15s forwards}
+#ft-pulse-4{offset-path:path('M816,264 H848 V192 H888');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 6.55s infinite, ft-show .1s linear 6.55s forwards}
+#ft-pulse-5{offset-path:path('M544,160 H552 V120 H704');offset-rotate:0deg;opacity:0;animation:ft-travel 2.4s linear 6.95s infinite, ft-show .1s linear 6.95s forwards}
+#ft-pulse-6{offset-path:path('M544,160 H648 V192 H736');offset-rotate:0deg;opacity:0;animation:ft-travel 3.8s linear 7.35s infinite, ft-show .1s linear 7.35s forwards}
+#ft-pulse-7{offset-path:path('M568,232 H672 V264 H736');offset-rotate:0deg;opacity:0;animation:ft-travel 3.8s linear 7.75s infinite, ft-show .1s linear 7.75s forwards}
+@keyframes ft-show{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){[id^=ft-pulse],[id^=ft-shaft]{display:none}*{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}</style><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 384" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title id="ov-e1-title">How Langflow agent workflows coordinate</title>
+  <rect id="ov-background" x="0" y="0" width="1080" height="384" fill="#FFFFFF" data-role="background" />
+  <defs id="ov-e2-defs">
+    <marker id="ov-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A" id="ov-e3-path" />
+    </marker>
+  <symbol id="ov-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5" id="ov-e4-ellipse" /><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13" id="ov-e5-path" /><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5" id="ov-e6-path" /></symbol>
+  <symbol id="ov-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z" id="ov-e7-path" /><path d="M14 3v5h5" id="ov-e8-path" /><path d="M9 13h7M9 17h7" id="ov-e9-path" /></symbol>
+  <symbol id="ov-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" id="ov-e10-circle" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" id="ov-e11-path" /></symbol>
+  <symbol id="ov-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z" id="ov-e12-path" /><path d="M3 13l9 5 9-5" id="ov-e13-path" /><path d="M3 17l9 5 9-5" id="ov-e14-path" /></symbol>
+  <symbol id="ov-icon-ports" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H5V10" id="ov-e15-path" /><path d="M14 5H19V10" id="ov-e16-path" /><path d="M19 14V19H14" id="ov-e17-path" /><path d="M10 19H5V14" id="ov-e18-path" /><circle cx="12" cy="5" r="2" id="ov-e19-circle" /><circle cx="19" cy="12" r="2" id="ov-e20-circle" /><circle cx="12" cy="19" r="2" id="ov-e21-circle" /><circle cx="5" cy="12" r="2" id="ov-e22-circle" /></symbol>
+  <symbol id="ov-icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" id="ov-e23-rect" /><circle cx="16" cy="8" r="1.5" id="ov-e24-circle" /><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19" id="ov-e25-polyline" /></symbol>
+  <symbol id="ov-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8" id="ov-e26-path" /></symbol>
+  <symbol id="ov-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" id="ov-e27-circle" /><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" id="ov-e28-path" /></symbol>
+  <symbol id="ov-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z" id="ov-e29-path" /></symbol>
+  </defs>
+  <g id="ov-n1" data-bbox="0 0 1080 384">
+    <!-- PORT:left x=136 y=120 id=n6.left type=input component="Chat Input" -->
+    <!-- PORT:right x=280 y=120 id=n6.right type=output component="Chat Input" -->
+    <!-- PORT:top x=208 y=96 id=n6.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=208 y=144 id=n6.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=120 y=192 id=n7.left type=input component="Langflow Storage" -->
+    <!-- PORT:right x=296 y=192 id=n7.right type=output component="Langflow Storage" -->
+    <!-- PORT:top x=208 y=168 id=n7.top type=input component="Langflow Storage" -->
+    <!-- PORT:bottom x=208 y=216 id=n7.bottom type=output component="Langflow Storage" -->
+    <!-- PORT:left x=96 y=264 id=n8.left type=input component="External Application" -->
+    <!-- PORT:right x=320 y=264 id=n8.right type=output component="External Application" -->
+    <!-- PORT:top x=208 y=240 id=n8.top type=input component="External Application" -->
+    <!-- PORT:bottom x=208 y=288 id=n8.bottom type=output component="External Application" -->
+    <!-- PORT:left x=448 y=160 id=n9.left type=input component="Agent" -->
+    <!-- PORT:right x=544 y=160 id=n9.right type=output component="Agent" -->
+    <!-- PORT:top x=496 y=136 id=n9.top type=input component="Agent" -->
+    <!-- PORT:bottom x=496 y=184 id=n9.bottom type=output component="Agent" -->
+    <!-- PORT:left x=424 y=232 id=n10.left type=input component="Workflow API" -->
+    <!-- PORT:right x=568 y=232 id=n10.right type=output component="Workflow API" -->
+    <!-- PORT:top x=496 y=208 id=n10.top type=input component="Workflow API" -->
+    <!-- PORT:bottom x=496 y=256 id=n10.bottom type=output component="Workflow API" -->
+    <!-- PORT:left x=704 y=120 id=n11.left type=input component="Chat Output" -->
+    <!-- PORT:right x=848 y=120 id=n11.right type=output component="Chat Output" -->
+    <!-- PORT:top x=776 y=96 id=n11.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=776 y=144 id=n11.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=736 y=192 id=n12.left type=input component="Tool" -->
+    <!-- PORT:right x=816 y=192 id=n12.right type=output component="Tool" -->
+    <!-- PORT:top x=776 y=168 id=n12.top type=input component="Tool" -->
+    <!-- PORT:bottom x=776 y=216 id=n12.bottom type=output component="Tool" -->
+    <!-- PORT:left x=736 y=264 id=n13.left type=input component="Flow" -->
+    <!-- PORT:right x=816 y=264 id=n13.right type=output component="Flow" -->
+    <!-- PORT:top x=776 y=240 id=n13.top type=input component="Flow" -->
+    <!-- PORT:bottom x=776 y=288 id=n13.bottom type=output component="Flow" -->
+    <!-- PORT:left x=888 y=192 id=n14.left type=input component="MCP Server" -->
+    <!-- PORT:right x=1016 y=192 id=n14.right type=output component="MCP Server" -->
+    <!-- PORT:top x=952 y=168 id=n14.top type=input component="MCP Server" -->
+    <!-- PORT:bottom x=952 y=216 id=n14.bottom type=output component="MCP Server" -->
+    <g id="ov-n2" transform="translate(32,32)" data-bbox="32 32 600 320" data-label="Chat Input, Langflow Storage, External Application, Agent, Workflow API">
+      <!-- PORT:left x=104 y=88 id=n6.left type=input component="Chat Input" -->
+      <!-- PORT:right x=248 y=88 id=n6.right type=output component="Chat Input" -->
+      <!-- PORT:top x=176 y=64 id=n6.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=176 y=112 id=n6.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=88 y=160 id=n7.left type=input component="Langflow Storage" -->
+      <!-- PORT:right x=264 y=160 id=n7.right type=output component="Langflow Storage" -->
+      <!-- PORT:top x=176 y=136 id=n7.top type=input component="Langflow Storage" -->
+      <!-- PORT:bottom x=176 y=184 id=n7.bottom type=output component="Langflow Storage" -->
+      <!-- PORT:left x=64 y=232 id=n8.left type=input component="External Application" -->
+      <!-- PORT:right x=288 y=232 id=n8.right type=output component="External Application" -->
+      <!-- PORT:top x=176 y=208 id=n8.top type=input component="External Application" -->
+      <!-- PORT:bottom x=176 y=256 id=n8.bottom type=output component="External Application" -->
+      <!-- PORT:left x=416 y=128 id=n9.left type=input component="Agent" -->
+      <!-- PORT:right x=512 y=128 id=n9.right type=output component="Agent" -->
+      <!-- PORT:top x=464 y=104 id=n9.top type=input component="Agent" -->
+      <!-- PORT:bottom x=464 y=152 id=n9.bottom type=output component="Agent" -->
+      <!-- PORT:left x=392 y=200 id=n10.left type=input component="Workflow API" -->
+      <!-- PORT:right x=536 y=200 id=n10.right type=output component="Workflow API" -->
+      <!-- PORT:top x=464 y=176 id=n10.top type=input component="Workflow API" -->
+      <!-- PORT:bottom x=464 y=224 id=n10.bottom type=output component="Workflow API" -->
+      <g id="ov-n4" transform="translate(32,32)" data-bbox="32 32 288 256" data-label="Chat Input, Langflow Storage, External Application">
+        <!-- PORT:left x=72 y=56 id=n6.left type=input component="Chat Input" -->
+        <!-- PORT:right x=216 y=56 id=n6.right type=output component="Chat Input" -->
+        <!-- PORT:top x=144 y=32 id=n6.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=144 y=80 id=n6.bottom type=output component="Chat Input" -->
+        <!-- PORT:left x=56 y=128 id=n7.left type=input component="Langflow Storage" -->
+        <!-- PORT:right x=232 y=128 id=n7.right type=output component="Langflow Storage" -->
+        <!-- PORT:top x=144 y=104 id=n7.top type=input component="Langflow Storage" -->
+        <!-- PORT:bottom x=144 y=152 id=n7.bottom type=output component="Langflow Storage" -->
+        <!-- PORT:left x=32 y=200 id=n8.left type=input component="External Application" -->
+        <!-- PORT:right x=256 y=200 id=n8.right type=output component="External Application" -->
+        <!-- PORT:top x=144 y=176 id=n8.top type=input component="External Application" -->
+        <!-- PORT:bottom x=144 y=224 id=n8.bottom type=output component="External Application" -->
+        <g id="ov-n6" transform="translate(72,32)" data-bbox="72 32 144 48" data-label="Chat Input">
+          <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Input" -->
+          <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Input" -->
+          <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Input" -->
+          <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Input" -->
+          <path id="ov-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input" />
+          <use id="ov-n6.icon" href="#ov-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+          <text id="ov-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+        </g>
+        <g id="ov-n7" transform="translate(56,104)" data-bbox="56 104 176 48" data-label="Langflow Storage">
+          <!-- PORT:left x=0 y=24 id=n7.left type=input component="Langflow Storage" -->
+          <!-- PORT:right x=176 y=24 id=n7.right type=output component="Langflow Storage" -->
+          <!-- PORT:top x=88 y=0 id=n7.top type=input component="Langflow Storage" -->
+          <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Langflow Storage" -->
+          <path id="ov-n7.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Langflow Storage" />
+          <use id="ov-n7.icon" href="#ov-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+          <text id="ov-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Langflow Storage</text>
+        </g>
+        <g id="ov-n8" transform="translate(32,176)" data-bbox="32 176 224 48" data-label="External Application">
+          <!-- PORT:left x=0 y=24 id=n8.left type=input component="External Application" -->
+          <!-- PORT:right x=224 y=24 id=n8.right type=output component="External Application" -->
+          <!-- PORT:top x=112 y=0 id=n8.top type=input component="External Application" -->
+          <!-- PORT:bottom x=112 y=48 id=n8.bottom type=output component="External Application" -->
+          <path id="ov-n8.block" d="M24,0 H200 A24,24 0 0 1 200,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 224 48" data-component="External Application" />
+          <use id="ov-n8.icon" href="#ov-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+          <text id="ov-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">External Application</text>
+        </g>
+      </g>
+      <g id="ov-n5" transform="translate(360,72)" data-bbox="360 72 208 184" data-label="Agent, Workflow API">
+        <!-- PORT:left x=56 y=56 id=n9.left type=input component="Agent" -->
+        <!-- PORT:right x=152 y=56 id=n9.right type=output component="Agent" -->
+        <!-- PORT:top x=104 y=32 id=n9.top type=input component="Agent" -->
+        <!-- PORT:bottom x=104 y=80 id=n9.bottom type=output component="Agent" -->
+        <!-- PORT:left x=32 y=128 id=n10.left type=input component="Workflow API" -->
+        <!-- PORT:right x=176 y=128 id=n10.right type=output component="Workflow API" -->
+        <!-- PORT:top x=104 y=104 id=n10.top type=input component="Workflow API" -->
+        <!-- PORT:bottom x=104 y=152 id=n10.bottom type=output component="Workflow API" -->
+        <g id="ov-n9" transform="translate(56,32)" data-bbox="56 32 96 48" data-label="Agent">
+          <!-- PORT:left x=0 y=24 id=n9.left type=input component="Agent" -->
+          <!-- PORT:right x=96 y=24 id=n9.right type=output component="Agent" -->
+          <!-- PORT:top x=48 y=0 id=n9.top type=input component="Agent" -->
+          <!-- PORT:bottom x=48 y=48 id=n9.bottom type=output component="Agent" -->
+          <rect id="ov-n9.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent" />
+          <use id="ov-n9.icon" href="#ov-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+          <text id="ov-n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+        </g>
+        <g id="ov-n10" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Workflow API">
+          <!-- PORT:left x=0 y=24 id=n10.left type=input component="Workflow API" -->
+          <!-- PORT:right x=144 y=24 id=n10.right type=output component="Workflow API" -->
+          <!-- PORT:top x=72 y=0 id=n10.top type=input component="Workflow API" -->
+          <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Workflow API" -->
+          <rect id="ov-n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Workflow API" />
+          <use id="ov-n10.icon" href="#ov-icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+          <text id="ov-n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Workflow API</text>
+        </g>
+      </g>
+      <path id="ov-n2.arrow0" d="M176,64 V56 H464 V104" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#ov-figtree-arrow)" data-from="n6.top" data-to="n9.top" />
+      <path id="ov-n2.arrow1" d="M264,160 H344 V128 H416" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#ov-figtree-arrow)" data-from="n7.right" data-to="n9.left" />
+      <path id="ov-n2.arrow2" d="M288,232 H352 V200 H392" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#ov-figtree-arrow)" data-from="n8.right" data-to="n10.left" />
+    </g>
+    <g id="ov-n3" transform="translate(672,64)" data-bbox="672 64 376 256" data-label="Chat Output, Tool, Flow, MCP Server">
+      <!-- PORT:left x=32 y=56 id=n11.left type=input component="Chat Output" -->
+      <!-- PORT:right x=176 y=56 id=n11.right type=output component="Chat Output" -->
+      <!-- PORT:top x=104 y=32 id=n11.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=104 y=80 id=n11.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=64 y=128 id=n12.left type=input component="Tool" -->
+      <!-- PORT:right x=144 y=128 id=n12.right type=output component="Tool" -->
+      <!-- PORT:top x=104 y=104 id=n12.top type=input component="Tool" -->
+      <!-- PORT:bottom x=104 y=152 id=n12.bottom type=output component="Tool" -->
+      <!-- PORT:left x=64 y=200 id=n13.left type=input component="Flow" -->
+      <!-- PORT:right x=144 y=200 id=n13.right type=output component="Flow" -->
+      <!-- PORT:top x=104 y=176 id=n13.top type=input component="Flow" -->
+      <!-- PORT:bottom x=104 y=224 id=n13.bottom type=output component="Flow" -->
+      <!-- PORT:left x=216 y=128 id=n14.left type=input component="MCP Server" -->
+      <!-- PORT:right x=344 y=128 id=n14.right type=output component="MCP Server" -->
+      <!-- PORT:top x=280 y=104 id=n14.top type=input component="MCP Server" -->
+      <!-- PORT:bottom x=280 y=152 id=n14.bottom type=output component="MCP Server" -->
+      <g id="ov-n11" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n11.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n11.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n11.bottom type=output component="Chat Output" -->
+        <path id="ov-n11.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output" />
+        <use id="ov-n11.icon" href="#ov-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="ov-n11.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <g id="ov-n12" transform="translate(64,104)" data-bbox="64 104 80 48" data-label="Tool">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="Tool" -->
+        <!-- PORT:right x=80 y=24 id=n12.right type=output component="Tool" -->
+        <!-- PORT:top x=40 y=0 id=n12.top type=input component="Tool" -->
+        <!-- PORT:bottom x=40 y=48 id=n12.bottom type=output component="Tool" -->
+        <rect id="ov-n12.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Tool" />
+        <use id="ov-n12.icon" href="#ov-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="ov-n12.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Tool</text>
+      </g>
+      <g id="ov-n13" transform="translate(64,176)" data-bbox="64 176 80 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="Flow" -->
+        <!-- PORT:right x=80 y=24 id=n13.right type=output component="Flow" -->
+        <!-- PORT:top x=40 y=0 id=n13.top type=input component="Flow" -->
+        <!-- PORT:bottom x=40 y=48 id=n13.bottom type=output component="Flow" -->
+        <rect id="ov-n13.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow" />
+        <use id="ov-n13.icon" href="#ov-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="ov-n13.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Flow</text>
+      </g>
+      <g id="ov-n14" transform="translate(216,104)" data-bbox="216 104 128 48" data-label="MCP Server">
+        <!-- PORT:left x=0 y=24 id=n14.left type=input component="MCP Server" -->
+        <!-- PORT:right x=128 y=24 id=n14.right type=output component="MCP Server" -->
+        <!-- PORT:top x=64 y=0 id=n14.top type=input component="MCP Server" -->
+        <!-- PORT:bottom x=64 y=48 id=n14.bottom type=output component="MCP Server" -->
+        <rect id="ov-n14.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Server" />
+        <use id="ov-n14.icon" href="#ov-icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon" />
+        <text id="ov-n14.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">MCP Server</text>
+      </g>
+      <path id="ov-n3.arrow0" d="M104,104 V88 H272 V72 H280 V104" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#ov-figtree-arrow)" data-from="n12.top" data-to="n14.top" />
+      <path id="ov-n3.arrow1" d="M144,200 H176 V128 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#ov-figtree-arrow)" data-from="n13.right" data-to="n14.left" />
+    </g>
+    <path id="ov-n1.arrow0" d="M544,160 H552 V120 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#ov-figtree-arrow)" data-from="n9.right" data-to="n11.left" />
+    <path id="ov-n1.arrow1" d="M544,160 H648 V192 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#ov-figtree-arrow)" data-from="n9.right" data-to="n12.left" />
+    <path id="ov-n1.arrow2" d="M568,232 H672 V264 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#ov-figtree-arrow)" data-from="n10.right" data-to="n13.left" />
+  </g>
+  <path id="ov-ft-shaft-0" d="M208,96 V88 H496 V136" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-1" d="M296,192 H376 V160 H448" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-2" d="M320,264 H384 V232 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-3" d="M776,168 V152 H944 V136 H952 V168" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-4" d="M816,264 H848 V192 H888" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-5" d="M544,160 H552 V120 H704" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-6" d="M544,160 H648 V192 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <path id="ov-ft-shaft-7" d="M568,232 H672 V264 H736" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-role="anim-shaft"/>
+  <circle id="ov-ft-pulse-0" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-1" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-2" r="3.5" fill="#999999" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-3" r="3.5" fill="#999999" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-4" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-5" r="3.5" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-6" r="3.5" fill="#999999" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+  <circle id="ov-ft-pulse-7" r="3.5" fill="#999999" stroke="#FFFFFF" stroke-width="1.5" data-role="pulse"/>
+</svg></div><figcaption class="cap"><b>How Langflow agent workflows coordinate</b><span class="score good">9.71 / 10</span> A chat message reaches an Agent, which calls tools, reads stored messages and answers, while flows are also served to outside programs through the Workflow API and an MCP server. Read it first to see which actors the nine workflow specs share.</figcaption></figure>
+<h3>Read the workflows in this order</h3><ol class="steps"><li>Start with agent-with-tools to see the Agent call Tool components from Chat Input to Chat Output.</li><li>Read agent-as-tool to see a second Agent attached as a Tool.</li><li>Read mcp-client to see the Agent reach tools hosted on an MCP Server.</li><li>Read mcp-server to see a Flow served as a tool on the MCP Server.</li><li>Read memory-and-sessions to see the Agent read Langflow Storage by session ID.</li><li>Read loops-and-routing to see branching, looping and sub-flows inside a Flow.</li><li>Read human-in-the-loop to see a Flow pause for a human decision.</li><li>Read run-flow-api to see an External Application run a Flow through the Workflow API.</li><li>Read a2a-agents to see Flows called as agents by other agents and clients.</li></ol>
+</section>
+<section id="a2a-agents"><h2>1 · Agents talking to agents over A2A</h2><p>Langflow can publish a flow as an A2A agent that A2A clients discover and call, and a flow can call a remote A2A agent through a calling component. Build it to expose an agent to other systems or to reuse one that lives elsewhere.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 872 408" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Agents talking to agents over A2A</title>
+  <rect id="f1-background" x="0" y="0" width="872" height="408" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f1-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f1-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="f1-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f1-icon-grounder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5V3h8l6 6v1"/><path d="M13 3v6h6"/><circle cx="14.5" cy="15.5" r="3.5"/><path d="M17 18l3.5 3.5"/></symbol>
+  <symbol id="f1-icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="f1-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="f1-icon-ports" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H5V10"/><path d="M14 5H19V10"/><path d="M19 14V19H14"/><path d="M10 19H5V14"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/></symbol>
+  <symbol id="f1-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="f1-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="f1-n1" data-bbox="0 0 872 408">
+    <!-- PORT:left x=64 y=112 id=n4.left type=input component="A2A Client" -->
+    <!-- PORT:right x=208 y=112 id=n4.right type=output component="A2A Client" -->
+    <!-- PORT:top x=136 y=88 id=n4.top type=input component="A2A Client" -->
+    <!-- PORT:bottom x=136 y=136 id=n4.bottom type=output component="A2A Client" -->
+    <!-- PORT:left x=248 y=112 id=n5.left type=input component="JSON-RPC Endpoint" -->
+    <!-- PORT:right x=424 y=112 id=n5.right type=output component="JSON-RPC Endpoint" -->
+    <!-- PORT:top x=336 y=88 id=n5.top type=input component="JSON-RPC Endpoint" -->
+    <!-- PORT:bottom x=336 y=136 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+    <!-- PORT:left x=464 y=112 id=n6.left type=input component="Published Flow" -->
+    <!-- PORT:right x=624 y=112 id=n6.right type=output component="Published Flow" -->
+    <!-- PORT:top x=544 y=88 id=n6.top type=input component="Published Flow" -->
+    <!-- PORT:bottom x=544 y=136 id=n6.bottom type=output component="Published Flow" -->
+    <!-- PORT:left x=664 y=112 id=n7.left type=input component="Agent Card" -->
+    <!-- PORT:right x=808 y=112 id=n7.right type=output component="Agent Card" -->
+    <!-- PORT:top x=736 y=88 id=n7.top type=input component="Agent Card" -->
+    <!-- PORT:bottom x=736 y=136 id=n7.bottom type=output component="Agent Card" -->
+    <!-- PORT:left x=184 y=288 id=n8.left type=input component="Chat Input" -->
+    <!-- PORT:right x=328 y=288 id=n8.right type=output component="Chat Input" -->
+    <!-- PORT:top x=256 y=264 id=n8.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=256 y=312 id=n8.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=368 y=288 id=n9.left type=input component="A2A Caller" -->
+    <!-- PORT:right x=496 y=288 id=n9.right type=output component="A2A Caller" -->
+    <!-- PORT:top x=432 y=264 id=n9.top type=input component="A2A Caller" -->
+    <!-- PORT:bottom x=432 y=312 id=n9.bottom type=output component="A2A Caller" -->
+    <!-- PORT:left x=552 y=248 id=n10.left type=input component="Chat Output" -->
+    <!-- PORT:right x=696 y=248 id=n10.right type=output component="Chat Output" -->
+    <!-- PORT:top x=624 y=224 id=n10.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=624 y=272 id=n10.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=552 y=320 id=n11.left type=input component="Remote A2A" -->
+    <!-- PORT:right x=696 y=320 id=n11.right type=output component="Remote A2A" -->
+    <!-- PORT:top x=624 y=296 id=n11.top type=input component="Remote A2A" -->
+    <!-- PORT:bottom x=624 y=344 id=n11.bottom type=output component="Remote A2A" -->
+    <g id="f1-n2" transform="translate(32,32)" data-bbox="32 32 808 136" data-label="Published Flow, Agent Card, A2A Client, JSON-RPC Endpoint">
+      <!-- PORT:left x=32 y=80 id=n4.left type=input component="A2A Client" -->
+      <!-- PORT:right x=176 y=80 id=n4.right type=output component="A2A Client" -->
+      <!-- PORT:top x=104 y=56 id=n4.top type=input component="A2A Client" -->
+      <!-- PORT:bottom x=104 y=104 id=n4.bottom type=output component="A2A Client" -->
+      <!-- PORT:left x=216 y=80 id=n5.left type=input component="JSON-RPC Endpoint" -->
+      <!-- PORT:right x=392 y=80 id=n5.right type=output component="JSON-RPC Endpoint" -->
+      <!-- PORT:top x=304 y=56 id=n5.top type=input component="JSON-RPC Endpoint" -->
+      <!-- PORT:bottom x=304 y=104 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+      <!-- PORT:left x=432 y=80 id=n6.left type=input component="Published Flow" -->
+      <!-- PORT:right x=592 y=80 id=n6.right type=output component="Published Flow" -->
+      <!-- PORT:top x=512 y=56 id=n6.top type=input component="Published Flow" -->
+      <!-- PORT:bottom x=512 y=104 id=n6.bottom type=output component="Published Flow" -->
+      <!-- PORT:left x=632 y=80 id=n7.left type=input component="Agent Card" -->
+      <!-- PORT:right x=776 y=80 id=n7.right type=output component="Agent Card" -->
+      <!-- PORT:top x=704 y=56 id=n7.top type=input component="Agent Card" -->
+      <!-- PORT:bottom x=704 y=104 id=n7.bottom type=output component="Agent Card" -->
+      <g id="f1-n4" transform="translate(32,56)" data-bbox="32 56 144 48" data-label="A2A Client">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="A2A Client" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="A2A Client" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="A2A Client" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="A2A Client" -->
+        <path id="f1-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="A2A Client"/>
+        <use id="f1-n4.icon" href="#f1-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">A2A Client</text>
+      </g>
+      <g id="f1-n5" transform="translate(216,56)" data-bbox="216 56 176 48" data-label="JSON-RPC Endpoint">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="JSON-RPC Endpoint" -->
+        <!-- PORT:right x=176 y=24 id=n5.right type=output component="JSON-RPC Endpoint" -->
+        <!-- PORT:top x=88 y=0 id=n5.top type=input component="JSON-RPC Endpoint" -->
+        <!-- PORT:bottom x=88 y=48 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+        <rect id="f1-n5.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="JSON-RPC Endpoint"/>
+        <use id="f1-n5.icon" href="#f1-icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">JSON-RPC Endpoint</text>
+      </g>
+      <g id="f1-n6" transform="translate(432,56)" data-bbox="432 56 160 48" data-label="Published Flow">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Published Flow" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Published Flow" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Published Flow" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Published Flow" -->
+        <rect id="f1-n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Published Flow"/>
+        <use id="f1-n6.icon" href="#f1-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Published Flow</text>
+      </g>
+      <g id="f1-n7" transform="translate(632,56)" data-bbox="632 56 144 48" data-label="Agent Card">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent Card" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Agent Card" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Agent Card" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Agent Card" -->
+        <path id="f1-n7.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="Agent Card"/>
+        <use id="f1-n7.icon" href="#f1-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Agent Card</text>
+      </g>
+      <path id="f1-n2.arrow0" d="M592,80 H632" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f1-figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+      <path id="f1-n2.arrow1" d="M176,80 H184 V32 H704 V56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f1-figtree-arrow)" data-from="n4.right" data-to="n7.top"/>
+      <path id="f1-n2.arrow2" d="M176,80 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f1-figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+      <path id="f1-n2.arrow3" d="M392,80 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f1-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="f1-n3" transform="translate(152,192)" data-bbox="152 192 576 184" data-label="Chat Input, A2A Caller, Chat Output, Remote A2A">
+      <!-- PORT:left x=32 y=96 id=n8.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=96 id=n8.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=72 id=n8.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=120 id=n8.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=216 y=96 id=n9.left type=input component="A2A Caller" -->
+      <!-- PORT:right x=344 y=96 id=n9.right type=output component="A2A Caller" -->
+      <!-- PORT:top x=280 y=72 id=n9.top type=input component="A2A Caller" -->
+      <!-- PORT:bottom x=280 y=120 id=n9.bottom type=output component="A2A Caller" -->
+      <!-- PORT:left x=400 y=56 id=n10.left type=input component="Chat Output" -->
+      <!-- PORT:right x=544 y=56 id=n10.right type=output component="Chat Output" -->
+      <!-- PORT:top x=472 y=32 id=n10.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=472 y=80 id=n10.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=400 y=128 id=n11.left type=input component="Remote A2A" -->
+      <!-- PORT:right x=544 y=128 id=n11.right type=output component="Remote A2A" -->
+      <!-- PORT:top x=472 y=104 id=n11.top type=input component="Remote A2A" -->
+      <!-- PORT:bottom x=472 y=152 id=n11.bottom type=output component="Remote A2A" -->
+      <g id="f1-n8" transform="translate(32,72)" data-bbox="32 72 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Input" -->
+        <path id="f1-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="f1-n8.icon" href="#f1-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="f1-n9" transform="translate(216,72)" data-bbox="216 72 128 48" data-label="A2A Caller">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="A2A Caller" -->
+        <!-- PORT:right x=128 y=24 id=n9.right type=output component="A2A Caller" -->
+        <!-- PORT:top x=64 y=0 id=n9.top type=input component="A2A Caller" -->
+        <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="A2A Caller" -->
+        <rect id="f1-n9.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="A2A Caller"/>
+        <use id="f1-n9.icon" href="#f1-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">A2A Caller</text>
+      </g>
+      <g id="f1-n10" transform="translate(400,32)" data-bbox="400 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n10.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n10.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Chat Output" -->
+        <path id="f1-n10.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="f1-n10.icon" href="#f1-icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n10.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <g id="f1-n11" transform="translate(400,104)" data-bbox="400 104 144 48" data-label="Remote A2A">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Remote A2A" -->
+        <!-- PORT:right x=144 y=24 id=n11.right type=output component="Remote A2A" -->
+        <!-- PORT:top x=72 y=0 id=n11.top type=input component="Remote A2A" -->
+        <!-- PORT:bottom x=72 y=48 id=n11.bottom type=output component="Remote A2A" -->
+        <path id="f1-n11.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Remote A2A"/>
+        <use id="f1-n11.icon" href="#f1-icon-grounder" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f1-n11.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Remote A2A</text>
+      </g>
+      <path id="f1-n3.arrow0" d="M176,96 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f1-figtree-arrow)" data-from="n8.right" data-to="n9.left"/>
+      <path id="f1-n3.arrow1" d="M280,72 V56 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f1-figtree-arrow)" data-from="n9.top" data-to="n10.left"/>
+      <path id="f1-n3.arrow2" d="M344,96 H376 V128 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f1-figtree-arrow)" data-from="n9.right" data-to="n11.left"/>
+    </g>
+  </g>
+</svg></div><figcaption class="cap"><b>Agents talking to agents over A2A</b><span class="score good">9.71 / 10</span> Langflow can publish a flow as an A2A agent that A2A clients discover and call, and a flow can call a remote A2A agent through a calling component. Build it to expose an agent to other systems or to reuse one that lives elsewhere.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Set LANGFLOW_A2A_ENABLED to true before starting Langflow.</li><li>Open a flow that has Chat Input and Chat Output and turn on Serve as an A2A agent in the Agent tab.</li><li>Click Save so the status changes to Live and the card and endpoint are served.</li><li>Send a message from an A2A client to the JSON-RPC endpoint and read the reply.</li><li>In another flow, add the calling component and set Mode to Internal or External.</li><li>Connect Chat Input to the Message input and the Response output to Chat Output.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not describe how the Remote A2A agent runs internally or how the caller negotiates with it beyond the URL and the reply. OAuth is not supported for A2A as of Langflow 1.11.x.</p>
+</section>
+<section id="agent-as-tool"><h2>2 · A manager agent delegating to other agents</h2><p>A primary Agent calls a second Agent as a tool, so each specialized agent handles the queries suited to it. Build it when one agent should hand complex or domain-specific work to another model.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528 192" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>A manager agent delegating to other agents</title>
+  <rect id="f2-background" x="0" y="0" width="528" height="192" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f2-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f2-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f2-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="f2-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="f2-n1" data-bbox="0 0 528 192">
+    <!-- PORT:left x=48 y=64 id=n2.left type=input component="Tool Mode" -->
+    <!-- PORT:right x=176 y=64 id=n2.right type=output component="Tool Mode" -->
+    <!-- PORT:top x=112 y=40 id=n2.top type=input component="Tool Mode" -->
+    <!-- PORT:bottom x=112 y=88 id=n2.bottom type=output component="Tool Mode" -->
+    <!-- PORT:left x=32 y=136 id=n3.left type=input component="Tool Actions" -->
+    <!-- PORT:right x=192 y=136 id=n3.right type=output component="Tool Actions" -->
+    <!-- PORT:top x=112 y=112 id=n3.top type=input component="Tool Actions" -->
+    <!-- PORT:bottom x=112 y=160 id=n3.bottom type=output component="Tool Actions" -->
+    <!-- PORT:left x=232 y=104 id=n4.left type=input component="Agent" -->
+    <!-- PORT:right x=328 y=104 id=n4.right type=output component="Agent" -->
+    <!-- PORT:top x=280 y=80 id=n4.top type=input component="Agent" -->
+    <!-- PORT:bottom x=280 y=128 id=n4.bottom type=output component="Agent" -->
+    <!-- PORT:left x=368 y=104 id=n5.left type=input component="Agent Tool" -->
+    <!-- PORT:right x=496 y=104 id=n5.right type=output component="Agent Tool" -->
+    <!-- PORT:top x=432 y=80 id=n5.top type=input component="Agent Tool" -->
+    <!-- PORT:bottom x=432 y=128 id=n5.bottom type=output component="Agent Tool" -->
+    <g id="f2-n2" transform="translate(48,40)" data-bbox="48 40 128 48" data-label="Tool Mode">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Tool Mode" -->
+      <!-- PORT:right x=128 y=24 id=n2.right type=output component="Tool Mode" -->
+      <!-- PORT:top x=64 y=0 id=n2.top type=input component="Tool Mode" -->
+      <!-- PORT:bottom x=64 y=48 id=n2.bottom type=output component="Tool Mode" -->
+      <path id="f2-n2.block" d="M0,0 H128 V48 H0 Z M6,0 V48 M122,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 128 48" data-component="Tool Mode"/>
+      <use id="f2-n2.icon" href="#f2-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f2-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Tool Mode</text>
+    </g>
+    <g id="f2-n3" transform="translate(32,112)" data-bbox="32 112 160 48" data-label="Tool Actions">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Tool Actions" -->
+      <!-- PORT:right x=160 y=24 id=n3.right type=output component="Tool Actions" -->
+      <!-- PORT:top x=80 y=0 id=n3.top type=input component="Tool Actions" -->
+      <!-- PORT:bottom x=80 y=48 id=n3.bottom type=output component="Tool Actions" -->
+      <path id="f2-n3.block" d="M0,0 H152 L160,8 V48 H0 Z M152,0 V8 H160" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 160 48" data-component="Tool Actions"/>
+      <use id="f2-n3.icon" href="#f2-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f2-n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Tool Actions</text>
+    </g>
+    <g id="f2-n4" transform="translate(232,80)" data-bbox="232 80 96 48" data-label="Agent">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Agent" -->
+      <!-- PORT:right x=96 y=24 id=n4.right type=output component="Agent" -->
+      <!-- PORT:top x=48 y=0 id=n4.top type=input component="Agent" -->
+      <!-- PORT:bottom x=48 y=48 id=n4.bottom type=output component="Agent" -->
+      <rect id="f2-n4.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+      <use id="f2-n4.icon" href="#f2-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f2-n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+    </g>
+    <g id="f2-n5" transform="translate(368,80)" data-bbox="368 80 128 48" data-label="Agent Tool">
+      <!-- PORT:left x=0 y=24 id=n5.left type=input component="Agent Tool" -->
+      <!-- PORT:right x=128 y=24 id=n5.right type=output component="Agent Tool" -->
+      <!-- PORT:top x=64 y=0 id=n5.top type=input component="Agent Tool" -->
+      <!-- PORT:bottom x=64 y=48 id=n5.bottom type=output component="Agent Tool" -->
+      <rect id="f2-n5.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Tool"/>
+      <use id="f2-n5.icon" href="#f2-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f2-n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Agent Tool</text>
+    </g>
+    <path id="f2-n1.arrow0" d="M112,40 V32 H432 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f2-figtree-arrow)" data-from="n2.top" data-to="n5.top"/>
+    <path id="f2-n1.arrow1" d="M192,136 H208 V104 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f2-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="f2-n1.arrow2" d="M328,104 H368" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f2-figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+  </g>
+</svg></div><figcaption class="cap"><b>A manager agent delegating to other agents</b><span class="score good">10.00 / 10</span> A primary Agent calls a second Agent as a tool, so each specialized agent handles the queries suited to it. Build it when one agent should hand complex or domain-specific work to another model.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Create a flow from the starter template.</li><li>Add a second Agent component and add the API key to both agents.</li><li>Enable Tool Mode on the second Agent component.</li><li>Edit the tool&#x27;s actions so the slug and description say what the agent is for.</li><li>Connect the second agent&#x27;s Toolset port to the primary agent&#x27;s Tools port.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> These pages do not name the Chat Input and Chat Output components for this flow, and do not describe how the second agent&#x27;s answer is passed back to the primary agent.</p>
+</section>
+<section id="agent-with-tools"><h2>3 · An agent calling tools</h2><p>A Langflow Agent component receives a chat message and answers it, calling connected tool components when it decides they can help. Build it when a chat flow must search the web, fetch pages or calculate rather than rely only on the model.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 392" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>An agent calling tools</title>
+  <rect id="f3-background" x="0" y="0" width="592" height="392" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f3-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f3-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="f3-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f3-icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="f3-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="f3-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="f3-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="f3-n1" data-bbox="0 0 592 392">
+    <!-- PORT:left x=32 y=200 id=n2.left type=input component="Chat Input" -->
+    <!-- PORT:right x=176 y=200 id=n2.right type=output component="Chat Input" -->
+    <!-- PORT:top x=104 y=176 id=n2.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=104 y=224 id=n2.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=216 y=200 id=n3.left type=input component="Agent" -->
+    <!-- PORT:right x=312 y=200 id=n3.right type=output component="Agent" -->
+    <!-- PORT:top x=264 y=176 id=n3.top type=input component="Agent" -->
+    <!-- PORT:bottom x=264 y=224 id=n3.bottom type=output component="Agent" -->
+    <!-- PORT:left x=400 y=88 id=n6.left type=input component="Web Search" -->
+    <!-- PORT:right x=528 y=88 id=n6.right type=output component="Web Search" -->
+    <!-- PORT:top x=464 y=64 id=n6.top type=input component="Web Search" -->
+    <!-- PORT:bottom x=464 y=112 id=n6.bottom type=output component="Web Search" -->
+    <!-- PORT:left x=424 y=160 id=n7.left type=input component="URL" -->
+    <!-- PORT:right x=504 y=160 id=n7.right type=output component="URL" -->
+    <!-- PORT:top x=464 y=136 id=n7.top type=input component="URL" -->
+    <!-- PORT:bottom x=464 y=184 id=n7.bottom type=output component="URL" -->
+    <!-- PORT:left x=400 y=232 id=n8.left type=input component="Calculator" -->
+    <!-- PORT:right x=528 y=232 id=n8.right type=output component="Calculator" -->
+    <!-- PORT:top x=464 y=208 id=n8.top type=input component="Calculator" -->
+    <!-- PORT:bottom x=464 y=256 id=n8.bottom type=output component="Calculator" -->
+    <!-- PORT:left x=392 y=336 id=n5.left type=input component="Chat Output" -->
+    <!-- PORT:right x=536 y=336 id=n5.right type=output component="Chat Output" -->
+    <!-- PORT:top x=464 y=312 id=n5.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=464 y=360 id=n5.bottom type=output component="Chat Output" -->
+    <g id="f3-n2" transform="translate(32,176)" data-bbox="32 176 144 48" data-label="Chat Input">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="Chat Input" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="Chat Input" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="Chat Input" -->
+      <path id="f3-n2.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+      <use id="f3-n2.icon" href="#f3-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f3-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+    </g>
+    <g id="f3-n3" transform="translate(216,176)" data-bbox="216 176 96 48" data-label="Agent">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Agent" -->
+      <!-- PORT:right x=96 y=24 id=n3.right type=output component="Agent" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Agent" -->
+      <!-- PORT:bottom x=48 y=48 id=n3.bottom type=output component="Agent" -->
+      <rect id="f3-n3.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+      <use id="f3-n3.icon" href="#f3-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f3-n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+    </g>
+    <g id="f3-n4" transform="translate(368,32)" data-bbox="368 32 192 256" data-label="Web Search, URL, Calculator">
+      <!-- PORT:left x=32 y=56 id=n6.left type=input component="Web Search" -->
+      <!-- PORT:right x=160 y=56 id=n6.right type=output component="Web Search" -->
+      <!-- PORT:top x=96 y=32 id=n6.top type=input component="Web Search" -->
+      <!-- PORT:bottom x=96 y=80 id=n6.bottom type=output component="Web Search" -->
+      <!-- PORT:left x=56 y=128 id=n7.left type=input component="URL" -->
+      <!-- PORT:right x=136 y=128 id=n7.right type=output component="URL" -->
+      <!-- PORT:top x=96 y=104 id=n7.top type=input component="URL" -->
+      <!-- PORT:bottom x=96 y=152 id=n7.bottom type=output component="URL" -->
+      <!-- PORT:left x=32 y=200 id=n8.left type=input component="Calculator" -->
+      <!-- PORT:right x=160 y=200 id=n8.right type=output component="Calculator" -->
+      <!-- PORT:top x=96 y=176 id=n8.top type=input component="Calculator" -->
+      <!-- PORT:bottom x=96 y=224 id=n8.bottom type=output component="Calculator" -->
+      <g id="f3-n6" transform="translate(32,32)" data-bbox="32 32 128 48" data-label="Web Search">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Web Search" -->
+        <!-- PORT:right x=128 y=24 id=n6.right type=output component="Web Search" -->
+        <!-- PORT:top x=64 y=0 id=n6.top type=input component="Web Search" -->
+        <!-- PORT:bottom x=64 y=48 id=n6.bottom type=output component="Web Search" -->
+        <rect id="f3-n6.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Web Search"/>
+        <use id="f3-n6.icon" href="#f3-icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f3-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Web Search</text>
+      </g>
+      <g id="f3-n7" transform="translate(56,104)" data-bbox="56 104 80 48" data-label="URL">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="URL" -->
+        <!-- PORT:right x=80 y=24 id=n7.right type=output component="URL" -->
+        <!-- PORT:top x=40 y=0 id=n7.top type=input component="URL" -->
+        <!-- PORT:bottom x=40 y=48 id=n7.bottom type=output component="URL" -->
+        <rect id="f3-n7.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="URL"/>
+        <use id="f3-n7.icon" href="#f3-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f3-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">URL</text>
+      </g>
+      <g id="f3-n8" transform="translate(32,176)" data-bbox="32 176 128 48" data-label="Calculator">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Calculator" -->
+        <!-- PORT:right x=128 y=24 id=n8.right type=output component="Calculator" -->
+        <!-- PORT:top x=64 y=0 id=n8.top type=input component="Calculator" -->
+        <!-- PORT:bottom x=64 y=48 id=n8.bottom type=output component="Calculator" -->
+        <rect id="f3-n8.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Calculator"/>
+        <use id="f3-n8.icon" href="#f3-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f3-n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Calculator</text>
+      </g>
+    </g>
+    <g id="f3-n5" transform="translate(392,312)" data-bbox="392 312 144 48" data-label="Chat Output">
+      <!-- PORT:left x=0 y=24 id=n5.left type=input component="Chat Output" -->
+      <!-- PORT:right x=144 y=24 id=n5.right type=output component="Chat Output" -->
+      <!-- PORT:top x=72 y=0 id=n5.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Chat Output" -->
+      <path id="f3-n5.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+      <use id="f3-n5.icon" href="#f3-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f3-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+    </g>
+    <path id="f3-n1.arrow0" d="M176,200 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f3-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="f3-n1.arrow1" d="M264,224 V336 H392" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f3-figtree-arrow)" data-from="n3.bottom" data-to="n5.left"/>
+    <path id="f3-n1.arrow2" d="M264,176 V88 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f3-figtree-arrow)" data-from="n3.top" data-to="n6.left"/>
+    <path id="f3-n1.arrow3" d="M312,200 H320 V160 H424" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f3-figtree-arrow)" data-from="n3.right" data-to="n7.left"/>
+    <path id="f3-n1.arrow4" d="M312,200 H376 V232 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f3-figtree-arrow)" data-from="n3.right" data-to="n8.left"/>
+  </g>
+</svg></div><figcaption class="cap"><b>An agent calling tools</b><span class="score good">9.86 / 10</span> A Langflow Agent component receives a chat message and answers it, calling connected tool components when it decides they can help. Build it when a chat flow must search the web, fetch pages or calculate rather than rely only on the model.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Add an Agent component and select a model from the Language Model dropdown.</li><li>Add Chat Input and Chat Output components and connect them to the Agent.</li><li>Add Web Search, URL and Calculator components and enable Tool Mode on each.</li><li>Connect the Toolset port of each tool to the Tools port on the Agent.</li><li>Open the Playground and ask a question that needs a tool, such as a news summary.</li><li>Read the tool calls, their input and the raw output in the Playground.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not draw the tool results as a separate arrow back to the Agent; they describe the Playground showing the raw output the agent received.</p>
+</section>
+<section id="human-in-the-loop"><h2>4 · Pausing a Flow for a Human</h2><p>Human-in-the-Loop pauses a flow, creates a checkpoint and waits for a human decision. Build it when a step, such as committing code, must be approved before the run continues.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 256" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Pausing a Flow for a Human</title>
+  <rect id="f4-background" x="0" y="0" width="744" height="256" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f4-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f4-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="f4-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f4-icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l6-6h4M10 12l6 6h4"/><path d="M17 3l3 3-3 3M17 15l3 3-3 3"/></symbol>
+  <symbol id="f4-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="f4-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="f4-n1" data-bbox="0 0 744 256">
+    <!-- PORT:left x=80 y=96 id=n4.left type=input component="Agent" -->
+    <!-- PORT:right x=192 y=96 id=n4.right type=output component="Agent" -->
+    <!-- PORT:top x=136 y=72 id=n4.top type=input component="Agent" -->
+    <!-- PORT:bottom x=136 y=120 id=n4.bottom type=output component="Agent" -->
+    <!-- PORT:left x=64 y=168 id=n5.left type=input component="Playground" -->
+    <!-- PORT:right x=208 y=168 id=n5.right type=output component="Playground" -->
+    <!-- PORT:top x=136 y=144 id=n5.top type=input component="Playground" -->
+    <!-- PORT:bottom x=136 y=192 id=n5.bottom type=output component="Playground" -->
+    <!-- PORT:left x=272 y=136 id=n6.left type=input component="Human Input" -->
+    <!-- PORT:right x=432 y=136 id=n6.right type=output component="Human Input" -->
+    <!-- PORT:top x=352 y=112 id=n6.top type=input component="Human Input" -->
+    <!-- PORT:bottom x=352 y=160 id=n6.bottom type=output component="Human Input" -->
+    <!-- PORT:left x=544 y=96 id=n7.left type=input component="Git Commit" -->
+    <!-- PORT:right x=672 y=96 id=n7.right type=output component="Git Commit" -->
+    <!-- PORT:top x=608 y=72 id=n7.top type=input component="Git Commit" -->
+    <!-- PORT:bottom x=608 y=120 id=n7.bottom type=output component="Git Commit" -->
+    <!-- PORT:left x=536 y=168 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=680 y=168 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=608 y=144 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=608 y=192 id=n8.bottom type=output component="Chat Output" -->
+    <g id="f4-n2" transform="translate(32,32)" data-bbox="32 32 432 192" data-label="Agent, Playground, Human Input">
+      <!-- PORT:left x=48 y=64 id=n4.left type=input component="Agent" -->
+      <!-- PORT:right x=160 y=64 id=n4.right type=output component="Agent" -->
+      <!-- PORT:top x=104 y=40 id=n4.top type=input component="Agent" -->
+      <!-- PORT:bottom x=104 y=88 id=n4.bottom type=output component="Agent" -->
+      <!-- PORT:left x=32 y=136 id=n5.left type=input component="Playground" -->
+      <!-- PORT:right x=176 y=136 id=n5.right type=output component="Playground" -->
+      <!-- PORT:top x=104 y=112 id=n5.top type=input component="Playground" -->
+      <!-- PORT:bottom x=104 y=160 id=n5.bottom type=output component="Playground" -->
+      <!-- PORT:left x=240 y=104 id=n6.left type=input component="Human Input" -->
+      <!-- PORT:right x=400 y=104 id=n6.right type=output component="Human Input" -->
+      <!-- PORT:top x=320 y=80 id=n6.top type=input component="Human Input" -->
+      <!-- PORT:bottom x=320 y=128 id=n6.bottom type=output component="Human Input" -->
+      <g id="f4-n4" transform="translate(48,40)" data-bbox="48 40 112 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Agent" -->
+        <!-- PORT:right x=112 y=24 id=n4.right type=output component="Agent" -->
+        <!-- PORT:top x=56 y=0 id=n4.top type=input component="Agent" -->
+        <!-- PORT:bottom x=56 y=48 id=n4.bottom type=output component="Agent" -->
+        <path id="f4-n4.block" d="M24,0 H88 A24,24 0 0 1 88,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 112 48" data-component="Agent"/>
+        <use id="f4-n4.icon" href="#f4-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f4-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+      </g>
+      <g id="f4-n5" transform="translate(32,112)" data-bbox="32 112 144 48" data-label="Playground">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Playground" -->
+        <!-- PORT:right x=144 y=24 id=n5.right type=output component="Playground" -->
+        <!-- PORT:top x=72 y=0 id=n5.top type=input component="Playground" -->
+        <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Playground" -->
+        <path id="f4-n5.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Playground"/>
+        <use id="f4-n5.icon" href="#f4-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f4-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Playground</text>
+      </g>
+      <g id="f4-n6" transform="translate(240,80)" data-bbox="240 80 160 48" data-label="Human Input">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Human Input" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Human Input" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Human Input" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Human Input" -->
+        <path id="f4-n6.block" d="M80,0 L160,24 L80,48 L0,24 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 160 48" data-component="Human Input"/>
+        <use id="f4-n6.icon" href="#f4-icon-split" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f4-n6.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Human Input</text>
+      </g>
+      <path id="f4-n2.arrow0" d="M104,40 V32 H320 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f4-figtree-arrow)" data-from="n4.top" data-to="n6.top"/>
+      <path id="f4-n2.arrow1" d="M176,136 H216 V104 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f4-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="f4-n3" transform="translate(504,40)" data-bbox="504 40 208 184" data-label="Git Commit, Chat Output">
+      <!-- PORT:left x=40 y=56 id=n7.left type=input component="Git Commit" -->
+      <!-- PORT:right x=168 y=56 id=n7.right type=output component="Git Commit" -->
+      <!-- PORT:top x=104 y=32 id=n7.top type=input component="Git Commit" -->
+      <!-- PORT:bottom x=104 y=80 id=n7.bottom type=output component="Git Commit" -->
+      <!-- PORT:left x=32 y=128 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=176 y=128 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=104 y=104 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=104 y=152 id=n8.bottom type=output component="Chat Output" -->
+      <g id="f4-n7" transform="translate(40,32)" data-bbox="40 32 128 48" data-label="Git Commit">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Git Commit" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Git Commit" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Git Commit" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Git Commit" -->
+        <rect id="f4-n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Git Commit"/>
+        <use id="f4-n7.icon" href="#f4-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f4-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Git Commit</text>
+      </g>
+      <g id="f4-n8" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="f4-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="f4-n8.icon" href="#f4-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f4-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+    </g>
+    <path id="f4-n1.arrow0" d="M432,136 H440 V128 H704 V96 H672" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f4-figtree-arrow)" data-from="n6.right" data-to="n7.right"/>
+    <path id="f4-n1.arrow1" d="M432,136 H488 V168 H536" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f4-figtree-arrow)" data-from="n6.right" data-to="n8.left"/>
+    <path id="f4-n1.arrow2" d="M192,96 H544" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f4-figtree-arrow)" data-from="n4.right" data-to="n7.left"/>
+  </g>
+</svg></div><figcaption class="cap"><b>Pausing a Flow for a Human</b><span class="score good">8.90 / 10</span> Human-in-the-Loop pauses a flow, creates a checkpoint and waits for a human decision. Build it when a step, such as committing code, must be approved before the run continues.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Add a Human Input component after the code generation steps.</li><li>Enter Form Content and keep the Approve and Reject User Actions.</li><li>Connect the Approve output to the commit step and the Reject output to an alternate path.</li><li>Optionally enable Requires approval on the Git commit tool of the Agent.</li><li>Run the flow in the Playground and select an action in the approval pane.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not say that Notify and Listen are part of a human approval gate. They do not name the component that revises a rejected draft, so no revision loop is drawn.</p>
+</section>
+<section id="loops-and-routing"><h2>5 · Branching, looping and sub-flows inside a flow</h2><p>If-Else and Smart Router send a message down one branch, Loop repeats a chain of components for every item in a list, and Run Flow runs another flow as a step. Build them when one linear path is not enough.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 624" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Branching, looping and sub-flows inside a flow</title>
+  <rect id="f5-background" x="0" y="0" width="680" height="624" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f5-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f5-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="f5-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="f5-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f5-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="f5-icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></symbol>
+  <symbol id="f5-icon-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="6" rx="1"/><rect x="3" y="15" width="5" height="6" rx="1"/><path d="M8 6h3v12H8"/><path d="M11 12h3"/><path d="M12.5 10l2 2-2 2"/><rect x="16.5" y="8" width="5" height="8" rx="1"/></symbol>
+  <symbol id="f5-icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M10 12l6-6h4M10 12l6 6h4"/><path d="M17 3l3 3-3 3M17 15l3 3-3 3"/></symbol>
+  <symbol id="f5-icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5L5 16.5M12 11.5l7 5"/></symbol>
+  <symbol id="f5-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="f5-n1" data-bbox="0 0 680 624">
+    <!-- PORT:left x=88 y=128 id=n5.left type=input component="Loop" -->
+    <!-- PORT:right x=184 y=128 id=n5.right type=output component="Loop" -->
+    <!-- PORT:top x=136 y=104 id=n5.top type=input component="Loop" -->
+    <!-- PORT:bottom x=136 y=152 id=n5.bottom type=output component="Loop" -->
+    <!-- PORT:left x=240 y=88 id=n6.left type=input component="Type Convert" -->
+    <!-- PORT:right x=384 y=88 id=n6.right type=output component="Type Convert" -->
+    <!-- PORT:top x=312 y=64 id=n6.top type=input component="Type Convert" -->
+    <!-- PORT:bottom x=312 y=112 id=n6.bottom type=output component="Type Convert" -->
+    <!-- PORT:left x=248 y=160 id=n7.left type=input component="Chroma DB" -->
+    <!-- PORT:right x=376 y=160 id=n7.right type=output component="Chroma DB" -->
+    <!-- PORT:top x=312 y=136 id=n7.top type=input component="Chroma DB" -->
+    <!-- PORT:bottom x=312 y=184 id=n7.bottom type=output component="Chroma DB" -->
+    <!-- PORT:left x=432 y=128 id=n8.left type=input component="Structured Output" -->
+    <!-- PORT:right x=608 y=128 id=n8.right type=output component="Structured Output" -->
+    <!-- PORT:top x=520 y=104 id=n8.top type=input component="Structured Output" -->
+    <!-- PORT:bottom x=520 y=152 id=n8.bottom type=output component="Structured Output" -->
+    <!-- PORT:left x=168 y=328 id=n9.left type=input component="If-Else" -->
+    <!-- PORT:right x=296 y=328 id=n9.right type=output component="If-Else" -->
+    <!-- PORT:top x=232 y=304 id=n9.top type=input component="If-Else" -->
+    <!-- PORT:bottom x=232 y=352 id=n9.bottom type=output component="If-Else" -->
+    <!-- PORT:left x=144 y=400 id=n10.left type=input component="Smart Router" -->
+    <!-- PORT:right x=320 y=400 id=n10.right type=output component="Smart Router" -->
+    <!-- PORT:top x=232 y=376 id=n10.top type=input component="Smart Router" -->
+    <!-- PORT:bottom x=232 y=424 id=n10.bottom type=output component="Smart Router" -->
+    <!-- PORT:left x=384 y=368 id=n11.left type=input component="Language Model" -->
+    <!-- PORT:right x=544 y=368 id=n11.right type=output component="Language Model" -->
+    <!-- PORT:top x=464 y=344 id=n11.top type=input component="Language Model" -->
+    <!-- PORT:bottom x=464 y=392 id=n11.bottom type=output component="Language Model" -->
+    <!-- PORT:left x=200 y=536 id=n12.left type=input component="Agent" -->
+    <!-- PORT:right x=312 y=536 id=n12.right type=output component="Agent" -->
+    <!-- PORT:top x=256 y=512 id=n12.top type=input component="Agent" -->
+    <!-- PORT:bottom x=256 y=560 id=n12.bottom type=output component="Agent" -->
+    <!-- PORT:left x=352 y=536 id=n13.left type=input component="Run Flow" -->
+    <!-- PORT:right x=480 y=536 id=n13.right type=output component="Run Flow" -->
+    <!-- PORT:top x=416 y=512 id=n13.top type=input component="Run Flow" -->
+    <!-- PORT:bottom x=416 y=560 id=n13.bottom type=output component="Run Flow" -->
+    <g id="f5-n2" transform="translate(32,32)" data-bbox="32 32 616 208" data-label="Loop, Type Convert, Structured Output, Chroma DB">
+      <!-- PORT:left x=56 y=96 id=n5.left type=input component="Loop" -->
+      <!-- PORT:right x=152 y=96 id=n5.right type=output component="Loop" -->
+      <!-- PORT:top x=104 y=72 id=n5.top type=input component="Loop" -->
+      <!-- PORT:bottom x=104 y=120 id=n5.bottom type=output component="Loop" -->
+      <!-- PORT:left x=208 y=56 id=n6.left type=input component="Type Convert" -->
+      <!-- PORT:right x=352 y=56 id=n6.right type=output component="Type Convert" -->
+      <!-- PORT:top x=280 y=32 id=n6.top type=input component="Type Convert" -->
+      <!-- PORT:bottom x=280 y=80 id=n6.bottom type=output component="Type Convert" -->
+      <!-- PORT:left x=216 y=128 id=n7.left type=input component="Chroma DB" -->
+      <!-- PORT:right x=344 y=128 id=n7.right type=output component="Chroma DB" -->
+      <!-- PORT:top x=280 y=104 id=n7.top type=input component="Chroma DB" -->
+      <!-- PORT:bottom x=280 y=152 id=n7.bottom type=output component="Chroma DB" -->
+      <!-- PORT:left x=400 y=96 id=n8.left type=input component="Structured Output" -->
+      <!-- PORT:right x=576 y=96 id=n8.right type=output component="Structured Output" -->
+      <!-- PORT:top x=488 y=72 id=n8.top type=input component="Structured Output" -->
+      <!-- PORT:bottom x=488 y=120 id=n8.bottom type=output component="Structured Output" -->
+      <g id="f5-n5" transform="translate(56,72)" data-bbox="56 72 96 48" data-label="Loop">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Loop" -->
+        <!-- PORT:right x=96 y=24 id=n5.right type=output component="Loop" -->
+        <!-- PORT:top x=48 y=0 id=n5.top type=input component="Loop" -->
+        <!-- PORT:bottom x=48 y=48 id=n5.bottom type=output component="Loop" -->
+        <path id="f5-n5.block" d="M0,0 H96 V48 H0 Z M6,0 V48 M90,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 96 48" data-component="Loop"/>
+        <use id="f5-n5.icon" href="#f5-icon-loop" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Loop</text>
+      </g>
+      <g id="f5-n6" transform="translate(208,32)" data-bbox="208 32 144 48" data-label="Type Convert">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Type Convert" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Type Convert" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Type Convert" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Type Convert" -->
+        <rect id="f5-n6.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Type Convert"/>
+        <use id="f5-n6.icon" href="#f5-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Type Convert</text>
+      </g>
+      <g id="f5-n7" transform="translate(216,104)" data-bbox="216 104 128 48" data-label="Chroma DB">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Chroma DB" -->
+        <!-- PORT:right x=128 y=24 id=n7.right type=output component="Chroma DB" -->
+        <!-- PORT:top x=64 y=0 id=n7.top type=input component="Chroma DB" -->
+        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="Chroma DB" -->
+        <path id="f5-n7.block" d="M0,8 A64,8 0 0 1 128,8 V40 A64,8 0 0 1 0,40 Z M0,8 A64,8 0 0 0 128,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 128 48" data-component="Chroma DB"/>
+        <use id="f5-n7.icon" href="#f5-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="100">Chroma DB</text>
+      </g>
+      <g id="f5-n8" transform="translate(400,72)" data-bbox="400 72 176 48" data-label="Structured Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Structured Output" -->
+        <!-- PORT:right x=176 y=24 id=n8.right type=output component="Structured Output" -->
+        <!-- PORT:top x=88 y=0 id=n8.top type=input component="Structured Output" -->
+        <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="Structured Output" -->
+        <rect id="f5-n8.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structured Output"/>
+        <use id="f5-n8.icon" href="#f5-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">Structured Output</text>
+      </g>
+      <path id="f5-n2.arrow0" d="M104,72 V56 H208" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n5.top" data-to="n6.left"/>
+      <path id="f5-n2.arrow1" d="M352,56 H376 V96 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n6.right" data-to="n8.left"/>
+      <path id="f5-n2.arrow2" d="M576,96 H584 V176 H32 V96 H56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n8.right" data-to="n5.left"/>
+      <path id="f5-n2.arrow3" d="M152,96 H192 V128 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n5.right" data-to="n7.left"/>
+    </g>
+    <g id="f5-n3" transform="translate(112,264)" data-bbox="112 264 464 192" data-label="If-Else, Language Model, Smart Router">
+      <!-- PORT:left x=56 y=64 id=n9.left type=input component="If-Else" -->
+      <!-- PORT:right x=184 y=64 id=n9.right type=output component="If-Else" -->
+      <!-- PORT:top x=120 y=40 id=n9.top type=input component="If-Else" -->
+      <!-- PORT:bottom x=120 y=88 id=n9.bottom type=output component="If-Else" -->
+      <!-- PORT:left x=32 y=136 id=n10.left type=input component="Smart Router" -->
+      <!-- PORT:right x=208 y=136 id=n10.right type=output component="Smart Router" -->
+      <!-- PORT:top x=120 y=112 id=n10.top type=input component="Smart Router" -->
+      <!-- PORT:bottom x=120 y=160 id=n10.bottom type=output component="Smart Router" -->
+      <!-- PORT:left x=272 y=104 id=n11.left type=input component="Language Model" -->
+      <!-- PORT:right x=432 y=104 id=n11.right type=output component="Language Model" -->
+      <!-- PORT:top x=352 y=80 id=n11.top type=input component="Language Model" -->
+      <!-- PORT:bottom x=352 y=128 id=n11.bottom type=output component="Language Model" -->
+      <g id="f5-n9" transform="translate(56,40)" data-bbox="56 40 128 48" data-label="If-Else">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="If-Else" -->
+        <!-- PORT:right x=128 y=24 id=n9.right type=output component="If-Else" -->
+        <!-- PORT:top x=64 y=0 id=n9.top type=input component="If-Else" -->
+        <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="If-Else" -->
+        <path id="f5-n9.block" d="M64,0 L128,24 L64,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 128 48" data-component="If-Else"/>
+        <use id="f5-n9.icon" href="#f5-icon-split" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n9.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">If-Else</text>
+      </g>
+      <g id="f5-n10" transform="translate(32,112)" data-bbox="32 112 176 48" data-label="Smart Router">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Smart Router" -->
+        <!-- PORT:right x=176 y=24 id=n10.right type=output component="Smart Router" -->
+        <!-- PORT:top x=88 y=0 id=n10.top type=input component="Smart Router" -->
+        <!-- PORT:bottom x=88 y=48 id=n10.bottom type=output component="Smart Router" -->
+        <path id="f5-n10.block" d="M88,0 L176,24 L88,48 L0,24 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="decision" data-bbox="0 0 176 48" data-component="Smart Router"/>
+        <use id="f5-n10.icon" href="#f5-icon-tree" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n10.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Smart Router</text>
+      </g>
+      <g id="f5-n11" transform="translate(272,80)" data-bbox="272 80 160 48" data-label="Language Model">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Language Model" -->
+        <!-- PORT:right x=160 y=24 id=n11.right type=output component="Language Model" -->
+        <!-- PORT:top x=80 y=0 id=n11.top type=input component="Language Model" -->
+        <!-- PORT:bottom x=80 y=48 id=n11.bottom type=output component="Language Model" -->
+        <rect id="f5-n11.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Language Model"/>
+        <use id="f5-n11.icon" href="#f5-icon-bolt" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n11.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Language Model</text>
+      </g>
+      <path id="f5-n3.arrow0" d="M120,40 V32 H352 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n9.top" data-to="n11.top"/>
+      <path id="f5-n3.arrow1" d="M208,136 H248 V104 H272" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n10.right" data-to="n11.left"/>
+    </g>
+    <g id="f5-n4" transform="translate(168,480)" data-bbox="168 480 344 112" data-label="Agent, Run Flow">
+      <!-- PORT:left x=32 y=56 id=n12.left type=input component="Agent" -->
+      <!-- PORT:right x=144 y=56 id=n12.right type=output component="Agent" -->
+      <!-- PORT:top x=88 y=32 id=n12.top type=input component="Agent" -->
+      <!-- PORT:bottom x=88 y=80 id=n12.bottom type=output component="Agent" -->
+      <!-- PORT:left x=184 y=56 id=n13.left type=input component="Run Flow" -->
+      <!-- PORT:right x=312 y=56 id=n13.right type=output component="Run Flow" -->
+      <!-- PORT:top x=248 y=32 id=n13.top type=input component="Run Flow" -->
+      <!-- PORT:bottom x=248 y=80 id=n13.bottom type=output component="Run Flow" -->
+      <g id="f5-n12" transform="translate(32,32)" data-bbox="32 32 112 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n12.left type=input component="Agent" -->
+        <!-- PORT:right x=112 y=24 id=n12.right type=output component="Agent" -->
+        <!-- PORT:top x=56 y=0 id=n12.top type=input component="Agent" -->
+        <!-- PORT:bottom x=56 y=48 id=n12.bottom type=output component="Agent" -->
+        <path id="f5-n12.block" d="M24,0 H88 A24,24 0 0 1 88,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 112 48" data-component="Agent"/>
+        <use id="f5-n12.icon" href="#f5-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n12.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+      </g>
+      <g id="f5-n13" transform="translate(184,32)" data-bbox="184 32 128 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n13.left type=input component="Run Flow" -->
+        <!-- PORT:right x=128 y=24 id=n13.right type=output component="Run Flow" -->
+        <!-- PORT:top x=64 y=0 id=n13.top type=input component="Run Flow" -->
+        <!-- PORT:bottom x=64 y=48 id=n13.bottom type=output component="Run Flow" -->
+        <path id="f5-n13.block" d="M0,0 H128 V48 H0 Z M6,0 V48 M122,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 128 48" data-component="Run Flow"/>
+        <use id="f5-n13.icon" href="#f5-icon-merge" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f5-n13.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">Run Flow</text>
+      </g>
+      <path id="f5-n4.arrow0" d="M144,56 H184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f5-figtree-arrow)" data-from="n12.right" data-to="n13.left"/>
+    </g>
+  </g>
+</svg></div><figcaption class="cap"><b>Branching, looping and sub-flows inside a flow</b><span class="score good">10.00 / 10</span> If-Else and Smart Router send a message down one branch, Loop repeats a chain of components for every item in a list, and Run Flow runs another flow as a step. Build them when one linear path is not enough.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Connect a list such as a CSV file to the Loop component.</li><li>Connect the Item port to one chain of components and connect the last component back to the Looping port.</li><li>Connect the Done port to the component that receives the aggregated result.</li><li>Use If-Else with an operator and match text to send a message down the True or False port.</li><li>Use Smart Router with a Routes table and a Language Model to route by category.</li><li>Add Run Flow and select the flow to run, or attach it to an Agent as a tool.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not name the component that follows the Positive, Negative or Neutral ports of the Smart Router. The pages say the If-Else component is not compatible with the Loop component, and give no flow between them. The pages do not name the component that receives the Run Flow outputs.</p>
+</section>
+<section id="mcp-client"><h2>6 · An agent using an MCP server&#x27;s tools</h2><p>The MCP Tools component connects an external MCP server to a Langflow Agent so the agent can use the server&#x27;s tools when answering a prompt. Build it when the agent needs specialized tools such as weather or fetch.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 976 200" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>An agent using an MCP server's tools</title>
+  <rect id="f6-background" x="0" y="0" width="976" height="200" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f6-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f6-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="f6-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="f6-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f6-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="f6-icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4a5 5 0 0 0-4.6 7l-7 7 2.1 2.1 7-7A5 5 0 0 0 19 8.5l-3 1-2-2 1-3z"/></symbol>
+  </defs>
+  <g id="f6-n1" data-bbox="0 0 976 200">
+    <!-- PORT:left x=64 y=112 id=n4.left type=input component="Chat Input" -->
+    <!-- PORT:right x=208 y=112 id=n4.right type=output component="Chat Input" -->
+    <!-- PORT:top x=136 y=88 id=n4.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=136 y=136 id=n4.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=248 y=112 id=n5.left type=input component="Agent" -->
+    <!-- PORT:right x=344 y=112 id=n5.right type=output component="Agent" -->
+    <!-- PORT:top x=296 y=88 id=n5.top type=input component="Agent" -->
+    <!-- PORT:bottom x=296 y=136 id=n5.bottom type=output component="Agent" -->
+    <!-- PORT:left x=384 y=112 id=n6.left type=input component="Chat Output" -->
+    <!-- PORT:right x=528 y=112 id=n6.right type=output component="Chat Output" -->
+    <!-- PORT:top x=456 y=88 id=n6.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=456 y=136 id=n6.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=632 y=112 id=n7.left type=input component="MCP Tools" -->
+    <!-- PORT:right x=744 y=112 id=n7.right type=output component="MCP Tools" -->
+    <!-- PORT:top x=688 y=88 id=n7.top type=input component="MCP Tools" -->
+    <!-- PORT:bottom x=688 y=136 id=n7.bottom type=output component="MCP Tools" -->
+    <!-- PORT:left x=784 y=112 id=n8.left type=input component="MCP Server" -->
+    <!-- PORT:right x=912 y=112 id=n8.right type=output component="MCP Server" -->
+    <!-- PORT:top x=848 y=88 id=n8.top type=input component="MCP Server" -->
+    <!-- PORT:bottom x=848 y=136 id=n8.bottom type=output component="MCP Server" -->
+    <g id="f6-n2" transform="translate(32,56)" data-bbox="32 56 528 112" data-label="Chat Input, Agent, Chat Output">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=56 id=n4.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=32 id=n4.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=216 y=56 id=n5.left type=input component="Agent" -->
+      <!-- PORT:right x=312 y=56 id=n5.right type=output component="Agent" -->
+      <!-- PORT:top x=264 y=32 id=n5.top type=input component="Agent" -->
+      <!-- PORT:bottom x=264 y=80 id=n5.bottom type=output component="Agent" -->
+      <!-- PORT:left x=352 y=56 id=n6.left type=input component="Chat Output" -->
+      <!-- PORT:right x=496 y=56 id=n6.right type=output component="Chat Output" -->
+      <!-- PORT:top x=424 y=32 id=n6.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=424 y=80 id=n6.bottom type=output component="Chat Output" -->
+      <g id="f6-n4" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Input" -->
+        <path id="f6-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="f6-n4.icon" href="#f6-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f6-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="f6-n5" transform="translate(216,32)" data-bbox="216 32 96 48" data-label="Agent">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Agent" -->
+        <!-- PORT:right x=96 y=24 id=n5.right type=output component="Agent" -->
+        <!-- PORT:top x=48 y=0 id=n5.top type=input component="Agent" -->
+        <!-- PORT:bottom x=48 y=48 id=n5.bottom type=output component="Agent" -->
+        <rect id="f6-n5.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+        <use id="f6-n5.icon" href="#f6-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f6-n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+      </g>
+      <g id="f6-n6" transform="translate(352,32)" data-bbox="352 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Output" -->
+        <path id="f6-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="f6-n6.icon" href="#f6-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f6-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <path id="f6-n2.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f6-figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+      <path id="f6-n2.arrow1" d="M312,56 H352" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f6-figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
+    </g>
+    <g id="f6-n3" transform="translate(600,56)" data-bbox="600 56 344 112" data-label="MCP Tools, MCP Server">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="MCP Tools" -->
+      <!-- PORT:right x=144 y=56 id=n7.right type=output component="MCP Tools" -->
+      <!-- PORT:top x=88 y=32 id=n7.top type=input component="MCP Tools" -->
+      <!-- PORT:bottom x=88 y=80 id=n7.bottom type=output component="MCP Tools" -->
+      <!-- PORT:left x=184 y=56 id=n8.left type=input component="MCP Server" -->
+      <!-- PORT:right x=312 y=56 id=n8.right type=output component="MCP Server" -->
+      <!-- PORT:top x=248 y=32 id=n8.top type=input component="MCP Server" -->
+      <!-- PORT:bottom x=248 y=80 id=n8.bottom type=output component="MCP Server" -->
+      <g id="f6-n7" transform="translate(32,32)" data-bbox="32 32 112 48" data-label="MCP Tools">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="MCP Tools" -->
+        <!-- PORT:right x=112 y=24 id=n7.right type=output component="MCP Tools" -->
+        <!-- PORT:top x=56 y=0 id=n7.top type=input component="MCP Tools" -->
+        <!-- PORT:bottom x=56 y=48 id=n7.bottom type=output component="MCP Tools" -->
+        <rect id="f6-n7.block" x="0" y="0" width="112" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Tools"/>
+        <use id="f6-n7.icon" href="#f6-icon-wrench" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f6-n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="92">MCP Tools</text>
+      </g>
+      <g id="f6-n8" transform="translate(184,32)" data-bbox="184 32 128 48" data-label="MCP Server">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="MCP Server" -->
+        <!-- PORT:right x=128 y=24 id=n8.right type=output component="MCP Server" -->
+        <!-- PORT:top x=64 y=0 id=n8.top type=input component="MCP Server" -->
+        <!-- PORT:bottom x=64 y=48 id=n8.bottom type=output component="MCP Server" -->
+        <path id="f6-n8.block" d="M0,8 A64,8 0 0 1 128,8 V40 A64,8 0 0 1 0,40 Z M0,8 A64,8 0 0 0 128,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 128 48" data-component="MCP Server"/>
+        <use id="f6-n8.icon" href="#f6-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f6-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="100">MCP Server</text>
+      </g>
+      <path id="f6-n3.arrow0" d="M144,56 H184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f6-figtree-arrow)" data-from="n7.right" data-to="n8.left"/>
+    </g>
+    <path id="f6-n1.arrow0" d="M296,88 V32 H688 V88" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f6-figtree-arrow)" data-from="n5.top" data-to="n7.top"/>
+  </g>
+</svg></div><figcaption class="cap"><b>An agent using an MCP server&#x27;s tools</b><span class="score good">9.86 / 10</span> The MCP Tools component connects an external MCP server to a Langflow Agent so the agent can use the server&#x27;s tools when answering a prompt. Build it when the agent needs specialized tools such as weather or fetch.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Register the MCP server in Settings or the MCP sidebar with JSON, STDIO, or HTTP/SSE.</li><li>Add the MCP Tools component and select the registered server in the MCP Server field.</li><li>Select a tool, or leave it blank to allow all tools.</li><li>Enable Tool Mode on MCP Tools and connect its Toolset port to the Tools port of the Agent.</li><li>Attach Chat Input and Chat Output to the Agent.</li><li>Open the Playground and ask a question that needs the tool.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not state how the Agent and the MCP server exchange messages on the wire.</p>
+</section>
+<section id="mcp-server"><h2>7 · Flows exposed as tools to MCP clients</h2><p>A Langflow project has its own MCP server that exposes the project&#x27;s flows as tools. MCP clients such as Cursor connect to that server and call the tools when generating responses.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 736 320" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Flows exposed as tools to MCP clients</title>
+  <rect id="f7-background" x="0" y="0" width="736" height="320" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f7-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f7-icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h7"/></symbol>
+  <symbol id="f7-icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="f7-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f7-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="f7-icon-ports" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H5V10"/><path d="M14 5H19V10"/><path d="M19 14V19H14"/><path d="M10 19H5V14"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/></symbol>
+  <symbol id="f7-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="f7-n1" data-bbox="0 0 736 320">
+    <!-- PORT:left x=64 y=88 id=n4.left type=input component="Langflow Project" -->
+    <!-- PORT:right x=240 y=88 id=n4.right type=output component="Langflow Project" -->
+    <!-- PORT:top x=152 y=64 id=n4.top type=input component="Langflow Project" -->
+    <!-- PORT:bottom x=152 y=112 id=n4.bottom type=output component="Langflow Project" -->
+    <!-- PORT:left x=112 y=160 id=n5.left type=input component="Flow" -->
+    <!-- PORT:right x=192 y=160 id=n5.right type=output component="Flow" -->
+    <!-- PORT:top x=152 y=136 id=n5.top type=input component="Flow" -->
+    <!-- PORT:bottom x=152 y=184 id=n5.bottom type=output component="Flow" -->
+    <!-- PORT:left x=80 y=232 id=n6.left type=input component="MCP Client" -->
+    <!-- PORT:right x=224 y=232 id=n6.right type=output component="MCP Client" -->
+    <!-- PORT:top x=152 y=208 id=n6.top type=input component="MCP Client" -->
+    <!-- PORT:bottom x=152 y=256 id=n6.bottom type=output component="MCP Client" -->
+    <!-- PORT:left x=344 y=128 id=n7.left type=input component="MCP Inspector" -->
+    <!-- PORT:right x=504 y=128 id=n7.right type=output component="MCP Inspector" -->
+    <!-- PORT:top x=424 y=104 id=n7.top type=input component="MCP Inspector" -->
+    <!-- PORT:bottom x=424 y=152 id=n7.bottom type=output component="MCP Inspector" -->
+    <!-- PORT:left x=352 y=200 id=n8.left type=input component="Chat Output" -->
+    <!-- PORT:right x=496 y=200 id=n8.right type=output component="Chat Output" -->
+    <!-- PORT:top x=424 y=176 id=n8.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=424 y=224 id=n8.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=544 y=168 id=n9.left type=input component="MCP Server" -->
+    <!-- PORT:right x=672 y=168 id=n9.right type=output component="MCP Server" -->
+    <!-- PORT:top x=608 y=144 id=n9.top type=input component="MCP Server" -->
+    <!-- PORT:bottom x=608 y=192 id=n9.bottom type=output component="MCP Server" -->
+    <g id="f7-n2" transform="translate(32,32)" data-bbox="32 32 240 256" data-label="Langflow Project, Flow, MCP Client">
+      <!-- PORT:left x=32 y=56 id=n4.left type=input component="Langflow Project" -->
+      <!-- PORT:right x=208 y=56 id=n4.right type=output component="Langflow Project" -->
+      <!-- PORT:top x=120 y=32 id=n4.top type=input component="Langflow Project" -->
+      <!-- PORT:bottom x=120 y=80 id=n4.bottom type=output component="Langflow Project" -->
+      <!-- PORT:left x=80 y=128 id=n5.left type=input component="Flow" -->
+      <!-- PORT:right x=160 y=128 id=n5.right type=output component="Flow" -->
+      <!-- PORT:top x=120 y=104 id=n5.top type=input component="Flow" -->
+      <!-- PORT:bottom x=120 y=152 id=n5.bottom type=output component="Flow" -->
+      <!-- PORT:left x=48 y=200 id=n6.left type=input component="MCP Client" -->
+      <!-- PORT:right x=192 y=200 id=n6.right type=output component="MCP Client" -->
+      <!-- PORT:top x=120 y=176 id=n6.top type=input component="MCP Client" -->
+      <!-- PORT:bottom x=120 y=224 id=n6.bottom type=output component="MCP Client" -->
+      <g id="f7-n4" transform="translate(32,32)" data-bbox="32 32 176 48" data-label="Langflow Project">
+        <!-- PORT:left x=0 y=24 id=n4.left type=input component="Langflow Project" -->
+        <!-- PORT:right x=176 y=24 id=n4.right type=output component="Langflow Project" -->
+        <!-- PORT:top x=88 y=0 id=n4.top type=input component="Langflow Project" -->
+        <!-- PORT:bottom x=88 y=48 id=n4.bottom type=output component="Langflow Project" -->
+        <path id="f7-n4.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Langflow Project"/>
+        <use id="f7-n4.icon" href="#f7-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Langflow Project</text>
+      </g>
+      <g id="f7-n5" transform="translate(80,104)" data-bbox="80 104 80 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Flow" -->
+        <!-- PORT:right x=80 y=24 id=n5.right type=output component="Flow" -->
+        <!-- PORT:top x=40 y=0 id=n5.top type=input component="Flow" -->
+        <!-- PORT:bottom x=40 y=48 id=n5.bottom type=output component="Flow" -->
+        <rect id="f7-n5.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow"/>
+        <use id="f7-n5.icon" href="#f7-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Flow</text>
+      </g>
+      <g id="f7-n6" transform="translate(48,176)" data-bbox="48 176 144 48" data-label="MCP Client">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="MCP Client" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="MCP Client" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="MCP Client" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="MCP Client" -->
+        <path id="f7-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="MCP Client"/>
+        <use id="f7-n6.icon" href="#f7-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">MCP Client</text>
+      </g>
+    </g>
+    <g id="f7-n3" transform="translate(312,72)" data-bbox="312 72 392 184" data-label="MCP Inspector, Chat Output, MCP Server">
+      <!-- PORT:left x=32 y=56 id=n7.left type=input component="MCP Inspector" -->
+      <!-- PORT:right x=192 y=56 id=n7.right type=output component="MCP Inspector" -->
+      <!-- PORT:top x=112 y=32 id=n7.top type=input component="MCP Inspector" -->
+      <!-- PORT:bottom x=112 y=80 id=n7.bottom type=output component="MCP Inspector" -->
+      <!-- PORT:left x=40 y=128 id=n8.left type=input component="Chat Output" -->
+      <!-- PORT:right x=184 y=128 id=n8.right type=output component="Chat Output" -->
+      <!-- PORT:top x=112 y=104 id=n8.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=112 y=152 id=n8.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=232 y=96 id=n9.left type=input component="MCP Server" -->
+      <!-- PORT:right x=360 y=96 id=n9.right type=output component="MCP Server" -->
+      <!-- PORT:top x=296 y=72 id=n9.top type=input component="MCP Server" -->
+      <!-- PORT:bottom x=296 y=120 id=n9.bottom type=output component="MCP Server" -->
+      <g id="f7-n7" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="MCP Inspector">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="MCP Inspector" -->
+        <!-- PORT:right x=160 y=24 id=n7.right type=output component="MCP Inspector" -->
+        <!-- PORT:top x=80 y=0 id=n7.top type=input component="MCP Inspector" -->
+        <!-- PORT:bottom x=80 y=48 id=n7.bottom type=output component="MCP Inspector" -->
+        <path id="f7-n7.block" d="M24,0 H136 A24,24 0 0 1 136,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 160 48" data-component="MCP Inspector"/>
+        <use id="f7-n7.icon" href="#f7-icon-eye" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">MCP Inspector</text>
+      </g>
+      <g id="f7-n8" transform="translate(40,104)" data-bbox="40 104 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Output" -->
+        <path id="f7-n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="f7-n8.icon" href="#f7-icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      </g>
+      <g id="f7-n9" transform="translate(232,72)" data-bbox="232 72 128 48" data-label="MCP Server">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="MCP Server" -->
+        <!-- PORT:right x=128 y=24 id=n9.right type=output component="MCP Server" -->
+        <!-- PORT:top x=64 y=0 id=n9.top type=input component="MCP Server" -->
+        <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="MCP Server" -->
+        <rect id="f7-n9.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="MCP Server"/>
+        <use id="f7-n9.icon" href="#f7-icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f7-n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">MCP Server</text>
+      </g>
+      <path id="f7-n3.arrow0" d="M192,56 H208 V96 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f7-figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
+    </g>
+    <path id="f7-n1.arrow0" d="M240,88 H704 V168 H672" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f7-figtree-arrow)" data-from="n4.right" data-to="n9.right"/>
+    <path id="f7-n1.arrow1" d="M152,184 V192 H320 V200 H352" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f7-figtree-arrow)" data-from="n5.bottom" data-to="n8.left"/>
+    <path id="f7-n1.arrow2" d="M152,184 V192 H64 V264 H608 V192" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f7-figtree-arrow)" data-from="n5.bottom" data-to="n9.bottom"/>
+    <path id="f7-n1.arrow3" d="M224,232 H536 V112 H608 V144" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f7-figtree-arrow)" data-from="n6.right" data-to="n9.top"/>
+  </g>
+</svg></div><figcaption class="cap"><b>Flows exposed as tools to MCP clients</b><span class="score good">9.19 / 10</span> A Langflow project has its own MCP server that exposes the project&#x27;s flows as tools. MCP clients such as Cursor connect to that server and call the tools when generating responses.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Create a Langflow project with at least one flow that has a Chat Output component.</li><li>Select which flows are exposed as tools on the MCP Server tab.</li><li>Edit each tool name and description so clients can pick the right tool.</li><li>Set the authentication method for the project&#x27;s MCP server.</li><li>Add the server to an MCP client with the JSON snippet or Auto install.</li><li>Test the tools in MCP Inspector, then ask the client a question that needs a flow.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not state how the MCP Server runs a flow internally after a tool call arrives. The pages do not draw a direct link between the coding agents of the Langflow MCP Client setting and the project MCP server.</p>
+</section>
+<section id="memory-and-sessions"><h2>8 · Conversation memory across turns and sessions</h2><p>Langflow stores chat messages in its database under a session ID, and a flow reads them back by that ID. Build this flow when an agent should remember earlier turns of the same conversation.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 496" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Conversation memory across turns and sessions</title>
+  <rect id="f8-background" x="0" y="0" width="624" height="496" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f8-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f8-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></symbol>
+  <symbol id="f8-icon-edit-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h11M3 10h8M3 15h5"/><path d="M10 21l.5-3.5L18 10l3 3-7.5 7.5z"/><path d="M16 12l3 3"/></symbol>
+  <symbol id="f8-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f8-icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
+  <symbol id="f8-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="f8-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="f8-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="f8-n1" data-bbox="0 0 624 496">
+    <!-- PORT:left x=80 y=88 id=n6.left type=input component="Chat Input" -->
+    <!-- PORT:right x=224 y=88 id=n6.right type=output component="Chat Input" -->
+    <!-- PORT:top x=152 y=64 id=n6.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=152 y=112 id=n6.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=80 y=160 id=n7.left type=input component="Session ID" -->
+    <!-- PORT:right x=224 y=160 id=n7.right type=output component="Session ID" -->
+    <!-- PORT:top x=152 y=136 id=n7.top type=input component="Session ID" -->
+    <!-- PORT:bottom x=152 y=184 id=n7.bottom type=output component="Session ID" -->
+    <!-- PORT:left x=64 y=232 id=n8.left type=input component="Langflow Storage" -->
+    <!-- PORT:right x=240 y=232 id=n8.right type=output component="Langflow Storage" -->
+    <!-- PORT:top x=152 y=208 id=n8.top type=input component="Langflow Storage" -->
+    <!-- PORT:bottom x=152 y=256 id=n8.bottom type=output component="Langflow Storage" -->
+    <!-- PORT:left x=312 y=160 id=n3.left type=input component="Agent" -->
+    <!-- PORT:right x=408 y=160 id=n3.right type=output component="Agent" -->
+    <!-- PORT:top x=360 y=136 id=n3.top type=input component="Agent" -->
+    <!-- PORT:bottom x=360 y=184 id=n3.bottom type=output component="Agent" -->
+    <!-- PORT:left x=448 y=160 id=n4.left type=input component="Chat Output" -->
+    <!-- PORT:right x=592 y=160 id=n4.right type=output component="Chat Output" -->
+    <!-- PORT:top x=520 y=136 id=n4.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=520 y=184 id=n4.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=64 y=408 id=n9.left type=input component="Message History" -->
+    <!-- PORT:right x=224 y=408 id=n9.right type=output component="Message History" -->
+    <!-- PORT:top x=144 y=384 id=n9.top type=input component="Message History" -->
+    <!-- PORT:bottom x=144 y=432 id=n9.bottom type=output component="Message History" -->
+    <!-- PORT:left x=264 y=408 id=n10.left type=input component="Prompt Template" -->
+    <!-- PORT:right x=424 y=408 id=n10.right type=output component="Prompt Template" -->
+    <!-- PORT:top x=344 y=384 id=n10.top type=input component="Prompt Template" -->
+    <!-- PORT:bottom x=344 y=432 id=n10.bottom type=output component="Prompt Template" -->
+    <g id="f8-n2" transform="translate(32,32)" data-bbox="32 32 240 256" data-label="Chat Input, Session ID, Langflow Storage">
+      <!-- PORT:left x=48 y=56 id=n6.left type=input component="Chat Input" -->
+      <!-- PORT:right x=192 y=56 id=n6.right type=output component="Chat Input" -->
+      <!-- PORT:top x=120 y=32 id=n6.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=120 y=80 id=n6.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=48 y=128 id=n7.left type=input component="Session ID" -->
+      <!-- PORT:right x=192 y=128 id=n7.right type=output component="Session ID" -->
+      <!-- PORT:top x=120 y=104 id=n7.top type=input component="Session ID" -->
+      <!-- PORT:bottom x=120 y=152 id=n7.bottom type=output component="Session ID" -->
+      <!-- PORT:left x=32 y=200 id=n8.left type=input component="Langflow Storage" -->
+      <!-- PORT:right x=208 y=200 id=n8.right type=output component="Langflow Storage" -->
+      <!-- PORT:top x=120 y=176 id=n8.top type=input component="Langflow Storage" -->
+      <!-- PORT:bottom x=120 y=224 id=n8.bottom type=output component="Langflow Storage" -->
+      <g id="f8-n6" transform="translate(48,32)" data-bbox="48 32 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n6.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n6.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n6.bottom type=output component="Chat Input" -->
+        <path id="f8-n6.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="f8-n6.icon" href="#f8-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f8-n6.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      </g>
+      <g id="f8-n7" transform="translate(48,104)" data-bbox="48 104 144 48" data-label="Session ID">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Session ID" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Session ID" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Session ID" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Session ID" -->
+        <path id="f8-n7.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="Session ID"/>
+        <use id="f8-n7.icon" href="#f8-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f8-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Session ID</text>
+      </g>
+      <g id="f8-n8" transform="translate(32,176)" data-bbox="32 176 176 48" data-label="Langflow Storage">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Langflow Storage" -->
+        <!-- PORT:right x=176 y=24 id=n8.right type=output component="Langflow Storage" -->
+        <!-- PORT:top x=88 y=0 id=n8.top type=input component="Langflow Storage" -->
+        <!-- PORT:bottom x=88 y=48 id=n8.bottom type=output component="Langflow Storage" -->
+        <path id="f8-n8.block" d="M0,8 A88,8 0 0 1 176,8 V40 A88,8 0 0 1 0,40 Z M0,8 A88,8 0 0 0 176,8" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="store" data-bbox="0 0 176 48" data-component="Langflow Storage"/>
+        <use id="f8-n8.icon" href="#f8-icon-database" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f8-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="148">Langflow Storage</text>
+      </g>
+    </g>
+    <g id="f8-n3" transform="translate(312,136)" data-bbox="312 136 96 48" data-label="Agent">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="Agent" -->
+      <!-- PORT:right x=96 y=24 id=n3.right type=output component="Agent" -->
+      <!-- PORT:top x=48 y=0 id=n3.top type=input component="Agent" -->
+      <!-- PORT:bottom x=48 y=48 id=n3.bottom type=output component="Agent" -->
+      <rect id="f8-n3.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+      <use id="f8-n3.icon" href="#f8-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f8-n3.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="76">Agent</text>
+    </g>
+    <g id="f8-n4" transform="translate(448,136)" data-bbox="448 136 144 48" data-label="Chat Output">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Chat Output" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Chat Output" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Chat Output" -->
+      <path id="f8-n4.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+      <use id="f8-n4.icon" href="#f8-icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f8-n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+    </g>
+    <g id="f8-n5" transform="translate(32,352)" data-bbox="32 352 424 112" data-label="Message History, Prompt Template">
+      <!-- PORT:left x=32 y=56 id=n9.left type=input component="Message History" -->
+      <!-- PORT:right x=192 y=56 id=n9.right type=output component="Message History" -->
+      <!-- PORT:top x=112 y=32 id=n9.top type=input component="Message History" -->
+      <!-- PORT:bottom x=112 y=80 id=n9.bottom type=output component="Message History" -->
+      <!-- PORT:left x=232 y=56 id=n10.left type=input component="Prompt Template" -->
+      <!-- PORT:right x=392 y=56 id=n10.right type=output component="Prompt Template" -->
+      <!-- PORT:top x=312 y=32 id=n10.top type=input component="Prompt Template" -->
+      <!-- PORT:bottom x=312 y=80 id=n10.bottom type=output component="Prompt Template" -->
+      <g id="f8-n9" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Message History">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Message History" -->
+        <!-- PORT:right x=160 y=24 id=n9.right type=output component="Message History" -->
+        <!-- PORT:top x=80 y=0 id=n9.top type=input component="Message History" -->
+        <!-- PORT:bottom x=80 y=48 id=n9.bottom type=output component="Message History" -->
+        <rect id="f8-n9.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Message History"/>
+        <use id="f8-n9.icon" href="#f8-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f8-n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Message History</text>
+      </g>
+      <g id="f8-n10" transform="translate(232,32)" data-bbox="232 32 160 48" data-label="Prompt Template">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Prompt Template" -->
+        <!-- PORT:right x=160 y=24 id=n10.right type=output component="Prompt Template" -->
+        <!-- PORT:top x=80 y=0 id=n10.top type=input component="Prompt Template" -->
+        <!-- PORT:bottom x=80 y=48 id=n10.bottom type=output component="Prompt Template" -->
+        <rect id="f8-n10.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Prompt Template"/>
+        <use id="f8-n10.icon" href="#f8-icon-edit-script" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f8-n10.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Prompt Template</text>
+      </g>
+      <path id="f8-n5.arrow0" d="M192,56 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n9.right" data-to="n10.left"/>
+    </g>
+    <path id="f8-n1.arrow0" d="M224,88 H360 V136" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n6.right" data-to="n3.top"/>
+    <path id="f8-n1.arrow1" d="M408,160 H448" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n3.right" data-to="n4.left"/>
+    <path id="f8-n1.arrow2" d="M80,160 H32 V408 H64" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n7.left" data-to="n9.left"/>
+    <path id="f8-n1.arrow3" d="M224,160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n7.right" data-to="n3.left"/>
+    <path id="f8-n1.arrow4" d="M152,256 V352 H144 V384" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n8.bottom" data-to="n9.top"/>
+    <path id="f8-n1.arrow5" d="M240,232 H280 V160 H312" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n8.right" data-to="n3.left"/>
+    <path id="f8-n1.arrow6" d="M424,408 H464 V320 H360 V184" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n10.right" data-to="n3.bottom"/>
+    <path id="f8-n1.arrow7" d="M520,184 V464 H144 V432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f8-figtree-arrow)" data-from="n4.bottom" data-to="n9.bottom"/>
+  </g>
+</svg></div><figcaption class="cap"><b>Conversation memory across turns and sessions</b><span class="score good">9.86 / 10</span> Langflow stores chat messages in its database under a session ID, and a flow reads them back by that ID. Build this flow when an agent should remember earlier turns of the same conversation.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Pass a custom session ID in the API call, or leave it empty to use the flow ID.</li><li>Add a Message History component in Retrieve mode at the start of the flow.</li><li>Add a Prompt Template with a memory variable and connect the Message History output to it.</li><li>Connect the Prompt Template output to the Agent and connect Chat Input to the Agent.</li><li>Connect the Agent output to Chat Output.</li><li>Add a second Message History in Store mode and connect Chat Output to its Message input.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not show the Session ID as a component with ports; it is a parameter passed in the payload or set in a component&#x27;s advanced settings. The pages describe the Prompt Template wiring with a Language Model component and say an Agent can be used instead.</p>
+</section>
+<section id="run-flow-api"><h2>9 · Running a Flow from an Application through the API</h2><p>An external application calls the Workflow API with a flow ID and an input, and gets the result back in one response, as a stream of events, or later from a queued job. Build it when a chatbot, website or script must run a Langflow flow.</p>
+<figure class="fig"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 360" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Running a Flow from an Application through the API</title>
+  <rect id="f9-background" x="0" y="0" width="624" height="360" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="f9-figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  <symbol id="f9-icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="f9-icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></symbol>
+  <symbol id="f9-icon-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></symbol>
+  <symbol id="f9-icon-render" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="16" cy="8" r="1.5"/><polyline points="3 17 8.5 11.5 13 16 15.5 13.5 21 19"/></symbol>
+  <symbol id="f9-icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></symbol>
+  <symbol id="f9-icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
+  <symbol id="f9-icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  </defs>
+  <g id="f9-n1" data-bbox="0 0 624 360">
+    <!-- PORT:left x=32 y=56 id=n2.left type=input component="API Access" -->
+    <!-- PORT:right x=176 y=56 id=n2.right type=output component="API Access" -->
+    <!-- PORT:top x=104 y=32 id=n2.top type=input component="API Access" -->
+    <!-- PORT:bottom x=104 y=80 id=n2.bottom type=output component="API Access" -->
+    <!-- PORT:left x=216 y=56 id=n3.left type=input component="External Application" -->
+    <!-- PORT:right x=440 y=56 id=n3.right type=output component="External Application" -->
+    <!-- PORT:top x=328 y=32 id=n3.top type=input component="External Application" -->
+    <!-- PORT:bottom x=328 y=80 id=n3.bottom type=output component="External Application" -->
+    <!-- PORT:left x=32 y=240 id=n4.left type=input component="Workflow API" -->
+    <!-- PORT:right x=176 y=240 id=n4.right type=output component="Workflow API" -->
+    <!-- PORT:top x=104 y=216 id=n4.top type=input component="Workflow API" -->
+    <!-- PORT:bottom x=104 y=264 id=n4.bottom type=output component="Workflow API" -->
+    <!-- PORT:left x=256 y=200 id=n6.left type=input component="Flow" -->
+    <!-- PORT:right x=336 y=200 id=n6.right type=output component="Flow" -->
+    <!-- PORT:top x=296 y=176 id=n6.top type=input component="Flow" -->
+    <!-- PORT:bottom x=296 y=224 id=n6.bottom type=output component="Flow" -->
+    <!-- PORT:left x=248 y=272 id=n7.left type=input component="Job" -->
+    <!-- PORT:right x=344 y=272 id=n7.right type=output component="Job" -->
+    <!-- PORT:top x=296 y=248 id=n7.top type=input component="Job" -->
+    <!-- PORT:bottom x=296 y=296 id=n7.bottom type=output component="Job" -->
+    <!-- PORT:left x=384 y=200 id=n8.left type=input component="Event Stream" -->
+    <!-- PORT:right x=544 y=200 id=n8.right type=output component="Event Stream" -->
+    <!-- PORT:top x=464 y=176 id=n8.top type=input component="Event Stream" -->
+    <!-- PORT:bottom x=464 y=224 id=n8.bottom type=output component="Event Stream" -->
+    <!-- PORT:left x=384 y=272 id=n9.left type=input component="Status Endpoint" -->
+    <!-- PORT:right x=544 y=272 id=n9.right type=output component="Status Endpoint" -->
+    <!-- PORT:top x=464 y=248 id=n9.top type=input component="Status Endpoint" -->
+    <!-- PORT:bottom x=464 y=296 id=n9.bottom type=output component="Status Endpoint" -->
+    <g id="f9-n2" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="API Access">
+      <!-- PORT:left x=0 y=24 id=n2.left type=input component="API Access" -->
+      <!-- PORT:right x=144 y=24 id=n2.right type=output component="API Access" -->
+      <!-- PORT:top x=72 y=0 id=n2.top type=input component="API Access" -->
+      <!-- PORT:bottom x=72 y=48 id=n2.bottom type=output component="API Access" -->
+      <path id="f9-n2.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="API Access"/>
+      <use id="f9-n2.icon" href="#f9-icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f9-n2.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">API Access</text>
+    </g>
+    <g id="f9-n3" transform="translate(216,32)" data-bbox="216 32 224 48" data-label="External Application">
+      <!-- PORT:left x=0 y=24 id=n3.left type=input component="External Application" -->
+      <!-- PORT:right x=224 y=24 id=n3.right type=output component="External Application" -->
+      <!-- PORT:top x=112 y=0 id=n3.top type=input component="External Application" -->
+      <!-- PORT:bottom x=112 y=48 id=n3.bottom type=output component="External Application" -->
+      <path id="f9-n3.block" d="M24,0 H200 A24,24 0 0 1 200,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 224 48" data-component="External Application"/>
+      <use id="f9-n3.icon" href="#f9-icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f9-n3.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="188">External Application</text>
+    </g>
+    <g id="f9-n4" transform="translate(32,216)" data-bbox="32 216 144 48" data-label="Workflow API">
+      <!-- PORT:left x=0 y=24 id=n4.left type=input component="Workflow API" -->
+      <!-- PORT:right x=144 y=24 id=n4.right type=output component="Workflow API" -->
+      <!-- PORT:top x=72 y=0 id=n4.top type=input component="Workflow API" -->
+      <!-- PORT:bottom x=72 y=48 id=n4.bottom type=output component="Workflow API" -->
+      <rect id="f9-n4.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Workflow API"/>
+      <use id="f9-n4.icon" href="#f9-icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+      <text id="f9-n4.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Workflow API</text>
+    </g>
+    <g id="f9-n5" transform="translate(216,144)" data-bbox="216 144 360 184" data-label="Flow, Job, Event Stream, Status Endpoint">
+      <!-- PORT:left x=40 y=56 id=n6.left type=input component="Flow" -->
+      <!-- PORT:right x=120 y=56 id=n6.right type=output component="Flow" -->
+      <!-- PORT:top x=80 y=32 id=n6.top type=input component="Flow" -->
+      <!-- PORT:bottom x=80 y=80 id=n6.bottom type=output component="Flow" -->
+      <!-- PORT:left x=32 y=128 id=n7.left type=input component="Job" -->
+      <!-- PORT:right x=128 y=128 id=n7.right type=output component="Job" -->
+      <!-- PORT:top x=80 y=104 id=n7.top type=input component="Job" -->
+      <!-- PORT:bottom x=80 y=152 id=n7.bottom type=output component="Job" -->
+      <!-- PORT:left x=168 y=56 id=n8.left type=input component="Event Stream" -->
+      <!-- PORT:right x=328 y=56 id=n8.right type=output component="Event Stream" -->
+      <!-- PORT:top x=248 y=32 id=n8.top type=input component="Event Stream" -->
+      <!-- PORT:bottom x=248 y=80 id=n8.bottom type=output component="Event Stream" -->
+      <!-- PORT:left x=168 y=128 id=n9.left type=input component="Status Endpoint" -->
+      <!-- PORT:right x=328 y=128 id=n9.right type=output component="Status Endpoint" -->
+      <!-- PORT:top x=248 y=104 id=n9.top type=input component="Status Endpoint" -->
+      <!-- PORT:bottom x=248 y=152 id=n9.bottom type=output component="Status Endpoint" -->
+      <g id="f9-n6" transform="translate(40,32)" data-bbox="40 32 80 48" data-label="Flow">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Flow" -->
+        <!-- PORT:right x=80 y=24 id=n6.right type=output component="Flow" -->
+        <!-- PORT:top x=40 y=0 id=n6.top type=input component="Flow" -->
+        <!-- PORT:bottom x=40 y=48 id=n6.bottom type=output component="Flow" -->
+        <rect id="f9-n6.block" x="0" y="0" width="80" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Flow"/>
+        <use id="f9-n6.icon" href="#f9-icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f9-n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Flow</text>
+      </g>
+      <g id="f9-n7" transform="translate(32,104)" data-bbox="32 104 96 48" data-label="Job">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Job" -->
+        <!-- PORT:right x=96 y=24 id=n7.right type=output component="Job" -->
+        <!-- PORT:top x=48 y=0 id=n7.top type=input component="Job" -->
+        <!-- PORT:bottom x=48 y=48 id=n7.bottom type=output component="Job" -->
+        <path id="f9-n7.block" d="M0,0 H96 V48 H0 Z M6,0 V48 M90,0 V48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="process" data-bbox="0 0 96 48" data-component="Job"/>
+        <use id="f9-n7.icon" href="#f9-icon-loop" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f9-n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="60">Job</text>
+      </g>
+      <g id="f9-n8" transform="translate(168,32)" data-bbox="168 32 160 48" data-label="Event Stream">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Event Stream" -->
+        <!-- PORT:right x=160 y=24 id=n8.right type=output component="Event Stream" -->
+        <!-- PORT:top x=80 y=0 id=n8.top type=input component="Event Stream" -->
+        <!-- PORT:bottom x=80 y=48 id=n8.bottom type=output component="Event Stream" -->
+        <path id="f9-n8.block" d="M0,0 H152 L160,8 V48 H0 Z M152,0 V8 H160" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 160 48" data-component="Event Stream"/>
+        <use id="f9-n8.icon" href="#f9-icon-render" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f9-n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="124">Event Stream</text>
+      </g>
+      <g id="f9-n9" transform="translate(168,104)" data-bbox="168 104 160 48" data-label="Status Endpoint">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Status Endpoint" -->
+        <!-- PORT:right x=160 y=24 id=n9.right type=output component="Status Endpoint" -->
+        <!-- PORT:top x=80 y=0 id=n9.top type=input component="Status Endpoint" -->
+        <!-- PORT:bottom x=80 y=48 id=n9.bottom type=output component="Status Endpoint" -->
+        <rect id="f9-n9.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Status Endpoint"/>
+        <use id="f9-n9.icon" href="#f9-icon-search" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="f9-n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Status Endpoint</text>
+      </g>
+      <path id="f9-n5.arrow0" d="M120,56 H168" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f9-figtree-arrow)" data-from="n6.right" data-to="n8.left"/>
+      <path id="f9-n5.arrow1" d="M128,128 H168" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f9-figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
+    </g>
+    <path id="f9-n1.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f9-figtree-arrow)" data-from="n2.right" data-to="n3.left"/>
+    <path id="f9-n1.arrow1" d="M328,80 V88 H104 V216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f9-figtree-arrow)" data-from="n3.bottom" data-to="n4.top"/>
+    <path id="f9-n1.arrow2" d="M176,240 H184 V200 H256" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f9-figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
+    <path id="f9-n1.arrow3" d="M544,200 H584 V112 H328 V80" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f9-figtree-arrow)" data-from="n8.right" data-to="n3.bottom"/>
+    <path id="f9-n1.arrow4" d="M176,240 H216 V272 H248" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#f9-figtree-arrow)" data-from="n4.right" data-to="n7.left"/>
+    <path id="f9-n1.arrow5" d="M440,56 H592 V272 H544" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#f9-figtree-arrow)" data-from="n3.right" data-to="n9.right"/>
+  </g>
+</svg></div><figcaption class="cap"><b>Running a Flow from an Application through the API</b><span class="score good">9.86 / 10</span> An external application calls the Workflow API with a flow ID and an input, and gets the result back in one response, as a stream of events, or later from a queued job. Build it when a chatbot, website or script must run a Langflow flow.</figcaption></figure>
+<h3>Steps</h3><ol class="steps"><li>Open the flow, click Share, select API access and copy the snippet for your language.</li><li>Set the Langflow API key in the x-api-key header.</li><li>Send a POST request to the Workflow API with the flow_id, the input_value and a mode.</li><li>In sync mode, read the answer from output.text in the response.</li><li>In stream mode, read the events from the stream until the run ends.</li><li>In background mode, poll the status endpoint with the job_id until the status is completed.</li></ol>
+<p class="gaps"><b>Not in the documentation:</b> The pages do not state how the sync response travels back from the Workflow API to the application as a separate step, so no return arrow is drawn for it.</p>
+</section>
+<section id="icons"><h2>Icon family for this concept space</h2><p>Each concept that appears across the figures has a 24-grid monoline icon, drawn with the icon-smith loop and checked at 16, 24 and 48 px.</p>
+<div class="icons"><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="api-endpoint"><path d="M3 17v-5a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v5z" id="ic-api-endpoint.before-repair-e1-path" /><path d="M15 13h3V4h3v3h-3" id="ic-api-endpoint.before-repair-e2-path" /><path d="M7 12h4" id="ic-api-endpoint.before-repair-e3-path" /><path d="M9 17v4" id="ic-api-endpoint.before-repair-e4-path" /><path d="M6 21h6" id="ic-api-endpoint.before-repair-e5-path" /></svg><span class="name">api-endpoint.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="api-endpoint"><path d="M15 4h5v16h-5" id="ic-api-endpoint-e1-path" /><path d="M3 8h9" id="ic-api-endpoint-e2-path" /><path d="M9 5l3 3-3 3" id="ic-api-endpoint-e3-path" /><path d="M12 16H3" id="ic-api-endpoint-e4-path" /><path d="M6 13l-3 3 3 3" id="ic-api-endpoint-e5-path" /></svg><span class="name">api-endpoint</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="approval-gate"><polyline points="3,20 3,4 21,4 21,20" id="ic-approval-gate.before-repair-e1-polyline" /><circle cx="8" cy="12" r="2" id="ic-approval-gate.before-repair-e2-circle" /><line x1="10" y1="12" x2="21" y2="12" id="ic-approval-gate.before-repair-e3-line" /><line x1="8" y1="14" x2="8" y2="20" id="ic-approval-gate.before-repair-e4-line" /></svg><span class="name">approval-gate.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="approval-gate"><line x1="5" y1="5" x2="5" y2="19" id="ic-approval-gate-e1-line" /><line x1="11" y1="5" x2="11" y2="19" id="ic-approval-gate-e2-line" /><polyline points="15,13 18,16 21,9" id="ic-approval-gate-e3-polyline" /></svg>
+<span class="name">approval-gate</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="flow-graph"><rect x="3" y="3" width="7" height="7" rx="1" id="ic-flow-graph.before-repair-e1-rect" /><rect x="14" y="14" width="7" height="7" rx="1" id="ic-flow-graph.before-repair-e2-rect" /><path d="M6.5 10V14A3.5 3.5 0 0 0 10 17.5H14" id="ic-flow-graph.before-repair-e3-path" /></svg><span class="name">flow-graph.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="flow-graph"><rect x="2" y="9" width="6" height="6" rx="1" id="ic-flow-graph-e1-rect" /><rect x="16" y="3" width="6" height="6" rx="1" id="ic-flow-graph-e2-rect" /><path d="M8 12H12V6H15" id="ic-flow-graph-e3-path" /><rect x="16" y="15" width="6" height="6" rx="1" id="ic-flow-graph-e4-rect" /><path d="M12 12V18H15" id="ic-flow-graph-e5-path" /></svg>
+<span class="name">flow-graph</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="language-model"><rect x="6" y="6" width="12" height="12" rx="2" id="ic-language-model.before-repair-e1-rect" /><line x1="10" y1="3" x2="10" y2="6" id="ic-language-model.before-repair-e2-line" /><line x1="14" y1="3" x2="14" y2="6" id="ic-language-model.before-repair-e3-line" /><line x1="10" y1="18" x2="10" y2="21" id="ic-language-model.before-repair-e4-line" /><line x1="14" y1="18" x2="14" y2="21" id="ic-language-model.before-repair-e5-line" /><line x1="3" y1="10" x2="6" y2="10" id="ic-language-model.before-repair-e6-line" /><line x1="3" y1="14" x2="6" y2="14" id="ic-language-model.before-repair-e7-line" /><line x1="18" y1="10" x2="21" y2="10" id="ic-language-model.before-repair-e8-line" /><line x1="18" y1="14" x2="21" y2="14" id="ic-language-model.before-repair-e9-line" /><line x1="11" y1="12" x2="13" y2="12" id="ic-language-model.before-repair-e10-line" /></svg><span class="name">language-model.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="language-model"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" id="ic-language-model-e1-rect" /><line x1="7" y1="9" x2="17" y2="9" id="ic-language-model-e2-line" /><line x1="7" y1="13" x2="13" y2="13" id="ic-language-model-e3-line" /></svg>
+<span class="name">language-model</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="mcp-server"><rect x="3" y="3" width="12" height="7" rx="1.5" id="ic-mcp-server.before-repair-e1-rect" /><rect x="3" y="14" width="12" height="7" rx="1.5" id="ic-mcp-server.before-repair-e2-rect" /><line x1="6.5" y1="6.5" x2="7" y2="6.5" id="ic-mcp-server.before-repair-e3-line" /><line x1="6.5" y1="17.5" x2="7" y2="17.5" id="ic-mcp-server.before-repair-e4-line" /><line x1="15" y1="12" x2="18" y2="12" id="ic-mcp-server.before-repair-e5-line" /><line x1="18" y1="8" x2="18" y2="16" id="ic-mcp-server.before-repair-e6-line" /><line x1="18" y1="10" x2="21" y2="10" id="ic-mcp-server.before-repair-e7-line" /><line x1="18" y1="14" x2="21" y2="14" id="ic-mcp-server.before-repair-e8-line" /></svg><span class="name">mcp-server.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="mcp-server"><rect x="3" y="3" width="9" height="7" rx="1.5" id="ic-mcp-server-e1-rect" /><rect x="3" y="14" width="9" height="7" rx="1.5" id="ic-mcp-server-e2-rect" /><line x1="15" y1="6.5" x2="18" y2="6.5" id="ic-mcp-server-e5-line" /><line x1="18" y1="6.5" x2="18" y2="17.5" id="ic-mcp-server-e6-line" /><line x1="15" y1="17.5" x2="18" y2="17.5" id="ic-mcp-server-e7-line" /><line x1="18" y1="12" x2="21" y2="12" id="ic-mcp-server-e8-line" /></svg>
+<span class="name">mcp-server</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="message-bubble"><path d="M5 3H19A2 2 0 0 1 21 5V15A2 2 0 0 1 19 17H11L7 21V17H5A2 2 0 0 1 3 15V5A2 2 0 0 1 5 3Z" id="ic-message-bubble.before-repair-e1-path" /><line x1="8" y1="8" x2="16" y2="8" id="ic-message-bubble.before-repair-e2-line" /><line x1="8" y1="12" x2="13" y2="12" id="ic-message-bubble.before-repair-e3-line" /></svg><span class="name">message-bubble.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="message-bubble"><path d="M11 3H19A2 2 0 0 1 21 5V10A2 2 0 0 1 19 12H15L12 15V12H11A2 2 0 0 1 9 10V5A2 2 0 0 1 11 3Z" id="ic-message-bubble-e1-path" /><line x1="3" y1="6" x2="5" y2="6" id="ic-message-bubble-e2-line" /><line x1="3" y1="10" x2="5" y2="10" id="ic-message-bubble-e3-line" /><line x1="3" y1="19" x2="20" y2="19" id="ic-message-bubble-e4-line" /><polyline points="17 16 20 19 17 22" id="ic-message-bubble-e5-line" /></svg>
+<span class="name">message-bubble</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="remote-agent"><path d="M5 11a7 7 0 0 0 14 0z" id="ic-remote-agent.before-repair-e1-path" /><path d="M12 18v3" id="ic-remote-agent.before-repair-e2-path" /><path d="M8.5 21h7" id="ic-remote-agent.before-repair-e3-path" /><path d="M12 11V8" id="ic-remote-agent.before-repair-e4-path" /><circle cx="12" cy="6" r="1" id="ic-remote-agent.before-repair-e5-circle" /><path d="M15.5 3.5A4.5 4.5 0 0 1 15.5 8.5" id="ic-remote-agent.before-repair-e6-path" /><path d="M8.5 8.5A4.5 4.5 0 0 1 8.5 3.5" id="ic-remote-agent.before-repair-e7-path" /></svg><span class="name">remote-agent.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="remote-agent"><circle cx="5" cy="12" r="2" id="ic-remote-agent-e1-circle" /><path d="M7 12h6" id="ic-remote-agent-e2-path" /><rect x="13" y="8" width="8" height="10" rx="2" id="ic-remote-agent-e3-rect" /><path d="M17 8V5" id="ic-remote-agent-e4-path" /><path d="M15.5 13h.01" id="ic-remote-agent-e5-path" /><path d="M18.5 13h.01" id="ic-remote-agent-e6-path" /></svg>
+<span class="name">remote-agent</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="tool-mode"><line x1="2" y1="12" x2="5" y2="12" id="ic-tool-mode.before-repair-e1-line" /><rect x="5" y="7" width="4" height="10" id="ic-tool-mode.before-repair-e2-rect" /><line x1="9" y1="9.5" x2="16" y2="9.5" id="ic-tool-mode.before-repair-e3-line" /><line x1="9" y1="14.5" x2="16" y2="14.5" id="ic-tool-mode.before-repair-e4-line" /><path d="M13 5H20V19H13" id="ic-tool-mode.before-repair-e5-path" /></svg><span class="name">tool-mode.before-repair</span></div><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="tool-mode"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" id="ic-tool-mode-e5-path" /></svg>
+<span class="name">tool-mode</span></div></div>
+<details><summary>Contact sheet with scores</summary><div class="sheet"><svg style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 984 200"><rect id="sheet-background" width="984" height="200" fill="#FFFFFF"/><g id="sheet-ic-api-endpoint-0" transform="translate(24,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h5v16h-5" id="sheet-e1-path" /><path d="M3 8h9" id="sheet-e2-path" /><path d="M9 5l3 3-3 3" id="sheet-e3-path" /><path d="M12 16H3" id="sheet-e4-path" /><path d="M6 13l-3 3 3 3" id="sheet-e5-path" /></g><g id="sheet-ic-api-endpoint-1" transform="translate(56,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h5v16h-5" id="sheet-e1-path" /><path d="M3 8h9" id="sheet-e2-path" /><path d="M9 5l3 3-3 3" id="sheet-e3-path" /><path d="M12 16H3" id="sheet-e4-path" /><path d="M6 13l-3 3 3 3" id="sheet-e5-path" /></g><g id="sheet-ic-api-endpoint-2" transform="translate(24,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h5v16h-5" id="sheet-e1-path" /><path d="M3 8h9" id="sheet-e2-path" /><path d="M9 5l3 3-3 3" id="sheet-e3-path" /><path d="M12 16H3" id="sheet-e4-path" /><path d="M6 13l-3 3 3 3" id="sheet-e5-path" /></g><text id="sheet-lb-api-endpoint" x="72" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">api-endpoint</text><g id="sheet-ic-approval-gate-0" transform="translate(144,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="5" y2="19" id="sheet-e1-line" /><line x1="11" y1="5" x2="11" y2="19" id="sheet-e2-line" /><polyline points="15,13 18,16 21,9" id="sheet-e3-polyline" /></g><g id="sheet-ic-approval-gate-1" transform="translate(176,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="5" y2="19" id="sheet-e1-line" /><line x1="11" y1="5" x2="11" y2="19" id="sheet-e2-line" /><polyline points="15,13 18,16 21,9" id="sheet-e3-polyline" /></g><g id="sheet-ic-approval-gate-2" transform="translate(144,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="5" y2="19" id="sheet-e1-line" /><line x1="11" y1="5" x2="11" y2="19" id="sheet-e2-line" /><polyline points="15,13 18,16 21,9" id="sheet-e3-polyline" /></g><text id="sheet-lb-approval-gate" x="192" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">approval-gate</text><g id="sheet-ic-flow-graph-0" transform="translate(264,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1" id="sheet-e1-rect" /><rect x="16" y="3" width="6" height="6" rx="1" id="sheet-e2-rect" /><path d="M8 12H12V6H15" id="sheet-e3-path" /><rect x="16" y="15" width="6" height="6" rx="1" id="sheet-e4-rect" /><path d="M12 12V18H15" id="sheet-e5-path" /></g><g id="sheet-ic-flow-graph-1" transform="translate(296,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1" id="sheet-e1-rect" /><rect x="16" y="3" width="6" height="6" rx="1" id="sheet-e2-rect" /><path d="M8 12H12V6H15" id="sheet-e3-path" /><rect x="16" y="15" width="6" height="6" rx="1" id="sheet-e4-rect" /><path d="M12 12V18H15" id="sheet-e5-path" /></g><g id="sheet-ic-flow-graph-2" transform="translate(264,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1" id="sheet-e1-rect" /><rect x="16" y="3" width="6" height="6" rx="1" id="sheet-e2-rect" /><path d="M8 12H12V6H15" id="sheet-e3-path" /><rect x="16" y="15" width="6" height="6" rx="1" id="sheet-e4-rect" /><path d="M12 12V18H15" id="sheet-e5-path" /></g><text id="sheet-lb-flow-graph" x="312" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">flow-graph</text><g id="sheet-ic-language-model-0" transform="translate(384,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" id="sheet-e1-rect" /><line x1="7" y1="9" x2="17" y2="9" id="sheet-e2-line" /><line x1="7" y1="13" x2="13" y2="13" id="sheet-e3-line" /></g><g id="sheet-ic-language-model-1" transform="translate(416,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" id="sheet-e1-rect" /><line x1="7" y1="9" x2="17" y2="9" id="sheet-e2-line" /><line x1="7" y1="13" x2="13" y2="13" id="sheet-e3-line" /></g><g id="sheet-ic-language-model-2" transform="translate(384,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" id="sheet-e1-rect" /><line x1="7" y1="9" x2="17" y2="9" id="sheet-e2-line" /><line x1="7" y1="13" x2="13" y2="13" id="sheet-e3-line" /></g><text id="sheet-lb-language-model" x="432" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">language-model</text><g id="sheet-ic-mcp-server-0" transform="translate(504,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="9" height="7" rx="1.5" id="sheet-e1-rect" /><rect x="3" y="14" width="9" height="7" rx="1.5" id="sheet-e2-rect" /><line x1="15" y1="6.5" x2="18" y2="6.5" id="sheet-e5-line" /><line x1="18" y1="6.5" x2="18" y2="17.5" id="sheet-e6-line" /><line x1="15" y1="17.5" x2="18" y2="17.5" id="sheet-e7-line" /><line x1="18" y1="12" x2="21" y2="12" id="sheet-e8-line" /></g><g id="sheet-ic-mcp-server-1" transform="translate(536,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="9" height="7" rx="1.5" id="sheet-e1-rect" /><rect x="3" y="14" width="9" height="7" rx="1.5" id="sheet-e2-rect" /><line x1="15" y1="6.5" x2="18" y2="6.5" id="sheet-e5-line" /><line x1="18" y1="6.5" x2="18" y2="17.5" id="sheet-e6-line" /><line x1="15" y1="17.5" x2="18" y2="17.5" id="sheet-e7-line" /><line x1="18" y1="12" x2="21" y2="12" id="sheet-e8-line" /></g><g id="sheet-ic-mcp-server-2" transform="translate(504,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="9" height="7" rx="1.5" id="sheet-e1-rect" /><rect x="3" y="14" width="9" height="7" rx="1.5" id="sheet-e2-rect" /><line x1="15" y1="6.5" x2="18" y2="6.5" id="sheet-e5-line" /><line x1="18" y1="6.5" x2="18" y2="17.5" id="sheet-e6-line" /><line x1="15" y1="17.5" x2="18" y2="17.5" id="sheet-e7-line" /><line x1="18" y1="12" x2="21" y2="12" id="sheet-e8-line" /></g><text id="sheet-lb-mcp-server" x="552" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">mcp-server</text><g id="sheet-ic-message-bubble-0" transform="translate(624,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H19A2 2 0 0 1 21 5V10A2 2 0 0 1 19 12H15L12 15V12H11A2 2 0 0 1 9 10V5A2 2 0 0 1 11 3Z" id="sheet-e1-path" /><line x1="3" y1="6" x2="5" y2="6" id="sheet-e2-line" /><line x1="3" y1="10" x2="5" y2="10" id="sheet-e3-line" /><line x1="3" y1="19" x2="20" y2="19" id="sheet-e4-line" /><polyline points="17 16 20 19 17 22" id="sheet-e5-line" /></g><g id="sheet-ic-message-bubble-1" transform="translate(656,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H19A2 2 0 0 1 21 5V10A2 2 0 0 1 19 12H15L12 15V12H11A2 2 0 0 1 9 10V5A2 2 0 0 1 11 3Z" id="sheet-e1-path" /><line x1="3" y1="6" x2="5" y2="6" id="sheet-e2-line" /><line x1="3" y1="10" x2="5" y2="10" id="sheet-e3-line" /><line x1="3" y1="19" x2="20" y2="19" id="sheet-e4-line" /><polyline points="17 16 20 19 17 22" id="sheet-e5-line" /></g><g id="sheet-ic-message-bubble-2" transform="translate(624,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H19A2 2 0 0 1 21 5V10A2 2 0 0 1 19 12H15L12 15V12H11A2 2 0 0 1 9 10V5A2 2 0 0 1 11 3Z" id="sheet-e1-path" /><line x1="3" y1="6" x2="5" y2="6" id="sheet-e2-line" /><line x1="3" y1="10" x2="5" y2="10" id="sheet-e3-line" /><line x1="3" y1="19" x2="20" y2="19" id="sheet-e4-line" /><polyline points="17 16 20 19 17 22" id="sheet-e5-line" /></g><text id="sheet-lb-message-bubble" x="672" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">message-bubble</text><g id="sheet-ic-remote-agent-0" transform="translate(744,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2" id="sheet-e1-circle" /><path d="M7 12h6" id="sheet-e2-path" /><rect x="13" y="8" width="8" height="10" rx="2" id="sheet-e3-rect" /><path d="M17 8V5" id="sheet-e4-path" /><path d="M15.5 13h.01" id="sheet-e5-path" /><path d="M18.5 13h.01" id="sheet-e6-path" /></g><g id="sheet-ic-remote-agent-1" transform="translate(776,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2" id="sheet-e1-circle" /><path d="M7 12h6" id="sheet-e2-path" /><rect x="13" y="8" width="8" height="10" rx="2" id="sheet-e3-rect" /><path d="M17 8V5" id="sheet-e4-path" /><path d="M15.5 13h.01" id="sheet-e5-path" /><path d="M18.5 13h.01" id="sheet-e6-path" /></g><g id="sheet-ic-remote-agent-2" transform="translate(744,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2" id="sheet-e1-circle" /><path d="M7 12h6" id="sheet-e2-path" /><rect x="13" y="8" width="8" height="10" rx="2" id="sheet-e3-rect" /><path d="M17 8V5" id="sheet-e4-path" /><path d="M15.5 13h.01" id="sheet-e5-path" /><path d="M18.5 13h.01" id="sheet-e6-path" /></g><text id="sheet-lb-remote-agent" x="792" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">remote-agent</text><g id="sheet-ic-tool-mode-0" transform="translate(864,24) scale(1)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" id="sheet-e5-path" /></g><g id="sheet-ic-tool-mode-1" transform="translate(896,24) scale(2)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" id="sheet-e5-path" /></g><g id="sheet-ic-tool-mode-2" transform="translate(864,72) scale(4)" fill="none" stroke="#2B3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" id="sheet-e5-path" /></g><text id="sheet-lb-tool-mode" x="912" y="190" font-size="11" text-anchor="middle" font-family="IBM Plex Sans, Arial" fill="#5B6B7C">tool-mode</text></svg></div></details>
+</section>
+<footer><p>Source: the Langflow documentation (docs/docs in the MIT-licensed langflow-ai/langflow repository, fetched 2026-10-12). Specs were written by Sonnet researchers and checked mechanically against the pages; figures were generated, scored and routed by the FigTree pipeline; icons were drawn through the icon-smith loop and reviewed at 16, 24 and 48 px.</p></footer></main></body></html>

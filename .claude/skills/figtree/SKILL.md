@@ -147,3 +147,7 @@ Args as the scripts read them today:
 ## Process and handoff
 
 How this effort is developed (meta-prompt first, self-apply, tiny-context workers, adversarial fold, package every round) is the `figtree-process` skill; the resume point is `docs/HANDOFF.md`. The boundary between the pipeline and any design is the `FigureProgram` contract (`design/contract/README.md`; `python -m figtree contract export|validate|render`).
+
+## Failure modes
+
+`docs/FAILURE-MODES.md` is the running log of defects seen in real runs with their detection, prevention and what the eye must still check. Read its open rows before a run; add a row the day a new defect appears. The first three rows (arrows through blocks or labels, shared shafts, arrows through their own source) are blocking in every workflow.

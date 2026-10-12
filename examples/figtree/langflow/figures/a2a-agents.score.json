@@ -8,10 +8,20 @@
     "text_quality": 10.0,
     "visual_polish": 10.0,
     "medium_fit": 10.0,
-    "compactness": 7.5
+    "compactness": 8.0
   },
-  "overall": 9.64,
+  "overall": 9.71,
   "issues": [
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "top margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "move the content towards the edge and shrink the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
     {
       "check_id": "compactness.blank_margin",
       "dimension": "compactness",
@@ -22,26 +32,16 @@
       "penalty": 1.0,
       "auto_edit": {
         "op": "set_canvas",
-        "width": 936,
-        "height": 305
+        "width": 872,
+        "height": 369
       }
-    },
-    {
-      "check_id": "compactness.aspect",
-      "dimension": "compactness",
-      "severity": "warning",
-      "visual_description": "canvas aspect 2.72 outside the teaching material range 1.0-2.4 (banner or tower shape)",
-      "code_anchor": "svg",
-      "fix_instruction": "re-flow the layout into rows so the figure is closer to the medium's aspect",
-      "penalty": 1.5,
-      "auto_edit": null
     }
   ],
   "tags": [],
   "metrics": {
-    "fill_ratio": 0.629,
-    "aspect": 2.72,
-    "mean_detour": 1.04,
+    "fill_ratio": 0.591,
+    "aspect": 2.14,
+    "mean_detour": 1.01,
     "crossings": 0,
     "forward_ratio": 1.0,
     "palette_size": 1

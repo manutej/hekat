@@ -4,62 +4,60 @@
     "semantic_coverage": null,
     "hallucination_control": 10.0,
     "topology_accuracy": 10.0,
-    "flow_readability": 4.9,
+    "flow_readability": 9.3,
     "text_quality": 10.0,
     "visual_polish": 10.0,
-    "medium_fit": 6.0,
-    "compactness": 9.0
+    "medium_fit": 7.0,
+    "compactness": 8.0
   },
-  "overall": 8.56,
+  "overall": 9.19,
   "issues": [
     {
       "check_id": "compactness.blank_margin",
       "dimension": "compactness",
       "severity": "warning",
-      "visual_description": "bottom margin is 63px of blank canvas",
+      "visual_description": "top margin is 63px of blank canvas",
+      "code_anchor": "svg",
+      "fix_instruction": "move the content towards the edge and shrink the canvas",
+      "penalty": 1.0,
+      "auto_edit": null
+    },
+    {
+      "check_id": "compactness.blank_margin",
+      "dimension": "compactness",
+      "severity": "warning",
+      "visual_description": "bottom margin is 55px of blank canvas",
       "code_anchor": "svg",
       "fix_instruction": "shrink the canvas to content + margin",
       "penalty": 1.0,
       "auto_edit": {
         "op": "set_canvas",
         "width": 736,
-        "height": 313
+        "height": 289
       }
     },
     {
       "check_id": "flow.crossings",
       "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "3 arrow crossing(s)",
+      "severity": "warning",
+      "visual_description": "1 arrow crossing(s)",
       "code_anchor": "n3.arrow0",
       "fix_instruction": "re-order or re-route to remove crossings",
-      "penalty": 2.0999999999999996,
-      "auto_edit": null
-    },
-    {
-      "check_id": "flow.collinear_overlap",
-      "dimension": "flow_readability",
-      "severity": "critical",
-      "visual_description": "arrows n1.arrow1 and n1.arrow3 share a collinear shaft for 40px (two heads, ambiguous endpoints)",
-      "code_anchor": "n1.arrow1",
-      "fix_instruction": "offset one arrow by a grid step or merge them into one connector",
-      "penalty": 1.5,
+      "penalty": 0.7,
       "auto_edit": null
     }
   ],
   "tags": [
-    "flow_readability",
-    "veto:occlusion",
     "veto:chaotic_routing"
   ],
   "metrics": {
-    "fill_ratio": 0.607,
-    "aspect": 2.09,
-    "mean_detour": 1.26,
-    "crossings": 3,
+    "fill_ratio": 0.551,
+    "aspect": 2.3,
+    "mean_detour": 1.19,
+    "crossings": 1,
     "forward_ratio": 1.0,
     "palette_size": 1,
-    "vetoes": 2
+    "vetoes": 1
   },
   "unit": "mcp-server",
   "title": "Flows exposed as tools to MCP clients",

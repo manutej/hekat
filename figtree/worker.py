@@ -8,6 +8,9 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 from figtree.generator import _layers, fill_for
 from figtree.geometry import (
+    segments,
+    collinear_overlap,
+    segment_hits_box,
     Point,
     ceil_to_grid,
     round_to_grid,
@@ -226,9 +229,14 @@ class Worker:
         def port_pt(child: Node, port: Port) -> Point:
             return (child.offset["x"] + port.rel_x, child.offset["y"] + port.rel_y)
 
+        HALO = 4  # the critic's clearance: a shaft grazing a border counts as through the block
+
+        def inflate(bx: BBox) -> BBox:
+            return BBox(bx.x - HALO, bx.y - HALO, bx.w + 2 * HALO, bx.h + 2 * HALO)
+
         for i, (f, a, b) in enumerate(owned):
             fwd = column_of[a.id] < column_of[b.id]
-            obstacles = [bx for comp, bx in leaf_blocks.items() if comp not in (f.src, f.dst)]
+            obstacles = [inflate(bx) for comp, bx in leaf_blocks.items() if comp not in (f.src, f.dst)]
             sp = self._leaf_port(a, f.src, "right")
             dp = self._leaf_port(b, f.dst, "left")
             if sp is None or dp is None:
@@ -255,15 +263,17 @@ class Worker:
                 y += 8 * k  # each cross-row arrow travels its own lane in the row gap
                 gx1 += 8 * k
                 cand_a = [s, (gx1, s[1]), (gx1, y), (xl, y), (xl, d[1]), d]
-                dp_t = self._leaf_port(b, f.dst, "top")
+                # enter the target from the side that faces the row gap: top when the target is
+                # below the source, bottom when it is above (entering the far side crosses the block)
+                dp_t = self._leaf_port(b, f.dst, "top" if rb > ra else "bottom")
                 d_t = port_pt(b, dp_t)
                 cand_b = [s, (gx1, s[1]), (gx1, y), (d_t[0], y), d_t]
                 if dp.id not in used_ports and d[0] - xl >= node.style.min_arrow and not path_hits_boxes(cand_a, obstacles):
                     pts = cand_a
                 elif dp_t.id not in used_ports and not path_hits_boxes(cand_b, obstacles):
                     pts, dp = cand_b, dp_t
-                elif not path_hits_boxes(cand_a, obstacles):
-                    pts = cand_a
+                # otherwise fall through to the detour candidates and the grid router below, which
+                # prefer a free port: a second arrow into a used port shares its shaft (two heads)
             elif fwd:
                 direct = route(s, d, "right", "left", node.style.grid)
                 if len(direct) == 4:  # Z-route: give each arrow between these columns its own vertical lane
@@ -308,8 +318,39 @@ class Worker:
                     ([s_v, (s_v[0], y), (d_v[0], y), d_v], sp_v, dp_v),
                 ]
                 ok = [c for c in candidates if not path_hits_boxes(c[0], obstacles) and final_segment_length(c[0]) >= node.style.min_arrow]
-                chosen = ok[0] if ok else next((c for c in candidates if not path_hits_boxes(c[0], obstacles)), candidates[0])
-                pts, sp, dp = chosen
+                # a port already used by another arrow would give two heads on one shaft: prefer a free port
+                free = [c for c in ok if c[2].id not in used_ports]
+                ok = free or ok
+                if ok:
+                    pts, sp, dp = ok[0]
+                else:
+                    # every heuristic collides: route on the grid around every block (never through one)
+                    from figtree.router import astar_route
+
+                    bounds = BBox(min(bx.x for bx in all_boxes) - 2 * self.detour, min(bx.y for bx in all_boxes) - 2 * self.detour,
+                                  max(bx.x2 for bx in all_boxes) - min(bx.x for bx in all_boxes) + 4 * self.detour,
+                                  max(bx.y2 for bx in all_boxes) - min(bx.y for bx in all_boxes) + 4 * self.detour)
+                    taken = [p.points for p in paths]
+                    routed = None
+                    for s_side, d_side in (("right", "left"), ("top", "top"), ("bottom", "bottom"), ("right", "top"), ("right", "bottom"), ("bottom", "left"), ("top", "left"), ("left", "left")):
+                        sp2, dp2 = self._leaf_port(a, f.src, s_side), self._leaf_port(b, f.dst, d_side)
+                        if sp2 is None or dp2 is None or dp2.id in used_ports:
+                            continue
+                        r = astar_route(port_pt(a, sp2), port_pt(b, dp2), s_side, d_side, obstacles, bounds, node.style.grid, 0, taken, node.style.min_arrow,
+                                        src_box=leaf_blocks.get(f.src), dst_box=leaf_blocks.get(f.dst))
+                        if r and not path_hits_boxes(r, obstacles):
+                            routed, sp, dp = r, sp2, dp2
+                            break
+                    if routed is not None:
+                        pts = routed
+                    else:
+                        chosen = next((c for c in candidates if not path_hits_boxes(c[0], obstacles)), candidates[0])
+                        pts, sp, dp = chosen
+                        node.residuals.append(ResidualDefect("critical", f"arrow {f.src} -> {f.dst} could not be routed around the blocks", node.id, "re-decompose or widen the layout"))
+            # a route must leave its source and enter its target from outside the block
+            own = [bx for comp, bx in leaf_blocks.items() if comp in (f.src, f.dst)]
+            if own and (segment_hits_box(pts[0], pts[1], own[0]) if len(own) == 1 else (segment_hits_box(pts[0], pts[1], leaf_blocks.get(f.src, own[0])) or segment_hits_box(pts[-2], pts[-1], leaf_blocks.get(f.dst, own[-1])))):
+                node.residuals.append(ResidualDefect("warning", f"arrow {f.src} -> {f.dst} enters or leaves through its own block", node.id, "choose the port facing the route"))
             used_ports.add(dp.id)
             paths.append(
                 PathEl(
@@ -322,7 +363,103 @@ class Worker:
                     dst_port=dp.id,
                 )
             )
+        self._repair_routes(node, children, owned, paths, leaf_blocks, all_boxes, port_pt, used_ports)
         return paths
+
+    def _repair_routes(self, node, children, owned, paths, leaf_blocks, all_boxes, port_pt, used_ports) -> None:
+        """Re-route on the grid every arrow that passes through a block, enters or leaves through its
+        own block, or shares a shaft with another arrow.  The heuristics above are fast and usually
+        right; this pass is what makes "an arrow through a box" impossible rather than merely rare."""
+        from figtree.router import astar_route
+
+        if not paths or not leaf_blocks:
+            return
+        bounds = BBox(min(bx.x for bx in all_boxes) - 2 * self.detour, min(bx.y for bx in all_boxes) - 2 * self.detour,
+                      max(bx.x2 for bx in all_boxes) - min(bx.x for bx in all_boxes) + 4 * self.detour,
+                      max(bx.y2 for bx in all_boxes) - min(bx.y for bx in all_boxes) + 4 * self.detour)
+        flows = {f"{node.id}.arrow{i}": (f, a, b) for i, (f, a, b) in enumerate(owned)}
+        # arrows the children already drew, in this node's frame: a parent arrow must not share a
+        # shaft with them either
+        child_paths: List[List[Point]] = []
+        for c in children:
+            for el, off in c.model.iter_all((c.offset["x"], c.offset["y"])):
+                if isinstance(el, PathEl):
+                    child_paths.append([(x + off[0], y + off[1]) for x, y in el.points])
+
+        def crossings(p: PathEl) -> int:
+            n = 0
+            for q in paths:
+                if q is p:
+                    continue
+                for (a1, a2) in segments(p.points):
+                    for (b1, b2) in segments(q.points):
+                        if a1[1] == a2[1] and b1[0] == b2[0] and min(a1[0], a2[0]) < b1[0] < max(a1[0], a2[0]) and min(b1[1], b2[1]) < a1[1] < max(b1[1], b2[1]):
+                            n += 1
+                        elif a1[0] == a2[0] and b1[1] == b2[1] and min(b1[0], b2[0]) < a1[0] < max(b1[0], b2[0]) and min(a1[1], a2[1]) < b1[1] < max(a1[1], a2[1]):
+                            n += 1
+            return n
+
+        HALO = 4
+
+        def inflate(bx: BBox) -> BBox:
+            return BBox(bx.x - HALO, bx.y - HALO, bx.w + 2 * HALO, bx.h + 2 * HALO)
+
+        def offending(p: PathEl) -> bool:
+            f, a, b = flows[p.id]
+            others = [inflate(bx) for comp, bx in leaf_blocks.items() if comp not in (f.src, f.dst)]
+            if path_hits_boxes(p.points, others):
+                return True
+            src_box, dst_box = leaf_blocks.get(f.src), leaf_blocks.get(f.dst)
+            # the own blocks: every segment but the exit/entry ones must stay clear of them
+            if src_box and any(segment_hits_box(u, v, src_box) for u, v in segments(p.points)[1:]):
+                return True
+            if dst_box and any(segment_hits_box(u, v, dst_box) for u, v in segments(p.points)[:-1]):
+                return True
+            if src_box and segment_hits_box(p.points[0], p.points[1], src_box):
+                return True
+            if dst_box and segment_hits_box(p.points[-2], p.points[-1], dst_box):
+                return True
+            for q in paths:
+                if q is not p and collinear_overlap(p.points, q.points) > node.style.grid:
+                    return True
+            if any(collinear_overlap(p.points, cp) > node.style.grid for cp in child_paths):
+                return True
+            return crossings(p) >= 2
+
+        for _ in range(2):
+            changed = False
+            for p in paths:
+                if not offending(p):
+                    continue
+                f, a, b = flows[p.id]
+                others = [inflate(bx) for comp, bx in leaf_blocks.items() if comp not in (f.src, f.dst)]
+                taken = [q.points for q in paths if q is not p] + child_paths
+                used_ports.discard(p.dst_port)
+                best = None
+                for s_side, d_side in (("right", "left"), ("right", "top"), ("right", "bottom"), ("top", "top"), ("bottom", "bottom"), ("bottom", "left"), ("top", "left"), ("bottom", "top"), ("top", "bottom"), ("left", "left"), ("right", "right")):
+                    sp2, dp2 = self._leaf_port(a, f.src, s_side), self._leaf_port(b, f.dst, d_side)
+                    if sp2 is None or dp2 is None or dp2.id in used_ports:
+                        continue
+                    r = astar_route(port_pt(a, sp2), port_pt(b, dp2), s_side, d_side, others, bounds, node.style.grid, 0, taken, node.style.min_arrow,
+                                    src_box=leaf_blocks.get(f.src), dst_box=leaf_blocks.get(f.dst))
+                    if not r or path_hits_boxes(r, others):
+                        continue
+                    shared = max((collinear_overlap(r, t) for t in taken), default=0)
+                    key = (shared > node.style.grid, len(r) + 2 * sum(1 for t in taken for (a1, a2) in segments(r) for (b1, b2) in segments(t) if (a1[1] == a2[1] and b1[0] == b2[0] and min(a1[0], a2[0]) < b1[0] < max(a1[0], a2[0]) and min(b1[1], b2[1]) < a1[1] < max(b1[1], b2[1])) or (a1[0] == a2[0] and b1[1] == b2[1] and min(b1[0], b2[0]) < a1[0] < max(b1[0], b2[0]) and min(a1[1], a2[1]) < b1[1] < max(a1[1], a2[1]))), shared)
+                    if best is None or key < best[0]:
+                        best = (key, r, sp2, dp2)
+                if best is not None:
+                    _, r, sp2, dp2 = best
+                    p.points, p.src_port, p.dst_port = r, sp2.id, dp2.id
+                    changed = True
+                used_ports.add(p.dst_port)
+            if not changed:
+                break
+        for p in paths:
+            f, a, b = flows[p.id]
+            others = [inflate(bx) for comp, bx in leaf_blocks.items() if comp not in (f.src, f.dst)]
+            if path_hits_boxes(p.points, others) or any(q is not p and collinear_overlap(p.points, q.points) > node.style.grid for q in paths):
+                node.residuals.append(ResidualDefect("critical", f"arrow {f.src} -> {f.dst} still crosses a block or shares a shaft after re-routing", node.id, "re-decompose or widen the layout"))
 
     def _assemble(
         self,

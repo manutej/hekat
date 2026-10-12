@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="936" height="344" viewBox="0 0 936 344" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+<svg xmlns="http://www.w3.org/2000/svg" width="872" height="408" viewBox="0 0 872 408" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
   <title>Agents talking to agents over A2A</title>
-  <rect id="background" x="0" y="0" width="936" height="344" fill="#FFFFFF" data-role="background"/>
+  <rect id="background" x="0" y="0" width="872" height="408" fill="#FFFFFF" data-role="background"/>
   <defs>
     <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
@@ -14,57 +14,57 @@
   <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M12 6v14M8 20h8"/></symbol>
   <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
   </defs>
-  <g id="n1" data-bbox="0 0 936 344">
-    <!-- PORT:left x=64 y=152 id=n4.left type=input component="A2A Client" -->
-    <!-- PORT:right x=208 y=152 id=n4.right type=output component="A2A Client" -->
-    <!-- PORT:top x=136 y=128 id=n4.top type=input component="A2A Client" -->
-    <!-- PORT:bottom x=136 y=176 id=n4.bottom type=output component="A2A Client" -->
-    <!-- PORT:left x=64 y=224 id=n5.left type=input component="Chat Input" -->
-    <!-- PORT:right x=208 y=224 id=n5.right type=output component="Chat Input" -->
-    <!-- PORT:top x=136 y=200 id=n5.top type=input component="Chat Input" -->
-    <!-- PORT:bottom x=136 y=248 id=n5.bottom type=output component="Chat Input" -->
-    <!-- PORT:left x=248 y=152 id=n6.left type=input component="JSON-RPC Endpoint" -->
-    <!-- PORT:right x=424 y=152 id=n6.right type=output component="JSON-RPC Endpoint" -->
-    <!-- PORT:top x=336 y=128 id=n6.top type=input component="JSON-RPC Endpoint" -->
-    <!-- PORT:bottom x=336 y=176 id=n6.bottom type=output component="JSON-RPC Endpoint" -->
-    <!-- PORT:left x=272 y=224 id=n7.left type=input component="A2A Caller" -->
-    <!-- PORT:right x=400 y=224 id=n7.right type=output component="A2A Caller" -->
-    <!-- PORT:top x=336 y=200 id=n7.top type=input component="A2A Caller" -->
-    <!-- PORT:bottom x=336 y=248 id=n7.bottom type=output component="A2A Caller" -->
-    <!-- PORT:left x=528 y=112 id=n8.left type=input component="Published Flow" -->
-    <!-- PORT:right x=688 y=112 id=n8.right type=output component="Published Flow" -->
-    <!-- PORT:top x=608 y=88 id=n8.top type=input component="Published Flow" -->
-    <!-- PORT:bottom x=608 y=136 id=n8.bottom type=output component="Published Flow" -->
-    <!-- PORT:left x=536 y=184 id=n9.left type=input component="Chat Output" -->
-    <!-- PORT:right x=680 y=184 id=n9.right type=output component="Chat Output" -->
-    <!-- PORT:top x=608 y=160 id=n9.top type=input component="Chat Output" -->
-    <!-- PORT:bottom x=608 y=208 id=n9.bottom type=output component="Chat Output" -->
-    <!-- PORT:left x=536 y=256 id=n10.left type=input component="Remote A2A" -->
-    <!-- PORT:right x=680 y=256 id=n10.right type=output component="Remote A2A" -->
-    <!-- PORT:top x=608 y=232 id=n10.top type=input component="Remote A2A" -->
-    <!-- PORT:bottom x=608 y=280 id=n10.bottom type=output component="Remote A2A" -->
-    <!-- PORT:left x=728 y=184 id=n11.left type=input component="Agent Card" -->
-    <!-- PORT:right x=872 y=184 id=n11.right type=output component="Agent Card" -->
-    <!-- PORT:top x=800 y=160 id=n11.top type=input component="Agent Card" -->
-    <!-- PORT:bottom x=800 y=208 id=n11.bottom type=output component="Agent Card" -->
-    <g id="n2" transform="translate(32,96)" data-bbox="32 96 424 184" data-label="A2A Client, Chat Input, JSON-RPC Endpoint, A2A Caller">
-      <!-- PORT:left x=32 y=56 id=n4.left type=input component="A2A Client" -->
-      <!-- PORT:right x=176 y=56 id=n4.right type=output component="A2A Client" -->
-      <!-- PORT:top x=104 y=32 id=n4.top type=input component="A2A Client" -->
-      <!-- PORT:bottom x=104 y=80 id=n4.bottom type=output component="A2A Client" -->
-      <!-- PORT:left x=32 y=128 id=n5.left type=input component="Chat Input" -->
-      <!-- PORT:right x=176 y=128 id=n5.right type=output component="Chat Input" -->
-      <!-- PORT:top x=104 y=104 id=n5.top type=input component="Chat Input" -->
-      <!-- PORT:bottom x=104 y=152 id=n5.bottom type=output component="Chat Input" -->
-      <!-- PORT:left x=216 y=56 id=n6.left type=input component="JSON-RPC Endpoint" -->
-      <!-- PORT:right x=392 y=56 id=n6.right type=output component="JSON-RPC Endpoint" -->
-      <!-- PORT:top x=304 y=32 id=n6.top type=input component="JSON-RPC Endpoint" -->
-      <!-- PORT:bottom x=304 y=80 id=n6.bottom type=output component="JSON-RPC Endpoint" -->
-      <!-- PORT:left x=240 y=128 id=n7.left type=input component="A2A Caller" -->
-      <!-- PORT:right x=368 y=128 id=n7.right type=output component="A2A Caller" -->
-      <!-- PORT:top x=304 y=104 id=n7.top type=input component="A2A Caller" -->
-      <!-- PORT:bottom x=304 y=152 id=n7.bottom type=output component="A2A Caller" -->
-      <g id="n4" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="A2A Client">
+  <g id="n1" data-bbox="0 0 872 408">
+    <!-- PORT:left x=64 y=112 id=n4.left type=input component="A2A Client" -->
+    <!-- PORT:right x=208 y=112 id=n4.right type=output component="A2A Client" -->
+    <!-- PORT:top x=136 y=88 id=n4.top type=input component="A2A Client" -->
+    <!-- PORT:bottom x=136 y=136 id=n4.bottom type=output component="A2A Client" -->
+    <!-- PORT:left x=248 y=112 id=n5.left type=input component="JSON-RPC Endpoint" -->
+    <!-- PORT:right x=424 y=112 id=n5.right type=output component="JSON-RPC Endpoint" -->
+    <!-- PORT:top x=336 y=88 id=n5.top type=input component="JSON-RPC Endpoint" -->
+    <!-- PORT:bottom x=336 y=136 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+    <!-- PORT:left x=464 y=112 id=n6.left type=input component="Published Flow" -->
+    <!-- PORT:right x=624 y=112 id=n6.right type=output component="Published Flow" -->
+    <!-- PORT:top x=544 y=88 id=n6.top type=input component="Published Flow" -->
+    <!-- PORT:bottom x=544 y=136 id=n6.bottom type=output component="Published Flow" -->
+    <!-- PORT:left x=664 y=112 id=n7.left type=input component="Agent Card" -->
+    <!-- PORT:right x=808 y=112 id=n7.right type=output component="Agent Card" -->
+    <!-- PORT:top x=736 y=88 id=n7.top type=input component="Agent Card" -->
+    <!-- PORT:bottom x=736 y=136 id=n7.bottom type=output component="Agent Card" -->
+    <!-- PORT:left x=184 y=288 id=n8.left type=input component="Chat Input" -->
+    <!-- PORT:right x=328 y=288 id=n8.right type=output component="Chat Input" -->
+    <!-- PORT:top x=256 y=264 id=n8.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=256 y=312 id=n8.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=368 y=288 id=n9.left type=input component="A2A Caller" -->
+    <!-- PORT:right x=496 y=288 id=n9.right type=output component="A2A Caller" -->
+    <!-- PORT:top x=432 y=264 id=n9.top type=input component="A2A Caller" -->
+    <!-- PORT:bottom x=432 y=312 id=n9.bottom type=output component="A2A Caller" -->
+    <!-- PORT:left x=552 y=248 id=n10.left type=input component="Chat Output" -->
+    <!-- PORT:right x=696 y=248 id=n10.right type=output component="Chat Output" -->
+    <!-- PORT:top x=624 y=224 id=n10.top type=input component="Chat Output" -->
+    <!-- PORT:bottom x=624 y=272 id=n10.bottom type=output component="Chat Output" -->
+    <!-- PORT:left x=552 y=320 id=n11.left type=input component="Remote A2A" -->
+    <!-- PORT:right x=696 y=320 id=n11.right type=output component="Remote A2A" -->
+    <!-- PORT:top x=624 y=296 id=n11.top type=input component="Remote A2A" -->
+    <!-- PORT:bottom x=624 y=344 id=n11.bottom type=output component="Remote A2A" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 808 136" data-label="Published Flow, Agent Card, A2A Client, JSON-RPC Endpoint">
+      <!-- PORT:left x=32 y=80 id=n4.left type=input component="A2A Client" -->
+      <!-- PORT:right x=176 y=80 id=n4.right type=output component="A2A Client" -->
+      <!-- PORT:top x=104 y=56 id=n4.top type=input component="A2A Client" -->
+      <!-- PORT:bottom x=104 y=104 id=n4.bottom type=output component="A2A Client" -->
+      <!-- PORT:left x=216 y=80 id=n5.left type=input component="JSON-RPC Endpoint" -->
+      <!-- PORT:right x=392 y=80 id=n5.right type=output component="JSON-RPC Endpoint" -->
+      <!-- PORT:top x=304 y=56 id=n5.top type=input component="JSON-RPC Endpoint" -->
+      <!-- PORT:bottom x=304 y=104 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+      <!-- PORT:left x=432 y=80 id=n6.left type=input component="Published Flow" -->
+      <!-- PORT:right x=592 y=80 id=n6.right type=output component="Published Flow" -->
+      <!-- PORT:top x=512 y=56 id=n6.top type=input component="Published Flow" -->
+      <!-- PORT:bottom x=512 y=104 id=n6.bottom type=output component="Published Flow" -->
+      <!-- PORT:left x=632 y=80 id=n7.left type=input component="Agent Card" -->
+      <!-- PORT:right x=776 y=80 id=n7.right type=output component="Agent Card" -->
+      <!-- PORT:top x=704 y=56 id=n7.top type=input component="Agent Card" -->
+      <!-- PORT:bottom x=704 y=104 id=n7.bottom type=output component="Agent Card" -->
+      <g id="n4" transform="translate(32,56)" data-bbox="32 56 144 48" data-label="A2A Client">
         <!-- PORT:left x=0 y=24 id=n4.left type=input component="A2A Client" -->
         <!-- PORT:right x=144 y=24 id=n4.right type=output component="A2A Client" -->
         <!-- PORT:top x=72 y=0 id=n4.top type=input component="A2A Client" -->
@@ -73,94 +73,94 @@
         <use id="n4.icon" href="#icon-user" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
         <text id="n4.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">A2A Client</text>
       </g>
-      <g id="n5" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Chat Input">
-        <!-- PORT:left x=0 y=24 id=n5.left type=input component="Chat Input" -->
-        <!-- PORT:right x=144 y=24 id=n5.right type=output component="Chat Input" -->
-        <!-- PORT:top x=72 y=0 id=n5.top type=input component="Chat Input" -->
-        <!-- PORT:bottom x=72 y=48 id=n5.bottom type=output component="Chat Input" -->
-        <path id="n5.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
-        <use id="n5.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n5.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
+      <g id="n5" transform="translate(216,56)" data-bbox="216 56 176 48" data-label="JSON-RPC Endpoint">
+        <!-- PORT:left x=0 y=24 id=n5.left type=input component="JSON-RPC Endpoint" -->
+        <!-- PORT:right x=176 y=24 id=n5.right type=output component="JSON-RPC Endpoint" -->
+        <!-- PORT:top x=88 y=0 id=n5.top type=input component="JSON-RPC Endpoint" -->
+        <!-- PORT:bottom x=88 y=48 id=n5.bottom type=output component="JSON-RPC Endpoint" -->
+        <rect id="n5.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="JSON-RPC Endpoint"/>
+        <use id="n5.icon" href="#icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n5.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">JSON-RPC Endpoint</text>
       </g>
-      <g id="n6" transform="translate(216,32)" data-bbox="216 32 176 48" data-label="JSON-RPC Endpoint">
-        <!-- PORT:left x=0 y=24 id=n6.left type=input component="JSON-RPC Endpoint" -->
-        <!-- PORT:right x=176 y=24 id=n6.right type=output component="JSON-RPC Endpoint" -->
-        <!-- PORT:top x=88 y=0 id=n6.top type=input component="JSON-RPC Endpoint" -->
-        <!-- PORT:bottom x=88 y=48 id=n6.bottom type=output component="JSON-RPC Endpoint" -->
-        <rect id="n6.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="JSON-RPC Endpoint"/>
-        <use id="n6.icon" href="#icon-ports" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="156">JSON-RPC Endpoint</text>
+      <g id="n6" transform="translate(432,56)" data-bbox="432 56 160 48" data-label="Published Flow">
+        <!-- PORT:left x=0 y=24 id=n6.left type=input component="Published Flow" -->
+        <!-- PORT:right x=160 y=24 id=n6.right type=output component="Published Flow" -->
+        <!-- PORT:top x=80 y=0 id=n6.top type=input component="Published Flow" -->
+        <!-- PORT:bottom x=80 y=48 id=n6.bottom type=output component="Published Flow" -->
+        <rect id="n6.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Published Flow"/>
+        <use id="n6.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n6.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Published Flow</text>
       </g>
-      <g id="n7" transform="translate(240,104)" data-bbox="240 104 128 48" data-label="A2A Caller">
-        <!-- PORT:left x=0 y=24 id=n7.left type=input component="A2A Caller" -->
-        <!-- PORT:right x=128 y=24 id=n7.right type=output component="A2A Caller" -->
-        <!-- PORT:top x=64 y=0 id=n7.top type=input component="A2A Caller" -->
-        <!-- PORT:bottom x=64 y=48 id=n7.bottom type=output component="A2A Caller" -->
-        <rect id="n7.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="A2A Caller"/>
-        <use id="n7.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n7.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">A2A Caller</text>
+      <g id="n7" transform="translate(632,56)" data-bbox="632 56 144 48" data-label="Agent Card">
+        <!-- PORT:left x=0 y=24 id=n7.left type=input component="Agent Card" -->
+        <!-- PORT:right x=144 y=24 id=n7.right type=output component="Agent Card" -->
+        <!-- PORT:top x=72 y=0 id=n7.top type=input component="Agent Card" -->
+        <!-- PORT:bottom x=72 y=48 id=n7.bottom type=output component="Agent Card" -->
+        <path id="n7.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="Agent Card"/>
+        <use id="n7.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n7.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Agent Card</text>
       </g>
-      <path id="n2.arrow0" d="M176,56 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n6.left"/>
-      <path id="n2.arrow1" d="M176,128 H240" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n7.left"/>
+      <path id="n2.arrow0" d="M592,80 H632" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n7.left"/>
+      <path id="n2.arrow1" d="M176,80 H184 V32 H704 V56" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n7.top"/>
+      <path id="n2.arrow2" d="M176,80 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n4.right" data-to="n5.left"/>
+      <path id="n2.arrow3" d="M392,80 H432" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n5.right" data-to="n6.left"/>
     </g>
-    <g id="n3" transform="translate(496,56)" data-bbox="496 56 408 256" data-label="Published Flow, Chat Output, Remote A2A, Agent Card">
-      <!-- PORT:left x=32 y=56 id=n8.left type=input component="Published Flow" -->
-      <!-- PORT:right x=192 y=56 id=n8.right type=output component="Published Flow" -->
-      <!-- PORT:top x=112 y=32 id=n8.top type=input component="Published Flow" -->
-      <!-- PORT:bottom x=112 y=80 id=n8.bottom type=output component="Published Flow" -->
-      <!-- PORT:left x=40 y=128 id=n9.left type=input component="Chat Output" -->
-      <!-- PORT:right x=184 y=128 id=n9.right type=output component="Chat Output" -->
-      <!-- PORT:top x=112 y=104 id=n9.top type=input component="Chat Output" -->
-      <!-- PORT:bottom x=112 y=152 id=n9.bottom type=output component="Chat Output" -->
-      <!-- PORT:left x=40 y=200 id=n10.left type=input component="Remote A2A" -->
-      <!-- PORT:right x=184 y=200 id=n10.right type=output component="Remote A2A" -->
-      <!-- PORT:top x=112 y=176 id=n10.top type=input component="Remote A2A" -->
-      <!-- PORT:bottom x=112 y=224 id=n10.bottom type=output component="Remote A2A" -->
-      <!-- PORT:left x=232 y=128 id=n11.left type=input component="Agent Card" -->
-      <!-- PORT:right x=376 y=128 id=n11.right type=output component="Agent Card" -->
-      <!-- PORT:top x=304 y=104 id=n11.top type=input component="Agent Card" -->
-      <!-- PORT:bottom x=304 y=152 id=n11.bottom type=output component="Agent Card" -->
-      <g id="n8" transform="translate(32,32)" data-bbox="32 32 160 48" data-label="Published Flow">
-        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Published Flow" -->
-        <!-- PORT:right x=160 y=24 id=n8.right type=output component="Published Flow" -->
-        <!-- PORT:top x=80 y=0 id=n8.top type=input component="Published Flow" -->
-        <!-- PORT:bottom x=80 y=48 id=n8.bottom type=output component="Published Flow" -->
-        <rect id="n8.block" x="0" y="0" width="160" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Published Flow"/>
-        <use id="n8.icon" href="#icon-layers" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="140">Published Flow</text>
+    <g id="n3" transform="translate(152,192)" data-bbox="152 192 576 184" data-label="Chat Input, A2A Caller, Chat Output, Remote A2A">
+      <!-- PORT:left x=32 y=96 id=n8.left type=input component="Chat Input" -->
+      <!-- PORT:right x=176 y=96 id=n8.right type=output component="Chat Input" -->
+      <!-- PORT:top x=104 y=72 id=n8.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=104 y=120 id=n8.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=216 y=96 id=n9.left type=input component="A2A Caller" -->
+      <!-- PORT:right x=344 y=96 id=n9.right type=output component="A2A Caller" -->
+      <!-- PORT:top x=280 y=72 id=n9.top type=input component="A2A Caller" -->
+      <!-- PORT:bottom x=280 y=120 id=n9.bottom type=output component="A2A Caller" -->
+      <!-- PORT:left x=400 y=56 id=n10.left type=input component="Chat Output" -->
+      <!-- PORT:right x=544 y=56 id=n10.right type=output component="Chat Output" -->
+      <!-- PORT:top x=472 y=32 id=n10.top type=input component="Chat Output" -->
+      <!-- PORT:bottom x=472 y=80 id=n10.bottom type=output component="Chat Output" -->
+      <!-- PORT:left x=400 y=128 id=n11.left type=input component="Remote A2A" -->
+      <!-- PORT:right x=544 y=128 id=n11.right type=output component="Remote A2A" -->
+      <!-- PORT:top x=472 y=104 id=n11.top type=input component="Remote A2A" -->
+      <!-- PORT:bottom x=472 y=152 id=n11.bottom type=output component="Remote A2A" -->
+      <g id="n8" transform="translate(32,72)" data-bbox="32 72 144 48" data-label="Chat Input">
+        <!-- PORT:left x=0 y=24 id=n8.left type=input component="Chat Input" -->
+        <!-- PORT:right x=144 y=24 id=n8.right type=output component="Chat Input" -->
+        <!-- PORT:top x=72 y=0 id=n8.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=72 y=48 id=n8.bottom type=output component="Chat Input" -->
+        <path id="n8.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Input"/>
+        <use id="n8.icon" href="#icon-text" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n8.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Input</text>
       </g>
-      <g id="n9" transform="translate(40,104)" data-bbox="40 104 144 48" data-label="Chat Output">
-        <!-- PORT:left x=0 y=24 id=n9.left type=input component="Chat Output" -->
-        <!-- PORT:right x=144 y=24 id=n9.right type=output component="Chat Output" -->
-        <!-- PORT:top x=72 y=0 id=n9.top type=input component="Chat Output" -->
-        <!-- PORT:bottom x=72 y=48 id=n9.bottom type=output component="Chat Output" -->
-        <path id="n9.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
-        <use id="n9.icon" href="#icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n9.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
+      <g id="n9" transform="translate(216,72)" data-bbox="216 72 128 48" data-label="A2A Caller">
+        <!-- PORT:left x=0 y=24 id=n9.left type=input component="A2A Caller" -->
+        <!-- PORT:right x=128 y=24 id=n9.right type=output component="A2A Caller" -->
+        <!-- PORT:top x=64 y=0 id=n9.top type=input component="A2A Caller" -->
+        <!-- PORT:bottom x=64 y=48 id=n9.bottom type=output component="A2A Caller" -->
+        <rect id="n9.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="A2A Caller"/>
+        <use id="n9.icon" href="#icon-gear" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n9.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">A2A Caller</text>
       </g>
-      <g id="n10" transform="translate(40,176)" data-bbox="40 176 144 48" data-label="Remote A2A">
-        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Remote A2A" -->
-        <!-- PORT:right x=144 y=24 id=n10.right type=output component="Remote A2A" -->
-        <!-- PORT:top x=72 y=0 id=n10.top type=input component="Remote A2A" -->
-        <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Remote A2A" -->
-        <path id="n10.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Remote A2A"/>
-        <use id="n10.icon" href="#icon-grounder" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n10.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Remote A2A</text>
+      <g id="n10" transform="translate(400,32)" data-bbox="400 32 144 48" data-label="Chat Output">
+        <!-- PORT:left x=0 y=24 id=n10.left type=input component="Chat Output" -->
+        <!-- PORT:right x=144 y=24 id=n10.right type=output component="Chat Output" -->
+        <!-- PORT:top x=72 y=0 id=n10.top type=input component="Chat Output" -->
+        <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Chat Output" -->
+        <path id="n10.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Chat Output"/>
+        <use id="n10.icon" href="#icon-image" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n10.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Chat Output</text>
       </g>
-      <g id="n11" transform="translate(232,104)" data-bbox="232 104 144 48" data-label="Agent Card">
-        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Agent Card" -->
-        <!-- PORT:right x=144 y=24 id=n11.right type=output component="Agent Card" -->
-        <!-- PORT:top x=72 y=0 id=n11.top type=input component="Agent Card" -->
-        <!-- PORT:bottom x=72 y=48 id=n11.bottom type=output component="Agent Card" -->
-        <path id="n11.block" d="M0,0 H136 L144,8 V48 H0 Z M136,0 V8 H144" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="document" data-bbox="0 0 144 48" data-component="Agent Card"/>
-        <use id="n11.icon" href="#icon-document" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
-        <text id="n11.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Agent Card</text>
+      <g id="n11" transform="translate(400,104)" data-bbox="400 104 144 48" data-label="Remote A2A">
+        <!-- PORT:left x=0 y=24 id=n11.left type=input component="Remote A2A" -->
+        <!-- PORT:right x=144 y=24 id=n11.right type=output component="Remote A2A" -->
+        <!-- PORT:top x=72 y=0 id=n11.top type=input component="Remote A2A" -->
+        <!-- PORT:bottom x=72 y=48 id=n11.bottom type=output component="Remote A2A" -->
+        <path id="n11.block" d="M24,0 H120 A24,24 0 0 1 120,48 H24 A24,24 0 0 1 24,0 Z" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" stroke-linejoin="round" data-role="block" data-kind="terminal" data-bbox="0 0 144 48" data-component="Remote A2A"/>
+        <use id="n11.icon" href="#icon-grounder" x="8" y="16" width="16" height="16" color="#2B3A4A" data-role="icon"/>
+        <text id="n11.label" x="40" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="start" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="108">Remote A2A</text>
       </g>
-      <path id="n3.arrow0" d="M192,56 H208 V128 H232" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n11.left"/>
+      <path id="n3.arrow0" d="M176,96 H216" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n8.right" data-to="n9.left"/>
+      <path id="n3.arrow1" d="M280,72 V56 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.top" data-to="n10.left"/>
+      <path id="n3.arrow2" d="M344,96 H376 V128 H400" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n11.left"/>
     </g>
-    <path id="n1.arrow0" d="M136,128 V32 H800 V160" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n4.top" data-to="n11.top"/>
-    <path id="n1.arrow1" d="M424,152 H488 V112 H528" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n8.left"/>
-    <path id="n1.arrow2" d="M400,224 H480 V184 H536" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n9.left"/>
-    <path id="n1.arrow3" d="M400,224 H488 V256 H536" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="control" stroke-dasharray="4 2" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n10.left"/>
   </g>
 </svg>

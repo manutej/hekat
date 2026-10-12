@@ -16,6 +16,8 @@ DELIVERABLES
 N. <how to verify: the exact commands and the numbers that count as done>.
 
 Rules: edit only <paths>; do not touch <paths> (other workers own them). Keep tests green.
+Known failure modes to avoid and to log if seen again: docs/FAILURE-MODES.md (an arrow through a
+block or label is never acceptable output).
 Do not commit. Final answer: a ≤ 40-line report listing files created/changed, the numbers
 before/after, and anything you could not finish.
 ```

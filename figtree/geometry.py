@@ -78,6 +78,21 @@ def path_hits_boxes(points: Sequence[Point], boxes: Iterable[BBox]) -> List[BBox
     return hits
 
 
+def collinear_overlap(p: Sequence[Point], q: Sequence[Point]) -> int:
+    """Longest run (px) along which a segment of ``p`` and a segment of ``q`` lie on the same line
+    and overlap: two arrows sharing a shaft."""
+    best = 0
+    for (a1, a2) in segments(p):
+        for (b1, b2) in segments(q):
+            if a1[1] == a2[1] == b1[1] == b2[1]:  # both horizontal on one y
+                lo, hi = max(min(a1[0], a2[0]), min(b1[0], b2[0])), min(max(a1[0], a2[0]), max(b1[0], b2[0]))
+                best = max(best, hi - lo)
+            elif a1[0] == a2[0] == b1[0] == b2[0]:  # both vertical on one x
+                lo, hi = max(min(a1[1], a2[1]), min(b1[1], b2[1])), min(max(a1[1], a2[1]), max(b1[1], b2[1]))
+                best = max(best, hi - lo)
+    return best
+
+
 def route(
     src: Point,
     dst: Point,

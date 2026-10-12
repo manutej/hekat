@@ -14,9 +14,9 @@
   "issues": [],
   "tags": [],
   "metrics": {
-    "fill_ratio": 0.62,
-    "aspect": 2.54,
-    "mean_detour": 1.14,
+    "fill_ratio": 0.598,
+    "aspect": 2.75,
+    "mean_detour": 1.01,
     "crossings": 0,
     "forward_ratio": 1.0,
     "palette_size": 1

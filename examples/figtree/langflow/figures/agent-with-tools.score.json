@@ -29,7 +29,7 @@
     "aspect": 1.51,
     "mean_detour": 1.0,
     "crossings": 0,
-    "forward_ratio": 0.8,
+    "forward_ratio": 1.0,
     "palette_size": 1
   },
   "unit": "agent-with-tools",

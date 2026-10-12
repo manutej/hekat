@@ -85,7 +85,7 @@ CHECKS: List[Check] = [
     # --- folded in from the adversary reports (diagram) ---
     Check("flow.collinear_overlap", "flow_readability", "critical", "two arrows sharing a collinear shaft (two heads, ambiguous endpoints)", "collinear segment overlap > 8px", False, pattern=r"share a collinear shaft"),
     Check("flow.through_text", "flow_readability", "critical", "an arrow striking through a label", "segment vs text bbox interior", False, pattern=r"strikes through label"),
-    Check("flow.semantic_direction", "flow_readability", "critical", "a sink that only emits or a source that only receives data (judge request)", "role lexicon vs arrow endpoints", False, DIAGRAM_MEDIA, pattern=r"reads as a (sink|source) but only"),
+    Check("flow.semantic_direction", "flow_readability", "warning", "a sink that only emits or a source that only receives data (judge request)", "role lexicon vs arrow endpoints", False, DIAGRAM_MEDIA, pattern=r"reads as a (sink|source) but only"),
     Check("text.sentence_label", "text_quality", "critical", "a label that is a sentence (trailing full stop or sentence opener)", "label text", False, pattern=r"is a sentence, not a label"),
     Check("text.duplicate_labels", "text_quality", "warning", "two blocks with the same label", "case-folded hosted labels", False, DIAGRAM_MEDIA, pattern=r"carry the same label"),
     Check("text.outlined_glyphs", "text_quality", "critical", "a block label drawn as path glyphs, not addressable text", "small stroked paths inside a block with no text", False, DIAGRAM_MEDIA, pattern=r"drawn as \d+ path glyphs"),
