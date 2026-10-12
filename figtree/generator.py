@@ -9,7 +9,7 @@ level by level.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Sequence, Set
+from typing import Tuple, Dict, List, Optional, Sequence, Set
 
 from figtree.geometry import ceil_to_grid
 from figtree.ingest import to_noun_phrase
@@ -42,6 +42,26 @@ def is_atomic(node: Node, max_depth: int = MAX_DEPTH) -> bool:
         return True
     tokens = len(node.description.split())
     return len(node.components) <= 1 and tokens <= LEAF_TOKEN_LIMIT
+
+
+
+def _satellites(components: Sequence[str], flows: Sequence[Flow]) -> List[Tuple[str, List[str]]]:
+    """``[(source, [targets...])]``: targets reached only from ``source`` by control flows, with no
+    outgoing flows, at least two per source (an agent's tools, a router's branches)."""
+    comps = list(components)
+    incoming: Dict[str, List[Flow]] = {c: [] for c in comps}
+    outgoing: Dict[str, int] = {c: 0 for c in comps}
+    for f in flows:
+        if f.dst in incoming:
+            incoming[f.dst].append(f)
+        if f.src in outgoing:
+            outgoing[f.src] += 1
+    by_src: Dict[str, List[str]] = {}
+    for c in comps:
+        ins = incoming[c]
+        if len(ins) == 1 and ins[0].type == "control" and outgoing[c] == 0 and ins[0].src != c:
+            by_src.setdefault(ins[0].src, []).append(c)
+    return [(src, ts) for src, ts in by_src.items() if len(ts) >= 2]
 
 
 def _layers(components: Sequence[str], flows: Sequence[Flow]) -> List[List[str]]:
@@ -148,18 +168,30 @@ class RuleBasedGenerator:
     # -- Decompose -------------------------------------------------------
     def decompose(self, node: Node, next_id) -> List[Node]:
         comps = list(node.components)
-        layers = _order_layers(_layers(comps, node.flows), node.flows)
-        comps = [c for layer in layers for c in layer]  # reading order follows the layering
-        if len(comps) <= 4:
-            groups = [[c] for c in comps]
+        # satellites: two or more sinks that one node reaches by control flows and nothing else
+        # reaches (an agent's tools, a router's branches) become one child of their own, so they
+        # sit beside the main chain instead of being chunked into the chain's last layer
+        sats = _satellites(comps, node.flows)
+        sat_targets = {t for _, ts in sats for t in ts}
+        core = [c for c in comps if c not in sat_targets]
+        core_flows = [f for f in node.flows if f.src in core and f.dst in core]
+        layers = _order_layers(_layers(core, core_flows), core_flows)
+        core = [c for layer in layers for c in layer]  # reading order follows the layering
+        budget = max(1, 4 - len(sats))  # at most four children per split
+        if len(core) <= budget:
+            groups = [[c] for c in core]
         else:
-            # one group per layer when there are 2-4 layers, else balance into 4 groups
-            k = min(4, max(2, len(layers)))
+            # one group per layer when there are 2-4 layers, else balance into the budget
+            k = min(budget, max(2, len(layers)))
             groups = _chunk(layers, k)
-            if len(groups) < 2:  # single big layer (parallel block): split the layer itself
-                half = (len(comps) + 1) // 2
-                groups = [comps[:half], comps[half:]]
+            if len(groups) < 2 and len(core) > 1:  # single big layer (parallel block): split the layer itself
+                half = (len(core) + 1) // 2
+                groups = [core[:half], core[half:]]
         groups = [g for g in groups if g]
+        # the satellite groups follow their source in reading order
+        for src, ts in sats:
+            at = next((i for i, g in enumerate(groups) if src in g), len(groups) - 1)
+            groups.insert(at + 1, list(ts))
         children: List[Node] = []
         for g in groups:
             gset = set(g)

@@ -1,6 +1,6 @@
 # FigTree workflows (`.claude/workflows/`)
 
-Six Claude Code `Workflow` scripts turn the loops we used to run by hand with subagents
+Eight Claude Code `Workflow` scripts turn the loops we used to run by hand with subagents
 (score → repair, adversary → refute, judge panel, icon draw → cold eye, digest a directory)
 into reusable orchestrations. The script API is in `WORKFLOW-API.md`; this page is the
 contract the five scripts share, a table of their arguments, and a worked chain.
@@ -35,7 +35,7 @@ the previous results at once:
 
 Everything else (flatten, filter, threshold) is plain code inside a stage.
 
-## The six workflows
+## The eight workflows
 
 | Workflow | Args | Stages (agents) | Returns |
 |---|---|---|---|
@@ -45,6 +45,8 @@ Everything else (flatten, filter, threshold) is plain code inside a stage.
 | `figtree-icon-family` | `{briefs:[{name, concept, metaphor?}], out_dir}` | per brief: **draughtsman** (`figtree icon --backend claude`, rule/hand fallback) → **cold-eye reviewer** (renders 16/24/48 px, `{score, defects}`) → **repair** + re-review once when < 9.5 → one **sheet** agent (`iconsmith.sheet`) | `{out_dir, sheet, icons:[{name, svg, score, defects, repaired, status}], failed}` |
 | `figtree-digest` | `{inputs:[paths] \| {dir}, rubric, out_dir, max_units?, style?}` | **scout** (`figtree digest --plan` → manifest) → per unit: **generate** (`figtree digest --unit ID`) → **score** (reads `<id>.score.json`) → **refine** one round when < 8 → **completeness critic** (reads the manifest's `skipped`) | `{manifest_path, units:[{id, title, svg, overall, status}], skipped:[{source, title, reason, worth_a_figure}], not_covered, failed}` |
 | `figtree-handoff` | `{out?='docs/HANDOFF-STATUS.md', branch?}` | 4 **measurers** in parallel (tests, `figtree eval`, git state, open items from FOLD-REPORT / NOTES / workflows README) → 1 **writer** composes the resume-today status | `{tests, eval, git, open_items, status_md, missing}` |
+| `figtree-research` | `{corpus_dir, out_dir, topics?, max_topics?=8, model?, cheap_model?, format?}` | **scout** (or `args.topics`) → per topic **researcher** writes a spec in `SPEC-FORMAT.md` → **checker** runs `figtree spec check` → **fixer** ≤ 2 rounds from the check's list → **synthesizer** writes `00-overview.md` | `{specs:[{id, spec, ok, components, flows, fix_rounds, remaining}], overview, failed}` |
+| `figtree-pipeline` | `{title, corpus_dir, out_dir, topics?, rubric?, icons?, max_icons?, model?, cheap_model?, skip?}` | `workflow('figtree-research')` → `workflow('figtree-digest')` over the specs → icon briefs + `workflow('figtree-icon-family')` → **animator** → **page builder** (`figtree page`) | `{research, figures, icons, animated, page}` |
 
 Example calls:
 
@@ -53,6 +55,7 @@ Workflow({ name: 'figtree-refine', args: { svg: 'examples/figtree/teaching/slide
 Workflow({ name: 'figtree-adversary', args: { rubric: 'teaching', n_probes: 4, out_dir: '/tmp/adversary' } })
 Workflow({ name: 'figtree-judge-panel', args: { svgs: ['/tmp/a.svg', { svg: '/tmp/b.svg', source: 'examples/figtree/loop.md' }], rubric: 'teaching' } })
 Workflow({ name: 'figtree-icon-family', args: { briefs: [{ name: 'grounder', concept: 'extract only evidenced elements', metaphor: 'magnifier over a page' }, { name: 'critic', concept: 'dual-space review' }], out_dir: 'examples/figtree/icons/wf' } })
+Workflow({ name: 'figtree-pipeline', args: { title: 'Agentic workflows in Langflow', corpus_dir: 'examples/figtree/langflow/corpus', out_dir: 'examples/figtree/langflow', model: 'sonnet', cheap_model: 'haiku' } })
 Workflow({ name: 'figtree-handoff', args: { out: 'docs/HANDOFF-STATUS.md' } })
 Workflow({ name: 'figtree-digest', args: { inputs: { dir: 'examples/figtree' }, rubric: 'teaching', out_dir: '/tmp/digest', max_units: 12 } })
 ```
@@ -121,3 +124,7 @@ function, as the API's own examples assume), so `node --check --input-type=modul
 reports exactly one diagnostic, the final `return`. A dry-run harness that strips the
 `export`, wraps the body and stubs `agent/pipeline/parallel/phase/log/args` exercises every
 stage with schema-shaped fakes; run it when you change a script.
+
+## Model tiers
+
+Every script accepts `args.model` (all agents) and `args.cheap_model` (stages marked `effort: 'low'`: scorers, checkers, listers, file writers). The prompts are spec cards (`.claude/skills/figtree-process/references/spec-card.md`): one command, one file, one JSON shape, so Sonnet writes and Haiku checks without any prompt changing. The Langflow run used `model: 'sonnet', cheap_model: 'haiku'`.

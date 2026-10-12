@@ -243,6 +243,15 @@ class RuleBasedGrounder:
         flows = self._resolve_flows(raw_flows, names, residuals)
 
         claim = self._claim(text)
+        # spec mode: a document that declares its components ("- **Name** (kind: ..)" bullets, three
+        # or more) is drawn from that list alone; prose mentions elsewhere are not components
+        declared = {slug(m.group(1)) for m in _COMPONENT_HINT.finditer(text)}
+        if len(declared) >= 3:
+            dropped = [c.name for c in final_components if slug(c.name) not in declared]
+            final_components = [c for c in final_components if slug(c.name) in declared]
+            flows = [f for f in flows if slug(f.src) in declared and slug(f.dst) in declared]
+            if dropped:
+                residuals.append(ResidualDefect("info", f"spec mode: {len(dropped)} prose mention(s) not drawn: {', '.join(dropped[:6])}", "content_plan.components", "declare it under Components to draw it"))
         plan = ContentPlan(
             claim=claim,
             components=final_components,
@@ -287,7 +296,7 @@ class RuleBasedGrounder:
         tail_seg = tail[: m.start()].strip() if m else tail.strip()
         if len(tail_seg.split()) > 5:
             tail_seg = " ".join(tail_seg.split()[:3])
-        if re.search(r"\b(?:if|or|else|when|unless|otherwise)\b", head_seg, re.IGNORECASE):
+        if re.search(r"(?<![-\w])(?:if|or|else|when|unless|otherwise)(?![-\w])", head_seg):  # lowercase prose only: "If-Else" is a name
             head_seg = ""  # conditional sentence: the head is not an explicit component
         if not tail_seg:
             return None
@@ -314,7 +323,8 @@ class RuleBasedGrounder:
             if not seg:
                 continue
             # loop-back marker: "repeat ≤3" -> control flow back to the chain start
-            if re.match(r"^(repeat|loop|iterate|again)\b", seg, re.IGNORECASE):
+            # a loop-back marker is "repeat ≤3" / "loop back" / "again"; a lone capitalised "Loop" is a component
+            if re.match(r"^(repeat|loop|iterate|again)\b", seg, re.IGNORECASE) and not (seg[:1].isupper() and len(seg.split()) == 1 and seg.lower() != "again"):
                 for p in prev:
                     for f in first:
                         raw_flows.append((p, f, "control", expr))

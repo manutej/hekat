@@ -129,7 +129,8 @@ It prints one JSON line {id, title, source, svg, overall, issues, critical, stat
   async ({ gen, score }, u) => {
     const overall = score ? score.overall : gen.overall
     const row = { id: u.id, title: u.title, source: u.source, svg: gen.svg, overall, critical: score ? score.critical : null, status: overall >= REFINE_BELOW ? 'ok' : 'low' }
-    if (overall >= REFINE_BELOW) return row
+    const critical = score ? score.critical : 0
+    if (overall >= REFINE_BELOW && !critical) return row
     const source = u.source
     const refined = await run(
       `You are the REPAIRER for unit "${u.id}" (scored ${overall} on the ${rubric} rubric). Input SVG: ${gen.svg}. Content requests: ${score && score.requests.length ? score.requests.map((r, i) => `(${i + 1}) ${r}`).join(' ') : '(none)'}.
