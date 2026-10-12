@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="384" viewBox="0 0 1320 384" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" data-figtree="1">
+  <title>Research workflow — Langflow documentation to FigTree SOURCE</title>
+  <rect id="background" x="0" y="0" width="1320" height="384" fill="#FFFFFF" data-role="background"/>
+  <defs>
+    <marker id="figtree-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2B3A4A"/>
+    </marker>
+  </defs>
+  <g id="n1" data-bbox="0 0 1320 384">
+    <!-- PORT:left x=136 y=120 id=n6.left type=input component="Doc Scout" -->
+    <!-- PORT:right x=232 y=120 id=n6.right type=output component="Doc Scout" -->
+    <!-- PORT:top x=184 y=96 id=n6.top type=input component="Doc Scout" -->
+    <!-- PORT:bottom x=184 y=144 id=n6.bottom type=output component="Doc Scout" -->
+    <!-- PORT:left x=96 y=192 id=n7.left type=input component="Bibliography Checker" -->
+    <!-- PORT:right x=272 y=192 id=n7.right type=output component="Bibliography Checker" -->
+    <!-- PORT:top x=184 y=168 id=n7.top type=input component="Bibliography Checker" -->
+    <!-- PORT:bottom x=184 y=216 id=n7.bottom type=output component="Bibliography Checker" -->
+    <!-- PORT:left x=152 y=264 id=n8.left type=input component="Agent" -->
+    <!-- PORT:right x=216 y=264 id=n8.right type=output component="Agent" -->
+    <!-- PORT:top x=184 y=240 id=n8.top type=input component="Agent" -->
+    <!-- PORT:bottom x=184 y=288 id=n8.bottom type=output component="Agent" -->
+    <!-- PORT:left x=392 y=160 id=n9.left type=input component="Chat Input" -->
+    <!-- PORT:right x=504 y=160 id=n9.right type=output component="Chat Input" -->
+    <!-- PORT:top x=448 y=136 id=n9.top type=input component="Chat Input" -->
+    <!-- PORT:bottom x=448 y=184 id=n9.bottom type=output component="Chat Input" -->
+    <!-- PORT:left x=376 y=232 id=n10.left type=input component="Fact Extractor" -->
+    <!-- PORT:right x=520 y=232 id=n10.right type=output component="Fact Extractor" -->
+    <!-- PORT:top x=448 y=208 id=n10.top type=input component="Fact Extractor" -->
+    <!-- PORT:bottom x=448 y=256 id=n10.bottom type=output component="Fact Extractor" -->
+    <!-- PORT:left x=760 y=120 id=n13.left type=input component="Grounder Preview" -->
+    <!-- PORT:right x=904 y=120 id=n13.right type=output component="Grounder Preview" -->
+    <!-- PORT:top x=832 y=96 id=n13.top type=input component="Grounder Preview" -->
+    <!-- PORT:bottom x=832 y=144 id=n13.bottom type=output component="Grounder Preview" -->
+    <!-- PORT:left x=688 y=192 id=n14.left type=input component="Agent Component style arrow chains" -->
+    <!-- PORT:right x=976 y=192 id=n14.right type=output component="Agent Component style arrow chains" -->
+    <!-- PORT:top x=832 y=168 id=n14.top type=input component="Agent Component style arrow chains" -->
+    <!-- PORT:bottom x=832 y=216 id=n14.bottom type=output component="Agent Component style arrow chains" -->
+    <!-- PORT:left x=760 y=264 id=n15.left type=input component="Structure Writer" -->
+    <!-- PORT:right x=904 y=264 id=n15.right type=output component="Structure Writer" -->
+    <!-- PORT:top x=832 y=240 id=n15.top type=input component="Structure Writer" -->
+    <!-- PORT:bottom x=832 y=288 id=n15.bottom type=output component="Structure Writer" -->
+    <!-- PORT:left x=1080 y=160 id=n16.left type=input component="Digest Planner" -->
+    <!-- PORT:right x=1224 y=160 id=n16.right type=output component="Digest Planner" -->
+    <!-- PORT:top x=1152 y=136 id=n16.top type=input component="Digest Planner" -->
+    <!-- PORT:bottom x=1152 y=184 id=n16.bottom type=output component="Digest Planner" -->
+    <!-- PORT:left x=1088 y=232 id=n17.left type=input component="FigTree Scout" -->
+    <!-- PORT:right x=1216 y=232 id=n17.right type=output component="FigTree Scout" -->
+    <!-- PORT:top x=1152 y=208 id=n17.top type=input component="FigTree Scout" -->
+    <!-- PORT:bottom x=1152 y=256 id=n17.bottom type=output component="FigTree Scout" -->
+    <g id="n2" transform="translate(32,32)" data-bbox="32 32 552 320" data-label="Doc Scout, Bibliography Checker, Agent, Chat Input, Fact Extractor">
+      <!-- PORT:left x=104 y=88 id=n6.left type=input component="Doc Scout" -->
+      <!-- PORT:right x=200 y=88 id=n6.right type=output component="Doc Scout" -->
+      <!-- PORT:top x=152 y=64 id=n6.top type=input component="Doc Scout" -->
+      <!-- PORT:bottom x=152 y=112 id=n6.bottom type=output component="Doc Scout" -->
+      <!-- PORT:left x=64 y=160 id=n7.left type=input component="Bibliography Checker" -->
+      <!-- PORT:right x=240 y=160 id=n7.right type=output component="Bibliography Checker" -->
+      <!-- PORT:top x=152 y=136 id=n7.top type=input component="Bibliography Checker" -->
+      <!-- PORT:bottom x=152 y=184 id=n7.bottom type=output component="Bibliography Checker" -->
+      <!-- PORT:left x=120 y=232 id=n8.left type=input component="Agent" -->
+      <!-- PORT:right x=184 y=232 id=n8.right type=output component="Agent" -->
+      <!-- PORT:top x=152 y=208 id=n8.top type=input component="Agent" -->
+      <!-- PORT:bottom x=152 y=256 id=n8.bottom type=output component="Agent" -->
+      <!-- PORT:left x=360 y=128 id=n9.left type=input component="Chat Input" -->
+      <!-- PORT:right x=472 y=128 id=n9.right type=output component="Chat Input" -->
+      <!-- PORT:top x=416 y=104 id=n9.top type=input component="Chat Input" -->
+      <!-- PORT:bottom x=416 y=152 id=n9.bottom type=output component="Chat Input" -->
+      <!-- PORT:left x=344 y=200 id=n10.left type=input component="Fact Extractor" -->
+      <!-- PORT:right x=488 y=200 id=n10.right type=output component="Fact Extractor" -->
+      <!-- PORT:top x=416 y=176 id=n10.top type=input component="Fact Extractor" -->
+      <!-- PORT:bottom x=416 y=224 id=n10.bottom type=output component="Fact Extractor" -->
+      <g id="n4" transform="translate(32,32)" data-bbox="32 32 240 256" data-label="Doc Scout, Bibliography Checker, Agent">
+        <!-- PORT:left x=72 y=56 id=n6.left type=input component="Doc Scout" -->
+        <!-- PORT:right x=168 y=56 id=n6.right type=output component="Doc Scout" -->
+        <!-- PORT:top x=120 y=32 id=n6.top type=input component="Doc Scout" -->
+        <!-- PORT:bottom x=120 y=80 id=n6.bottom type=output component="Doc Scout" -->
+        <!-- PORT:left x=32 y=128 id=n7.left type=input component="Bibliography Checker" -->
+        <!-- PORT:right x=208 y=128 id=n7.right type=output component="Bibliography Checker" -->
+        <!-- PORT:top x=120 y=104 id=n7.top type=input component="Bibliography Checker" -->
+        <!-- PORT:bottom x=120 y=152 id=n7.bottom type=output component="Bibliography Checker" -->
+        <!-- PORT:left x=88 y=200 id=n8.left type=input component="Agent" -->
+        <!-- PORT:right x=152 y=200 id=n8.right type=output component="Agent" -->
+        <!-- PORT:top x=120 y=176 id=n8.top type=input component="Agent" -->
+        <!-- PORT:bottom x=120 y=224 id=n8.bottom type=output component="Agent" -->
+        <g id="n6" transform="translate(72,32)" data-bbox="72 32 96 48" data-label="Doc Scout">
+          <!-- PORT:left x=0 y=24 id=n6.left type=input component="Doc Scout" -->
+          <!-- PORT:right x=96 y=24 id=n6.right type=output component="Doc Scout" -->
+          <!-- PORT:top x=48 y=0 id=n6.top type=input component="Doc Scout" -->
+          <!-- PORT:bottom x=48 y=48 id=n6.bottom type=output component="Doc Scout" -->
+          <rect id="n6.block" x="0" y="0" width="96" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Doc Scout"/>
+          <text id="n6.label" x="48" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="96">Doc Scout</text>
+        </g>
+        <g id="n7" transform="translate(32,104)" data-bbox="32 104 176 48" data-label="Bibliography Checker">
+          <!-- PORT:left x=0 y=24 id=n7.left type=input component="Bibliography Checker" -->
+          <!-- PORT:right x=176 y=24 id=n7.right type=output component="Bibliography Checker" -->
+          <!-- PORT:top x=88 y=0 id=n7.top type=input component="Bibliography Checker" -->
+          <!-- PORT:bottom x=88 y=48 id=n7.bottom type=output component="Bibliography Checker" -->
+          <rect id="n7.block" x="0" y="0" width="176" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Bibliography Checker"/>
+          <text id="n7.label" x="88" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="176">Bibliography Checker</text>
+        </g>
+        <g id="n8" transform="translate(88,176)" data-bbox="88 176 64 48" data-label="Agent">
+          <!-- PORT:left x=0 y=24 id=n8.left type=input component="Agent" -->
+          <!-- PORT:right x=64 y=24 id=n8.right type=output component="Agent" -->
+          <!-- PORT:top x=32 y=0 id=n8.top type=input component="Agent" -->
+          <!-- PORT:bottom x=32 y=48 id=n8.bottom type=output component="Agent" -->
+          <rect id="n8.block" x="0" y="0" width="64" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent"/>
+          <text id="n8.label" x="32" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="64">Agent</text>
+        </g>
+      </g>
+      <g id="n5" transform="translate(312,72)" data-bbox="312 72 208 184" data-label="Chat Input, Fact Extractor">
+        <!-- PORT:left x=48 y=56 id=n9.left type=input component="Chat Input" -->
+        <!-- PORT:right x=160 y=56 id=n9.right type=output component="Chat Input" -->
+        <!-- PORT:top x=104 y=32 id=n9.top type=input component="Chat Input" -->
+        <!-- PORT:bottom x=104 y=80 id=n9.bottom type=output component="Chat Input" -->
+        <!-- PORT:left x=32 y=128 id=n10.left type=input component="Fact Extractor" -->
+        <!-- PORT:right x=176 y=128 id=n10.right type=output component="Fact Extractor" -->
+        <!-- PORT:top x=104 y=104 id=n10.top type=input component="Fact Extractor" -->
+        <!-- PORT:bottom x=104 y=152 id=n10.bottom type=output component="Fact Extractor" -->
+        <g id="n9" transform="translate(48,32)" data-bbox="48 32 112 48" data-label="Chat Input">
+          <!-- PORT:left x=0 y=24 id=n9.left type=input component="Chat Input" -->
+          <!-- PORT:right x=112 y=24 id=n9.right type=output component="Chat Input" -->
+          <!-- PORT:top x=56 y=0 id=n9.top type=input component="Chat Input" -->
+          <!-- PORT:bottom x=56 y=48 id=n9.bottom type=output component="Chat Input" -->
+          <rect id="n9.block" x="0" y="0" width="112" height="48" fill="#E6E8EC" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Chat Input"/>
+          <text id="n9.label" x="56" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="112">Chat Input</text>
+        </g>
+        <g id="n10" transform="translate(32,104)" data-bbox="32 104 144 48" data-label="Fact Extractor">
+          <!-- PORT:left x=0 y=24 id=n10.left type=input component="Fact Extractor" -->
+          <!-- PORT:right x=144 y=24 id=n10.right type=output component="Fact Extractor" -->
+          <!-- PORT:top x=72 y=0 id=n10.top type=input component="Fact Extractor" -->
+          <!-- PORT:bottom x=72 y=48 id=n10.bottom type=output component="Fact Extractor" -->
+          <rect id="n10.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Fact Extractor"/>
+          <text id="n10.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Fact Extractor</text>
+        </g>
+      </g>
+      <path id="n2.arrow0" d="M200,88 H272 V200 H344" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n6.right" data-to="n10.left"/>
+    </g>
+    <g id="n3" transform="translate(624,32)" data-bbox="624 32 664 320" data-label="Grounder Preview, Agent Component style arrow chains, Structure Writer, Digest Planner, FigTree Scout">
+      <!-- PORT:left x=136 y=88 id=n13.left type=input component="Grounder Preview" -->
+      <!-- PORT:right x=280 y=88 id=n13.right type=output component="Grounder Preview" -->
+      <!-- PORT:top x=208 y=64 id=n13.top type=input component="Grounder Preview" -->
+      <!-- PORT:bottom x=208 y=112 id=n13.bottom type=output component="Grounder Preview" -->
+      <!-- PORT:left x=64 y=160 id=n14.left type=input component="Agent Component style arrow chains" -->
+      <!-- PORT:right x=352 y=160 id=n14.right type=output component="Agent Component style arrow chains" -->
+      <!-- PORT:top x=208 y=136 id=n14.top type=input component="Agent Component style arrow chains" -->
+      <!-- PORT:bottom x=208 y=184 id=n14.bottom type=output component="Agent Component style arrow chains" -->
+      <!-- PORT:left x=136 y=232 id=n15.left type=input component="Structure Writer" -->
+      <!-- PORT:right x=280 y=232 id=n15.right type=output component="Structure Writer" -->
+      <!-- PORT:top x=208 y=208 id=n15.top type=input component="Structure Writer" -->
+      <!-- PORT:bottom x=208 y=256 id=n15.bottom type=output component="Structure Writer" -->
+      <!-- PORT:left x=456 y=128 id=n16.left type=input component="Digest Planner" -->
+      <!-- PORT:right x=600 y=128 id=n16.right type=output component="Digest Planner" -->
+      <!-- PORT:top x=528 y=104 id=n16.top type=input component="Digest Planner" -->
+      <!-- PORT:bottom x=528 y=152 id=n16.bottom type=output component="Digest Planner" -->
+      <!-- PORT:left x=464 y=200 id=n17.left type=input component="FigTree Scout" -->
+      <!-- PORT:right x=592 y=200 id=n17.right type=output component="FigTree Scout" -->
+      <!-- PORT:top x=528 y=176 id=n17.top type=input component="FigTree Scout" -->
+      <!-- PORT:bottom x=528 y=224 id=n17.bottom type=output component="FigTree Scout" -->
+      <g id="n11" transform="translate(32,32)" data-bbox="32 32 352 256" data-label="Grounder Preview, Agent Component style arrow chains, Structure Writer">
+        <!-- PORT:left x=104 y=56 id=n13.left type=input component="Grounder Preview" -->
+        <!-- PORT:right x=248 y=56 id=n13.right type=output component="Grounder Preview" -->
+        <!-- PORT:top x=176 y=32 id=n13.top type=input component="Grounder Preview" -->
+        <!-- PORT:bottom x=176 y=80 id=n13.bottom type=output component="Grounder Preview" -->
+        <!-- PORT:left x=32 y=128 id=n14.left type=input component="Agent Component style arrow chains" -->
+        <!-- PORT:right x=320 y=128 id=n14.right type=output component="Agent Component style arrow chains" -->
+        <!-- PORT:top x=176 y=104 id=n14.top type=input component="Agent Component style arrow chains" -->
+        <!-- PORT:bottom x=176 y=152 id=n14.bottom type=output component="Agent Component style arrow chains" -->
+        <!-- PORT:left x=104 y=200 id=n15.left type=input component="Structure Writer" -->
+        <!-- PORT:right x=248 y=200 id=n15.right type=output component="Structure Writer" -->
+        <!-- PORT:top x=176 y=176 id=n15.top type=input component="Structure Writer" -->
+        <!-- PORT:bottom x=176 y=224 id=n15.bottom type=output component="Structure Writer" -->
+        <g id="n13" transform="translate(104,32)" data-bbox="104 32 144 48" data-label="Grounder Preview">
+          <!-- PORT:left x=0 y=24 id=n13.left type=input component="Grounder Preview" -->
+          <!-- PORT:right x=144 y=24 id=n13.right type=output component="Grounder Preview" -->
+          <!-- PORT:top x=72 y=0 id=n13.top type=input component="Grounder Preview" -->
+          <!-- PORT:bottom x=72 y=48 id=n13.bottom type=output component="Grounder Preview" -->
+          <rect id="n13.block" x="0" y="0" width="144" height="48" fill="#F3C9A4" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Grounder Preview"/>
+          <text id="n13.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Grounder Preview</text>
+        </g>
+        <g id="n14" transform="translate(32,104)" data-bbox="32 104 288 48" data-label="Agent Component style arrow chains">
+          <!-- PORT:left x=0 y=24 id=n14.left type=input component="Agent Component style arrow chains" -->
+          <!-- PORT:right x=288 y=24 id=n14.right type=output component="Agent Component style arrow chains" -->
+          <!-- PORT:top x=144 y=0 id=n14.top type=input component="Agent Component style arrow chains" -->
+          <!-- PORT:bottom x=144 y=48 id=n14.bottom type=output component="Agent Component style arrow chains" -->
+          <rect id="n14.block" x="0" y="0" width="288" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Agent Component style arrow chains"/>
+          <text id="n14.label" x="144" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="288">Agent Component style arrow chains</text>
+        </g>
+        <g id="n15" transform="translate(104,176)" data-bbox="104 176 144 48" data-label="Structure Writer">
+          <!-- PORT:left x=0 y=24 id=n15.left type=input component="Structure Writer" -->
+          <!-- PORT:right x=144 y=24 id=n15.right type=output component="Structure Writer" -->
+          <!-- PORT:top x=72 y=0 id=n15.top type=input component="Structure Writer" -->
+          <!-- PORT:bottom x=72 y=48 id=n15.bottom type=output component="Structure Writer" -->
+          <rect id="n15.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Structure Writer"/>
+          <text id="n15.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Structure Writer</text>
+        </g>
+      </g>
+      <g id="n12" transform="translate(424,72)" data-bbox="424 72 208 184" data-label="Digest Planner, FigTree Scout">
+        <!-- PORT:left x=32 y=56 id=n16.left type=input component="Digest Planner" -->
+        <!-- PORT:right x=176 y=56 id=n16.right type=output component="Digest Planner" -->
+        <!-- PORT:top x=104 y=32 id=n16.top type=input component="Digest Planner" -->
+        <!-- PORT:bottom x=104 y=80 id=n16.bottom type=output component="Digest Planner" -->
+        <!-- PORT:left x=40 y=128 id=n17.left type=input component="FigTree Scout" -->
+        <!-- PORT:right x=168 y=128 id=n17.right type=output component="FigTree Scout" -->
+        <!-- PORT:top x=104 y=104 id=n17.top type=input component="FigTree Scout" -->
+        <!-- PORT:bottom x=104 y=152 id=n17.bottom type=output component="FigTree Scout" -->
+        <g id="n16" transform="translate(32,32)" data-bbox="32 32 144 48" data-label="Digest Planner">
+          <!-- PORT:left x=0 y=24 id=n16.left type=input component="Digest Planner" -->
+          <!-- PORT:right x=144 y=24 id=n16.right type=output component="Digest Planner" -->
+          <!-- PORT:top x=72 y=0 id=n16.top type=input component="Digest Planner" -->
+          <!-- PORT:bottom x=72 y=48 id=n16.bottom type=output component="Digest Planner" -->
+          <rect id="n16.block" x="0" y="0" width="144" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="Digest Planner"/>
+          <text id="n16.label" x="72" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="144">Digest Planner</text>
+        </g>
+        <g id="n17" transform="translate(40,104)" data-bbox="40 104 128 48" data-label="FigTree Scout">
+          <!-- PORT:left x=0 y=24 id=n17.left type=input component="FigTree Scout" -->
+          <!-- PORT:right x=128 y=24 id=n17.right type=output component="FigTree Scout" -->
+          <!-- PORT:top x=64 y=0 id=n17.top type=input component="FigTree Scout" -->
+          <!-- PORT:bottom x=64 y=48 id=n17.bottom type=output component="FigTree Scout" -->
+          <rect id="n17.block" x="0" y="0" width="128" height="48" fill="#C9DCF0" stroke="#2B3A4A" stroke-width="1.4" data-role="block" rx="6" data-component="FigTree Scout"/>
+          <text id="n17.label" x="64" y="24" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="#1C2630" data-kind="label" data-max-width="128">FigTree Scout</text>
+        </g>
+      </g>
+      <path id="n3.arrow0" d="M280,232 H368 V200 H464" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n15.right" data-to="n17.left"/>
+      <path id="n3.arrow1" d="M280,88 H376 V128 H456" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n13.right" data-to="n16.left"/>
+    </g>
+    <path id="n1.arrow0" d="M520,232 H640 V264 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n10.right" data-to="n15.left"/>
+    <path id="n1.arrow1" d="M272,192 H520 V120 H760" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n7.right" data-to="n13.left"/>
+    <path id="n1.arrow2" d="M504,160 H608 V192 H688" fill="none" stroke="#2B3A4A" stroke-width="1.4" data-flow="data" marker-end="url(#figtree-arrow)" data-from="n9.right" data-to="n14.left"/>
+  </g>
+</svg>

@@ -262,6 +262,10 @@ the truncation as a defect.
   `-adversary`, `-judge-panel`, `-icon-family`) fan these commands out over small-context
   subagents that hand back JSON verdicts only; see `docs/workflows/README.md`.
 
+**Documentation-first case study:** Langflow agentic workflows from official docs (no Figma input)
+— sources in `docs/research/langflow-agentic-workflows/`, figures and gallery in
+`examples/figtree/langflow/` (see that directory's README).
+
 ## Known limitations
 
 * The rule-based Grounder only admits explicit structure (arrow chains, "X Agent" names,
